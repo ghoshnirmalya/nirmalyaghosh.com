@@ -1,6 +1,8 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
 import StyledProfileCard from './styles'
 
@@ -33,12 +35,14 @@ const ProfileCard = () => {
         <>
           <StyledProfileCard>
             <div className="left-content">
-              <Img fixed={data.avatar.childImageSharp.fixed} />
+              <Link to="/">
+                <Img fixed={data.avatar.childImageSharp.fixed} />
+              </Link>
             </div>
             <div className="right-content">
               <p className="name">Nirmalya Ghosh</p>
               <div className="designation">
-                Front End Developer at{' '}
+                Front End Developer at
                 <a href="https://www.bangthetable.com/">
                   <Img fixed={data.bttLogo.childImageSharp.fixed} />
                 </a>
@@ -49,6 +53,10 @@ const ProfileCard = () => {
       )}
     />
   )
+}
+
+ProfileCard.propTypes = {
+  data: PropTypes.object,
 }
 
 export default ProfileCard

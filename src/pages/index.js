@@ -5,7 +5,7 @@ import PostCard from '../components/post-card'
 import SEO from '../components/seo'
 import posts from '../static/data/posts.json'
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <div className="boxed-content">

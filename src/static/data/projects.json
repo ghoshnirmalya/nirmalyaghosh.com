@@ -1,0 +1,38 @@
+[
+  {
+    "title": "React Search Box",
+    "description": "An autocomplete search box built with and for React",
+    "url": "https://github.com/ghoshnirmalya/react-search-box",
+    "stars": "23"
+  },
+  {
+    "title": "Reddit Clone",
+    "description": "Sample app for the tutorial showing how you can create a Reddit clone using React and Firebase",
+    "url": "https://github.com/ghoshnirmalya/reddit-clone",
+    "stars": "9"
+  },
+  {
+    "title": "LinkedIn Clone React Frontend",
+    "description": "Frontend for a software similar to LinkedIn",
+    "url": "https://github.com/ghoshnirmalya/linkedin-clone-react-frontend",
+    "stars": "2"
+  },
+  {
+    "title": "LinkedIn Clone Rails Backend",
+    "description": "API to power a software similar to LinkedIn",
+    "url": "https://github.com/ghoshnirmalya/linkedin-clone-rails-backend",
+    "stars": "4"
+  },
+  {
+    "title": "Building Redux From Scratch",
+    "description": "Building Redux from scratch",
+    "url": "https://github.com/ghoshnirmalya/building-redux-from-scratch",
+    "stars": "2"
+  },
+  {
+    "title": "Social App API In Elixir",
+    "description": "Social App API In Elixir",
+    "url": "https://github.com/ghoshnirmalya/social-app-api-in-elixir",
+    "stars": "11"
+  }
+]

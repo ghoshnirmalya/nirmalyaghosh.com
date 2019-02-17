@@ -18,8 +18,21 @@ const Navbar = () => {
           <Link to="/projects" className="link">
             Projects
           </Link>
-          <a href="https://www.linkedin.com/in/ghoshnirmalya/" className="link">
+          <a
+            href="https://www.linkedin.com/in/ghoshnirmalya/"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
+          </a>
+          <a
+            href="https://github.com/ghoshnirmalya/"
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
           </a>
         </div>
       </div>

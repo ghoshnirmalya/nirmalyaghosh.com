@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import StyledPostCard from './styles'
+import StyledProjectCard from './styles'
 
-const PostCard = ({ data }) => {
+const ProjectCard = ({ data }) => {
   return (
-    <StyledPostCard>
+    <StyledProjectCard>
       <a
         className="content"
         href={data.url}
@@ -13,14 +13,15 @@ const PostCard = ({ data }) => {
         rel="noopener noreferrer"
       >
         <p className="title">{data.title}</p>
-        <p className="date">Published on {data.date}</p>
+        <p className="description">{data.description}</p>
+        <p className="stars">{data.stars} stars</p>
       </a>
-    </StyledPostCard>
+    </StyledProjectCard>
   )
 }
 
-PostCard.propTypes = {
+ProjectCard.propTypes = {
   data: PropTypes.object,
 }
 
-export default PostCard
+export default ProjectCard

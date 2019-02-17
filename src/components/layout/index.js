@@ -32,6 +32,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0 15px;
   }
+
+  .fluid-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 `
 const Layout = ({ children }) => (
   <StaticQuery

@@ -10,6 +10,7 @@ const StyledNavbar = styled.nav`
   position: fixed;
   width: 100%;
   margin-top: -200px;
+  z-index: 1;
 
   > .boxed-content {
     display: flex;
