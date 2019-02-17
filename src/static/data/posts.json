@@ -1,0 +1,27 @@
+[
+  {
+    "title": "How to write a simple React search plugin, publish it to npm, and deploy it to Github pages",
+    "url": "https://medium.freecodecamp.org/how-to-write-a-simple-react-search-plugin-publish-it-to-npm-and-deploy-it-to-github-pages-d8876dff7780",
+    "date": "Jan 16, 2019"
+  },
+  {
+    "title": "9 steps for dockerizing a Rails api-only application",
+    "url": "https://medium.com/@nirmalyaghosh/9-steps-for-dockerizing-a-rails-api-only-application-d65a8836f3df",
+    "date": "Dec 25, 2018"
+  },
+  {
+    "title": "How to write highly readable React code — 10 coding style tips",
+    "url": "https://medium.freecodecamp.org/10-points-to-remember-thatll-help-you-master-coding-in-reactjs-library-d0520d8c73d8",
+    "date": "Jan 3, 2018"
+  },
+  {
+    "title": "How to Authenticate your Elixir/Phoenix APIs using Guardian",
+    "url": "https://medium.freecodecamp.org/authentication-using-elixir-phoenix-f9c162b2c398",
+    "date": "Mar 20, 2017"
+  },
+  {
+    "title": "Bootstrapping an API-only backend for a Social Networking app using Elixir/Phoenix",
+    "url": "https://medium.com/@nirmalyaghosh/bootstrapping-an-api-only-backend-for-a-social-networking-app-using-elixir-f74a73b1da51",
+    "date": "Mar 1, 2017"
+  }
+]

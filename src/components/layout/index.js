@@ -8,13 +8,11 @@ import Navbar from '../navbar'
 import StyledLayout from './styles'
 
 const GlobalStyle = createGlobalStyle`
-  @import url(‘https://fonts.googleapis.com/css?family=Montserrat|Roboto');
   @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
   ${reset}
 
   body {
-    font-family: 'Roboto', sans-serif;
     background-color: #f6f7f8;
   }
 
@@ -22,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'PT Serif', serif;
     color: #657177;
     margin-bottom: 1rem;
+    line-height: 2rem;
   }
 
   a {

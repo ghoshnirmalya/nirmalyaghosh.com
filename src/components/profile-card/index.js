@@ -9,11 +9,20 @@ const ProfileCard = () => {
     <StaticQuery
       query={graphql`
         query {
-          file(relativePath: { eq: "avatar.png" }) {
+          avatar: file(relativePath: { eq: "avatar.png" }) {
             childImageSharp {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.
               fixed(width: 100, height: 100) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          bttLogo: file(relativePath: { eq: "btt-logo.png" }) {
+            childImageSharp {
+              # Specify the image processing specifications right in the query.
+              # Makes it trivial to update as your page's design changes.
+              fixed(width: 150, height: 50) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -24,14 +33,16 @@ const ProfileCard = () => {
         <>
           <StyledProfileCard>
             <div className="left-content">
-              <Img fixed={data.file.childImageSharp.fixed} />
+              <Img fixed={data.avatar.childImageSharp.fixed} />
             </div>
             <div className="right-content">
               <p className="name">Nirmalya Ghosh</p>
-              <p className="designation">
+              <div className="designation">
                 Front End Developer at{' '}
-                <a href="https://www.bangthetable.com/">Bang the Table</a>
-              </p>
+                <a href="https://www.bangthetable.com/">
+                  <Img fixed={data.bttLogo.childImageSharp.fixed} />
+                </a>
+              </div>
             </div>
           </StyledProfileCard>
         </>

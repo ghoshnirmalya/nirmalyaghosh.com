@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const StyledProfileCard = styled.div`
   display: flex;
   align-items: center;
+  padding: 30px;
 
   > .right-content {
     margin-left: 20px;
@@ -10,10 +11,18 @@ const StyledProfileCard = styled.div`
     > .name {
       font-size: 30px;
       color: #0f0f0f;
+      font-weight: 600;
     }
 
     > .designation {
-      margin-bottom: 0;
+      font-family: 'Helvetica', serif;
+      margin: -10px 0 0 0;
+      display: flex;
+      align-items: center;
+
+      > a {
+        margin: -20px 0 0 5px;
+      }
     }
   }
 `
