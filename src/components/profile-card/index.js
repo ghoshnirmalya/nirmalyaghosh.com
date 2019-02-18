@@ -20,15 +20,6 @@ const ProfileCard = () => {
               }
             }
           }
-          bttLogo: file(relativePath: { eq: "btt-logo.png" }) {
-            childImageSharp {
-              # Specify the image processing specifications right in the query.
-              # Makes it trivial to update as your page's design changes.
-              fixed(width: 150, height: 50) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
         }
       `}
       render={data => (
@@ -44,7 +35,7 @@ const ProfileCard = () => {
               <div className="designation">
                 Front End Developer at
                 <a href="https://www.bangthetable.com/">
-                  <Img fixed={data.bttLogo.childImageSharp.fixed} />
+                  Bang the Table
                 </a>
               </div>
             </div>

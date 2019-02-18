@@ -21,7 +21,10 @@ const StyledProfileCard = styled.div`
       align-items: center;
 
       > a {
-        margin: -20px 0 0 5px;
+        color: #0f0f0f;
+        text-decoration: none;
+        margin-left: 5px;
+        font-weight: 600;
       }
     }
   }
