@@ -37,5 +37,11 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: `gatsby-plugin-fullstory`,
+      options: {
+        fs_org: process.env.FULL_STORY_ID,
+      },
+    },
   ],
 }
