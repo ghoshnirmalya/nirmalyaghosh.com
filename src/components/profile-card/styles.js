@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledProfileCard = styled.div`
   display: flex;
   align-items: center;
-  padding: 30px;
+  padding: 30px 0;
 
   > .right-content {
     margin-left: 20px;
@@ -16,7 +16,7 @@ const StyledProfileCard = styled.div`
 
     > .designation {
       font-family: 'Helvetica', serif;
-      margin: -10px 0 0 0;
+      margin-top: 5px;
       display: flex;
       align-items: center;
 
@@ -25,6 +25,25 @@ const StyledProfileCard = styled.div`
         text-decoration: none;
         margin-left: 5px;
         font-weight: 600;
+      }
+    }
+
+    > .social-profiles {
+      margin-top: 20px;
+
+      .link {
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #0366d6;
+
+        &:not(:first-child) {
+          margin-left: 15px;
+        }
+
+        &:hover {
+          color: #0366d6;
+        }
       }
     }
   }

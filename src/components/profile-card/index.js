@@ -34,8 +34,24 @@ const ProfileCard = () => {
               <p className="name">Nirmalya Ghosh</p>
               <div className="designation">
                 Front End Developer at
-                <a href="https://www.bangthetable.com/">
-                  Bang the Table
+                <a href="https://www.bangthetable.com/">Bang the Table</a>
+              </div>
+              <div className="social-profiles">
+                <a
+                  href="https://www.linkedin.com/in/ghoshnirmalya/"
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/ghoshnirmalya/"
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
                 </a>
               </div>
             </div>

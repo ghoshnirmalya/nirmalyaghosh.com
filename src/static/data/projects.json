@@ -3,13 +3,13 @@
     "title": "React Search Box",
     "description": "An autocomplete search box built with and for React",
     "url": "https://github.com/ghoshnirmalya/react-search-box",
-    "stars": "23"
+    "stars": "30"
   },
   {
     "title": "Reddit Clone",
     "description": "Sample app for the tutorial showing how you can create a Reddit clone using React and Firebase",
     "url": "https://github.com/ghoshnirmalya/reddit-clone",
-    "stars": "9"
+    "stars": "13"
   },
   {
     "title": "LinkedIn Clone React Frontend",
@@ -21,7 +21,7 @@
     "title": "LinkedIn Clone Rails Backend",
     "description": "API to power a software similar to LinkedIn",
     "url": "https://github.com/ghoshnirmalya/linkedin-clone-rails-backend",
-    "stars": "4"
+    "stars": "5"
   },
   {
     "title": "Building Redux From Scratch",

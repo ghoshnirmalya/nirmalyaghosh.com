@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
 
   body {
-    background-color: #f6f7f8;
+    background-color: #fafbfc;
   }
 
   p {
@@ -28,9 +28,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .boxed-content {
-    width: 800px;
+    width: 500px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 50px 0;
   }
 
   .fluid-content {
@@ -40,6 +40,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0 15px;
   }
+
+  .heading {
+    margin: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
 `
 const Layout = ({ children }) => (
   <StaticQuery

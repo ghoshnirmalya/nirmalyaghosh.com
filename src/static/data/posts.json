@@ -1,5 +1,15 @@
 [
   {
+    "title": "How to test Next.js apps",
+    "url": "https://buttercms.com/blog/how-to-test-nextjs-apps",
+    "date": "June 5, 2019"
+  },
+  {
+    "title": "How to Build a CMS-powered Marketing Website while Avoiding WordPress",
+    "url": "https://buttercms.com/blog/build-a-cms-powered-marketing-site-while-avoiding-wordpress",
+    "date": "April 5, 2019"
+  },
+  {
     "title": "How to write a simple React search plugin, publish it to npm, and deploy it to Github pages",
     "url": "https://medium.freecodecamp.org/how-to-write-a-simple-react-search-plugin-publish-it-to-npm-and-deploy-it-to-github-pages-d8876dff7780",
     "date": "Jan 16, 2019"

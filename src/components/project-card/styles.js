@@ -2,24 +2,20 @@ import styled from 'styled-components'
 
 const StyledProjectCard = styled.div`
   display: flex;
-  width: 350px;
-  height: 200px;
+  height: 250px;
   margin-bottom: 50px;
-
-  &:not(:last-child) {
-    margin-right: 50px;
-  }
 
   > .content {
     width: 100%;
     padding: 30px;
     text-decoration: none;
     color: #0f0f0f;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px 0px;
+    box-shadow: #fff 0 -15px, rgba(0, 0, 0, 0.1) 0 0 15px;
     background-color: #fff;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+    margin: 30px;
 
     > .title {
       font-size: 22px;

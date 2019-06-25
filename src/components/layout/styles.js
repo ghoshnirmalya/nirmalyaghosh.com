@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 const StyledLayout = styled.div`
-  margin-top: 200px;
+  .white {
+    background-color: #fff;
+  }
 `
 
 export default StyledLayout
