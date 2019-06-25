@@ -13,7 +13,9 @@ const IndexPage = () => (
     <section>
       <div className="boxed-content">
         <h2 className="heading">Blogs</h2>
-        {posts.map((post, index) => <PostCard key={index} data={post} />)}
+        {posts.map((post, index) => (
+          <PostCard key={index} data={post} />
+        ))}
       </div>
     </section>
     <section className="white">

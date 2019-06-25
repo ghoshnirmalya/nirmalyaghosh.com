@@ -14,7 +14,6 @@ const ProjectCard = ({ data }) => {
       >
         <p className="title">{data.title}</p>
         <p className="description">{data.description}</p>
-        <p className="stars">{data.stars} stars</p>
       </a>
     </StyledProjectCard>
   )

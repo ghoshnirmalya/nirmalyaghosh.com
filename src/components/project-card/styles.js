@@ -25,15 +25,6 @@ const StyledProjectCard = styled.div`
     > .description {
       font-family: 'Helvetica', sans-serif;
     }
-
-    > .stars {
-      color: #0062d91c;
-      position: absolute;
-      font-size: 80px;
-      margin-bottom: 0;
-      left: 40px;
-      top: 80px;
-    }
   }
 `
 
