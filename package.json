@@ -1,27 +1,27 @@
 {
   "name": "nirmalyaghosh.com",
-  "private": true,
-  "description": "My portfolio website",
-  "version": "0.0.1",
+  "private": false,
+  "description": "Frontend Developer",
+  "version": "0.1.0",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.1.4",
-    "gatsby-image": "^2.0.29",
-    "gatsby-plugin-fullstory": "^2.0.4",
-    "gatsby-plugin-manifest": "^2.0.17",
-    "gatsby-plugin-offline": "^2.0.23",
-    "gatsby-plugin-react-helmet": "^3.0.6",
-    "gatsby-plugin-sharp": "^2.0.20",
-    "gatsby-plugin-styled-components": "^3.0.5",
-    "gatsby-source-filesystem": "^2.0.20",
-    "gatsby-transformer-sharp": "^2.1.13",
+    "babel-plugin-styled-components": "^1.10.2",
+    "gatsby": "^2.10.5",
+    "gatsby-image": "^2.2.3",
+    "gatsby-plugin-fullstory": "^2.1.0",
+    "gatsby-plugin-manifest": "^2.2.0",
+    "gatsby-plugin-offline": "^2.2.0",
+    "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-plugin-styled-components": "^3.1.0",
+    "gatsby-source-filesystem": "^2.1.1",
+    "gatsby-transformer-sharp": "^2.2.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "react-helmet": "^5.2.0",
-    "styled-components": "^4.1.3",
-    "styled-reset": "^1.6.8"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2",
+    "styled-reset": "^2.0.16"
   },
   "keywords": [
     "gatsby"
@@ -30,12 +30,11 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.18.2"
   },
   "repository": {
     "type": "git",
