@@ -67,5 +67,18 @@ module.exports = {
         trackingId: process.env.GA_TRACKING_CODE,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Portfolio of Nirmalya Ghosh',
+        short_name: `Nirmalya Ghosh`,
+        start_url: `/`,
+        background_color: `#07162b`,
+        theme_color: `#03a9f4`,
+        display: `standalone`,
+        icon: `src/static/images/favicon.png`,
+      },
+    },
+    'gatsby-plugin-offline'
   ],
 }
