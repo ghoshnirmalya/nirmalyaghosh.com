@@ -35,6 +35,7 @@
     "gatsby-image": "^2.2.4",
     "gatsby-plugin-canonical-urls": "^2.1.0",
     "gatsby-plugin-emotion": "^4.1.0",
+    "gatsby-plugin-google-analytics": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sharp": "^2.2.2",
     "gatsby-plugin-typescript": "^2.1.0",

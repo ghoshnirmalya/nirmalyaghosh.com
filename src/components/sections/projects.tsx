@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Section from '../content/section'
 import data from '../../static/data/projects.json'
@@ -11,13 +12,13 @@ const ProjectsSection: React.FC = () => (
           <h4 className="title">{project.title}</h4>
           <p className="description">{project.description}</p>
           <div className="links">
-            <a href={project.projectUrl} rel="noopener noreferrer" target="_blank" className="url">
+            <OutboundLink href={project.projectUrl} rel="noopener noreferrer" target="_blank" className="url">
               Github
-            </a>
+            </OutboundLink>
             {project.demoUrl && (
-              <a href={project.demoUrl} rel="noopener noreferrer" target="_blank" className="url">
+              <OutboundLink href={project.demoUrl} rel="noopener noreferrer" target="_blank" className="url">
                 Demo
-              </a>
+              </OutboundLink>
             )}
           </div>
         </div>

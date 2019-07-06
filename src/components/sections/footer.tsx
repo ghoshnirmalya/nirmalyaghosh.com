@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const StyledFooterSection = styled.footer`
   display: flex;
@@ -25,9 +26,9 @@ const FooterSection: React.FC = () => (
   <StyledFooterSection>
     <p>
       Designed &amp; developed by{' '}
-      <a href="https://github.com/ghoshnirmalya/nirmalyaghosh.com/" rel="noopener noreferrer" target="_blank">
+      <OutboundLink href="https://github.com/ghoshnirmalya/nirmalyaghosh.com/" rel="noopener noreferrer" target="_blank">
         Nirmalya Ghosh
-      </a>
+      </OutboundLink>
     </p>
   </StyledFooterSection>
 )

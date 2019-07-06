@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const StyledHeroSection = styled.section`
   display: flex;
@@ -27,24 +28,24 @@ const StyledHeroSection = styled.section`
 
 const HeroSection: React.FC = () => (
   <StyledHeroSection>
-    <a className="link" href="https://github.com/ghoshnirmalya" rel="noopener noreferrer" target="_blank">
+    <OutboundLink className="link" href="https://github.com/ghoshnirmalya" rel="noopener noreferrer" target="_blank">
       Github
-    </a>
-    <a className="link" href="https://www.linkedin.com/in/ghoshnirmalya/" rel="noopener noreferrer" target="_blank">
+    </OutboundLink>
+    <OutboundLink className="link" href="https://www.linkedin.com/in/ghoshnirmalya/" rel="noopener noreferrer" target="_blank">
       LinkedIn
-    </a>
-    <a className="link" href="https://angel.co/ghosh-nirmalya" rel="noopener noreferrer" target="_blank">
+    </OutboundLink>
+    <OutboundLink className="link" href="https://angel.co/ghosh-nirmalya" rel="noopener noreferrer" target="_blank">
       AngelList
-    </a>
-    <a className="link" href="https://dribbble.com/ghoshnirmalya" rel="noopener noreferrer" target="_blank">
+    </OutboundLink>
+    <OutboundLink className="link" href="https://dribbble.com/ghoshnirmalya" rel="noopener noreferrer" target="_blank">
       Dribbble
-    </a>
-    <a className="link" href="https://www.behance.net/nirmalyaghosh" rel="noopener noreferrer" target="_blank">
+    </OutboundLink>
+    <OutboundLink className="link" href="https://www.behance.net/nirmalyaghosh" rel="noopener noreferrer" target="_blank">
       Behance
-    </a>
-    <a className="link" href="https://stackoverflow.com/users/1928724/nirmalya-ghosh" rel="noopener noreferrer" target="_blank">
+    </OutboundLink>
+    <OutboundLink className="link" href="https://stackoverflow.com/users/1928724/nirmalya-ghosh" rel="noopener noreferrer" target="_blank">
       Stack Overflow
-    </a>
+    </OutboundLink>
   </StyledHeroSection>
 )
 
