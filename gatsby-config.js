@@ -1,47 +1,65 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
-    title: `Nirmalya Ghosh`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'Portfolio of Nirmalya Ghosh',
+    description: 'Personal portfolio of Nirmalya Ghosh',
+    keywords: 'gatsby, portfolio, developer, react, javascript',
+    siteUrl: 'https://www.nirmalyaghosh.com',
+    author: {
+      name: 'Nirmalya Ghosh',
+      url: 'https://www.nirmalyaghosh.com',
+      email: 'nirmalya.email@gmail.com',
+    },
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/static/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/static/images/favicon.png`, // This path is relative to the root of the site.
+        name: 'content',
+        path: `${__dirname}/src/content`,
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: 'gatsby-transformer-remark',
       options: {
-        // Add any options here
+        plugins: [
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin-bottom: 1rem',
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1140,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
       },
     },
+    'gatsby-transformer-json',
     {
-      resolve: `gatsby-plugin-fullstory`,
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        fs_org: process.env.FULL_STORY_ID,
+        siteUrl: 'https://www.nirmalyaghosh.com',
       },
     },
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
   ],
 }
