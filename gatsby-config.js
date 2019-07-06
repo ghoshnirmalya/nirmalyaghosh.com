@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Portfolio of Nirmalya Ghosh',
+    title: 'Nirmalya Ghosh - Frontend Developer and Designer',
     description: 'Personal portfolio of Nirmalya Ghosh',
     keywords: 'gatsby, portfolio, developer, react, javascript',
     siteUrl: 'https://www.nirmalyaghosh.com',
