@@ -24,7 +24,7 @@ const NotFoundPage = () => (
           childImageSharp {
             # Specify the image processing specifications right in the query.
             # Makes it trivial to update as your page's design changes.
-            fixed(width: 400, height: 400) {
+            fixed(width: 315, height: 315) {
               ...GatsbyImageSharpFixed
             }
           }
