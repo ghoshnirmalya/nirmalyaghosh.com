@@ -97,7 +97,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ title, children }) => (
   <StyledSection>
-    <h2 className="section-title">{title}</h2>
+    <h2 className="section-title" id={title.toLocaleLowerCase()}>{title}</h2>
     <div className="container">{children}</div>
   </StyledSection>
 )

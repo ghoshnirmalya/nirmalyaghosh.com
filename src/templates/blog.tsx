@@ -48,11 +48,44 @@ const StyledBlog = styled.main`
     margin-bottom: 30px;
   }
 
-  > .link-to-home {
+  > .link-to-blogs {
     margin-bottom: 100px;
     display: flex;
     font-size: 20px;
     font-weight: bold;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .gatsby-highlight {
+    background-color: #04131f;
+    border-radius: 4px;
+    overflow: auto;
+    font-size: 14px;
+
+    .gatsby-highlight-code-line {
+      background-color: #002e52;
+      display: block;
+      border-left: 5px solid #03a9f4;
+    }
+
+    pre[class*="language-"] {
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      overflow: initial;
+      float: left;
+      min-width: 100%;
+    }
+
+    code[class*="language-"] {
+      background: transparent;
+      color: #e4e4e4;
+      box-shadow: none;
+    }
   }
 `
 
@@ -60,7 +93,7 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => (
   <>
     <Layout>
       <StyledBlog>
-        <Link to="/" className="link-to-home">&#8592; Home</Link>
+        <Link to="/#blogs" className="link-to-blogs">&#8592; All blogs</Link>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />

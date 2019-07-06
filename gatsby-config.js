@@ -41,9 +41,18 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1140,
-              quality: 90,
+              maxWidth: 700,
+              quality: 70,
+              backgroundColor: '#07162b',
               linkImagesToOriginal: false,
+              withWebp: true,
+              tracedSVG: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
             },
           },
         ],
@@ -62,21 +71,21 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GA_TRACKING_CODE,
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Portfolio of Nirmalya Ghosh',
-        short_name: `Nirmalya Ghosh`,
-        start_url: `/`,
-        background_color: `#07162b`,
-        theme_color: `#03a9f4`,
-        display: `standalone`,
-        icon: `src/static/images/favicon.png`,
+        short_name: 'Nirmalya Ghosh',
+        start_url: '/',
+        background_color: '#07162b',
+        theme_color: '#03a9f4',
+        display: 'standalone',
+        icon: 'src/static/images/favicon.png',
       },
     },
     'gatsby-plugin-offline'
