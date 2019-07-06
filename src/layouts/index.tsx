@@ -2,10 +2,10 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-
 import 'modern-normalize'
 
 import Content from '../components/content'
+import favicon from '../static/images/favicon.png'
 
 const StyledLayout = styled.div`
   display: flex;
@@ -53,6 +53,9 @@ const IndexLayout: React.FC = ({ children }) => (
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
+          ]}
+          link={[
+            { rel: "icon", type: "image/png", sizes: "16x16", href: `${favicon}` },
           ]}
         >
           <html lang="en" />
