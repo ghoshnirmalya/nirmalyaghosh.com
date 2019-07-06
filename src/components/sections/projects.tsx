@@ -5,7 +5,7 @@ import Section from '../content/section'
 import data from '../../static/data/projects.json'
 
 const ProjectsSection: React.FC = () => (
-  <Section title="Projects">
+  <Section title="Featured projects">
     {data.map((project, index) => {
       return (
         <div className="projects-block" key={index}>

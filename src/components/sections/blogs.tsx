@@ -6,7 +6,7 @@ import Section from '../content/section'
 import data from '../../static/data/blogs.json'
 
 const BlogsSection: React.FC = () => (
-  <Section title="Blogs">
+  <Section title="Latest articles">
     {data.map((blog, index) => {
       if (blog.guestAuthor) {
         return (
