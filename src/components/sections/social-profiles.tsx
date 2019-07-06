@@ -6,12 +6,6 @@ const StyledHeroSection = styled.section`
   display: flex;
   justify-content: space-between;
 
-  > .link {
-    &:not(:last-child) {
-      margin-right: 50px;
-    }
-  }
-
   @media (max-width: 768px) {
     flex-direction: column;
 
@@ -29,22 +23,22 @@ const StyledHeroSection = styled.section`
 const HeroSection: React.FC = () => (
   <StyledHeroSection>
     <OutboundLink className="link" href="https://github.com/ghoshnirmalya" rel="noopener noreferrer" target="_blank">
-      Github
+      Github &#8599;
     </OutboundLink>
     <OutboundLink className="link" href="https://www.linkedin.com/in/ghoshnirmalya/" rel="noopener noreferrer" target="_blank">
-      LinkedIn
+      LinkedIn &#8599;
     </OutboundLink>
     <OutboundLink className="link" href="https://angel.co/ghosh-nirmalya" rel="noopener noreferrer" target="_blank">
-      AngelList
+      AngelList &#8599;
     </OutboundLink>
     <OutboundLink className="link" href="https://dribbble.com/ghoshnirmalya" rel="noopener noreferrer" target="_blank">
-      Dribbble
+      Dribbble &#8599;
     </OutboundLink>
     <OutboundLink className="link" href="https://www.behance.net/nirmalyaghosh" rel="noopener noreferrer" target="_blank">
-      Behance
+      Behance &#8599;
     </OutboundLink>
     <OutboundLink className="link" href="https://stackoverflow.com/users/1928724/nirmalya-ghosh" rel="noopener noreferrer" target="_blank">
-      Stack Overflow
+      Stack Overflow &#8599;
     </OutboundLink>
   </StyledHeroSection>
 )

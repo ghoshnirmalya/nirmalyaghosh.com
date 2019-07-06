@@ -1,37 +1,65 @@
 [
   {
+    "title": "Building a real-time newsfeed with React and Hasura",
+    "url": "building-a-real-time-newsfeed-with-react-and-hasura",
+    "description": "In this article, we'll build a real-time newsfeed using React. The GraphQL API will be powered by Hasura. Any interaction on the feeds will be saved in real-time.",
+    "date": "July 6, 2019",
+    "guestAuthor": false
+  },
+  {
+    "title": "Building reusable components using React",
+    "url": "https://buttercms.com/blog/building-reusable-components-using-react",
+    "description": "React is one of the most popular JavaScript libraries for building user interfaces. To build an application using React, you just need to build encapsulated components that can contain their own state.",
+    "date": "June 26, 2019",
+    "guestAuthor": true
+  },
+  {
     "title": "How to test Next.js apps",
     "url": "https://buttercms.com/blog/how-to-test-nextjs-apps",
-    "date": "June 5, 2019"
+    "description": "In this tutorial, we’ll be using Cypress to write End to End tests for the app that was built as a part of How to Build a CMS-powered Marketing Website while Avoiding WordPress. ",
+    "date": "June 5, 2019",
+    "guestAuthor": true
   },
   {
     "title": "How to Build a CMS-powered Marketing Website while Avoiding WordPress",
     "url": "https://buttercms.com/blog/build-a-cms-powered-marketing-site-while-avoiding-wordpress",
-    "date": "April 5, 2019"
+    "description": "While WordPress powers 33% of the web, there are plenty of easier ways through which you can create your marketing site. WordPress can give you a basic outlook to your site.",
+    "date": "April 5, 2019",
+    "guestAuthor": true
   },
   {
     "title": "How to write a simple React search plugin, publish it to npm, and deploy it to Github pages",
     "url": "https://medium.freecodecamp.org/how-to-write-a-simple-react-search-plugin-publish-it-to-npm-and-deploy-it-to-github-pages-d8876dff7780",
-    "date": "Jan 16, 2019"
+    "description": "In this article, we’re going to write a simple search plugin in React. Through this article, I hope to help fellow developers understand how to write plugins using React, publish them to npm and deploy a demo to Github pages.",
+    "date": "Jan 16, 2019",
+    "guestAuthor": true
   },
   {
     "title": "9 steps for dockerizing a Rails api-only application",
     "url": "https://medium.com/@nirmalyaghosh/9-steps-for-dockerizing-a-rails-api-only-application-d65a8836f3df",
-    "date": "Dec 25, 2018"
+    "description": "Docker is a program that helps us in containerizing the environment in which development in being done. It helps us in creating a virtualized environment in which we can development applications without interfering with the host machine.",
+    "date": "Dec 25, 2018",
+    "guestAuthor": true
   },
   {
     "title": "How to write highly readable React code — 10 coding style tips",
     "url": "https://medium.freecodecamp.org/10-points-to-remember-thatll-help-you-master-coding-in-reactjs-library-d0520d8c73d8",
-    "date": "Jan 3, 2018"
+    "description": "This article will help you understand how you can write better code, so that other developers can better understand it. This article will give you a quick introduction to certain techniques I use while designing my components, and show you how you can do the same.",
+    "date": "Jan 3, 2018",
+    "guestAuthor": true
   },
   {
     "title": "How to Authenticate your Elixir/Phoenix APIs using Guardian",
     "url": "https://medium.freecodecamp.org/authentication-using-elixir-phoenix-f9c162b2c398",
-    "date": "Mar 20, 2017"
+    "description": "Authentication is always a tricky subject. People tend to use so many types of authentication in their apps. Authentication using an email address and a password with an option confirm password field is the most common. ",
+    "date": "Mar 20, 2017",
+    "guestAuthor": true
   },
   {
     "title": "Bootstrapping an API-only backend for a Social Networking app using Elixir/Phoenix",
     "url": "https://medium.com/@nirmalyaghosh/bootstrapping-an-api-only-backend-for-a-social-networking-app-using-elixir-f74a73b1da51",
-    "date": "Mar 1, 2017"
+    "description": "While learning any programming language, I tend to document my struggles, about how I overcome stuffs and solve problems. Recently, I started learning Elixir mostly because I wanted to explore its ‘realtime’ feature.",
+    "date": "Mar 1, 2017",
+    "guestAuthor": true
   }
 ]

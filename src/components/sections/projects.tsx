@@ -13,11 +13,11 @@ const ProjectsSection: React.FC = () => (
           <p className="description">{project.description}</p>
           <div className="links">
             <OutboundLink href={project.projectUrl} rel="noopener noreferrer" target="_blank" className="url">
-              Github
+              Github &#8599;
             </OutboundLink>
             {project.demoUrl && (
               <OutboundLink href={project.demoUrl} rel="noopener noreferrer" target="_blank" className="url">
-                Demo
+                Demo &#8599;
               </OutboundLink>
             )}
           </div>

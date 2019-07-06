@@ -1,24 +1,32 @@
 import * as React from 'react'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { Link } from "gatsby";
 
 import Section from '../content/section'
 import data from '../../static/data/blogs.json'
 
-const ProjectsSection: React.FC = () => (
+const BlogsSection: React.FC = () => (
   <Section title="Blogs">
-    {data.map((project, index) => {
+    {data.map((blog, index) => {
+      if (blog.guestAuthor) {
+        return (
+          <OutboundLink className="blogs-block" href={blog.url} rel="noopener noreferrer" target="_blank" key={index}>
+            <h4 className="title">{blog.title} &#8599;</h4>
+            <p className="description">{blog.description}</p>
+            <div className="date">{blog.date}</div>
+          </OutboundLink>
+        )
+      }
+
       return (
-        <OutboundLink className="blogs-block" href={project.url} rel="noopener noreferrer" target="_blank" key={index}>
-          <h4 className="title">{project.title}</h4>
-          <p className="description">
-            Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy
-            foster collaborative thinking to further the overall value proposition.{' '}
-          </p>
-          <div className="date">{project.date}</div>
-        </OutboundLink>
+        <Link className="blogs-block" to={blog.url} key={index}>
+          <h4 className="title">{blog.title}</h4>
+          <p className="description">{blog.description}</p>
+          <div className="date">{blog.date}</div>
+        </Link>
       )
     })}
   </Section>
 )
 
-export default ProjectsSection
+export default BlogsSection
