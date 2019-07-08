@@ -1,12 +1,5 @@
 [
   {
-    "title": "Building a real-time newsfeed with React and Hasura",
-    "url": "building-a-real-time-newsfeed-with-react-and-hasura",
-    "description": "In this article, we'll build a real-time newsfeed using React. The GraphQL API will be powered by Hasura. Any interaction on the feeds will be saved in real-time.",
-    "date": "July 6, 2019",
-    "guestAuthor": false
-  },
-  {
     "title": "Building reusable components using React",
     "url": "https://buttercms.com/blog/building-reusable-components-using-react",
     "description": "React is one of the most popular JavaScript libraries for building user interfaces. To build an application using React, you just need to build encapsulated components that can contain their own state.",
