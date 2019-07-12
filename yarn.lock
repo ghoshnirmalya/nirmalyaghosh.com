@@ -5441,10 +5441,10 @@ gatsby-graphiql-explorer@^0.2.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-image@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.5.tgz#2d9bfc8ccaa66a05990835fb825ff157d9293e8a"
-  integrity sha512-bf6NmR8MgjwI1RcOEBSjBmfUBzU7I1/c8/fJjNI7PkjDlW4lTo8i1cnojo8loGYB3r1PiM6G2lKAufND7t4TCg==
+gatsby-image@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.6.tgz#669191cdd5446242b0f3982df156a4bea971c5a8"
+  integrity sha512-gPAt6vUUNVN5iftBrwZykOMGLOAameq9IBCXj5z/egPFIWF62GoqkWQX1/hO71qhyEszNYq+ilwBzkJVsJIP2Q==
   dependencies:
     "@babel/runtime" "^7.0.0"
     object-fit-images "^3.2.4"
