@@ -2130,7 +2130,7 @@ babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.2:
     cosmiconfig "^5.2.0"
     resolve "^1.10.0"
 
-babel-plugin-remove-graphql-queries@^2.7.1, babel-plugin-remove-graphql-queries@^2.7.2:
+babel-plugin-remove-graphql-queries@^2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.2.tgz#101c8b26567e35c217e817e892135a9a04a5a805"
   integrity sha512-kkIqi2+oZ7YCLbZbrhOGxPA/HuWpfvzRUxbD75SHqwxl9fZVWSLQhOUl72GEpAuEt4MeCEguKpMX100oDN3MQA==
@@ -5600,16 +5600,16 @@ gatsby-react-router-scroll@^2.1.3:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-remark-copy-linked-files@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.1.2.tgz#6c7184d3668c779d3e46af6aae314b9731bb7a12"
-  integrity sha512-N2+dobbVjxR/ZTFUiFzSnySRa20r43TTwhw7Q9kj0c8mejK6RVtJOXxkQIZw+s5mWtoc3SghiEkq40Wi4guLrA==
+gatsby-remark-copy-linked-files@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-2.1.3.tgz#4b5d632a8907d2a327231a76c79e6c023852e745"
+  integrity sha512-Vj2QlvNnUo0+pQe97ZWsVxif/RLTS0F+AjOZW8qyiEM+4OZkSTE6ZzLPvyBjrbj8F8PEMtIdq+KRy31FglD5yA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     cheerio "^1.0.0-rc.2"
     fs-extra "^4.0.1"
     is-relative-url "^2.0.0"
-    lodash "^4.17.10"
+    lodash "^4.17.14"
     path-is-inside "^1.0.2"
     probe-image-size "^4.0.0"
     unist-util-visit "^1.3.0"
@@ -7893,7 +7893,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
+lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
