@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 import Layout from '../layouts'
 import Footer from "../components/sections/footer"
@@ -20,6 +21,7 @@ interface BlogTemplateProps {
     markdownRemark: {
       html: string
       excerpt: string
+      id: number
       frontmatter: {
         title: string
       }
@@ -53,6 +55,10 @@ const StyledBlog = styled.main`
     display: flex;
     font-size: 20px;
     font-weight: bold;
+  }
+
+  > .comments {
+    margin-top: 100px;
   }
 
   img {
@@ -89,20 +95,28 @@ const StyledBlog = styled.main`
   }
 `
 
-const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => (
-  <>
-    <Layout>
-      <StyledBlog>
-        <Link to="/#blogs" className="link-to-blogs">&#8592; All blogs</Link>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        {/* eslint-disable-next-line react/no-danger */}
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => {
+  const disqusConfig = {
+    identifier: data.markdownRemark.id,
+    title: data.markdownRemark.frontmatter.title,
+  }
 
-      </StyledBlog>
-    </Layout>
-    <Footer />
-  </>
-)
+  return (
+    <>
+      <Layout>
+        <StyledBlog>
+          <Link to="/#blogs" className="link-to-blogs">&#8592; All blogs</Link>
+          <h1>{data.markdownRemark.frontmatter.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+          <div className="comments">
+            <Disqus config={disqusConfig} />
+          </div>
+        </StyledBlog>
+      </Layout>
+      <Footer />
+    </>
+  )
+}
 
 export default BlogTemplate
 
@@ -121,6 +135,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
+      id
       frontmatter {
         title
       }

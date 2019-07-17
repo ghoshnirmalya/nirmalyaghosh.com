@@ -7,23 +7,23 @@ module.exports = {
     author: {
       name: 'Nirmalya Ghosh',
       url: 'https://www.nirmalyaghosh.com',
-      email: 'nirmalya.email@gmail.com',
-    },
+      email: 'nirmalya.email@gmail.com'
+    }
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/static/images`,
-      },
+        path: `${__dirname}/src/static/images`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/src/content`,
-      },
+        path: `${__dirname}/src/content`
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -32,8 +32,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
-              wrapperStyle: 'margin-bottom: 1rem',
-            },
+              wrapperStyle: 'margin-bottom: 1rem'
+            }
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
@@ -46,24 +46,24 @@ module.exports = {
               backgroundColor: '#07162b',
               linkImagesToOriginal: false,
               withWebp: true,
-              tracedSVG: true,
-            },
+              tracedSVG: true
+            }
           },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              showLineNumbers: true,
-            },
-          },
-        ],
-      },
+              showLineNumbers: true
+            }
+          }
+        ]
+      }
     },
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://www.nirmalyaghosh.com',
-      },
+        siteUrl: 'https://www.nirmalyaghosh.com'
+      }
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
@@ -73,8 +73,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: process.env.GA_TRACKING_CODE,
-      },
+        trackingId: process.env.GA_TRACKING_CODE
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -85,9 +85,15 @@ module.exports = {
         background_color: '#07162b',
         theme_color: '#03a9f4',
         display: 'standalone',
-        icon: 'src/static/images/favicon.png',
-      },
+        icon: 'src/static/images/favicon.png'
+      }
     },
-    'gatsby-plugin-offline'
-  ],
+    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: 'nirmalya-ghosh'
+      }
+    }
+  ]
 }
