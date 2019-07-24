@@ -1433,11 +1433,6 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@stefanprobst/lokijs@^1.5.6-b":
-  version "1.5.6-b"
-  resolved "https://registry.yarnpkg.com/@stefanprobst/lokijs/-/lokijs-1.5.6-b.tgz#6a36a86dbe132e702e6b15ffd3ce4139aebfe942"
-  integrity sha512-MNodHp46og+Sdde/LCxTLrxcD5Dimu21R/Fer2raXMG1XtHSV2+vZnkIV87OPAxuf2NiDj1W5hN7Q2MYUfQQ8w==
-
 "@types/classnames@^2.2.9":
   version "2.2.9"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.9.tgz#d868b6febb02666330410fe7f58f3c4b8258be7b"
@@ -5594,10 +5589,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.7.17:
-  version "2.7.17"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.7.17.tgz#5c2e2a453ff97c505e2540a7e5f7c9104993fb4b"
-  integrity sha512-VqW8jKRpv3Ko7NLzn3tZcPitvLEHRRJc3Zla3ug9oavXTuV2m/r24HAyyJM1ZCliBP0YWa8PCYxUrL2ezywBqQ==
+gatsby-cli@^2.7.19:
+  version "2.7.19"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.7.19.tgz#a4b3e0f74041c591e88a4ae0ddb2f871a0a9a29c"
+  integrity sha512-M9bmVG/L97j6bklZI1VZhPm36kvSicqyJ8a5n7CUwqPZXa5mliE5E550D/ug3sUGg9SrHth/0dBiflDv/rW5zw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -5615,7 +5610,7 @@ gatsby-cli@^2.7.17:
     execa "^0.8.0"
     fs-exists-cached "^1.0.0"
     fs-extra "^4.0.1"
-    gatsby-telemetry "^1.1.6"
+    gatsby-telemetry "^1.1.7"
     hosted-git-info "^2.6.0"
     is-valid-path "^0.1.1"
     lodash "^4.17.14"
@@ -5879,10 +5874,10 @@ gatsby-source-filesystem@^2.1.6:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-telemetry@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.1.6.tgz#957c95e1eefcfdfb5a82b4cb85d13e88e429bdd7"
-  integrity sha512-b0uIxlz8mjW/x45VbzDL3Rs5mrVVmJGMko87ldhCgFhrj2CyyxljUBC+C2daVfyrMhvHIWagFSygZ4BrijLjlA==
+gatsby-telemetry@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.1.7.tgz#dd2a363852ce87990249586e75189e7b05d1f561"
+  integrity sha512-mVJwkg4kdHGBt1OKlpcDO1gKoRd5oiJHKYR1jGrShXbB8FE4c52Z2Geg0xMKNXCeUbMUEZB78IPGlJ94nnPAag==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -5950,10 +5945,10 @@ gatsby-transformer-sharp@^2.2.4:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@^2.13.33:
-  version "2.13.33"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.33.tgz#0fcbf319b5c941fb24e428b793e20cb2a9cdcf72"
-  integrity sha512-7MWrtwxB4uAWAErpRYsXLaZ2kobSefPWOzU+TQM8Ac7FCo7BxdK77DdL+ExDZQbTn4xfUjCvDaLLLRJdkp/NXA==
+gatsby@^2.13.38:
+  version "2.13.38"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.38.tgz#279fc8c6ce1a9d1d8d2428c4b0fbd218cf7434f1"
+  integrity sha512-sb5OC2trI7CmOgzTt3w9fhnYfX0X7CESM7k3kUkmzONUmQ0Wy51gZvHclBlh8LEiUo1y21zRRlFR7lz9j5NIWw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -5966,7 +5961,6 @@ gatsby@^2.13.33:
     "@mikaelkristiansson/domready" "^1.0.9"
     "@pieh/friendly-errors-webpack-plugin" "1.7.0-chalk-2"
     "@reach/router" "^1.1.1"
-    "@stefanprobst/lokijs" "^1.5.6-b"
     address "1.0.3"
     autoprefixer "^9.6.0"
     babel-core "7.0.0-bridge.0"
@@ -6012,13 +6006,13 @@ gatsby@^2.13.33:
     flat "^4.0.0"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.7.17"
+    gatsby-cli "^2.7.19"
     gatsby-core-utils "^1.0.3"
     gatsby-graphiql-explorer "^0.2.3"
     gatsby-link "^2.2.2"
     gatsby-plugin-page-creator "^2.1.5"
     gatsby-react-router-scroll "^2.1.3"
-    gatsby-telemetry "^1.1.6"
+    gatsby-telemetry "^1.1.7"
     glob "^7.1.1"
     got "8.0.0"
     graphql "^14.1.1"
@@ -6032,6 +6026,7 @@ gatsby@^2.13.33:
     json-loader "^0.5.7"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.14"
+    lokijs "^1.5.7"
     md5 "^2.2.1"
     md5-file "^3.1.1"
     micromatch "^3.1.10"
@@ -8127,6 +8122,11 @@ loglevel@^1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.3.tgz#77f2eb64be55a404c9fd04ad16d57c1d6d6b1280"
   integrity sha512-LoEDv5pgpvWgPF4kNYuIp0qqSJVWak/dML0RY74xlzMZiT9w77teNAwKYKWBTYjlokMirg+o3jBwp+vlLrcfAA==
+
+lokijs@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/lokijs/-/lokijs-1.5.7.tgz#3bbeb5c2dbffebd78d035bac82c7c4e6055870f0"
+  integrity sha512-2SqUV6JH4f15Z5/7LVsyadSUwHhZppxhujgy/VhVqiRYMGt5oaocb7fV/3JGjHJ6rTuEIajnpTLGRz9cJW/c3g==
 
 longest-streak@^2.0.1:
   version "2.0.3"
