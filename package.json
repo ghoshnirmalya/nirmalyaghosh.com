@@ -50,7 +50,7 @@
     "gatsby-remark-smartypants": "^2.1.2",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-json": "^2.2.2",
-    "gatsby-transformer-remark": "^2.6.12",
+    "gatsby-transformer-remark": "^2.6.13",
     "gatsby-transformer-sharp": "^2.2.6",
     "modern-normalize": "^0.5.0",
     "normalize.css": "^8.0.1",
