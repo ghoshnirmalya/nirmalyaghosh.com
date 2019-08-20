@@ -1,5 +1,12 @@
 [
   {
+    "title": "Building a JAMstack Blog: Gatsby and ButterCMS on Netlify",
+    "url": "https://buttercms.com/blog/building-a-jamstack-blog-gatsby-and-buttercms-on-netlify",
+    "description": "Tutorial for building a lightning fast, static blog application hosted with Netlify using Gatsby on the front-end and ButterCMS to serve up the content.",
+    "date": "August 15, 2019",
+    "guestAuthor": true
+  },
+  {
     "title": "Building reusable components using React",
     "url": "https://buttercms.com/blog/building-reusable-components-using-react",
     "description": "React is one of the most popular JavaScript libraries for building user interfaces. To build an application using React, you just need to build encapsulated components that can contain their own state.",
