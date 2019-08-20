@@ -67,7 +67,7 @@
     "@types/classnames": "^2.2.9",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.8.5",
+    "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.9",
     "eslint": "^6.2.0",
     "eslint-config-prettier": "^6.0.0",
