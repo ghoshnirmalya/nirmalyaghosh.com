@@ -5644,10 +5644,10 @@ gatsby-plugin-google-analytics@^2.1.7:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-manifest@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.6.tgz#7dc0758ad16cb7656f0b808c7fef282b8f165d8c"
-  integrity sha512-QjOKUOrtwbmiXBAcFi0uvzQEGJa5PELXriJjXNuDmn++72sCybgoluOrY4Ajed+WUf82865RIXq58isK3Dmmgw==
+gatsby-plugin-manifest@^2.2.7:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.7.tgz#2a1db28ed641e6e484caaaa0d9f2f667d1c8d06d"
+  integrity sha512-Vq/ptgiBIz7tBxrx0B68IbP5x6poef2vilKr6dFkYL7sUmLox/DiNXJr7CDENfsdKmgc4WBwssO1N9uKf2UKBw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     gatsby-core-utils "^1.0.5"
