@@ -2974,7 +2974,7 @@ charenc@~0.0.1:
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
 
-cheerio@^1.0.0-rc.2:
+cheerio@^1.0.0-rc.2, cheerio@^1.0.0-rc.3:
   version "1.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.3.tgz#094636d425b2e9c0f4eb91a46c05630c9a1a8bf6"
   integrity sha512-0td5ijfUPuubwLUu0OBoe98gZj8C/AA+RW3v67GPlGOrvxWjZmBXiBCRU+I8VEiNyJzjth40POfHiz2RB3gImA==
@@ -5654,13 +5654,13 @@ gatsby-plugin-manifest@^2.2.6:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby-plugin-offline@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.2.7.tgz#f5cd03fab2505fcf413810ec1d7c31fc7851a982"
-  integrity sha512-AbX4kAEy8j+8P/kBITdzv/8JR1R+Lt5pAE49ICIzwb7tZDQB7fJisOSc1PGihhQTLuy+ppj9XJDgNhh205lETQ==
+gatsby-plugin-offline@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.2.8.tgz#4ae686e8f2e015f31883be75c960c30ef27fff0a"
+  integrity sha512-ZYZCYvN9Lg3KmO0iSCfeKyxD9besqJP5CLCHwqcKfB1CJ7LsNNvk9Ccv+FZqSXTC7YwKk7sWjMXgdi03hX860Q==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    cheerio "^1.0.0-rc.2"
+    cheerio "^1.0.0-rc.3"
     idb-keyval "^3.1.0"
     lodash "^4.17.14"
     slash "^3.0.0"
