@@ -5568,7 +5568,7 @@ gatsby-cli@^2.7.33:
     ink "^2.3.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.4, gatsby-core-utils@^1.0.5:
+gatsby-core-utils@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.5.tgz#f3290029228ff1a7649f645d82d353b299949448"
   integrity sha512-XRyZMduCP3yvV8AEKI4sAVWT+M1roW20SWhQwOKtZrYIkMCzlOe9nMOjNOZcJb2vCJsaUBxh2fxLT+OZg8+25A==
@@ -5642,13 +5642,13 @@ gatsby-plugin-google-analytics@^2.1.7:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-manifest@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.5.tgz#cfa3f5a5f02989e9a15a3b08b11548be45af11e8"
-  integrity sha512-7Zpf/jz2LNk7AkjdQJ5cOFcuGUvSbXYV+lfRY9rZwQCyE/fDVjjb5lbdDsCLKvFfWqJuPft3P5FPE6Az7sKpCw==
+gatsby-plugin-manifest@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.6.tgz#7dc0758ad16cb7656f0b808c7fef282b8f165d8c"
+  integrity sha512-QjOKUOrtwbmiXBAcFi0uvzQEGJa5PELXriJjXNuDmn++72sCybgoluOrY4Ajed+WUf82865RIXq58isK3Dmmgw==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    gatsby-core-utils "^1.0.4"
+    gatsby-core-utils "^1.0.5"
     semver "^5.6.0"
     sharp "^0.22.1"
 
