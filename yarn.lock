@@ -890,10 +890,10 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5":
-  version "7.4.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
-  integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -5614,12 +5614,12 @@ gatsby-page-utils@^0.0.7:
     micromatch "^3.1.10"
     slash "^1.0.0"
 
-gatsby-plugin-canonical-urls@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.4.tgz#12996203a4517b4e55adffd1eee1014a873eb8b3"
-  integrity sha512-35q1c2EgrDMXJrPb+dSecRdkP35X5O3FZuUJvXbXs4bOcCDGlLlQkFf6/vlNxUnPR+gQCfAwGCspE7AHeiSFSA==
+gatsby-plugin-canonical-urls@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.5.tgz#ab167e34228b3a44ca88ba99dc1674f82aa5b525"
+  integrity sha512-0hQl6SLGrMaxw6VdSN8dFyTCCNxYobh7Rih6g1VjNPcnSC7ebYuX2/bY6LKbXbWXux4pg+pGUAfTDgsb5adooQ==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.5.5"
 
 gatsby-plugin-disqus@^1.1.2:
   version "1.1.2"
