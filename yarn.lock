@@ -5742,20 +5742,20 @@ gatsby-remark-copy-linked-files@^2.1.9:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-images@^3.1.17:
-  version "3.1.17"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.17.tgz#550c37d9dc90323b4314f7d871d5941fe65a7642"
-  integrity sha512-vnxBzMoPrGSq+mL8LN/+NAAY6VUqQJvvnO7kd7adIHrXYHtNKOVyRegVXjXXmCff0A8gI8ajjBgEJXR1JJLp7w==
+gatsby-remark-images@^3.1.18:
+  version "3.1.18"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.18.tgz#e5e853042cc60adffdf9194f421e84da40b90272"
+  integrity sha512-LWoT3r3zLiJI/uaULEl4QpfS2fADY5vfyNaWj85IccvWTVPhMSHHseWw3Mu0pP1YDsuKrtfrYXrmg0n508SKig==
   dependencies:
     "@babel/runtime" "^7.5.5"
     chalk "^2.4.2"
     cheerio "^1.0.0-rc.3"
-    is-relative-url "^2.0.0"
+    is-relative-url "^3.0.0"
     lodash "^4.17.15"
     mdast-util-definitions "^1.2.4"
     potrace "^2.1.2"
     query-string "^6.8.2"
-    slash "^1.0.0"
+    slash "^3.0.0"
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
@@ -7098,6 +7098,11 @@ is-absolute-url@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-absolute-url/-/is-absolute-url-2.1.0.tgz#50530dfb84fcc9aa7dbe7852e83a37b93b9f2aa6"
   integrity sha1-UFMN+4T8yap9vnhS6Do3uTufKqY=
 
+is-absolute-url@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/is-absolute-url/-/is-absolute-url-3.0.1.tgz#e315cbdcbbc3d6789532d591954ac78a0e5049f6"
+  integrity sha512-c2QjUwuMxLsld90sj3xYzpFYWJtuxkIn1f5ua9RTEYJt/vV2IsM+Py00/6qjV7qExgifUvt7qfyBGBBKm+2iBg==
+
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/is-accessor-descriptor/-/is-accessor-descriptor-0.1.6.tgz#a9e12cb3ae8d876727eeef3843f8a0897b5c98d6"
@@ -7456,6 +7461,13 @@ is-relative-url@^2.0.0:
   integrity sha1-cpAtf+BLPUeS59sV+duEtyBMnO8=
   dependencies:
     is-absolute-url "^2.0.0"
+
+is-relative-url@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/is-relative-url/-/is-relative-url-3.0.0.tgz#f623c8e26baa5bd3742b3b7ec074f50f3b45b3f3"
+  integrity sha512-U1iSYRlY2GIMGuZx7gezlB5dp1Kheaym7zKzO1PV06mOihiWTXejLwm4poEJysPyXF+HtK/BEd0DVlcCh30pEA==
+  dependencies:
+    is-absolute-url "^3.0.0"
 
 is-relative@^1.0.0:
   version "1.0.0"
