@@ -5779,15 +5779,15 @@ gatsby-remark-responsive-iframe@^2.2.8:
     lodash "^4.17.15"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-smartypants@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-2.1.3.tgz#06e5e36887c2148380bfa8543a645a277dd64f49"
-  integrity sha512-9wYq4cCKc/HjcLpgT6u8shDjNwVgVL56KACYT6ZZH6v8Ue1WjvhItTPP6jsOd/E9WagdNiU4V8wDVTh3u/RbfA==
+gatsby-remark-smartypants@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-2.1.5.tgz#501b9a7c46d16ff64b435273db44062d02d594f6"
+  integrity sha512-W0zQsoOTkvU1FSachyrT5Tpdm2QFlC/sm7fFXvEsCU/3+S7sZSxZhNkXdsOtPzbFqoZXlZnvMsa68oDltqVoBQ==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.5.5"
     retext "^5.0.0"
-    retext-smartypants "^3.0.0"
-    unist-util-visit "^1.3.0"
+    retext-smartypants "^3.0.3"
+    unist-util-visit "^1.4.1"
 
 gatsby-source-filesystem@^2.1.14:
   version "2.1.14"
@@ -10931,7 +10931,7 @@ retext-latin@^2.0.0:
     parse-latin "^4.0.0"
     unherit "^1.0.4"
 
-retext-smartypants@^3.0.0:
+retext-smartypants@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-3.0.3.tgz#9c982dcc210ae3bb36f4bc46aae802798fce43f9"
   integrity sha512-/0fIipYayOvvucn3yjxvWwyT9P6p8gbpqdqUQNs1+L7av2hxatmiA9sk+fygJSDn5OXRyhBzcezvTbEmEabfIQ==
@@ -12599,7 +12599,7 @@ unist-util-visit-parents@^2.0.0, unist-util-visit-parents@^2.1.2:
   dependencies:
     unist-util-is "^3.0.0"
 
-unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.3.0, unist-util-visit@^1.4.1:
+unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.1.tgz#4724aaa8486e6ee6e26d7ff3c8685960d560b1e3"
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
