@@ -5829,10 +5829,10 @@ gatsby-image@^2.2.14:
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
-gatsby-link@^2.2.9:
-  version "2.2.9"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.9.tgz#dd0e6feeb44b065cb9c88b75900c47c4276176b9"
-  integrity sha512-xRluDXrt4DJOxNWcf308YQuNpZ9ASRoAugCZfr7CmPQ5Kii93moR2fDWz50DOl8ueuspuEexh6rZzKTatEiHMQ==
+gatsby-link@^2.2.10:
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.2.10.tgz#da7395eec2e9d1185bd9f1ba19bbfee7f50d560c"
+  integrity sha512-xZ7bc1Ck+WwwgDoAOclZ4QllRfr7GYapswq+oAe7AjR8fCOyRrcJx8olRx+x9qKgOh34f59jjX/bWDUeFWfInw==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@types/reach__router" "^1.2.4"
@@ -6119,10 +6119,10 @@ gatsby-transformer-sharp@^2.2.12:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@^2.14.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.14.0.tgz#ff5e19e6d8dfedbd1c3e41fc10e2f55bd8372ede"
-  integrity sha512-nZTXaC8HvfQTs9vOh1iVtY07c4AD6zrwtqIxttsyDfGVIRas47rvPCyPisUEVX6Hzk0W+cabEJ1T5cnZvi4ANA==
+gatsby@^2.14.2:
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.14.2.tgz#d9ec4c1b3935a67f38a950724f75c9d620a91817"
+  integrity sha512-SI1pqc87Qpy9Y2awAp4dxBQcY9X0WX4ksMleNtsnp5zlO0IXINDdo6Oz4BV9LcHxaZuqs5XNclApeJJLSW3tJw==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -6187,7 +6187,7 @@ gatsby@^2.14.0:
     gatsby-cli "^2.7.40"
     gatsby-core-utils "^1.0.6"
     gatsby-graphiql-explorer "^0.2.8"
-    gatsby-link "^2.2.9"
+    gatsby-link "^2.2.10"
     gatsby-plugin-page-creator "^2.1.12"
     gatsby-react-router-scroll "^2.1.6"
     gatsby-telemetry "^1.1.19"
@@ -6223,6 +6223,7 @@ gatsby@^2.14.0:
     pnp-webpack-plugin "^1.5.0"
     postcss-flexbugs-fixes "^3.3.1"
     postcss-loader "^2.1.6"
+    prompts "^2.1.0"
     prop-types "^15.7.2"
     raw-loader "^0.5.1"
     react-dev-utils "^4.2.3"
@@ -10474,7 +10475,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prompts@^2.2.1:
+prompts@^2.1.0, prompts@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/prompts/-/prompts-2.2.1.tgz#f901dd2a2dfee080359c0e20059b24188d75ad35"
   integrity sha512-VObPvJiWPhpZI6C5m60XOzTfnYg/xc/an+r9VYymj9WJW3B/DIH+REzjpAACPf8brwPeP+7vz3bIim3S+AaMjw==
