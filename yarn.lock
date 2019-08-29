@@ -5882,15 +5882,15 @@ gatsby-plugin-google-analytics@^2.1.12:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-plugin-manifest@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.6.tgz#7dc0758ad16cb7656f0b808c7fef282b8f165d8c"
-  integrity sha512-QjOKUOrtwbmiXBAcFi0uvzQEGJa5PELXriJjXNuDmn++72sCybgoluOrY4Ajed+WUf82865RIXq58isK3Dmmgw==
+gatsby-plugin-manifest@^2.2.10:
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.10.tgz#b4b3cc52390979bb34615302ea4aed6e5b0cbb68"
+  integrity sha512-gU8qBd5DFL00/PY0i8X2Va9+tyJ2R3ebEhugEyDBIhd498aC1KheNsH7gSTd/N9tXBbFRQ8RM6K/503osP5j/A==
   dependencies:
-    "@babel/runtime" "^7.0.0"
-    gatsby-core-utils "^1.0.5"
-    semver "^5.6.0"
-    sharp "^0.22.1"
+    "@babel/runtime" "^7.5.5"
+    gatsby-core-utils "^1.0.6"
+    semver "^5.7.1"
+    sharp "^0.23.0"
 
 gatsby-plugin-offline@^2.2.9:
   version "2.2.9"
