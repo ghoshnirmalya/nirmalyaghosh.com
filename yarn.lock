@@ -5842,10 +5842,10 @@ gatsby-page-utils@^0.0.14:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-canonical-urls@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.5.tgz#ab167e34228b3a44ca88ba99dc1674f82aa5b525"
-  integrity sha512-0hQl6SLGrMaxw6VdSN8dFyTCCNxYobh7Rih6g1VjNPcnSC7ebYuX2/bY6LKbXbWXux4pg+pGUAfTDgsb5adooQ==
+gatsby-plugin-canonical-urls@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.6.tgz#fa1bab8c525d2265f456375e8c66189e9e6f573d"
+  integrity sha512-OYPeLVXor5YncEzrA4e8fqnSPqSTNvndTHgcg6ZA1VWN9hchm12tD2UaBRXcsDCTL/6gDI7S4u0zJ2dZ4zLeWw==
   dependencies:
     "@babel/runtime" "^7.5.5"
 
