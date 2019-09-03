@@ -2364,7 +2364,7 @@ babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.6.1:
     cosmiconfig "^5.2.0"
     resolve "^1.10.0"
 
-babel-plugin-remove-graphql-queries@^2.7.5, babel-plugin-remove-graphql-queries@^2.7.6:
+babel-plugin-remove-graphql-queries@^2.7.6:
   version "2.7.6"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.6.tgz#ac4abf3a9f109499bf1b970d8c10f7515aa832b2"
   integrity sha512-0ZFyTwK/f2i9xH6mwiwBG/Zl/IHgevsJANTnUMsHS21yYcHcjGSwiiHZKgrzooIksz+dzhCQRpcAECMtq0Jx4Q==
@@ -5810,10 +5810,10 @@ gatsby-graphiql-explorer@^0.2.10:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-gatsby-image@^2.2.15:
-  version "2.2.15"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.15.tgz#eea5c4b8c7b685dee4948291d301f57dd4976f2a"
-  integrity sha512-61A0QEyyhWTIfaEJFkNktlDd2OcCrMhQ0mWd007g0Grf1FwoO/wVS0tXuYmpS6uhHrup3sFpM0EpVavRoDqdwg==
+gatsby-image@^2.2.16:
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.16.tgz#dcee73cfa820ed0b8115888b3275da3c6e940c81"
+  integrity sha512-wM9Yd7BOa/Y6+EJiLgA2+JXBGvNE2o+S3wUoaScYCCU6E9uuT+e4WaFQgsPBwizTLhH5/sBQmzdktRfGU3mmRA==
   dependencies:
     "@babel/runtime" "^7.5.5"
     object-fit-images "^3.2.4"
