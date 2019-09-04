@@ -6014,10 +6014,10 @@ gatsby-remark-prismjs@^3.3.12:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-responsive-iframe@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-2.2.11.tgz#2043c794241366e9152fdb7780e5146d2a4a7d76"
-  integrity sha512-k0Xa2Ej39ZSUbRltEz0MSOvLWqdfhU/MmE1L2f38oJGDRRSZvJx5z359xS2+CHlxIlML2YixPcAw5aTACBMtag==
+gatsby-remark-responsive-iframe@^2.2.13:
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-2.2.13.tgz#51a6aaed2bc71ff2f7af712c337ef7af71e47c7b"
+  integrity sha512-TtBDJ3HFLeKZAAxKhYY3U7g/5Fikl7YtDMB/IXMi/wDXW4qtcNPHShH4PXeyBhyuGZRoR2UzRyTLM4IOxoFktg==
   dependencies:
     "@babel/runtime" "^7.5.5"
     bluebird "^3.5.5"
