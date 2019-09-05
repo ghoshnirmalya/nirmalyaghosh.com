@@ -70,7 +70,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.9",
     "eslint": "^6.3.0",
-    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-prettier": "^3.1.0",
     "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
