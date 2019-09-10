@@ -943,10 +943,10 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
-  version "7.5.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
-  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.0.tgz#4fc1d642a9fd0299754e8b5de62c631cf5568205"
+  integrity sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -6035,12 +6035,12 @@ gatsby-telemetry@^1.1.22:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-transformer-json@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.7.tgz#a7d27eac5919c01b85e35f9aa6b50ae84c813fc7"
-  integrity sha512-IphhDBKsdehCDMcSW4r6EXcudGbMnuLp98ot2uvytX42VS9IfDSzzfYTViJuz8+fXUIxJf7b9NImvgniDDFpJA==
+gatsby-transformer-json@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.8.tgz#7577452fa667c78183888597ac13c2c0b29b050e"
+  integrity sha512-duZymKGtJ2FV1J+a3pT8q+1+NkZKZq7RawLWpPrE7+d2VaAHH7pzuwXb4If93uqk7rITE1K7s5++sv/hBzGFCw==
   dependencies:
-    "@babel/runtime" "^7.5.5"
+    "@babel/runtime" "^7.6.0"
     bluebird "^3.5.5"
 
 gatsby-transformer-remark@^2.6.21:
