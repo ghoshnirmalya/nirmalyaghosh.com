@@ -5956,10 +5956,10 @@ gatsby-plugin-sharp@^2.2.14:
     sharp "^0.22.1"
     svgo "^1.2.0"
 
-gatsby-plugin-typescript@^2.1.7:
-  version "2.1.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.7.tgz#3ab3bd3ae208ba72e33ff40fdd41c4e50bdb4593"
-  integrity sha512-pa8gr+kFQ2ZJ+Ofx6a99xhqipQc3GOr26o3mSK8vPDOu0gKLlz0UP4FJLRq6sZlBZk5Ini2Juqsur7CMi8ccwQ==
+gatsby-plugin-typescript@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.8.tgz#123b77bace28d1cdb67014ed132f715558185a6a"
+  integrity sha512-jujlUsaEa1QqpAdJHDEXmAbxdJJXQm2SPqmrc5n9dOR7bRqBmCge9QPb2Mwir6fXcCEv1jLmE0xnbC14B+VtZA==
   dependencies:
     "@babel/preset-typescript" "^7.6.0"
     "@babel/runtime" "^7.6.0"
