@@ -6114,10 +6114,10 @@ gatsby-transformer-remark@^2.6.23:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.4.1"
 
-gatsby-transformer-sharp@^2.2.15:
-  version "2.2.15"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.15.tgz#d1bc18763525524c5a368996892f48a656f7d28f"
-  integrity sha512-eY071dvoZ3z9X+dl3TqTbWUft0CpBn/F1ZlQ+RoE2mSjegAenMxftrR6Tumf2dPuTANgB+KGX6bXe3eaejkcCw==
+gatsby-transformer-sharp@^2.2.16:
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.2.16.tgz#909a62f4369318bfa40779f8dce1126ba4564757"
+  integrity sha512-9aWhm7LAra5NFgA/QY9Z3gYU6g9uNnrWckR9om/s3ATcxw+VjXz+CUGEOPjyiJ93NF4rAFMfwlaa+BZWOFb4hw==
   dependencies:
     "@babel/runtime" "^7.6.0"
     bluebird "^3.5.5"
