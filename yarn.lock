@@ -2376,7 +2376,7 @@ babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.6.1:
     cosmiconfig "^5.2.0"
     resolve "^1.10.0"
 
-babel-plugin-remove-graphql-queries@^2.7.7, babel-plugin-remove-graphql-queries@^2.7.8:
+babel-plugin-remove-graphql-queries@^2.7.8:
   version "2.7.8"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.8.tgz#f9a90ae83750011931cee94941ae8714c6bf57c6"
   integrity sha512-uMEVCaeDQbQBJBev8cMGHInJRGu/oMPdVbIK5sqRXpAgtdfo1WGriyb7OtIKDycSlvHx95l2NjOtwPADI9mG9w==
@@ -5819,7 +5819,7 @@ gatsby-cli@^2.7.49:
     ink "^2.3.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.10, gatsby-core-utils@^1.0.5, gatsby-core-utils@^1.0.9:
+gatsby-core-utils@^1.0.10, gatsby-core-utils@^1.0.5:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.10.tgz#f4309a8439e36b3e833c00b1903f381148df4c1b"
   integrity sha512-AeOrwjF4LiAHAqvrUkAFtvZHkLpKtF2gnIS/nezHDzIMq0SaZLHbdQiJcesyzZ6CcerjLIDWbD6MqxrTt6KkhA==
@@ -6083,10 +6083,10 @@ gatsby-telemetry@^1.1.25:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-transformer-json@^2.2.8:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.8.tgz#7577452fa667c78183888597ac13c2c0b29b050e"
-  integrity sha512-duZymKGtJ2FV1J+a3pT8q+1+NkZKZq7RawLWpPrE7+d2VaAHH7pzuwXb4If93uqk7rITE1K7s5++sv/hBzGFCw==
+gatsby-transformer-json@^2.2.9:
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.9.tgz#9d6802629cde86424782259dfb4267d23f4b39a9"
+  integrity sha512-hiD1ZXfkWjN8yPhEKe3wuWd77TaK3kbm7HeXAbGNFSkzD/fYB6M/htgz46ABFTsPNnzrAiNv93iIkoyxtzdwLQ==
   dependencies:
     "@babel/runtime" "^7.6.0"
     bluebird "^3.5.5"
