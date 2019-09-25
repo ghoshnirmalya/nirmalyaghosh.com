@@ -5824,10 +5824,10 @@ gatsby-core-utils@^1.0.10, gatsby-core-utils@^1.0.5:
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.10.tgz#f4309a8439e36b3e833c00b1903f381148df4c1b"
   integrity sha512-AeOrwjF4LiAHAqvrUkAFtvZHkLpKtF2gnIS/nezHDzIMq0SaZLHbdQiJcesyzZ6CcerjLIDWbD6MqxrTt6KkhA==
 
-gatsby-graphiql-explorer@^0.2.18:
-  version "0.2.18"
-  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.18.tgz#5801f327399d312d53ba423cd6c486ffc02f7707"
-  integrity sha512-QQmX1Jg5LBsTG6ZoYte0nHS7+tApea/sVCntHSe4M7JRnM8KrECJJsyDesCBUME6lvzV5wdUV9TvFER3+sK++A==
+gatsby-graphiql-explorer@^0.2.19:
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.2.19.tgz#4d804f6fa3cbd72ebeedc0800c8b4fd9428d685a"
+  integrity sha512-OBfmxFZ2LxIydri0Jb83m7+F/iMm2uhk5no+SLaLuFOnoweehm2zKZLk7gk7rW6kX2eHt2VgZ5i3IgldNaMhEg==
   dependencies:
     "@babel/runtime" "^7.6.0"
 
@@ -6131,10 +6131,10 @@ gatsby-transformer-sharp@^2.2.17:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@^2.15.22:
-  version "2.15.22"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.22.tgz#a859793645b8b5e3c2c5df85ffbfd306b655590e"
-  integrity sha512-UI3py8JOJVLrfUWy+eun1Q2OMP3LYV0yawdQ8Ei2TN4AUP+dw+Q7iXT+V+XYOMpZdXaOxvq+gIpNM9iHAmzYOA==
+gatsby@^2.15.24:
+  version "2.15.24"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.15.24.tgz#2cb7d545208fd8bea8bcba5916e809bd85e1bfb7"
+  integrity sha512-c5DJmK/kRgxWxswL0cFaxbscKCy+SdSh830cyOaHkIrT7Qg9qU6bu9hRIl+MXpXW5m0WbAuOfzDB33aw7UBsRw==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.0"
@@ -6198,7 +6198,7 @@ gatsby@^2.15.22:
     fs-extra "^8.1.0"
     gatsby-cli "^2.7.50"
     gatsby-core-utils "^1.0.10"
-    gatsby-graphiql-explorer "^0.2.18"
+    gatsby-graphiql-explorer "^0.2.19"
     gatsby-link "^2.2.15"
     gatsby-plugin-page-creator "^2.1.21"
     gatsby-react-router-scroll "^2.1.9"
@@ -6259,7 +6259,7 @@ gatsby@^2.15.22:
     util.promisify "^1.0.0"
     uuid "^3.3.3"
     v8-compile-cache "^1.1.2"
-    webpack "~4.40.2"
+    webpack "~4.41.0"
     webpack-dev-middleware "^3.7.1"
     webpack-dev-server "^3.8.1"
     webpack-hot-middleware "^2.25.0"
@@ -13376,10 +13376,10 @@ webpack-stats-plugin@^0.3.0:
   resolved "https://registry.yarnpkg.com/webpack-stats-plugin/-/webpack-stats-plugin-0.3.0.tgz#6952f63feb9a5393a328d774fb3eccac78d2f51b"
   integrity sha512-4a6mEl9HLtMukVjEPY8QPCSmtX2EDFJNhDTX5ZE2CLch2adKAZf53nUrpG6m7NattwigS0AodNcwNxlu9kMSDQ==
 
-webpack@~4.40.2:
-  version "4.40.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.40.2.tgz#d21433d250f900bf0facbabe8f50d585b2dc30a7"
-  integrity sha512-5nIvteTDCUws2DVvP9Qe+JPla7kWPPIDFZv55To7IycHWZ+Z5qBdaBYPyuXWdhggTufZkQwfIK+5rKQTVovm2A==
+webpack@~4.41.0:
+  version "4.41.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.0.tgz#db6a254bde671769f7c14e90a1a55e73602fc70b"
+  integrity sha512-yNV98U4r7wX1VJAj5kyMsu36T8RPPQntcb5fJLOsMz/pt/WrKC0Vp1bAlqPLkA1LegSwQwf6P+kAbyhRKVQ72g==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
