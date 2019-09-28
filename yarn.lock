@@ -2410,7 +2410,7 @@ babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.6.1:
     cosmiconfig "^5.2.0"
     resolve "^1.10.0"
 
-babel-plugin-remove-graphql-queries@^2.7.10, babel-plugin-remove-graphql-queries@^2.7.8:
+babel-plugin-remove-graphql-queries@^2.7.10:
   version "2.7.10"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.10.tgz#141bc6c8e13d6371d34f6f663954fd9ba5117a37"
   integrity sha512-J/4xsXYXlWwSuA/hktGx9xtWb+oKMhocwl3ztb17XB6S+x9XEIGKQnOj9nGh/Tr4x04unM/wa12UszzMXbwR+w==
@@ -5874,7 +5874,7 @@ gatsby-cli@^2.7.53:
     ink "^2.4.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.10, gatsby-core-utils@^1.0.12, gatsby-core-utils@^1.0.5:
+gatsby-core-utils@^1.0.12, gatsby-core-utils@^1.0.5:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.12.tgz#72f38677b9894d701b55f12b0c443a72274ae1c6"
   integrity sha512-Ryh0ILzG6zuYA88irnFQPKGe0NwEBh30FqAp7KNyYgsiOB41CSD0JfjIlFUgkU/gAoLlZKXyeFwbq3SVEBwNoA==
@@ -6015,14 +6015,14 @@ gatsby-plugin-sharp@^2.2.14:
     sharp "^0.22.1"
     svgo "^1.2.0"
 
-gatsby-plugin-typescript@^2.1.9:
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.9.tgz#6b5afa810dd5c55bad8cd349019e3e62decad47d"
-  integrity sha512-g++yoSbMb/4WHdu8Z1Uh4e9qDXWdb1g5xfc63qzabGjRgoNVP5gG3azhUe4Az2E4RGTyW1S6c8flB20+64Lijg==
+gatsby-plugin-typescript@^2.1.11:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.1.11.tgz#cc687c0547b16ea6a22a0eb9ce25609b5cdd0978"
+  integrity sha512-IcUblbq1TF1V5w7AbR0ygVbjotQFh+Z+B+SI5J73OtNFKgehS3cPLEE/6+PMDTmBRYdEJx+ajAMOuIIPn5Jn4w==
   dependencies:
     "@babel/preset-typescript" "^7.6.0"
-    "@babel/runtime" "^7.6.0"
-    babel-plugin-remove-graphql-queries "^2.7.8"
+    "@babel/runtime" "^7.6.2"
+    babel-plugin-remove-graphql-queries "^2.7.10"
 
 gatsby-react-router-scroll@^2.1.11:
   version "2.1.11"
