@@ -58,7 +58,7 @@
     "prism-themes": "^1.2.0",
     "prismjs": "^1.17.1",
     "react": "^16.10.2",
-    "react-dom": "^16.10.1",
+    "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.0",
     "typescript": "^3.6.3"
