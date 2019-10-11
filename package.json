@@ -61,7 +61,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
