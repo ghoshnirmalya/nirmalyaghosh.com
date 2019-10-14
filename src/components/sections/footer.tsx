@@ -7,10 +7,9 @@ const StyledFooterSection = styled.footer`
   justify-content: center;
   align-items: center;
   background-color: #030d1f;
-  color: #a8b2d1;
+  color: rgba(247, 247, 247, 0.52);
   padding: 20px;
   font-size: 14px;
-  font-weight: lighter;
 
   a {
     color: #03a9f4;

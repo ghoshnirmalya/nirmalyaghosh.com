@@ -38,9 +38,8 @@ const StyledSection = styled.section`
       }
 
       > .description {
-        color: #a8b2d1;
+        color: rgba(247, 247, 247, 0.52);
         font-size: 14px;
-        font-weight: lighter;
         margin: 0;
         margin-bottom: 20px;
         line-height: 20px;
@@ -75,9 +74,8 @@ const StyledSection = styled.section`
       }
 
       > .description {
-        color: #a8b2d1;
+        color: rgba(247, 247, 247, 0.52);
         font-size: 14px;
-        font-weight: lighter;
         margin: 0;
         margin-bottom: 20px;
         line-height: 20px;
