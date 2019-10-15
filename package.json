@@ -51,7 +51,7 @@
     "gatsby-source-filesystem": "^2.1.31",
     "gatsby-transformer-json": "^2.2.13",
     "gatsby-transformer-remark": "^2.6.28",
-    "gatsby-transformer-sharp": "^2.2.21",
+    "gatsby-transformer-sharp": "^2.2.23",
     "modern-normalize": "^0.5.0",
     "normalize.css": "^8.0.1",
     "polished": "^3.4.1",
