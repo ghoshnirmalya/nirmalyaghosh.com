@@ -5991,10 +5991,10 @@ gatsby-plugin-disqus@^1.1.2:
     babel-preset-gatsby-package "^0.1.2"
     cross-env "^5.2.0"
 
-gatsby-plugin-emotion@^4.1.10:
-  version "4.1.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.1.10.tgz#c03b36e7cf8a422d52a905d99f7fbd4e6fc9c1f4"
-  integrity sha512-U8IpjI/P3uI/k6eV/U3LF2hdj7MIAbEALqibJEG0cUT5Z5gETKI5nMeSRy8esk6CEEqNnv+x4fxHtO9lJ1oxQQ==
+gatsby-plugin-emotion@^4.1.12:
+  version "4.1.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.1.12.tgz#0b1a542363fff1676dfc703ee5083c3215ac57af"
+  integrity sha512-sKWMHQ688qITqAqiage4dj2OZ6Dqw435B6hfhLfwHGX0LLb/yB4ZDDPxsOKZtjQn8FIKmacarzpq8oB3lRmWFA==
   dependencies:
     "@babel/runtime" "^7.6.3"
     "@emotion/babel-preset-css-prop" "^10.0.17"
