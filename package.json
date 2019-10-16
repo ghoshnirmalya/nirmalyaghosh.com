@@ -49,7 +49,7 @@
     "gatsby-remark-responsive-iframe": "^2.2.23",
     "gatsby-remark-smartypants": "^2.1.14",
     "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-json": "^2.2.13",
+    "gatsby-transformer-json": "^2.2.15",
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.2.23",
     "modern-normalize": "^0.5.0",
