@@ -57,7 +57,7 @@
     "polished": "^3.4.1",
     "prism-themes": "^1.2.0",
     "prismjs": "^1.17.1",
-    "react": "^16.10.2",
+    "react": "^16.11.0",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.0",
