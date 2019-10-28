@@ -41,7 +41,7 @@
     "gatsby-plugin-manifest": "^2.2.6",
     "gatsby-plugin-offline": "^3.0.16",
     "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sharp": "^2.2.14",
+    "gatsby-plugin-sharp": "^2.2.34",
     "gatsby-plugin-typescript": "^2.1.15",
     "gatsby-remark-copy-linked-files": "^2.1.28",
     "gatsby-remark-images": "^3.1.28",
