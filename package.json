@@ -32,7 +32,7 @@
     "@emotion/styled": "^10.0.23",
     "babel-plugin-styled-components": "^1.10.6",
     "classnames": "^2.2.6",
-    "gatsby": "^2.17.10",
+    "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-canonical-urls": "^2.1.13",
     "gatsby-plugin-disqus": "^1.1.4",
