@@ -45,7 +45,7 @@
     "gatsby-plugin-typescript": "^2.1.18",
     "gatsby-remark-copy-linked-files": "^2.1.30",
     "gatsby-remark-images": "^3.1.32",
-    "gatsby-remark-prismjs": "^3.3.23",
+    "gatsby-remark-prismjs": "^3.3.24",
     "gatsby-remark-responsive-iframe": "^2.2.27",
     "gatsby-remark-smartypants": "^2.1.16",
     "gatsby-source-filesystem": "^2.1.38",
