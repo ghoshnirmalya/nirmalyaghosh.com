@@ -33,7 +33,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "classnames": "^2.2.6",
     "gatsby": "^2.18.3",
-    "gatsby-image": "^2.2.33",
+    "gatsby-image": "^2.2.34",
     "gatsby-plugin-canonical-urls": "^2.1.15",
     "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-emotion": "^4.1.15",
