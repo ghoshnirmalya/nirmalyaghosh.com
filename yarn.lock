@@ -6199,12 +6199,12 @@ gatsby-page-utils@^0.0.31:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-canonical-urls@^2.1.15:
-  version "2.1.15"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.15.tgz#91ec3fc821561928d7e489a7eda932a64d6ad9ea"
-  integrity sha512-USweX3kgmaNcWO5W/Exc9ag4EjcIuxfUe0U2sxE1R4oyjH4gGOd6TOsOcAteQV+NxmFk5DgepTQAOKPIfv0CcQ==
+gatsby-plugin-canonical-urls@^2.1.16:
+  version "2.1.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-2.1.16.tgz#c7f191c536705c794059e87d6df6537d326e8039"
+  integrity sha512-0z5+esadNZDf3i+B4iR7WwXWuEWn9mQgRMid+xxBQMz0CTdzqcAwJFmxfmtC6PCkWSAb33UDkBcek9nKwBOLgg==
   dependencies:
-    "@babel/runtime" "^7.7.2"
+    "@babel/runtime" "^7.7.4"
 
 gatsby-plugin-disqus@^1.1.4:
   version "1.1.4"
