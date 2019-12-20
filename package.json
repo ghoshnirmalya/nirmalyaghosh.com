@@ -27,7 +27,7 @@
     "node": ">=11.0.0"
   },
   "dependencies": {
-    "@babel/core": "^7.7.5",
+    "@babel/core": "^7.7.7",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "babel-plugin-styled-components": "^1.10.6",
