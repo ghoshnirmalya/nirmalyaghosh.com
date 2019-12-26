@@ -1,5 +1,12 @@
 [
   {
+    "title": "How to Automate the Backend stuffs with Open Source Headless CMS Strapi and Docker",
+    "url": "/automate-backend-stuffs-with-strapi-and-docker",
+    "description": "Tutorial for building a lightning fast, static blog application hosted with Netlify using Gatsby on the front-end and ButterCMS to serve up the content.",
+    "date": "January 5, 2020",
+    "guestAuthor": false
+  },
+  {
     "title": "Building a JAMstack Blog: Gatsby and ButterCMS on Netlify",
     "url": "https://buttercms.com/blog/building-a-jamstack-blog-gatsby-and-buttercms-on-netlify",
     "description": "Tutorial for building a lightning fast, static blog application hosted with Netlify using Gatsby on the front-end and ButterCMS to serve up the content.",
