@@ -42,7 +42,7 @@
     "gatsby-plugin-offline": "^3.0.30",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.18",
-    "gatsby-plugin-sharp": "^2.3.10",
+    "gatsby-plugin-sharp": "^2.2.14",
     "gatsby-plugin-typescript": "^2.1.23",
     "gatsby-remark-copy-linked-files": "^2.1.33",
     "gatsby-remark-images": "^3.1.39",
