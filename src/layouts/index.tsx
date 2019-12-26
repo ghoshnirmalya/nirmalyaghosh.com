@@ -11,7 +11,8 @@ const StyledLayout = styled.div`
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background-color: #07162b;
+  background: rgba(4,17,31,1);
+  background: linear-gradient(180deg,rgba(1, 28, 66, 1) 0%,rgba(4,17,31,1) 100%);
   color: #f1f1f1;
   font-size: 16px;
 

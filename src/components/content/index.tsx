@@ -7,13 +7,13 @@ const StyledContent = styled.main`
   width: 100%;
 
   section {
-    &:not(:last-child) {
-      margin-bottom: 200px;
+    &:not(:first-of-type) {
+      padding-top: 200px;
     }
 
     > .section-title {
       font-size: 30px;
-      margin-bottom: 50px;
+      margin: 0 0 50px;
       text-transform: uppercase;
       font-weight: bold;
     }

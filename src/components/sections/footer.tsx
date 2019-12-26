@@ -6,7 +6,7 @@ const StyledFooterSection = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #030d1f;
+  background-color: #04101f;
   color: rgba(247, 247, 247, 0.52);
   padding: 20px;
   font-size: 14px;

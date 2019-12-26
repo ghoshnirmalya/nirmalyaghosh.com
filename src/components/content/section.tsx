@@ -38,7 +38,7 @@ const StyledSection = styled.section`
       }
 
       > .description {
-        color: rgba(247, 247, 247, 0.52);
+        color: hsla(0,0%,100%,0.7);
         font-size: 14px;
         margin: 0;
         margin-bottom: 20px;
@@ -74,7 +74,7 @@ const StyledSection = styled.section`
       }
 
       > .description {
-        color: rgba(247, 247, 247, 0.52);
+        color: hsla(0,0%,100%,0.7);
         font-size: 14px;
         margin: 0;
         margin-bottom: 20px;
@@ -90,12 +90,13 @@ const StyledSection = styled.section`
 `
 
 interface SectionProps {
-  title: string
+  title: string;
+  id: string;
 }
 
-const Section: React.FC<SectionProps> = ({ title, children }) => (
-  <StyledSection>
-    <h2 className="section-title" id={title.toLocaleLowerCase()}>{title}</h2>
+const Section: React.FC<SectionProps> = ({ title, id, children }) => (
+  <StyledSection id={id}>
+    <h2 className="section-title">{title}</h2>
     <div className="container">{children}</div>
   </StyledSection>
 )

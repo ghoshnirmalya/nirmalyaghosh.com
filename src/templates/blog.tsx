@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus } from 'gatsby-plugin-disqus'
 
 import Layout from '../layouts'
 import Footer from "../components/sections/footer"
@@ -31,11 +31,13 @@ interface BlogTemplateProps {
 
 const StyledBlog = styled.main`
   h1 {
-    color: #f1f1f1;
+    color: #fff;
     font-size: 50px;
     font-weight: bold;
     margin: 0;
     margin-bottom: 50px;
+    line-height: 65px;
+    letter-spacing: .25px;
   }
 
   h2 {
@@ -44,10 +46,24 @@ const StyledBlog = styled.main`
   }
 
   p {
-    color: #ffffffbf;
-    font-size: 16px;
+    color: hsla(0,0%,100%,0.8);
+    font-size: 17px;
+    margin-bottom: 50px;
+    font-family: "Noto Serif", serif;
     line-height: 30px;
-    margin-bottom: 30px;
+  }
+
+  blockquote {
+    border-left: 5px solid #03a9f4;
+    padding: 20px 0 20px 40px;
+    margin: 0 0 50px;
+    background-color: #04121f;
+    border-radius: 4px;
+    font-style: italic;
+
+    > p {
+      margin: 0;
+    }
   }
 
   > .link-to-blogs {
@@ -71,11 +87,15 @@ const StyledBlog = styled.main`
     border-radius: 4px;
     overflow: auto;
     font-size: 14px;
+    padding: 20px;
+    margin-bottom: 50px;
 
     .gatsby-highlight-code-line {
       background-color: #002e52;
       display: block;
       border-left: 5px solid #03a9f4;
+      margin: 0 -20px;
+      padding-left: 10px;
     }
 
     pre[class*="language-"] {
