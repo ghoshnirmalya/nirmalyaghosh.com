@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: 'How to Automate the Backend stuffs with Open Source Headless CMS Strapi and Docker'
-tags: ["strapi", "docker"]
+tags: ['strapi', 'docker']
 ---
 
 > In this tutorial, we'll learn about the problems (related to saving our data) that we face while developing front-end applications. We'll explore an open source headless CMS, [Strapi](https://strapi.io/). We'll also learn about how to install and get started with Strapi using [Docker](https://www.docker.com/).

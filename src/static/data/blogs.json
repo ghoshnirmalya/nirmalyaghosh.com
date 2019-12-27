@@ -1,4 +1,10 @@
-[
+[{
+  "title": "What is TailwindCSS and what problems does this new CSS framework solve for us",
+  "url": "/what-is-tailwind-css",
+  "description": "This article will help you understand how TailwindCSS can help you reduce the time to design, code and ship your projects.",
+  "date": "January 8, 2020",
+  "guestAuthor": false
+},
   {
     "title": "How to Automate the Backend stuffs with Open Source Headless CMS Strapi and Docker",
     "url": "/blogs/automate-backend-stuffs-with-strapi-and-docker",

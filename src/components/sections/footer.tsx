@@ -25,7 +25,11 @@ const FooterSection: React.FC = () => (
   <StyledFooterSection>
     <p>
       Designed &amp; developed by{' '}
-      <OutboundLink href="https://github.com/ghoshnirmalya/nirmalyaghosh.com/" rel="noopener noreferrer" target="_blank">
+      <OutboundLink
+        href="https://github.com/ghoshnirmalya/nirmalyaghosh.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         Nirmalya Ghosh &#8599;
       </OutboundLink>
     </p>

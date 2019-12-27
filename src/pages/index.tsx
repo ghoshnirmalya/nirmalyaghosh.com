@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Particles from 'react-particles-js';
+import Particles from 'react-particles-js'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
@@ -17,8 +17,12 @@ const StyledLayout = styled.div`
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background: rgba(4,17,31,1);
-  background: linear-gradient(180deg,rgba(1, 28, 66, 1) 0%,rgba(4,17,31,1) 100%);
+  background: rgba(4, 17, 31, 1);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 28, 66, 1) 0%,
+    rgba(4, 17, 31, 1) 100%
+  );
   color: #f1f1f1;
   font-size: 16px;
 
@@ -37,7 +41,7 @@ const StyledLayout = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%
+    height: 100%;
   }
 `
 
@@ -63,17 +67,24 @@ const IndexPage: React.FC = () => (
         }
       }
     `}
-
     render={(data: StaticQueryProps) => (
       <StyledLayout>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
+            {
+              name: 'description',
+              content: data.site.siteMetadata.description,
+            },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
           ]}
           link={[
-            { rel: "icon", type: "image/png", sizes: "16x16", href: `${favicon}` },
+            {
+              rel: 'icon',
+              type: 'image/png',
+              sizes: '16x16',
+              href: `${favicon}`,
+            },
           ]}
         >
           <html lang="en" />
@@ -82,56 +93,57 @@ const IndexPage: React.FC = () => (
           <div className="background-container">
             <Particles
               params={{
-                "particles": {
-                  "number": {
-                    "value": 200,
-                    "density": {
-                      "enable": true
-                    }
+                particles: {
+                  number: {
+                    value: 200,
+                    density: {
+                      enable: true,
+                    },
                   },
-                  "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                      "speed": 4,
-                      "size_min": 0.3
-                    }
+                  size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                      speed: 4,
+                      size_min: 0.3,
+                    },
                   },
-                  "line_linked": {
-                    "enable": false
+                  line_linked: {
+                    enable: false,
                   },
-                  "move": {
-                    "random": true,
-                    "speed": 1,
-                    "direction": "top",
-                    "out_mode": "out"
-                  }
+                  move: {
+                    random: true,
+                    speed: 1,
+                    direction: 'top',
+                    out_mode: 'out',
+                  },
                 },
-                "interactivity": {
-                  "events": {
-                    "onhover": {
-                      "enable": false,
-                      "mode": "bubble"
+                interactivity: {
+                  events: {
+                    onhover: {
+                      enable: false,
+                      mode: 'bubble',
                     },
-                    "onclick": {
-                      "enable": true,
-                      "mode": "repulse"
-                    }
+                    onclick: {
+                      enable: true,
+                      mode: 'repulse',
+                    },
                   },
-                  "modes": {
-                    "bubble": {
-                      "distance": 250,
-                      "duration": 2,
-                      "size": 0,
-                      "opacity": 0
+                  modes: {
+                    bubble: {
+                      distance: 250,
+                      duration: 2,
+                      size: 0,
+                      opacity: 0,
                     },
-                    "repulse": {
-                      "distance": 400,
-                      "duration": 4
-                    }
-                  }
-                }
-              }} />
+                    repulse: {
+                      distance: 400,
+                      duration: 4,
+                    },
+                  },
+                },
+              }}
+            />
           </div>
           <Hero />
           <SocialProfiles />

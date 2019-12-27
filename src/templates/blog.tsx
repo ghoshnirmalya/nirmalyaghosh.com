@@ -5,7 +5,7 @@ import { Disqus } from 'gatsby-plugin-disqus'
 import Helmet from 'react-helmet'
 
 import Layout from '../layouts'
-import Footer from "../components/sections/footer"
+import Footer from '../components/sections/footer'
 
 interface BlogTemplateProps {
   data: {
@@ -36,9 +36,9 @@ const StyledBlog = styled.main`
     font-size: 50px;
     font-weight: bold;
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     line-height: 65px;
-    letter-spacing: .25px;
+    letter-spacing: 0.25px;
   }
 
   h2 {
@@ -47,10 +47,10 @@ const StyledBlog = styled.main`
   }
 
   p {
-    color: hsla(0,0%,100%,0.8);
+    color: hsla(0, 0%, 100%, 0.8);
     font-size: 17px;
     margin-bottom: 50px;
-    font-family: "Noto Serif", serif;
+    font-family: 'Noto Serif', Georgia, serif;
     line-height: 30px;
   }
 
@@ -96,10 +96,10 @@ const StyledBlog = styled.main`
       display: block;
       border-left: 5px solid #03a9f4;
       margin: 0 -20px;
-      padding-left: 10px;
+      padding-left: 15px;
     }
 
-    pre[class*="language-"] {
+    pre[class*='language-'] {
       background: transparent;
       margin: 0;
       padding: 0;
@@ -108,11 +108,19 @@ const StyledBlog = styled.main`
       min-width: 100%;
     }
 
-    code[class*="language-"] {
+    code[class*='language-'] {
       background: transparent;
       color: #e4e4e4;
       box-shadow: none;
     }
+  }
+
+  code[class*='language-'] {
+    font-size: 14px;
+    padding: 0.25em 0.75em;
+    border-radius: 4px;
+    background-color: #04131f;
+    color: hsla(0, 0%, 100%, 0.8);
   }
 `
 
@@ -128,14 +136,18 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => {
         <Helmet
           title={`${data.markdownRemark.frontmatter.title} | ${data.site.siteMetadata.title}`}
           meta={[
-            { name: 'description', content: data.markdownRemark.frontmatter.title }
+            {
+              name: 'description',
+              content: data.markdownRemark.frontmatter.title,
+            },
           ]}
-
         >
           <html lang="en" />
         </Helmet>
         <StyledBlog>
-          <Link to="/#blogs" className="link-to-blogs">&#8592; All blogs</Link>
+          <Link to="/#blogs" className="link-to-blogs">
+            &#8592; All blogs
+          </Link>
           <h1>{data.markdownRemark.frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
           <div className="comments">
