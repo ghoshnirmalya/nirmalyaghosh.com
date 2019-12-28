@@ -3,6 +3,8 @@ layout: blog
 title: 'How to Automate the Backend stuffs with Open Source Headless CMS Strapi and Docker'
 ---
 
+> In this tutorial, we'll learn about the problems (related to saving our data) that we face while developing front-end applications. We'll explore an open source headless CMS, [Strapi](https://strapi.io/). We'll also learn about how to install and get started with Strapi using [Docker](https://www.docker.com/).
+
 One of the aspects that always tend to be a blocker to me while developing front-end applications is the need for a ways to save the data from the front-end. In the past, I've use [Firebase](https://firebase.google.com/) for saving my data to the database. However, it becomes difficult to manage this as Firebase has strict [data types](https://firebase.google.com/docs/firestore/manage-data/data-types) as well as issues with [scaling](https://itnext.io/lessons-from-a-long-week-with-firebase-b433ce8ee49e), [pricing](https://crisp.chat/blog/why-you-should-never-use-firebase-realtime-database/), etc. For small apps and projects, Firebase works perfectly fine. However, for bigger apps, it presents its own set of problems. For those who don't know, Firebase is Google's mobile platform that helps you quickly develop high-quality apps and grow your business.
 
 As a result, I was trying to find an alternate tool which would take care of the back-end. Recently, I came across [Strapi](https://strapi.io/) which is an open source Headless CMS. It's very easy to [get started with Strapi](https://strapi.io/documentation/3.0.0-beta.x/getting-started/quick-start.html). Also, it has a nice set of plugins in their [marketplace](https://strapi.io/marketplace).
