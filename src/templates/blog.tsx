@@ -95,14 +95,14 @@ const StyledBlog = styled.main`
       background-color: #002e52;
       display: block;
       border-left: 5px solid #03a9f4;
-      margin: 0 -20px;
-      padding-left: 15px;
+      margin: 0 -31px;
+      padding-left: 25px;
     }
 
     pre[class*='language-'] {
       background: transparent;
       margin: 0;
-      padding: 0;
+      padding: .25em .75em;
       overflow: initial;
       float: left;
       min-width: 100%;
