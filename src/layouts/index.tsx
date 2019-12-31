@@ -47,6 +47,7 @@ const IndexLayout: React.FC = ({ children }) => (
         }
       }
     `}
+
     render={(data: StaticQueryProps) => (
       <StyledLayout>
         <Helmet
@@ -61,7 +62,9 @@ const IndexLayout: React.FC = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Content>{children}</Content>
+        <Content>
+          {children}
+        </Content>
       </StyledLayout>
     )}
   />

@@ -60,6 +60,7 @@ const StyledSection = styled.section`
     > .blogs-block {
       size: 18px;
       margin-bottom: 50px;
+      z-index: 1;
 
       > .title {
         color: #f1f1f1;
