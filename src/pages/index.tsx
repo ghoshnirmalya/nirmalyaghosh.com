@@ -1,5 +1,7 @@
 import * as React from 'react'
 import Particles from 'react-particles-js';
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import Hero from '../components/sections/hero'
@@ -8,6 +10,8 @@ import Projects from '../components/sections/projects'
 import Blogs from '../components/sections/blogs'
 import Footer from '../components/sections/footer'
 import Content from '../components/content'
+
+import favicon from '../static/images/favicon.png'
 
 const StyledLayout = styled.div`
   display: flex;
@@ -37,72 +41,107 @@ const StyledLayout = styled.div`
   }
 `
 
-const IndexPage = () => (
-  <>
-    <StyledLayout>
-      <Content>
-        <div className="background-container">
-          <Particles
-            params={{
-              "particles": {
-                "number": {
-                  "value": 200,
-                  "density": {
-                    "enable": true
-                  }
-                },
-                "size": {
-                  "value": 3,
-                  "random": true,
-                  "anim": {
-                    "speed": 4,
-                    "size_min": 0.3
-                  }
-                },
-                "line_linked": {
-                  "enable": false
-                },
-                "move": {
-                  "random": true,
-                  "speed": 1,
-                  "direction": "top",
-                  "out_mode": "out"
-                }
-              },
-              "interactivity": {
-                "events": {
-                  "onhover": {
-                    "enable": false,
-                    "mode": "bubble"
+interface StaticQueryProps {
+  site: {
+    siteMetadata: {
+      title: string
+      description: string
+      keywords: string
+    }
+  }
+}
+
+const IndexPage: React.FC = ({ }) => (
+  <StaticQuery
+    query={graphql`
+      query IndexPageQuery {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `}
+
+    render={(data: StaticQueryProps) => (
+      <StyledLayout>
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: data.site.siteMetadata.description },
+            { name: 'keywords', content: data.site.siteMetadata.keywords },
+          ]}
+          link={[
+            { rel: "icon", type: "image/png", sizes: "16x16", href: `${favicon}` },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Content>
+          <div className="background-container">
+            <Particles
+              params={{
+                "particles": {
+                  "number": {
+                    "value": 200,
+                    "density": {
+                      "enable": true
+                    }
                   },
-                  "onclick": {
-                    "enable": true,
-                    "mode": "repulse"
+                  "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                      "speed": 4,
+                      "size_min": 0.3
+                    }
+                  },
+                  "line_linked": {
+                    "enable": false
+                  },
+                  "move": {
+                    "random": true,
+                    "speed": 1,
+                    "direction": "top",
+                    "out_mode": "out"
                   }
                 },
-                "modes": {
-                  "bubble": {
-                    "distance": 250,
-                    "duration": 2,
-                    "size": 0,
-                    "opacity": 0
+                "interactivity": {
+                  "events": {
+                    "onhover": {
+                      "enable": false,
+                      "mode": "bubble"
+                    },
+                    "onclick": {
+                      "enable": true,
+                      "mode": "repulse"
+                    }
                   },
-                  "repulse": {
-                    "distance": 400,
-                    "duration": 4
+                  "modes": {
+                    "bubble": {
+                      "distance": 250,
+                      "duration": 2,
+                      "size": 0,
+                      "opacity": 0
+                    },
+                    "repulse": {
+                      "distance": 400,
+                      "duration": 4
+                    }
                   }
                 }
-              }
-            }} />
-        </div>
-        <Hero />
-        <SocialProfiles />
-        <Projects />
-        <Blogs />
-        <Footer />
-      </Content>
-    </StyledLayout>
-  </>
+              }} />
+          </div>
+          <Hero />
+          <SocialProfiles />
+          <Projects />
+          <Blogs />
+          <Footer />
+        </Content>
+      </StyledLayout>
+    )}
+  />
 )
 
 export default IndexPage
