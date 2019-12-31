@@ -1,5 +1,12 @@
 [
   {
+    "title": "Integrating TailwindCSS with Next.js",
+    "url": "/integrating-tailwindcss-with-next-js",
+    "description": "This tutorial will help you understand how to integrate TailwindCSS with Next.js",
+    "date": "January 15, 2020",
+    "guestAuthor": false
+  },
+  {
     "title": "Building a JAMstack Blog: Gatsby and ButterCMS on Netlify",
     "url": "https://buttercms.com/blog/building-a-jamstack-blog-gatsby-and-buttercms-on-netlify",
     "description": "Tutorial for building a lightning fast, static blog application hosted with Netlify using Gatsby on the front-end and ButterCMS to serve up the content.",
