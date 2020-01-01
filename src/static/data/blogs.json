@@ -7,6 +7,13 @@
     "guestAuthor": false
   },
   {
+    "title": "Understand and implement your own Redux",
+    "url": "https://buttercms.com/blog/understand-and-implement-your-own-redux",
+    "description": "In this tutorial, we'll discover the basic concepts of Redux and learn about Actions, Reducers, and a Store in Redux. In addition, we’ll also build our own version of Redux using vanilla JavaScript and use it in an application.",
+    "date": "December 29, 2019",
+    "guestAuthor": true
+  },
+  {
     "title": "Building a JAMstack Blog: Gatsby and ButterCMS on Netlify",
     "url": "https://buttercms.com/blog/building-a-jamstack-blog-gatsby-and-buttercms-on-netlify",
     "description": "Tutorial for building a lightning fast, static blog application hosted with Netlify using Gatsby on the front-end and ButterCMS to serve up the content.",
