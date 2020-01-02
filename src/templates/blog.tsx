@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { Disqus } from 'gatsby-plugin-disqus'
+import Helmet from 'react-helmet'
 
 import Layout from '../layouts'
 import Footer from "../components/sections/footer"
@@ -124,6 +125,15 @@ const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => {
   return (
     <>
       <Layout>
+        <Helmet
+          title={`${data.markdownRemark.frontmatter.title} | ${data.site.siteMetadata.title}`}
+          meta={[
+            { name: 'description', content: data.markdownRemark.frontmatter.title }
+          ]}
+
+        >
+          <html lang="en" />
+        </Helmet>
         <StyledBlog>
           <Link to="/#blogs" className="link-to-blogs">&#8592; All blogs</Link>
           <h1>{data.markdownRemark.frontmatter.title}</h1>
