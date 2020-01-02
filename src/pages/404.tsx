@@ -1,20 +1,6 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
-import Layout from '../layouts'
-
-const Styled404Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  > .text {
-    margin-top: 50px;
-  }
-`
 
 const NotFoundPage = () => (
   <StaticQuery
@@ -32,14 +18,12 @@ const NotFoundPage = () => (
       }
     `}
     render={data => (
-      <Layout>
-        <Styled404Section>
-          <Img fixed={data.avatar.childImageSharp.fixed} />
-          <Link to="/" className="text">
-            Click here to go back to the home page
+      <div>
+        <Img fixed={data.avatar.childImageSharp.fixed} />
+        <Link to="/">
+          Click here to go back to the home page
           </Link>
-        </Styled404Section>
-      </Layout>
+      </div>
     )}
   />
 )

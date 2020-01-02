@@ -1,30 +1,9 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from '@emotion/styled'
-import 'modern-normalize'
 
-import Content from '../components/content'
 import favicon from '../static/images/favicon.png'
 
-const StyledLayout = styled.div`
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  background: rgba(4,17,31,1);
-  background: linear-gradient(180deg,rgba(1, 28, 66, 1) 0%,rgba(4,17,31,1) 100%);
-  color: #f1f1f1;
-  font-size: 16px;
-
-  a {
-    color: #03a9f4;
-    text-decoration: none;
-
-    &:hover {
-      color: #65cfff;
-    }
-  }
-`
 interface StaticQueryProps {
   site: {
     siteMetadata: {
@@ -49,7 +28,7 @@ const IndexLayout: React.FC = ({ children }) => (
     `}
 
     render={(data: StaticQueryProps) => (
-      <StyledLayout>
+      <React.Fragment>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -62,10 +41,8 @@ const IndexLayout: React.FC = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Content>
-          {children}
-        </Content>
-      </StyledLayout>
+        {children}
+      </React.Fragment>
     )}
   />
 )

@@ -15,3 +15,5 @@ declare module '*.module.css' {
 }
 
 declare module 'gatsby-plugin-disqus'
+
+declare module '*.png'

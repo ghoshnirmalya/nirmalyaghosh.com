@@ -1,17 +1,6 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
-
-const StyledHeroSection = styled.section`
-  h1 {
-    font-size: 50px;
-  }
-
-  @media (max-width: 768px) {
-    text-align: center;
-  }
-`
 
 const HeroSection: React.FC = () => {
   return (
@@ -30,11 +19,17 @@ const HeroSection: React.FC = () => {
         }
       `}
       render={data => (
-        <StyledHeroSection>
-          <Img fixed={data.avatar.childImageSharp.fixed} />
-          <h1>Nirmalya Ghosh</h1>
-          <p>Frontend Developer and Designer from Bangalore, India</p>
-        </StyledHeroSection>
+        <div className="flex flex-col items-center text-center mb-8">
+          <Img
+            fixed={data.avatar.childImageSharp.fixed}
+            className="w-10 h-10 rounded-full mb-4 border-2 border-white shadow"
+          />
+          <div className="text-base">
+            <p className="text-gray-900 leading-none text-2xl font-bold mb-2">Nirmalya Ghosh</p>
+            <p className="text-gray-600">
+              <span className="text-gray-700 font-semibold">Frontend Developer</span> and <span className="text-gray-700 font-semibold">Designer</span> from Bangalore, India</p>
+          </div>
+        </div>
       )}
     />
   )

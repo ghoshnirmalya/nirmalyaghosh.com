@@ -76,11 +76,11 @@ module.exports = {
         siteUrl: 'https://www.nirmalyaghosh.com',
       },
     },
-    'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
