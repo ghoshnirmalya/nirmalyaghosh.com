@@ -51,7 +51,7 @@ interface StaticQueryProps {
   }
 }
 
-const IndexPage: React.FC = ({ }) => (
+const IndexPage: React.FC = () => (
   <StaticQuery
     query={graphql`
       query IndexPageQuery {
