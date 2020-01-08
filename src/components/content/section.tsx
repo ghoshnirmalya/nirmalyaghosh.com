@@ -38,7 +38,7 @@ const StyledSection = styled.section`
       }
 
       > .description {
-        color: hsla(0,0%,100%,0.7);
+        color: hsla(0, 0%, 100%, 0.7);
         font-size: 14px;
         margin: 0;
         margin-bottom: 20px;
@@ -75,7 +75,7 @@ const StyledSection = styled.section`
       }
 
       > .description {
-        color: hsla(0,0%,100%,0.7);
+        color: hsla(0, 0%, 100%, 0.7);
         font-size: 14px;
         margin: 0;
         margin-bottom: 20px;
@@ -91,8 +91,8 @@ const StyledSection = styled.section`
 `
 
 interface SectionProps {
-  title: string;
-  id: string;
+  title: string
+  id: string
 }
 
 const Section: React.FC<SectionProps> = ({ title, id, children }) => (

@@ -35,6 +35,8 @@ const StyledContent = styled.main`
   }
 `
 
-const ContentMain: React.FC = ({ children }) => <StyledContent>{children}</StyledContent>
+const ContentMain: React.FC = ({ children }) => (
+  <StyledContent>{children}</StyledContent>
+)
 
 export default ContentMain
