@@ -1,11 +1,9 @@
 import React, { FC } from 'react'
-import Link from 'gatsby-link'
 import kebabCase from 'lodash/kebabCase'
 import Helmet from 'react-helmet'
 
 import PageProps from '../models/PageProps'
 import Layout from '../components/Layout'
-import Header from '../components/Header'
 import Article from '../components/Article'
 import config from '../../config/SiteConfig'
 
@@ -18,16 +16,12 @@ const TagTemplate: FC<PageProps> = ({ pathContext }) => {
 
   return (
     <Layout>
-      <Helmet title={`${'Tags'} | ${config.siteTitle}`} />
-      <Header>
-        <Link to="/">{config.siteTitle}</Link>
-        <div>Tag &ndash; {tagName}</div>
-        <div>
-          {subline} (See <Link to="/tags">all tags</Link>)
-        </div>
-      </Header>
-      <div>
-        <div>
+      <Helmet title={`${tagName} | ${config.siteTitle}`} />
+      <div className="bg-gray-100 px-8 min-h-screen">
+        <div className="max-w-xl m-auto py-12">
+        <div className="flex justify-between items-center">
+      <div className="text-lg font-semibold mb-4 text-gray-700">{subline}</div>
+    </div>
           {posts
             ? posts.map((post: any, index) => (
                 <Article
@@ -35,7 +29,6 @@ const TagTemplate: FC<PageProps> = ({ pathContext }) => {
                   date={post.frontmatter.date}
                   excerpt={post.excerpt}
                   slug={kebabCase(post.frontmatter.title)}
-                  timeToRead={post.timeToRead}
                   category={post.frontmatter.category}
                   key={index}
                 />

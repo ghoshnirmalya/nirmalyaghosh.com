@@ -6,7 +6,7 @@ export default {
   siteUrl: 'https://www.nirmalyaghosh.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteBanner: '/images/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
-  defaultBg: '/images/bg.png', // default post background header
+  defaultBg: '/images/banners/default.png', // default post background header
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
   siteDescription: 'Personal portfolio of Nirmalya Ghosh', // Your site description
   author: 'Nirmalya Ghosh', // Author for schemaORGJSONLD

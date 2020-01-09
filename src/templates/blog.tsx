@@ -1,11 +1,12 @@
 import React, { FC } from 'react'
 import { Link, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
+import Navbar from '../components/Navbar'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Pagination from '../components/Pagination'
 import Article from '../components/Article'
-import Helmet from 'react-helmet'
 import config from '../../config/SiteConfig'
 import Data from '../models/Data'
 
@@ -24,30 +25,26 @@ const BlogTemplate: FC<Props> = ({ pageContext, data }) => {
   return (
     <Layout>
       <Helmet title={`Blog | ${config.siteTitle}`} />
+      <Navbar />
       <Header>
         <Link to="/">{config.siteTitle}</Link>
         <div>Latest stories ({totalCount})</div>
       </Header>
-      <div>
-        <div>
-          {edges.map(post => (
-            <Article
-              title={post.node.frontmatter.title}
-              date={post.node.frontmatter.date}
-              excerpt={post.node.excerpt}
-              timeToRead={post.node.timeToRead}
-              slug={post.node.fields.slug}
-              category={post.node.frontmatter.category}
-              key={post.node.fields.slug}
-            />
-          ))}
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            url={'blog'}
-          />
-        </div>
-      </div>
+      {edges.map(post => (
+        <Article
+          title={post.node.frontmatter.title}
+          date={post.node.frontmatter.date}
+          excerpt={post.node.excerpt}
+          slug={post.node.fields.slug}
+          category={post.node.frontmatter.category}
+          key={post.node.fields.slug}
+        />
+      ))}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        url={'blog'}
+      />
     </Layout>
   )
 }

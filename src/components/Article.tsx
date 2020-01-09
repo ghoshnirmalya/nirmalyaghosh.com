@@ -7,7 +7,6 @@ interface Props {
   date: string
   excerpt: string
   slug: string
-  timeToRead: number
   category: string
 }
 
@@ -16,15 +15,26 @@ const Article: FC<Props> = ({
   date,
   excerpt,
   slug,
-  timeToRead,
-  category,
+  category
 }) => {
   return (
-    <div>
-      <Link to={`/blog/${slug}`}>{title}</Link>
-      {date} &mdash; {timeToRead} Min Read &mdash; In
-      <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
-      <div>{excerpt}</div>
+<div>
+    <Link className="mb-16 block" to={`/blog/${slug}`}>
+<h4 className="text-2xl font-semibold text-blue-700 hover:text-blue-800 mb-2">
+{title}
+</h4>
+<div className="text-sm mb-2 text-gray-600">
+Posted on {date}
+                {' '} in
+                <Link
+                  to={`/categories/${kebabCase(category)}`}
+                  className="ml-1"
+                >
+                  {category}
+                </Link>
+                </div>
+<p className="text-sm text-gray-700">{excerpt}</p>
+</Link>
     </div>
   )
 }

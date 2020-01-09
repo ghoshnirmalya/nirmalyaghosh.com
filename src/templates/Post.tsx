@@ -8,7 +8,6 @@ import Header from '../components/Header'
 import SEO from '../components/SEO'
 import PrevNext from '../components/PrevNext'
 import config from '../../config/SiteConfig'
-import '../utils/prismjs-theme.css'
 import PathContext from '../models/PathContext'
 import Post from '../models/Post'
 
@@ -28,32 +27,42 @@ const PostTemplate: FC<Props> = ({ pathContext, data }) => {
         <>
           <SEO postPath={post.fields.slug} postNode={post} postSEO />
           <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
-          <Header banner={post.frontmatter.banner}>
-            <Link to="/">{config.siteTitle}</Link>
-            <div>{post.frontmatter.title}</div>
-            <div>
-              {post.frontmatter.date} &mdash; {post.timeToRead} Min Read &mdash;
-              In{' '}
-              <Link to={`/categories/${kebabCase(post.frontmatter.category)}`}>
-                {post.frontmatter.category}
-              </Link>
-            </div>
-          </Header>
-          <div>
-            <div>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              {post.frontmatter.tags ? (
-                <div>
-                  Tags: &#160;
-                  {post.frontmatter.tags.map((tag, i) => (
-                    <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                      <strong>{tag}</strong>{' '}
-                      {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
-                    </Link>
-                  ))}
+          <Header banner={post.frontmatter.banner} />
+          <div className="px-8">
+            <div className="max-w-xl m-auto py-12">
+              <div className="text-sm mb-2 text-gray-600">
+                {post.timeToRead} Min Read
+                <i className='bx bx-wifi-0'/>
+                Posted on {post.frontmatter.date}
+                {' '} in
+                <Link
+                  to={`/categories/${kebabCase(post.frontmatter.category)}`}
+                  className="ml-1"
+                >
+                  {post.frontmatter.category}
+                </Link>
+              </div>
+              <h1 className="text-5xl font-semibold mb-4">
+                {post.frontmatter.title}
+              </h1>
+              <div className="text-xs mb-12">
+                {post.frontmatter.tags ? (
+                    <div>
+                      {post.frontmatter.tags.map((tag, i) => (
+                        <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                          <span className="bg-blue-700 text-white py-1 px-2 mr-2 rounded"># {tag}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+              </div>
+              <div
+                className="text-base leading-relaxed text-gray-900"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+                <div className="mt-12">
+                  <PrevNext prev={prev} next={next} />
                 </div>
-              ) : null}
-              <PrevNext prev={prev} next={next} />
             </div>
           </div>
         </>
