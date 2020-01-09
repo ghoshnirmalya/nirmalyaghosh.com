@@ -1,90 +1,81 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import { Disqus } from 'gatsby-plugin-disqus'
+import React, { FC } from 'react'
+import { Link, graphql } from 'gatsby'
+
+import Layout from '../components/Layout'
+import Header from '../components/Header'
+import Pagination from '../components/Pagination'
+import Article from '../components/Article'
 import Helmet from 'react-helmet'
+import config from '../../config/SiteConfig'
+import Data from '../models/Data'
 
-import Navbar from "../components/navbar"
-
-interface BlogTemplateProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-        author: {
-          name: string
-          url: string
-        }
-      }
-    }
-    markdownRemark: {
-      html: string
-      excerpt: string
-      id: number
-      frontmatter: {
-        title: string
-      }
-    }
+interface Props {
+  data: Data
+  pageContext: {
+    currentPage: number
+    totalPages: number
   }
 }
 
-const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => {
-  const disqusConfig = {
-    identifier: data.markdownRemark.id,
-    title: data.markdownRemark.frontmatter.title,
-  }
+const BlogTemplate: FC<Props> = ({ pageContext, data }) => {
+  const { currentPage, totalPages } = pageContext
+  const { edges, totalCount } = data.allMarkdownRemark
 
   return (
-    <>
-      <Helmet
-        title={`${data.markdownRemark.frontmatter.title} | ${data.site.siteMetadata.title}`}
-        meta={[
-          { name: 'description', content: data.markdownRemark.frontmatter.title }
-        ]}
-
-      >
-        <html lang="en" />
-      </Helmet>
-      <Navbar />
-      <div className="bg-gray-100 px-8">
-        <div className="max-w-xl m-auto py-12">
-          <h1 className="text-3xl font-semibold mb-12">
-            {data.markdownRemark.frontmatter.title}
-          </h1>
-          <div
-            className="text-base leading-relaxed text-gray-900"
-            dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+    <Layout>
+      <Helmet title={`Blog | ${config.siteTitle}`} />
+      <Header>
+        <Link to="/">{config.siteTitle}</Link>
+        <div>Latest stories ({totalCount})</div>
+      </Header>
+      <div>
+        <div>
+          {edges.map(post => (
+            <Article
+              title={post.node.frontmatter.title}
+              date={post.node.frontmatter.date}
+              excerpt={post.node.excerpt}
+              timeToRead={post.node.timeToRead}
+              slug={post.node.fields.slug}
+              category={post.node.frontmatter.category}
+              key={post.node.fields.slug}
+            />
+          ))}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            url={'blog'}
           />
-          <div className="mt-8">
-            <Disqus config={disqusConfig} />
-          </div>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 
-export default BlogTemplate
-
-export const query = graphql`
-  query BlogTemplateQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-        author {
-          name
-          url
+export const BlogQuery = graphql`
+  query($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "DD.MM.YYYY")
+            category
+          }
+          excerpt(pruneLength: 200)
+          timeToRead
         }
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt
-      id
-      frontmatter {
-        title
       }
     }
   }
 `
+
+export default BlogTemplate

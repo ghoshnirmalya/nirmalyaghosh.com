@@ -1,85 +1,162 @@
-'use strict'
+const path = require('path');
+const _ = require('lodash');
+const config = require('./config/SiteConfig').default;
 
-const path = require('path')
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  // Sometimes, optional fields tend to get not picked up by the GraphQL
-  // interpreter if not a single content uses it. Therefore, we're putting them
-  // through `createNodeField` so that the fields still exist and GraphQL won't
-  // trip up. An empty string is still required in replacement to `null`.
-
-  switch (node.internal.type) {
-    case 'MarkdownRemark': {
-      const { permalink, layout } = node.frontmatter
-      const { relativePath } = getNode(node.parent)
-
-      let slug = permalink
-
-      if (!slug) {
-        slug = `/blogs/${relativePath.replace('.md', '')}/`
-      }
-
-      // Used to generate URL to view this content.
-      createNodeField({
-        node,
-        name: 'slug',
-        value: slug || '',
-      })
-
-      // Used to determine a page layout.
-      createNodeField({
-        node,
-        name: 'layout',
-        value: layout || '',
-      })
-    }
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === 'MarkdownRemark' && _.has(node, 'frontmatter') && _.has(node.frontmatter, 'title')) {
+    const slug = `${_.kebabCase(node.frontmatter.title)}`;
+    createNodeField({ node, name: 'slug', value: slug });
   }
-}
+};
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const allMarkdown = await graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            fields {
-              layout
-              slug
-            }
+const getPostsByType = (posts, classificationType) => {
+  const postsByType = {};
+  posts.forEach(({ node }) => {
+    const nodeClassificationType = node.frontmatter[classificationType];
+    if (nodeClassificationType) {
+      if (_.isArray(nodeClassificationType)) {
+        nodeClassificationType.forEach(name => {
+          if (!_.has(postsByType, name)) {
+            postsByType[name] = [];
           }
+          postsByType[name].push(node);
+        });
+      }
+      else {
+        const name = nodeClassificationType;
+        if (!postsByType[name]) {
+          postsByType[name] = [];
+        }
+        postsByType[name].push(node);
+      }
+    }
+  });
+  return postsByType;
+};
+
+const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }) => {
+  const classifications = [
+    {
+      singularName: 'category',
+      pluralName: 'categories',
+      template: {
+        part: path.resolve(`src/templates/Category.tsx`),
+        all: path.resolve(`src/templates/AllCategory.tsx`),
+      },
+      postsByClassificationNames: getPostsByType(posts, 'category'),
+    },
+    {
+      singularName: 'tag',
+      pluralName: 'tags',
+      template: {
+        part: path.resolve(`src/templates/Tag.tsx`),
+        all: path.resolve(`src/templates/AllTag.tsx`),
+      },
+      postsByClassificationNames: getPostsByType(posts, 'tags'),
+    },
+  ];
+
+  classifications.forEach(classification => {
+    const names = Object.keys(classification.postsByClassificationNames);
+
+    createPage({
+                 path: _.kebabCase(`/${classification.pluralName}`),
+                 component: classification.template.all,
+                 context: {
+                   [`${classification.pluralName}`]: names.sort(),
+                 },
+               });
+
+    names.forEach(name => {
+      const postsByName = classification.postsByClassificationNames[name];
+      createPage({
+                   path: `/${classification.pluralName}/${_.kebabCase(name)}`,
+                   component: classification.template.part,
+                   context: {
+                     posts: postsByName,
+                     [`${classification.singularName}Name`]: name,
+                   },
+                 });
+    });
+  });
+};
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+                             resolve: {
+                               modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+                             },
+                           });
+};
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+
+  const postTemplate = path.resolve(`src/templates/Post.tsx`);
+
+  return graphql(`{
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 10000
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          html
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            date
+            title
+            category
+            tags
+            banner
+          }
+          timeToRead
         }
       }
     }
-  `)
+  }`)
+  .then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+    const posts = result.data.allMarkdownRemark.edges;
+    const postsPerPage = config.POST_PER_PAGE;
+    const numPages = Math.ceil(posts.length / postsPerPage);
 
-  if (allMarkdown.errors) {
-    console.error(allMarkdown.errors)
-    throw new Error(allMarkdown.errors)
-  }
+    Array.from({ length: numPages })
+         .forEach((_, i) => {
+           createPage({
+                        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+                        component: path.resolve('./src/templates/Blog.tsx'),
+                        context: {
+                          limit: postsPerPage,
+                          skip: i * postsPerPage,
+                          totalPages: numPages,
+                          currentPage: i + 1
+                        },
+                      });
+         });
 
-  allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, layout } = node.fields
+    createClassificationPages({ createPage, posts, postsPerPage, numPages });
 
-    createPage({
-      path: slug,
-      // This will automatically resolve the template to a corresponding
-      // `layout` frontmatter in the Markdown.
-      //
-      // Feel free to set any `layout` as you'd like in the frontmatter, as
-      // long as the corresponding template file exists in src/templates.
-      // If no template is set, it will fall back to the default `page`
-      // template.
-      //
-      // Note that the template has to exist first, or else the build will fail.
-      component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
-      context: {
-        // Data passed to context is available in page queries as GraphQL variables.
-        slug,
-      },
-    })
-  })
-}
+    posts.forEach(({ node }, index) => {
+      const next = index === 0 ? null : posts[index - 1].node;
+      const prev = index === posts.length - 1 ? null : posts[index + 1].node;
+
+      createPage({
+                   path: `/blog/${_.kebabCase(node.frontmatter.title)}`,
+                   component: postTemplate,
+                   context: {
+                     slug: _.kebabCase(node.frontmatter.title),
+                     prev,
+                     next,
+                   },
+                 });
+    });
+  });
+};

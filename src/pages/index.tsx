@@ -1,68 +1,75 @@
-import * as React from 'react'
+import React, { FC } from 'react'
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
-import Hero from '../components/sections/hero'
-import SocialProfiles from '../components/sections/social-profiles'
-import Projects from '../components/sections/projects'
-import Blogs from '../components/sections/blogs'
+import Layout from '../components/Layout'
+import Article from '../components/Article'
+import Hero from '../components/sections/Hero'
+import Projects from '../components/sections/Projects'
+import Blogs from '../components/sections/Blogs'
 
-import favicon from '../static/images/favicon.png'
-import '../static/styles/tailwind.css'
-import 'boxicons/css/boxicons.min.css'
+import PageProps from '../models/PageProps'
+import config from '../../config/SiteConfig'
 
-interface StaticQueryProps {
-  site: {
-    siteMetadata: {
-      title: string
-      description: string
-      keywords: string
-    }
-  }
+const IndexPage: FC<PageProps> = ({ data }) => {
+  const { edges, totalCount } = data.allMarkdownRemark
+
+  return (
+    <Layout>
+      <Helmet title={`Homepage | ${config.siteTitle}`} />
+      <div className="shadow border-b border-gray-100 relative px-8">
+        <div className="max-w-xl m-auto pt-6">
+          <Hero />
+        </div>
+      </div>
+      <div className="bg-gray-100 px-8">
+        <div className="max-w-xl m-auto py-12">
+          <Projects />
+          <Blogs />
+        </div>
+      </div>
+      <img src={config.siteLogo} />
+
+      {edges.map(post => (
+        <Article
+          title={post.node.frontmatter.title}
+          date={post.node.frontmatter.date}
+          excerpt={post.node.excerpt}
+          timeToRead={post.node.timeToRead}
+          slug={post.node.fields.slug}
+          category={post.node.frontmatter.category}
+          key={post.node.fields.slug}
+        />
+      ))}
+      <p className={'textRight'}>
+        <Link to={'/blog'}>All articles ({totalCount})</Link>
+      </p>
+    </Layout>
+  )
 }
 
-const IndexPage: React.FC = () => (
-  <StaticQuery
-    query={graphql`
-      query IndexPageQuery {
-        site {
-          siteMetadata {
-            title
-            description
+export const IndexQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1
+    ) {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
           }
+          frontmatter {
+            title
+            date(formatString: "DD.MM.YYYY")
+            category
+          }
+          timeToRead
         }
       }
-    `}
-
-    render={(data: StaticQueryProps) => (
-      <React.Fragment>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: data.site.siteMetadata.keywords },
-          ]}
-          link={[
-            { rel: "icon", type: "image/png", sizes: "16x16", href: `${favicon}` },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <div className="shadow border-b border-gray-100 relative px-8">
-          <div className="max-w-xl m-auto pt-6">
-            <Hero />
-            <SocialProfiles />
-          </div>
-        </div>
-        <div className="bg-gray-100 px-8">
-          <div className="max-w-xl m-auto py-12">
-            <Projects />
-            <Blogs />
-          </div>
-        </div>
-      </React.Fragment>
-    )}
-  />
-)
+    }
+  }
+`
 
 export default IndexPage

@@ -1,39 +1,42 @@
+require('source-map-support').install();
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'es2017',
+  },
+});
+
+const config = require('./config/SiteConfig').default;
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
 module.exports = {
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    title: 'Nirmalya Ghosh - Frontend Developer and Designer',
-    description: 'Personal portfolio of Nirmalya Ghosh',
-    keywords: 'gatsby, portfolio, developer, react, javascript',
-    siteUrl: 'https://www.nirmalyaghosh.com',
-    author: {
-      name: 'Nirmalya Ghosh',
-      url: 'https://www.nirmalyaghosh.com',
-      email: 'nirmalya.email@gmail.com',
-    },
+    siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-manifest',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-lodash',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        fonts: [
-          {
-            family: `Noto Serif`,
-            variants: [`400`, `700`],
-          },
-        ],
+        name: 'post',
+        path: `${__dirname}/blog`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/static/images`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'content',
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -41,70 +44,35 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-responsive-iframe',
+            resolve: 'gatsby-remark-external-links',
             options: {
-              wrapperStyle: 'margin-bottom: 1rem',
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
             },
           },
           'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 700,
-              quality: 70,
-              backgroundColor: '#07162b',
-              linkImagesToOriginal: false,
-              withWebp: true,
-              tracedSVG: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              showLineNumbers: true,
-            },
-          },
+          'gatsby-remark-autolink-headers',
         ],
       },
     },
-    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-plugin-canonical-urls',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        siteUrl: 'https://www.nirmalyaghosh.com',
+        name: config.siteTitle,
+        short_name: config.siteTitleAlt,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: config.favicon,
       },
     },
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet',
-    `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GA_TRACKING_CODE,
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Portfolio of Nirmalya Ghosh',
-        short_name: 'Nirmalya Ghosh',
-        start_url: '/',
-        background_color: '#07162b',
-        theme_color: '#03a9f4',
-        display: 'standalone',
-        icon: 'src/static/images/favicon.png',
-      },
-    },
-    'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: 'nirmalya-ghosh',
-      },
-    },
-  ],
-}
+  ]
+};

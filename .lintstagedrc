@@ -1,0 +1,3 @@
+{
+  "{*.{ts,tsx,css,json,md}}": ["npm run fix", "git add"]
+}

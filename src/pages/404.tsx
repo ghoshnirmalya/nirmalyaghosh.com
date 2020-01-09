@@ -1,31 +1,25 @@
-import * as React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React, { FC } from 'react'
+import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
 
-const NotFoundPage = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        avatar: file(relativePath: { eq: "404.png" }) {
-          childImageSharp {
-            # Specify the image processing specifications right in the query.
-            # Makes it trivial to update as your page's design changes.
-            fixed(width: 315, height: 315) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
+import Layout from '../components/Layout'
+import config from '../../config/SiteConfig'
+
+const NotFoundPage: FC<any> = () => {
+  return (
+    <Layout>
+      <Helmet title={`404 not found | ${config.siteTitle}`} />
       <div>
-        <Img fixed={data.avatar.childImageSharp.fixed} />
-        <Link to="/">
-          Click here to go back to the home page
-          </Link>
+        <Link to="/">{config.siteTitle}</Link>
+        <div>NOT FOUND</div>
       </div>
-    )}
-  />
-)
+      <div>
+        <div>
+          <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        </div>
+      </div>
+    </Layout>
+  )
+}
 
 export default NotFoundPage

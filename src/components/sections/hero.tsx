@@ -20,14 +20,22 @@ const HeroSection: React.FC = () => {
       `}
       render={data => (
         <div className="flex flex-col items-center text-center mb-8">
-          <Img
+          
+          <Img
             fixed={data.avatar.childImageSharp.fixed}
             className="w-10 h-10 rounded-full mb-4 border-2 border-white shadow"
           />
           <div className="text-base">
-            <p className="text-gray-900 leading-none text-2xl font-bold mb-2">Nirmalya Ghosh</p>
+            <p className="text-gray-900 leading-none text-2xl font-bold mb-2">
+              Nirmalya Ghosh
+            </p>
             <p className="text-gray-600">
-              <span className="text-gray-700 font-semibold">Frontend Developer</span> and <span className="text-gray-700 font-semibold">Designer</span> from Bangalore, India</p>
+              <span className="text-gray-700 font-semibold">
+                Frontend Developer
+              </span>{' '}
+              and <span className="text-gray-700 font-semibold">Designer</span>{' '}
+              from Bangalore, India
+            </p>
           </div>
         </div>
       )}

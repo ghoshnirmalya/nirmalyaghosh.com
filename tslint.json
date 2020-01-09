@@ -1,0 +1,12 @@
+{
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "extends": [
+    "tslint-config-blvd/react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "prettier": true
+  }
+}
