@@ -76,7 +76,6 @@ export const BlogsQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1
     ) {
       totalCount
       edges {
