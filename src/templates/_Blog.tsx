@@ -24,7 +24,7 @@ const BlogTemplate: FC<Props> = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <Helmet title={`Blog | ${config.siteTitle}`} />
+      <Helmet title={`Blogs | ${config.siteTitle}`} />
       <Navbar />
       <Header>
         <Link to="/">{config.siteTitle}</Link>
