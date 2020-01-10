@@ -1,3 +1,0 @@
-{
-  "{*.{ts,tsx,js,css,json,md}}": ["npm run fix", "git add"]
-}
