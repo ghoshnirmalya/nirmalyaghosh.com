@@ -17,7 +17,7 @@ const ProjectsPage: FC = () => {
             {projects.map((project, index) => {
               return (
                 <div key={index} className="mb-8 w-full sm:w-1/2 px-4">
-                  <div className="bg-white shadow rounded p-4 h-48 flex flex-col justify-between">
+                  <div className="bg-white shadow-lg rounded p-4 h-48 flex flex-col justify-between">
                     <div className="mb-2">
                       <OutboundLink
                         href={project.projectUrl}

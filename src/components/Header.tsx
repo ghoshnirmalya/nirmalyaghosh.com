@@ -1,18 +1,15 @@
 import React, { FC } from 'react'
 
-import config from '../../config/SiteConfig'
-
 interface Props {
   banner?: string
 }
 
 const Header: FC<Props> = ({ banner }) => {
-  return (
-    <img 
-      src={banner || config.defaultBg} 
-      className="opacity-75"
-    />
-  )
+  if (!banner) {
+    return <div className="h-64 bg-gray-300" />
+  }
+
+  return <img src={banner} className="opacity-75" />
 }
 
 export default Header

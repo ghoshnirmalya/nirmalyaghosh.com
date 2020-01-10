@@ -3,7 +3,6 @@ date: '2020-01-08'
 title: 'What is TailwindCSS and what problems does this new CSS framework solve for us'
 category: 'CSS'
 tags: ['tailwind', 'css']
-banner: '/images/banners/1.jpg'
 ---
 
 > In this tutorial, we'll learn what is the problem with component-based styling and why we need utility-based styles. Also, we'll explore [TailwindCSS](https://tailwindcss.com/) which is a utility-first CSS framework. We'll also learn about how to install, configure and learn TailwindCSS with a [React](https://reactjs.org/) app.

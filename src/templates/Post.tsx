@@ -81,7 +81,7 @@ export const postQuery = graphql`
       }
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
+        date(formatString: "MMMM D, YYYY")
         category
         tags
         banner

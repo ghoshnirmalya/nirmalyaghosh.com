@@ -33,10 +33,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
 
 export const IndexBlogsQuery = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
