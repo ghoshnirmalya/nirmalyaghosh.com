@@ -7,9 +7,7 @@ interface Props {
 }
 
 const Header: FC<Props> = ({ banner }) => {
-  return (
-    <img src={banner || config.defaultBg}/>
-  )
+  return <img src={banner || config.defaultBg} />
 }
 
 export default Header

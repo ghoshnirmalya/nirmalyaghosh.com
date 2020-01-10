@@ -16,7 +16,7 @@
     "build": "gatsby build",
     "clean": "rimraf public",
     "dev": "gatsby develop",
-    "fix": "prettier --write 'src/**/*.{ts,tsx,scss,md}'",
+    "fix": "prettier --write 'src/**/*.{ts,tsx,js,scss,md}'",
     "type-check": "tsc"
   },
   "devDependencies": {

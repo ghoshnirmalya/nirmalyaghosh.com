@@ -1,13 +1,13 @@
-require('source-map-support').install();
+require('source-map-support').install()
 require('ts-node').register({
   compilerOptions: {
     module: 'commonjs',
     target: 'es2017',
   },
-});
+})
 
-const config = require('./config/SiteConfig').default;
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+const config = require('./config/SiteConfig').default
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -74,5 +74,5 @@ module.exports = {
         trackingId: process.env.GA_TRACKING_CODE,
       },
     },
-  ]
-};
+  ],
+}

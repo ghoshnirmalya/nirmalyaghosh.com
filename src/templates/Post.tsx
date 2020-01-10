@@ -32,9 +32,8 @@ const PostTemplate: FC<Props> = ({ pathContext, data }) => {
             <div className="max-w-xl m-auto py-12">
               <div className="text-sm mb-2 text-gray-600">
                 {post.timeToRead} Min Read
-                <i className='bx bx-wifi-0'/>
-                Posted on {post.frontmatter.date}
-                {' '} in
+                <i className="bx bx-wifi-0" />
+                Posted on {post.frontmatter.date} in
                 <Link
                   to={`/categories/${kebabCase(post.frontmatter.category)}`}
                   className="ml-1"
@@ -47,22 +46,24 @@ const PostTemplate: FC<Props> = ({ pathContext, data }) => {
               </h1>
               <div className="text-xs mb-12">
                 {post.frontmatter.tags ? (
-                    <div>
-                      {post.frontmatter.tags.map((tag, i) => (
-                        <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                          <span className="bg-blue-700 text-white py-1 px-2 mr-2 rounded"># {tag}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  ) : null}
+                  <div>
+                    {post.frontmatter.tags.map((tag, i) => (
+                      <Link key={i} to={`/tags/${kebabCase(tag)}`}>
+                        <span className="bg-blue-700 text-white py-1 px-2 mr-2 rounded">
+                          # {tag}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
               </div>
               <div
                 className="text-base leading-relaxed text-gray-900"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
-                <div className="mt-12">
-                  <PrevNext prev={prev} next={next} />
-                </div>
+              <div className="mt-12">
+                <PrevNext prev={prev} next={next} />
+              </div>
             </div>
           </div>
         </>

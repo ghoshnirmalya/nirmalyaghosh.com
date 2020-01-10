@@ -8,10 +8,10 @@ import '../../static/styles/tailwind.css'
 
 const Layout: FC<{}> = ({ children }) => {
   return (
-        <React.Fragment>
-          <Navbar />
-          {children}
-        </React.Fragment>
+    <React.Fragment>
+      <Navbar />
+      {children}
+    </React.Fragment>
   )
 }
 
