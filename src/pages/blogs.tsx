@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import Helmet from 'react-helmet'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Navbar from '../components/Navbar'
 import config from '../../config/SiteConfig'

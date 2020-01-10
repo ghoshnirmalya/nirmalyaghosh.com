@@ -11,6 +11,7 @@ export default {
   siteDescription: 'Personal portfolio of Nirmalya Ghosh', // Your site description
   author: 'Nirmalya Ghosh', // Author for schemaORGJSONLD
   siteLogo: '/images/logo.png', // Image for schemaORGJSONLD
+  NotFoundPageBg: '/images/backgrounds/404.png', // Image for 404 page
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@mhadaily', // Twitter Username - Optional
