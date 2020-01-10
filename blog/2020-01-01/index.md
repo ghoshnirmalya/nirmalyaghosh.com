@@ -124,4 +124,4 @@ We would get the following response once the entry is created:
 
 We've leveraged Strapi, a Headless CMS to design the APIs for our back-end application. In the subsequest tutorials, we'd utlize these APIs to build front-end applications.
 
-I hope this tutorial helps you in your future projects. Please feel free to share your feedback in the comments section below.
+I hope that this tutorial helps you in your future projects.

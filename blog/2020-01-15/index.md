@@ -136,4 +136,4 @@ If you want to know more about configuring Tailwind, you can read it [here](http
 
 In this tutorial, we've learnt how to use TailwindCSS with a Next.js application. In the future, we'll build a [ProductHunt](https://www.producthunt.com/) clone using [React](https://reactjs.org/) and [GraphQL](https://graphql.org/).
 
-I hope this tutorial helps you in your future projects. Please feel free to share your feedback in the comments section below.
+I hope that this tutorial helps you in your future projects.
