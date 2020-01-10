@@ -1,6 +1,4 @@
 import React, { FC } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import split from 'lodash/split'
 
 import Navbar from './Navbar'
 import 'boxicons/css/boxicons.min.css'

@@ -29,7 +29,7 @@ const PostTemplate: FC<Props> = ({ pathContext, data }) => {
           <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
           <Header banner={post.frontmatter.banner} />
           <div className="px-8">
-            <div className="max-w-xl m-auto py-12">
+            <div className="max-w-2xl m-auto py-12 -mt-48 bg-white relative p-12 rounded-t">
               <div className="text-sm mb-2 text-gray-600">
                 {post.timeToRead} Min Read
                 <i className="bx bx-wifi-0" />
@@ -41,7 +41,7 @@ const PostTemplate: FC<Props> = ({ pathContext, data }) => {
                   {post.frontmatter.category}
                 </Link>
               </div>
-              <h1 className="text-5xl font-semibold mb-4">
+              <h1 className="text-4xl font-semibold mb-4">
                 {post.frontmatter.title}
               </h1>
               <div className="text-xs mb-12">

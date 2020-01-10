@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import Helmet from 'react-helmet'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { Link } from 'gatsby'
 
 import Navbar from '../components/Navbar'
 import config from '../../config/SiteConfig'
@@ -13,7 +12,7 @@ const ProjectsPage: FC = () => {
       <Helmet title={`Homepage | ${config.siteTitle}`} />
       <Navbar />
       <div className="bg-gray-100 px-8">
-        <div className="max-w-xl m-auto py-12">
+        <div className="max-w-2xl m-auto py-12">
           <div className="flex flex-wrap -mx-8">
             {projects.map((project, index) => {
               return (

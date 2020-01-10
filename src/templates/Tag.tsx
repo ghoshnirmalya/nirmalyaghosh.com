@@ -18,7 +18,7 @@ const TagTemplate: FC<PageProps> = ({ pathContext }) => {
     <Layout>
       <Helmet title={`${tagName} | ${config.siteTitle}`} />
       <div className="bg-gray-100 px-8 min-h-screen">
-        <div className="max-w-xl m-auto py-12">
+        <div className="max-w-2xl m-auto py-12">
           <div className="flex justify-between items-center">
             <div className="text-lg font-semibold mb-4 text-gray-700">
               {subline}

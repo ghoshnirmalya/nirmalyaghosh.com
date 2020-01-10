@@ -10,7 +10,7 @@ const NotFoundPage: FC<any> = () => {
     <Layout>
       <Helmet title={`404 not found | ${config.siteTitle}`} />
       <div className="bg-gray-100 px-8 min-h-screen">
-        <div className="max-w-xl m-auto py-12">
+        <div className="max-w-2xl m-auto py-12">
           <div className="flex items-center justify-center flex-col">
           <img 
           src={config.NotFoundPageBg} 

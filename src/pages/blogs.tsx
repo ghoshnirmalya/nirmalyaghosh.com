@@ -16,7 +16,7 @@ const BlogsPage: FC<PageProps> = ({ data }) => {
       <Helmet title={`Homepage | ${config.siteTitle}`} />
       <Navbar />
       <div className="bg-gray-100 px-8">
-        <div className="max-w-xl m-auto py-12">
+        <div className="max-w-2xl m-auto py-12">
           {edges.map((post: any) => (
             <Link
               className="mb-16 block"
@@ -86,10 +86,11 @@ export const BlogsQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "MMMM D, YYYY")
             category
           }
           timeToRead
+          excerpt
         }
       }
     }

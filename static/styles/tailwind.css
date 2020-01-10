@@ -154,3 +154,7 @@ pre[class*='language-'] {
 .token.italic {
   @apply italic;
 }
+
+img {
+  @apply rounded;
+}

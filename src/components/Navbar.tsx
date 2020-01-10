@@ -6,7 +6,7 @@ import SocialProfiles from './SocialProfiles'
 const ContentMain: FC = () => {
   return (
     <div className="shadow border-b border-gray-100 relative p-4">
-      <div className="max-w-xl m-auto flex justify-between items-center flex-col sm:flex-row">
+      <div className="max-w-2xl m-auto flex justify-between items-center flex-col sm:flex-row">
         <div>
           <Link
             to="/"

@@ -17,12 +17,12 @@ const IndexPage: FC<PageProps> = ({ data }) => {
     <Layout>
       <Helmet title={`Homepage | ${config.siteTitle}`} />
       <div className="shadow border-b border-gray-100 relative px-8">
-        <div className="max-w-xl m-auto pt-6">
+        <div className="max-w-2xl m-auto pt-6">
           <Hero />
         </div>
       </div>
       <div className="bg-gray-100 px-8">
-        <div className="max-w-xl m-auto py-12">
+        <div className="max-w-2xl m-auto py-12">
           <Projects />
           <Blogs edges={edges} />
         </div>
@@ -45,10 +45,11 @@ export const IndexBlogsQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "MMMM D, YYYY")
             category
           }
           timeToRead
+          excerpt
         }
       }
     }
