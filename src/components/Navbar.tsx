@@ -16,18 +16,18 @@ const ContentMain: FC = () => {
             Home
           </Link>
           <Link
-            to="/blogs"
+            to="/projects"
             className="text-base text-blue-700 hover:text-blue-800 mr-4"
             activeClassName="text-blue-800"
           >
-            Blogs
+            Projects
           </Link>
           <Link
-            to="/projects"
+            to="/blogs"
             className="text-base text-blue-700 hover:text-blue-800"
             activeClassName="text-blue-800"
           >
-            Projects
+            Blog
           </Link>
         </div>
         <div className="mt-4 sm:mt-0">
