@@ -3,9 +3,9 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Hero from '../components/sections/Hero'
-import Projects from '../components/sections/Projects'
-import Blogs from '../components/sections/Blogs'
+import Hero from '../components/Sections/Hero'
+import Projects from '../components/Sections/Projects'
+import Blogs from '../components/Sections/Blogs'
 
 import PageProps from '../models/PageProps'
 import config from '../../config/SiteConfig'
