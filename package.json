@@ -52,7 +52,7 @@
     "react-helmet": "^5.2.1",
     "source-map-support": "latest",
     "tailwindcss": "^1.1.4",
-    "ts-node": "^8.6.0",
+    "ts-node": "^8.6.1",
     "tslint": "^5.20.1",
     "tslint-config-blvd": "^1.2.1",
     "tslint-config-prettier": "^1.18.0",
