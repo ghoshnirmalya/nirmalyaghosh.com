@@ -46,7 +46,7 @@
     "lint-staged": "^9.5.0",
     "lodash": "^4.17.15",
     "prettier": "^1.19.1",
-    "prismjs": "^1.18.0",
+    "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
