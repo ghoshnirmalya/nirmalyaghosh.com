@@ -118,9 +118,7 @@ const Home = () => (
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
     <Nav />
-
     <div className="hero bg-blue-100 py-8"> // highlight-line
       <h1 className="title">Welcome to Next.js!</h1>
       <p className="description">
