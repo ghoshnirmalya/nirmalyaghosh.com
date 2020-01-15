@@ -158,3 +158,7 @@ pre[class*='language-'] {
 img {
   @apply rounded;
 }
+
+.gatsby-highlight-code-line {
+  @apply -mx-6 px-6 bg-gray-900 border-l-4 border-solid border-blue-300 block;
+}
