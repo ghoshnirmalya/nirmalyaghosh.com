@@ -57,7 +57,7 @@
     "tslint-config-blvd": "^1.2.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.1.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.5"
   },
   "dependencies": {
     "gatsby-plugin-google-analytics": "^2.1.33"
