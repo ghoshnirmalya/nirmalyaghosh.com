@@ -31,7 +31,7 @@ a:hover {
 }
 
 code {
-  @apply font-mono text-sm !important;
+  @apply text-sm !important;
 }
 
 /**
@@ -42,7 +42,7 @@ code {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-white font-mono text-sm;
+  @apply text-white text-sm;
 }
 
 /* Code blocks */
@@ -160,5 +160,8 @@ img {
 }
 
 .gatsby-highlight-code-line {
-  @apply -mx-6 px-6 bg-gray-900 border-l-4 border-solid border-blue-300 block;
+  @apply -mx-6 bg-gray-900 border-l-4 border-solid border-blue-300 block;
+
+  /* Fix for code highlight */
+  padding-left: 1.2rem;
 }
