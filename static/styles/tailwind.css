@@ -31,7 +31,7 @@ a:hover {
 }
 
 code {
-  @apply font-mono text-sm !important;
+  @apply text-sm !important;
 }
 
 /**
@@ -42,7 +42,7 @@ code {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-white font-mono text-sm;
+  @apply text-white text-sm;
 }
 
 /* Code blocks */
