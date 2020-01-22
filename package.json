@@ -42,7 +42,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.13",
-    "husky": "^4.0.10",
+    "husky": "^4.2.0",
     "lint-staged": "^10.0.1",
     "lodash": "^4.17.15",
     "prettier": "^1.19.1",
