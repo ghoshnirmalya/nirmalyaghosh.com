@@ -60,7 +60,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "gatsby-plugin-google-analytics": "^2.1.33"
+    "gatsby-plugin-google-analytics": "^2.1.34"
   },
   "husky": {
     "hooks": {
