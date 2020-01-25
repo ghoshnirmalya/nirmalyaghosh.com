@@ -506,4 +506,4 @@ In this tutorial, we've learnt how to use TailwindCSS to build scalable front-en
 
 Tailwind [supports](https://tailwindcss.com/docs/browser-support) IE11 and all the latest versions of Chrome, Firefox, Safari, and Edge.
 
-I hope this tutorial helps you in your future projects. Please feel free to share your feedback in the comments section below.
+I hope that this tutorial helps you in your future projects.

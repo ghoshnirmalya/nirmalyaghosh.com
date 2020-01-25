@@ -19,7 +19,7 @@ h4 {
 }
 
 p {
-  @apply mb-6;
+  @apply my-4;
 }
 
 a {
@@ -34,6 +34,9 @@ code {
   @apply text-sm !important;
 }
 
+ol {
+  @apply list-decimal ml-4;
+}
 /**
  * atom-dark theme for `prism.js`
  * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
@@ -67,22 +70,22 @@ pre[class*='language-'] {
   @apply text-gray-500;
 }
 
-.token.punctuation {
-  @apply text-white;
-}
-
 .namespace {
   @apply opacity-75;
 }
 
-.token.property,
+.token.property {
+  @apply text-blue-300;
+}
+
 .token.keyword,
-.token.tag {
-  @apply text-white;
+.token.tag,
+.token.punctuation {
+  @apply text-blue-400;
 }
 
 .token.class-name {
-  @apply text-yellow-500;
+  @apply text-yellow-300;
 }
 
 .token.boolean,
@@ -105,7 +108,7 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-blue-300;
+  @apply text-blue-200;
 }
 
 .token.variable {
@@ -156,7 +159,7 @@ pre[class*='language-'] {
 }
 
 img {
-  @apply rounded;
+  @apply rounded block mx-auto;
 }
 
 .gatsby-highlight-code-line {
