@@ -39,7 +39,7 @@
     "gatsby-remark-autolink-headers": "^2.1.23",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.3.30",
-    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-filesystem": "^2.1.47",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.13",
     "husky": "^4.2.1",
