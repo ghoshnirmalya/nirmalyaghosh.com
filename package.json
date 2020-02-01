@@ -32,6 +32,7 @@
     "gatsby-plugin-manifest": "^2.2.38",
     "gatsby-plugin-offline": "^3.0.33",
     "gatsby-plugin-postcss": "^2.1.19",
+    "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.4",
     "gatsby-plugin-sitemap": "^2.2.26",
