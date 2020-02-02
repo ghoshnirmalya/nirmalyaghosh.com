@@ -74,9 +74,7 @@ const BlogsPage: FC<PageProps> = ({ data }) => {
 
 export const BlogsQuery = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
