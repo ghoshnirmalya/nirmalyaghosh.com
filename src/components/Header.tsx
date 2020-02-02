@@ -9,7 +9,14 @@ const Header: FC<Props> = ({ banner }) => {
     return <div className="h-64 bg-gray-300" />
   }
 
-  return <img src={banner} className="opacity-75" />
+  return (
+    <div
+      style={{
+        backgroundImage: `url(${banner})`,
+      }}
+      className="h-64 opacity-75 bg-center bg-cover"
+    />
+  )
 }
 
 export default Header
