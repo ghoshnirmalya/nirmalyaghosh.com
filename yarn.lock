@@ -2448,10 +2448,10 @@ boxen@^4.2.0:
     type-fest "^0.8.1"
     widest-line "^3.1.0"
 
-boxicons@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/boxicons/-/boxicons-2.0.4.tgz#66c4a271b8171195fc1e69fc293baa26c9e87184"
-  integrity sha512-LQ0iV4DsqQnu7Y7PzOl6IrLn5gtnSdrq8N9y7eqogisLUaXt2j6G2NltWslp0f8I5T7OAt8yfR0Jdldgq43h/Q==
+boxicons@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/boxicons/-/boxicons-2.0.5.tgz#c967dd5fd82276a3463929286be2e830394eaf56"
+  integrity sha512-qMRNvjaxjR1aQWssbwjWqV2cBKmqq4slWIeo1ovXPsuksQrGb7CWVi9PeC7tngUjnrQE4Vk79DE4+W702vdKWg==
   dependencies:
     "@webcomponents/webcomponentsjs" "^2.0.2"
     prop-types "^15.6.0"
