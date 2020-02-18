@@ -24,7 +24,7 @@
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
-    "boxicons": "^2.0.4",
+    "boxicons": "^2.0.5",
     "gatsby": "^2.19.18",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-catch-links": "^2.1.25",
