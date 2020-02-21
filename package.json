@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
-    "@types/react": "^16.9.20",
+    "@types/react": "^16.9.21",
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
     "boxicons": "^2.0.5",
