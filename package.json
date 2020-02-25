@@ -44,7 +44,7 @@
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.14",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.7",
+    "lint-staged": "^10.0.8",
     "lodash": "^4.17.15",
     "prettier": "^1.19.1",
     "prismjs": "^1.19.0",
