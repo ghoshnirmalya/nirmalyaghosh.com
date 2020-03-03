@@ -36,7 +36,7 @@
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "^2.2.27",
-    "gatsby-plugin-typescript": "^2.1.27",
+    "gatsby-plugin-typescript": "^2.2.0",
     "gatsby-remark-autolink-headers": "^2.1.24",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.3.32",
