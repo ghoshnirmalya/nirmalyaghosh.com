@@ -34,7 +34,7 @@
     "gatsby-plugin-postcss": "^2.1.20",
     "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.22",
-    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-plugin-sharp": "^2.4.7",
     "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-typescript": "^2.2.0",
     "gatsby-remark-autolink-headers": "^2.1.24",
