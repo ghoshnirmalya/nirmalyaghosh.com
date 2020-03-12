@@ -54,7 +54,7 @@
     "source-map-support": "latest",
     "tailwindcss": "^1.2.0",
     "ts-node": "^8.6.2",
-    "tslint": "^6.0.0",
+    "tslint": "^6.1.0",
     "tslint-config-blvd": "^1.2.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.1.0",
