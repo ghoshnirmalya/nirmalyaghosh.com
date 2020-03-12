@@ -29,7 +29,7 @@
     "gatsby-image": "^2.2.43",
     "gatsby-plugin-catch-links": "^2.1.27",
     "gatsby-plugin-lodash": "^3.1.21",
-    "gatsby-plugin-manifest": "^2.2.46",
+    "gatsby-plugin-manifest": "^2.2.47",
     "gatsby-plugin-offline": "^3.0.39",
     "gatsby-plugin-postcss": "^2.1.21",
     "gatsby-plugin-purgecss": "^4.0.1",
