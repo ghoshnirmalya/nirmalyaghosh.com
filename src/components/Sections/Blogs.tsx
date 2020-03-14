@@ -36,6 +36,23 @@ const BlogsSection: FC<any> = ({ edges }) => {
               <p className="text-sm text-gray-700">{post.node.excerpt}</p>
             </Link>
           ))}
+        </div>
+      </div>
+      <div className="flex justify-between items-center mt-16">
+        <div className="text-lg font-semibold mb-4 text-gray-700">
+          Sponsored Articles
+        </div>
+        <div className="mb-4">
+          <Link
+            to="blogs"
+            className="text-sm text-blue-700 hover:text-blue-800 flex items-center"
+          >
+            View all articles <i className="bx bx-right-arrow-alt ml-1" />
+          </Link>
+        </div>
+      </div>
+      <div className="px-4">
+        <div className="flex flex-wrap -mx-8">
           {blogs.slice(0, 5).map((blog, index) => {
             if (blog.guestAuthor) {
               return (

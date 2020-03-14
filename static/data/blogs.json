@@ -1,5 +1,12 @@
 [
   {
+    "title": "Building a Product Hunt clone app using Hasura and Next.js",
+    "url": "https://blog.logrocket.com/building-a-product-hunt-clone-app-using-hasura-and-next-js",
+    "description": "This tutorial will demonstrate how to create a clone of product curation app Product Hunt using Hasura and Next.js. We’ll show you how to conduct authentication and authorization using Hasura and how to leverage GraphQL to fetch and write data from a Next.js frontend application.",
+    "date": "February 20, 2020",
+    "guestAuthor": true
+  },
+  {
     "title": "Understand and implement your own Redux",
     "url": "https://buttercms.com/blog/understand-and-implement-your-own-redux",
     "description": "In this tutorial, we'll discover the basic concepts of Redux and learn about Actions, Reducers, and a Store in Redux. In addition, we’ll also build our own version of Redux using vanilla JavaScript and use it in an application.",
