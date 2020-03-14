@@ -12,7 +12,11 @@ const NotFoundPage: FC<any> = () => {
       <div className="bg-gray-100 px-8 min-h-screen">
         <div className="max-w-2xl m-auto py-12">
           <div className="flex items-center justify-center flex-col">
-            <img src={config.NotFoundPageBg} className="mb-12 h-48" />
+            <img
+              src={config.NotFoundPageBg}
+              className="mb-12 h-48"
+              alt="Page not found!"
+            />
             <Link to="/" className="text">
               Click here to go back to the Home Page
             </Link>
