@@ -48,7 +48,7 @@
     "lodash": "^4.17.15",
     "prettier": "^1.19.1",
     "prismjs": "^1.19.0",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "source-map-support": "latest",
