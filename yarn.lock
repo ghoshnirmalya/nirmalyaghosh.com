@@ -5824,10 +5824,10 @@ gatsby-plugin-sitemap@^2.2.30:
     pify "^3.0.0"
     sitemap "^1.13.0"
 
-gatsby-plugin-typescript@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.2.5.tgz#60d136ed9ce02dc05054f987934bfee1b0cca97e"
-  integrity sha512-C17SW9tW08xUDl6K6niwY0FUi4INMVb5n29+6QwMGJw4Nxrztt3l99C6rKGR4qogsNjNEW0T/xRp2ehuHY/9rw==
+gatsby-plugin-typescript@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.3.0.tgz#fe8645f0b739c6ac2445f88f0de659633103caf4"
+  integrity sha512-j/evNb71dpKHfUb8oXHMZwpAj3p/ep8Qc28gjzvxcJs7Q+dFijKawrmBTjZxHuC9cS4LG6nOfeVi+p68w525VA==
   dependencies:
     "@babel/core" "^7.8.7"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.8.3"
@@ -5835,7 +5835,7 @@ gatsby-plugin-typescript@^2.2.5:
     "@babel/plugin-proposal-optional-chaining" "^7.8.3"
     "@babel/preset-typescript" "^7.8.3"
     "@babel/runtime" "^7.8.7"
-    babel-plugin-remove-graphql-queries "^2.7.26"
+    babel-plugin-remove-graphql-queries "^2.8.0"
 
 gatsby-react-router-scroll@^2.2.0:
   version "2.2.0"
