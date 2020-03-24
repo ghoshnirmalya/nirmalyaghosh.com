@@ -28,7 +28,7 @@
     "gatsby": "^2.20.3",
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-catch-links": "^2.2.1",
-    "gatsby-plugin-lodash": "^3.1.22",
+    "gatsby-plugin-lodash": "^3.2.1",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-offline": "^3.0.42",
     "gatsby-plugin-postcss": "^2.2.0",
