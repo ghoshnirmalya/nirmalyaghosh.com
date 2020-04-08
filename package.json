@@ -25,7 +25,7 @@
     "@types/react-dom": "^16.9.6",
     "@types/react-helmet": "^5.0.15",
     "boxicons": "^2.0.5",
-    "gatsby": "^2.20.13",
+    "gatsby": "^2.20.14",
     "gatsby-image": "^2.3.2",
     "gatsby-plugin-catch-links": "^2.2.1",
     "gatsby-plugin-lodash": "^3.2.1",
