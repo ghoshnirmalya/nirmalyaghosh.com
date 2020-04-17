@@ -5830,13 +5830,13 @@ gatsby-plugin-lodash@^3.2.1:
     babel-plugin-lodash "^3.3.4"
     lodash-webpack-plugin "^0.11.5"
 
-gatsby-plugin-manifest@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.3.3.tgz#119b9e648428a0db8979d577d2fdb20a9f3c18b7"
-  integrity sha512-lEval/fZaCqu9qlQMY38A8fuoJOpWRih3Hh0sLfM2Bt1dPlVkjDQqpHbQCfEinQA41c6JUdFAQFhdp5+G0kOwQ==
+gatsby-plugin-manifest@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.3.4.tgz#3ba0c3463ef22cfaf14d82b93a34345e5c2d97e2"
+  integrity sha512-v3G5pi5x5mMZ0s5Jw9mTcWqyX1rjssdohpdkGUqX2kaPELvduXMs/j4hl6OSVOM/rM1epA027VPqAg9jWqERrQ==
   dependencies:
     "@babel/runtime" "^7.8.7"
-    gatsby-core-utils "^1.1.1"
+    gatsby-core-utils "^1.1.2"
     semver "^5.7.1"
     sharp "^0.25.1"
 
