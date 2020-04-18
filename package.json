@@ -27,7 +27,7 @@
     "boxicons": "^2.0.5",
     "gatsby": "^2.20.23",
     "gatsby-image": "^2.3.3",
-    "gatsby-plugin-catch-links": "^2.2.1",
+    "gatsby-plugin-catch-links": "^2.2.3",
     "gatsby-plugin-lodash": "^3.2.1",
     "gatsby-plugin-manifest": "^2.3.4",
     "gatsby-plugin-offline": "^3.1.3",
