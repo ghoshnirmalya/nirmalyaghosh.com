@@ -2535,7 +2535,7 @@ babel-plugin-macros@^2.8.0:
     cosmiconfig "^6.0.0"
     resolve "^1.12.0"
 
-babel-plugin-remove-graphql-queries@^2.8.2, babel-plugin-remove-graphql-queries@^2.8.3:
+babel-plugin-remove-graphql-queries@^2.8.3:
   version "2.8.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.8.3.tgz#90bd811e5912348e9c158113e2c0774a8d5ac8fb"
   integrity sha512-BVux5WSXstiZzZuff7hD7F3WjBPq4V/sDgsT7EosXUNAoShht3msg1pFhJx+Id4jq/VNGEy+lfUzmAvBklIYeA==
@@ -6172,10 +6172,10 @@ gatsby-plugin-page-creator@^2.2.3:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-postcss@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.2.2.tgz#89f03c765679e1610645f04b3c74d42ddfeb5c1f"
-  integrity sha512-Y8AsS1RkVR0iM3WAvb6nNrAKEf/YdczRt0od4EzXZwRG2LrRy6xj2Hn4wmC/J5OGfjjeEsk5wmEkWPNQEDlLUA==
+gatsby-plugin-postcss@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.2.3.tgz#df351d5e28f204a3b19ea2ee8a7ecea520428130"
+  integrity sha512-zzz7BhrY/hUXQiakuQvVaSKueggH89HOZirYYhBfcO5tAnKQS+0YC78xDr1iP10CwC/zD2OMpF3GidmfH1DLAg==
   dependencies:
     "@babel/runtime" "^7.8.7"
     postcss-loader "^3.0.0"
