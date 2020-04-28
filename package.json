@@ -42,7 +42,7 @@
     "gatsby-remark-prismjs": "^3.4.5",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-remark": "^2.7.5",
-    "gatsby-transformer-sharp": "^2.4.6",
+    "gatsby-transformer-sharp": "^2.5.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "lodash": "^4.17.15",
