@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.150",
     "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
+    "@types/react-dom": "^16.9.7",
     "@types/react-helmet": "^5.0.15",
     "boxicons": "^2.0.5",
     "gatsby": "^2.21.1",
