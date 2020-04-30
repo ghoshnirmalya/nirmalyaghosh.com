@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import kebabCase from 'lodash/kebabCase'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import PageProps from '../models/PageProps'
 import Layout from '../components/Layout'

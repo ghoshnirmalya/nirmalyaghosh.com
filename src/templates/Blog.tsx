@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Link, graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import Navbar from '../components/Navbar'
 import Layout from '../components/Layout'
@@ -30,7 +30,7 @@ const BlogTemplate: FC<Props> = ({ pageContext, data }) => {
         <Link to="/">{config.siteTitle}</Link>
         <div>Latest stories ({totalCount})</div>
       </Header>
-      {edges.map(post => (
+      {edges.map((post) => (
         <Article
           title={post.node.frontmatter.title}
           date={post.node.frontmatter.date}

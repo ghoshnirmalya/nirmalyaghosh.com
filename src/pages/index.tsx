@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Navbar from '../components/Navbar'
