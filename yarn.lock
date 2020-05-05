@@ -910,10 +910,10 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
-  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -6114,12 +6114,12 @@ gatsby-page-utils@^0.2.0:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-catch-links@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.0.tgz#75cdee9c62c6948b0d509a83c6876cea3a54c53b"
-  integrity sha512-Neoa6ijOG0+EeMH1SudOX9s8qKimguOmtxPgbr9WvbXEbY1zjz4Pi3iE3Np1sLodXTiHdjlPuHewv3NUnaFflg==
+gatsby-plugin-catch-links@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.1.tgz#1450501b0cf88b045abde92ae30f74bf66cdf1ca"
+  integrity sha512-0hqe9mmJGPF+mh2Rrat1RhBBfm/rNi4nCEnsNSQ/j7h2w5btOny80B7He9JIqLTspcQhXuo709nGdOUqx+Qmyw==
   dependencies:
-    "@babel/runtime" "^7.9.2"
+    "@babel/runtime" "^7.9.6"
     escape-string-regexp "^1.0.5"
 
 gatsby-plugin-google-analytics@^2.3.0:
