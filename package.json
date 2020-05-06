@@ -37,7 +37,7 @@
     "gatsby-plugin-sharp": "^2.6.0",
     "gatsby-plugin-sitemap": "^2.4.2",
     "gatsby-plugin-typescript": "^2.4.2",
-    "gatsby-remark-autolink-headers": "^2.3.0",
+    "gatsby-remark-autolink-headers": "^2.3.1",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.5.1",
     "gatsby-source-filesystem": "^2.3.1",
