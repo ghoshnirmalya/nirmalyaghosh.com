@@ -26,7 +26,7 @@
     "@types/react-helmet": "^5.0.15",
     "boxicons": "^2.0.5",
     "gatsby": "^2.21.9",
-    "gatsby-image": "^2.4.1",
+    "gatsby-image": "^2.4.2",
     "gatsby-plugin-catch-links": "^2.3.1",
     "gatsby-plugin-lodash": "^3.3.0",
     "gatsby-plugin-manifest": "^2.4.1",
