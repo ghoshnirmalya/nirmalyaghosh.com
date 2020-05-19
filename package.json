@@ -41,7 +41,7 @@
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.5.1",
     "gatsby-source-filesystem": "^2.3.4",
-    "gatsby-transformer-remark": "^2.8.8",
+    "gatsby-transformer-remark": "^2.8.9",
     "gatsby-transformer-sharp": "^2.5.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.4",
