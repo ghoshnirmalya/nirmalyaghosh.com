@@ -1,15 +1,15 @@
 export default {
   details: {
-    title: 'Nirmalya Ghosh',
-    tagLine: 'Designer and Developer',
-    description: 'Personal portfolio of Nirmalya Ghosh',
-    url: 'https://www.nirmalyaghosh.com',
+    title: "Nirmalya Ghosh",
+    tagLine: "Designer and Developer",
+    description: "Personal portfolio of Nirmalya Ghosh",
+    url: "https://www.nirmalyaghosh.com",
   },
   assets: {
-    avatar: '/images/avatar.png',
-    favicon: '/images/favicon.png',
+    avatar: "/images/avatar.png",
+    favicon: "/images/favicon.png",
   },
   socialLinks: {
-    twitter: '@nirmalyaghosh23',
+    twitter: "@nirmalyaghosh23",
   },
-}
+};

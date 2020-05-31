@@ -1,13 +1,13 @@
-import { FC } from 'react'
-import { Box, useColorMode } from '@chakra-ui/core'
-import Jumbotron from 'components/pages/index/jumbotron'
-import Articles from 'components/pages/index/articles'
-import Publications from 'components/pages/index/publications'
+import { FC } from "react";
+import { Box, useColorMode } from "@chakra-ui/core";
+import Jumbotron from "components/pages/index/jumbotron";
+import Articles from "components/pages/index/articles";
+import Publications from "components/pages/index/publications";
 
 const Page: FC = () => {
-  const { colorMode } = useColorMode()
-  const bgColor = { light: 'gray.100', dark: 'gray.900' }
-  const color = { light: 'gray.900', dark: 'gray.100' }
+  const { colorMode } = useColorMode();
+  const bgColor = { light: "gray.100", dark: "gray.900" };
+  const color = { light: "gray.900", dark: "gray.100" };
 
   return (
     <>
@@ -27,7 +27,7 @@ const Page: FC = () => {
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

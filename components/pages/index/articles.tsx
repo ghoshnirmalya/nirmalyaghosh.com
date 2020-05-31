@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import { Box, Stack, Heading, Text } from '@chakra-ui/core'
-import Link from 'next/link'
+import { FC } from "react";
+import { Box, Stack, Heading, Text } from "@chakra-ui/core";
+import Link from "next/link";
 
 const Articles: FC = () => {
   return (
@@ -31,10 +31,10 @@ const Articles: FC = () => {
               </a>
             </Link>
           </Box>
-        )
+        );
       })}
     </Stack>
-  )
-}
+  );
+};
 
-export default Articles
+export default Articles;

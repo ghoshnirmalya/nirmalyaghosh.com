@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import { Box, Stack, Heading, Text, Image } from '@chakra-ui/core'
-import siteConfig from 'config/site'
+import { FC } from "react";
+import { Box, Stack, Heading, Text, Image } from "@chakra-ui/core";
+import siteConfig from "config/site";
 
 const Jumbotron: FC = () => {
   return (
@@ -28,7 +28,7 @@ const Jumbotron: FC = () => {
         </Text>
       </Box>
     </Stack>
-  )
-}
+  );
+};
 
-export default Jumbotron
+export default Jumbotron;

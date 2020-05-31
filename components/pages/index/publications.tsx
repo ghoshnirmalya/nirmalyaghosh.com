@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import { Box, Stack, Heading, Text } from '@chakra-ui/core'
-import Link from 'next/link'
+import { FC } from "react";
+import { Box, Stack, Heading, Text } from "@chakra-ui/core";
+import Link from "next/link";
 
 const Publications: FC = () => {
   return (
@@ -32,10 +32,10 @@ const Publications: FC = () => {
               </a>
             </Link>
           </Box>
-        )
+        );
       })}
     </Stack>
-  )
-}
+  );
+};
 
-export default Publications
+export default Publications;

@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript, Html } from 'next/document'
+import Document, { Head, Main, NextScript, Html } from "next/document";
 
 export default class MyDocument extends Document {
   render() {
@@ -10,6 +10,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }

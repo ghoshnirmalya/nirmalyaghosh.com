@@ -1,11 +1,11 @@
-import { FC } from 'react'
-import { Box, Stack, Link, IconButton, useColorMode } from '@chakra-ui/core'
+import { FC } from "react";
+import { Box, Stack, Link, IconButton, useColorMode } from "@chakra-ui/core";
 
 const Navbar: FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const themeSwitcherButtonNode = () => {
-    if (colorMode === 'light') {
+    if (colorMode === "light") {
       return (
         <IconButton
           aria-label="Switch to dark theme"
@@ -13,7 +13,7 @@ const Navbar: FC = () => {
           size="sm"
           onClick={toggleColorMode}
         />
-      )
+      );
     }
 
     return (
@@ -23,8 +23,8 @@ const Navbar: FC = () => {
         size="sm"
         onClick={toggleColorMode}
       />
-    )
-  }
+    );
+  };
 
   return (
     <Box borderBottomWidth={1} borderTopWidth={6} borderTopColor="brandColor">
@@ -56,7 +56,7 @@ const Navbar: FC = () => {
         </Stack>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

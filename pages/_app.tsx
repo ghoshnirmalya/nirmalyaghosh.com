@@ -1,18 +1,18 @@
-import { ThemeProvider, CSSReset, DarkMode, Box, theme } from '@chakra-ui/core'
-import Navbar from 'components/navbar'
-import Head from 'next/head'
-import siteConfig from 'config/site'
+import { ThemeProvider, CSSReset, DarkMode, Box, theme } from "@chakra-ui/core";
+import Navbar from "components/navbar";
+import Head from "next/head";
+import siteConfig from "config/site";
 
 const customTheme = {
   ...theme,
   colors: {
     ...theme.colors,
-    brandColor: '#805ad5',
+    brandColor: "#805ad5",
   },
-}
+};
 
 export function reportWebVitals(metric) {
-  console.log(metric)
+  console.log(metric);
 }
 
 const App = ({ Component, pageProps }) => {
@@ -57,7 +57,7 @@ const App = ({ Component, pageProps }) => {
         </DarkMode>
       </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
