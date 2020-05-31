@@ -11,6 +11,10 @@ const customTheme = {
   },
 }
 
+export function reportWebVitals(metric) {
+  console.log(metric)
+}
+
 const App = ({ Component, pageProps }) => {
   return (
     <>
@@ -56,10 +60,6 @@ const App = ({ Component, pageProps }) => {
       </ThemeProvider>
     </>
   )
-}
-
-export function reportWebVitals(metric) {
-  console.log(metric)
 }
 
 export default App
