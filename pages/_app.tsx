@@ -15,6 +15,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href={siteConfig.assets.favicon} />
         <title>{`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}</title>
 

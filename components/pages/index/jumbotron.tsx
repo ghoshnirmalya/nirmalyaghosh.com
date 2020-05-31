@@ -24,14 +24,7 @@ const Jumbotron: FC = () => {
       </Box>
       <Box>
         <Text>
-          <Box as="b" color="brandColor">
-            Frontend Developer
-          </Box>{' '}
-          and{' '}
-          <Box as="b" color="brandColor">
-            Designer
-          </Box>{' '}
-          from Bangalore, India
+          <Box as="b">Frontend Developer</Box> and <Box as="b">Designer</Box>
         </Text>
       </Box>
     </Stack>
