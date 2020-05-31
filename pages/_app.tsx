@@ -1,44 +1,16 @@
-import {
-  ThemeProvider,
-  CSSReset,
-  ColorModeProvider,
-  theme,
-} from '@chakra-ui/core'
+import { ThemeProvider, CSSReset, DarkMode, Box } from '@chakra-ui/core'
 import Navbar from 'components/navbar'
-
-const customTheme = {
-  ...theme,
-  colors: {
-    ...theme.colors,
-    mode: {
-      dark: {
-        background: {
-          100: '#000',
-        },
-        text: {
-          100: '#fff',
-        },
-      },
-      light: {
-        background: {
-          100: '#fff',
-        },
-        text: {
-          100: '#000',
-        },
-      },
-    },
-  },
-}
 
 const App = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={customTheme}>
-      <ColorModeProvider>
+    <ThemeProvider>
+      <DarkMode>
         <CSSReset />
         <Navbar />
-        <Component {...pageProps} />
-      </ColorModeProvider>
+        <Box maxW="6xl" mx="auto">
+          <Component {...pageProps} />
+        </Box>
+      </DarkMode>
     </ThemeProvider>
   )
 }

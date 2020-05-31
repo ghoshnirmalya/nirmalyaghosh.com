@@ -3,39 +3,57 @@ import {
   Stack,
   Link,
   Button,
+  IconButton,
   useColorMode,
-  useTheme,
 } from '@chakra-ui/core'
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const theme = useTheme()
+
+  const themeSwitcherButtonNode = () => {
+    if (colorMode === 'light') {
+      return (
+        <IconButton
+          aria-label="Switch to dark theme"
+          icon="moon"
+          size="sm"
+          onClick={toggleColorMode}
+        />
+      )
+    }
+
+    return (
+      <IconButton
+        aria-label="Switch to light theme"
+        icon="sun"
+        size="sm"
+        onClick={toggleColorMode}
+      />
+    )
+  }
 
   return (
-    <Box
-      // @ts-ignore
-      color={theme.colors.mode[colorMode].text}
-      // @ts-ignore
-      bg={theme.colors.mode[colorMode].background}
-    >
-      <Box maxW="4xl" mx="auto">
-        <Stack isInline justifyContent="space-between">
+    <Box borderBottomWidth={1}>
+      <Box maxW="6xl" mx="auto">
+        <Stack
+          isInline
+          justifyContent="space-between"
+          alignItems="center"
+          p={4}
+          spacing={8}
+        >
           <Box>
             <Link>Logo</Link>
           </Box>
           <Box>
-            <Stack isInline>
+            <Stack isInline spacing={8} alignItems="center">
               <Box>
                 <Link>Projects</Link>
               </Box>
               <Box>
                 <Link>Blogs</Link>
               </Box>
-              <Box>
-                <Button size="sm" onClick={toggleColorMode}>
-                  Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-                </Button>
-              </Box>
+              <Box>{themeSwitcherButtonNode()}</Box>
             </Stack>
           </Box>
         </Stack>
