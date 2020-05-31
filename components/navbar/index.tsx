@@ -37,7 +37,7 @@ const Navbar: FC = () => {
           spacing={8}
         >
           <Box>
-            <Link>Logo</Link>
+            <Link>Home</Link>
           </Box>
           <Box>
             <Stack isInline spacing={8} alignItems="center">
@@ -45,7 +45,10 @@ const Navbar: FC = () => {
                 <Link>Projects</Link>
               </Box>
               <Box>
-                <Link>Blogs</Link>
+                <Link>Articles</Link>
+              </Box>
+              <Box>
+                <Link>Publications</Link>
               </Box>
               <Box>{themeSwitcherButtonNode()}</Box>
             </Stack>

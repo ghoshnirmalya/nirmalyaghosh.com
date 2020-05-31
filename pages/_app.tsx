@@ -53,9 +53,7 @@ const App = ({ Component, pageProps }) => {
         <DarkMode>
           <CSSReset />
           <Navbar />
-          <Box maxW="6xl" mx="auto" p={4}>
-            <Component {...pageProps} />
-          </Box>
+          <Component {...pageProps} />
         </DarkMode>
       </ThemeProvider>
     </>
