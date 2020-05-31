@@ -2,9 +2,18 @@ import { FC } from "react";
 import { Box, Stack, Heading, Text } from "@chakra-ui/core";
 import Link from "next/link";
 
-const Articles: FC = () => {
+interface Article {
+  id: number;
+  title: string;
+}
+
+interface Props {
+  articles: Article[];
+}
+
+const Articles: FC<Props> = ({ articles }) => {
   return (
-    <Stack spacing={8} py={8}>
+    <Stack spacing={8}>
       <Box>
         <Link href="/articles">
           <Heading as="h2" size="xl">
@@ -12,14 +21,14 @@ const Articles: FC = () => {
           </Heading>
         </Link>
       </Box>
-      {[...Array(5)].map((_, index: number) => {
+      {articles.map((article: Article) => {
         return (
-          <Box key={index}>
-            <Link href={`/posts/${index}`}>
+          <Box key={article.id}>
+            <Link href={`/articles/${article.id}`}>
               <a>
                 <Stack spacing={4}>
                   <Heading as="h4" size="lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    {article.title}
                   </Heading>
                   <Text>
                     Ut at ipsum porttitor, dignissim eros a, interdum nisl. Duis

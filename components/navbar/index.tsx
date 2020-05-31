@@ -1,5 +1,12 @@
 import { FC } from "react";
-import { Box, Stack, Link, IconButton, useColorMode } from "@chakra-ui/core";
+import {
+  Box,
+  Stack,
+  Link as _Link,
+  IconButton,
+  useColorMode,
+} from "@chakra-ui/core";
+import Link from "next/link";
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -37,18 +44,26 @@ const Navbar: FC = () => {
           spacing={8}
         >
           <Box>
-            <Link>Home</Link>
+            <Link href="/">
+              <_Link>My Home</_Link>
+            </Link>
           </Box>
           <Box>
             <Stack isInline spacing={8} alignItems="center">
               <Box>
-                <Link>Projects</Link>
+                <Link href="/projects">
+                  <_Link>Projects</_Link>
+                </Link>
               </Box>
               <Box>
-                <Link>Articles</Link>
+                <Link href="/articles">
+                  <_Link>Articles</_Link>
+                </Link>
               </Box>
               <Box>
-                <Link>Publications</Link>
+                <Link href="/publications">
+                  <_Link>Publications</_Link>
+                </Link>
               </Box>
               <Box>{themeSwitcherButtonNode()}</Box>
             </Stack>

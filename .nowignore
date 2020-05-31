@@ -1,0 +1,7 @@
+node_modules
+dist
+*.log
+LICENSE.md
+README.md
+.next
+.github
