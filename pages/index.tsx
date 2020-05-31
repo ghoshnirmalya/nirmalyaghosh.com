@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { getSortedPostsData } from 'lib/posts'
+import Page from 'components/pages/index'
 
-export default function Home({ allPostsData }) {
+const IndexPage = ({ allPostsData }) => {
   return (
     <div>
+      <Page />
       <ul>
         {allPostsData.map(({ id, title }) => (
           <li key={id}>
@@ -25,3 +27,5 @@ export async function getStaticProps() {
     },
   }
 }
+
+export default IndexPage

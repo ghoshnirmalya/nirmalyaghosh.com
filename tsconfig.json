@@ -19,7 +19,8 @@
       "components/*": ["components/*"],
       "lib/*": ["lib/*"],
       "pages/*": ["pages/*"],
-      "posts/*": ["posts/*"]
+      "posts/*": ["posts/*"],
+      "config/*": ["config/*"]
     }
   },
   "exclude": ["node_modules"],

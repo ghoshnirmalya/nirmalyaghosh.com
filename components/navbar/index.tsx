@@ -1,13 +1,7 @@
-import {
-  Box,
-  Stack,
-  Link,
-  Button,
-  IconButton,
-  useColorMode,
-} from '@chakra-ui/core'
+import { FC } from 'react'
+import { Box, Stack, Link, IconButton, useColorMode } from '@chakra-ui/core'
 
-const Navbar = () => {
+const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   const themeSwitcherButtonNode = () => {
@@ -33,7 +27,7 @@ const Navbar = () => {
   }
 
   return (
-    <Box borderBottomWidth={1}>
+    <Box borderBottomWidth={1} borderTopWidth={6} borderTopColor="brandColor">
       <Box maxW="6xl" mx="auto">
         <Stack
           isInline
