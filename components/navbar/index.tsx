@@ -10,6 +10,8 @@ import Link from "next/link";
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const navbarBgColor = { light: "white", dark: "black" };
+  const navbarColor = { light: "black", dark: "white" };
 
   const themeSwitcherButtonNode = () => {
     if (colorMode === "light") {
@@ -34,7 +36,15 @@ const Navbar: FC = () => {
   };
 
   return (
-    <Box borderBottomWidth={1} borderTopWidth={6} borderTopColor="brandColor">
+    <Box
+      borderTopWidth={6}
+      borderTopColor="brandColor"
+      bg={navbarBgColor[colorMode]}
+      color={navbarColor[colorMode]}
+      position="sticky"
+      top={0}
+      zIndex={1}
+    >
       <Box maxW="6xl" mx="auto">
         <Stack
           isInline
@@ -45,7 +55,7 @@ const Navbar: FC = () => {
         >
           <Box>
             <Link href="/">
-              <_Link>My Home</_Link>
+              <_Link>Home</_Link>
             </Link>
           </Box>
           <Box>
