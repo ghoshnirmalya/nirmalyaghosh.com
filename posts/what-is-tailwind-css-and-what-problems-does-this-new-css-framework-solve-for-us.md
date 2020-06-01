@@ -1,5 +1,5 @@
 ---
-date: "2020-01-08"
+date: "8th January, 2020"
 title: "What is TailwindCSS and what problems does this new CSS framework solve for us"
 category: "CSS"
 tags: ["tailwind", "css"]

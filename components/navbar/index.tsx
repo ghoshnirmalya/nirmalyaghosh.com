@@ -10,8 +10,8 @@ import Link from "next/link";
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const navbarBgColor = { light: "white", dark: "black" };
-  const navbarColor = { light: "black", dark: "white" };
+  const navbarBgColor = { light: "white", dark: "gray.900" };
+  const navbarColor = { light: "gray.900", dark: "white" };
 
   const themeSwitcherButtonNode = () => {
     if (colorMode === "light") {
@@ -44,6 +44,8 @@ const Navbar: FC = () => {
       position="sticky"
       top={0}
       zIndex={1}
+      shadow="md"
+      fontWeight="bold"
     >
       <Box maxW="6xl" mx="auto">
         <Stack
@@ -51,28 +53,36 @@ const Navbar: FC = () => {
           justifyContent="space-between"
           alignItems="center"
           p={4}
-          spacing={8}
+          spacing={4}
         >
           <Box>
             <Link href="/">
-              <_Link>Home</_Link>
+              <_Link p={2} href="/" rounded="md">
+                Home
+              </_Link>
             </Link>
           </Box>
           <Box>
-            <Stack isInline spacing={8} alignItems="center">
+            <Stack isInline spacing={4} alignItems="center">
               <Box>
                 <Link href="/projects">
-                  <_Link>Projects</_Link>
+                  <_Link p={2} href="/projects" rounded="md">
+                    Projects
+                  </_Link>
                 </Link>
               </Box>
               <Box>
                 <Link href="/articles">
-                  <_Link>Articles</_Link>
+                  <_Link p={2} href="/articles" rounded="md">
+                    Articles
+                  </_Link>
                 </Link>
               </Box>
               <Box>
                 <Link href="/publications">
-                  <_Link>Publications</_Link>
+                  <_Link p={2} href="/publications" rounded="md">
+                    Publications
+                  </_Link>
                 </Link>
               </Box>
               <Box>{themeSwitcherButtonNode()}</Box>

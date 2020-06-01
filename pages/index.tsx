@@ -1,26 +1,27 @@
 import Page from "components/pages/index";
 import { getSortedPostsData } from "lib/posts";
 import { NextPage } from "next";
-
-interface Article {
-  id: number;
-  title: string;
-}
+import IArticle from "types/article";
+import IPublication from "types/publication";
+import publicationsData from "public/data/publications.json";
 
 interface Props {
-  articles: Article[];
+  articles: IArticle[];
+  publications: IPublication[];
 }
 
-const IndexPage: NextPage<Props> = ({ articles }) => {
-  return <Page articles={articles} />;
+const IndexPage: NextPage<Props> = ({ articles, publications }) => {
+  return <Page articles={articles} publications={publications} />;
 };
 
 export async function getStaticProps() {
   const articles = getSortedPostsData();
+  const publications = publicationsData;
 
   return {
     props: {
       articles,
+      publications,
     },
   };
 }

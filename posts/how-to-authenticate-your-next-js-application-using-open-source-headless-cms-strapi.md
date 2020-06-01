@@ -1,5 +1,5 @@
 ---
-date: "2020-03-30"
+date: "30th March, 2020"
 title: "How to Authenticate your Next.js application using Open Source Headless CMS Strapi"
 category: "CMS"
 tags: ["strapi", "next.js"]

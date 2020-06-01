@@ -1,5 +1,5 @@
 ---
-date: "2020-01-15"
+date: "15th January, 2020"
 title: "Integrating TailwindCSS with Next.js"
 category: "Nextjs"
 tags: ["tailwind", "css", "nextjs"]

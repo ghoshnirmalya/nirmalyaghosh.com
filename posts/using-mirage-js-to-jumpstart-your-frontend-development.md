@@ -1,5 +1,5 @@
 ---
-date: "2020-01-29"
+date: "29th January, 2020"
 title: "Using Mirage.js to jumpstart your frontend development"
 category: "frontend"
 tags: ["javascript", "API"]
