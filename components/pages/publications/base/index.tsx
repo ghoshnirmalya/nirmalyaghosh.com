@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Box, Grid, Stack, useColorMode } from "@chakra-ui/core";
 import Publications from "components/publications";
 import SocialLinks from "components/social-links";

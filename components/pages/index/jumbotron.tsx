@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Box, Stack, Heading, Text, Image } from "@chakra-ui/core";
 import siteConfig from "config/site";
 

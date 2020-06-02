@@ -1,22 +1,29 @@
+import React, { FC } from "react";
 import Head from "next/head";
 import { getAllPostIds, getPostData } from "lib/posts";
+import Page from "components/pages/articles/show";
+import IArticle from "types/article";
 
-export default function Post({ postData }) {
+interface Props {
+  article: IArticle;
+}
+
+const ArticlesShowPage: FC<Props> = ({ article }) => {
   return (
-    <div>
+    <>
       <Head>
-        <title>{postData.title}</title>
+        <title>{article.title}</title>
       </Head>
       <article>
-        <h1>{postData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Page article={article} />
       </article>
-    </div>
+    </>
   );
-}
+};
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
+
   return {
     paths,
     fallback: false,
@@ -24,10 +31,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const article = await getPostData(params.id);
+
   return {
     props: {
-      postData,
+      article,
     },
   };
 }
+
+export default ArticlesShowPage;

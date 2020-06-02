@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Box,
   Stack,
@@ -78,7 +78,7 @@ const projects: FC<Props> = ({
   };
 
   return (
-    <Box position="sticky" top={100}>
+    <Stack spacing={8}>
       {headingNode()}
       <Stack spacing={4}>
         {projects.map((project: IProject, index: number) => {
@@ -111,7 +111,7 @@ const projects: FC<Props> = ({
           );
         })}
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 

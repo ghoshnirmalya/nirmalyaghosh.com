@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Box,
   Stack,
@@ -87,7 +87,7 @@ const Publications: FC<Props> = ({
   };
 
   return (
-    <Box>
+    <Stack spacing={8}>
       {headingNode()}
       <Stack spacing={8}>
         {publications.map((publication: IPublication, index: number) => {
@@ -95,15 +95,13 @@ const Publications: FC<Props> = ({
             <Box key={index}>
               <a href={publication.url} target="_blank">
                 <Box>
-                  <Stack isInline py={4} spacing={4}>
-                    <Stack spacing={4} justifyContent="space-between" h="full">
-                      <Stack spacing={4}>
-                        {dateNode(publication.date)}
-                        {titleNode(publication.title)}
-                        {descriptionNode()}
-                      </Stack>
-                      <Box>{ctaNode()}</Box>
+                  <Stack spacing={4}>
+                    <Stack spacing={4}>
+                      {dateNode(publication.date)}
+                      {titleNode(publication.title)}
+                      {descriptionNode()}
                     </Stack>
+                    <Box>{ctaNode()}</Box>
                   </Stack>
                 </Box>
               </a>
@@ -111,7 +109,7 @@ const Publications: FC<Props> = ({
           );
         })}
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 

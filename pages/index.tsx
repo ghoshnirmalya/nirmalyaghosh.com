@@ -6,6 +6,8 @@ import IPublication from "types/publication";
 import IProject from "types/project";
 import publicationsData from "public/data/publications.json";
 import projectsData from "public/data/projects.json";
+import Head from "next/head";
+import siteConfig from "config/site";
 
 interface Props {
   articles: IArticle[];
@@ -19,7 +21,16 @@ const IndexPage: NextPage<Props> = ({
   projects = [],
 }) => {
   return (
-    <Page articles={articles} publications={publications} projects={projects} />
+    <>
+      <Head>
+        <title>{`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}</title>
+      </Head>
+      <Page
+        articles={articles}
+        publications={publications}
+        projects={projects}
+      />
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Box,
   Stack,
@@ -111,7 +111,7 @@ const Articles: FC<Props> = ({
   };
 
   return (
-    <Box>
+    <Stack spacing={8}>
       {headingNode()}
       <Stack spacing={8}>
         {articles.map((article: IArticle) => {
@@ -120,20 +120,14 @@ const Articles: FC<Props> = ({
               <Link href="/articles/[id]" as={`/articles/${article.id}`}>
                 <a>
                   <Box>
-                    <Stack isInline py={4} spacing={4}>
-                      <Stack
-                        spacing={4}
-                        justifyContent="space-between"
-                        h="full"
-                      >
-                        <Stack spacing={4}>
-                          {dateNode(article.date)}
-                          {titleNode(article.title)}
-                          {tagsNode(article.tags)}
-                          {descriptionNode()}
-                        </Stack>
-                        <Box>{ctaNode()}</Box>
+                    <Stack spacing={4}>
+                      <Stack spacing={4}>
+                        {dateNode(article.date)}
+                        {titleNode(article.title)}
+                        {tagsNode(article.tags)}
+                        {descriptionNode()}
                       </Stack>
+                      <Box>{ctaNode()}</Box>
                     </Stack>
                   </Box>
                 </a>
@@ -142,7 +136,7 @@ const Articles: FC<Props> = ({
           );
         })}
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 

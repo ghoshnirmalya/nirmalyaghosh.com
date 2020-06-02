@@ -2,13 +2,21 @@ import Page from "components/pages/articles/base";
 import { getSortedPostsData } from "lib/posts";
 import { NextPage } from "next";
 import IArticle from "types/article";
+import Head from "next/head";
 
 interface Props {
   articles: IArticle[];
 }
 
 const ArticlesIndexPage: NextPage<Props> = ({ articles = [] }) => {
-  return <Page articles={articles} />;
+  return (
+    <>
+      <Head>
+        <title>Articles</title>
+      </Head>
+      <Page articles={articles} />
+    </>
+  );
 };
 
 export async function getStaticProps() {
