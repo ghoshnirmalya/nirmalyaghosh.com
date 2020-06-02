@@ -13,6 +13,7 @@ const ArticlesShowPage: FC<Props> = ({ article }) => {
     <>
       <Head>
         <title>{article.title}</title>
+        <link rel="stylesheet" href="/styles/code.css" />
       </Head>
       <article>
         <Page article={article} />

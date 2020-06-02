@@ -16,6 +16,7 @@ const App = ({ Component, pageProps }) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
           <title>{`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}</title>
+          <link rel="stylesheet" href="/styles/fonts.css" />
 
           {/* SEO stuffs */}
           <meta name="description" content={siteConfig.details.description} />

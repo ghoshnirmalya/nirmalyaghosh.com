@@ -78,7 +78,7 @@ const projects: FC<Props> = ({
   };
 
   return (
-    <Stack spacing={8}>
+    <Stack spacing={4}>
       {headingNode()}
       <Stack spacing={4}>
         {projects.map((project: IProject, index: number) => {

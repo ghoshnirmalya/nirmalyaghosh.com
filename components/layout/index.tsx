@@ -21,6 +21,12 @@ const Layout: FC = ({ children }) => {
       ...theme.colors,
       brandColor,
     },
+    fonts: {
+      ...theme.fonts,
+      heading: "'Roboto', sans-serif",
+      body: "'Roboto', serif",
+      mono: "'Inter', monospace",
+    },
   };
 
   return (

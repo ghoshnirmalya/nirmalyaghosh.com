@@ -113,7 +113,7 @@ const Articles: FC<Props> = ({
   return (
     <Stack spacing={8}>
       {headingNode()}
-      <Stack spacing={8}>
+      <Stack spacing={16}>
         {articles.map((article: IArticle) => {
           return (
             <Box key={article.id}>

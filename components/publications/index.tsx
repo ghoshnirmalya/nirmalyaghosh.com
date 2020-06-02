@@ -89,7 +89,7 @@ const Publications: FC<Props> = ({
   return (
     <Stack spacing={8}>
       {headingNode()}
-      <Stack spacing={8}>
+      <Stack spacing={16}>
         {publications.map((publication: IPublication, index: number) => {
           return (
             <Box key={index}>
