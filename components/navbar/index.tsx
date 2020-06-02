@@ -8,10 +8,8 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
   useColorMode,
   useDisclosure,
   useTheme,
@@ -29,7 +27,7 @@ const Navbar: FC = () => {
   const theme = useTheme();
   const { colorMode, toggleColorMode } = useColorMode();
   const navbarBgColor = { light: "white", dark: "gray.900" };
-  const modalBgColor = { light: "gray.100", dark: "gray.900" };
+  const modalBgColor = { light: "gray.100", dark: "black" };
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const themeSwitcherButtonNode = () => {

@@ -4,10 +4,9 @@ import {
   Stack,
   Heading,
   Text,
-  PseudoBox,
+  Button,
   Tag,
   Link as _Link,
-  useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IArticle from "types/article";
@@ -26,10 +25,6 @@ const Articles: FC<Props> = ({
   articles = [],
   hideViewAllLinksNode = false,
 }) => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "black" };
-  const cardColor = { light: "black", dark: "white" };
-
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
@@ -48,7 +43,7 @@ const Articles: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="lg">
           Articles
         </Heading>
         {viewAllLinksNode()}
@@ -80,7 +75,7 @@ const Articles: FC<Props> = ({
       <Stack isInline spacing={2}>
         {tags.map((tag, index) => {
           return (
-            <Tag key={index} size="sm" bg="brandColor" color="white">
+            <Tag key={index} size="sm" color="brandColor">
               <Stack spacing={2} isInline alignItems="center">
                 <Box as={IoIosPricetag} size="15px" />
                 <Box>{tag}</Box>
@@ -104,15 +99,19 @@ const Articles: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Stack spacing={2} isInline alignItems="center" color="brandColor">
-        <Box fontWeight="bold">Read more</Box>
-        <Box as={IoMdArrowRoundForward} size="15px" />
-      </Stack>
+      <Button
+        rightIcon="arrow-forward"
+        bg="brandColor"
+        color="white"
+        _hover={{ bg: "brandColor", color: "white" }}
+      >
+        Read more
+      </Button>
     );
   };
 
   return (
-    <Stack spacing={8}>
+    <Box>
       {headingNode()}
       <Stack spacing={8}>
         {articles.map((article: IArticle) => {
@@ -120,43 +119,30 @@ const Articles: FC<Props> = ({
             <Box key={article.id}>
               <Link href="/articles/[id]" as={`/articles/${article.id}`}>
                 <a>
-                  <PseudoBox
-                    rounded="md"
-                    bg={cardBgColor[colorMode]}
-                    color={cardColor[colorMode]}
-                    shadow="lg"
-                  >
-                    <Stack isInline p={4} spacing={4}>
-                      <Stack>
-                        <Stack
-                          spacing={4}
-                          justifyContent="space-between"
-                          h="full"
-                        >
-                          <Stack spacing={4}>
-                            <Stack
-                              spacing={8}
-                              isInline
-                              justifyContent="space-between"
-                            >
-                              {dateNode(article.date)}
-                              {tagsNode(article.tags)}
-                            </Stack>
-                            {titleNode(article.title)}
-                            {descriptionNode()}
-                          </Stack>
-                          <Box>{ctaNode()}</Box>
+                  <Box>
+                    <Stack isInline py={4} spacing={4}>
+                      <Stack
+                        spacing={4}
+                        justifyContent="space-between"
+                        h="full"
+                      >
+                        <Stack spacing={4}>
+                          {dateNode(article.date)}
+                          {titleNode(article.title)}
+                          {tagsNode(article.tags)}
+                          {descriptionNode()}
                         </Stack>
+                        <Box>{ctaNode()}</Box>
                       </Stack>
                     </Stack>
-                  </PseudoBox>
+                  </Box>
                 </a>
               </Link>
             </Box>
           );
         })}
       </Stack>
-    </Stack>
+    </Box>
   );
 };
 

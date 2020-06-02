@@ -21,10 +21,10 @@ const Page: FC<Props> = ({
   projects = [],
 }) => {
   const { colorMode } = useColorMode();
-  const jumbotronSectionBgColor = { light: "white", dark: "black" };
-  const jumbotronSectionColor = { light: "black", dark: "white" };
-  const sectionBgColor = { light: "gray.100", dark: "gray.900" };
-  const sectionColor = { light: "gray.900", dark: "gray.100" };
+  const jumbotronSectionBgColor = { light: "gray.100", dark: "black" };
+  const jumbotronSectionColor = { light: "black", dark: "gray.100" };
+  const sectionBgColor = { light: "white", dark: "gray.900" };
+  const sectionColor = { light: "gray.900", dark: "white" };
 
   return (
     <>
@@ -47,12 +47,16 @@ const Page: FC<Props> = ({
               <Box as="section">
                 <Publications publications={publications.slice(0, 3)} />
               </Box>
-              <Box as="section">
-                <Projects projects={projects.slice(0, 3)} />
-              </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
-              <SocialLinks />
+              <Stack spacing={8} position="sticky" top={100}>
+                <Box>
+                  <SocialLinks />
+                </Box>
+                <Box>
+                  <Projects projects={projects.slice(0, 3)} />
+                </Box>
+              </Stack>
             </Box>
           </Grid>
         </Box>

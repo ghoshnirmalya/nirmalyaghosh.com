@@ -7,6 +7,7 @@ import {
   PseudoBox,
   Link as _Link,
   useColorMode,
+  Button,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IProject from "types/project";
@@ -22,8 +23,8 @@ const projects: FC<Props> = ({
   hideViewAllLinksNode = false,
 }) => {
   const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "black" };
-  const cardColor = { light: "black", dark: "white" };
+  const cardBgColor = { light: "gray.100", dark: "black" };
+  const cardColor = { light: "black", dark: "gray.100" };
 
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
@@ -42,8 +43,8 @@ const projects: FC<Props> = ({
 
   const headingNode = () => {
     return (
-      <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
+      <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
+        <Heading as="h2" size="lg">
           Projects
         </Heading>
         {viewAllLinksNode()}
@@ -65,17 +66,21 @@ const projects: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Stack spacing={2} isInline alignItems="center" color="brandColor">
-        <Box fontWeight="bold">Read more</Box>
-        <Box as={IoMdArrowRoundForward} size="15px" />
-      </Stack>
+      <Button
+        rightIcon="arrow-forward"
+        bg="brandColor"
+        color="white"
+        _hover={{ bg: "brandColor", color: "white" }}
+      >
+        View project
+      </Button>
     );
   };
 
   return (
-    <Stack spacing={8}>
+    <Box position="sticky" top={100}>
       {headingNode()}
-      <Stack spacing={8}>
+      <Stack spacing={4}>
         {projects.map((project: IProject, index: number) => {
           return (
             <Box key={index}>
@@ -84,7 +89,6 @@ const projects: FC<Props> = ({
                   rounded="md"
                   bg={cardBgColor[colorMode]}
                   color={cardColor[colorMode]}
-                  shadow="lg"
                 >
                   <Stack isInline p={4} spacing={4}>
                     <Stack>
@@ -107,7 +111,7 @@ const projects: FC<Props> = ({
           );
         })}
       </Stack>
-    </Stack>
+    </Box>
   );
 };
 

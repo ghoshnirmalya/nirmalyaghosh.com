@@ -4,9 +4,8 @@ import {
   Stack,
   Heading,
   Text,
-  PseudoBox,
+  Button,
   Link as _Link,
-  useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IPublication from "types/publication";
@@ -21,10 +20,6 @@ const Publications: FC<Props> = ({
   publications = [],
   hideViewAllLinksNode = false,
 }) => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "black" };
-  const cardColor = { light: "black", dark: "white" };
-
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
@@ -43,7 +38,7 @@ const Publications: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="lg">
           Publications
         </Heading>
         {viewAllLinksNode()}
@@ -80,56 +75,43 @@ const Publications: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Stack spacing={2} isInline alignItems="center" color="brandColor">
-        <Box fontWeight="bold">Read more</Box>
-        <Box as={IoMdArrowRoundForward} size="15px" />
-      </Stack>
+      <Button
+        rightIcon="arrow-forward"
+        bg="brandColor"
+        color="white"
+        _hover={{ bg: "brandColor", color: "white" }}
+      >
+        Read more
+      </Button>
     );
   };
 
   return (
-    <Stack spacing={8}>
+    <Box>
       {headingNode()}
       <Stack spacing={8}>
         {publications.map((publication: IPublication, index: number) => {
           return (
             <Box key={index}>
               <a href={publication.url} target="_blank">
-                <PseudoBox
-                  rounded="md"
-                  bg={cardBgColor[colorMode]}
-                  color={cardColor[colorMode]}
-                  shadow="lg"
-                >
-                  <Stack isInline p={4} spacing={4}>
-                    <Stack>
-                      <Stack
-                        spacing={4}
-                        justifyContent="space-between"
-                        h="full"
-                      >
-                        <Stack spacing={4}>
-                          <Stack
-                            spacing={8}
-                            isInline
-                            justifyContent="space-between"
-                          >
-                            {dateNode(publication.date)}
-                          </Stack>
-                          {titleNode(publication.title)}
-                          {descriptionNode()}
-                        </Stack>
-                        <Box>{ctaNode()}</Box>
+                <Box>
+                  <Stack isInline py={4} spacing={4}>
+                    <Stack spacing={4} justifyContent="space-between" h="full">
+                      <Stack spacing={4}>
+                        {dateNode(publication.date)}
+                        {titleNode(publication.title)}
+                        {descriptionNode()}
                       </Stack>
+                      <Box>{ctaNode()}</Box>
                     </Stack>
                   </Stack>
-                </PseudoBox>
+                </Box>
               </a>
             </Box>
           );
         })}
       </Stack>
-    </Stack>
+    </Box>
   );
 };
 

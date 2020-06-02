@@ -10,8 +10,8 @@ interface Props {
 
 const Page: FC<Props> = ({ projects = [] }) => {
   const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "gray.900" };
-  const sectionColor = { light: "gray.900", dark: "gray.100" };
+  const sectionBgColor = { light: "white", dark: "gray.900" };
+  const sectionColor = { light: "gray.900", dark: "white" };
 
   return (
     <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
@@ -23,7 +23,9 @@ const Page: FC<Props> = ({ projects = [] }) => {
             </Box>
           </Stack>
           <Box order={[1, 1, 1, 2]}>
-            <SocialLinks />
+            <Box position="sticky" top={100}>
+              <SocialLinks />
+            </Box>
           </Box>
         </Grid>
       </Box>
