@@ -19,12 +19,42 @@ import {
 
 interface Props {
   articles: IArticle[];
+  hideViewAllLinksNode?: boolean;
 }
 
-const Articles: FC<Props> = ({ articles = [] }) => {
+const Articles: FC<Props> = ({
+  articles = [],
+  hideViewAllLinksNode = false,
+}) => {
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "black" };
   const cardColor = { light: "black", dark: "white" };
+
+  const viewAllLinksNode = () => {
+    if (hideViewAllLinksNode) return false;
+
+    return (
+      <Link href="/articles">
+        <_Link p={2} href="/articles" rounded="md" color="brandColor">
+          <Stack spacing={2} isInline alignItems="center">
+            <Box fontWeight="bold">View all articles</Box>
+            <Box as={IoMdArrowRoundForward} size="15px" />
+          </Stack>
+        </_Link>
+      </Link>
+    );
+  };
+
+  const headingNode = () => {
+    return (
+      <Box d="flex" justifyContent="space-between" alignItems="center">
+        <Heading as="h2" size="xl">
+          Articles
+        </Heading>
+        {viewAllLinksNode()}
+      </Box>
+    );
+  };
 
   const dateNode = (date: string) => {
     return (
@@ -83,21 +113,9 @@ const Articles: FC<Props> = ({ articles = [] }) => {
 
   return (
     <Stack spacing={8}>
-      <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
-          Articles
-        </Heading>
-        <Link href="/articles">
-          <_Link p={2} href="/articles" rounded="md" color="brandColor">
-            <Stack spacing={2} isInline alignItems="center">
-              <Box fontWeight="bold">View all articles</Box>
-              <Box as={IoMdArrowRoundForward} size="15px" />
-            </Stack>
-          </_Link>
-        </Link>
-      </Box>
+      {headingNode()}
       <Stack spacing={8}>
-        {articles.slice(0, 3).map((article: IArticle) => {
+        {articles.map((article: IArticle) => {
           return (
             <Box key={article.id}>
               <Link href="/articles/[id]" as={`/articles/${article.id}`}>
@@ -106,6 +124,7 @@ const Articles: FC<Props> = ({ articles = [] }) => {
                     rounded="md"
                     bg={cardBgColor[colorMode]}
                     color={cardColor[colorMode]}
+                    shadow="lg"
                   >
                     <Stack isInline p={4} spacing={4}>
                       <Stack>

@@ -6,8 +6,8 @@ export default {
     url: "https://www.nirmalyaghosh.com",
   },
   assets: {
-    avatar: "/images/avatar.png",
-    favicon: "/images/favicon.png",
+    avatar: "/images/common/avatar.png",
+    favicon: "/images/common/favicon.png",
   },
   socialLinks: {
     twitter: "@nirmalyaghosh23",

@@ -14,12 +14,42 @@ import { IoMdClock, IoMdArrowRoundForward } from "react-icons/io";
 
 interface Props {
   publications: IPublication[];
+  hideViewAllLinksNode?: boolean;
 }
 
-const Publications: FC<Props> = ({ publications = [] }) => {
+const Publications: FC<Props> = ({
+  publications = [],
+  hideViewAllLinksNode = false,
+}) => {
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "black" };
   const cardColor = { light: "black", dark: "white" };
+
+  const viewAllLinksNode = () => {
+    if (hideViewAllLinksNode) return false;
+
+    return (
+      <Link href="/publications">
+        <_Link p={2} href="/publications" rounded="md" color="brandColor">
+          <Stack spacing={2} isInline alignItems="center">
+            <Box fontWeight="bold">View all publications</Box>
+            <Box as={IoMdArrowRoundForward} size="15px" />
+          </Stack>
+        </_Link>
+      </Link>
+    );
+  };
+
+  const headingNode = () => {
+    return (
+      <Box d="flex" justifyContent="space-between" alignItems="center">
+        <Heading as="h2" size="xl">
+          Publications
+        </Heading>
+        {viewAllLinksNode()}
+      </Box>
+    );
+  };
 
   const dateNode = (date: string) => {
     return (
@@ -59,21 +89,9 @@ const Publications: FC<Props> = ({ publications = [] }) => {
 
   return (
     <Stack spacing={8}>
-      <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
-          Publications
-        </Heading>
-        <Link href="/publications">
-          <_Link p={2} href="/publications" rounded="md" color="brandColor">
-            <Stack spacing={2} isInline alignItems="center">
-              <Box fontWeight="bold">View all publications</Box>
-              <Box as={IoMdArrowRoundForward} size="15px" />
-            </Stack>
-          </_Link>
-        </Link>
-      </Box>
+      {headingNode()}
       <Stack spacing={8}>
-        {publications.slice(0, 3).map((publication: IPublication, index) => {
+        {publications.map((publication: IPublication, index: number) => {
           return (
             <Box key={index}>
               <a href={publication.url} target="_blank">
@@ -81,6 +99,7 @@ const Publications: FC<Props> = ({ publications = [] }) => {
                   rounded="md"
                   bg={cardBgColor[colorMode]}
                   color={cardColor[colorMode]}
+                  shadow="lg"
                 >
                   <Stack isInline p={4} spacing={4}>
                     <Stack>

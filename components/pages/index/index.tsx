@@ -1,18 +1,25 @@
 import { FC } from "react";
 import { Box, Grid, Stack, useColorMode } from "@chakra-ui/core";
 import Jumbotron from "components/pages/index/jumbotron";
-import Articles from "components/pages/index/articles";
-import Publications from "components/pages/index/publications";
-import SocialLinks from "components/pages/index/social-links";
+import Articles from "components/articles";
+import Publications from "components/publications";
+import Projects from "components/projects";
+import SocialLinks from "components/social-links";
 import IArticle from "types/article";
 import IPublication from "types/publication";
+import IProject from "types/project";
 
 interface Props {
   articles: IArticle[];
   publications: IPublication[];
+  projects: IProject[];
 }
 
-const Page: FC<Props> = ({ articles, publications }) => {
+const Page: FC<Props> = ({
+  articles = [],
+  publications = [],
+  projects = [],
+}) => {
   const { colorMode } = useColorMode();
   const jumbotronSectionBgColor = { light: "white", dark: "black" };
   const jumbotronSectionColor = { light: "black", dark: "white" };
@@ -35,10 +42,13 @@ const Page: FC<Props> = ({ articles, publications }) => {
           <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
             <Stack spacing={16} order={[2, 2, 2, 1]}>
               <Box as="section">
-                <Articles articles={articles} />
+                <Articles articles={articles.slice(0, 3)} />
               </Box>
               <Box as="section">
-                <Publications publications={publications} />
+                <Publications publications={publications.slice(0, 3)} />
+              </Box>
+              <Box as="section">
+                <Projects projects={projects.slice(0, 3)} />
               </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>

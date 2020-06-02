@@ -1,5 +1,6 @@
 export default interface Publication {
   title: string;
-  date: string;
+  description: string;
   url: string;
+  demoUrl: string;
 }
