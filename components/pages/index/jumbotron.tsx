@@ -12,8 +12,6 @@ const Jumbotron: FC = () => {
           src={siteConfig.assets.avatar}
           alt={siteConfig.details.title}
           rounded="full"
-          borderWidth={2}
-          borderColor="brandColor"
           shadow="xl"
         />
       </Box>

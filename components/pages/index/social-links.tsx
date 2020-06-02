@@ -5,7 +5,7 @@ import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble } from "react-icons/io";
 const SocialLinks: FC = () => {
   return (
     <Box position="sticky" top={100} rounded="md">
-      <Box py={4} borderTopLeftRadius="md" borderTopRightRadius="md">
+      <Box pb={4} borderTopLeftRadius="md" borderTopRightRadius="md">
         <Heading as="h4" size="md">
           Follow me
         </Heading>

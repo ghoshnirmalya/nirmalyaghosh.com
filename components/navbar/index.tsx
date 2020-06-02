@@ -1,17 +1,36 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   Box,
   Stack,
   Link as _Link,
   IconButton,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
   useColorMode,
+  useDisclosure,
+  useTheme,
 } from "@chakra-ui/core";
 import Link from "next/link";
+import { IoIosOptions } from "react-icons/io";
+import { atom, useRecoilState } from "recoil";
+
+const brandColorState = atom({
+  key: "brandColor",
+  default: "#3182ce",
+});
 
 const Navbar: FC = () => {
+  const theme = useTheme();
   const { colorMode, toggleColorMode } = useColorMode();
   const navbarBgColor = { light: "white", dark: "gray.900" };
-  const navbarColor = { light: "gray.900", dark: "white" };
+  const modalBgColor = { light: "gray.100", dark: "gray.900" };
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const themeSwitcherButtonNode = () => {
     if (colorMode === "light") {
@@ -35,12 +54,56 @@ const Navbar: FC = () => {
     );
   };
 
+  const sideEditorButtonNode = () => {
+    const [_, setBrandColor] = useRecoilState(brandColorState);
+
+    return (
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent rounded="md">
+          <Stack
+            isInline
+            alignItems="center"
+            bg={modalBgColor[colorMode]}
+            borderTopLeftRadius="md"
+            borderTopRightRadius="md"
+          >
+            <ModalHeader>Choose brand color</ModalHeader>
+            <ModalCloseButton top="auto" />
+          </Stack>
+          <ModalBody py={8}>
+            <Stack isInline justifyContent="space-between">
+              {["red", "orange", "yellow", "green", "teal", "blue"].map(
+                (color: string, index: number) => {
+                  return (
+                    <Box
+                      key={index}
+                      as="button"
+                      h={12}
+                      w={12}
+                      bg={`${color}.500`}
+                      rounded="full"
+                      shadow="xl"
+                      borderWidth={2}
+                      borderColor="gray.100"
+                      onClick={() => setBrandColor(theme.colors[color][500])}
+                    />
+                  );
+                }
+              )}
+            </Stack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    );
+  };
+
   return (
     <Box
       borderTopWidth={6}
       borderTopColor="brandColor"
       bg={navbarBgColor[colorMode]}
-      color={navbarColor[colorMode]}
+      color="brandColor"
       position="sticky"
       top={0}
       zIndex={1}
@@ -86,6 +149,15 @@ const Navbar: FC = () => {
                 </Link>
               </Box>
               <Box>{themeSwitcherButtonNode()}</Box>
+              <Box>
+                <IconButton
+                  aria-label="Edit site"
+                  size="sm"
+                  icon={IoIosOptions}
+                  onClick={onOpen}
+                />
+                {sideEditorButtonNode()}
+              </Box>
             </Stack>
           </Box>
         </Stack>
@@ -93,5 +165,7 @@ const Navbar: FC = () => {
     </Box>
   );
 };
+
+export { brandColorState };
 
 export default Navbar;

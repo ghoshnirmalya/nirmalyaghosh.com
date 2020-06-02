@@ -5,17 +5,12 @@ import {
   Heading,
   Text,
   PseudoBox,
-  Tag,
   Link as _Link,
   useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IPublication from "types/publication";
-import {
-  IoMdClock,
-  IoMdArrowRoundForward,
-  IoIosPricetag,
-} from "react-icons/io";
+import { IoMdClock, IoMdArrowRoundForward } from "react-icons/io";
 
 interface Props {
   publications: IPublication[];
@@ -29,7 +24,7 @@ const Publications: FC<Props> = ({ publications = [] }) => {
   const dateNode = (date: string) => {
     return (
       <Stack spacing={2} isInline alignItems="center">
-        <Box as={IoMdClock} />
+        <Box as={IoMdClock} color="brandColor" />
         <Text fontSize="sm">{date}</Text>
       </Stack>
     );
@@ -37,7 +32,7 @@ const Publications: FC<Props> = ({ publications = [] }) => {
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h4" size="md">
+      <Heading as="h4" size="md" color="brandColor">
         {title}
       </Heading>
     );
@@ -55,7 +50,7 @@ const Publications: FC<Props> = ({ publications = [] }) => {
 
   const ctaNode = () => {
     return (
-      <Stack spacing={2} isInline alignItems="center">
+      <Stack spacing={2} isInline alignItems="center" color="brandColor">
         <Box fontWeight="bold">Read more</Box>
         <Box as={IoMdArrowRoundForward} size="15px" />
       </Stack>
@@ -69,7 +64,7 @@ const Publications: FC<Props> = ({ publications = [] }) => {
           Publications
         </Heading>
         <Link href="/publications">
-          <_Link p={2} href="/publications" rounded="md">
+          <_Link p={2} href="/publications" rounded="md" color="brandColor">
             <Stack spacing={2} isInline alignItems="center">
               <Box fontWeight="bold">View all publications</Box>
               <Box as={IoMdArrowRoundForward} size="15px" />
@@ -78,10 +73,10 @@ const Publications: FC<Props> = ({ publications = [] }) => {
         </Link>
       </Box>
       <Stack spacing={8}>
-        {publications.slice(0, 3).map((article: IPublication) => {
+        {publications.slice(0, 3).map((publication: IPublication, index) => {
           return (
-            <Box key={article.id}>
-              <a href={article.url} target="_blank">
+            <Box key={index}>
+              <a href={publication.url} target="_blank">
                 <PseudoBox
                   rounded="md"
                   bg={cardBgColor[colorMode]}
@@ -100,9 +95,9 @@ const Publications: FC<Props> = ({ publications = [] }) => {
                             isInline
                             justifyContent="space-between"
                           >
-                            {dateNode(article.date)}
+                            {dateNode(publication.date)}
                           </Stack>
-                          {titleNode(article.title)}
+                          {titleNode(publication.title)}
                           {descriptionNode()}
                         </Stack>
                         <Box>{ctaNode()}</Box>

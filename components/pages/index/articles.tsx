@@ -29,7 +29,7 @@ const Articles: FC<Props> = ({ articles = [] }) => {
   const dateNode = (date: string) => {
     return (
       <Stack spacing={2} isInline alignItems="center">
-        <Box as={IoMdClock} />
+        <Box as={IoMdClock} color="brandColor" />
         <Text fontSize="sm">{date}</Text>
       </Stack>
     );
@@ -37,7 +37,7 @@ const Articles: FC<Props> = ({ articles = [] }) => {
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h4" size="md">
+      <Heading as="h4" size="md" color="brandColor">
         {title}
       </Heading>
     );
@@ -50,7 +50,7 @@ const Articles: FC<Props> = ({ articles = [] }) => {
       <Stack isInline spacing={2}>
         {tags.map((tag, index) => {
           return (
-            <Tag key={index} size="sm" variantColor="purple">
+            <Tag key={index} size="sm" bg="brandColor" color="white">
               <Stack spacing={2} isInline alignItems="center">
                 <Box as={IoIosPricetag} size="15px" />
                 <Box>{tag}</Box>
@@ -74,7 +74,7 @@ const Articles: FC<Props> = ({ articles = [] }) => {
 
   const ctaNode = () => {
     return (
-      <Stack spacing={2} isInline alignItems="center">
+      <Stack spacing={2} isInline alignItems="center" color="brandColor">
         <Box fontWeight="bold">Read more</Box>
         <Box as={IoMdArrowRoundForward} size="15px" />
       </Stack>
@@ -88,7 +88,7 @@ const Articles: FC<Props> = ({ articles = [] }) => {
           Articles
         </Heading>
         <Link href="/articles">
-          <_Link p={2} href="/articles" rounded="md">
+          <_Link p={2} href="/articles" rounded="md" color="brandColor">
             <Stack spacing={2} isInline alignItems="center">
               <Box fontWeight="bold">View all articles</Box>
               <Box as={IoMdArrowRoundForward} size="15px" />
