@@ -5,22 +5,12 @@ import {
   Link as _Link,
   Button,
   IconButton,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
-  MenuGroup,
-  MenuDivider,
   MenuOptionGroup,
   MenuItemOption,
   useColorMode,
-  useDisclosure,
   useTheme,
 } from "@chakra-ui/core";
 import Link from "next/link";
@@ -29,15 +19,13 @@ import { atom, useRecoilState } from "recoil";
 
 const brandColorState = atom({
   key: "brandColor",
-  default: "#3182ce",
+  default: "#00B5D8",
 });
 
 const Navbar: FC = () => {
   const theme = useTheme();
   const { colorMode, toggleColorMode } = useColorMode();
   const navbarBgColor = { light: "white", dark: "gray.900" };
-  const modalBgColor = { light: "gray.100", dark: "black" };
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const themeSwitcherButtonNode = () => {
     if (colorMode === "light") {
@@ -71,40 +59,49 @@ const Navbar: FC = () => {
         </MenuButton>
         <MenuList minWidth="200px" placement="bottom-end">
           <MenuOptionGroup
-            defaultValue={theme.colors["blue"][500]}
+            defaultValue={theme.colors["cyan"][500]}
             title="Choose brand color"
             type="radio"
           >
-            {["Blue", "Red", "Orange", "Yellow", "Green", "Teal"].map(
-              (color: string, index: number) => {
-                return (
-                  <MenuItemOption
-                    key={index}
-                    value={theme.colors[color.toLowerCase()][500]}
-                    onClick={() =>
-                      setBrandColor(theme.colors[color.toLowerCase()][500])
-                    }
-                  >
-                    <Stack key={index} isInline spacing={4} alignItems="center">
-                      <Box
-                        h={5}
-                        w={5}
-                        m={2}
-                        bg={`${color.toLowerCase()}.500`}
-                        rounded="full"
-                        shadow="xl"
-                        borderWidth={1}
-                        borderColor="gray.100"
-                        onClick={() =>
-                          setBrandColor(theme.colors[color.toLowerCase()][500])
-                        }
-                      />
-                      <span>{color}</span>
-                    </Stack>
-                  </MenuItemOption>
-                );
-              }
-            )}
+            {[
+              "Gray",
+              "Red",
+              "Orange",
+              "Yellow",
+              "Green",
+              "Teal",
+              "Blue",
+              "Cyan",
+              "Purple",
+              "Pink",
+            ].map((color: string, index: number) => {
+              return (
+                <MenuItemOption
+                  key={index}
+                  value={theme.colors[color.toLowerCase()][500]}
+                  onClick={() =>
+                    setBrandColor(theme.colors[color.toLowerCase()][500])
+                  }
+                >
+                  <Stack key={index} isInline spacing={4} alignItems="center">
+                    <Box
+                      h={5}
+                      w={5}
+                      m={2}
+                      bg={`${color.toLowerCase()}.500`}
+                      rounded="full"
+                      shadow="xl"
+                      borderWidth={1}
+                      borderColor="gray.100"
+                      onClick={() =>
+                        setBrandColor(theme.colors[color.toLowerCase()][500])
+                      }
+                    />
+                    <span>{color}</span>
+                  </Stack>
+                </MenuItemOption>
+              );
+            })}
           </MenuOptionGroup>
         </MenuList>
       </Menu>
@@ -113,7 +110,7 @@ const Navbar: FC = () => {
 
   return (
     <Box
-      borderTopWidth={6}
+      borderTopWidth={3}
       borderTopColor="brandColor"
       bg={navbarBgColor[colorMode]}
       color="brandColor"

@@ -57,7 +57,7 @@ const Publications: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h4" size="md" color="brandColor">
+      <Heading as="h3" size="md" color="brandColor">
         {title}
       </Heading>
     );
@@ -93,7 +93,7 @@ const Publications: FC<Props> = ({
         {publications.map((publication: IPublication, index: number) => {
           return (
             <Box key={index}>
-              <a href={publication.url} target="_blank">
+              <a href={publication.url} target="_blank" rel="noopener">
                 <Box>
                   <Stack spacing={4}>
                     <Stack spacing={4}>

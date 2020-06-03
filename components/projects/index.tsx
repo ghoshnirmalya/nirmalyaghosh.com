@@ -54,7 +54,7 @@ const projects: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h4" size="md" color="brandColor">
+      <Heading as="h3" size="md" color="brandColor">
         {title}
       </Heading>
     );
@@ -84,7 +84,7 @@ const projects: FC<Props> = ({
         {projects.map((project: IProject, index: number) => {
           return (
             <Box key={index}>
-              <a href={project.url} target="_blank">
+              <a href={project.url} target="_blank" rel="noopener">
                 <PseudoBox
                   rounded="md"
                   bg={cardBgColor[colorMode]}

@@ -1,22 +1,17 @@
 import React, { FC } from "react";
-import { Box, Stack, Heading, Text, Image } from "@chakra-ui/core";
-import siteConfig from "config/site";
+import { Box, Stack, Heading, Text } from "@chakra-ui/core";
 
 const Jumbotron: FC = () => {
   return (
-    <Stack spacing={2} alignItems="center" py={32}>
+    <Stack
+      spacing={2}
+      height="calc(100vh - 70px)"
+      alignItems="center"
+      justifyContent="center"
+      textAlign="center"
+    >
       <Box>
-        <Image
-          size="150px"
-          objectFit="cover"
-          src={siteConfig.assets.avatar}
-          alt={siteConfig.details.title}
-          rounded="full"
-          shadow="xl"
-        />
-      </Box>
-      <Box>
-        <Heading as="h1" fontSize="4rem">
+        <Heading as="h1" fontSize={["3rem", "4rem", "5rem", "6rem"]}>
           Nirmalya Ghosh
         </Heading>
       </Box>

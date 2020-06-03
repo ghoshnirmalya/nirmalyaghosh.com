@@ -16,7 +16,6 @@ const App = ({ Component, pageProps }) => {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
-          <link rel="stylesheet" href="/styles/fonts.css" />
         </Head>
         <NextSeo
           title={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
