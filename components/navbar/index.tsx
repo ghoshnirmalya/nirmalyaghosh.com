@@ -3,6 +3,7 @@ import {
   Box,
   Stack,
   Link as _Link,
+  Button,
   IconButton,
   Modal,
   ModalOverlay,
@@ -10,6 +11,14 @@ import {
   ModalHeader,
   ModalBody,
   ModalCloseButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuGroup,
+  MenuDivider,
+  MenuOptionGroup,
+  MenuItemOption,
   useColorMode,
   useDisclosure,
   useTheme,
@@ -52,47 +61,53 @@ const Navbar: FC = () => {
     );
   };
 
-  const sideEditorButtonNode = () => {
+  const siteEditorButtonNode = () => {
     const [_, setBrandColor] = useRecoilState(brandColorState);
 
     return (
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay />
-        <ModalContent rounded="md">
-          <Stack
-            isInline
-            alignItems="center"
-            bg={modalBgColor[colorMode]}
-            borderTopLeftRadius="md"
-            borderTopRightRadius="md"
+      <Menu closeOnSelect={false}>
+        <MenuButton as={Button} aria-label="Edit site" size="sm">
+          <Box as={IoIosOptions} size="15px" />
+        </MenuButton>
+        <MenuList minWidth="200px" placement="bottom-end">
+          <MenuOptionGroup
+            defaultValue={theme.colors["blue"][500]}
+            title="Choose brand color"
+            type="radio"
           >
-            <ModalHeader>Choose brand color</ModalHeader>
-            <ModalCloseButton top="auto" />
-          </Stack>
-          <ModalBody py={8}>
-            <Stack isInline justifyContent="space-between">
-              {["red", "orange", "yellow", "green", "teal", "blue"].map(
-                (color: string, index: number) => {
-                  return (
-                    <Box
-                      key={index}
-                      as="button"
-                      h={12}
-                      w={12}
-                      bg={`${color}.500`}
-                      rounded="full"
-                      shadow="xl"
-                      borderWidth={2}
-                      borderColor="gray.100"
-                      onClick={() => setBrandColor(theme.colors[color][500])}
-                    />
-                  );
-                }
-              )}
-            </Stack>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+            {["Blue", "Red", "Orange", "Yellow", "Green", "Teal"].map(
+              (color: string, index: number) => {
+                return (
+                  <MenuItemOption
+                    key={index}
+                    value={theme.colors[color.toLowerCase()][500]}
+                    onClick={() =>
+                      setBrandColor(theme.colors[color.toLowerCase()][500])
+                    }
+                  >
+                    <Stack key={index} isInline spacing={4} alignItems="center">
+                      <Box
+                        h={5}
+                        w={5}
+                        m={2}
+                        bg={`${color.toLowerCase()}.500`}
+                        rounded="full"
+                        shadow="xl"
+                        borderWidth={1}
+                        borderColor="gray.100"
+                        onClick={() =>
+                          setBrandColor(theme.colors[color.toLowerCase()][500])
+                        }
+                      />
+                      <span>{color}</span>
+                    </Stack>
+                  </MenuItemOption>
+                );
+              }
+            )}
+          </MenuOptionGroup>
+        </MenuList>
+      </Menu>
     );
   };
 
@@ -147,15 +162,7 @@ const Navbar: FC = () => {
                 </Link>
               </Box>
               <Box>{themeSwitcherButtonNode()}</Box>
-              <Box>
-                <IconButton
-                  aria-label="Edit site"
-                  size="sm"
-                  icon={IoIosOptions}
-                  onClick={onOpen}
-                />
-                {sideEditorButtonNode()}
-              </Box>
+              <Box>{siteEditorButtonNode()}</Box>
             </Stack>
           </Box>
         </Stack>

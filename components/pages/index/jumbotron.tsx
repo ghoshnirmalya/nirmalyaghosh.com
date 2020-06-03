@@ -16,7 +16,7 @@ const Jumbotron: FC = () => {
         />
       </Box>
       <Box>
-        <Heading as="h1" size="2xl">
+        <Heading as="h1" fontSize="4rem">
           Nirmalya Ghosh
         </Heading>
       </Box>
