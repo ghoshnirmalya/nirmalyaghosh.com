@@ -3,6 +3,7 @@ import Layout from "components/layout";
 import Head from "next/head";
 import siteConfig from "config/site";
 import { RecoilRoot } from "recoil";
+import { NextSeo } from "next-seo";
 
 export function reportWebVitals(metric) {
   console.log(metric);
@@ -15,38 +16,33 @@ const App = ({ Component, pageProps }) => {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
-          <title>{`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}</title>
           <link rel="stylesheet" href="/styles/fonts.css" />
-
-          {/* SEO stuffs */}
-          <meta name="description" content={siteConfig.details.description} />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:title"
-            content={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
-          />
-          <meta
-            property="og:description"
-            content={siteConfig.details.description}
-          />
-          <meta property="og:image" content={siteConfig.assets.avatar} />
-          <meta property="og:url" content={siteConfig.details.url} />
-          <meta property="og:site_name" content={siteConfig.details.title} />
-          <meta
-            name="twitter:title"
-            content={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
-          />
-          <meta
-            name="twitter:description"
-            content={siteConfig.details.description}
-          />
-          <meta name="twitter:image" content={siteConfig.assets.avatar} />
-          <meta name="twitter:site" content={siteConfig.socialLinks.twitter} />
-          <meta
-            name="twitter:creator"
-            content={siteConfig.socialLinks.twitter}
-          />
         </Head>
+        <NextSeo
+          title={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
+          description={siteConfig.details.description}
+          twitter={{
+            handle: siteConfig.socialLinks.twitter,
+            site: siteConfig.socialLinks.twitter,
+            cardType: "summary_large_image",
+          }}
+          openGraph={{
+            url: siteConfig.details.url,
+            title: siteConfig.details.title,
+            description: siteConfig.details.description,
+            images: [
+              {
+                url: siteConfig.assets.avatar,
+                width: 800,
+                height: 600,
+                alt: siteConfig.details.title,
+              },
+            ],
+            site_name: siteConfig.details.title,
+            type: "website",
+            locale: "en_IE",
+          }}
+        />
         <Navbar />
         <Component {...pageProps} />
       </Layout>
