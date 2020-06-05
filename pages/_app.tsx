@@ -1,9 +1,11 @@
-import Navbar from "components/navbar";
-import Layout from "components/layout";
 import Head from "next/head";
 import siteConfig from "config/site";
 import { RecoilRoot } from "recoil";
 import { NextSeo } from "next-seo";
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(import("components/navbar"));
+const Layout = dynamic(import("components/layout"));
 
 export function reportWebVitals(metric) {
   console.log(metric);

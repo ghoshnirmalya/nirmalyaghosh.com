@@ -1,14 +1,16 @@
 import React, { FC } from "react";
 import { Box, Grid, Stack, useColorMode } from "@chakra-ui/core";
-import Jumbotron from "components/pages/index/jumbotron";
-import Articles from "components/articles";
-import Publications from "components/publications";
-import Projects from "components/projects";
-import SocialLinks from "components/social-links";
 import IArticle from "types/article";
 import IPublication from "types/publication";
 import IProject from "types/project";
+import LazyLoad from "react-lazyload";
+import dynamic from "next/dynamic";
 
+const Jumbotron = dynamic(import("components/pages/index/jumbotron"));
+const Articles = dynamic(import("components/articles"));
+const Publications = dynamic(import("components/publications"));
+const Projects = dynamic(import("components/projects"));
+const SocialLinks = dynamic(import("components/social-links"));
 interface Props {
   articles: IArticle[];
   publications: IPublication[];
@@ -42,19 +44,27 @@ const Page: FC<Props> = ({
           <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
             <Stack spacing={16} order={[2, 2, 2, 1]}>
               <Box as="section">
-                <Articles articles={articles.slice(0, 3)} />
+                <LazyLoad once offset={100}>
+                  <Articles articles={articles.slice(0, 3)} />
+                </LazyLoad>
               </Box>
               <Box as="section">
-                <Publications publications={publications.slice(0, 3)} />
+                <LazyLoad once offset={100}>
+                  <Publications publications={publications.slice(0, 3)} />
+                </LazyLoad>
               </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
               <Stack spacing={16} position="sticky" top={100}>
                 <Box>
-                  <SocialLinks />
+                  <LazyLoad once offset={100}>
+                    <SocialLinks />
+                  </LazyLoad>
                 </Box>
                 <Box>
-                  <Projects projects={projects.slice(0, 3)} />
+                  <LazyLoad once offset={100}>
+                    <Projects projects={projects.slice(0, 3)} />
+                  </LazyLoad>
                 </Box>
               </Stack>
             </Box>
