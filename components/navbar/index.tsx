@@ -7,6 +7,7 @@ import {
   IconButton,
   Menu,
   MenuButton,
+  MenuItem,
   MenuList,
   MenuOptionGroup,
   MenuItemOption,
@@ -108,6 +109,77 @@ const Navbar: FC = () => {
     );
   };
 
+  const mobileMenuNode = () => {
+    return (
+      <Menu>
+        <MenuButton as={Button}>Menu</MenuButton>
+        <MenuList placement="bottom-end">
+          <Link href="/">
+            <MenuItem>
+              <_Link p={2} href="/" rounded="md">
+                Home
+              </_Link>
+            </MenuItem>
+          </Link>
+          <Link href="/projects">
+            <MenuItem>
+              <_Link p={2} href="/projects" rounded="md">
+                Projects
+              </_Link>
+            </MenuItem>
+          </Link>
+          <Link href="/articles">
+            <MenuItem>
+              <_Link p={2} href="/articles" rounded="md">
+                Articles
+              </_Link>
+            </MenuItem>
+          </Link>
+          <Link href="/publications">
+            <MenuItem>
+              <_Link p={2} href="/publications" rounded="md">
+                Publications
+              </_Link>
+            </MenuItem>
+          </Link>
+          <MenuItem onClick={toggleColorMode} px={6}>
+            Switch color mode
+          </MenuItem>
+        </MenuList>
+      </Menu>
+    );
+  };
+
+  const desktopMenuNode = () => {
+    return (
+      <Stack isInline spacing={4} alignItems="center">
+        <Box>
+          <Link href="/projects">
+            <_Link p={2} href="/projects" rounded="md">
+              Projects
+            </_Link>
+          </Link>
+        </Box>
+        <Box>
+          <Link href="/articles">
+            <_Link p={2} href="/articles" rounded="md">
+              Articles
+            </_Link>
+          </Link>
+        </Box>
+        <Box>
+          <Link href="/publications">
+            <_Link p={2} href="/publications" rounded="md">
+              Publications
+            </_Link>
+          </Link>
+        </Box>
+        <Box>{themeSwitcherButtonNode()}</Box>
+        <Box>{siteEditorButtonNode()}</Box>
+      </Stack>
+    );
+  };
+
   return (
     <Box
       borderTopWidth={3}
@@ -135,32 +207,11 @@ const Navbar: FC = () => {
               </_Link>
             </Link>
           </Box>
-          <Box>
-            <Stack isInline spacing={4} alignItems="center">
-              <Box>
-                <Link href="/projects">
-                  <_Link p={2} href="/projects" rounded="md">
-                    Projects
-                  </_Link>
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/articles">
-                  <_Link p={2} href="/articles" rounded="md">
-                    Articles
-                  </_Link>
-                </Link>
-              </Box>
-              <Box>
-                <Link href="/publications">
-                  <_Link p={2} href="/publications" rounded="md">
-                    Publications
-                  </_Link>
-                </Link>
-              </Box>
-              <Box>{themeSwitcherButtonNode()}</Box>
-              <Box>{siteEditorButtonNode()}</Box>
-            </Stack>
+          <Box display={["none", "none", "block", "block"]}>
+            {desktopMenuNode()}
+          </Box>
+          <Box display={["block", "block", "none", "none"]}>
+            {mobileMenuNode()}
           </Box>
         </Stack>
       </Box>
