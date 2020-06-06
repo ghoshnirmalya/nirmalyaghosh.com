@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Head from "next/head";
-import { getAllPostIds, getPostData } from "lib/posts";
+import { getAllPostIds, getPostData } from "lib/extract-posts-from-markdown";
 import Page from "components/pages/articles/show";
 import IArticle from "types/article";
 

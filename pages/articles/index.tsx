@@ -1,5 +1,5 @@
 import Page from "components/pages/articles/base";
-import { getSortedPostsData } from "lib/posts";
+import { getSortedPostsData } from "lib/extract-posts-from-markdown";
 import { NextPage } from "next";
 import IArticle from "types/article";
 import Head from "next/head";

@@ -4,5 +4,5 @@ export default interface Article {
   banner: string;
   date: string;
   tags: string[];
-  contentHtml: string;
+  processedContent: string;
 }

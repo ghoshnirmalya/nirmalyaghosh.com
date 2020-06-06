@@ -70,7 +70,7 @@ const Page: FC<Props> = ({ article }) => {
               {dateNode(article.date)}
               {titleNode(article.title)}
               {tagsNode(article.tags)}
-              {descriptionNode(article.contentHtml)}
+              {descriptionNode(article.processedContent)}
             </Stack>
           </Box>
           <Box order={[1, 1, 1, 2]}>
