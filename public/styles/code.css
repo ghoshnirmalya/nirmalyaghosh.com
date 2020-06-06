@@ -1,194 +1,44 @@
-h2 {
-  margin-top: 4rem !important;
-  margin-bottom: 1rem !important;
-  font-size: 2rem !important;
-  font-weight: 600 !important;
+/*
+ * Code overrides
+ */
+pre {
+  font-size: 0.9rem !important;
+  font-weight: bold;
+  background: #2e3440;
+  border-radius: 4px;
+  margin: 1rem 0 !important;
+}
+
+code {
+  background: #2e3540;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  color: #a3be8c;
+  font-size: 0.85rem !important;
 }
 
 p {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
+  margin: 1rem 0 !important;
 }
 
-code {
-  font-size: 0.875rem !important;
+blockquote {
+  padding-left: 1.5em;
+  padding: 0.5rem 2rem;
+  border-left: 2px solid;
+  font-style: italic;
+  opacity: 0.75;
 }
 
-ol {
-  list-style-type: decimal !important;
-  margin-left: 1rem !important;
-  padding-left: 1rem !important;
-}
-
-code {
-  font-family: "Inter", sans-serif;
-  line-height: 1.625;
-  letter-spacing: -0.025em;
-}
-
-@supports (font-variation-settings: normal) {
-  code {
-    font-family: "Inter", monospace;
-    letter-spacing: -0.025rem;
-  }
-}
-
-code[class*="language-"],
-pre[class*="language-"] {
-  font-family: "Inter", monospace;
-  font-weight: 500;
-}
-
-code,
-pre {
-  color: #fff !important;
-  font-size: 0.875rem !important;
-}
-
-/* Code blocks */
-code,
-pre {
-  padding: 1.5rem !important;
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  overflow: auto !important;
-  border-radius: 0.25rem !important;
-}
-
-:not(pre) > code,
-pre {
-  background-color: #2d3748 !important;
-}
-
-code.hljs.language-bash {
-  margin-left: -1.5rem !important;
-}
-
-/* Inline code */
-:not(pre) > code {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
-  border-radius: 0.25rem !important;
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
+/*
+ * hljs overrides
+ */
+.hljs.language-js {
+  position: relative;
+  padding: 2rem;
 }
 
 .hljs-comment {
-  margin-left: -1.125rem !important;
-}
-
-.hljs-comment,
-.hljs-prolog,
-.hljs-doctype,
-.hljs-cdata {
-  color: #a0aec0 !important;
-}
-
-.hljs-namespace {
-  opacity: 0.75 !important;
-}
-
-.hljs-property {
-  color: #90cdf4 !important;
-}
-
-.hljs-keyword,
-.hljs-tag,
-.hljs-punctuation {
-  color: #3182ce !important;
-}
-
-.hljs-class-name {
-  color: #ecc94b !important;
-}
-
-.hljs-boolean,
-.hljs-constant {
-  color: #f56565 !important;
-}
-
-.hljs-symbol,
-.hljs-deleted {
-  color: #c53030 !important;
-}
-
-.hljs-number {
-  color: #f56565 !important;
-}
-
-.hljs-selector,
-.hljs-attr-name,
-.hljs-string,
-.hljs-char,
-.hljs-builtin,
-.hljs-inserted {
-  color: #bee3f8 !important;
-}
-
-.hljs-variable {
-  color: #e2e8f0 !important;
-}
-
-.hljs-operator {
-  color: #e2e8f0 !important;
-}
-
-.hljs-entity {
-  color: #e2e8f0 !important;
-}
-
-.hljs-url {
-  color: #fff !important;
-}
-
-.language-css .string,
-.style .string {
-  color: #2f855a !important;
-}
-
-.hljs-atrule,
-.hljs-attr-value {
-  color: #faf089 !important;
-}
-
-.hljs-function {
-  color: #faf089 !important;
-}
-
-.hljs-regex {
-  color: #faf089 !important;
-}
-
-.hljs-important {
-  color: #c53030 !important;
-}
-
-.hljs-important,
-.hljs-bold {
-  font-weight: bold !important;
-}
-
-.hljs-italic {
   font-style: italic;
-}
-
-img {
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  border-radius: 0.25rem !important;
-}
-
-.gatsby-highlight-code-line {
-  /* Fix for code highlight */
-  padding-left: 1.2rem !important;
-  margin-left: -1.5rem !important;
-  margin-right: -1.5rem !important;
-  background-color: #1a202c !important;
-  border-left-width: 4px !important;
-  border-style: solid !important;
-  border-color: #90cdf4 !important;
-  display: block !important;
+  display: inline-block;
+  color: #868b94 !important;
 }

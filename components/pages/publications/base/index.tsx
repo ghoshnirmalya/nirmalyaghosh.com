@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import { Box, Grid, Stack, useColorMode } from "@chakra-ui/core";
-import Publications from "components/publications";
-import SocialLinks from "components/social-links";
 import IPublication from "types/publication";
+import dynamic from "next/dynamic";
+
+const Publications = dynamic(import("components/publications"));
+const SocialLinks = dynamic(import("components/social-links"));
 
 interface Props {
   publications: IPublication[];

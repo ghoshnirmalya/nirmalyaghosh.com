@@ -14,6 +14,11 @@ const ArticlesShowPage: FC<Props> = ({ article }) => {
       <Head>
         <title>{article.title}</title>
         <link rel="stylesheet" href="/styles/code.css" />
+        <link
+          href="https://unpkg.com/nord-highlightjs@0.1.0/dist/nord.css"
+          rel="stylesheet"
+          type="text/css"
+        />
       </Head>
       <article>
         <Page article={article} />

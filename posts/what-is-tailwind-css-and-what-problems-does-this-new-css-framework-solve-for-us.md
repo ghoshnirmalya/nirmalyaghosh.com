@@ -59,7 +59,7 @@ Next, we need to add the `build:style` script to our `package.json` file:
   "build": "react-scripts build",
   "test": "react-scripts test",
   "eject": "react-scripts eject",
-  "build:style": "tailwind build src/styles/vendors.css -o src/styles/tailwind.css" //highlight-line
+  "build:style": "tailwind build src/styles/vendors.css -o src/styles/tailwind.css"
 },
 ```
 
@@ -74,7 +74,7 @@ Next, we need to add the generated file to our `src/App.js` file:
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import "./styles/tailwind.css"; // highlight-line
+import "./styles/tailwind.css";
 ```
 
 That's all we need to do to make TailwindCSS work with Create React App. To verify whether TailwindCSS is working or not, we can add a TailwindCSS class. We can add the `bg-blue-900` class to our `<header>` in `src/App.js` file:
@@ -82,7 +82,7 @@ That's all we need to do to make TailwindCSS work with Create React App. To veri
 ```jsx
 // src/App.js
 <div className="App">
-  <header className="App-header bg-blue-900"> {/* highlight-line */}
+  <header className="App-header bg-blue-900">
     <img src={logo} className="App-logo" alt="logo" />
     <p>
       Edit <code>src/App.js</code> and save to reload.
@@ -135,7 +135,7 @@ For example, if we want to add the prefix `u-` ('u' stands for utility) to Tailw
 ```js
 // tailwind.config.js
 module.exports = {
-  prefix: "u-", // highlight-line
+  prefix: "u-",
   theme: {
     extend: {},
   },
@@ -149,7 +149,7 @@ Now, if we build our styles again using `yarn build:style`, we'll get classes li
 ```js
 // src/App.js
 <div className="App">
-  <header className="App-header u-bg-blue-900"> // highlight-line
+  <header className="App-header u-bg-blue-900">
     <img src={logo} className="App-logo" alt="logo" />
     <p>
 ```
@@ -166,7 +166,7 @@ To do that we just need to add the following code to the configuration file:
 // tailwind.config.js
 module.exports = {
   prefix: "u-",
-  important: true, // highlight-line
+  important: true,
   theme: {
     extend: {},
   },
@@ -405,7 +405,7 @@ Let's import that Card component into our `src/App.js` file:
 // src/App.js
 import React from "react";
 
-import Card from "./Card"; // highlight-line
+import Card from "./Card";
 
 import "./styles/tailwind.css";
 
@@ -471,7 +471,7 @@ function App() {
         </div>
       </nav>
       <div className="flex justify-around h-screen bg-gray-200 pt-24">
-        <Card /> // highlight-line
+        <Card />
       </div>
     </React.Fragment>
   );
@@ -487,10 +487,8 @@ Let's add two more `Card` components to our `src/App.js` file:
 
 <div className="flex justify-around h-screen bg-gray-200 pt-24">
   <Card />
-  // highlight-start
   <Card />
   <Card />
-  // highlight-end
 </div>
 ```
 

@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import { Box, Grid, Stack, useColorMode } from "@chakra-ui/core";
-import Projects from "components/projects";
-import SocialLinks from "components/social-links";
 import IProject from "types/project";
+import dynamic from "next/dynamic";
+
+const Projects = dynamic(import("components/projects"));
+const SocialLinks = dynamic(import("components/social-links"));
 
 interface Props {
   projects: IProject[];

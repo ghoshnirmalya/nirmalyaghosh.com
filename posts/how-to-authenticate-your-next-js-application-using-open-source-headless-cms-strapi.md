@@ -156,7 +156,7 @@ We need to update our `handleSubmit` method:
 import React, { useState } from "react";
 import Head from "next/head";
 import axios from "axios";
-import { setCookie } from "nookies"; //highlight-line
+import { setCookie } from "nookies";
 
   ..
 
@@ -173,12 +173,10 @@ const SignUp = () => {
       password
     });
 
-    //highlight-start
     setCookie("", "token", res.data.jwt, {
       maxAge: 30 * 24 * 60 * 60,
       path: "/"
     });
-    //highlight-end
   };
 
   ..

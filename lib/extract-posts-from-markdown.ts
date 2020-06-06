@@ -2,8 +2,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import unified from "unified";
-import slug from "remark-slug";
-import toc from "remark-toc";
 import remark2rehype from "remark-rehype";
 import highlight from "rehype-highlight";
 import parse from "remark-parse";
@@ -82,8 +80,6 @@ export async function getPostData(id: string) {
   // Use remark to convert markdown into HTML string
   const processedContent = unified()
     .use(parse)
-    .use(slug)
-    .use(toc)
     .use(remark2rehype)
     .use(highlight)
     .use(remark2react)

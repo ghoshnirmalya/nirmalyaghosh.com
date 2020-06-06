@@ -80,15 +80,13 @@ Now, let's import the Mirage app that we just created:
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { makeServer } from "mirage-mock-api/src/server"; //highlight-line
+import { makeServer } from "mirage-mock-api/src/server";
 
 import App from "./App";
 
-// highlight-start
 if (process.env.NODE_ENV === "development") {
   makeServer();
 }
-// highlight-end
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```

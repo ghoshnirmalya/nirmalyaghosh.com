@@ -8,9 +8,11 @@ import {
   Tag,
   useColorMode,
 } from "@chakra-ui/core";
-import SocialLinks from "components/social-links";
 import IArticle from "types/article";
 import { IoMdClock, IoIosPricetag } from "react-icons/io";
+import dynamic from "next/dynamic";
+
+const SocialLinks = dynamic(import("components/social-links"));
 
 interface Props {
   article: IArticle;

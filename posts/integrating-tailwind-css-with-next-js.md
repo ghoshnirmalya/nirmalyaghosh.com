@@ -74,7 +74,7 @@ Next, we need to add the `build:style` script to our `package.json` file:
   "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "build:style": "tailwind build public/assets/styles/vendors.css -o public/assets/styles/tailwind.css" //highlight-line
+  "build:style": "tailwind build public/assets/styles/vendors.css -o public/assets/styles/tailwind.css"
 },
 ```
 
@@ -88,7 +88,7 @@ Next, we need to add the generated file to our `pages/index.js` file:
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
-import "../public/assets/styles/tailwind.css"; // highlight-line
+import "../public/assets/styles/tailwind.css";
 ```
 
 However, if we visit [http://localhost:3000](http://localhost:3000/), we'll get the following error:
@@ -119,7 +119,7 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Nav />
-    <div className="hero bg-blue-100 py-8"> // highlight-line
+    <div className="hero bg-blue-100 py-8">
       <h1 className="title">Welcome to Next.js!</h1>
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
