@@ -4799,11 +4799,6 @@ node-releases@^1.1.53:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.53.tgz#2d821bfa499ed7c5dffc5e2f28c88e78a08ee3f4"
   integrity sha512-wp8zyQVwef2hpZ/dJH7SfSrIPD6YoJz6BDQDpGEkcA0s3LpAQoxBIYmfIq6QAhC1DhwsyCgTaTTcONwX8qzCuQ==
 
-nord-highlightjs@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/nord-highlightjs/-/nord-highlightjs-0.1.0.tgz#f62c1442e249fc888e5dd9cdd1b98ee7ec7200a8"
-  integrity sha512-1fcQsaEOjGq3XwTD3izRCxYHFnJQAMrQZ18zlWmJxCd4wOJ7/hnoZtCw9qTsRnRjSsUwkPsCGtJXTB+7bEVMJw==
-
 normalize-html-whitespace@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/normalize-html-whitespace/-/normalize-html-whitespace-1.0.0.tgz#5e3c8e192f1b06c3b9eee4b7e7f28854c7601e34"

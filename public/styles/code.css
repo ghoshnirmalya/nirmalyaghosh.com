@@ -3,18 +3,21 @@
  */
 pre {
   font-size: 0.9rem !important;
-  font-weight: bold;
   background: #2e3440;
   border-radius: 4px;
   margin: 1rem 0 !important;
 }
 
 code {
-  background: #2e3540;
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.5rem !important;
   border-radius: 4px;
-  color: #a3be8c;
+  color: #9bb587;
   font-size: 0.85rem !important;
+  background: #2e3540;
+}
+
+pre > code {
+  padding: 2rem !important;
 }
 
 p {
