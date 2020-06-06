@@ -1,67 +1,52 @@
 {
   "name": "nirmalyaghosh.com",
   "description": "Personal portfolio of Nirmalya Ghosh",
-  "version": "0.0.3",
-  "private": false,
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
+  "version": "0.0.4",
+  "private": false,
+  "license": "MIT",
   "keywords": [
-    "gatsby",
+    "next.js",
     "portfolio",
     "developer",
     "react",
     "javascript"
   ],
-  "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "clean": "rimraf public",
-    "dev": "gatsby develop",
-    "fix": "prettier --write 'src/**/*.{ts,tsx,js,scss,md}'",
-    "type-check": "tsc"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.155",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-helmet": "^6.0.0",
-    "boxicons": "^2.0.5",
-    "gatsby": "^2.23.1",
-    "gatsby-image": "^2.4.6",
-    "gatsby-plugin-catch-links": "^2.3.4",
-    "gatsby-plugin-lodash": "^3.3.3",
-    "gatsby-plugin-manifest": "^2.4.10",
-    "gatsby-plugin-offline": "^3.2.8",
-    "gatsby-plugin-postcss": "^2.3.3",
-    "gatsby-plugin-purgecss": "^5.0.0",
-    "gatsby-plugin-react-helmet": "^3.3.3",
-    "gatsby-plugin-sharp": "^2.6.10",
-    "gatsby-plugin-sitemap": "^2.4.4",
-    "gatsby-plugin-typescript": "^2.4.2",
-    "gatsby-remark-autolink-headers": "^2.3.4",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-prismjs": "^3.5.3",
-    "gatsby-source-filesystem": "^2.3.10",
-    "gatsby-transformer-remark": "^2.8.14",
-    "gatsby-transformer-sharp": "^2.5.4",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.9",
-    "lodash": "^4.17.15",
-    "prettier": "^2.0.5",
-    "prismjs": "^1.20.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0",
-    "source-map-support": "latest",
-    "tailwindcss": "^1.4.6",
-    "ts-node": "^8.10.2",
-    "tslint": "^6.1.2",
-    "tslint-config-blvd": "^1.2.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.3.0",
-    "typescript": "^3.9.5"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "lint": "prettier --write '**/*.{js,json,css,md,tsx,ts}'"
   },
   "dependencies": {
-    "gatsby-plugin-google-analytics": "^2.3.3"
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+    "gray-matter": "^4.0.2",
+    "next": "9.4.4",
+    "next-seo": "^4.5.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-icons": "^3.10.0",
+    "react-lazyload": "^2.6.7",
+    "recoil": "^0.0.7",
+    "rehype-highlight": "^4.0.0",
+    "rehype-stringify": "^7.0.0",
+    "remark-parse": "^8.0.2",
+    "remark-react": "^7.0.1",
+    "remark-rehype": "^7.0.0",
+    "unified": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.11",
+    "@types/react-lazyload": "^2.6.0",
+    "@types/recoil": "^0.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
   },
   "husky": {
     "hooks": {
@@ -70,8 +55,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,md,tsx,ts}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }

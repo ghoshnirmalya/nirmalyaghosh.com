@@ -1,0 +1,47 @@
+/*
+ * Code overrides
+ */
+pre {
+  font-size: 0.9rem !important;
+  background: #2e3440;
+  border-radius: 4px;
+  margin: 1rem 0 !important;
+}
+
+code {
+  padding: 0.15rem 0.5rem !important;
+  border-radius: 4px;
+  color: #9bb587;
+  font-size: 0.85rem !important;
+  background: #2e3540;
+}
+
+pre > code {
+  padding: 2rem !important;
+}
+
+p {
+  margin: 1rem 0 !important;
+}
+
+blockquote {
+  padding-left: 1.5em;
+  padding: 0.5rem 2rem;
+  border-left: 2px solid;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/*
+ * hljs overrides
+ */
+.hljs.language-js {
+  position: relative;
+  padding: 2rem;
+}
+
+.hljs-comment {
+  font-style: italic;
+  display: inline-block;
+  color: #868b94 !important;
+}

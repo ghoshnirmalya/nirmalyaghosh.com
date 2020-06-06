@@ -56,10 +56,6 @@ typings/
 .env.development
 .env.production
 
-# gatsby files
-.cache/
-public
-
 # Mac files
 .DS_Store
 
@@ -69,3 +65,9 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Next.js
+.next
+
+# Vercel
+.vercel

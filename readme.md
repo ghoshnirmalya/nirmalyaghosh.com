@@ -1,4 +1,4 @@
-# Personal Portfolio using Gatsby
+# Personal Portfolio using Next.js
 
 A starter theme for building your own portfolio.
 
