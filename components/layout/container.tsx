@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import { ThemeProvider, CSSReset, DarkMode, theme } from "@chakra-ui/core";
+import { theme, useColorMode } from "@chakra-ui/core";
 import { brandColorState } from "components/navbar";
 import { selector, useRecoilValue } from "recoil";
-import Container from "components/layout/container";
+import { Global, css } from "@emotion/core";
+import { prismDarkTheme, prismLightTheme } from "styles/code";
 
-const Layout: FC = ({ children }) => {
+const Container: FC = ({ children }) => {
   const brandColorSelector = selector({
     key: "brandColorSelector", // unique ID (with respect to other atoms/selectors)
     get: ({ get }) => {
@@ -15,23 +16,19 @@ const Layout: FC = ({ children }) => {
   });
 
   const brandColor = useRecoilValue(brandColorSelector);
+  const { colorMode } = useColorMode();
 
-  const customTheme = {
-    ...theme,
-    colors: {
-      ...theme.colors,
-      brandColor,
-    },
+  const codeStyles = {
+    light: prismLightTheme,
+    dark: prismDarkTheme,
   };
 
   return (
-    <ThemeProvider theme={customTheme}>
-      <DarkMode>
-        <CSSReset />
-        <Container>{children}</Container>
-      </DarkMode>
-    </ThemeProvider>
+    <>
+      <Global styles={codeStyles[colorMode]} />
+      {children}
+    </>
   );
 };
 
-export default Layout;
+export default Container;
