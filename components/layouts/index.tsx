@@ -2,11 +2,11 @@ import React, { FC } from "react";
 import { ThemeProvider, CSSReset, DarkMode, theme } from "@chakra-ui/core";
 import { brandColorState } from "components/navbar";
 import { selector, useRecoilValue } from "recoil";
-import Container from "components/layout/container";
+import Container from "components/layouts/container";
 
 const Layout: FC = ({ children }) => {
   const brandColorSelector = selector({
-    key: "brandColorSelector", // unique ID (with respect to other atoms/selectors)
+    key: "brandColorSelector",
     get: ({ get }) => {
       const brandColor = get(brandColorState);
 

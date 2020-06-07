@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ErrorInfo } from "react";
 import Head from "next/head";
 import siteConfig from "config/site";
 import { RecoilRoot } from "recoil";
@@ -7,10 +7,10 @@ import dynamic from "next/dynamic";
 import App from "next/app";
 import * as gtag from "lib/gtag";
 import Router from "next/router";
-import * as Sentry from "@sentry/browser";
+import * as Sentry from "@sentry/node";
 
 const Navbar = dynamic(import("components/navbar"));
-const Layout = dynamic(import("components/layout"));
+const Layout = dynamic(import("components/layouts"));
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -20,11 +20,10 @@ declare global {
   }
 }
 
-if (isProd) {
-  Sentry.init({
-    dsn: process.env.SENTRY_DSN,
-  });
-}
+Sentry.init({
+  enabled: isProd,
+  dsn: process.env.SENTRY_DSN,
+});
 
 export function reportWebVitals({ id, name, label, value }) {
   if (isProd && window.gtag) {

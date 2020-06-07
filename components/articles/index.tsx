@@ -115,9 +115,11 @@ const Articles: FC<Props> = ({
       {headingNode()}
       <Stack spacing={16}>
         {articles.map((article: IArticle) => {
+          const permalink = article.__resourcePath.replace(".mdx", "");
+
           return (
-            <Box key={article.id}>
-              <Link href="/articles/[id]" as={`/articles/${article.id}`}>
+            <Box key={permalink}>
+              <Link href={`/${permalink}`}>
                 <a>
                   <Box>
                     <Stack spacing={4}>

@@ -30,8 +30,7 @@ yarn add --dev miragejs
 
 Next, we'll create a route to get a list of dog breeds. Let's create a new file called `server.js` inside `src` directory:
 
-```js
-// src/server.js
+```js:src/server.js
 
 const Mirage = require("miragejs");
 
@@ -75,8 +74,7 @@ npx create-react-app mirage-react-app && cd mirage-react-app
 
 Now, let's import the Mirage app that we just created:
 
-```js
-// src/index.js
+```js:src/index.js
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -93,8 +91,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 Also, let's test our Mirage API:
 
-```js
-// src/App.js
+```js:src/App.js
 
 import React, { useState, useEffect } from "react";
 
