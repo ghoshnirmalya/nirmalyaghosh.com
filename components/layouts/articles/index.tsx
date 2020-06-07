@@ -69,7 +69,7 @@ const Page = (article: IArticle) => {
                 {dateNode(article.date)}
                 {titleNode(article.title)}
                 {tagsNode(article.tags)}
-                <Box>{children}</Box>
+                <Box className="article">{children}</Box>
               </Stack>
             </Box>
             <Box order={[1, 1, 1, 2]}>

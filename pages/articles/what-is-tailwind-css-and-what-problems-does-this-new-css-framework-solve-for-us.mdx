@@ -43,8 +43,7 @@ cd my-app && npm install tailwindcss
 
 Next, we need to use the @tailwind directive to inject Tailwind's base, components, and utilities styles into our CSS. To do that we need to add the following code to our `src/styles/vendors.css` file:
 
-```scss
-// src/styles/vendor.css
+```scss:src/styles/vendor.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,8 +51,7 @@ Next, we need to use the @tailwind directive to inject Tailwind's base, componen
 
 Next, we need to add the `build:style` script to our `package.json` file:
 
-```json
-// package.json
+```json:package.json
 "scripts": {
   "start": "react-scripts start",
   "build": "react-scripts build",
@@ -69,8 +67,7 @@ Now, the `build:style` command will generate a new `src/styles/tailwind.css` fil
 
 Next, we need to add the generated file to our `src/App.js` file:
 
-```jsx
-// src/App.js
+```jsx:src/App.js
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -79,8 +76,7 @@ import "./styles/tailwind.css";
 
 That's all we need to do to make TailwindCSS work with Create React App. To verify whether TailwindCSS is working or not, we can add a TailwindCSS class. We can add the `bg-blue-900` class to our `<header>` in `src/App.js` file:
 
-```jsx
-// src/App.js
+```jsx:src/App.js
 <div className="App">
   <header className="App-header bg-blue-900">
     <img src={logo} className="App-logo" alt="logo" />
@@ -115,8 +111,7 @@ npx tailwind init
 
 This will create a new file `tailwind.config.js` at the root of our project:
 
-```js
-// tailwind.config.js
+```js:tailwind.config.js
 module.exports = {
   theme: {
     extend: {},
@@ -132,8 +127,7 @@ Now, let's say we want to use Tailwind in your existing codebase. Our existing c
 
 For example, if we want to add the prefix `u-` ('u' stands for utility) to Tailwind's classes, we just need to add that to the configuration file we generated above:
 
-```js
-// tailwind.config.js
+```js:tailwind.config.js
 module.exports = {
   prefix: "u-",
   theme: {
@@ -146,8 +140,7 @@ module.exports = {
 
 Now, if we build our styles again using `yarn build:style`, we'll get classes like `u-bg-blue-900`. Let's replace `bg-blue-900` to `u-bg-blue-900` in our `src/App.js` file:
 
-```js
-// src/App.js
+```js:src/App.js
 <div className="App">
   <header className="App-header u-bg-blue-900">
     <img src={logo} className="App-logo" alt="logo" />
@@ -162,8 +155,7 @@ If we see that the Tailwind classes are not reflecting on the browser, it could 
 
 To do that we just need to add the following code to the configuration file:
 
-```js
-// tailwind.config.js
+```js:tailwind.config.js
 module.exports = {
   prefix: "u-",
   important: true,
@@ -177,8 +169,7 @@ module.exports = {
 
 Now, if we build our styles again using `yarn build:style`, we'll get styles like:
 
-```scss
-// src/styles/tailwind.css
+```scss:src/styles/tailwind.css
 .u-bg-gray-900 {
   background-color: #1a202c !important;
 }
@@ -196,8 +187,7 @@ First, let's remove all the code from our `src/App.js` file and then remove the 
 
 Our `src/App.js` file should look like the following:
 
-```js
-// src/App.js
+```js:src/App.js
 import React from "react";
 
 import "./styles/tailwind.css";
@@ -213,8 +203,7 @@ We're now in a position to develop our first page using React and style it with 
 
 Let's introduce that component into our `src/App.js` file:
 
-```js
-// src/App.js
+```js:src/App.js
 import React from "react";
 
 import "./styles/tailwind.css";
@@ -291,8 +280,7 @@ If we visit [http://localhost:3000](http://localhost:3000/), it'll look like the
 
 Our page looks like it's without styles. This is because we've prefixed with `u-` in our Tailwind configuration file. Let's remove that for now so that our `tailwind.config.js` file looks like the following:
 
-```js
-// tailwind.config.js
+```js:tailwind.config.js
 module.exports = {
   important: true,
   theme: {
@@ -311,8 +299,7 @@ If we visit [http://localhost:3000](http://localhost:3000/), it'll now look like
 
 Now, it looks as expected. Let's now add a card component to this. We just need to add the following code to our `src/App.js` file:
 
-```js
-// src/App.js
+```js:src/App.js
 <div className="flex items-center justify-center h-screen bg-gray-200">
   <div className="max-w-md">
     <div className="rounded overflow-hidden shadow-lg">
@@ -359,8 +346,7 @@ Till now, we designed the whole page inside one single file. However, we'll most
 
 Let's create a new file `src/Card.js` and move the card styles from `src/App.js` file to that file:
 
-```js
-// src/Card.js
+```js:src/Card.js
 import React from "react";
 
 function Card() {
@@ -401,8 +387,7 @@ export default Card;
 
 Let's import that Card component into our `src/App.js` file:
 
-```js
-// src/App.js
+```js:src/App.js
 import React from "react";
 
 import Card from "./Card";
@@ -482,8 +467,7 @@ export default App;
 
 Let's add two more `Card` components to our `src/App.js` file:
 
-```js
-// src/App.js
+```js:src/App.js
 
 <div className="flex justify-around h-screen bg-gray-200 pt-24">
   <Card />
