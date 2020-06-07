@@ -64,19 +64,6 @@ const projects: FC<Props> = ({
     return <Text>{description}</Text>;
   };
 
-  const ctaNode = () => {
-    return (
-      <Button
-        rightIcon="arrow-forward"
-        bg="brandColor"
-        color="white"
-        _hover={{ bg: "brandColor", color: "white" }}
-      >
-        View project
-      </Button>
-    );
-  };
-
   return (
     <Stack spacing={4}>
       {headingNode()}
@@ -89,21 +76,11 @@ const projects: FC<Props> = ({
                   rounded="md"
                   bg={cardBgColor[colorMode]}
                   color={cardColor[colorMode]}
+                  p={4}
                 >
-                  <Stack isInline p={4} spacing={4}>
-                    <Stack>
-                      <Stack
-                        spacing={4}
-                        justifyContent="space-between"
-                        h="full"
-                      >
-                        <Stack spacing={4}>
-                          {titleNode(project.title)}
-                          {descriptionNode(project.title)}
-                        </Stack>
-                        <Box>{ctaNode()}</Box>
-                      </Stack>
-                    </Stack>
+                  <Stack spacing={4}>
+                    {titleNode(project.title)}
+                    {descriptionNode(project.title)}
                   </Stack>
                 </PseudoBox>
               </a>

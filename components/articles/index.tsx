@@ -101,9 +101,9 @@ const Articles: FC<Props> = ({
     return (
       <Button
         rightIcon="arrow-forward"
-        bg="brandColor"
-        color="white"
-        _hover={{ bg: "brandColor", color: "white" }}
+        color="brandColor"
+        variant="link"
+        fontSize="sm"
       >
         Read more
       </Button>
@@ -121,12 +121,10 @@ const Articles: FC<Props> = ({
                 <a>
                   <Box>
                     <Stack spacing={4}>
-                      <Stack spacing={4}>
-                        {dateNode(article.date)}
-                        {titleNode(article.title)}
-                        {tagsNode(article.tags)}
-                        {descriptionNode()}
-                      </Stack>
+                      {dateNode(article.date)}
+                      {titleNode(article.title)}
+                      {tagsNode(article.tags)}
+                      {descriptionNode()}
                       <Box>{ctaNode()}</Box>
                     </Stack>
                   </Box>

@@ -77,9 +77,9 @@ const Publications: FC<Props> = ({
     return (
       <Button
         rightIcon="arrow-forward"
-        bg="brandColor"
-        color="white"
-        _hover={{ bg: "brandColor", color: "white" }}
+        color="brandColor"
+        variant="link"
+        fontSize="sm"
       >
         Read more
       </Button>
@@ -96,11 +96,9 @@ const Publications: FC<Props> = ({
               <a href={publication.url} target="_blank" rel="noopener">
                 <Box>
                   <Stack spacing={4}>
-                    <Stack spacing={4}>
-                      {dateNode(publication.date)}
-                      {titleNode(publication.title)}
-                      {descriptionNode()}
-                    </Stack>
+                    {dateNode(publication.date)}
+                    {titleNode(publication.title)}
+                    {descriptionNode()}
                     <Box>{ctaNode()}</Box>
                   </Stack>
                 </Box>
