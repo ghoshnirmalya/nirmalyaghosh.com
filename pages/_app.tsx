@@ -10,7 +10,7 @@ import Router from "next/router";
 import * as Sentry from "@sentry/browser";
 
 const Navbar = dynamic(import("components/navbar"));
-const Layout = dynamic(import("components/layout"));
+const Layout = dynamic(import("components/layouts"));
 
 const isProd = process.env.NODE_ENV === "production";
 

@@ -1,25 +1,19 @@
 import Page from "components/pages/index";
-import { getSortedPostsData } from "lib/extract-posts-from-markdown";
 import { NextPage } from "next";
-import IArticle from "types/article";
 import IPublication from "types/publication";
 import IProject from "types/project";
 import publicationsData from "public/data/publications.json";
 import projectsData from "public/data/projects.json";
 import Head from "next/head";
 import siteConfig from "config/site";
+import { frontMatter as articles } from "./articles/*.mdx";
 
 interface Props {
-  articles: IArticle[];
   publications: IPublication[];
   projects: IProject[];
 }
 
-const IndexPage: NextPage<Props> = ({
-  articles = [],
-  publications = [],
-  projects = [],
-}) => {
+const IndexPage: NextPage<Props> = ({ publications = [], projects = [] }) => {
   return (
     <>
       <Head>
@@ -35,7 +29,6 @@ const IndexPage: NextPage<Props> = ({
 };
 
 export async function getStaticProps() {
-  const articles = getSortedPostsData();
   const publications = publicationsData;
   const projects = projectsData;
 

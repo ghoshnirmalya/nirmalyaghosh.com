@@ -2,10 +2,7 @@ import { css } from "@emotion/core";
 import { theme } from "@chakra-ui/core";
 
 const prismBaseTheme = css`
-  h1,
-  h2,
-  h3,
-  h4 {
+  h2 {
     margin: ${theme.space[16]} 0 ${theme.space[4]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
