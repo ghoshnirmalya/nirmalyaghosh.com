@@ -23,6 +23,8 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@sentry/node": "^5.16.1",
+    "@sentry/webpack-plugin": "^1.11.1",
     "babel-plugin-import-glob-array": "^0.2.0",
     "emotion-theming": "^10.0.27",
     "gray-matter": "^4.0.2",

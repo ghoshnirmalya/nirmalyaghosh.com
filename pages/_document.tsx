@@ -1,17 +1,6 @@
 import Document, { Head, Main, NextScript, Html } from "next/document";
-import * as Sentry from "@sentry/browser";
 
 const isProd = process.env.NODE_ENV === "production";
-
-if (isProd) {
-  process.on("unhandledRejection", (err) => {
-    Sentry.captureException(err);
-  });
-
-  process.on("uncaughtException", (err) => {
-    Sentry.captureException(err);
-  });
-}
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {

@@ -1,6 +1,7 @@
 import Page from "components/pages/articles/base";
 import { NextPage } from "next";
 import Head from "next/head";
+// @ts-ignore
 import { frontMatter as articles } from "./articles/*.mdx";
 
 const ArticlesIndexPage: NextPage = () => {

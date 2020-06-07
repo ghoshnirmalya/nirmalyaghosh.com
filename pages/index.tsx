@@ -6,6 +6,7 @@ import publicationsData from "public/data/publications.json";
 import projectsData from "public/data/projects.json";
 import Head from "next/head";
 import siteConfig from "config/site";
+//@ts-ignore
 import { frontMatter as articles } from "./articles/*.mdx";
 
 interface Props {
