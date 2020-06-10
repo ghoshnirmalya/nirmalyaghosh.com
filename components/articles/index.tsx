@@ -8,6 +8,7 @@ import {
   Tag,
   Link as _Link,
   useColorMode,
+  Icon,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IArticle from "types/article";
@@ -31,8 +32,6 @@ const Articles: FC<Props> = ({
   const cardColor = { light: "gray.900", dark: "white" };
 
   const viewAllLinksNode = () => {
-    if (hideViewAllLinksNode) return false;
-
     return (
       <Link href="/articles">
         <_Link p={2} href="/articles" rounded="md">
@@ -46,6 +45,17 @@ const Articles: FC<Props> = ({
   };
 
   const headingNode = () => {
+    if (hideViewAllLinksNode) {
+      return (
+        <Stack spacing={2}>
+          <Heading as="h2" size="xl">
+            Articles
+          </Heading>
+          <Text>Posts related to some of the latest technologies</Text>
+        </Stack>
+      );
+    }
+
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
         <Heading as="h2" size="xl">
@@ -56,11 +66,20 @@ const Articles: FC<Props> = ({
     );
   };
 
-  const dateNode = (date: string) => {
+  const metaNode = (date: string, readingTime: string, wordCount: string) => {
     return (
-      <Stack spacing={2} isInline alignItems="center">
-        <Box as={IoMdClock} />
-        <Text fontSize="sm">{date}</Text>
+      <Stack spacing={4} isInline alignItems="center">
+        <Box>
+          <Text fontSize="xs">{date}</Text>
+        </Box>
+        <Icon name="minus" size="12px" />
+        <Box>
+          <Text fontSize="xs">{readingTime}</Text>
+        </Box>
+        <Icon name="minus" size="12px" />
+        <Box>
+          <Text fontSize="xs">{wordCount} words</Text>
+        </Box>
       </Stack>
     );
   };
@@ -73,33 +92,8 @@ const Articles: FC<Props> = ({
     );
   };
 
-  const tagsNode = (tags: string[] = []) => {
-    if (!tags.length) return false;
-
-    return (
-      <Stack isInline spacing={2}>
-        {tags.map((tag, index) => {
-          return (
-            <Tag key={index} size="sm">
-              <Stack spacing={2} isInline alignItems="center">
-                <Box as={IoIosPricetag} size="15px" />
-                <Box>{tag}</Box>
-              </Stack>
-            </Tag>
-          );
-        })}
-      </Stack>
-    );
-  };
-
-  const descriptionNode = () => {
-    return (
-      <Text>
-        Ut at ipsum porttitor, dignissim eros a, interdum nisl. Duis egestas sed
-        mauris nec interdum. Nunc at pellentesque purus. Suspendisse felis
-        ligula, auctor gravida tempor non, vehicula ut massa.
-      </Text>
-    );
+  const descriptionNode = (description: string) => {
+    return <Text>{description}</Text>;
   };
 
   const ctaNode = () => {
@@ -129,10 +123,13 @@ const Articles: FC<Props> = ({
                     shadow="md"
                   >
                     <Stack spacing={4}>
-                      {dateNode(article.date)}
+                      {metaNode(
+                        article.date,
+                        article.readingTime.text,
+                        article.wordCount
+                      )}
                       {titleNode(article.title)}
-                      {tagsNode(article.tags)}
-                      {descriptionNode()}
+                      {descriptionNode(article.description)}
                       <Box>{ctaNode()}</Box>
                     </Stack>
                   </Box>

@@ -46,7 +46,7 @@ const Page: FC<Props> = ({
               </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
-              <Stack spacing={32} position="sticky" top={100}>
+              <Stack spacing={8} position="sticky" top={100}>
                 <Box>
                   <LazyLoad once offset={100}>
                     <SocialLinks />

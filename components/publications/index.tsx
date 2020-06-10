@@ -26,8 +26,6 @@ const Publications: FC<Props> = ({
   const cardColor = { light: "gray.900", dark: "white" };
 
   const viewAllLinksNode = () => {
-    if (hideViewAllLinksNode) return false;
-
     return (
       <Link href="/publications">
         <_Link p={2} href="/publications" rounded="md">
@@ -41,6 +39,17 @@ const Publications: FC<Props> = ({
   };
 
   const headingNode = () => {
+    if (hideViewAllLinksNode) {
+      return (
+        <Stack spacing={2}>
+          <Heading as="h2" size="xl">
+            Publications
+          </Heading>
+          <Text>Articles which have been published on other websites</Text>
+        </Stack>
+      );
+    }
+
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
         <Heading as="h2" size="xl">
@@ -68,14 +77,8 @@ const Publications: FC<Props> = ({
     );
   };
 
-  const descriptionNode = () => {
-    return (
-      <Text>
-        Ut at ipsum porttitor, dignissim eros a, interdum nisl. Duis egestas sed
-        mauris nec interdum. Nunc at pellentesque purus. Suspendisse felis
-        ligula, auctor gravida tempor non, vehicula ut massa.
-      </Text>
-    );
+  const descriptionNode = (description: string) => {
+    return <Text>{description}</Text>;
   };
 
   const ctaNode = () => {
@@ -105,7 +108,7 @@ const Publications: FC<Props> = ({
                   <Stack spacing={4}>
                     {dateNode(publication.date)}
                     {titleNode(publication.title)}
-                    {descriptionNode()}
+                    {descriptionNode(publication.description)}
                     <Box>{ctaNode()}</Box>
                   </Stack>
                 </Box>

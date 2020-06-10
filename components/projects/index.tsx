@@ -38,7 +38,7 @@ const projects: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="lg">
           Projects
         </Heading>
         {viewAllLinksNode()}
@@ -61,7 +61,7 @@ const projects: FC<Props> = ({
   return (
     <Stack spacing={4}>
       {headingNode()}
-      <Stack spacing={8}>
+      <Stack spacing={4}>
         {projects.map((project: IProject, index: number) => {
           return (
             <Box key={index}>
