@@ -1,4 +1,4 @@
-import React, { ErrorInfo } from "react";
+import React from "react";
 import Head from "next/head";
 import siteConfig from "config/site";
 import { RecoilRoot } from "recoil";
@@ -9,9 +9,7 @@ import * as gtag from "lib/gtag";
 import Router from "next/router";
 import * as Sentry from "@sentry/node";
 
-const Navbar = dynamic(import("components/navbar"));
 const Layout = dynamic(import("components/layouts"));
-
 const isProd = process.env.NODE_ENV === "production";
 
 declare global {
@@ -105,7 +103,6 @@ export default class MyApp extends App {
               locale: "en_IE",
             }}
           />
-          <Navbar />
           <Component {...pageProps} />
         </Layout>
       </RecoilRoot>

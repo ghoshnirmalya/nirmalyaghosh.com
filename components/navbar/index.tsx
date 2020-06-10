@@ -9,24 +9,14 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  MenuOptionGroup,
-  MenuItemOption,
   useColorMode,
-  useTheme,
 } from "@chakra-ui/core";
 import Link from "next/link";
-import { IoIosOptions } from "react-icons/io";
-import { atom, useRecoilState } from "recoil";
-
-const brandColorState = atom({
-  key: "brandColor",
-  default: "#00B5D8",
-});
 
 const Navbar: FC = () => {
-  const theme = useTheme();
   const { colorMode, toggleColorMode } = useColorMode();
-  const navbarBgColor = { light: "white", dark: "gray.900" };
+  const navbarSectionBgColor = { light: "white", dark: "gray.900" };
+  const navbarSectionColor = { light: "dark.900", dark: "white" };
 
   const themeSwitcherButtonNode = () => {
     if (colorMode === "light") {
@@ -47,65 +37,6 @@ const Navbar: FC = () => {
         size="sm"
         onClick={toggleColorMode}
       />
-    );
-  };
-
-  const siteEditorButtonNode = () => {
-    const [_, setBrandColor] = useRecoilState(brandColorState);
-
-    return (
-      <Menu closeOnSelect={false}>
-        <MenuButton as={Button} aria-label="Edit site" size="sm">
-          <Box as={IoIosOptions} size="15px" />
-        </MenuButton>
-        <MenuList minWidth="200px" placement="bottom-end">
-          <MenuOptionGroup
-            defaultValue={theme.colors["cyan"][500]}
-            title="Choose brand color"
-            type="radio"
-          >
-            {[
-              "Gray",
-              "Red",
-              "Orange",
-              "Yellow",
-              "Green",
-              "Teal",
-              "Blue",
-              "Cyan",
-              "Purple",
-              "Pink",
-            ].map((color: string, index: number) => {
-              return (
-                <MenuItemOption
-                  key={index}
-                  value={theme.colors[color.toLowerCase()][500]}
-                  onClick={() =>
-                    setBrandColor(theme.colors[color.toLowerCase()][500])
-                  }
-                >
-                  <Stack key={index} isInline spacing={4} alignItems="center">
-                    <Box
-                      h={5}
-                      w={5}
-                      m={2}
-                      bg={`${color.toLowerCase()}.500`}
-                      rounded="full"
-                      shadow="xl"
-                      borderWidth={1}
-                      borderColor="gray.100"
-                      onClick={() =>
-                        setBrandColor(theme.colors[color.toLowerCase()][500])
-                      }
-                    />
-                    <span>{color}</span>
-                  </Stack>
-                </MenuItemOption>
-              );
-            })}
-          </MenuOptionGroup>
-        </MenuList>
-      </Menu>
     );
   };
 
@@ -175,20 +106,18 @@ const Navbar: FC = () => {
           </Link>
         </Box>
         <Box>{themeSwitcherButtonNode()}</Box>
-        <Box>{siteEditorButtonNode()}</Box>
       </Stack>
     );
   };
 
   return (
     <Box
-      borderTopWidth={3}
-      borderTopColor="brandColor"
-      bg={navbarBgColor[colorMode]}
-      color="brandColor"
+      as="header"
       position="sticky"
       top={0}
       zIndex={1}
+      bg={navbarSectionBgColor[colorMode]}
+      color={navbarSectionColor[colorMode]}
       shadow="md"
       fontWeight="bold"
     >
@@ -218,7 +147,5 @@ const Navbar: FC = () => {
     </Box>
   );
 };
-
-export { brandColorState };
 
 export default Navbar;

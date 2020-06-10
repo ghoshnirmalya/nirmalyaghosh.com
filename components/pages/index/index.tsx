@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Grid, Stack, useColorMode } from "@chakra-ui/core";
+import { Box, Grid, Stack } from "@chakra-ui/core";
 import IArticle from "types/article";
 import IPublication from "types/publication";
 import IProject from "types/project";
@@ -11,6 +11,8 @@ const Articles = dynamic(import("components/articles"));
 const Publications = dynamic(import("components/publications"));
 const Projects = dynamic(import("components/projects"));
 const SocialLinks = dynamic(import("components/social-links"));
+const Navbar = dynamic(import("components/navbar"));
+
 interface Props {
   articles: IArticle[];
   publications: IPublication[];
@@ -22,27 +24,16 @@ const Page: FC<Props> = ({
   publications = [],
   projects = [],
 }) => {
-  const { colorMode } = useColorMode();
-  const jumbotronSectionBgColor = { light: "gray.100", dark: "black" };
-  const jumbotronSectionColor = { light: "black", dark: "gray.100" };
-  const sectionBgColor = { light: "white", dark: "gray.900" };
-  const sectionColor = { light: "gray.900", dark: "white" };
-
   return (
     <>
-      <Box
-        as="section"
-        bg={jumbotronSectionBgColor[colorMode]}
-        color={jumbotronSectionColor[colorMode]}
-      >
-        <Box maxW="6xl" mx="auto" p={4}>
-          <Jumbotron />
-        </Box>
+      <Box as="section">
+        <Jumbotron />
       </Box>
-      <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
+      <Navbar />
+      <Box>
         <Box maxW="6xl" mx="auto" px={4} py={8}>
           <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
-            <Stack spacing={16} order={[2, 2, 2, 1]}>
+            <Stack spacing={32} order={[2, 2, 2, 1]}>
               <Box as="section">
                 <LazyLoad once offset={100}>
                   <Articles articles={articles.slice(0, 3)} />
@@ -55,7 +46,7 @@ const Page: FC<Props> = ({
               </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
-              <Stack spacing={16} position="sticky" top={100}>
+              <Stack spacing={32} position="sticky" top={100}>
                 <Box>
                   <LazyLoad once offset={100}>
                     <SocialLinks />

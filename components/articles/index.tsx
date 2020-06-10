@@ -7,6 +7,7 @@ import {
   Button,
   Tag,
   Link as _Link,
+  useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IArticle from "types/article";
@@ -25,12 +26,16 @@ const Articles: FC<Props> = ({
   articles = [],
   hideViewAllLinksNode = false,
 }) => {
+  const { colorMode } = useColorMode();
+  const cardBgColor = { light: "white", dark: "gray.900" };
+  const cardColor = { light: "gray.900", dark: "white" };
+
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
     return (
       <Link href="/articles">
-        <_Link p={2} href="/articles" rounded="md" color="brandColor">
+        <_Link p={2} href="/articles" rounded="md">
           <Stack spacing={2} isInline alignItems="center">
             <Box fontWeight="bold">View all articles</Box>
             <Box as={IoMdArrowRoundForward} size="15px" />
@@ -43,7 +48,7 @@ const Articles: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="lg">
+        <Heading as="h2" size="xl">
           Articles
         </Heading>
         {viewAllLinksNode()}
@@ -54,7 +59,7 @@ const Articles: FC<Props> = ({
   const dateNode = (date: string) => {
     return (
       <Stack spacing={2} isInline alignItems="center">
-        <Box as={IoMdClock} color="brandColor" />
+        <Box as={IoMdClock} />
         <Text fontSize="sm">{date}</Text>
       </Stack>
     );
@@ -62,7 +67,7 @@ const Articles: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color="brandColor">
+      <Heading as="h3" size="md">
         {title}
       </Heading>
     );
@@ -75,7 +80,7 @@ const Articles: FC<Props> = ({
       <Stack isInline spacing={2}>
         {tags.map((tag, index) => {
           return (
-            <Tag key={index} size="sm" color="brandColor">
+            <Tag key={index} size="sm">
               <Stack spacing={2} isInline alignItems="center">
                 <Box as={IoIosPricetag} size="15px" />
                 <Box>{tag}</Box>
@@ -99,12 +104,7 @@ const Articles: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Button
-        rightIcon="arrow-forward"
-        color="brandColor"
-        variant="link"
-        fontSize="sm"
-      >
+      <Button rightIcon="arrow-forward" variant="link" fontSize="sm">
         Read more
       </Button>
     );
@@ -113,7 +113,7 @@ const Articles: FC<Props> = ({
   return (
     <Stack spacing={8}>
       {headingNode()}
-      <Stack spacing={16}>
+      <Stack spacing={8}>
         {articles.map((article: IArticle) => {
           const permalink = article.__resourcePath.replace(".mdx", "");
 
@@ -121,7 +121,13 @@ const Articles: FC<Props> = ({
             <Box key={permalink}>
               <Link href={`/${permalink}`}>
                 <a>
-                  <Box>
+                  <Box
+                    bg={cardBgColor[colorMode]}
+                    color={cardColor[colorMode]}
+                    p={8}
+                    rounded="md"
+                    shadow="md"
+                  >
                     <Stack spacing={4}>
                       {dateNode(article.date)}
                       {titleNode(article.title)}

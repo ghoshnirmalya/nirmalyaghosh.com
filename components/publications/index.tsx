@@ -6,6 +6,7 @@ import {
   Text,
   Button,
   Link as _Link,
+  useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IPublication from "types/publication";
@@ -20,12 +21,16 @@ const Publications: FC<Props> = ({
   publications = [],
   hideViewAllLinksNode = false,
 }) => {
+  const { colorMode } = useColorMode();
+  const cardBgColor = { light: "white", dark: "gray.900" };
+  const cardColor = { light: "gray.900", dark: "white" };
+
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
     return (
       <Link href="/publications">
-        <_Link p={2} href="/publications" rounded="md" color="brandColor">
+        <_Link p={2} href="/publications" rounded="md">
           <Stack spacing={2} isInline alignItems="center">
             <Box fontWeight="bold">View all publications</Box>
             <Box as={IoMdArrowRoundForward} size="15px" />
@@ -38,7 +43,7 @@ const Publications: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="lg">
+        <Heading as="h2" size="xl">
           Publications
         </Heading>
         {viewAllLinksNode()}
@@ -49,7 +54,7 @@ const Publications: FC<Props> = ({
   const dateNode = (date: string) => {
     return (
       <Stack spacing={2} isInline alignItems="center">
-        <Box as={IoMdClock} color="brandColor" />
+        <Box as={IoMdClock} />
         <Text fontSize="sm">{date}</Text>
       </Stack>
     );
@@ -57,7 +62,7 @@ const Publications: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color="brandColor">
+      <Heading as="h3" size="md">
         {title}
       </Heading>
     );
@@ -75,12 +80,7 @@ const Publications: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Button
-        rightIcon="arrow-forward"
-        color="brandColor"
-        variant="link"
-        fontSize="sm"
-      >
+      <Button rightIcon="external-link" variant="link" fontSize="sm">
         Read more
       </Button>
     );
@@ -89,10 +89,17 @@ const Publications: FC<Props> = ({
   return (
     <Stack spacing={8}>
       {headingNode()}
-      <Stack spacing={16}>
+      <Stack spacing={8}>
         {publications.map((publication: IPublication, index: number) => {
           return (
-            <Box key={index}>
+            <Box
+              key={index}
+              bg={cardBgColor[colorMode]}
+              color={cardColor[colorMode]}
+              p={8}
+              rounded="md"
+              shadow="md"
+            >
               <a href={publication.url} target="_blank" rel="noopener">
                 <Box>
                   <Stack spacing={4}>

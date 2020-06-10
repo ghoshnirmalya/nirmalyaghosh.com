@@ -1,10 +1,12 @@
 import React, { FC } from "react";
-import { useColorMode } from "@chakra-ui/core";
+import { useColorMode, Box } from "@chakra-ui/core";
 import { Global } from "@emotion/core";
 import { prismDarkTheme, prismLightTheme } from "styles/code";
 
 const Container: FC = ({ children }) => {
   const { colorMode } = useColorMode();
+  const sectionBgColor = { light: "gray.100", dark: "black" };
+  const sectionColor = { light: "black", dark: "gray.100" };
 
   const codeStyles = {
     light: prismLightTheme,
@@ -12,10 +14,10 @@ const Container: FC = ({ children }) => {
   };
 
   return (
-    <>
+    <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
       <Global styles={codeStyles[colorMode]} />
       {children}
-    </>
+    </Box>
   );
 };
 

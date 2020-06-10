@@ -6,8 +6,6 @@ import {
   Text,
   PseudoBox,
   Link as _Link,
-  useColorMode,
-  Button,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IProject from "types/project";
@@ -22,16 +20,12 @@ const projects: FC<Props> = ({
   projects = [],
   hideViewAllLinksNode = false,
 }) => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "gray.100", dark: "black" };
-  const cardColor = { light: "black", dark: "gray.100" };
-
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
     return (
       <Link href="/projects">
-        <_Link p={2} href="/projects" rounded="md" color="brandColor">
+        <_Link p={2} href="/projects" rounded="md">
           <Stack spacing={2} isInline alignItems="center">
             <Box fontWeight="bold">View all projects</Box>
             <Box as={IoMdArrowRoundForward} size="15px" />
@@ -44,7 +38,7 @@ const projects: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="lg">
+        <Heading as="h2" size="xl">
           Projects
         </Heading>
         {viewAllLinksNode()}
@@ -54,7 +48,7 @@ const projects: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color="brandColor">
+      <Heading as="h3" size="md">
         {title}
       </Heading>
     );
@@ -67,22 +61,15 @@ const projects: FC<Props> = ({
   return (
     <Stack spacing={4}>
       {headingNode()}
-      <Stack spacing={4}>
+      <Stack spacing={8}>
         {projects.map((project: IProject, index: number) => {
           return (
             <Box key={index}>
               <a href={project.url} target="_blank" rel="noopener">
-                <PseudoBox
-                  rounded="md"
-                  bg={cardBgColor[colorMode]}
-                  color={cardColor[colorMode]}
-                  p={4}
-                >
-                  <Stack spacing={4}>
-                    {titleNode(project.title)}
-                    {descriptionNode(project.title)}
-                  </Stack>
-                </PseudoBox>
+                <Stack spacing={4}>
+                  {titleNode(project.title)}
+                  {descriptionNode(project.description)}
+                </Stack>
               </a>
             </Box>
           );

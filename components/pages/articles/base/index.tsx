@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Box, Grid, Stack } from "@chakra-ui/core";
 import IArticle from "types/article";
 import dynamic from "next/dynamic";
+import withNavbarLayout from "lib/with-navbar-layout";
 
 const Articles = dynamic(import("components/articles"));
 const SocialLinks = dynamic(import("components/social-links"));
@@ -29,4 +30,4 @@ const Page: FC<Props> = ({ articles = [] }) => {
   );
 };
 
-export default Page;
+export default withNavbarLayout(Page);
