@@ -11,8 +11,8 @@ import {
 
 const NewsletterSubscriptionForm: FC = () => {
   const { colorMode } = useColorMode();
-  const cardBgColor = { light: "gray.900", dark: "gray.100" };
-  const cardColor = { light: "gray.100", dark: "gray.900" };
+  const cardBgColor = { light: "gray.900", dark: "white" };
+  const cardColor = { light: "white", dark: "gray.900" };
   const MAILCHIMP_SIGNUP_FORM_URL = "http://eepurl.com/g6SNEv";
 
   return (
