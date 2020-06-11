@@ -88,7 +88,7 @@ const Page: FC<Props> = ({ projects = [] }) => {
                     <Stack spacing={4} minH={48} justifyContent="space-between">
                       <Stack spacing={4}>
                         {titleNode(project.title)}
-                        {descriptionNode(project.title)}
+                        {descriptionNode(project.description)}
                       </Stack>
                       <Box>{ctaNode()}</Box>
                     </Stack>
