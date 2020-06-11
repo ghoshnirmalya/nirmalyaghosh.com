@@ -4,8 +4,8 @@ import {
   Stack,
   Heading,
   Text,
-  PseudoBox,
   Link as _Link,
+  useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IProject from "types/project";
@@ -20,6 +20,10 @@ const projects: FC<Props> = ({
   projects = [],
   hideViewAllLinksNode = false,
 }) => {
+  const { colorMode } = useColorMode();
+  const cardBgColor = { light: "gray.900", dark: "gray.100" };
+  const cardColor = { light: "gray.100", dark: "gray.900" };
+
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
@@ -55,16 +59,23 @@ const projects: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text>{description}</Text>;
+    return <Text fontSize="sm">{description}</Text>;
   };
 
   return (
     <Stack spacing={4}>
       {headingNode()}
-      <Stack spacing={4}>
+      <Stack spacing={8}>
         {projects.map((project: IProject, index: number) => {
           return (
-            <Box key={index}>
+            <Box
+              key={index}
+              bg={cardBgColor[colorMode]}
+              color={cardColor[colorMode]}
+              p={8}
+              rounded="md"
+              shadow="md"
+            >
               <a href={project.url} target="_blank" rel="noopener">
                 <Stack spacing={4}>
                   {titleNode(project.title)}

@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import withNavbarLayout from "lib/with-navbar-layout";
 
 const Articles = dynamic(import("components/articles"));
-const SocialLinks = dynamic(import("components/social-links"));
 
 interface Props {
   articles: IArticle[];
@@ -13,18 +12,13 @@ interface Props {
 
 const Page: FC<Props> = ({ articles = [] }) => {
   return (
-    <Box maxW="6xl" mx="auto" px={4} py={8}>
-      <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
-        <Stack spacing={16} order={[2, 2, 2, 1]}>
+    <Box maxW="3xl" mx="auto" px={4} py={8}>
+      <Grid templateColumns="1fr">
+        <Stack spacing={16}>
           <Box as="section">
             <Articles articles={articles} hideViewAllLinksNode />
           </Box>
         </Stack>
-        <Box order={[1, 1, 1, 2]}>
-          <Box position="sticky" top={100}>
-            <SocialLinks />
-          </Box>
-        </Box>
       </Grid>
     </Box>
   );

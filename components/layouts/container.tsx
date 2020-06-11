@@ -14,7 +14,11 @@ const Container: FC = ({ children }) => {
   };
 
   return (
-    <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
+    <Box
+      bg={sectionBgColor[colorMode]}
+      color={sectionColor[colorMode]}
+      minH="100vh"
+    >
       <Global styles={codeStyles[colorMode]} />
       {children}
     </Box>

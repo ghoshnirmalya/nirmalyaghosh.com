@@ -7,6 +7,7 @@ import {
   Text,
   Tag,
   useColorMode,
+  Icon,
 } from "@chakra-ui/core";
 import IArticle from "types/article";
 import { IoMdClock, IoIosPricetag } from "react-icons/io";
@@ -25,11 +26,20 @@ const Page = (article: IArticle) => {
     const sectionBgColor = { light: "gray.100", dark: "black" };
     const sectionColor = { light: "black", dark: "gray.100" };
 
-    const dateNode = (date: string) => {
+    const metaNode = (date: string, readingTime: string, wordCount: string) => {
       return (
-        <Stack spacing={2} isInline alignItems="center">
-          <Box as={IoMdClock} />
-          <Text fontSize="sm">{date}</Text>
+        <Stack spacing={4} isInline alignItems="center">
+          <Box>
+            <Text fontSize="xs">{date}</Text>
+          </Box>
+          <Icon name="minus" size="12px" />
+          <Box>
+            <Text fontSize="xs">{readingTime}</Text>
+          </Box>
+          <Icon name="minus" size="12px" />
+          <Box>
+            <Text fontSize="xs">{wordCount} words</Text>
+          </Box>
         </Stack>
       );
     };
@@ -65,20 +75,19 @@ const Page = (article: IArticle) => {
       <>
         <Navbar />
         <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
-          <Box maxW="6xl" mx="auto" px={4} py={8}>
-            <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
+          <Box maxW="3xl" mx="auto" px={4} py={8}>
+            <Grid templateColumns="1fr">
               <Box maxW="100%" overflowX="hidden">
                 <Stack spacing={8}>
-                  {dateNode(article.date)}
+                  {metaNode(
+                    article.date,
+                    article.readingTime.text,
+                    article.wordCount
+                  )}
                   {titleNode(article.title)}
                   {tagsNode(article.tags)}
                   <Box className="article">{children}</Box>
                 </Stack>
-              </Box>
-              <Box order={[1, 1, 1, 2]}>
-                <Box position="sticky" top={100}>
-                  <SocialLinks />
-                </Box>
               </Box>
             </Grid>
           </Box>

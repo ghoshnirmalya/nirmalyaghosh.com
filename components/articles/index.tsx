@@ -12,11 +12,7 @@ import {
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IArticle from "types/article";
-import {
-  IoMdClock,
-  IoMdArrowRoundForward,
-  IoIosPricetag,
-} from "react-icons/io";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 interface Props {
   articles: IArticle[];
@@ -93,7 +89,7 @@ const Articles: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text>{description}</Text>;
+    return <Text fontSize="sm">{description}</Text>;
   };
 
   const ctaNode = () => {

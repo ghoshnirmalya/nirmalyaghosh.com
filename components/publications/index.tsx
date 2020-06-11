@@ -63,8 +63,9 @@ const Publications: FC<Props> = ({
   const dateNode = (date: string) => {
     return (
       <Stack spacing={2} isInline alignItems="center">
-        <Box as={IoMdClock} />
-        <Text fontSize="sm">{date}</Text>
+        <Box>
+          <Text fontSize="xs">{date}</Text>
+        </Box>
       </Stack>
     );
   };
@@ -78,7 +79,7 @@ const Publications: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text>{description}</Text>;
+    return <Text fontSize="sm">{description}</Text>;
   };
 
   const ctaNode = () => {
