@@ -38,11 +38,6 @@ yarn dev
 
 This will spin up the development server at [localhost:8000](http://localhost:8000/).
 
-## Built With
-
-- [Gatsby](https://www.gatsbyjs.org/) - Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps
-- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-
 ## Authors
 
 - **Nirmalya Ghosh**
