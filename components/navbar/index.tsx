@@ -114,7 +114,7 @@ const Navbar: FC = () => {
     <Box
       as="header"
       position="sticky"
-      top={0}
+      top="80px"
       zIndex={1}
       bg={navbarSectionBgColor[colorMode]}
       color={navbarSectionColor[colorMode]}
@@ -126,8 +126,7 @@ const Navbar: FC = () => {
           isInline
           justifyContent="space-between"
           alignItems="center"
-          p={4}
-          spacing={4}
+          py={4}
         >
           <Box>
             <Link href="/">

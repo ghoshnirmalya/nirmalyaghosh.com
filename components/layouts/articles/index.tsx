@@ -10,11 +10,12 @@ import {
   Icon,
 } from "@chakra-ui/core";
 import IArticle from "types/article";
-import { IoMdClock, IoIosPricetag } from "react-icons/io";
+import { IoIosPricetag } from "react-icons/io";
 import dynamic from "next/dynamic";
 
 const SocialLinks = dynamic(import("components/social-links"));
 const Navbar = dynamic(import("components/navbar"));
+const Footer = dynamic(import("components/footer"));
 
 interface Props {
   article: IArticle;
@@ -73,6 +74,7 @@ const Page = (article: IArticle) => {
 
     return (
       <>
+        <SocialLinks />
         <Navbar />
         <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
           <Box maxW="3xl" mx="auto" px={4} py={8}>
@@ -92,6 +94,7 @@ const Page = (article: IArticle) => {
             </Grid>
           </Box>
         </Box>
+        <Footer />
       </>
     );
   };

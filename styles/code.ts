@@ -10,6 +10,7 @@ const prismBaseTheme = css`
 
   .article p {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
+    font-size: ${theme.fontSizes["lg"]};
   }
 
   code[class*="language-"],

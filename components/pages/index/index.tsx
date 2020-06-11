@@ -7,11 +7,15 @@ import LazyLoad from "react-lazyload";
 import dynamic from "next/dynamic";
 
 const Jumbotron = dynamic(import("components/pages/index/jumbotron"));
+const NewsletterSubscriptionForm = dynamic(
+  import("components/pages/index/newsletter-subscription-form")
+);
 const Articles = dynamic(import("components/articles"));
 const Publications = dynamic(import("components/publications"));
 const Projects = dynamic(import("components/projects"));
 const SocialLinks = dynamic(import("components/social-links"));
 const Navbar = dynamic(import("components/navbar"));
+const Footer = dynamic(import("components/footer"));
 
 interface Props {
   articles: IArticle[];
@@ -29,6 +33,7 @@ const Page: FC<Props> = ({
       <Box as="section">
         <Jumbotron />
       </Box>
+      <SocialLinks />
       <Navbar />
       <Box>
         <Box maxW="6xl" mx="auto" px={4} py={8}>
@@ -46,10 +51,10 @@ const Page: FC<Props> = ({
               </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
-              <Stack spacing={8} position="sticky" top={100}>
+              <Stack spacing={8}>
                 <Box>
                   <LazyLoad once offset={100}>
-                    <SocialLinks />
+                    <NewsletterSubscriptionForm />
                   </LazyLoad>
                 </Box>
                 <Box>
@@ -62,6 +67,7 @@ const Page: FC<Props> = ({
           </Grid>
         </Box>
       </Box>
+      <Footer />
     </>
   );
 };

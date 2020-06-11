@@ -6,11 +6,12 @@ import {
   Text,
   Button,
   Link as _Link,
+  Image,
   useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IPublication from "types/publication";
-import { IoMdClock, IoMdArrowRoundForward } from "react-icons/io";
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 interface Props {
   publications: IPublication[];
@@ -41,11 +42,27 @@ const Publications: FC<Props> = ({
   const headingNode = () => {
     if (hideViewAllLinksNode) {
       return (
-        <Stack spacing={2}>
-          <Heading as="h2" size="xl">
-            Publications
-          </Heading>
-          <Text>Articles which have been published on other websites</Text>
+        <Stack isInline spacing={4} alignItems="center">
+          <Box>
+            <Image
+              objectFit="cover"
+              src="/images/common/publications.svg"
+              alt="Publications"
+              size={20}
+              bg={cardColor[colorMode]}
+              color={cardBgColor[colorMode]}
+              rounded="full"
+              p={2}
+            />
+          </Box>
+          <Box>
+            <Stack spacing={2}>
+              <Heading as="h2" size="xl">
+                Publications
+              </Heading>
+              <Text>Articles which have been published on other websites</Text>
+            </Stack>
+          </Box>
         </Stack>
       );
     }
