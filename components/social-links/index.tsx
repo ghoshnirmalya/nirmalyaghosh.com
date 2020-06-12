@@ -16,16 +16,11 @@ const SocialLinks: FC = () => {
   const cardColor = { light: "gray.100", dark: "gray.900" };
 
   return (
-    <Box
-      bg={cardBgColor[colorMode]}
-      color={cardColor[colorMode]}
-      p={4}
-      zIndex={1}
-    >
-      <Box maxW="6xl" mx="auto" d="flex" justifyContent="space-between">
+    <Box bg={cardBgColor[colorMode]} color={cardColor[colorMode]} zIndex={1}>
+      <Box maxW="6xl" mx="auto" d="flex" justifyContent="space-between" p={4}>
         <Box d="flex" alignItems="center">
           <Link href="/">
-            <_Link p={2} href="/" rounded="md">
+            <_Link href="/" rounded="md">
               <Image src="/images/common/favicon.png" alt="Logo" size={8} />
             </_Link>
           </Link>

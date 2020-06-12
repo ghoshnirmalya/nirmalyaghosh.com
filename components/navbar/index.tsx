@@ -47,28 +47,28 @@ const Navbar: FC = () => {
         <MenuList placement="bottom-end">
           <Link href="/">
             <MenuItem>
-              <_Link p={2} href="/" rounded="md">
+              <_Link p={4} href="/" rounded="md">
                 Home
               </_Link>
             </MenuItem>
           </Link>
           <Link href="/projects">
             <MenuItem>
-              <_Link p={2} href="/projects" rounded="md">
+              <_Link p={4} href="/projects" rounded="md">
                 Projects
               </_Link>
             </MenuItem>
           </Link>
           <Link href="/articles">
             <MenuItem>
-              <_Link p={2} href="/articles" rounded="md">
+              <_Link p={4} href="/articles" rounded="md">
                 Articles
               </_Link>
             </MenuItem>
           </Link>
           <Link href="/publications">
             <MenuItem>
-              <_Link p={2} href="/publications" rounded="md">
+              <_Link p={4} href="/publications" rounded="md">
                 Publications
               </_Link>
             </MenuItem>
@@ -86,26 +86,26 @@ const Navbar: FC = () => {
       <Stack isInline spacing={4} alignItems="center">
         <Box>
           <Link href="/projects">
-            <_Link p={2} href="/projects" rounded="md">
+            <_Link p={4} href="/projects" rounded="md">
               Projects
             </_Link>
           </Link>
         </Box>
         <Box>
           <Link href="/articles">
-            <_Link p={2} href="/articles" rounded="md">
+            <_Link p={4} href="/articles" rounded="md">
               Articles
             </_Link>
           </Link>
         </Box>
         <Box>
           <Link href="/publications">
-            <_Link p={2} href="/publications" rounded="md">
+            <_Link p={4} href="/publications" rounded="md">
               Publications
             </_Link>
           </Link>
         </Box>
-        <Box>{themeSwitcherButtonNode()}</Box>
+        <Box px={2}>{themeSwitcherButtonNode()}</Box>
       </Stack>
     );
   };
@@ -130,7 +130,7 @@ const Navbar: FC = () => {
         >
           <Box>
             <Link href="/">
-              <_Link p={2} href="/" rounded="md">
+              <_Link p={4} href="/" rounded="md">
                 Home
               </_Link>
             </Link>
@@ -138,7 +138,7 @@ const Navbar: FC = () => {
           <Box display={["none", "none", "block", "block"]}>
             {desktopMenuNode()}
           </Box>
-          <Box display={["block", "block", "none", "none"]}>
+          <Box display={["block", "block", "none", "none"]} px={4}>
             {mobileMenuNode()}
           </Box>
         </Stack>
