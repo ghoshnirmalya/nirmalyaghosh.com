@@ -114,7 +114,7 @@ const Navbar: FC = () => {
     <Box
       as="header"
       position="sticky"
-      top="80px"
+      top={0}
       zIndex={1}
       bg={navbarSectionBgColor[colorMode]}
       color={navbarSectionColor[colorMode]}
