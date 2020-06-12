@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import {
   Stack,
-  Button,
   Image,
   Box,
   Link as _Link,
+  Text,
   useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
-import { IoLogoGithub, IoLogoLinkedin, IoLogoDribbble } from "react-icons/io";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const SocialLinks: FC = () => {
   const { colorMode } = useColorMode();
@@ -34,39 +34,34 @@ const SocialLinks: FC = () => {
         </Box>
         <Box d="flex" alignItems="center">
           <Stack spacing={4} isInline>
-            <Button
-              leftIcon={IoLogoGithub}
+            <_Link
+              py={2}
+              px={4}
+              href="https://github.com/ghoshnirmalya"
+              rounded="md"
               bg="#333"
               color="#fff"
-              textAlign="left"
-              _hover={{
-                color: "#fff",
-              }}
+              fontWeight="bold"
+              isExternal
             >
-              Github
-            </Button>
-            <Button
-              leftIcon={IoLogoLinkedin}
+              <Stack spacing={2} isInline alignItems="center">
+                <Box as={IoLogoGithub} /> <Text>Github</Text>
+              </Stack>
+            </_Link>
+            <_Link
+              py={2}
+              px={4}
+              href="https://www.linkedin.com/in/ghoshnirmalya/"
+              rounded="md"
               bg="#0e76a8"
               color="#fff"
-              textAlign="left"
-              _hover={{
-                color: "#fff",
-              }}
+              fontWeight="bold"
+              isExternal
             >
-              LinkedIn
-            </Button>
-            <Button
-              leftIcon={IoLogoDribbble}
-              bg="#ea4c89"
-              color="#fff"
-              textAlign="left"
-              _hover={{
-                color: "#fff",
-              }}
-            >
-              Dribbble
-            </Button>
+              <Stack spacing={2} isInline alignItems="center">
+                <Box as={IoLogoLinkedin} /> <Text>LinkedIn</Text>
+              </Stack>
+            </_Link>
           </Stack>
         </Box>
       </Box>
