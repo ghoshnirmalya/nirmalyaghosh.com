@@ -10,9 +10,9 @@ const Jumbotron = dynamic(import("components/pages/index/jumbotron"));
 const NewsletterSubscriptionForm = dynamic(
   import("components/pages/index/newsletter-subscription-form")
 );
-const Articles = dynamic(import("components/articles"));
-const Publications = dynamic(import("components/publications"));
-const Projects = dynamic(import("components/projects"));
+const Articles = dynamic(import("components/layouts/articles"));
+const Publications = dynamic(import("components/layouts/publications"));
+const Projects = dynamic(import("components/pages/index/projects"));
 const SocialLinks = dynamic(import("components/social-links"));
 const Navbar = dynamic(import("components/navbar"));
 const Footer = dynamic(import("components/footer"));
