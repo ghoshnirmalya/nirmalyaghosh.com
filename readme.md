@@ -1,6 +1,6 @@
 # Personal Portfolio using Next.js
 
-A starter theme for building your own portfolio.
+A starter Next.js template for building your own portfolio.
 
 ## Getting Started
 
@@ -37,10 +37,6 @@ yarn dev
 ```
 
 This will spin up the development server at [localhost:8000](http://localhost:8000/).
-
-## Authors
-
-- **Nirmalya Ghosh**
 
 ## License
 
