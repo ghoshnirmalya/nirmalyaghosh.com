@@ -6,7 +6,6 @@ const withSourceMaps = require("@zeit/next-source-maps")();
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
 const readingTime = require("reading-time");
-const mdxPrism = require("mdx-prism");
 const withMdxEnhanced = require("next-mdx-enhanced");
 
 const isProd = process.env.NODE_ENV === "production";
@@ -16,11 +15,11 @@ module.exports = withSourceMaps(
     layoutPath: "./components/layouts/articles/show",
     defaultLayout: true,
     remarkPlugins: [
-      require("remark-autolink-headings"),
       require("remark-slug"),
       require("remark-code-titles"),
+      require("remark-toc"),
     ],
-    rehypePlugins: [mdxPrism],
+    rehypePlugins: [require("rehype-autolink-headings"), require("mdx-prism")],
     extendFrontMatter: {
       process: (mdxContent) => ({
         wordCount: mdxContent.split(/\s+/gu).length,

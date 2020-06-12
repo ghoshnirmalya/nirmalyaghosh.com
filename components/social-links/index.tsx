@@ -20,8 +20,6 @@ const SocialLinks: FC = () => {
       bg={cardBgColor[colorMode]}
       color={cardColor[colorMode]}
       p={4}
-      position="sticky"
-      top={0}
       zIndex={1}
     >
       <Box maxW="6xl" mx="auto" d="flex" justifyContent="space-between">

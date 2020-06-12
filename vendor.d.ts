@@ -1,8 +1,8 @@
 import IArticle from "types/article";
 
-declare module "remark-autolink-headings";
 declare module "remark-slug";
 declare module "remark-code-titles";
+declare module "rehype-autolink-headings";
 declare module "next-mdx-enhanced";
 declare module "mdx-prism";
 

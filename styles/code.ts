@@ -2,15 +2,38 @@ import { css } from "@emotion/core";
 import { theme } from "@chakra-ui/core";
 
 const prismBaseTheme = css`
-  .article h2 {
-    margin: ${theme.space[16]} 0 ${theme.space[4]};
+  .article > h2 {
+    padding: ${theme.space[24]} 0 ${theme.space[4]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
   }
 
-  .article p {
+  .article > p {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     font-size: ${theme.fontSizes["lg"]};
+  }
+
+  .article > #table-of-contents + ul {
+    padding: ${theme.space[6]};
+    list-style-type: decimal;
+  }
+
+  .article > #table-of-contents + ul > li {
+    margin-bottom: ${theme.space[4]};
+  }
+
+  .article > #table-of-contents + ul > li > a {
+    font-size: ${theme.fontSizes["lg"]};
+  }
+
+  .article > #table-of-contents + ul > li > a:hover {
+    text-decoration: underline;
+  }
+
+  .article .icon.icon-link::before {
+    content: "#";
+    margin-right: ${theme.space[2]};
+    display: inline-flex;
   }
 
   code[class*="language-"],
