@@ -1,65 +1,73 @@
 import React, { FC } from "react";
 import {
-  Link,
   Text,
   useColorMode,
   Box,
-  Image,
   Stack,
-  Icon,
+  Input,
+  Button,
+  Heading,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/core";
 
 const NewsletterSubscriptionForm: FC = () => {
   const { colorMode } = useColorMode();
-  const cardBgColor = { light: "gray.900", dark: "white" };
-  const cardColor = { light: "white", dark: "gray.900" };
-  const MAILCHIMP_SIGNUP_FORM_URL = "http://eepurl.com/g6SNEv";
+  const cardBgColor = { light: "gray.900", dark: "gray.100" };
+  const cardColor = { light: "gray.100", dark: "gray.900" };
 
   return (
-    <Link
-      as="a"
-      target="blank"
-      href={MAILCHIMP_SIGNUP_FORM_URL}
+    <Box
+      p={4}
+      rounded="md"
       bg={cardBgColor[colorMode]}
       color={cardColor[colorMode]}
-      p={8}
-      rounded="md"
-      shadow="md"
-      w="full"
-      d="flex"
-      flexDirection="column"
-      textAlign="center"
     >
       <Stack spacing={4}>
-        <Box d="flex" justifyContent="center">
-          <Image
-            objectFit="cover"
-            src="/images/common/newsletter-subscription.svg"
-            alt="Subscribe to my newsletter"
-            size={32}
-            bg={cardColor[colorMode]}
-            color={cardBgColor[colorMode]}
-            rounded="full"
-            p={2}
-          />
+        <Box>
+          <Heading as="h2" size="lg">
+            Newsletter
+          </Heading>
         </Box>
-        <Box
-          bg={cardColor[colorMode]}
-          color={cardBgColor[colorMode]}
-          fontSize="lg"
-          fontWeight="bold"
-          p={4}
-          rounded="md"
-          shadow="md"
-          mx="auto"
+        <form
+          action="https://www.getrevue.co/profile/ghoshnirmalya/add_subscriber"
+          method="post"
+          id="revue-form"
+          name="revue-form"
+          target="_blank"
         >
-          <Stack spacing={4} isInline alignItems="center">
-            <Text>Subscribe to my newsletter</Text>
-            <Icon name="external-link" />
+          <Stack spacing={4}>
+            <Box>
+              <Text>
+                Subscribe to my newsletter to know more about some of the latest
+                technologies
+              </Text>
+            </Box>
+            <Box
+              rounded="md"
+              color={cardBgColor[colorMode]}
+              bg={cardColor[colorMode]}
+            >
+              <InputGroup size="md">
+                <Input
+                  type="email"
+                  name="member[email]"
+                  id="member_email"
+                  aria-describedby="email-helper-text"
+                  placeholder="john@doe.com"
+                  p={2}
+                />
+                <InputRightElement width="auto">
+                  <Button size="sm" type="submit" id="member_submit" m={2}>
+                    Subscribe
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </Box>
           </Stack>
-        </Box>
+        </form>
       </Stack>
-    </Link>
+    </Box>
   );
 };
 

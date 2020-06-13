@@ -49,17 +49,17 @@ const Page: FC<Props> = ({
                   <Publications publications={publications.slice(0, 3)} />
                 </LazyLoad>
               </Box>
+              <Box as="section">
+                <LazyLoad once offset={100}>
+                  <Projects projects={projects.slice(0, 3)} />
+                </LazyLoad>
+              </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
-              <Stack spacing={8}>
+              <Stack spacing={8} position="sticky" top={96}>
                 <Box>
                   <LazyLoad once offset={100}>
                     <NewsletterSubscriptionForm />
-                  </LazyLoad>
-                </Box>
-                <Box>
-                  <LazyLoad once offset={100}>
-                    <Projects projects={projects.slice(0, 3)} />
                   </LazyLoad>
                 </Box>
               </Stack>
