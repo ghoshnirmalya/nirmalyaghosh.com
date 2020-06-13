@@ -51,6 +51,8 @@ const Articles: FC<Props> = ({
   };
 
   const searchNode = () => {
+    if (!hideViewAllLinksNode) return false;
+
     return (
       <Box>
         <Input

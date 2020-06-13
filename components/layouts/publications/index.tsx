@@ -50,6 +50,8 @@ const Publications: FC<Props> = ({
   };
 
   const searchNode = () => {
+    if (!hideViewAllLinksNode) return false;
+
     return (
       <Box>
         <Input
@@ -57,7 +59,7 @@ const Publications: FC<Props> = ({
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
           }
-          placeholder="Search for an article"
+          placeholder="Search for a publication"
         />
       </Box>
     );
