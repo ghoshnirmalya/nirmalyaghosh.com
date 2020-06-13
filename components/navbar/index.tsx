@@ -13,6 +13,26 @@ import {
 } from "@chakra-ui/core";
 import Link from "next/link";
 
+interface NavLink {
+  url: string;
+  title: string;
+}
+
+const LINKS = [
+  {
+    url: "/projects",
+    title: "Projects",
+  },
+  {
+    url: "/articles",
+    title: "Articles",
+  },
+  {
+    url: "/publications",
+    title: "Publications",
+  },
+];
+
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const navbarSectionBgColor = { light: "white", dark: "gray.900" };
@@ -45,35 +65,22 @@ const Navbar: FC = () => {
       <Menu>
         <MenuButton as={Button}>Menu</MenuButton>
         <MenuList placement="bottom-end">
-          <Link href="/">
-            <MenuItem>
-              <_Link p={4} href="/" rounded="md">
-                Home
-              </_Link>
-            </MenuItem>
-          </Link>
-          <Link href="/projects">
-            <MenuItem>
-              <_Link p={4} href="/projects" rounded="md">
-                Projects
-              </_Link>
-            </MenuItem>
-          </Link>
-          <Link href="/articles">
-            <MenuItem>
-              <_Link p={4} href="/articles" rounded="md">
-                Articles
-              </_Link>
-            </MenuItem>
-          </Link>
-          <Link href="/publications">
-            <MenuItem>
-              <_Link p={4} href="/publications" rounded="md">
-                Publications
-              </_Link>
-            </MenuItem>
-          </Link>
-          <MenuItem onClick={toggleColorMode} px={6}>
+          {[
+            LINKS.map((link: NavLink) => {
+              return (
+                <Box key={link.url}>
+                  <Link href={link.url}>
+                    <MenuItem>
+                      <_Link href={link.url} rounded="md">
+                        {link.title}
+                      </_Link>
+                    </MenuItem>
+                  </Link>
+                </Box>
+              );
+            }),
+          ]}
+          <MenuItem onClick={toggleColorMode} px={4}>
             Switch color mode
           </MenuItem>
         </MenuList>
@@ -84,27 +91,19 @@ const Navbar: FC = () => {
   const desktopMenuNode = () => {
     return (
       <Stack isInline spacing={4} alignItems="center">
-        <Box>
-          <Link href="/projects">
-            <_Link p={4} href="/projects" rounded="md">
-              Projects
-            </_Link>
-          </Link>
-        </Box>
-        <Box>
-          <Link href="/articles">
-            <_Link p={4} href="/articles" rounded="md">
-              Articles
-            </_Link>
-          </Link>
-        </Box>
-        <Box>
-          <Link href="/publications">
-            <_Link p={4} href="/publications" rounded="md">
-              Publications
-            </_Link>
-          </Link>
-        </Box>
+        {[
+          LINKS.map((link: NavLink) => {
+            return (
+              <Box key={link.url}>
+                <Link href={link.url}>
+                  <_Link p={4} href={link.url} rounded="md">
+                    {link.title}
+                  </_Link>
+                </Link>
+              </Box>
+            );
+          }),
+        ]}
         <Box px={2}>{themeSwitcherButtonNode()}</Box>
       </Stack>
     );
