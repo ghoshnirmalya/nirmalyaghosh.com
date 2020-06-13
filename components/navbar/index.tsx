@@ -31,6 +31,10 @@ const LINKS = [
     url: "/publications",
     title: "Publications",
   },
+  {
+    url: "/about",
+    title: "About",
+  },
 ];
 
 const Navbar: FC = () => {

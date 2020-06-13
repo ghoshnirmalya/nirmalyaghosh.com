@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 const Navbar = dynamic(import("components/navbar"));
 const SocialLinks = dynamic(import("components/social-links"));
+const Footer = dynamic(import("components/footer"));
 
 const higherOrderComponent = (Page: NextComponentType<NextPageContext>) => {
   return class extends Component<any> {
@@ -19,6 +20,7 @@ const higherOrderComponent = (Page: NextComponentType<NextPageContext>) => {
           <SocialLinks />
           <Navbar />
           <Page {...this.props} />
+          <Footer />
         </>
       );
     }
