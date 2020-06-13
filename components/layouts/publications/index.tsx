@@ -13,6 +13,10 @@ import {
 import Link from "next/link";
 import IPublication from "types/publication";
 import { IoMdArrowRoundForward } from "react-icons/io";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+
+dayjs.extend(localizedFormat);
 
 interface Props {
   publications: IPublication[];
@@ -109,7 +113,7 @@ const Publications: FC<Props> = ({
     return (
       <Stack spacing={2} isInline alignItems="center">
         <Box>
-          <Text fontSize="xs">{date}</Text>
+          <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
         </Box>
       </Stack>
     );

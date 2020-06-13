@@ -10,14 +10,14 @@ import {
 } from "@chakra-ui/core";
 import IArticle from "types/article";
 import dynamic from "next/dynamic";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 const SocialLinks = dynamic(import("components/social-links"));
 const Navbar = dynamic(import("components/navbar"));
 const Footer = dynamic(import("components/footer"));
 
-interface Props {
-  article: IArticle;
-}
+dayjs.extend(localizedFormat);
 
 const Page = (article: IArticle) => {
   return ({ children }) => {
@@ -25,19 +25,15 @@ const Page = (article: IArticle) => {
     const sectionBgColor = { light: "gray.100", dark: "black" };
     const sectionColor = { light: "black", dark: "gray.100" };
 
-    const metaNode = (date: string, readingTime: string, wordCount: string) => {
+    const metaNode = (date: string, readingTime: string) => {
       return (
         <Stack spacing={4} isInline alignItems="center">
           <Box>
-            <Text fontSize="xs">{date}</Text>
+            <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
           </Box>
           <Icon name="minus" size="12px" />
           <Box>
             <Text fontSize="xs">{readingTime}</Text>
-          </Box>
-          <Icon name="minus" size="12px" />
-          <Box>
-            <Text fontSize="xs">{wordCount} words</Text>
           </Box>
         </Stack>
       );
@@ -60,11 +56,7 @@ const Page = (article: IArticle) => {
             <Grid templateColumns="1fr">
               <Box maxW="100%" overflowX="hidden">
                 <Stack spacing={8}>
-                  {metaNode(
-                    article.date,
-                    article.readingTime.text,
-                    article.wordCount
-                  )}
+                  {metaNode(article.date, article.readingTime.text)}
                   {titleNode(article.title)}
                   <Box className="article">{children}</Box>
                 </Stack>
