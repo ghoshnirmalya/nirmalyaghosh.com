@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import {
   Stack,
-  Button,
   Image,
   Box,
   Link as _Link,
