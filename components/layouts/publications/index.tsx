@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, FormEvent } from "react";
 import {
   Box,
   Stack,
@@ -8,6 +8,7 @@ import {
   Link as _Link,
   Image,
   useColorMode,
+  Input,
 } from "@chakra-ui/core";
 import Link from "next/link";
 import IPublication from "types/publication";
@@ -25,6 +26,15 @@ const Publications: FC<Props> = ({
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "gray.900" };
   const cardColor = { light: "gray.900", dark: "white" };
+  const [searchQuery, setSearchQuery] = useState("");
+  const sortedPublications = publications
+    .sort(
+      (a: IPublication, b: IPublication) =>
+        Number(new Date(b.date)) - Number(new Date(a.date))
+    )
+    .filter((article) =>
+      article.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   const viewAllLinksNode = () => {
     return (
@@ -36,6 +46,22 @@ const Publications: FC<Props> = ({
           </Stack>
         </_Link>
       </Link>
+    );
+  };
+
+  const searchNode = () => {
+    if (!hideViewAllLinksNode) return false;
+
+    return (
+      <Box>
+        <Input
+          value={searchQuery}
+          onChange={(e: FormEvent<HTMLInputElement>) =>
+            setSearchQuery(e.currentTarget.value)
+          }
+          placeholder="Search for a publication"
+        />
+      </Box>
     );
   };
 
@@ -60,7 +86,9 @@ const Publications: FC<Props> = ({
               <Heading as="h2" size="xl">
                 Publications
               </Heading>
-              <Text>Articles which have been published on other websites</Text>
+              <Text>
+                publications which have been published on other websites
+              </Text>
             </Stack>
           </Box>
         </Stack>
@@ -107,34 +135,52 @@ const Publications: FC<Props> = ({
     );
   };
 
+  const publicationsNode = () => {
+    if (!sortedPublications.length) {
+      return (
+        <Stack mx="auto" textAlign="center">
+          <Image
+            src="/images/common/no-items.svg"
+            alt="No publications found!"
+            size={64}
+          />
+          <Text>No publications found!</Text>
+        </Stack>
+      );
+    }
+
+    return sortedPublications.map(
+      (publication: IPublication, index: number) => {
+        return (
+          <Box
+            key={index}
+            bg={cardBgColor[colorMode]}
+            color={cardColor[colorMode]}
+            p={8}
+            rounded="md"
+            shadow="md"
+          >
+            <a href={publication.url} target="_blank" rel="noopener">
+              <Box>
+                <Stack spacing={4}>
+                  {dateNode(publication.date)}
+                  {titleNode(publication.title)}
+                  {descriptionNode(publication.description)}
+                  <Box>{ctaNode()}</Box>
+                </Stack>
+              </Box>
+            </a>
+          </Box>
+        );
+      }
+    );
+  };
+
   return (
     <Stack spacing={8}>
       {headingNode()}
-      <Stack spacing={8}>
-        {publications.map((publication: IPublication, index: number) => {
-          return (
-            <Box
-              key={index}
-              bg={cardBgColor[colorMode]}
-              color={cardColor[colorMode]}
-              p={8}
-              rounded="md"
-              shadow="md"
-            >
-              <a href={publication.url} target="_blank" rel="noopener">
-                <Box>
-                  <Stack spacing={4}>
-                    {dateNode(publication.date)}
-                    {titleNode(publication.title)}
-                    {descriptionNode(publication.description)}
-                    <Box>{ctaNode()}</Box>
-                  </Stack>
-                </Box>
-              </a>
-            </Box>
-          );
-        })}
-      </Stack>
+      {searchNode()}
+      {publicationsNode()}
     </Stack>
   );
 };

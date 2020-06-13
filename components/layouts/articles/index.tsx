@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, FormEvent } from "react";
 import {
   Box,
   Stack,
@@ -8,6 +8,7 @@ import {
   Link as _Link,
   Image,
   Icon,
+  Input,
   useColorMode,
 } from "@chakra-ui/core";
 import Link from "next/link";
@@ -26,6 +27,15 @@ const Articles: FC<Props> = ({
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "gray.900" };
   const cardColor = { light: "gray.900", dark: "white" };
+  const [searchQuery, setSearchQuery] = useState("");
+  const sortedArticles = articles
+    .sort(
+      (a: IArticle, b: IArticle) =>
+        Number(new Date(b.date)) - Number(new Date(a.date))
+    )
+    .filter((article) =>
+      article.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   const viewAllLinksNode = () => {
     return (
@@ -37,6 +47,22 @@ const Articles: FC<Props> = ({
           </Stack>
         </_Link>
       </Link>
+    );
+  };
+
+  const searchNode = () => {
+    if (!hideViewAllLinksNode) return false;
+
+    return (
+      <Box>
+        <Input
+          value={searchQuery}
+          onChange={(e: FormEvent<HTMLInputElement>) =>
+            setSearchQuery(e.currentTarget.value)
+          }
+          placeholder="Search for an article"
+        />
+      </Box>
     );
   };
 
@@ -116,41 +142,57 @@ const Articles: FC<Props> = ({
     );
   };
 
+  const articlesNode = () => {
+    if (!sortedArticles.length) {
+      return (
+        <Stack mx="auto" textAlign="center">
+          <Image
+            src="/images/common/no-items.svg"
+            alt="No articles found!"
+            size={64}
+          />
+          <Text>No articles found!</Text>
+        </Stack>
+      );
+    }
+
+    return sortedArticles.map((article: IArticle) => {
+      const permalink = article.__resourcePath.replace(".mdx", "");
+
+      return (
+        <Box key={permalink}>
+          <Link href={`/${permalink}`}>
+            <a>
+              <Box
+                bg={cardBgColor[colorMode]}
+                color={cardColor[colorMode]}
+                p={8}
+                rounded="md"
+                shadow="md"
+              >
+                <Stack spacing={4}>
+                  {metaNode(
+                    article.date,
+                    article.readingTime.text,
+                    article.wordCount
+                  )}
+                  {titleNode(article.title)}
+                  {descriptionNode(article.description)}
+                  <Box>{ctaNode()}</Box>
+                </Stack>
+              </Box>
+            </a>
+          </Link>
+        </Box>
+      );
+    });
+  };
+
   return (
     <Stack spacing={8}>
       {headingNode()}
-      <Stack spacing={8}>
-        {articles.map((article: IArticle) => {
-          const permalink = article.__resourcePath.replace(".mdx", "");
-
-          return (
-            <Box key={permalink}>
-              <Link href={`/${permalink}`}>
-                <a>
-                  <Box
-                    bg={cardBgColor[colorMode]}
-                    color={cardColor[colorMode]}
-                    p={8}
-                    rounded="md"
-                    shadow="md"
-                  >
-                    <Stack spacing={4}>
-                      {metaNode(
-                        article.date,
-                        article.readingTime.text,
-                        article.wordCount
-                      )}
-                      {titleNode(article.title)}
-                      {descriptionNode(article.description)}
-                      <Box>{ctaNode()}</Box>
-                    </Stack>
-                  </Box>
-                </a>
-              </Link>
-            </Box>
-          );
-        })}
-      </Stack>
+      {searchNode()}
+      {articlesNode()}
     </Stack>
   );
 };

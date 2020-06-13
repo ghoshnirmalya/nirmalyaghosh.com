@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, FormEvent } from "react";
 import {
   Box,
   Grid,
@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   useColorMode,
+  Input,
 } from "@chakra-ui/core";
 import IProject from "types/project";
 
@@ -19,6 +20,24 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "gray.900" };
   const cardColor = { light: "gray.900", dark: "white" };
+  const [searchQuery, setSearchQuery] = useState("");
+  const sortedProjects = projects.filter((project: IProject) =>
+    project.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const searchNode = () => {
+    return (
+      <Box>
+        <Input
+          value={searchQuery}
+          onChange={(e: FormEvent<HTMLInputElement>) =>
+            setSearchQuery(e.currentTarget.value)
+          }
+          placeholder="Search for an project"
+        />
+      </Box>
+    );
+  };
 
   const headingNode = () => {
     return (
@@ -67,11 +86,23 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     );
   };
 
-  return (
-    <Stack spacing={8}>
-      {headingNode()}
+  const projectsNode = () => {
+    if (!sortedProjects.length) {
+      return (
+        <Stack mx="auto" textAlign="center">
+          <Image
+            src="/images/common/no-items.svg"
+            alt="No projects found!"
+            size={64}
+          />
+          <Text>No projects found!</Text>
+        </Stack>
+      );
+    }
+
+    return (
       <Grid templateColumns="repeat(3, 1fr)" gap={8}>
-        {projects.map((project: IProject, index: number) => {
+        {sortedProjects.map((project: IProject, index: number) => {
           return (
             <Box
               key={index}
@@ -96,6 +127,14 @@ const Projects: FC<Props> = ({ projects = [] }) => {
           );
         })}
       </Grid>
+    );
+  };
+
+  return (
+    <Stack spacing={8}>
+      {headingNode()}
+      {searchNode()}
+      {projectsNode()}
     </Stack>
   );
 };
