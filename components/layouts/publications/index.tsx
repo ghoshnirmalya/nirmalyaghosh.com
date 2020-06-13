@@ -83,7 +83,7 @@ const Publications: FC<Props> = ({
           </Box>
           <Box>
             <Stack spacing={2}>
-              <Heading as="h2" size="xl">
+              <Heading as="h1" size="xl">
                 Publications
               </Heading>
               <Text>

@@ -56,7 +56,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
         </Box>
         <Box>
           <Stack spacing={2}>
-            <Heading as="h2" size="xl">
+            <Heading as="h1" size="xl">
               Projects
             </Heading>
             <Text>Open Source Projects developed and available on Github</Text>
