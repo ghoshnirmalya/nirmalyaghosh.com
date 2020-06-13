@@ -9,7 +9,7 @@ const Jumbotron: FC = () => {
   return (
     <Stack
       spacing={2}
-      height="calc(100vh - 80px)"
+      height="calc(100vh - 72px)"
       alignItems="center"
       justifyContent="center"
       textAlign="center"
