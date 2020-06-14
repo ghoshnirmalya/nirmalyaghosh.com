@@ -6,10 +6,20 @@
     "demoUrl": "https://ghoshnirmalya.github.io/react-search-box"
   },
   {
+    "title": "Hasura Next.js Boilerplate",
+    "description": "Boilerplate for building applications using Hasura and Next.js",
+    "url": "https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate"
+  },
+  {
     "title": "Reddit Clone",
     "description": "Sample app for the tutorial showing how you can create a Reddit clone using React and Firebase",
     "url": "https://github.com/ghoshnirmalya/reddit-clone",
     "demoUrl": "https://www.sitepoint.com/reddit-clone-react-firebase"
+  },
+  {
+    "title": "Hasura Next.js Trello Clone",
+    "description": "A clone of Trello built using Hasura and Next.js",
+    "url": "https://github.com/ghoshnirmalya/nextjs-hasura-trello-clone"
   },
   {
     "title": "LinkedIn Clone React Frontend",
@@ -20,19 +30,16 @@
   {
     "title": "LinkedIn Clone Rails Backend",
     "description": "API to power a software similar to LinkedIn",
-    "url": "https://github.com/ghoshnirmalya/linkedin-clone-rails-backend",
-    "stars": "5"
+    "url": "https://github.com/ghoshnirmalya/linkedin-clone-rails-backend"
   },
   {
     "title": "Building Redux From Scratch",
     "description": "Building Redux from scratch",
-    "url": "https://github.com/ghoshnirmalya/building-redux-from-scratch",
-    "stars": "2"
+    "url": "https://github.com/ghoshnirmalya/building-redux-from-scratch"
   },
   {
     "title": "Social App API In Elixir",
     "description": "Social App API In Elixir",
-    "url": "https://github.com/ghoshnirmalya/social-app-api-in-elixir",
-    "stars": "11"
+    "url": "https://github.com/ghoshnirmalya/social-app-api-in-elixir"
   }
 ]
