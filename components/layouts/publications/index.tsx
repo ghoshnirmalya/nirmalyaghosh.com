@@ -72,30 +72,16 @@ const Publications: FC<Props> = ({
   const headingNode = () => {
     if (hideViewAllLinksNode) {
       return (
-        <Stack isInline spacing={4} alignItems="center">
-          <Box>
-            <Image
-              objectFit="cover"
-              src="/images/common/publications.svg"
-              alt="Publications"
-              size={20}
-              bg={cardColor[colorMode]}
-              color={cardBgColor[colorMode]}
-              rounded="full"
-              p={2}
-            />
-          </Box>
-          <Box>
-            <Stack spacing={2}>
-              <Heading as="h1" size="xl">
-                Publications
-              </Heading>
-              <Text>
-                publications which have been published on other websites
-              </Text>
-            </Stack>
-          </Box>
-        </Stack>
+        <Box>
+          <Stack spacing={2}>
+            <Heading as="h1" size="xl">
+              Publications
+            </Heading>
+            <Text>
+              publications which have been published on other websites
+            </Text>
+          </Stack>
+        </Box>
       );
     }
 

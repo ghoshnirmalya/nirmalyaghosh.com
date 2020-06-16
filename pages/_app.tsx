@@ -77,6 +77,10 @@ export default class MyApp extends App {
               href={siteConfig.assets.favicon}
               type="image/png"
             />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Serif:wght@700&display=swap"
+              rel="stylesheet"
+            />
           </Head>
           <NextSeo
             title={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}

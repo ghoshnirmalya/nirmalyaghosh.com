@@ -7,7 +7,7 @@ import projectsData from "public/data/projects.json";
 import Head from "next/head";
 import siteConfig from "config/site";
 //@ts-ignore
-import { frontMatter as articles } from "./articles/*.mdx";
+import { frontMatter } from "./articles/*.mdx";
 
 interface Props {
   publications: IPublication[];
@@ -21,7 +21,7 @@ const IndexPage: NextPage<Props> = ({ publications = [], projects = [] }) => {
         <title>{`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}</title>
       </Head>
       <Page
-        articles={articles}
+        articles={frontMatter}
         publications={publications}
         projects={projects}
       />
@@ -35,7 +35,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles,
       publications,
       projects,
     },

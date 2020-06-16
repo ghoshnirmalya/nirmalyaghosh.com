@@ -73,28 +73,14 @@ const Articles: FC<Props> = ({
   const headingNode = () => {
     if (hideViewAllLinksNode) {
       return (
-        <Stack isInline spacing={4} alignItems="center">
-          <Box>
-            <Image
-              objectFit="cover"
-              src="/images/common/articles.svg"
-              alt="Articles"
-              size={20}
-              bg={cardColor[colorMode]}
-              color={cardBgColor[colorMode]}
-              rounded="full"
-              p={2}
-            />
-          </Box>
-          <Box>
-            <Stack spacing={2}>
-              <Heading as="h1" size="xl">
-                Articles
-              </Heading>
-              <Text>Posts related to some of the latest technologies</Text>
-            </Stack>
-          </Box>
-        </Stack>
+        <Box>
+          <Stack spacing={2}>
+            <Heading as="h1" size="xl">
+              Articles
+            </Heading>
+            <Text>Posts related to some of the latest technologies</Text>
+          </Stack>
+        </Box>
       );
     }
 
