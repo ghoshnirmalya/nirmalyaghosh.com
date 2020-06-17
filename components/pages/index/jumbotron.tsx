@@ -18,7 +18,11 @@ const Jumbotron: FC = () => {
       color={sectionColor[colorMode]}
     >
       <Box>
-        <Heading as="h1" fontSize={["3rem", "4rem", "5rem", "6rem"]}>
+        <Heading
+          as="h1"
+          fontSize={["3rem", "4rem", "5rem", "6rem"]}
+          fontFamily="body"
+        >
           Nirmalya Ghosh
         </Heading>
       </Box>

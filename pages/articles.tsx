@@ -2,7 +2,7 @@ import Page from "components/pages/articles/base";
 import { NextPage } from "next";
 import Head from "next/head";
 // @ts-ignore
-import { frontMatter as articles } from "./articles/*.mdx";
+import { frontMatter } from "./articles/*.mdx";
 
 const ArticlesIndexPage: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const ArticlesIndexPage: NextPage = () => {
       <Head>
         <title>Articles</title>
       </Head>
-      <Page articles={articles} />
+      <Page articles={frontMatter} />
     </>
   );
 };

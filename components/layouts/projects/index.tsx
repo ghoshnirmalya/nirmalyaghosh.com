@@ -41,28 +41,14 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const headingNode = () => {
     return (
-      <Stack isInline spacing={4} alignItems="center">
-        <Box>
-          <Image
-            objectFit="cover"
-            src="/images/common/projects.svg"
-            alt="Projects"
-            size={20}
-            bg={cardColor[colorMode]}
-            color={cardBgColor[colorMode]}
-            rounded="full"
-            p={2}
-          />
-        </Box>
-        <Box>
-          <Stack spacing={2}>
-            <Heading as="h1" size="xl">
-              Projects
-            </Heading>
-            <Text>Open Source Projects developed and available on Github</Text>
-          </Stack>
-        </Box>
-      </Stack>
+      <Box>
+        <Stack spacing={2}>
+          <Heading as="h1" size="xl">
+            Projects
+          </Heading>
+          <Text>Open Source Projects developed and available on Github</Text>
+        </Stack>
+      </Box>
     );
   };
 

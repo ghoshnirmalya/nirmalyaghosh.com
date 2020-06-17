@@ -3,31 +3,35 @@ import { theme } from "@chakra-ui/core";
 
 const prismBaseTheme = css`
   .article > h2 {
+    font-family: "Noto Serif", serif;
     padding: ${theme.space[24]} 0 ${theme.space[4]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
   }
 
-  .article > p {
+  .article p,
+  .article ul,
+  .article ol {
+    font-family: "Inter", sans-serif;
     margin: ${theme.space[4]} 0 ${theme.space[8]};
-    font-size: ${theme.fontSizes["lg"]};
   }
 
-  .article > #table-of-contents + ul {
-    padding: ${theme.space[6]};
+  .article a:hover {
+    text-decoration: underline;
+  }
+
+  .article img {
+    border-radius: ${theme.radii.md};
+  }
+
+  .article #table-of-contents + ul,
+  .article ol {
+    padding-left: ${theme.space[12]};
     list-style-type: decimal;
   }
 
-  .article > #table-of-contents + ul > li {
-    margin-bottom: ${theme.space[4]};
-  }
-
-  .article > #table-of-contents + ul > li > a {
-    font-size: ${theme.fontSizes["lg"]};
-  }
-
-  .article > #table-of-contents + ul > li > a:hover {
-    text-decoration: underline;
+  .article #table-of-contents + ul > li {
+    margin-bottom: ${theme.space[2]};
   }
 
   .article .icon.icon-link::before {
@@ -36,12 +40,20 @@ const prismBaseTheme = css`
     display: inline-flex;
   }
 
+  .article blockquote > p {
+    padding: ${theme.space[4]};
+    margin: 0;
+    font-style: italic;
+    border-left: 4px solid;
+    border-radius: ${theme.radii.md};
+  }
+
   code[class*="language-"],
   pre[class*="language-"] {
     color: ${theme.colors.gray[800]};
     background: none;
-    font-family: ${theme.fonts.mono};
-    font-size: ${theme.fontSizes[2]};
+    font-family: "Menlo", Monaco, Consolas, Courier New, monospace;
+    font-size: ${theme.fontSizes["sm"]};
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -66,7 +78,6 @@ const prismBaseTheme = css`
     margin: ${theme.space[6]} 0;
     overflow: auto;
     min-width: 100%;
-    font-size: 0.9rem;
   }
 
   :not(pre) > code[class*="language-"],
@@ -80,6 +91,15 @@ const prismBaseTheme = css`
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
+  }
+
+  :not(pre) > code {
+    font-size: ${theme.fontSizes["sm"]};
+  }
+
+  :not(pre) > code:before,
+  :not(pre) > code:after {
+    content: "\`";
   }
 
   .token.comment,
@@ -202,6 +222,19 @@ export const prismLightTheme = css`
   .mdx-marker {
     background-color: hsla(204, 45%, 96%, 1);
   }
+
+  .article a {
+    color: ${theme.colors.blue[600]};
+  }
+
+  :not(pre) > code {
+    color: ${theme.colors.purple[700]};
+  }
+
+  .article blockquote > p {
+    background: ${theme.colors.gray[300]};
+    border-color: ${theme.colors.gray[500]};
+  }
 `;
 
 export const prismDarkTheme = css`
@@ -291,5 +324,18 @@ export const prismDarkTheme = css`
     background: ${theme.colors.gray[700]};
     color: ${theme.colors.gray[100]};
     border: 1px solid ${theme.colors.gray[700]};
+  }
+
+  .article a {
+    color: ${theme.colors.blue[400]};
+  }
+
+  :not(pre) > code {
+    color: ${theme.colors.purple[300]};
+  }
+
+  .article blockquote > p {
+    background: ${theme.colors.gray[700]};
+    border-color: ${theme.colors.gray[500]};
   }
 `;
