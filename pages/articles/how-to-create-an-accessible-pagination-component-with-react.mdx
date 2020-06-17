@@ -1,16 +1,17 @@
 ---
 date: "2020-06-17"
-title: "How to Create a Flexible Pagination Component with React"
+title: "How to Design and Create a Flexible and Theme-able Pagination Component with React and Theme UI"
 category: "React"
 tags: ["react.js"]
 description: "This tutorial will explain all the things that is necessary to know how to build a custom pagination component with a good User Experience using React."
 ---
 
-![Banner](/images/content/how-to-create-an-accessible-pagination-component-with-react/1.svg)
+![Banner](/images/content/how-to-create-an-accessible-pagination-component-with-react/1.png)
 
 > In this tutorial, we'll explain all the things that are necessary to build an
 accessible pagination component with a good User Experience using React. The source code is available on
-[Github](https://github.com/ghoshnirmalya/react-pagination-component).
+[Github](https://github.com/ghoshnirmalya/react-pagination-component). You can
+view a demo of the application [here](https://react-pagination-component.vercel.app/).
 
 
 ## Table of Contents
@@ -25,35 +26,32 @@ A Pagination component helps in fetching and showing data in steps. It's mainly 
 
 
 ## Difference between Pagination and Infinite Scrolling
-A Pagination component is useful for fetching fragments of data and show it to
-the user. The user can control when they want to view the next set of data. In a
-Pagination component, the user can also control the amount of data that they
-want to view.
+A Pagination component is useful for fetching fragments of data and showing it
+to the user. The user can control when they want to view the next set of data.
+In a Pagination component, the user can also control the amount of data that
+they want to view.
 
-![View with page-size selector](/images/content/how-to-create-an-accessible-pagination-component-with-react/2.svg)
+![View with page-size selector](/images/content/how-to-create-an-accessible-pagination-component-with-react/2.png)
 
 In most cases like in [Ant Design](https://ant.design/components/pagination/)
 and [Semantic UI](https://react.semantic-ui.com/addons/pagination/), the user
 can also view the data for a particular page directly by typing the number of
 that page in a small input box.
 
-![View with page-number selector](/images/content/how-to-create-an-accessible-pagination-component-with-react/3.svg)
+![View with page-number selector](/images/content/how-to-create-an-accessible-pagination-component-with-react/3.png)
 
 In an Infinite Scrolling component, initially, a subset of the whole data is
 shown. However, when the user scrolls to the bottom of the list or table, the
 next set of data is fetched from the server and shown on the browser.
 
-For example, initially a set of 5 rows out of 100 rows will be fetched from the
-server and rendered on the list or table. When the user scrolls to the bottom of the
-list or table, the next 5 rows are fetched from the server and shown.
+For example, initially a set of 5 records out of 100 records will be fetched from the server and rendered on the list or table. When the user scrolls to the bottom of the list or table, the next 5 records are fetched from the server and shown.
 
-It's also possible that the whole data is fetched initially but the rows are
+It's also possible that the whole data is fetched initially but the records are
 shown lazily. This is done in order to [reduce Cognitive Overload](https://www.smashingmagazine.com/2016/09/reducing-cognitive-overload-for-a-better-user-experience/).
 
 
 ## When should we use Pagination instead of Infinite Scrolling?
-[This
-article](https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1)
+[This article](https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1)
 explains the answer for this question in details. However, if an application
 needs to remember the scroll-position of the user during page transition, then
 it's always better to use pagination. For example, if we have an e-commerce
@@ -70,7 +68,7 @@ We'll be talking about both of these in details.
 
 
 ## Client-side Pagination
-![Client-side pagination](/images/content/how-to-create-an-accessible-pagination-component-with-react/4.svg)
+![Client-side pagination](/images/content/how-to-create-an-accessible-pagination-component-with-react/4.png)
 
 In this type of pagination, the whole data is fetched from the server but is
 shown on the browser in steps. There can be certain cases in which the pagination
@@ -86,7 +84,8 @@ This type of pagination can be achieved in the following ways:
 
 
 ## Server-side Pagination
-![Server-side pagination](/images/content/how-to-create-an-accessible-pagination-component-with-react/5.svg)
+![Server-side pagination](/images/content/how-to-create-an-accessible-pagination-component-with-react/5.png)
+
 In this type of pagination, the records are fetched from the server in steps.
 This is a better way of doing pagination because of the following:
 1. Size of API requests are smaller since they are fetched in chunks
@@ -99,7 +98,7 @@ This is a better way of doing pagination because of the following:
    records are lesser, there will be lesser load on the browser to parse the
    data and show it to the user.
 
-![Server-side pagination view](/images/content/how-to-create-an-accessible-pagination-component-with-react/6.svg)
+![Server-side pagination view](/images/content/how-to-create-an-accessible-pagination-component-with-react/6.png)
 
 This type of pagination can be achieved in the following ways:
 1. Fetch only the necessary records from the server for a particular page
