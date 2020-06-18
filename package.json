@@ -39,7 +39,7 @@
     "react-icons": "^3.10.0",
     "react-lazyload": "^2.6.8",
     "reading-time": "^1.2.0",
-    "recoil": "^0.0.7",
+    "recoil": "^0.0.10",
     "rehype": "^11.0.0",
     "rehype-autolink-headings": "^3.0.0",
     "remark-code-titles": "^0.1.1",
