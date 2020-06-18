@@ -1,0 +1,124 @@
+---
+date: "2020-06-20"
+title: "Create a Package from an existing React Component and Publish it to NPM"
+category: "React"
+tags: ["react", "npm"]
+description: "This tutorial will explain how you can create a package from a React component and publish it to NPM."
+---
+
+> In this tutorial, we'll learn how we can create a package from an existing React component. We'll also learn how to publish it to [NPM](https://www.npmjs.com/) so that other developers can use our package.
+
+
+## Table of Contents
+
+## Introduction
+We'd developed a Pagination component in one of our [previous posts](https://nirmalyaghosh.com/articles/how-to-create-an-accessible-pagination-component-with-react). We'll be using that component and converting it into a NPM package.
+
+> You'll need a [NPM](https://www.npmjs.com/) account before you can publish a package there. Before we get started, it's recommended to create an account on NPM. You can create [unlimited public packages](https://www.npmjs.com/products) on NPM.
+
+
+## Adding NPM information to our local environment
+First, we need to [add a registry user account](https://docs.npmjs.com/cli/adduser) on our local machine. On our terminal, we need to execute the following command:
+
+```bash
+npm adduser
+```
+
+The above command will create or verify a user named `<username>` in the specified registry, and save the credentials to the **.npmrc** file. More information regarding the above command can be obtained [from NPM docs](https://docs.npmjs.com/cli/adduser).
+
+![NPM adduser](/images/content/create-a-npm-package-from-a-react-component/1.png)
+
+We'll see a similar output on our terminal.
+
+Now, if we type the command below, we should be able to view our NPM username:
+
+```bash
+npm whoami
+```
+
+![NPM whoami](/images/content/create-a-npm-package-from-a-react-component/2.png)
+
+
+## Initializing NPM with out package
+We can use the following command to create a **package.json** file which is necessary for publishing a package to NPM:
+
+```bash
+npm init
+```
+
+More information regarding the above command can be obtained [from NPM docs](https://docs.npmjs.com/cli/init).
+
+> If you already have a **package.json** file with your project, you can skip the above step.
+
+Here's a reference to our current **package.json** file:
+
+```json:package.json
+{
+  "name": "react-pagination-component",
+  "version": "0.0.1",
+  "description": "A simple pagination component for React.js",
+  "main": "index.js",
+  "author": "Nirmalya Ghosh (nirmalya.email@gmail.com)",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/package-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "parcel-bundler": "^1.12.4"
+  }
+}
+```
+
+## Publishing our package to NPM
+The final step would be publishing our package to NPM.
+
+```bash
+npm publish
+```
+
+The above command will publish our package to NPM. More information regarding the above command can be obtained [from NPM docs](https://docs.npmjs.com/cli/publish).
+
+![NPM publish error](/images/content/create-a-npm-package-from-a-react-component/3.png)
+
+It's possible that we might see the above error when we're trying to publish our package. This means that there is already a published package named **react-pagination-component** on NPM. So, we'll need to rename our package.
+
+> You can search for packages in NPM using the [`npm search <package-name>`](https://docs.npmjs.com/cli-commands/search.html) command.
+
+In this case, we can rename our package from **react-pagination-component** to **reactjs-pagination-component** in our **package.json** file:
+
+```json:package.json
+{
+  "name": "reactjs-pagination-component",
+
+....
+```
+
+Now, if we try to publish again, everything should work fine:
+
+```bash
+npm publish
+```
+
+The above command will generate an output similar to the following:
+
+![NPM publish](/images/content/create-a-npm-package-from-a-react-component/4.png)
+
+Now, we can see that our package [has been published to NPM](https://www.npmjs.com/package/reactjs-pagination-component).
+
+![NPM package page](/images/content/create-a-npm-package-from-a-react-component/5.png)
+
+
+## Conclusion
+In this tutorial, we learnt how we can convert an existing React component into a package and publish it to NPM. We'll be learning more about how to publish updates to our package and release them in a separate tutorial.
