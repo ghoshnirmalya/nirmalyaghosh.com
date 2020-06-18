@@ -7,7 +7,7 @@ import projectsData from "public/data/projects.json";
 import Head from "next/head";
 import siteConfig from "config/site";
 //@ts-ignore
-import { frontMatter } from "./articles/*.mdx";
+import { frontMatter as articles } from "./articles/*.mdx";
 
 interface Props {
   publications: IPublication[];
@@ -21,7 +21,7 @@ const IndexPage: NextPage<Props> = ({ publications = [], projects = [] }) => {
         <title>{`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}</title>
       </Head>
       <Page
-        articles={frontMatter}
+        articles={articles}
         publications={publications}
         projects={projects}
       />
