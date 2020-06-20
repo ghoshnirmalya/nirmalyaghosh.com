@@ -22,6 +22,7 @@ const prismBaseTheme = css`
 
   .article img {
     border-radius: ${theme.radii.md};
+    border: 1px solid ${theme.colors.gray[200]};
   }
 
   .article #table-of-contents + ul,

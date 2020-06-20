@@ -28,6 +28,11 @@ const Page: FC<Props> = ({
   publications = [],
   projects = [],
 }) => {
+  const sortedArticles = articles.sort(
+    (a: IArticle, b: IArticle) =>
+      Number(new Date(b.date)) - Number(new Date(a.date))
+  );
+
   return (
     <>
       <Box as="section">
@@ -41,7 +46,7 @@ const Page: FC<Props> = ({
             <Stack spacing={32} order={[2, 2, 2, 1]}>
               <Box as="section">
                 <LazyLoad once offset={100}>
-                  <Articles articles={articles.slice(0, 3)} />
+                  <Articles articles={sortedArticles.slice(0, 3)} />
                 </LazyLoad>
               </Box>
               <Box as="section">
