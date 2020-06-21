@@ -47,6 +47,8 @@ module.exports = withSourceMaps(
         config.node = {
           fs: "empty",
         };
+
+        require("./lib/generate-sitemap.ts");
       }
 
       // When all the Sentry configuration env variables are available/configured
@@ -69,6 +71,11 @@ module.exports = withSourceMaps(
             release: options.buildId,
           })
         );
+      }
+
+      // Generate sitemap.xml on the server. This will be generated in domain.com/sitemap.xml
+      if (options.isServer) {
+        require("./lib/generate-sitemap.ts");
       }
 
       return config;
