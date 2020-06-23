@@ -6438,10 +6438,10 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-rehype-autolink-headings@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/rehype-autolink-headings/-/rehype-autolink-headings-3.0.0.tgz#8e771395690d02570b507ba430bcaf081a0a9c14"
-  integrity sha512-Kit6caYCGvH7OSeXgEq0F4b4vXFg92owru/26ckSLCODjvbD4TogAOvYvzcvkaeIO0uDpnmCg0MsmHJtHXBvyQ==
+rehype-autolink-headings@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/rehype-autolink-headings/-/rehype-autolink-headings-4.0.0.tgz#9d5d78c9fb9c787b40efdc95e99cbeb573133e47"
+  integrity sha512-2lglJ+4S3A4RCz+zlKVWj1wHvwO4bjunAoEOgMfjphT59EVXwdMiJzrL/A2fuAX/33k/LhkGW6BEK1Cl1I5WQw==
   dependencies:
     extend "^3.0.1"
     hast-util-has-property "^1.0.0"
