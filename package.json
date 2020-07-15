@@ -47,7 +47,7 @@
     "remark-toc": "^7.0.0"
   },
   "devDependencies": {
-    "@sentry/browser": "^5.19.1",
+    "@sentry/browser": "^5.19.2",
     "@types/node": "^14.0.23",
     "@types/react-lazyload": "^2.6.0",
     "@types/recoil": "^0.0.1",
