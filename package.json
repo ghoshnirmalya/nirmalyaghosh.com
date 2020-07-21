@@ -23,7 +23,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@jsdevtools/rehype-toc": "^3.0.1",
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "@sentry/node": "^5.19.2",
     "@sentry/webpack-plugin": "^1.12.0",
     "babel-plugin-import-glob-array": "^0.2.0",
