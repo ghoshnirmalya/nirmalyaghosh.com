@@ -1269,10 +1269,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@jsdevtools/rehype-toc@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-toc/-/rehype-toc-3.0.1.tgz#94dd7df9fe97a4de17285b4123a2b184a60ffe9a"
-  integrity sha512-HzLFICsh4PBwOb2PpGh8GN2uF20d+0KnfIkPAf251Lr+EwUtwS0IYyT9vMtRAR6Gi24eqRnXFRJOzLpRr4b4kg==
+"@jsdevtools/rehype-toc@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@jsdevtools/rehype-toc/-/rehype-toc-3.0.2.tgz#29c32e6b40cd4b5dafd96cb90d5057ac5dab4a51"
+  integrity sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==
 
 "@mdx-js/loader@^1.6.1":
   version "1.6.5"
