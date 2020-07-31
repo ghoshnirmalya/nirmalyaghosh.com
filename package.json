@@ -31,7 +31,7 @@
     "emotion-theming": "^10.0.27",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.1",
-    "next": "9.5.0",
+    "next": "9.5.1",
     "next-mdx-enhanced": "^3.1.0",
     "next-seo": "^4.7.3",
     "react": "16.13.1",
