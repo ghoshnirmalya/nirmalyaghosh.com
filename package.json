@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "^10.0.34",
+    "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@sentry/node": "^5.21.1",
