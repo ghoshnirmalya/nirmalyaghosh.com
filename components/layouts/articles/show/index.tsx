@@ -12,6 +12,8 @@ import IArticle from "types/article";
 import dynamic from "next/dynamic";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import siteConfig from "config/site";
+import { NextSeo } from "next-seo";
 
 const SocialLinks = dynamic(import("components/social-links"));
 const Navbar = dynamic(import("components/navbar"));
@@ -49,6 +51,29 @@ const Page = (article: IArticle) => {
 
     return (
       <>
+        <NextSeo
+          title={`${article.title} | ${siteConfig.details.title}`}
+          description={article.description}
+          openGraph={{
+            url: `${siteConfig.details.url}/${article.__resourcePath.replace(
+              ".mdx",
+              ""
+            )}`,
+            title: siteConfig.details.title,
+            description: article.description,
+            images: [
+              {
+                url: siteConfig.assets.avatar,
+                width: 800,
+                height: 600,
+                alt: siteConfig.details.title,
+              },
+            ],
+            site_name: siteConfig.details.title,
+            type: "article",
+            locale: "en_IE",
+          }}
+        />
         <SocialLinks />
         <Navbar />
         <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
