@@ -57,7 +57,7 @@ const Page = (article: IArticle) => {
           openGraph={{
             url: `${siteConfig.details.url}/${article.__resourcePath.replace(
               ".mdx",
-              ""
+              "/"
             )}`,
             title: siteConfig.details.title,
             description: article.description,
