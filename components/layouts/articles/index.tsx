@@ -94,7 +94,7 @@ const Articles: FC<Props> = ({
     );
   };
 
-  const metaNode = (date: string, readingTime: string, wordCount: string) => {
+  const metaNode = (date: string, readingTime: string) => {
     return (
       <Stack spacing={4} isInline alignItems="center">
         <Box>
@@ -103,10 +103,6 @@ const Articles: FC<Props> = ({
         <Icon name="minus" size="12px" />
         <Box>
           <Text fontSize="xs">{readingTime}</Text>
-        </Box>
-        <Icon name="minus" size="12px" />
-        <Box>
-          <Text fontSize="xs">{wordCount} words</Text>
         </Box>
       </Stack>
     );

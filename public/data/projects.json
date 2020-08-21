@@ -11,6 +11,26 @@
     "url": "https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate"
   },
   {
+    "title": "Building Monorepos Using Lerna",
+    "description": "Sample application which shows how to build monorepos using Lerna",
+    "url": "https://github.com/ghoshnirmalya/building-monorepos-using-lerna"
+  },
+  {
+    "title": "Product Hunt Clone Using Next.js and Hasura",
+    "description": "Full-stack application similar to Product Hunt built using Next.js and Hasura",
+    "url": "https://github.com/ghoshnirmalya/product-hunt-clone-using-nextjs-and-hasura"
+  },
+  {
+    "title": "Next.js Strapi boilerplate",
+    "description": "Boilerplate for building applications using Strapi and Next.js",
+    "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
+  },
+  {
+    "title": "Screenshot Mockup",
+    "description": "An app to generate mockups based on your images",
+    "url": "https://github.com/ghoshnirmalya/screenshot-mockup"
+  },
+  {
     "title": "Reddit Clone",
     "description": "Sample app for the tutorial showing how you can create a Reddit clone using React and Firebase",
     "url": "https://github.com/ghoshnirmalya/reddit-clone",
