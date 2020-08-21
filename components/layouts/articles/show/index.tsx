@@ -63,7 +63,7 @@ const Page = (article: IArticle) => {
             description: article.description,
             images: [
               {
-                url: siteConfig.assets.avatar,
+                url: `${siteConfig.details.url}${siteConfig.assets.avatar}`,
                 width: 800,
                 height: 600,
                 alt: siteConfig.details.title,
