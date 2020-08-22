@@ -157,11 +157,7 @@ const Articles: FC<Props> = ({
                 shadow="md"
               >
                 <Stack spacing={4}>
-                  {metaNode(
-                    article.date,
-                    article.readingTime.text,
-                    article.wordCount
-                  )}
+                  {metaNode(article.date, article.readingTime.text)}
                   {titleNode(article.title)}
                   {descriptionNode(article.description)}
                   <Box>{ctaNode()}</Box>
