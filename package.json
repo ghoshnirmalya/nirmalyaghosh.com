@@ -46,7 +46,7 @@
     "remark-toc": "^7.0.0"
   },
   "devDependencies": {
-    "@sentry/browser": "^5.21.4",
+    "@sentry/browser": "^5.22.0",
     "@types/node": "^14.6.0",
     "@types/react-lazyload": "^2.6.0",
     "@zeit/next-source-maps": "0.0.4-canary.1",
