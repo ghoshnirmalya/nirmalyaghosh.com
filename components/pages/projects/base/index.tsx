@@ -4,7 +4,9 @@ import IProject from "types/project";
 import dynamic from "next/dynamic";
 import withNavbarLayout from "lib/with-navbar-layout";
 
-const Projects = dynamic(import("components/layouts/projects"));
+const Projects = dynamic(
+  import(/* webpackChunkName: "Projects" */ "components/layouts/projects")
+);
 
 interface Props {
   projects: IProject[];

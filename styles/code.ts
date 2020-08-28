@@ -14,6 +14,7 @@ const prismBaseTheme = css`
   .article ol {
     font-family: "Inter", sans-serif;
     margin: ${theme.space[4]} 0 ${theme.space[8]};
+    line-height: ${theme.lineHeights.tall};
   }
 
   .article a:hover {
@@ -60,7 +61,7 @@ const prismBaseTheme = css`
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: ${theme.lineHeights[2]};
+    line-height: ${theme.lineHeights.tall};
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
@@ -225,7 +226,7 @@ export const prismLightTheme = css`
   }
 
   .article a {
-    color: ${theme.colors.blue[600]};
+    color: ${theme.colors.blue[700]};
   }
 
   :not(pre) > code {
@@ -233,7 +234,7 @@ export const prismLightTheme = css`
   }
 
   .article blockquote > p {
-    background: ${theme.colors.gray[300]};
+    background: ${theme.colors.gray[100]};
     border-color: ${theme.colors.gray[500]};
   }
 `;
@@ -328,7 +329,7 @@ export const prismDarkTheme = css`
   }
 
   .article a {
-    color: ${theme.colors.blue[400]};
+    color: ${theme.colors.blue[300]};
   }
 
   :not(pre) > code {
@@ -336,7 +337,7 @@ export const prismDarkTheme = css`
   }
 
   .article blockquote > p {
-    background: ${theme.colors.gray[700]};
+    background: ${theme.colors.gray[900]};
     border-color: ${theme.colors.gray[500]};
   }
 `;

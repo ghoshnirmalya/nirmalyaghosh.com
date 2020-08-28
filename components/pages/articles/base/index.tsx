@@ -4,7 +4,9 @@ import IArticle from "types/article";
 import dynamic from "next/dynamic";
 import withNavbarLayout from "lib/with-navbar-layout";
 
-const Articles = dynamic(import("components/layouts/articles"));
+const Articles = dynamic(
+  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+);
 
 interface Props {
   articles: IArticle[];

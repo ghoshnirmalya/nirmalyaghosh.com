@@ -10,12 +10,26 @@ const Jumbotron = dynamic(import("components/pages/index/jumbotron"));
 const NewsletterSubscriptionForm = dynamic(
   import("components/pages/index/newsletter-subscription-form")
 );
-const Articles = dynamic(import("components/layouts/articles"));
-const Publications = dynamic(import("components/layouts/publications"));
-const Projects = dynamic(import("components/pages/index/projects"));
-const SocialLinks = dynamic(import("components/social-links"));
-const Navbar = dynamic(import("components/navbar"));
-const Footer = dynamic(import("components/footer"));
+const Articles = dynamic(
+  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+);
+const Publications = dynamic(
+  import(
+    /* webpackChunkName: "Publications" */ "components/layouts/publications"
+  )
+);
+const Projects = dynamic(
+  import(/* webpackChunkName: "Projects" */ "components/pages/index/projects")
+);
+const SocialLinks = dynamic(
+  import(/* webpackChunkName: "SocialLinks" */ "components/social-links")
+);
+const Navbar = dynamic(
+  import(/* webpackChunkName: "Navbar" */ "components/navbar")
+);
+const Footer = dynamic(
+  import(/* webpackChunkName: "Footer" */ "components/footer")
+);
 
 interface Props {
   articles: IArticle[];

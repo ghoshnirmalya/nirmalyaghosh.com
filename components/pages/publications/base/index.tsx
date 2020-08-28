@@ -4,7 +4,11 @@ import IPublication from "types/publication";
 import dynamic from "next/dynamic";
 import withNavbarLayout from "lib/with-navbar-layout";
 
-const Publications = dynamic(import("components/layouts/publications"));
+const Publications = dynamic(
+  import(
+    /* webpackChunkName: "Publications" */ "components/layouts/publications"
+  )
+);
 
 interface Props {
   publications: IPublication[];

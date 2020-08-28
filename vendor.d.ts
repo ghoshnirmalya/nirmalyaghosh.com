@@ -5,6 +5,7 @@ declare module "remark-code-titles";
 declare module "rehype-autolink-headings";
 declare module "next-mdx-enhanced";
 declare module "mdx-prism";
+declare module "sharer.js";
 
 declare module "*.mdx" {
   export const frontMatter: IArticle[];

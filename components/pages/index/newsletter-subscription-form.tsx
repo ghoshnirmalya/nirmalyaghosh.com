@@ -39,8 +39,8 @@ const NewsletterSubscriptionForm: FC = () => {
           <Stack spacing={4}>
             <Box>
               <Text>
-                Subscribe to my newsletter to know more about some of the latest
-                technologies
+                Subscribe to my newsletter to know more about the latest
+                technologies. No spam ever!
               </Text>
             </Box>
             <Box
