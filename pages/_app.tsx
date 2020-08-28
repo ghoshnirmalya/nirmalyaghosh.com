@@ -8,7 +8,9 @@ import * as gtag from "lib/gtag";
 import Router from "next/router";
 import * as Sentry from "@sentry/node";
 
-const Layout = dynamic(import("components/layouts"));
+const Layout = dynamic(
+  import(/* webpackChunkName: "Layouts" */ "components/layouts")
+);
 const isProd = process.env.NODE_ENV === "production";
 
 declare global {

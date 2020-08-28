@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import { NextComponentType, NextPageContext } from "next";
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(import("components/navbar"));
-const SocialLinks = dynamic(import("components/social-links"));
-const Footer = dynamic(import("components/footer"));
+const Navbar = dynamic(
+  import(/* webpackChunkName: "Navbar" */ "components/navbar")
+);
+const SocialLinks = dynamic(
+  import(/* webpackChunkName: "SocialLinks" */ "components/social-links")
+);
+const Footer = dynamic(
+  import(/* webpackChunkName: "Footer" */ "components/footer")
+);
 
 const higherOrderComponent = (Page: NextComponentType<NextPageContext>) => {
   return class extends Component<any> {

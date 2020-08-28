@@ -107,7 +107,7 @@ const Publications: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md">
+      <Heading as="h3" size="md" letterSpacing="tight" lineHeight="tall">
         {title}
       </Heading>
     );

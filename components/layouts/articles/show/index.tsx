@@ -14,15 +14,27 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import siteConfig from "config/site";
 import { NextSeo } from "next-seo";
 
-const SocialLinks = dynamic(import("components/social-links"));
-const Navbar = dynamic(import("components/navbar"));
-const Footer = dynamic(import("components/footer"));
+const SocialLinks = dynamic(
+  import(/* webpackChunkName: "SocialLinks" */ "components/social-links")
+);
+const Navbar = dynamic(
+  import(/* webpackChunkName: "Navbar" */ "components/navbar")
+);
+const Footer = dynamic(
+  import(/* webpackChunkName: "Footer" */ "components/footer")
+);
+const SocialShare = dynamic(
+  import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
+  {
+    ssr: false,
+  }
+);
 
 dayjs.extend(localizedFormat);
 
 const Page = ({ frontMatter, children }) => {
   const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "black" };
+  const sectionBgColor = { light: "white", dark: "black" };
   const sectionColor = { light: "black", dark: "gray.100" };
 
   const metaNode = (date: string, readingTime: string) => {
@@ -81,7 +93,13 @@ const Page = ({ frontMatter, children }) => {
               <Stack spacing={8}>
                 {metaNode(frontMatter.date, frontMatter.readingTime.text)}
                 {titleNode(frontMatter.title)}
+                <Box>
+                  <SocialShare title={frontMatter.title} />
+                </Box>
                 <Box className="article">{children}</Box>
+                <Box>
+                  <SocialShare title={frontMatter.title} />
+                </Box>
               </Stack>
             </Box>
           </Grid>
