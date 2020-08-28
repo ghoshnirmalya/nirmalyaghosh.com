@@ -13,11 +13,7 @@ interface IProps {
   url?: string;
 }
 
-const SocialShare: FC<IProps> = ({
-  title,
-  url = "https://nirmalyaghosh.com/articles/2020-08-20-how-to-use-next.js-with-strapi-and-apollo",
-  // window.location.href
-}) => {
+const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
   const socialLinks = [
     {
       href: `https://twitter.com/intent/tweet?text=${title}&url=${url}`,
