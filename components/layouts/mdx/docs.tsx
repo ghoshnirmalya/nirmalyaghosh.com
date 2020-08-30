@@ -42,6 +42,53 @@ const DocsMdxLayout = ({ frontMatter, children }) => {
     );
   };
 
+  const githubButtonNode = () => {
+    if (!frontMatter.githubLink) {
+      return false;
+    }
+
+    return (
+      <_Link
+        py={2}
+        px={4}
+        href={frontMatter.githubLink}
+        rounded="md"
+        bg="#333"
+        color="#fff"
+        fontWeight="bold"
+        isExternal
+      >
+        <Stack spacing={2} isInline alignItems="center">
+          <Box as={IoLogoGithub} />
+          <Text>View source</Text>
+        </Stack>
+      </_Link>
+    );
+  };
+
+  const demoButtonNode = () => {
+    if (!frontMatter.demoLink) {
+      return false;
+    }
+
+    return (
+      <_Link
+        py={2}
+        px={4}
+        href={frontMatter.demoLink}
+        rounded="md"
+        bg="#754abb"
+        color="#fff"
+        fontWeight="bold"
+        isExternal
+      >
+        <Stack spacing={2} isInline alignItems="center">
+          <Box as={IoMdEye} /> <Text>View demo</Text>
+        </Stack>
+      </_Link>
+    );
+  };
+
   return (
     <>
       <NextSeo
@@ -80,35 +127,8 @@ const DocsMdxLayout = ({ frontMatter, children }) => {
                 <Box>
                   <Box d="flex" alignItems="center">
                     <Stack spacing={4} isInline>
-                      <_Link
-                        py={2}
-                        px={4}
-                        href={frontMatter.githubLink}
-                        rounded="md"
-                        bg="#333"
-                        color="#fff"
-                        fontWeight="bold"
-                        isExternal
-                      >
-                        <Stack spacing={2} isInline alignItems="center">
-                          <Box as={IoLogoGithub} />
-                          <Text>View source</Text>
-                        </Stack>
-                      </_Link>
-                      <_Link
-                        py={2}
-                        px={4}
-                        href={frontMatter.demoLink}
-                        rounded="md"
-                        bg="#754abb"
-                        color="#fff"
-                        fontWeight="bold"
-                        isExternal
-                      >
-                        <Stack spacing={2} isInline alignItems="center">
-                          <Box as={IoMdEye} /> <Text>View demo</Text>
-                        </Stack>
-                      </_Link>
+                      {githubButtonNode()}
+                      {demoButtonNode()}
                     </Stack>
                   </Box>
                 </Box>
