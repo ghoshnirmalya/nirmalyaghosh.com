@@ -32,6 +32,10 @@ const LINKS = [
     title: "Publications",
   },
   {
+    url: "/docs",
+    title: "Documents",
+  },
+  {
     url: "/about",
     title: "About",
   },
@@ -142,10 +146,10 @@ const Navbar: FC = () => {
               </_Link>
             </Link>
           </Box>
-          <Box display={["none", "none", "block", "block"]}>
+          <Box display={["none", "none", "none", "block"]}>
             {desktopMenuNode()}
           </Box>
-          <Box display={["block", "block", "none", "none"]} px={4}>
+          <Box display={["block", "block", "block", "none"]} px={4}>
             {mobileMenuNode()}
           </Box>
         </Stack>

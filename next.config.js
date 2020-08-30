@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === "production";
 
 module.exports = withSourceMaps(
   withMdxEnhanced({
-    layoutPath: "./components/layouts/articles/show",
+    layoutPath: "./components/layouts/mdx",
     defaultLayout: true,
     remarkPlugins: [
       require("remark-slug"),

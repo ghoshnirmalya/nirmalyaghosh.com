@@ -32,7 +32,7 @@ const SocialShare = dynamic(
 
 dayjs.extend(localizedFormat);
 
-const Page = ({ frontMatter, children }) => {
+const ArticlesMdxLayout = ({ frontMatter, children }) => {
   const { colorMode } = useColorMode();
   const sectionBgColor = { light: "white", dark: "black" };
   const sectionColor = { light: "black", dark: "gray.100" };
@@ -110,4 +110,4 @@ const Page = ({ frontMatter, children }) => {
   );
 };
 
-export default Page;
+export default ArticlesMdxLayout;

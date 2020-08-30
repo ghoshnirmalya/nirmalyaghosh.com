@@ -23,7 +23,6 @@ const prismBaseTheme = css`
 
   .article img {
     border-radius: ${theme.radii.md};
-    border: 1px solid ${theme.colors.gray[200]};
   }
 
   .article #table-of-contents + ul,
@@ -32,7 +31,8 @@ const prismBaseTheme = css`
     list-style-type: decimal;
   }
 
-  .article #table-of-contents + ul > li {
+  .article #table-of-contents + ul > li,
+  .article ol > li {
     margin-bottom: ${theme.space[2]};
   }
 
@@ -234,8 +234,12 @@ export const prismLightTheme = css`
   }
 
   .article blockquote > p {
-    background: ${theme.colors.gray[100]};
+    background: ${theme.colors.gray[50]};
     border-color: ${theme.colors.gray[500]};
+  }
+
+  .article img {
+    border: 1px solid ${theme.colors.gray[200]};
   }
 `;
 
@@ -337,7 +341,11 @@ export const prismDarkTheme = css`
   }
 
   .article blockquote > p {
-    background: ${theme.colors.gray[900]};
+    background: ${theme.colors.gray[800]};
     border-color: ${theme.colors.gray[500]};
+  }
+
+  .article img {
+    border: 1px solid ${theme.colors.gray[700]};
   }
 `;

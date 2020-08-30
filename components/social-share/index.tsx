@@ -1,12 +1,6 @@
-import { Stack, Link, Box, Text } from "@chakra-ui/core";
+import { Box, Link, Stack, Text, useColorMode } from "@chakra-ui/core";
 import React, { FC } from "react";
-import {
-  IoLogoGithub,
-  IoLogoTwitter,
-  IoLogoFacebook,
-  IoLogoLinkedin,
-  IoLogoReddit,
-} from "react-icons/io";
+import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 
 interface IProps {
   title: string;
@@ -14,6 +8,10 @@ interface IProps {
 }
 
 const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
+  const { colorMode } = useColorMode();
+  const sectionBgColor = { light: "gray.100", dark: "gray.900" };
+  const sectionColor = { light: "gray.900ack", dark: "gray.100" };
+
   const socialLinks = [
     {
       href: `https://twitter.com/intent/tweet?text=${title}&url=${url}`,
@@ -36,30 +34,37 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
   ];
 
   return (
-    <Stack spacing={2}>
-      <Text fontWeight="bold">Share this post:</Text>
-      <Stack spacing={2} isInline>
-        {socialLinks.map((link, index) => {
-          return (
-            <Link
-              key={index}
-              py={2}
-              px={4}
-              href={link.href}
-              rounded="md"
-              bg={link.bg}
-              color="#fff"
-              fontWeight="bold"
-              isExternal
-            >
-              <Stack spacing={2} isInline alignItems="center">
-                <Box as={link.icon} /> <Text fontSize="xs">{link.label}</Text>
-              </Stack>
-            </Link>
-          );
-        })}
+    <Box
+      bg={sectionBgColor[colorMode]}
+      color={sectionColor[colorMode]}
+      p={4}
+      rounded="md"
+    >
+      <Stack spacing={2}>
+        <Text fontWeight="bold">Share this post</Text>
+        <Stack spacing={2} isInline>
+          {socialLinks.map((link, index) => {
+            return (
+              <Link
+                key={index}
+                py={2}
+                px={4}
+                href={link.href}
+                rounded="md"
+                bg={link.bg}
+                color="#fff"
+                fontWeight="bold"
+                isExternal
+              >
+                <Stack spacing={2} isInline alignItems="center">
+                  <Box as={link.icon} /> <Text fontSize="xs">{link.label}</Text>
+                </Stack>
+              </Link>
+            );
+          })}
+        </Stack>
       </Stack>
-    </Stack>
+    </Box>
   );
 };
 
