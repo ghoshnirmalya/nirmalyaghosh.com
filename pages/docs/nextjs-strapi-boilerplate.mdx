@@ -71,6 +71,12 @@ GOOGLE_CLIENT_ID=""
 GOOGLE_CLIENT_SECRET=""
 ```
 
+We might need to run the following command:
+
+```bash
+source .env
+```
+
 4. **Create and copy the Google client credentials**
 
 Create a new [Google OAuth Client](https://console.developers.google.com/apis/credentials/oauthclient) and copy the credentials (Client ID and Client Secret) in your .env file.
@@ -98,6 +104,26 @@ docker-compose up
 ```
 
 We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on [http://localhost:1337/v1/graphql](http://localhost:1337/v1/graphql).
+
+8. **Configure Strapi**
+
+a. Allow permissions for all operations on the Feed content-type for Authenticated users.
+
+![Authenticated user role](/images/content/nextjs-strapi-boilerplate/1.png)
+
+![Allow permissions for all operations on the Feed content-type for Authenticated users](/images/content/nextjs-strapi-boilerplate/2.png)
+
+b. Allow permissions for all operations on the Feed content-type for Authenticated users as well.
+
+![Allow permissions for all operations on the Feed content-type for Authenticated users as well](/images/content/nextjs-strapi-boilerplate/3.png)
+
+c. Enable the Google provider.
+
+![Enable the Google provider](/images/content/nextjs-strapi-boilerplate/4.png)
+
+![Enable informations for the Google provider](/images/content/nextjs-strapi-boilerplate/5.png)
+
+d. Click on the "Done" button and now we can log into our Next.js application using our Google account.
 
 ## Deployment
 
