@@ -1,42 +1,51 @@
-# Personal Portfolio using Next.js
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/6391763/91746343-12db9600-ebda-11ea-852f-c53409d470ca.png" alt="Logo"/>
+</p>
 
-A starter Next.js template for building your own portfolio.
+<p align="center">
+  <a href="https://twitter.com/nirmalyaghosh23">
+    <img alt="Twitter: Nirmalya Ghosh" src="https://img.shields.io/twitter/follow/nirmalyaghosh23.svg?style=social" target="_blank" />
+  </a>
+</p>
 
-## Getting Started
+This is a boilerplate for building portfolio applications using Next.js.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Overview
 
-### Prerequisites
+This boilerplate is built using the following technologies:
 
-What things you need to install the software and how to install them
+1. [Chakra UI](https://chakra-ui.com/)
+2. [Emotion](https://emotion.sh/)
+3. [TypeScript](https://www.typescriptlang.org/)
 
-### Cloning
+## Requirements
 
+1. [Node.js](https://nodejs.org/)
+2. [npm](https://www.npmjs.com/)
+
+## Installation
+
+### 1. **Clone the application**
+
+```sh
+git clone https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate
 ```
-git clone git@github.com:ghoshnirmalya/nirmalyaghosh.com.git
+
+### 2. **Install necessary dependencies for the frontend application**
+
+```sh
+cd frontend && yarn install
 ```
 
-### Installing
+### 3. **Start the frontend application**
 
-A step by step series of examples that tell you how to get a development env running:
+From the frontend directory, we can run the following command to start our Next.js frontend application:
 
-```
-yarn install
-```
-
-If you prefer `npm`, then:
-
-```
-npm install
-```
-
-Then, you can run the development server using:
-
-```
+```sh
 yarn dev
 ```
 
-This will spin up the development server at [localhost:8000](http://localhost:8000/).
+The above command will start the frontend application on [http://localhost:3000/](http://localhost:3000).
 
 ## License
 
