@@ -79,7 +79,7 @@ export default class MyApp extends App {
             description: siteConfig.details.description,
             images: [
               {
-                url: siteConfig.assets.avatar,
+                url: `${siteConfig.details.url}${siteConfig.assets.avatar}`,
                 width: 800,
                 height: 600,
                 alt: siteConfig.details.title,
