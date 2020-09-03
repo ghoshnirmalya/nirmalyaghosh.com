@@ -28,7 +28,7 @@
     "@sentry/node": "^5.22.3",
     "@sentry/webpack-plugin": "^1.12.1",
     "babel-plugin-import-glob-array": "^0.2.0",
-    "dayjs": "^1.8.34",
+    "dayjs": "^1.8.35",
     "emotion-theming": "^10.0.27",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.1",
