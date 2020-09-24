@@ -34,7 +34,7 @@
     "mdx-prism": "^0.3.1",
     "next": "9.5.3",
     "next-mdx-enhanced": "^4.0.0",
-    "next-seo": "^4.7.3",
+    "next-seo": "^4.9.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.11.0",
