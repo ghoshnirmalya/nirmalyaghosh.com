@@ -1,8 +1,14 @@
 [
   {
+    "title": "Getting started with Mock Service Worker",
+    "url": "https://blog.logrocket.com/getting-started-with-mock-service-worker/",
+    "description": "In this tutorial, we’ll learn about Mock Service Worker and how we can use it to mock network requests. We’ll build a chat application that will use the mock data provided by the Mock Service Worker API.",
+    "date": "2020-09-03"
+  },
+  {
     "title": "Functional user interfaces with Moon.js",
     "url": "https://blog.logrocket.com/functional-uis-moon-js/",
-    "description": "In this tutorial, we’ll introduce Moon.js by understanding what it is and why it was created. ",
+    "description": "In this tutorial, we’ll introduce Moon.js by understanding what it is and why it was created.",
     "date": "2020-07-22"
   },
   {
