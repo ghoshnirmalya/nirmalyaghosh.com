@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.1.0...1.1.1) (2020-10-06)
+
+### Bug Fixes
+
+- fixes articles with no introduction ([2007ccc](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/2007ccc0648d488bbe1589afb96acb793717366a))
+- fixes og:image tag value ([0c77c38](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/0c77c3847bed0bf5672c0d15b6a1bad7da79db21))
+
 # [1.1.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.0.0...1.1.0) (2020-08-31)
 
 ### Features
