@@ -13,12 +13,13 @@
     "javascript"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn refresh && next dev",
+    "build": "yarn refresh && next build",
     "start": "next start",
     "type-check": "tsc",
     "lint": "prettier --write '**/*.{js,json,css,md,tsx,ts}'",
-    "release": "release-it"
+    "release": "release-it",
+    "refresh": "rm -rf .next/cache/next-babel-loader"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
