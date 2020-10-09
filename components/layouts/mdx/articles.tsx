@@ -67,6 +67,7 @@ const ArticlesMdxLayout = ({ frontMatter, children }) => {
           bgSize="cover"
           bgPos="center"
           h={64}
+          bg="gray.100"
         />
       );
     }
@@ -77,6 +78,7 @@ const ArticlesMdxLayout = ({ frontMatter, children }) => {
         bgSize="cover"
         bgPos="center"
         h={64}
+        bg="gray.100"
       />
     );
   };

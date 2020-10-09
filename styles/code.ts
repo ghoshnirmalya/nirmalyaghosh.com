@@ -237,10 +237,6 @@ export const prismLightTheme = css`
     background: ${theme.colors.gray[50]};
     border-color: ${theme.colors.gray[500]};
   }
-
-  .article img {
-    border: 1px solid ${theme.colors.gray[200]};
-  }
 `;
 
 export const prismDarkTheme = css`
@@ -343,9 +339,5 @@ export const prismDarkTheme = css`
   .article blockquote > p {
     background: ${theme.colors.gray[800]};
     border-color: ${theme.colors.gray[500]};
-  }
-
-  .article img {
-    border: 1px solid ${theme.colors.gray[700]};
   }
 `;
