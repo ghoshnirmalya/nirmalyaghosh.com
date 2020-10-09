@@ -59,6 +59,28 @@ const ArticlesMdxLayout = ({ frontMatter, children }) => {
     );
   };
 
+  const coverImageNode = () => {
+    if (!frontMatter.coverImage) {
+      return (
+        <Box
+          bgImage={`url(/images/common/cover.jpg)`}
+          bgSize="cover"
+          bgPos="center"
+          h={64}
+        />
+      );
+    }
+
+    return (
+      <Box
+        bgImage={`url(${frontMatter.coverImage})`}
+        bgSize="cover"
+        bgPos="center"
+        h={64}
+      />
+    );
+  };
+
   return (
     <>
       <NextSeo
@@ -69,14 +91,16 @@ const ArticlesMdxLayout = ({ frontMatter, children }) => {
             ".mdx",
             "/"
           )}`,
-          title: siteConfig.details.title,
+          title: frontMatter.title,
           description: frontMatter.description,
           images: [
             {
-              url: `${siteConfig.details.url}${siteConfig.assets.avatar}`,
+              url: frontMatter.coverImage
+                ? frontMatter.coverImage
+                : "/images/common/cover.jpg",
               width: 800,
               height: 600,
-              alt: siteConfig.details.title,
+              alt: frontMatter.title,
             },
           ],
           site_name: siteConfig.details.title,
@@ -87,6 +111,7 @@ const ArticlesMdxLayout = ({ frontMatter, children }) => {
       <SocialLinks />
       <Navbar />
       <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
+        {coverImageNode()}
         <Box maxW="3xl" mx="auto" px={4} py={8}>
           <Grid templateColumns="1fr">
             <Box maxW="100%" overflowX="hidden">
