@@ -37,7 +37,7 @@
     "next-mdx-enhanced": "^4.0.0",
     "next-seo": "^4.11.0",
     "react": "16.14.0",
-    "react-dom": "16.13.1",
+    "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
     "react-lazyload": "^3.0.0",
     "reading-time": "^1.2.0",
