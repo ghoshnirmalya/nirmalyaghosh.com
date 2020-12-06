@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.1.1...1.2.0) (2020-12-06)
+
+### Features
+
+- adds "refresh" script to clear babel cache ([2f65e44](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/2f65e443cc8dadad62cf2968ef43ce0d219244d6))
+- adds cover images ([aad6f85](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/aad6f8545c023c75cb84c19786a2ebd76d40fab0))
+
 ## [1.1.1](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.1.0...1.1.1) (2020-10-06)
 
 ### Bug Fixes
