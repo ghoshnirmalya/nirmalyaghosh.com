@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Grid } from "@chakra-ui/core";
+import { Box, Grid } from "@chakra-ui/react";
 import IPublication from "types/publication";
 import dynamic from "next/dynamic";
 import withNavbarLayout from "lib/with-navbar-layout";

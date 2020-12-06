@@ -1,21 +1,21 @@
-import React, { FC, useState, FormEvent } from "react";
+import { ArrowForwardIcon, MinusIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Stack,
-  Heading,
-  Text,
   Button,
-  Link as _Link,
+  Heading,
   Image,
-  Icon,
   Input,
+  Link as _Link,
+  Stack,
+  Text,
   useColorMode,
-} from "@chakra-ui/core";
-import Link from "next/link";
-import IArticle from "types/article";
-import { IoMdArrowRoundForward } from "react-icons/io";
+} from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import Link from "next/link";
+import React, { FC, FormEvent, useState } from "react";
+import { IoMdArrowRoundForward } from "react-icons/io";
+import IArticle from "types/article";
 
 dayjs.extend(localizedFormat);
 
@@ -60,6 +60,8 @@ const Articles: FC<Props> = ({
     return (
       <Box>
         <Input
+          bg={cardBgColor[colorMode]}
+          color={cardColor[colorMode]}
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -100,7 +102,7 @@ const Articles: FC<Props> = ({
         <Box>
           <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
         </Box>
-        <Icon name="minus" size="12px" />
+        <MinusIcon size="12px" />
         <Box>
           <Text fontSize="xs">{readingTime}</Text>
         </Box>
@@ -122,7 +124,7 @@ const Articles: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Button rightIcon="arrow-forward" variant="link" fontSize="sm">
+      <Button rightIcon={<ArrowForwardIcon />} variant="link" fontSize="sm">
         Read more
       </Button>
     );

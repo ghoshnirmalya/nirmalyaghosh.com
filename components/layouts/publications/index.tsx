@@ -9,12 +9,13 @@ import {
   Image,
   useColorMode,
   Input,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Link from "next/link";
 import IPublication from "types/publication";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 dayjs.extend(localizedFormat);
 
@@ -59,6 +60,8 @@ const Publications: FC<Props> = ({
     return (
       <Box>
         <Input
+          bg={cardBgColor[colorMode]}
+          color={cardColor[colorMode]}
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -119,7 +122,7 @@ const Publications: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Button rightIcon="external-link" variant="link" fontSize="sm">
+      <Button rightIcon={<ExternalLinkIcon />} variant="link" fontSize="sm">
         Read more
       </Button>
     );

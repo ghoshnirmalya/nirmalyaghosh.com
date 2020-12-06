@@ -6,7 +6,7 @@ import {
   Stack,
   Text,
   useColorMode,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import siteConfig from "config/site";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Grid, Stack } from "@chakra-ui/core";
+import { Box, Grid, Stack } from "@chakra-ui/react";
 import IArticle from "types/article";
 import IPublication from "types/publication";
 import IProject from "types/project";
@@ -59,25 +59,25 @@ const Page: FC<Props> = ({
           <Grid templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]} gap={8}>
             <Stack spacing={32} order={[2, 2, 2, 1]}>
               <Box as="section">
-                <LazyLoad once offset={100}>
+                <LazyLoad once offset={300}>
                   <Articles articles={sortedArticles.slice(0, 3)} />
                 </LazyLoad>
               </Box>
               <Box as="section">
-                <LazyLoad once offset={100}>
+                <LazyLoad once offset={300}>
                   <Publications publications={publications.slice(0, 3)} />
                 </LazyLoad>
               </Box>
               <Box as="section">
-                <LazyLoad once offset={100}>
+                <LazyLoad once offset={300}>
                   <Projects projects={projects.slice(0, 3)} />
                 </LazyLoad>
               </Box>
             </Stack>
             <Box order={[1, 1, 1, 2]}>
-              <Stack spacing={8} position="sticky" top={96}>
+              <Stack spacing={8} position="sticky" top="96px">
                 <Box>
-                  <LazyLoad once offset={100}>
+                  <LazyLoad once offset={300}>
                     <NewsletterSubscriptionForm />
                   </LazyLoad>
                 </Box>

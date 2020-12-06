@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ThemeProvider, CSSReset, LightMode, theme } from "@chakra-ui/core";
+import { ChakraProvider, LightMode, theme } from "@chakra-ui/react";
 import Container from "components/layouts/container";
 
 const Layout: FC = ({ children }) => {
@@ -17,12 +17,9 @@ const Layout: FC = ({ children }) => {
   };
 
   return (
-    <ThemeProvider theme={customTheme}>
-      <LightMode>
-        <CSSReset />
-        <Container>{children}</Container>
-      </LightMode>
-    </ThemeProvider>
+    <ChakraProvider theme={customTheme}>
+      <Container>{children}</Container>
+    </ChakraProvider>
   );
 };
 

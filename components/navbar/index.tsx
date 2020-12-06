@@ -1,17 +1,18 @@
-import React, { FC } from "react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Stack,
-  Link as _Link,
   Button,
   IconButton,
+  Link as _Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Stack,
   useColorMode,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Link from "next/link";
+import React, { FC } from "react";
 
 interface NavLink {
   url: string;
@@ -55,7 +56,7 @@ const Navbar: FC = () => {
       return (
         <IconButton
           aria-label="Switch to dark theme"
-          icon="moon"
+          icon={<MoonIcon />}
           size="sm"
           onClick={toggleColorMode}
         />
@@ -65,7 +66,7 @@ const Navbar: FC = () => {
     return (
       <IconButton
         aria-label="Switch to light theme"
-        icon="sun"
+        icon={<SunIcon />}
         size="sm"
         onClick={toggleColorMode}
       />
