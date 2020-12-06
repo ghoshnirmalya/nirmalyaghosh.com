@@ -10,12 +10,13 @@ import {
   Icon,
   Input,
   useColorMode,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Link from "next/link";
 import IArticle from "types/article";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 dayjs.extend(localizedFormat);
 
@@ -60,6 +61,8 @@ const Articles: FC<Props> = ({
     return (
       <Box>
         <Input
+          bg={cardBgColor[colorMode]}
+          color={cardColor[colorMode]}
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -122,7 +125,7 @@ const Articles: FC<Props> = ({
 
   const ctaNode = () => {
     return (
-      <Button rightIcon="arrow-forward" variant="link" fontSize="sm">
+      <Button rightIcon={<ArrowForwardIcon />} variant="link" fontSize="sm">
         Read more
       </Button>
     );

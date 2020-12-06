@@ -9,7 +9,7 @@ import {
   Heading,
   InputGroup,
   InputRightElement,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 
 const NewsletterSubscriptionForm: FC = () => {
   const { colorMode } = useColorMode();

@@ -8,7 +8,7 @@ import {
   Text,
   Link,
   useColorMode,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import withNavbarLayout from "lib/with-navbar-layout";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 

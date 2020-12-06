@@ -6,7 +6,7 @@ import {
   Link as _Link,
   Text,
   useColorMode,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 

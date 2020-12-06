@@ -7,7 +7,7 @@ import {
   Text,
   useColorMode,
   Icon,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";

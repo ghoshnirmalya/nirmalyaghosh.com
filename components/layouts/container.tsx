@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { useColorMode, Box } from "@chakra-ui/core";
-import { Global } from "@emotion/core";
+import { useColorMode, Box } from "@chakra-ui/react";
+import { Global } from "@emotion/react";
 import { prismDarkTheme, prismLightTheme } from "styles/code";
 
 const Container: FC = ({ children }) => {

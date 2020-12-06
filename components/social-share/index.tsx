@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Text, useColorMode } from "@chakra-ui/core";
+import { Box, Link, Stack, Text, useColorMode } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Stack, Heading, Text, useColorMode } from "@chakra-ui/core";
+import { Box, Stack, Heading, Text, useColorMode } from "@chakra-ui/react";
 
 const Jumbotron: FC = () => {
   const { colorMode } = useColorMode();

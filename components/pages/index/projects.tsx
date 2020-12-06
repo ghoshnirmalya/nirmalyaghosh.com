@@ -6,7 +6,7 @@ import {
   Text,
   Link as _Link,
   useColorMode,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Link from "next/link";
 import IProject from "types/project";
 import { IoMdArrowRoundForward } from "react-icons/io";
@@ -21,8 +21,8 @@ const projects: FC<Props> = ({
   hideViewAllLinksNode = false,
 }) => {
   const { colorMode } = useColorMode();
-  const cardBgColor = { light: "gray.900", dark: "gray.100" };
-  const cardColor = { light: "gray.100", dark: "gray.900" };
+  const cardBgColor = { light: "white", dark: "gray.900" };
+  const cardColor = { light: "gray.900", dark: "white" };
 
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;

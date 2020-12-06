@@ -9,8 +9,9 @@ import {
   Button,
   useColorMode,
   Input,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import IProject from "types/project";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 interface Props {
   projects: IProject[];
@@ -29,6 +30,8 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     return (
       <Box>
         <Input
+          bg={cardBgColor[colorMode]}
+          color={cardColor[colorMode]}
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -66,7 +69,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const ctaNode = () => {
     return (
-      <Button rightIcon="external-link" fontSize="sm">
+      <Button rightIcon={<ExternalLinkIcon />} fontSize="sm">
         View project
       </Button>
     );

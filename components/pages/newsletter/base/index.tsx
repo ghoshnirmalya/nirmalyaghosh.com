@@ -8,7 +8,7 @@ import {
   Input,
   InputRightElement,
   Button,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import withNavbarLayout from "lib/with-navbar-layout";
 import React, { FC } from "react";
 import dynamic from "next/dynamic";
