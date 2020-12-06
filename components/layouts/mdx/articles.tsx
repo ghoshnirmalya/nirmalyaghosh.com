@@ -1,18 +1,18 @@
-import React from "react";
+import { MinusIcon } from "@chakra-ui/icons";
 import {
   Box,
   Grid,
-  Stack,
   Heading,
+  Stack,
   Text,
   useColorMode,
-  Icon,
 } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
+import siteConfig from "config/site";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import siteConfig from "config/site";
 import { NextSeo } from "next-seo";
+import dynamic from "next/dynamic";
+import React from "react";
 
 const SocialLinks = dynamic(
   import(/* webpackChunkName: "SocialLinks" */ "components/social-links")
@@ -43,7 +43,7 @@ const ArticlesMdxLayout = ({ frontMatter, children }) => {
         <Box>
           <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
         </Box>
-        <Icon name="minus" size="12px" />
+        <MinusIcon size="12px" />
         <Box>
           <Text fontSize="xs">{readingTime}</Text>
         </Box>

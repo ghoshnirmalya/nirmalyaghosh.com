@@ -1,22 +1,21 @@
-import React, { FC, useState, FormEvent } from "react";
+import { ArrowForwardIcon, MinusIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Stack,
-  Heading,
-  Text,
   Button,
-  Link as _Link,
+  Heading,
   Image,
-  Icon,
   Input,
+  Link as _Link,
+  Stack,
+  Text,
   useColorMode,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import IDoc from "types/doc";
-import { IoMdArrowRoundForward } from "react-icons/io";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import Link from "next/link";
+import React, { FC, FormEvent, useState } from "react";
+import { IoMdArrowRoundForward } from "react-icons/io";
+import IDoc from "types/doc";
 
 dayjs.extend(localizedFormat);
 
@@ -99,7 +98,7 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
         <Box>
           <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
         </Box>
-        <Icon name="minus" size="12px" />
+        <MinusIcon size="12px" />
         <Box>
           <Text fontSize="xs">{readingTime}</Text>
         </Box>
