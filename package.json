@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.1",
-    "@chakra-ui/react": "^1.0.2",
+    "@chakra-ui/react": "^1.0.3",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
