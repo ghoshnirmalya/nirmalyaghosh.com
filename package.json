@@ -27,7 +27,7 @@
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
-    "@sentry/node": "^5.29.0",
+    "@sentry/node": "^5.29.1",
     "@sentry/webpack-plugin": "^1.14.0",
     "babel-plugin-import-glob-array": "^0.2.0",
     "dayjs": "^1.9.7",
