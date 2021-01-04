@@ -1,18 +1,20 @@
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
+  border,
   Box,
   Button,
+  HStack,
   IconButton,
   Link as _Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
-  Stack,
   useColorMode,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
 interface NavLink {
   url: string;
@@ -29,10 +31,6 @@ const LINKS = [
     title: "Articles",
   },
   {
-    url: "/publications",
-    title: "Publications",
-  },
-  {
     url: "/docs",
     title: "Documents",
   },
@@ -40,25 +38,22 @@ const LINKS = [
     url: "/about",
     title: "About",
   },
-  {
-    url: "/newsletter",
-    title: "Newsletter",
-  },
 ];
 
 const Navbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const navbarSectionBgColor = { light: "white", dark: "gray.900" };
   const navbarSectionColor = { light: "dark.900", dark: "white" };
+  const borderColor = { light: "blue.600", dark: "blue.400" };
 
   const themeSwitcherButtonNode = () => {
     if (colorMode === "light") {
       return (
         <IconButton
           aria-label="Switch to dark theme"
-          icon={<MoonIcon />}
-          size="sm"
+          icon={<IoMdMoon />}
           onClick={toggleColorMode}
+          variant="ghost"
         />
       );
     }
@@ -66,9 +61,9 @@ const Navbar: FC = () => {
     return (
       <IconButton
         aria-label="Switch to light theme"
-        icon={<SunIcon />}
-        size="sm"
+        icon={<IoMdSunny />}
         onClick={toggleColorMode}
+        variant="ghost"
       />
     );
   };
@@ -77,7 +72,11 @@ const Navbar: FC = () => {
     return (
       <Menu>
         <MenuButton as={Button}>Menu</MenuButton>
-        <MenuList placement="bottom-end">
+        <MenuList
+          placement="bottom-end"
+          bg={navbarSectionBgColor[colorMode]}
+          color={navbarSectionColor[colorMode]}
+        >
           {[
             LINKS.map((link: NavLink) => {
               return (
@@ -103,7 +102,7 @@ const Navbar: FC = () => {
 
   const desktopMenuNode = () => {
     return (
-      <Stack isInline spacing={4} alignItems="center">
+      <HStack isInline spacing={4} alignItems="center">
         {[
           LINKS.map((link: NavLink) => {
             return (
@@ -118,32 +117,35 @@ const Navbar: FC = () => {
           }),
         ]}
         <Box px={2}>{themeSwitcherButtonNode()}</Box>
-      </Stack>
+      </HStack>
     );
   };
 
   return (
     <Box
       as="header"
-      position="sticky"
-      top={0}
       zIndex={1}
       bg={navbarSectionBgColor[colorMode]}
       color={navbarSectionColor[colorMode]}
       shadow="md"
       fontWeight="bold"
+      px={4}
+      borderTopWidth={5}
+      borderColor={borderColor[colorMode]}
     >
       <Box maxW="6xl" mx="auto">
-        <Stack
-          isInline
-          justifyContent="space-between"
-          alignItems="center"
-          py={4}
-        >
-          <Box>
+        <HStack justifyContent="space-between" alignItems="center" py={4}>
+          <Box d="flex" alignItems="center">
             <Link href="/">
-              <_Link p={4} href="/" rounded="md">
-                Home
+              <_Link href="/" d="flex">
+                <Image
+                  src="/images/common/favicon.png"
+                  alt="Logo"
+                  height={32}
+                  width={32}
+                  quality={100}
+                  priority
+                />
               </_Link>
             </Link>
           </Box>
@@ -153,7 +155,7 @@ const Navbar: FC = () => {
           <Box display={["block", "block", "block", "none"]} px={4}>
             {mobileMenuNode()}
           </Box>
-        </Stack>
+        </HStack>
       </Box>
     </Box>
   );

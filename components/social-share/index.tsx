@@ -1,4 +1,11 @@
-import { Box, Link, Stack, Text, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Link,
+  Text,
+  useColorMode,
+  VStack,
+} from "@chakra-ui/react";
 import React, { FC } from "react";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 
@@ -40,9 +47,9 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
       p={4}
       rounded="md"
     >
-      <Stack spacing={2}>
+      <VStack spacing={2} align="left">
         <Text fontWeight="bold">Share this post</Text>
-        <Stack spacing={2} isInline>
+        <HStack spacing={2}>
           {socialLinks.map((link, index) => {
             return (
               <Link
@@ -56,14 +63,14 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
                 fontWeight="bold"
                 isExternal
               >
-                <Stack spacing={2} isInline alignItems="center">
+                <HStack spacing={2} alignItems="center">
                   <Box as={link.icon} /> <Text fontSize="xs">{link.label}</Text>
-                </Stack>
+                </HStack>
               </Link>
             );
           })}
-        </Stack>
-      </Stack>
+        </HStack>
+      </VStack>
     </Box>
   );
 };

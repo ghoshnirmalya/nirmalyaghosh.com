@@ -1,15 +1,15 @@
-import React, { FC } from "react";
 import {
   Box,
   Grid,
-  Stack,
   Heading,
-  Image,
-  Text,
+  HStack,
   Link,
+  Text,
   useColorMode,
+  VStack,
 } from "@chakra-ui/react";
-import withNavbarLayout from "lib/with-navbar-layout";
+import Image from "next/image";
+import React, { FC } from "react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const Page: FC = () => {
@@ -19,28 +19,33 @@ const Page: FC = () => {
 
   const headingNode = () => {
     return (
-      <Stack isInline spacing={4} alignItems="center">
-        <Box>
+      <HStack spacing={4} alignItems="center">
+        <Box
+          bg={cardColor[colorMode]}
+          color={cardBgColor[colorMode]}
+          rounded="full"
+          p={1}
+          w={100}
+          h={100}
+        >
           <Image
-            objectFit="cover"
             src="/images/common/avatar.png"
             alt="Nirmalya Ghosh"
-            size={20}
-            bg={cardColor[colorMode]}
-            color={cardBgColor[colorMode]}
-            rounded="full"
-            p={1}
+            height={100}
+            width={100}
+            quality={100}
+            priority
           />
         </Box>
         <Box>
-          <Stack spacing={2}>
+          <VStack spacing={2} align="left">
             <Heading as="h1" size="xl">
               Nirmalya Ghosh
             </Heading>
             <Text>A little bit about me</Text>
-          </Stack>
+          </VStack>
         </Box>
-      </Stack>
+      </HStack>
     );
   };
 
@@ -77,15 +82,15 @@ const Page: FC = () => {
 
   const socialLinksNode = () => {
     return (
-      <Stack spacing={4}>
-        <Stack spacing={8}>
+      <VStack spacing={4} align="left">
+        <VStack spacing={8} align="left">
           <Heading as="h2" size="lg">
             Social profiles
           </Heading>
           <Text>You can find me in the following social websites:</Text>
-        </Stack>
+        </VStack>
         <Box d="flex" alignItems="center">
-          <Stack spacing={4} isInline>
+          <HStack spacing={4}>
             <Link
               py={2}
               px={4}
@@ -96,9 +101,9 @@ const Page: FC = () => {
               fontWeight="bold"
               isExternal
             >
-              <Stack spacing={2} isInline alignItems="center">
+              <HStack spacing={2} alignItems="center">
                 <Box as={IoLogoGithub} /> <Text>Github</Text>
-              </Stack>
+              </HStack>
             </Link>
             <Link
               py={2}
@@ -110,29 +115,29 @@ const Page: FC = () => {
               fontWeight="bold"
               isExternal
             >
-              <Stack spacing={2} isInline alignItems="center">
+              <HStack spacing={2} alignItems="center">
                 <Box as={IoLogoLinkedin} /> <Text>LinkedIn</Text>
-              </Stack>
+              </HStack>
             </Link>
-          </Stack>
+          </HStack>
         </Box>
-      </Stack>
+      </VStack>
     );
   };
 
   return (
-    <Box maxW="3xl" mx="auto" px={4} py={8}>
+    <Box maxW="2xl" mx="auto" px={4} py={8}>
       <Grid templateColumns="1fr">
         <Box as="section">
-          <Stack spacing={8}>
+          <VStack spacing={8} align="left">
             {headingNode()}
             {bioDescriptionNode()}
             {socialLinksNode()}
-          </Stack>
+          </VStack>
         </Box>
       </Grid>
     </Box>
   );
 };
 
-export default withNavbarLayout(Page);
+export default Page;

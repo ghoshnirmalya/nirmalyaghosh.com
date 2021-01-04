@@ -1,17 +1,17 @@
-import React, { FC, useState, FormEvent } from "react";
 import {
   Box,
-  Grid,
-  Stack,
-  Heading,
-  Text,
-  Image,
   Button,
-  useColorMode,
+  Grid,
+  Heading,
+  Image,
   Input,
+  Text,
+  useColorMode,
+  VStack,
 } from "@chakra-ui/react";
+import React, { FC, FormEvent, useState } from "react";
+import { IoMdArrowForward } from "react-icons/io";
 import IProject from "types/project";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 interface Props {
   projects: IProject[];
@@ -45,12 +45,12 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   const headingNode = () => {
     return (
       <Box>
-        <Stack spacing={2}>
+        <VStack spacing={2} align="left">
           <Heading as="h1" size="xl">
             Projects
           </Heading>
           <Text>Open Source Projects developed and available on Github</Text>
-        </Stack>
+        </VStack>
       </Box>
     );
   };
@@ -69,7 +69,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const ctaNode = () => {
     return (
-      <Button rightIcon={<ExternalLinkIcon />} fontSize="sm">
+      <Button rightIcon={<IoMdArrowForward />} fontSize="sm">
         View project
       </Button>
     );
@@ -78,14 +78,14 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   const projectsNode = () => {
     if (!sortedProjects.length) {
       return (
-        <Stack mx="auto" textAlign="center">
+        <VStack mx="auto" textAlign="center">
           <Image
             src="/images/common/no-items.svg"
             alt="No projects found!"
             size={64}
           />
           <Text>No projects found!</Text>
-        </Stack>
+        </VStack>
       );
     }
 
@@ -97,19 +97,23 @@ const Projects: FC<Props> = ({ projects = [] }) => {
               key={index}
               bg={cardBgColor[colorMode]}
               color={cardColor[colorMode]}
-              p={8}
               rounded="md"
               shadow="md"
             >
               <a href={project.url} target="_blank" rel="noopener">
-                <Box>
-                  <Stack spacing={4} minH={48} justifyContent="space-between">
-                    <Stack spacing={4}>
+                <Box p={8}>
+                  <VStack
+                    spacing={4}
+                    minH={48}
+                    justifyContent="space-between"
+                    align="left"
+                  >
+                    <VStack spacing={4} align="left">
                       {titleNode(project.title)}
                       {descriptionNode(project.description)}
-                    </Stack>
+                    </VStack>
                     <Box>{ctaNode()}</Box>
-                  </Stack>
+                  </VStack>
                 </Box>
               </a>
             </Box>
@@ -120,11 +124,11 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   };
 
   return (
-    <Stack spacing={8}>
+    <VStack spacing={8} align="left">
       {headingNode()}
       {searchNode()}
       {projectsNode()}
-    </Stack>
+    </VStack>
   );
 };
 

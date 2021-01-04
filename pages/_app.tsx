@@ -1,16 +1,24 @@
-import React from "react";
-import Head from "next/head";
-import siteConfig from "config/site";
-import { NextSeo } from "next-seo";
-import dynamic from "next/dynamic";
-import App from "next/app";
-import * as gtag from "lib/gtag";
-import Router from "next/router";
+import { Box } from "@chakra-ui/react";
 import * as Sentry from "@sentry/node";
+import siteConfig from "config/site";
+import * as gtag from "lib/gtag";
+import { NextSeo } from "next-seo";
+import App from "next/app";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import Router from "next/router";
+import React from "react";
 
 const Layout = dynamic(
   import(/* webpackChunkName: "Layouts" */ "components/layouts")
 );
+const Navbar = dynamic(
+  import(/* webpackChunkName: "Navbar" */ "components/navbar")
+);
+const Footer = dynamic(
+  import(/* webpackChunkName: "Footer" */ "components/footer")
+);
+
 const isProd = process.env.NODE_ENV === "production";
 
 declare global {
@@ -61,6 +69,16 @@ export default class MyApp extends App {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
           <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Serif:wght@700&display=swap"
+            rel="preload"
+            as="style"
+          />
+          <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Serif:wght@700&display=swap"
             rel="stylesheet"
           />
@@ -90,7 +108,11 @@ export default class MyApp extends App {
             locale: "en_IE",
           }}
         />
-        <Component {...pageProps} />
+        <Navbar />
+        <Box minH="calc(100vh - 72px - 116px)">
+          <Component {...pageProps} />
+        </Box>
+        <Footer />
       </Layout>
     );
   }
