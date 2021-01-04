@@ -1,84 +1,64 @@
 // Use the hidden-source-map option when you don't want the source maps to be
 // publicly available on the servers, only to the error reporting
-const withSourceMaps = require("@zeit/next-source-maps")();
+const withSourceMaps = require("@zeit/next-source-maps");
 
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
-const readingTime = require("reading-time");
-const withMdxEnhanced = require("next-mdx-enhanced");
-
 const isProd = process.env.NODE_ENV === "production";
 
-module.exports = withSourceMaps(
-  withMdxEnhanced({
-    layoutPath: "./components/layouts/mdx",
-    defaultLayout: true,
-    remarkPlugins: [
-      require("remark-slug"),
-      require("remark-code-titles"),
-      require("remark-toc"),
-    ],
-    rehypePlugins: [require("rehype-autolink-headings"), require("mdx-prism")],
-    extendFrontMatter: {
-      process: (mdxContent) => ({
-        wordCount: mdxContent.split(/\s+/gu).length,
-        readingTime: readingTime(mdxContent),
-      }),
-    },
-  })({
-    webpack: (config, options) => {
-      // In `pages/_app.js`, Sentry is imported from @sentry/node. While
-      // @sentry/browser will run in a Node.js environment, @sentry/node will use
-      // Node.js-only APIs to catch even more unhandled exceptions.
-      //
-      // This works well when Next.js is SSRing your page on a server with
-      // Node.js, but it is not what we want when your client-side bundle is being
-      // executed by a browser.
-      //
-      // Luckily, Next.js will call this webpack function twice, once for the
-      // server and once for the client. Read more:
-      // https://nextjs.org/docs#customizing-webpack-config
-      //
-      // So ask Webpack to replace @sentry/node imports with @sentry/browser when
-      // building the browser's bundle
-      if (!options.isServer) {
-        config.resolve.alias["@sentry/node"] = "@sentry/browser";
-        config.node = {
-          fs: "empty",
-        };
+module.exports = withSourceMaps({
+  webpack: (config, options) => {
+    // In `pages/_app.js`, Sentry is imported from @sentry/node. While
+    // @sentry/browser will run in a Node.js environment, @sentry/node will use
+    // Node.js-only APIs to catch even more unhandled exceptions.
+    //
+    // This works well when Next.js is SSRing your page on a server with
+    // Node.js, but it is not what we want when your client-side bundle is being
+    // executed by a browser.
+    //
+    // Luckily, Next.js will call this webpack function twice, once for the
+    // server and once for the client. Read more:
+    // https://nextjs.org/docs#customizing-webpack-config
+    //
+    // So ask Webpack to replace @sentry/node imports with @sentry/browser when
+    // building the browser's bundle
+    if (!options.isServer) {
+      config.resolve.alias["@sentry/node"] = "@sentry/browser";
+      config.node = {
+        fs: "empty",
+      };
 
-        require("./lib/generate-sitemap.ts");
-      }
+      require("./lib/generate-sitemap.ts");
+    }
 
-      // When all the Sentry configuration env variables are available/configured
-      // The Sentry webpack plugin gets pushed to the webpack plugins to build
-      // and upload the source maps to sentry.
-      // This is an alternative to manually uploading the source maps
-      // Note: This is disabled in development mode.
-      if (
-        process.env.SENTRY_DSN &&
-        process.env.SENTRY_ORG &&
-        process.env.SENTRY_PROJECT &&
-        process.env.SENTRY_AUTH_TOKEN &&
-        isProd
-      ) {
-        config.plugins.push(
-          new SentryWebpackPlugin({
-            include: ".next",
-            ignore: ["node_modules"],
-            urlPrefix: "~/_next",
-            release: options.buildId,
-          })
-        );
-      }
+    // When all the Sentry configuration env variables are available/configured
+    // The Sentry webpack plugin gets pushed to the webpack plugins to build
+    // and upload the source maps to sentry.
+    // This is an alternative to manually uploading the source maps
+    // Note: This is disabled in development mode.
+    if (
+      process.env.SENTRY_DSN &&
+      process.env.SENTRY_ORG &&
+      process.env.SENTRY_PROJECT &&
+      process.env.SENTRY_AUTH_TOKEN &&
+      isProd
+    ) {
+      config.plugins.push(
+        new SentryWebpackPlugin({
+          include: ".next",
+          ignore: ["node_modules"],
+          urlPrefix: "~/_next",
+          release: options.buildId,
+        })
+      );
+    }
 
-      // Generate sitemap.xml on the server. This will be generated in domain.com/sitemap.xml
-      if (options.isServer) {
-        require("./lib/generate-sitemap.ts");
-      }
+    // Generate sitemap.xml on the server. This will be generated in domain.com/sitemap.xml
+    if (options.isServer) {
+      require("./lib/generate-sitemap.ts");
+    }
 
-      return config;
-    },
-  })
-);
+    return config;
+  },
+});

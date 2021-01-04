@@ -1,6 +1,6 @@
 {
   "git": {
-    "commitMessage": "chore: release v${version}"
+    "commitMessage": "chore: release ${version}"
   },
   "github": {
     "release": true
@@ -11,5 +11,8 @@
       "preset": "angular",
       "infile": "changelog.md"
     }
+  },
+  "hooks": {
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
   }
 }

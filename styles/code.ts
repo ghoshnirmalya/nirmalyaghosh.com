@@ -4,7 +4,7 @@ import { theme } from "@chakra-ui/react";
 const prismBaseTheme = css`
   .article > h2 {
     font-family: "Noto Serif", serif;
-    padding: ${theme.space[24]} 0 ${theme.space[4]};
+    padding: ${theme.space[16]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
   }
@@ -45,8 +45,7 @@ const prismBaseTheme = css`
   .article blockquote > p {
     padding: ${theme.space[4]};
     margin: 0;
-    font-style: italic;
-    border-left: 4px solid;
+    border: 1px solid;
     border-radius: ${theme.radii.md};
   }
 

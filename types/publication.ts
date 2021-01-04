@@ -1,6 +1,8 @@
 export default interface Publication {
-  title: string;
-  description: string;
-  date: string;
-  url: string;
+  frontMatter: {
+    title: string;
+    description: string;
+    date: string;
+    url: string;
+  };
 }

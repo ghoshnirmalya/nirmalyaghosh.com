@@ -1,8 +1,7 @@
-import React, { FC } from "react";
 import { Box, Grid } from "@chakra-ui/react";
-import IProject from "types/project";
 import dynamic from "next/dynamic";
-import withNavbarLayout from "lib/with-navbar-layout";
+import React, { FC } from "react";
+import IProject from "types/project";
 
 const Projects = dynamic(
   import(/* webpackChunkName: "Projects" */ "components/layouts/projects")
@@ -24,4 +23,4 @@ const Page: FC<Props> = ({ projects = [] }) => {
   );
 };
 
-export default withNavbarLayout(Page);
+export default Page;

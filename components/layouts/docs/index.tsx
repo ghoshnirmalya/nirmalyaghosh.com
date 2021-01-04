@@ -1,20 +1,20 @@
-import { ArrowForwardIcon, MinusIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   Heading,
+  HStack,
   Image,
   Input,
   Link as _Link,
-  Stack,
   Text,
   useColorMode,
+  VStack,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { IoMdArrowForward, IoMdArrowRoundForward } from "react-icons/io";
 import IDoc from "types/doc";
 
 dayjs.extend(localizedFormat);
@@ -28,23 +28,27 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "gray.900" };
   const cardColor = { light: "gray.900", dark: "white" };
+  const linkColor = { light: "blue.600", dark: "blue.400" };
   const [searchQuery, setSearchQuery] = useState("");
+
   const sortedDocs = docs
     .sort(
-      (a: IDoc, b: IDoc) => Number(new Date(b.date)) - Number(new Date(a.date))
+      (a: IDoc, b: IDoc) =>
+        Number(new Date(b.frontMatter.date)) -
+        Number(new Date(a.frontMatter.date))
     )
-    .filter((doc) =>
-      doc.title.toLowerCase().includes(searchQuery.toLowerCase())
+    .filter((doc: IDoc) =>
+      doc.frontMatter.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   const viewAllLinksNode = () => {
     return (
       <Link href="/docs">
         <_Link p={2} href="/docs" rounded="md">
-          <Stack spacing={2} isInline alignItems="center">
+          <HStack spacing={2} alignItems="center">
             <Box fontWeight="bold">View all documents</Box>
             <Box as={IoMdArrowRoundForward} size="15px" />
-          </Stack>
+          </HStack>
         </_Link>
       </Link>
     );
@@ -72,12 +76,12 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
     if (hideViewAllLinksNode) {
       return (
         <Box>
-          <Stack spacing={2}>
+          <VStack spacing={2} align="left">
             <Heading as="h1" size="xl">
               Documents
             </Heading>
             <Text>Posts related to some of the latest technologies</Text>
-          </Stack>
+          </VStack>
         </Box>
       );
     }
@@ -92,23 +96,24 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
     );
   };
 
-  const metaNode = (date: string, readingTime: string) => {
+  const metaNode = (date: string) => {
     return (
-      <Stack spacing={4} isInline alignItems="center">
-        <Box>
-          <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
-        </Box>
-        <MinusIcon size="12px" />
-        <Box>
-          <Text fontSize="xs">{readingTime}</Text>
-        </Box>
-      </Stack>
+      <Box>
+        <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
+      </Box>
     );
   };
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" letterSpacing="tight" lineHeight="tall">
+      <Heading
+        as="h3"
+        size="md"
+        letterSpacing="tight"
+        lineHeight="tall"
+        color={linkColor[colorMode]}
+        fontWeight="bold"
+      >
         {title}
       </Heading>
     );
@@ -120,7 +125,7 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
 
   const ctaNode = () => {
     return (
-      <Button rightIcon={<ArrowForwardIcon />} variant="link" fontSize="sm">
+      <Button rightIcon={<IoMdArrowForward />} variant="link" fontSize="sm">
         Read more
       </Button>
     );
@@ -129,37 +134,29 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
   const docsNode = () => {
     if (!sortedDocs.length) {
       return (
-        <Stack mx="auto" textAlign="center">
+        <VStack mx="auto" textAlign="center">
           <Image
             src="/images/common/no-items.svg"
             alt="No docs found!"
             size={64}
           />
           <Text>No docs found!</Text>
-        </Stack>
+        </VStack>
       );
     }
 
     return sortedDocs.map((doc: IDoc) => {
-      const permalink = doc.__resourcePath.replace(".mdx", "");
-
       return (
-        <Box key={permalink}>
-          <Link href={`/${permalink}`}>
+        <Box key={doc.slug}>
+          <Link href={`/docs/${doc.slug}`}>
             <a>
-              <Box
-                bg={cardBgColor[colorMode]}
-                color={cardColor[colorMode]}
-                p={8}
-                rounded="md"
-                shadow="md"
-              >
-                <Stack spacing={4}>
-                  {metaNode(doc.date, doc.readingTime.text)}
-                  {titleNode(doc.title)}
-                  {descriptionNode(doc.description)}
+              <Box>
+                <VStack spacing={2} align="left">
+                  {metaNode(doc.frontMatter.date)}
+                  {titleNode(doc.frontMatter.title)}
+                  {descriptionNode(doc.frontMatter.description)}
                   <Box>{ctaNode()}</Box>
-                </Stack>
+                </VStack>
               </Box>
             </a>
           </Link>
@@ -169,11 +166,11 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
   };
 
   return (
-    <Stack spacing={8}>
+    <VStack spacing={8} align="left">
       {headingNode()}
       {searchNode()}
       {docsNode()}
-    </Stack>
+    </VStack>
   );
 };
 
