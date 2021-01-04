@@ -1,3 +1,9 @@
+# [1.3.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.2.0...1.3.0) (2021-01-04)
+
+### Features
+
+- updates design of site ([cac8d35](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/cac8d35d434947549aa631dffb3e044a791c1e1b))
+
 # [1.2.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.1.1...1.2.0) (2020-12-06)
 
 ### Features
