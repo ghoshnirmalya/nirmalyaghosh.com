@@ -27,7 +27,7 @@ interface IProps {
   chapter: string;
 }
 
-const DocumentPage: NextPage<IProps> = ({
+const DocsChapterPage: NextPage<IProps> = ({
   docs,
   mdxSource,
   frontMatter,
@@ -93,4 +93,4 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export default DocumentPage;
+export default DocsChapterPage;

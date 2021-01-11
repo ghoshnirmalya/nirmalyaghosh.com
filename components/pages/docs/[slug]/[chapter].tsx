@@ -33,7 +33,7 @@ const SocialShare = dynamic(
   }
 );
 
-const DocChapterPage: NextPage<IProps> = ({
+const Page: NextPage<IProps> = ({
   content,
   frontMatter,
   docs,
@@ -196,4 +196,4 @@ const DocChapterPage: NextPage<IProps> = ({
   );
 };
 
-export default DocChapterPage;
+export default Page;

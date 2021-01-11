@@ -25,7 +25,7 @@ interface IProps {
   frontMatter: any;
 }
 
-const ArticlePage: NextPage<IProps> = ({ mdxSource, frontMatter }) => {
+const ArticlesSlugPage: NextPage<IProps> = ({ mdxSource, frontMatter }) => {
   const content = hydrate(mdxSource, { components });
 
   return (
@@ -80,4 +80,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default ArticlePage;
+export default ArticlesSlugPage;

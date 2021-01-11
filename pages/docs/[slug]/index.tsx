@@ -26,7 +26,7 @@ interface IProps {
   slug: string;
 }
 
-const DocumentPage: NextPage<IProps> = ({
+const DocsSlugPage: NextPage<IProps> = ({
   docs,
   mdxSource,
   frontMatter,
@@ -95,4 +95,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default DocumentPage;
+export default DocsSlugPage;
