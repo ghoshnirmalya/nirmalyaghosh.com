@@ -7,7 +7,7 @@ export default {
   },
   assets: {
     avatar: "/images/common/avatar.png",
-    favicon: "/images/common/favicon.png",
+    favicon: "/images/common/favicon.svg",
   },
   socialLinks: {
     twitter: "@nirmalyaghosh23",

@@ -108,7 +108,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
                     justifyContent="space-between"
                     align="left"
                   >
-                    <VStack spacing={4} align="left">
+                    <VStack spacing={1} align="left">
                       {titleNode(project.title)}
                       {descriptionNode(project.description)}
                     </VStack>

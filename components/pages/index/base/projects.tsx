@@ -67,7 +67,7 @@ const projects: FC<Props> = ({
       return (
         <Box key={index}>
           <a href={project.url} target="_blank" rel="noopener">
-            <VStack spacing={2} align="left">
+            <VStack spacing={1} align="left">
               {titleNode(project.title)}
               {descriptionNode(project.description)}
             </VStack>

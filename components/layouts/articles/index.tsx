@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Heading,
   HStack,
   Image,
@@ -14,7 +13,7 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
-import { IoMdArrowForward, IoMdArrowRoundForward } from "react-icons/io";
+import { IoMdArrowRoundForward } from "react-icons/io";
 import IArticle from "types/article";
 import IPublication from "types/publication";
 
@@ -129,14 +128,6 @@ const Articles: FC<Props> = ({
     return <Text fontSize="sm">{description}</Text>;
   };
 
-  const ctaNode = () => {
-    return (
-      <Button rightIcon={<IoMdArrowForward />} variant="link" fontSize="sm">
-        Read more
-      </Button>
-    );
-  };
-
   const articlesNode = () => {
     if (!sortedArticles.length) {
       return (
@@ -161,11 +152,10 @@ const Articles: FC<Props> = ({
               rel="nofollow noopener noreferrer"
             >
               <Box>
-                <VStack spacing={2} align="left">
+                <VStack spacing={1} align="left">
                   {metaNode(article.frontMatter.date)}
                   {titleNode(article.frontMatter.title)}
                   {descriptionNode(article.frontMatter.description)}
-                  <Box>{ctaNode()}</Box>
                 </VStack>
               </Box>
             </a>
@@ -178,11 +168,10 @@ const Articles: FC<Props> = ({
           <Link href={`/articles/${article.slug}`}>
             <a>
               <Box>
-                <VStack spacing={2} align="left">
+                <VStack spacing={1} align="left">
                   {metaNode(article.frontMatter.date)}
                   {titleNode(article.frontMatter.title)}
                   {descriptionNode(article.frontMatter.description)}
-                  <Box>{ctaNode()}</Box>
                 </VStack>
               </Box>
             </a>

@@ -139,7 +139,7 @@ const Navbar: FC = () => {
             <Link href="/">
               <_Link href="/" d="flex">
                 <Image
-                  src="/images/common/favicon.png"
+                  src="/images/common/favicon.svg"
                   alt="Logo"
                   height={32}
                   width={32}

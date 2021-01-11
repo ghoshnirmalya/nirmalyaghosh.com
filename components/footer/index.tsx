@@ -12,9 +12,9 @@ const SocialLinks: FC = () => {
               <Link href="/">
                 <_Link href="/" target="_blank">
                   <Image
-                    src="/images/common/favicon.png"
+                    src="/images/common/favicon.svg"
                     alt="Logo"
-                    size={8}
+                    boxSize={8}
                     mx="auto"
                   />
                 </_Link>
