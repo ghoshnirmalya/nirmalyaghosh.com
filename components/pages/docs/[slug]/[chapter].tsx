@@ -23,6 +23,7 @@ interface IProps {
   frontMatter: IFrontMatter;
   docs: any;
   slug: string;
+  chapter: string;
 }
 
 const SocialShare = dynamic(
@@ -32,7 +33,13 @@ const SocialShare = dynamic(
   }
 );
 
-const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
+const DocChapterPage: NextPage<IProps> = ({
+  content,
+  frontMatter,
+  docs,
+  slug,
+  chapter,
+}) => {
   const { colorMode } = useColorMode();
   const sectionBgColor = { light: "gray.100", dark: "black" };
   const sectionColor = { light: "black", dark: "gray.100" };
@@ -51,11 +58,19 @@ const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
             {docs.map((doc: IDoc, index: number) => {
               return (
                 <Box key={doc.slug}>
-                  <Link href={`${slug}/${doc.slug}`}>
+                  <Link
+                    href={{
+                      pathname: "/docs/[slug]/[chapter]",
+                      query: {
+                        slug,
+                        chapter: doc.slug,
+                      },
+                    }}
+                  >
                     <a>
                       <Box
                         fontSize="sm"
-                        fontWeight={index === 0 ? "bold" : "normal"}
+                        fontWeight={doc.slug === chapter ? "bold" : "normal"}
                       >
                         {index + 1}. {doc.frontMatter.title}
                       </Box>
@@ -181,4 +196,4 @@ const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
   );
 };
 
-export default Page;
+export default DocChapterPage;

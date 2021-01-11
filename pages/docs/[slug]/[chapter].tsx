@@ -1,4 +1,4 @@
-import Page from "components/pages/docs/[slug]";
+import Page from "components/pages/docs/[slug]/[chapter]";
 import fs from "fs";
 import matter from "gray-matter";
 import { NextPage } from "next";
@@ -22,28 +22,45 @@ const components = { Callout };
 interface IProps {
   mdxSource: MdxRemote.Source;
   frontMatter: any;
+  docs: any;
+  slug: string;
+  chapter: string;
 }
 
-const DocumentPage: NextPage<IProps> = ({ mdxSource, frontMatter }) => {
+const DocumentPage: NextPage<IProps> = ({
+  docs,
+  mdxSource,
+  frontMatter,
+  slug,
+  chapter,
+}) => {
   const content = hydrate(mdxSource, { components });
 
-  return <Page content={content} frontMatter={frontMatter} />;
+  return (
+    <Page
+      content={content}
+      frontMatter={frontMatter}
+      docs={docs}
+      slug={slug}
+      chapter={chapter}
+    />
+  );
 };
 
-export async function getStaticPaths() {
-  return {
-    fallback: false,
-    paths: fs.readdirSync(path.join(root, "data", "docs")).map((p) => ({
-      params: {
-        slug: p.replace(/\.mdx/, ""),
-      },
-    })),
-  };
-}
+export async function getServerSideProps({ params }) {
+  const docsRoot = path.join(root, "data", "docs", `${params.slug}`);
+  const docs = fs.readdirSync(docsRoot).map((p) => {
+    const content = fs.readFileSync(path.join(docsRoot, p), "utf8");
 
-export async function getStaticProps({ params }) {
+    return {
+      slug: p.replace(/\.mdx/, ""),
+      content,
+      frontMatter: matter(content).data,
+    };
+  });
+
   const source = fs.readFileSync(
-    path.join(root, "data", "docs", `${params.slug}.mdx`),
+    path.join(root, "data", "docs", `${params.slug}`, `${params.chapter}.mdx`),
     "utf8"
   );
   const { data, content } = matter(source);
@@ -67,8 +84,11 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      docs,
       mdxSource,
       frontMatter: data,
+      slug: params.slug,
+      chapter: params.chapter,
     },
   };
 }

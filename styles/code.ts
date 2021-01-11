@@ -4,7 +4,7 @@ import { theme } from "@chakra-ui/react";
 const prismBaseTheme = css`
   .article > h2 {
     font-family: "Noto Serif", serif;
-    padding: ${theme.space[16]} 0 ${theme.space[2]};
+    padding: ${theme.space[8]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
   }

@@ -26,7 +26,10 @@ const DocsIndexPage: NextPage<IProps> = ({ docs }) => {
 export async function getStaticProps() {
   const docsRoot = path.join(root, "data", "docs");
   const docs = fs.readdirSync(docsRoot).map((p) => {
-    const content = fs.readFileSync(path.join(docsRoot, p), "utf8");
+    const content = fs.readFileSync(
+      path.join(docsRoot, p, "01-index.mdx"),
+      "utf8"
+    );
 
     return {
       slug: p.replace(/\.mdx/, ""),
