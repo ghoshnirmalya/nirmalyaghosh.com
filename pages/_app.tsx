@@ -109,7 +109,7 @@ export default class MyApp extends App {
           }}
         />
         <Navbar />
-        <Box minH="calc(100vh - 72px - 116px)">
+        <Box minH="calc(100vh - 77px - 148px)">
           <Component {...pageProps} />
         </Box>
         <Footer />

@@ -3,18 +3,15 @@ import {
   Grid,
   Heading,
   HStack,
-  Link as _Link,
-  Text,
   useColorMode,
   VStack,
 } from "@chakra-ui/react";
 import siteConfig from "config/site";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
-import { IoIosPaper, IoLogoGithub, IoMdEye } from "react-icons/io";
+import { IoIosPaper } from "react-icons/io";
 import IDoc from "types/doc";
 import IFrontMatter from "types/frontMatter";
 
@@ -25,13 +22,6 @@ interface IProps {
   slug: string;
 }
 
-const SocialShare = dynamic(
-  import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
-  {
-    ssr: false,
-  }
-);
-
 const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
   const { colorMode } = useColorMode();
   const sectionBgColor = { light: "gray.100", dark: "black" };
@@ -40,7 +30,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
   const sidebarNode = () => {
     return (
       <Box>
-        <VStack spacing={8} align="left" pos="sticky" top={8}>
+        <VStack spacing={6} align="left" pos="sticky" top={8}>
           <HStack spacing={2} alignItems="center">
             <Box as={IoIosPaper} fontSize="xl" />
             <Heading as="h3" fontSize="xl">
@@ -51,7 +41,15 @@ const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
             {docs.map((doc: IDoc, index: number) => {
               return (
                 <Box key={doc.slug}>
-                  <Link href={`${slug}/${doc.slug}`}>
+                  <Link
+                    href={{
+                      pathname: "/docs/[slug]/[chapter]",
+                      query: {
+                        slug,
+                        chapter: doc.slug,
+                      },
+                    }}
+                  >
                     <a>
                       <Box
                         fontSize="sm"
@@ -67,61 +65,6 @@ const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
           </VStack>
         </VStack>
       </Box>
-    );
-  };
-
-  const titleNode = (title: string) => {
-    return (
-      <Heading as="h1" size="xl">
-        {title}
-      </Heading>
-    );
-  };
-
-  const githubButtonNode = () => {
-    if (!frontMatter.githubLink) {
-      return false;
-    }
-
-    return (
-      <_Link
-        py={2}
-        px={4}
-        href={frontMatter.githubLink}
-        rounded="md"
-        bg="#333"
-        color="#fff"
-        fontWeight="bold"
-        isExternal
-      >
-        <HStack spacing={2} alignItems="center">
-          <Box as={IoLogoGithub} />
-          <Text>View source</Text>
-        </HStack>
-      </_Link>
-    );
-  };
-
-  const demoButtonNode = () => {
-    if (!frontMatter.demoLink) {
-      return false;
-    }
-
-    return (
-      <_Link
-        py={2}
-        px={4}
-        href={frontMatter.demoLink}
-        rounded="md"
-        bg="#754abb"
-        color="#fff"
-        fontWeight="bold"
-        isExternal
-      >
-        <HStack spacing={2} alignItems="center">
-          <Box as={IoMdEye} /> <Text>View demo</Text>
-        </HStack>
-      </_Link>
     );
   };
 
@@ -159,19 +102,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, docs, slug }) => {
             {sidebarNode()}
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">
-                {titleNode(frontMatter.title)}
-                <Box>
-                  <Box d="flex" alignItems="center">
-                    <HStack spacing={4}>
-                      {githubButtonNode()}
-                      {demoButtonNode()}
-                    </HStack>
-                  </Box>
-                </Box>
                 <Box className="article">{content}</Box>
-                <Box>
-                  <SocialShare title={frontMatter.title} />
-                </Box>
               </VStack>
             </Box>
           </Grid>

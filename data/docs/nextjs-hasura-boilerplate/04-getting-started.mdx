@@ -1,22 +1,12 @@
 ---
-date: "2020-08-30"
 title: "Getting started"
-category: "boilerplate"
-tags: ["next.js", "hasura", "boilerplate"]
 description: "Boilerplate for building applications using Hasura and Next.js."
-coverImage: "/images/content/nextjs-hasura-boilerplate/hasura-nextjs-boilerplate.png"
-githubLink: "https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate"
-demoLink: "https://nextjs-hasura-boilerplate.vercel.app/"
 ---
-
-[![Logo](/images/content/nextjs-hasura-boilerplate/hasura-nextjs-boilerplate.png)](https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate)
 
 [**Hasura Next.js Boilerplate**](https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate) is a boilerplate for building applications using Hasura and Next.js. This boilerplate consists of the following:
 
 1. [**Frontend**](https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate/tree/master/frontend): Next.js application
 2. [**Backend**](https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate/tree/master/backend): Dockerized Hasura application
-
-## Table of Contents
 
 ## Overview
 
@@ -41,18 +31,7 @@ It supports GraphQL Query, Mutation and Subscription out of the box.
 
 1. [**Frontend**](https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate/tree/master/frontend): Next.js application
 
-This application is the primary user-facing application. Once it’s up and running (see Development section), it’s available on http://localhost:3000/.
-
-![Home page before login](/images/content/nextjs-hasura-boilerplate/1.png)
-
-To create a new user, we’ll have to Sign Up using Google. [NextAuth](https://next-auth.js.org/) is being used to help us in authentication.
-![Login page](/images/content/nextjs-hasura-boilerplate/2.png)
-
-![Home page after login](/images/content/nextjs-hasura-boilerplate/3.png)
-
-![Feeds page](/images/content/nextjs-hasura-boilerplate/4.png)
-
-![My Profile page](/images/content/nextjs-hasura-boilerplate/5.png)
+This application is the primary user-facing application. Once it’s up and running (see Development section), it’s available on [http://localhost:3000](http://localhost:3000/).
 
 2. [**Backend**](https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate/tree/master/backend): Dockerized Hasura application
 
@@ -139,29 +118,4 @@ HASURA_GRAPHQL_ADMIN_SECRET: secret
 docker-compose up
 ```
 
-We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on http://localhost:8080/v1/graphql.
-
-## Deployment
-
-1. **Frontend**
-
-Click on the button below to deploy the frontend application on Vercel. You'll need to [sign up for a free Vercel account](https://vercel.com/signup/).
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fghoshnirmalya%2Fnextjs-hasura-boilerplate%2Ftree%2Fmaster%2Ffrontend&env=NEXT_PUBLIC_API_URL,NEXT_PUBLIC_WS_URL,DATABASE_URL,AUTH_PRIVATE_KEY,EMAIL_SERVER,EMAIL_FROM,NEXTAUTH_URL,GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET&project-name=nextjs-hasura-boilerplate&repo-name=nextjs-hasura-boilerplate)
-
-2. **Backend**
-
-Click on the button below to deploy the backend application on Heroku. You'll need to [sign up for a free Heroku account](https://signup.heroku.com/).
-
-[![Deploy to
-Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate)
-
-## Other interesting repositories
-
-1. [Hasura Next.js Boilerplate](https://github.com/ghoshnirmalya/nextjs-hasura-trello-clone)
-2. [React Search Box](https://github.com/ghoshnirmalya/react-search-box)
-3. [LinkedIn Clone using Create React App](https://github.com/ghoshnirmalya/linkedin-clone-react-frontend)
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on [http://localhost:8080/v1/graphql](http://localhost:8080/v1/graphql).

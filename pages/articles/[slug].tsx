@@ -11,10 +11,7 @@ import path from "path";
 import React from "react";
 
 const Callout = dynamic(
-  import(/* webpackChunkName: "Callout" */ "components/mdx/callout"),
-  {
-    ssr: false,
-  }
+  import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
 );
 
 const root = process.cwd();

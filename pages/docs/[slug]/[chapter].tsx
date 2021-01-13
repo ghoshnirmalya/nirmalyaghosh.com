@@ -10,14 +10,19 @@ import path from "path";
 import React from "react";
 
 const Callout = dynamic(
-  import(/* webpackChunkName: "Callout" */ "components/mdx/callout"),
-  {
-    ssr: false,
-  }
+  import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+);
+
+const Jumbotron = dynamic(
+  import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+);
+
+const Link = dynamic(
+  import(/* webpackChunkName: "Link" */ "components/mdx/link")
 );
 
 const root = process.cwd();
-const components = { Callout };
+const components = { Callout, Jumbotron, Link };
 
 interface IProps {
   mdxSource: MdxRemote.Source;

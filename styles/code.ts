@@ -21,6 +21,10 @@ const prismBaseTheme = css`
     text-decoration: underline;
   }
 
+  .article a.chakra-link {
+    text-decoration: none;
+  }
+
   .article img {
     border-radius: ${theme.radii.md};
   }
@@ -224,7 +228,7 @@ export const prismLightTheme = css`
     background-color: hsla(204, 45%, 96%, 1);
   }
 
-  .article a {
+  .article a:not(.chakra-link) {
     color: ${theme.colors.blue[700]};
   }
 
@@ -327,7 +331,7 @@ export const prismDarkTheme = css`
     border: 1px solid ${theme.colors.gray[700]};
   }
 
-  .article a {
+  .article a:not(.chakra-link) {
     color: ${theme.colors.blue[300]};
   }
 

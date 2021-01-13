@@ -18,10 +18,7 @@ interface IProps {
 }
 
 const SocialShare = dynamic(
-  import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
-  {
-    ssr: false,
-  }
+  import(/* webpackChunkName: "SocialShare" */ "components/social-share")
 );
 
 const Page: NextPage<IProps> = ({ content, frontMatter, readingTime }) => {
