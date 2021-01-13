@@ -1,4 +1,4 @@
-import Page from "components/pages/docs/[slug]/[chapter]";
+import Page from "components/pages/guides/[slug]";
 import fs from "fs";
 import matter from "gray-matter";
 import { NextPage } from "next";
@@ -23,21 +23,18 @@ const Link = dynamic(
 
 const root = process.cwd();
 const components = { Callout, Jumbotron, Link };
-
 interface IProps {
   mdxSource: MdxRemote.Source;
   frontMatter: any;
-  docs: any;
+  guides: any;
   slug: string;
-  chapter: string;
 }
 
-const DocsChapterPage: NextPage<IProps> = ({
-  docs,
+const GuidesSlugPage: NextPage<IProps> = ({
+  guides,
   mdxSource,
   frontMatter,
   slug,
-  chapter,
 }) => {
   const content = hydrate(mdxSource, { components });
 
@@ -45,17 +42,27 @@ const DocsChapterPage: NextPage<IProps> = ({
     <Page
       content={content}
       frontMatter={frontMatter}
-      docs={docs}
+      guides={guides}
       slug={slug}
-      chapter={chapter}
     />
   );
 };
 
-export async function getServerSideProps({ params }) {
-  const docsRoot = path.join(root, "data", "docs", `${params.slug}`);
-  const docs = fs.readdirSync(docsRoot).map((p) => {
-    const content = fs.readFileSync(path.join(docsRoot, p), "utf8");
+export async function getStaticPaths() {
+  return {
+    fallback: false,
+    paths: fs.readdirSync(path.join(root, "data", "guides")).map((p) => ({
+      params: {
+        slug: p.replace(/\.mdx/, ""),
+      },
+    })),
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const guidesRoot = path.join(root, "data", "guides", `${params.slug}`);
+  const guides = fs.readdirSync(guidesRoot).map((p) => {
+    const content = fs.readFileSync(path.join(guidesRoot, p), "utf8");
 
     return {
       slug: p.replace(/\.mdx/, ""),
@@ -65,7 +72,7 @@ export async function getServerSideProps({ params }) {
   });
 
   const source = fs.readFileSync(
-    path.join(root, "data", "docs", `${params.slug}`, `${params.chapter}.mdx`),
+    path.join(root, "data", "guides", `${params.slug}`, "01-index.mdx"),
     "utf8"
   );
   const { data, content } = matter(source);
@@ -89,13 +96,12 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      docs,
+      guides,
       mdxSource,
       frontMatter: data,
       slug: params.slug,
-      chapter: params.chapter,
     },
   };
 }
 
-export default DocsChapterPage;
+export default GuidesSlugPage;

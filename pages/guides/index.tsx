@@ -1,33 +1,33 @@
-import Page from "components/pages/docs/base";
+import Page from "components/pages/guides/base";
 import fs from "fs";
 import matter from "gray-matter";
 import { NextPage } from "next";
 import Head from "next/head";
 import path from "path";
-import IDoc from "types/doc";
+import IGuide from "types/guide";
 
 const root = process.cwd();
 
 interface IProps {
-  docs: IDoc[];
+  guides: IGuide[];
 }
 
-const DocsIndexPage: NextPage<IProps> = ({ docs }) => {
+const guidesIndexPage: NextPage<IProps> = ({ guides }) => {
   return (
     <>
       <Head>
-        <title>Documents</title>
+        <title>Guides</title>
       </Head>
-      <Page docs={docs} />
+      <Page guides={guides} />
     </>
   );
 };
 
 export async function getStaticProps() {
-  const docsRoot = path.join(root, "data", "docs");
-  const docs = fs.readdirSync(docsRoot).map((p) => {
+  const guidesRoot = path.join(root, "data", "guides");
+  const guides = fs.readdirSync(guidesRoot).map((p) => {
     const content = fs.readFileSync(
-      path.join(docsRoot, p, "01-index.mdx"),
+      path.join(guidesRoot, p, "01-index.mdx"),
       "utf8"
     );
 
@@ -40,9 +40,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      docs,
+      guides,
     },
   };
 }
 
-export default DocsIndexPage;
+export default guidesIndexPage;

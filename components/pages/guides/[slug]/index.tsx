@@ -12,24 +12,17 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import React from "react";
 import { IoIosPaper } from "react-icons/io";
-import IDoc from "types/doc";
+import IGuide from "types/guide";
 import IFrontMatter from "types/frontMatter";
 
 interface IProps {
   content: any;
   frontMatter: IFrontMatter;
-  docs: any;
+  guides: any;
   slug: string;
-  chapter: string;
 }
 
-const Page: NextPage<IProps> = ({
-  content,
-  frontMatter,
-  docs,
-  slug,
-  chapter,
-}) => {
+const Page: NextPage<IProps> = ({ content, frontMatter, guides, slug }) => {
   const { colorMode } = useColorMode();
   const sectionBgColor = { light: "gray.100", dark: "black" };
   const sectionColor = { light: "black", dark: "gray.100" };
@@ -45,24 +38,24 @@ const Page: NextPage<IProps> = ({
             </Heading>
           </HStack>
           <VStack spacing={2} align="left">
-            {docs.map((doc: IDoc, index: number) => {
+            {guides.map((guide: IGuide, index: number) => {
               return (
-                <Box key={doc.slug}>
+                <Box key={guide.slug}>
                   <Link
                     href={{
-                      pathname: "/docs/[slug]/[chapter]",
+                      pathname: "/guides/[slug]/[chapter]",
                       query: {
                         slug,
-                        chapter: doc.slug,
+                        chapter: guide.slug,
                       },
                     }}
                   >
                     <a>
                       <Box
                         fontSize="sm"
-                        fontWeight={doc.slug === chapter ? "bold" : "normal"}
+                        fontWeight={index === 0 ? "bold" : "normal"}
                       >
-                        {index + 1}. {doc.frontMatter.title}
+                        {index + 1}. {guide.frontMatter.title}
                       </Box>
                     </a>
                   </Link>
