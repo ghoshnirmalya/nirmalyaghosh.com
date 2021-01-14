@@ -15,7 +15,7 @@ This boilerplate is built using the following technologies:
 1. [Chakra UI](https://chakra-ui.com/)
 2. [Emotion](https://emotion.sh/)
 3. [GraphQL](https://graphql.org/)
-4. [urql](https://formidable.com/open-source/urql/)
+4. [Apollo](https://www.apollographql.com/)
 5. [NextAuth](https://next-auth.js.org/)
 6. [TypeScript](https://www.typescriptlang.org/)
 
@@ -45,77 +45,18 @@ This application is the primary user-facing application. Once it’s up and runn
 git clone https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate
 ```
 
-2. **Install necessary dependencies for the frontend application**
+2. **Run the bootstrap script by running the following command from the root of your project**
 
 ```bash
-cd frontend && yarn install
+yarn bootstrap
 ```
 
-3. **Create a .env file and copy the contents from .env.example (present in frontend directory)**
+3. Create a Google OAuth Client from https://console.developers.google.com/apis/credentials/oauthclient and copy the credentials to `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your `.env` file inside the `frontend` directory.
 
-4. **Generate the RSA keys**
-
-```bash
-openssl genrsa -out private.pem 2048
-openssl rsa -in private.pem -pubout > public.pem
-```
-
-5. **Print the keys in the escaped format**
-
-```bash
-awk -v ORS='\\n' '1' private.pem
-```
-
-6. **Copy the value of the key into the `AUTH_PRIVATE_KEY` key (in the .env file)**
-
-The `AUTH_PRIVATE_KEY` should look like the following:
-
-```yml:frontend/.env
-AUTH_PRIVATE_KEY='{"type":"RS256", "key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEA0U3NR0eyMehHBlx6DK5sJ+Pys9dTWf558kpKVeQvL2oIZEY3\nLvS3/jdrIm/dU4WrIGPki1r/AWXQAyBZ2FKnZROcUWN0IqdmxrC5zTDymuscqhKX\nqxjSwrwOVWHc+zWWmXCQGmDdoCokXd9ZW66nA0BN66MdMC2+d5GrZdKUF305dpzT\nUdzDE12/XwOEUalCM0703eGu8zFwutLYc3+vf2CFOQ1z+rvDQD4N2aZABKTxZRtE\nkMHljnoyKlF9rljNzT/5N8YQE7qn4pBh6CMa1zcSilk9nhgl55n/Kjn2xMieWdIa\nlaOEKw1LqqIjiT1ESkAKfPaIoSSnmTaYy78gbwIDAQABAoIBAF+3t+AYLqraMdj7\n46j2/2lCupR6LZkjYntmdBZRky6YzBunbMchjR9KEsmd5Na0c20NodAFHkdyWy2C\n1vOx4PG9hShHVi4e5kaJPX9UGi60xNgWRpwtbv01aUysw5VyjVvAeXZGxDPh8d2o\nLcJa3fADsV7IqqmE0ez2hi67nZQbkbEUbKs7aGfCE6srCfjCfOadfNnto9+7qDjJ\nnd4rK18H1rBSLTqj4T7wd1K8THgo25vjEuVRbGsEVrNB/B1Dz0pdOqhqukzixfcS\nVL/7uYDXehLasmUQu2VtMFsLqDpAbQgvpoNnzeZuB0WARvygSi/n4t+pCi84hXXe\na1m/01kCgYEA6+i5FwJAPxe2oCc0iignHjA20itTalyUhgJrLa8tTs721GJ3ku0A\n/EJVgmoNOLCQnZMldWvEDGmf6QuaWitq8ZWK/0BmHrEjbDA7m1fPdf3hrNx6eH/i\nazxjAoWA/u0yZg6QvUC7hSOO6WEpFYGuc2+/mHlnm5RLdL3QNIlHyyUCgYEA4yEI\n2deZ9MgmxbnFc76u7VhT1lc1MHpuAcDR3hqKT9xH2fTBaTDpVqeFbQJR5Hu+ZqgT\nL3+zV5kzIz3RaNMGN1IaxDEEx+tDnL9aw8sqawauWZtp7W2EeFvtP8uhHiBWpqVl\nvus6Gpl6hpNg6X96vHRcW+mB13I/h5YWA25EEwMCgYA5YbkrvJNuBVGZsQ+Zj1y8\nfhPHmVxH4c8KranuSc7mfXcSgAT/ywBTW7s65prisCfs/C6/WgAs2MBZykW4Kxlv\nO+W8Yqi0THgGR9En3vsKgz+ScWqkxs6HMQAQS/LtjzqUEnToY8d5AgYwBD8fCRUq\n5QKgjt9Bu5eDBOyQ6td4tQKBgBtDrOdRfTaoDBdyHGSvgBoXn0C8iTL/j1MAjXDG\n6NF7VNiyC8GP0ILJazfRrnjp7cou5Nav0pxyVHQniIq3wihD39irNbK16BDZ25Bj\nQ/1C+Qzing2VNvCnwEwHKpkOMrigZB1N6VSmFdIvwNNmrRoQMcIKvr5ZBY1GE/Bn\nfR53AoGBAIXaWIoDW5d9XwFa8HdxkgMPyLlizckZKyXASYEGWD2VU8P1NwA/bZ1t\nymioQPRJymTBfUL6E44Ebwx25DezjYEun1yqouZ+WZBlsEYtssffzTs2IocZ6aCN\nYfzt3orUEI/rWbRSqYFEuOntzzf3a7r3MtDU41e7iXcNkRSxCAIV\n-----END RSA PRIVATE KEY-----\n"}'
-```
-
-7. **Create and copy the Google client credentials**
-
-Create a new [Google OAuth Client](https://console.developers.google.com/apis/credentials/oauthclient) and copy the credentials (Client ID and Client Secret) in your .env file.
-
-8. **Start the frontend application**
-
-From the frontend directory, we can run the following command to start our Next.js frontend application:
+4. **Run both the applications by running the following command from the root of your project**
 
 ```bash
 yarn dev
 ```
 
-The above command will start the frontend application on [http://localhost:3000/](http://localhost:3000).
-
-9. **Go inside the directory of the backend package on another terminal window**
-
-```bash
-cd packages/backend
-```
-
-10. **Add the necessary environment keys (in the docker-compose.yml file)**
-
-```bash
-awk -v ORS='\\n' '1' public.pem
-```
-
-The `HASURA_GRAPHQL_JWT_SECRET` should look like the following (in your docker-compose.yml file):
-
-```yml:backend/docker-compose.yml
-HASURA_GRAPHQL_JWT_SECRET='{"type":"RS256", "key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0U3NR0eyMehHBlx6DK5s\nJ+Pys9dTWf558kpKVeQvL2oIZEY3LvS3/jdrIm/dU4WrIGPki1r/AWXQAyBZ2FKn\nZROcUWN0IqdmxrC5zTDymuscqhKXqxjSwrwOVWHc+zWWmXCQGmDdoCokXd9ZW66n\nA0BN66MdMC2+d5GrZdKUF305dpzTUdzDE12/XwOEUalCM0703eGu8zFwutLYc3+v\nf2CFOQ1z+rvDQD4N2aZABKTxZRtEkMHljnoyKlF9rljNzT/5N8YQE7qn4pBh6CMa\n1zcSilk9nhgl55n/Kjn2xMieWdIalaOEKw1LqqIjiT1ESkAKfPaIoSSnmTaYy78g\nbwIDAQAB\n-----END PUBLIC KEY-----\n"}'
-```
-
-Also, the `HASURA_GRAPHQL_ADMIN_SECRET` value needs to be updated in the docker-compose.yml file:
-
-```yml:backend/docker-compose.yml
-HASURA_GRAPHQL_ADMIN_SECRET: secret
-```
-
-11. **Start docker-compose**
-
-```bash
-docker-compose up
-```
-
-We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on [http://localhost:8080/v1/graphql](http://localhost:8080/v1/graphql).
+We need to start Docker and then run the above command. The Hasura server will be up and running on [http://localhost:8080/v1/graphql](http://localhost:8080/v1/graphql).
