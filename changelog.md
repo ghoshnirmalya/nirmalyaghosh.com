@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.3.0...1.4.0) (2021-01-14)
+
+### Bug Fixes
+
+- fixes deployment ([227ce8e](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/227ce8e8a1db502c1761457bbf34b31c542bf6c4))
+
+### Features
+
+- adds multi-page support for docs ([a8830a2](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/a8830a22e6cd1305fd4313d593f2019243d42fa8))
+- updates favicon ([f74b269](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/f74b2698461b644f777784f04e4bcab2758f2f63))
+
 # [1.3.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.2.0...1.3.0) (2021-01-04)
 
 ### Features
