@@ -1,4 +1,4 @@
-import { Box, Image, Link as _Link, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Image, Link as _Link, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { FC } from "react";
 
@@ -6,11 +6,24 @@ const SocialLinks: FC = () => {
   return (
     <Box p={4} as="footer">
       <Box maxW="6xl" mx="auto" fontSize="xs">
-        <Box d="flex" textAlign="center" justifyContent="center">
-          <VStack spacing={2}>
+        <Box
+          d="flex"
+          textAlign="center"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <HStack spacing={2}>
+            <Box>
+              <_Link
+                href="https://github.com/ghoshnirmalya/nirmalyaghosh.com"
+                p={4}
+              >
+                Source code on Github
+              </_Link>
+            </Box>
             <Box>
               <Link href="/">
-                <_Link href="/" target="_blank">
+                <_Link href="/" target="_blank" p={4}>
                   <Image
                     src="/images/common/favicon.svg"
                     alt="Logo"
@@ -21,19 +34,11 @@ const SocialLinks: FC = () => {
               </Link>
             </Box>
             <Box p={4}>
-              <_Link
-                href="https://github.com/ghoshnirmalya/nirmalyaghosh.com"
-                p={4}
-              >
-                Source code on Github
-              </_Link>
-            </Box>
-            <Box>
               <Text>
                 Copyright &copy; {new Date().getFullYear()} Nirmalya Ghosh
               </Text>
             </Box>
-          </VStack>
+          </HStack>
         </Box>
       </Box>
     </Box>

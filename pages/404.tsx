@@ -1,6 +1,6 @@
 import Error from "next/error";
 
-const NotFound = () => {
+const NotFoundPage = () => {
   return <Error statusCode={404} />;
 };
-export default NotFound;
+export default NotFoundPage;

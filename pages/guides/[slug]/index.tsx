@@ -1,4 +1,4 @@
-import Page from "components/pages/docs/[slug]";
+import Page from "components/pages/guides/[slug]";
 import fs from "fs";
 import matter from "gray-matter";
 import { NextPage } from "next";
@@ -10,30 +10,48 @@ import path from "path";
 import React from "react";
 
 const Callout = dynamic(
-  import(/* webpackChunkName: "Callout" */ "components/mdx/callout"),
-  {
-    ssr: false,
-  }
+  import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+);
+
+const Jumbotron = dynamic(
+  import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+);
+
+const Link = dynamic(
+  import(/* webpackChunkName: "Link" */ "components/mdx/link")
 );
 
 const root = process.cwd();
-const components = { Callout };
-
+const components = { Callout, Jumbotron, Link };
 interface IProps {
   mdxSource: MdxRemote.Source;
   frontMatter: any;
+  guides: any;
+  slug: string;
 }
 
-const DocumentPage: NextPage<IProps> = ({ mdxSource, frontMatter }) => {
+const GuidesSlugPage: NextPage<IProps> = ({
+  guides,
+  mdxSource,
+  frontMatter,
+  slug,
+}) => {
   const content = hydrate(mdxSource, { components });
 
-  return <Page content={content} frontMatter={frontMatter} />;
+  return (
+    <Page
+      content={content}
+      frontMatter={frontMatter}
+      guides={guides}
+      slug={slug}
+    />
+  );
 };
 
 export async function getStaticPaths() {
   return {
     fallback: false,
-    paths: fs.readdirSync(path.join(root, "data", "docs")).map((p) => ({
+    paths: fs.readdirSync(path.join(root, "data", "guides")).map((p) => ({
       params: {
         slug: p.replace(/\.mdx/, ""),
       },
@@ -42,8 +60,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const guidesRoot = path.join(root, "data", "guides", `${params.slug}`);
+  const guides = fs.readdirSync(guidesRoot).map((p) => {
+    const content = fs.readFileSync(path.join(guidesRoot, p), "utf8");
+
+    return {
+      slug: p.replace(/\.mdx/, ""),
+      content,
+      frontMatter: matter(content).data,
+    };
+  });
+
   const source = fs.readFileSync(
-    path.join(root, "data", "docs", `${params.slug}.mdx`),
+    path.join(root, "data", "guides", `${params.slug}`, "01-index.mdx"),
     "utf8"
   );
   const { data, content } = matter(source);
@@ -67,10 +96,12 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      guides,
       mdxSource,
       frontMatter: data,
+      slug: params.slug,
     },
   };
 }
 
-export default DocumentPage;
+export default GuidesSlugPage;

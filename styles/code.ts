@@ -4,7 +4,7 @@ import { theme } from "@chakra-ui/react";
 const prismBaseTheme = css`
   .article > h2 {
     font-family: "Noto Serif", serif;
-    padding: ${theme.space[16]} 0 ${theme.space[2]};
+    padding: ${theme.space[8]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
   }
@@ -19,6 +19,10 @@ const prismBaseTheme = css`
 
   .article a:hover {
     text-decoration: underline;
+  }
+
+  .article a.chakra-link {
+    text-decoration: none;
   }
 
   .article img {
@@ -224,7 +228,7 @@ export const prismLightTheme = css`
     background-color: hsla(204, 45%, 96%, 1);
   }
 
-  .article a {
+  .article a:not(.chakra-link) {
     color: ${theme.colors.blue[700]};
   }
 
@@ -327,7 +331,7 @@ export const prismDarkTheme = css`
     border: 1px solid ${theme.colors.gray[700]};
   }
 
-  .article a {
+  .article a:not(.chakra-link) {
     color: ${theme.colors.blue[300]};
   }
 

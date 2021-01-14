@@ -31,8 +31,8 @@ const LINKS = [
     title: "Articles",
   },
   {
-    url: "/docs",
-    title: "Documents",
+    url: "/guides",
+    title: "Guides",
   },
   {
     url: "/about",

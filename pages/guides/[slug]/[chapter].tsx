@@ -1,7 +1,6 @@
-import Page from "components/pages/articles/[slug]";
+import Page from "components/pages/guides/[slug]/[chapter]";
 import fs from "fs";
 import matter from "gray-matter";
-import calculateReadingTime from "lib/calculate-reading-time";
 import { NextPage } from "next";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
@@ -14,40 +13,65 @@ const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
 );
 
+const Jumbotron = dynamic(
+  import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+);
+
+const Link = dynamic(
+  import(/* webpackChunkName: "Link" */ "components/mdx/link")
+);
+
 const root = process.cwd();
-const components = { Callout };
+const components = { Callout, Jumbotron, Link };
 
 interface IProps {
   mdxSource: MdxRemote.Source;
   frontMatter: any;
+  guides: any;
+  slug: string;
+  chapter: string;
 }
 
-const ArticlesSlugPage: NextPage<IProps> = ({ mdxSource, frontMatter }) => {
+const GuidesChapterPage: NextPage<IProps> = ({
+  guides,
+  mdxSource,
+  frontMatter,
+  slug,
+  chapter,
+}) => {
   const content = hydrate(mdxSource, { components });
 
   return (
     <Page
       content={content}
       frontMatter={frontMatter}
-      readingTime={calculateReadingTime(mdxSource.renderedOutput)}
+      guides={guides}
+      slug={slug}
+      chapter={chapter}
     />
   );
 };
 
-export async function getStaticPaths() {
-  return {
-    fallback: false,
-    paths: fs.readdirSync(path.join(root, "data", "articles")).map((p) => ({
-      params: {
-        slug: p.replace(/\.mdx/, ""),
-      },
-    })),
-  };
-}
+export async function getServerSideProps({ params }) {
+  const guidesRoot = path.join(root, "data", "guides", `${params.slug}`);
+  const guides = fs.readdirSync(guidesRoot).map((p) => {
+    const content = fs.readFileSync(path.join(guidesRoot, p), "utf8");
 
-export async function getStaticProps({ params }) {
+    return {
+      slug: p.replace(/\.mdx/, ""),
+      content,
+      frontMatter: matter(content).data,
+    };
+  });
+
   const source = fs.readFileSync(
-    path.join(root, "data", "articles", `${params.slug}.mdx`),
+    path.join(
+      root,
+      "data",
+      "guides",
+      `${params.slug}`,
+      `${params.chapter}.mdx`
+    ),
     "utf8"
   );
   const { data, content } = matter(source);
@@ -71,10 +95,13 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      guides,
       mdxSource,
       frontMatter: data,
+      slug: params.slug,
+      chapter: params.chapter,
     },
   };
 }
 
-export default ArticlesSlugPage;
+export default GuidesChapterPage;

@@ -9,53 +9,33 @@ import {
   useColorMode,
   VStack,
 } from "@chakra-ui/react";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import IDoc from "types/doc";
-
-dayjs.extend(localizedFormat);
+import IGuide from "types/guide";
 
 interface Props {
-  docs: IDoc[];
-  hideViewAllLinksNode?: boolean;
+  guides: IGuide[];
 }
 
-const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
+const Guides: FC<Props> = ({ guides = [] }) => {
   const { colorMode } = useColorMode();
   const cardBgColor = { light: "white", dark: "gray.900" };
   const cardColor = { light: "gray.900", dark: "white" };
   const linkColor = { light: "blue.600", dark: "blue.400" };
   const [searchQuery, setSearchQuery] = useState("");
 
-  const sortedDocs = docs
+  const sortedGuides = guides
     .sort(
-      (a: IDoc, b: IDoc) =>
+      (a: IGuide, b: IGuide) =>
         Number(new Date(b.frontMatter.date)) -
         Number(new Date(a.frontMatter.date))
     )
-    .filter((doc: IDoc) =>
-      doc.frontMatter.title.toLowerCase().includes(searchQuery.toLowerCase())
+    .filter((guide: IGuide) =>
+      guide.frontMatter.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
-  const viewAllLinksNode = () => {
-    return (
-      <Link href="/docs">
-        <_Link p={2} href="/docs" rounded="md">
-          <HStack spacing={2} alignItems="center">
-            <Box fontWeight="bold">View all documents</Box>
-            <Box as={IoMdArrowRoundForward} size="15px" />
-          </HStack>
-        </_Link>
-      </Link>
-    );
-  };
 
   const searchNode = () => {
-    if (!hideViewAllLinksNode) return false;
-
     return (
       <Box>
         <Input
@@ -65,40 +45,23 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
           }
-          placeholder="Search for a document"
+          placeholder="Search for a guide"
         />
       </Box>
     );
   };
 
   const headingNode = () => {
-    if (hideViewAllLinksNode) {
-      return (
-        <Box>
-          <VStack spacing={2} align="left">
-            <Heading as="h1" size="xl">
-              Documents
-            </Heading>
-            <Text>Posts related to some of the latest technologies</Text>
-          </VStack>
-        </Box>
-      );
-    }
-
-    return (
-      <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
-          Documents
-        </Heading>
-        {viewAllLinksNode()}
-      </Box>
-    );
-  };
-
-  const metaNode = (date: string) => {
     return (
       <Box>
-        <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
+        <VStack spacing={2} align="left">
+          <Heading as="h1" size="xl">
+            Guides
+          </Heading>
+          <Text>
+            Guides related to some of the projects that I've developed
+          </Text>
+        </VStack>
       </Box>
     );
   };
@@ -122,30 +85,29 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
     return <Text fontSize="sm">{description}</Text>;
   };
 
-  const docsNode = () => {
-    if (!sortedDocs.length) {
+  const guidesNode = () => {
+    if (!sortedGuides.length) {
       return (
         <VStack mx="auto" textAlign="center">
           <Image
             src="/images/common/no-items.svg"
-            alt="No docs found!"
+            alt="No guides found!"
             size={64}
           />
-          <Text>No docs found!</Text>
+          <Text>No guides found!</Text>
         </VStack>
       );
     }
 
-    return sortedDocs.map((doc: IDoc) => {
+    return sortedGuides.map((guide: IGuide) => {
       return (
-        <Box key={doc.slug}>
-          <Link href={`/docs/${doc.slug}`}>
+        <Box key={guide.slug}>
+          <Link href={`/guides/${guide.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(doc.frontMatter.date)}
-                  {titleNode(doc.frontMatter.title)}
-                  {descriptionNode(doc.frontMatter.description)}
+                  {titleNode(guide.frontMatter.title)}
+                  {descriptionNode(guide.frontMatter.description)}
                 </VStack>
               </Box>
             </a>
@@ -159,9 +121,9 @@ const Docs: FC<Props> = ({ docs = [], hideViewAllLinksNode = false }) => {
     <VStack spacing={8} align="left">
       {headingNode()}
       {searchNode()}
-      {docsNode()}
+      {guidesNode()}
     </VStack>
   );
 };
 
-export default Docs;
+export default Guides;
