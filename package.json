@@ -15,7 +15,7 @@
     "@chakra-ui/react": "^1.1.5",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
-    "@sentry/browser": "^5.30.0",
+    "@sentry/browser": "^6.0.0",
     "@sentry/node": "^6.0.0",
     "@sentry/webpack-plugin": "^1.14.0",
     "@zeit/next-source-maps": "^0.0.3",
