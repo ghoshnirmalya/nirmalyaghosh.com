@@ -52,7 +52,33 @@ const GuidesChapterPage: NextPage<IProps> = ({
   );
 };
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const allPaths = fs
+    .readdirSync(path.join(root, "data", "guides"))
+    .map((p) => {
+      return fs
+        .readdirSync(path.join(root, "data", "guides", p))
+        .map((chapter) => {
+          return {
+            params: {
+              slug: p.replace(/\.mdx/, ""),
+              chapter: chapter.replace(/\.mdx/, ""),
+            },
+          };
+        });
+    });
+
+  const paths = allPaths.reduce((previousChapter, nextChapter) =>
+    previousChapter.concat(nextChapter)
+  );
+
+  return {
+    fallback: false,
+    paths,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const guidesRoot = path.join(root, "data", "guides", `${params.slug}`);
   const guides = fs.readdirSync(guidesRoot).map((p) => {
     const content = fs.readFileSync(path.join(guidesRoot, p), "utf8");
