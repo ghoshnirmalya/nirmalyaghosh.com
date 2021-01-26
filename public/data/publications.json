@@ -1,6 +1,22 @@
 [
   {
     "frontMatter": {
+      "title": "User Authentication in Next.js with Strapi",
+      "url": "https://strapi.io/blog/user-authentication-in-next-js-with-strapi",
+      "description": "In this tutorial, we'll be building a Next.js application and authenticate that with Strapi and NextAuth.",
+      "date": "2021-01-24"
+    }
+  },
+  {
+    "frontMatter": {
+      "title": "Difference between SWR and React Query in terms of fetching data",
+      "url": "https://codebrahma.com/difference-between-swr-and-react-query/",
+      "description": "In this article, we'll be learning about React Query and SWR which will help us create easy to understand and maintainable structure to fetch data from a back-end API endpoint.",
+      "date": "2020-12-20"
+    }
+  },
+  {
+    "frontMatter": {
       "title": "Getting started with Mock Service Worker",
       "url": "https://blog.logrocket.com/getting-started-with-mock-service-worker/",
       "description": "In this tutorial, we’ll learn about Mock Service Worker and how we can use it to mock network requests. We’ll build a chat application that will use the mock data provided by the Mock Service Worker API.",
