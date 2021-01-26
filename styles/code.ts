@@ -31,8 +31,8 @@ const prismBaseTheme = css`
 
   .article #table-of-contents + ul,
   .article ol {
-    padding-left: ${theme.space[12]};
     list-style-type: decimal;
+    list-style-position: inside;
   }
 
   .article #table-of-contents + ul > li,
