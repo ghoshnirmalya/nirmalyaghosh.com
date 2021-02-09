@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1.2.1",
-    "@emotion/react": "^11.1.4",
+    "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@sentry/browser": "^6.1.0",
     "@sentry/node": "^6.1.0",
