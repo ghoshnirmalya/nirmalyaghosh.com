@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.0",
-    "@types/node": "^14.14.25",
+    "@types/node": "^14.14.26",
     "@types/react": "^17.0.1",
     "husky": "^5.0.9",
     "lint-staged": "^10.5.4",
