@@ -1813,14 +1813,14 @@
   dependencies:
     tslib "^2.0.0"
 
-"@release-it/conventional-changelog@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@release-it/conventional-changelog/-/conventional-changelog-2.0.0.tgz#7101d5174c1d99adf5769561bd4c0741ffa754a9"
-  integrity sha512-S6mm01dtRsG0ouzcxQoTF2R9q4uhJyGV9NyDmt5Yamd/zbLAPhRmtwdekjKwEkAHQMvIcM1WfbEY/YoPVW0Jbw==
+"@release-it/conventional-changelog@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@release-it/conventional-changelog/-/conventional-changelog-2.0.1.tgz#bdd52ad3ecc0d6e39d637592d6ea2bd6d28e5ecb"
+  integrity sha512-q67D3Jod935kZt6wThsDeOmhY+RWYPMY7nYyl0YxiXK8vVZzD+9z957fXGz+8Uk3iugmgDaucht7VxTaZlu6nA==
   dependencies:
     concat-stream "^2.0.0"
-    conventional-changelog "^3.1.23"
-    conventional-recommended-bump "^6.0.10"
+    conventional-changelog "^3.1.24"
+    conventional-recommended-bump "^6.1.0"
     prepend-file "^2.0.0"
 
 "@sentry/browser@^6.2.0":
@@ -2964,7 +2964,7 @@ conventional-changelog-writer@^4.0.18:
     split "^1.0.0"
     through2 "^4.0.0"
 
-conventional-changelog@^3.1.23:
+conventional-changelog@^3.1.24:
   version "3.1.24"
   resolved "https://registry.yarnpkg.com/conventional-changelog/-/conventional-changelog-3.1.24.tgz#ebd180b0fd1b2e1f0095c4b04fd088698348a464"
   integrity sha512-ed6k8PO00UVvhExYohroVPXcOJ/K1N0/drJHx/faTH37OIZthlecuLIRX/T6uOp682CAoVoFpu+sSEaeuH6Asg==
@@ -3002,7 +3002,7 @@ conventional-commits-parser@^3.2.0:
     through2 "^4.0.0"
     trim-off-newlines "^1.0.0"
 
-conventional-recommended-bump@^6.0.10:
+conventional-recommended-bump@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/conventional-recommended-bump/-/conventional-recommended-bump-6.1.0.tgz#cfa623285d1de554012f2ffde70d9c8a22231f55"
   integrity sha512-uiApbSiNGM/kkdL9GTOLAqC4hbptObFo4wW2QRyHsKciGAfQuLU1ShZ1BIVI/+K2BE/W1AWYQMCXAsv4dyKPaw==
