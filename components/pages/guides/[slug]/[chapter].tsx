@@ -1,19 +1,12 @@
-import {
-  Box,
-  Grid,
-  Heading,
-  HStack,
-  useColorMode,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Grid, Heading, HStack, VStack } from "@chakra-ui/react";
 import siteConfig from "config/site";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import React from "react";
 import { IoIosPaper } from "react-icons/io";
-import IGuide from "types/guide";
 import IFrontMatter from "types/frontMatter";
+import IGuide from "types/guide";
 
 interface IProps {
   content: any;
@@ -30,10 +23,6 @@ const Page: NextPage<IProps> = ({
   slug,
   chapter,
 }) => {
-  const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "black" };
-  const sectionColor = { light: "black", dark: "gray.100" };
-
   const sidebarNode = () => {
     return (
       <Box>
@@ -99,7 +88,7 @@ const Page: NextPage<IProps> = ({
           locale: "en_IE",
         }}
       />
-      <Box bg={sectionBgColor[colorMode]} color={sectionColor[colorMode]}>
+      <Box bg="black" color="gray.100">
         <Box maxW="6xl" mx="auto" px={4} py={8}>
           <Grid
             templateColumns={["1fr", "1fr", "1fr", "1fr 3fr"]}

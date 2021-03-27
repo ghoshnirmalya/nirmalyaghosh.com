@@ -6,7 +6,6 @@ import {
   Input,
   Link as _Link,
   Text,
-  useColorMode,
   VStack,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
@@ -28,10 +27,6 @@ const Articles: FC<Props> = ({
   articles = [],
   hideViewAllLinksNode = false,
 }) => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "gray.900" };
-  const cardColor = { light: "gray.900", dark: "white" };
-  const linkColor = { light: "blue.600", dark: "blue.400" };
   const [searchQuery, setSearchQuery] = useState("");
 
   const sortedArticles = articles
@@ -65,8 +60,8 @@ const Articles: FC<Props> = ({
     return (
       <Box>
         <Input
-          bg={cardBgColor[colorMode]}
-          color={cardColor[colorMode]}
+          bg="gray.900"
+          color="white"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -116,7 +111,7 @@ const Articles: FC<Props> = ({
         size="md"
         letterSpacing="tight"
         lineHeight="tall"
-        color={linkColor[colorMode]}
+        color="blue.400"
         fontWeight="bold"
       >
         {title}
@@ -131,11 +126,11 @@ const Articles: FC<Props> = ({
   const articlesNode = () => {
     if (!sortedArticles.length) {
       return (
-        <VStack mx="auto" textAlign="center">
+        <VStack mx="auto" textAlign="center" w="100%">
           <Image
             src="/images/common/no-items.svg"
             alt="No articles found!"
-            size={64}
+            boxSize={64}
           />
           <Text>No articles found!</Text>
         </VStack>

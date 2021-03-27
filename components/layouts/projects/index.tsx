@@ -6,7 +6,6 @@ import {
   Image,
   Input,
   Text,
-  useColorMode,
   VStack,
 } from "@chakra-ui/react";
 import React, { FC, FormEvent, useState } from "react";
@@ -18,9 +17,6 @@ interface Props {
 }
 
 const Projects: FC<Props> = ({ projects = [] }) => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "gray.900" };
-  const cardColor = { light: "gray.900", dark: "white" };
   const [searchQuery, setSearchQuery] = useState("");
   const sortedProjects = projects.filter((project: IProject) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -30,8 +26,8 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     return (
       <Box>
         <Input
-          bg={cardBgColor[colorMode]}
-          color={cardColor[colorMode]}
+          bg="gray.900"
+          color="white"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -78,11 +74,11 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   const projectsNode = () => {
     if (!sortedProjects.length) {
       return (
-        <VStack mx="auto" textAlign="center">
+        <VStack mx="auto" textAlign="center" w="100%">
           <Image
             src="/images/common/no-items.svg"
             alt="No projects found!"
-            size={64}
+            boxSize={64}
           />
           <Text>No projects found!</Text>
         </VStack>
@@ -95,8 +91,8 @@ const Projects: FC<Props> = ({ projects = [] }) => {
           return (
             <Box
               key={index}
-              bg={cardBgColor[colorMode]}
-              color={cardColor[colorMode]}
+              bg="gray.900"
+              color="white"
               rounded="md"
               shadow="md"
             >

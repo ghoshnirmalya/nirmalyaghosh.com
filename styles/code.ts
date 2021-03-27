@@ -210,38 +210,6 @@ const prismBaseTheme = css`
   }
 `;
 
-export const prismLightTheme = css`
-  ${prismBaseTheme};
-
-  code[class*="language-"],
-  pre[class*="language-"] {
-    color: ${theme.colors.gray[800]};
-  }
-
-  :not(pre) > code[class*="language-"],
-  pre[class*="language-"] {
-    background: ${theme.colors.gray[50]};
-    border: 1px solid ${theme.colors.gray[200]};
-  }
-
-  .mdx-marker {
-    background-color: hsla(204, 45%, 96%, 1);
-  }
-
-  .article a:not(.chakra-link) {
-    color: ${theme.colors.blue[700]};
-  }
-
-  :not(pre) > code {
-    color: ${theme.colors.purple[700]};
-  }
-
-  .article blockquote > p {
-    background: ${theme.colors.gray[50]};
-    border-color: ${theme.colors.gray[500]};
-  }
-`;
-
 export const prismDarkTheme = css`
   ${prismBaseTheme};
 

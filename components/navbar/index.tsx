@@ -1,20 +1,16 @@
 import {
-  border,
   Box,
   Button,
   HStack,
-  IconButton,
   Link as _Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
-  useColorMode,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
-import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
 interface NavLink {
   url: string;
@@ -41,42 +37,11 @@ const LINKS = [
 ];
 
 const Navbar: FC = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const navbarSectionBgColor = { light: "white", dark: "gray.900" };
-  const navbarSectionColor = { light: "dark.900", dark: "white" };
-  const borderColor = { light: "blue.600", dark: "blue.400" };
-
-  const themeSwitcherButtonNode = () => {
-    if (colorMode === "light") {
-      return (
-        <IconButton
-          aria-label="Switch to dark theme"
-          icon={<IoMdMoon />}
-          onClick={toggleColorMode}
-          variant="ghost"
-        />
-      );
-    }
-
-    return (
-      <IconButton
-        aria-label="Switch to light theme"
-        icon={<IoMdSunny />}
-        onClick={toggleColorMode}
-        variant="ghost"
-      />
-    );
-  };
-
   const mobileMenuNode = () => {
     return (
       <Menu>
         <MenuButton as={Button}>Menu</MenuButton>
-        <MenuList
-          placement="bottom-end"
-          bg={navbarSectionBgColor[colorMode]}
-          color={navbarSectionColor[colorMode]}
-        >
+        <MenuList placement="bottom-end" bg="gray.900" color="white">
           {[
             LINKS.map((link: NavLink) => {
               return (
@@ -92,9 +57,6 @@ const Navbar: FC = () => {
               );
             }),
           ]}
-          <MenuItem onClick={toggleColorMode} px={4}>
-            Switch color mode
-          </MenuItem>
         </MenuList>
       </Menu>
     );
@@ -116,7 +78,6 @@ const Navbar: FC = () => {
             );
           }),
         ]}
-        <Box px={2}>{themeSwitcherButtonNode()}</Box>
       </HStack>
     );
   };
@@ -125,13 +86,13 @@ const Navbar: FC = () => {
     <Box
       as="header"
       zIndex={1}
-      bg={navbarSectionBgColor[colorMode]}
-      color={navbarSectionColor[colorMode]}
+      bg="gray.900"
+      color="white"
       shadow="md"
       fontWeight="bold"
       px={4}
       borderTopWidth={5}
-      borderColor={borderColor[colorMode]}
+      borderColor="blue.400"
     >
       <Box maxW="6xl" mx="auto">
         <HStack justifyContent="space-between" alignItems="center" py={4}>

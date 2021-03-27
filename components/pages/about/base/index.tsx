@@ -5,7 +5,6 @@ import {
   HStack,
   Link,
   Text,
-  useColorMode,
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
@@ -13,21 +12,10 @@ import React, { FC } from "react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const Page: FC = () => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "gray.900" };
-  const cardColor = { light: "gray.900", dark: "white" };
-
   const headingNode = () => {
     return (
       <HStack spacing={4} alignItems="center">
-        <Box
-          bg={cardColor[colorMode]}
-          color={cardBgColor[colorMode]}
-          rounded="full"
-          p={1}
-          w={100}
-          h={100}
-        >
+        <Box bg="white" color="gray.900" rounded="full" p={1} w={100} h={100}>
           <Image
             src="/images/common/avatar.png"
             alt="Nirmalya Ghosh"

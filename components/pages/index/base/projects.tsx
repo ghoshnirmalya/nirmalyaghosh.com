@@ -4,7 +4,6 @@ import {
   HStack,
   Link as _Link,
   Text,
-  useColorMode,
   VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
@@ -21,9 +20,6 @@ const projects: FC<Props> = ({
   projects = [],
   hideViewAllLinksNode = false,
 }) => {
-  const { colorMode } = useColorMode();
-  const linkColor = { light: "blue.600", dark: "blue.400" };
-
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
@@ -52,7 +48,7 @@ const projects: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color={linkColor[colorMode]} fontWeight="bold">
+      <Heading as="h3" size="md" color="blue.400" fontWeight="bold">
         {title}
       </Heading>
     );

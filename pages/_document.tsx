@@ -1,4 +1,5 @@
 import Document, { Head, Main, NextScript, Html } from "next/document";
+import { ColorModeScript } from "@chakra-ui/react";
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -40,6 +41,7 @@ export default class MyDocument extends Document {
           )}
         </Head>
         <body>
+          <ColorModeScript initialColorMode="dark" />
           <Main />
           <NextScript />
         </body>

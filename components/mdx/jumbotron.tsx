@@ -80,12 +80,7 @@ const Jumbotron: FC<IProps> = ({
       p={[4, 12, 16]}
     >
       <Box>
-        <Heading
-          as="h1"
-          fontFamily="body"
-          bgGradient="linear-gradient(to left, #45abff, #673AB7)"
-          bgClip="text"
-        >
+        <Heading as="h1" fontFamily="body" bgColor="blue.400" bgClip="text">
           {heading}
         </Heading>
       </Box>

@@ -1,17 +1,6 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Image,
-  Input,
-  Link as _Link,
-  Text,
-  useColorMode,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Input, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
-import { IoMdArrowRoundForward } from "react-icons/io";
 import IGuide from "types/guide";
 
 interface Props {
@@ -19,10 +8,6 @@ interface Props {
 }
 
 const Guides: FC<Props> = ({ guides = [] }) => {
-  const { colorMode } = useColorMode();
-  const cardBgColor = { light: "white", dark: "gray.900" };
-  const cardColor = { light: "gray.900", dark: "white" };
-  const linkColor = { light: "blue.600", dark: "blue.400" };
   const [searchQuery, setSearchQuery] = useState("");
 
   const sortedGuides = guides
@@ -39,8 +24,8 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     return (
       <Box>
         <Input
-          bg={cardBgColor[colorMode]}
-          color={cardColor[colorMode]}
+          bg="gray.900"
+          color="white"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -73,7 +58,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
         size="md"
         letterSpacing="tight"
         lineHeight="tall"
-        color={linkColor[colorMode]}
+        color="blue.400"
         fontWeight="bold"
       >
         {title}

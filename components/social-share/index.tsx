@@ -1,11 +1,4 @@
-import {
-  Box,
-  HStack,
-  Link,
-  Text,
-  useColorMode,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, HStack, Link, Text, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 
@@ -15,10 +8,6 @@ interface IProps {
 }
 
 const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
-  const { colorMode } = useColorMode();
-  const sectionBgColor = { light: "gray.100", dark: "gray.900" };
-  const sectionColor = { light: "gray.900ack", dark: "gray.100" };
-
   const socialLinks = [
     {
       href: `https://twitter.com/intent/tweet?text=${title}&url=${url}`,
@@ -41,12 +30,7 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
   ];
 
   return (
-    <Box
-      bg={sectionBgColor[colorMode]}
-      color={sectionColor[colorMode]}
-      p={4}
-      rounded="md"
-    >
+    <Box bg="gray.900" color="gray.100" p={4} rounded="md">
       <VStack spacing={2} align="left">
         <Text fontWeight="bold">Share this post</Text>
         <HStack spacing={2}>
