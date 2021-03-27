@@ -1,7 +1,6 @@
 import Document, { Head, Main, NextScript, Html } from "next/document";
 import { ColorModeScript } from "@chakra-ui/react";
-
-const isProd = process.env.NODE_ENV === "production";
+import isProduction from "lib/is-production";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -14,7 +13,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {isProd && (
+          {isProduction && (
             <>
               <script
                 async
