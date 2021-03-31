@@ -16,7 +16,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@sentry/browser": "^6.2.4",
-    "@sentry/node": "^6.2.3",
+    "@sentry/node": "^6.2.4",
     "@sentry/webpack-plugin": "^1.14.2",
     "@zeit/next-source-maps": "^0.0.3",
     "dayjs": "^1.10.4",
