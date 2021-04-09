@@ -14,7 +14,7 @@
   "dependencies": {
     "@chakra-ui/react": "^1.5.0",
     "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "@sentry/browser": "^6.2.5",
     "@sentry/node": "^6.2.5",
     "@sentry/webpack-plugin": "^1.14.2",
