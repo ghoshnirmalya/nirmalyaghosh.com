@@ -6485,6 +6485,16 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rive-canvas@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/rive-canvas/-/rive-canvas-0.7.2.tgz#c74a992e074f1a0791f6a3c661bbfe21480cbda7"
+  integrity sha512-gXWHIO3Xu61oB4mEXJdTFtB7Jp111v5c74dh1aPqkNA7j0KnSKSt90nRgC8hoUAHdBOllSCvSyDISsb7sVO8Fw==
+
+rive-js@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/rive-js/-/rive-js-0.7.7.tgz#19c6a3e10472fa71f9e1b2ea2d3779706fab21a5"
+  integrity sha512-LyTz4gSRHUEP8deXWmxMsa87L1h0cVVI5gnS+alPIeKGICCb1RyAblZ298LjH8m+sTLv2/vQrLFiLCPSmI4tBw==
+
 run-async@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"

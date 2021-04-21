@@ -80,7 +80,7 @@ const Jumbotron: FC<IProps> = ({
       p={[4, 12, 16]}
     >
       <Box>
-        <Heading as="h1" fontFamily="body" bgColor="blue.400" bgClip="text">
+        <Heading as="h1" fontFamily="body" bgColor="#65F8ED" bgClip="text">
           {heading}
         </Heading>
       </Box>

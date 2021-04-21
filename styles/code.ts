@@ -186,7 +186,7 @@ const prismBaseTheme = css`
     padding-left: ${theme.space[4]};
     padding-right: ${theme.space[4]};
     background-color: ${theme.colors.gray[200]};
-    box-shadow: inset 3px 0px 0 0px ${theme.colors.blue[600]};
+    box-shadow: inset 3px 0px 0 0px #65F8ED;
     min-width: fit-content;
   }
 
@@ -300,7 +300,7 @@ export const prismDarkTheme = css`
   }
 
   .article a:not(.chakra-link) {
-    color: ${theme.colors.blue[300]};
+    color: #65F8ED;
   }
 
   :not(pre) > code {

@@ -58,7 +58,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
         size="md"
         letterSpacing="tight"
         lineHeight="tall"
-        color="blue.400"
+        color="#65F8ED"
         fontWeight="bold"
       >
         {title}

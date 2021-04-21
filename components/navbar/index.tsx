@@ -84,7 +84,7 @@ const Navbar: FC = () => {
       fontWeight="bold"
       px={4}
       borderTopWidth={5}
-      borderColor="blue.400"
+      borderColor="#65F8ED"
     >
       <Box maxW="6xl" mx="auto">
         <HStack justifyContent="space-between" alignItems="center" py={4}>

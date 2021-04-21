@@ -48,7 +48,7 @@ import {
   
     const titleNode = (title: string) => {
       return (
-        <Heading as="h3" size="md" color="blue.400" fontWeight="bold">
+        <Heading as="h3" size="md" color="#65F8ED" fontWeight="bold">
           {title}
         </Heading>
       );

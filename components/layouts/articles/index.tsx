@@ -111,7 +111,7 @@ const Articles: FC<Props> = ({
         size="md"
         letterSpacing="tight"
         lineHeight="tall"
-        color="blue.400"
+        color="#65F8ED"
         fontWeight="bold"
       >
         {title}
