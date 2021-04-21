@@ -15,7 +15,7 @@ const SocialLinks: FC = () => {
           <HStack spacing={2}>
             <Box>
               <_Link
-                href="https://github.com/ghoshnirmalya/nirmalyaghosh.com"
+                href="https://github.com/pedroboni/portifolio-boni"
                 p={4}
               >
                 Source code on Github
@@ -35,7 +35,7 @@ const SocialLinks: FC = () => {
             </Box>
             <Box p={4}>
               <Text>
-                Copyright &copy; {new Date().getFullYear()} Nirmalya Ghosh
+                Copyright &copy; {new Date().getFullYear()} Pedro Bonifacio
               </Text>
             </Box>
           </HStack>

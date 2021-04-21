@@ -23,14 +23,6 @@ const LINKS = [
     title: "Projects",
   },
   {
-    url: "/articles",
-    title: "Articles",
-  },
-  {
-    url: "/guides",
-    title: "Guides",
-  },
-  {
     url: "/about",
     title: "About",
   },

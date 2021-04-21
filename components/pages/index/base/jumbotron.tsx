@@ -12,14 +12,13 @@ const Jumbotron: FC = () => {
     >
       <Box>
         <Heading as="h1" fontFamily="body" bgColor="blue.400" bgClip="text">
-          Hi, I'm Nirmalya
+          Hi, I'm Pedro Bonifacio
         </Heading>
       </Box>
       <Box>
-        <Text>
-          I'm a <Box as="b">Developer</Box>, who likes{" "}
-          <Box as="b">designing</Box> <Box as="b">writing</Box> and building{" "}
-          <Box as="b">Open Source</Box> stuffs.
+        <Text> 
+          I'm a <Box as="b">Developer</Box>, who likes to{" "}
+          <Box as="b">learn new things</Box> and <Box as="b">build cool things</Box>
         </Text>
       </Box>
     </VStack>

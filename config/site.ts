@@ -1,15 +1,15 @@
 export default {
   details: {
-    title: "Nirmalya Ghosh",
-    tagLine: "Designer and Developer",
-    description: "Personal portfolio of Nirmalya Ghosh",
-    url: "https://www.nirmalyaghosh.com",
+    title: "Pedro Bonifacio",
+    tagLine: "Developer",
+    description: "Personal portfolio of Pedro Bonifacio",
+    url: "https://www.pedroboni.tech/",
   },
   assets: {
     avatar: "/images/common/avatar.png",
     favicon: "/images/common/favicon.svg",
   },
   socialLinks: {
-    twitter: "@nirmalyaghosh23",
+    twitter: "@pedrboni",
   },
 };

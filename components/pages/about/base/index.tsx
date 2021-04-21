@@ -15,12 +15,12 @@ const Page: FC = () => {
   const headingNode = () => {
     return (
       <HStack spacing={4} alignItems="center">
-        <Box bg="white" color="gray.900" rounded="full" p={1} w={100} h={100}>
+        <Box bg="white" color="gray.900" rounded="full" p={1} w={120} h={120}>
           <Image
             src="/images/common/avatar.png"
-            alt="Nirmalya Ghosh"
-            height={100}
-            width={100}
+            alt="Pedro Bonifacio"
+            height={120}
+            width={120}
             quality={100}
             priority
           />
@@ -28,7 +28,7 @@ const Page: FC = () => {
         <Box>
           <VStack spacing={2} align="left">
             <Heading as="h1" size="xl">
-              Nirmalya Ghosh
+              Pedro Bonifacio
             </Heading>
             <Text>A little bit about me</Text>
           </VStack>
@@ -41,8 +41,7 @@ const Page: FC = () => {
     return (
       <Box className="article">
         <Text fontWeight="bold">
-          Computer Science Engineer having interest in web-designing and
-          development with an eye for detail.
+          System Development Technician with an interest in web design and development with attention to detail.
         </Text>
         <Text>
           I'm also a big fan of{" "}
@@ -51,15 +50,15 @@ const Page: FC = () => {
           </Box>{" "}
           and have{" "}
           <Box as="span" fontWeight="bold">
-            around 5 years
+            around 1 year
           </Box>{" "}
-          experience with it. I have also fiddled with Ruby on Rails and Elixir.
-          I'm eager to learn new frameworks, libraries and languages like Elm,
-          Vue.js and ReasonML. I'm also interested in learning Go and Python.
+          experience with it. I have also fiddled with React Native and C#.
+          I'm eager to learn new frameworks, libraries and languages like Angulas,
+          Vue.js and Gatsby. I'm also interested in learning Python.
         </Text>
         <Text>
           Though I spend most of my time writing code for building User
-          Interfaces, I've also fiddled with many Back-end technologies. I like
+          Interfaces, I also played with back-end technologies like PHP and Node.JS. I like
           enjoying working in the intersection of design and development. I feel
           most productive when I'm able to design User Interfaces which not only
           look good but has a good performance as well.
@@ -82,7 +81,7 @@ const Page: FC = () => {
             <Link
               py={2}
               px={4}
-              href="https://github.com/ghoshnirmalya"
+              href="https://github.com/pedroboni"
               rounded="md"
               bg="#333"
               color="#fff"
@@ -96,7 +95,7 @@ const Page: FC = () => {
             <Link
               py={2}
               px={4}
-              href="https://www.linkedin.com/in/ghoshnirmalya/"
+              href="https://www.linkedin.com/in/pedroboni/"
               rounded="md"
               bg="#0e76a8"
               color="#fff"
