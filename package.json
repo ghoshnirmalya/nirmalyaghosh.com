@@ -20,7 +20,7 @@
     "@sentry/webpack-plugin": "^1.15.1",
     "@zeit/next-source-maps": "^0.0.3",
     "dayjs": "^1.10.4",
-    "framer-motion": "^4.1.15",
+    "framer-motion": "^4.1.16",
     "gray-matter": "^4.0.3",
     "mdx-prism": "^0.3.3",
     "next": "10.2.0",
