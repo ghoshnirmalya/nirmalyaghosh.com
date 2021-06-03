@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.1",
-    "@types/node": "^15.6.1",
+    "@types/node": "^15.9.0",
     "@types/react": "^17.0.9",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
