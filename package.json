@@ -38,7 +38,7 @@
     "remark-toc": "^7.2.0"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^3.0.0",
+    "@release-it/conventional-changelog": "^3.0.1",
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.11",
     "lint-staged": "^11.0.0",
