@@ -14,7 +14,6 @@ dayjs.extend(localizedFormat);
 interface IProps {
   content: any;
   frontMatter: IFrontMatter;
-  readingTime: string;
 }
 
 const SocialShare = dynamic(
@@ -24,7 +23,7 @@ const SocialShare = dynamic(
   }
 );
 
-const Page: NextPage<IProps> = ({ content, frontMatter, readingTime }) => {
+const Page: NextPage<IProps> = ({ content, frontMatter }) => {
   const metaNode = (date: string) => {
     return (
       <HStack spacing={2} isInline alignItems="center">
@@ -33,9 +32,6 @@ const Page: NextPage<IProps> = ({ content, frontMatter, readingTime }) => {
           {dayjs(date).format("LL")}
         </Text>
         <Text fontSize="xs">and it's a</Text>
-        <Text fontSize="xs" fontWeight="bold">
-          {readingTime}
-        </Text>
       </HStack>
     );
   };

@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import * as Sentry from "@sentry/node";
 import siteConfig from "config/site";
 import * as gtag from "lib/gtag";
 import isProduction from "lib/is-production";
@@ -25,11 +24,6 @@ declare global {
     gtag: any;
   }
 }
-
-Sentry.init({
-  enabled: isProduction,
-  dsn: process.env.SENTRY_DSN,
-});
 
 export function reportWebVitals({ id, name, label, value }) {
   if (isProduction && window.gtag) {

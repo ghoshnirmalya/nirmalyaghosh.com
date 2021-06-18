@@ -53,7 +53,7 @@ typings/
 
 # dotenv environment variables file
 .env
-.env.development
+.env.local
 .env.production
 
 # Mac files

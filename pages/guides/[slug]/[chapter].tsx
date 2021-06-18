@@ -2,9 +2,8 @@ import Page from "components/pages/guides/[slug]/[chapter]";
 import fs from "fs";
 import matter from "gray-matter";
 import { NextPage } from "next";
-import hydrate from "next-mdx-remote/hydrate";
-import renderToString from "next-mdx-remote/render-to-string";
-import { MdxRemote } from "next-mdx-remote/types";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
 import React from "react";
@@ -25,7 +24,7 @@ const root = process.cwd();
 const components = { Callout, Jumbotron, Link };
 
 interface IProps {
-  mdxSource: MdxRemote.Source;
+  mdxSource: any;
   frontMatter: any;
   guides: any;
   slug: string;
@@ -39,11 +38,9 @@ const GuidesChapterPage: NextPage<IProps> = ({
   slug,
   chapter,
 }) => {
-  const content = hydrate(mdxSource, { components });
-
   return (
     <Page
-      content={content}
+      content={<MDXRemote {...mdxSource} components={components} />}
       frontMatter={frontMatter}
       guides={guides}
       slug={slug}
@@ -101,8 +98,7 @@ export async function getStaticProps({ params }) {
     "utf8"
   );
   const { data, content } = matter(source);
-  const mdxSource = await renderToString(content, {
-    components,
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
         require("remark-slug"),
