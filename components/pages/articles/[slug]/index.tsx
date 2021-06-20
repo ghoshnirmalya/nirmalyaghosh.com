@@ -79,7 +79,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
         description={frontMatter.description}
         openGraph={{
           url: `${siteConfig.details.url}`,
-          title: siteConfig.details.title,
+          title: `${frontMatter.title} | ${siteConfig.details.title}`,
           description: frontMatter.description,
           images: [
             {
