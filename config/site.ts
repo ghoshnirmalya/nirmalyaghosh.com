@@ -6,7 +6,7 @@ export default {
     url: "https://www.nirmalyaghosh.com",
   },
   assets: {
-    avatar: "/images/common/avatar.png",
+    avatar: "/images/common/seo-cover.png",
     favicon: "/images/common/favicon.svg",
   },
   socialLinks: {
