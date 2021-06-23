@@ -31,7 +31,6 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
         <Text fontSize="xs" fontWeight="bold">
           {dayjs(date).format("LL")}
         </Text>
-        <Text fontSize="xs">and it's a</Text>
       </HStack>
     );
   };
