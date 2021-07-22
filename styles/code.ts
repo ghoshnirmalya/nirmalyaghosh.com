@@ -17,6 +17,10 @@ const prismBaseTheme = css`
     line-height: ${theme.lineHeights.tall};
   }
 
+  .article p {
+    display: inline;
+  }
+
   .article a:hover {
     text-decoration: underline;
   }
