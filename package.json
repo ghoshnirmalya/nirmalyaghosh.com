@@ -37,7 +37,7 @@
     "@sentry/nextjs": "^6.10.0",
     "@types/node": "^16.4.13",
     "@types/react": "^17.0.15",
-    "lint-staged": "^11.1.1",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "release-it": "^14.10.1",
     "typescript": "^4.3.5"
