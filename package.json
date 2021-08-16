@@ -36,7 +36,7 @@
     "@release-it/conventional-changelog": "^3.1.1",
     "@sentry/nextjs": "^6.11.0",
     "@types/node": "^16.6.1",
-    "@types/react": "^17.0.17",
+    "@types/react": "^17.0.18",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "release-it": "^14.11.3",
