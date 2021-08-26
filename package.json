@@ -35,7 +35,7 @@
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
     "@sentry/nextjs": "^6.11.0",
-    "@types/node": "^16.7.1",
+    "@types/node": "^16.7.2",
     "@types/react": "^17.0.19",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
