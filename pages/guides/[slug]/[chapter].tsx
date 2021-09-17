@@ -127,3 +127,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default GuidesChapterPage;
+
+export const config = {
+  unstable_runtimeJS: false,
+};

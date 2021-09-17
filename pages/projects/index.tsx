@@ -30,3 +30,7 @@ export async function getStaticProps() {
 }
 
 export default ProjectsIndexPage;
+
+export const config = {
+  unstable_runtimeJS: false,
+};

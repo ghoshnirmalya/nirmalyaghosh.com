@@ -45,3 +45,7 @@ export async function getStaticProps() {
 }
 
 export default ArticlesIndexPage;
+
+export const config = {
+  unstable_runtimeJS: false,
+};

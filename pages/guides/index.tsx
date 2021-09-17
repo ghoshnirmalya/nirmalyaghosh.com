@@ -46,3 +46,7 @@ export async function getStaticProps() {
 }
 
 export default guidesIndexPage;
+
+export const config = {
+  unstable_runtimeJS: false,
+};
