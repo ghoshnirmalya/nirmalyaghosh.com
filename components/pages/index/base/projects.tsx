@@ -1,14 +1,6 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Link as _Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Heading, Link as _Link, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
-import React, { FC } from "react";
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { FC } from "react";
 import IProject from "types/project";
 
 interface Props {
@@ -26,10 +18,7 @@ const projects: FC<Props> = ({
     return (
       <Link href="/projects" passHref>
         <_Link p={2} href="/projects" rounded="md">
-          <HStack spacing={2} alignItems="center">
-            <Box fontWeight="bold">View all projects</Box>
-            <Box as={IoMdArrowRoundForward} size="15px" />
-          </HStack>
+          <Box fontWeight="bold">View all projects</Box>
         </_Link>
       </Link>
     );

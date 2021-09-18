@@ -8,8 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React, { FC, FormEvent, useState } from "react";
-import { IoMdArrowForward } from "react-icons/io";
+import { FC, FormEvent, useState } from "react";
 import IProject from "types/project";
 
 interface Props {
@@ -28,6 +27,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
         <Input
           bg="gray.900"
           color="white"
+          border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -64,11 +64,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   };
 
   const ctaNode = () => {
-    return (
-      <Button rightIcon={<IoMdArrowForward />} fontSize="sm">
-        View project
-      </Button>
-    );
+    return <Button fontSize="sm">View project</Button>;
   };
 
   const projectsNode = () => {
@@ -86,7 +82,15 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     }
 
     return (
-      <Grid templateColumns="repeat(3, 1fr)" gap={8}>
+      <Grid
+        templateColumns={[
+          "repeat(1, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)",
+        ]}
+        gap={8}
+      >
         {sortedProjects.map((project: IProject, index: number) => {
           return (
             <Box

@@ -9,9 +9,6 @@ const customTheme = extendTheme({
   },
   fonts: {
     ...theme.fonts,
-    heading: "'Noto Serif', serif",
-    body: "'Inter', sans-serif",
-    mono: "Menlo, Monaco, Consolas, Courier New, monospace",
   },
 });
 

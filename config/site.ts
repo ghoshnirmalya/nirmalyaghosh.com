@@ -1,4 +1,4 @@
-export default {
+const siteConfig = {
   details: {
     title: "Nirmalya Ghosh",
     tagLine: "Designer and Developer",
@@ -13,3 +13,5 @@ export default {
     twitter: "@nirmalyaghosh23",
   },
 };
+
+export default siteConfig;

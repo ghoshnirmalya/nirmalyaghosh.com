@@ -26,6 +26,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
         <Input
           bg="gray.900"
           color="white"
+          border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)

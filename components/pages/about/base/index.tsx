@@ -72,7 +72,7 @@ const Page: FC = () => {
   const socialLinksNode = () => {
     return (
       <VStack spacing={4} align="left">
-        <VStack spacing={8} align="left">
+        <VStack spacing={4} align="left">
           <Heading as="h2" size="lg">
             Social profiles
           </Heading>

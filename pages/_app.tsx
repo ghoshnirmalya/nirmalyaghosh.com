@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router from "next/router";
 import React, { useEffect } from "react";
+import Script from "next/script";
 
 const Layout = dynamic(
   import(/* webpackChunkName: "Layouts" */ "components/layouts")
@@ -59,6 +60,29 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
       </Head>
+      {isProduction && (
+        <>
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+          />
+          <Script strategy="lazyOnload" id="google-tag-manager">
+            {`
+              window.dataLayer = window.dataLayer || [];
+
+              function gtag(){
+                dataLayer.push(arguments);
+              }
+
+              gtag('js', new Date());
+
+              gtag('config', '${process.env.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+          `}
+          </Script>
+        </>
+      )}
       <NextSeo
         title={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
         description={siteConfig.details.description}
