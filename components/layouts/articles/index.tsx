@@ -1,7 +1,6 @@
 import {
   Box,
   Heading,
-  HStack,
   Image,
   Input,
   Link as _Link,
@@ -11,8 +10,7 @@ import {
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
-import React, { FC, FormEvent, useState } from "react";
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { FC, FormEvent, useState } from "react";
 import IArticle from "types/article";
 import IPublication from "types/publication";
 
@@ -43,12 +41,9 @@ const Articles: FC<Props> = ({
 
   const viewAllLinksNode = () => {
     return (
-      <Link href="/articles">
+      <Link href="/articles" passHref>
         <_Link p={2} href="/articles" rounded="md">
-          <HStack spacing={2} alignItems="center">
-            <Box fontWeight="bold">View all articles</Box>
-            <Box as={IoMdArrowRoundForward} size="15px" />
-          </HStack>
+          <Box fontWeight="bold">View all articles</Box>
         </_Link>
       </Link>
     );
@@ -62,6 +57,7 @@ const Articles: FC<Props> = ({
         <Input
           bg="gray.900"
           color="white"
+          border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -99,7 +95,7 @@ const Articles: FC<Props> = ({
   const metaNode = (date: string) => {
     return (
       <Box>
-        <Text fontSize="xs">{dayjs(date).format("LL")}</Text>
+        <Text fontSize="sm">{dayjs(date).format("LL")}</Text>
       </Box>
     );
   };

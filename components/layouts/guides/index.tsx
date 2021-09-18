@@ -26,6 +26,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
         <Input
           bg="gray.900"
           color="white"
+          border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
             setSearchQuery(e.currentTarget.value)
@@ -44,7 +45,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
             Guides
           </Heading>
           <Text>
-            Guides related to some of the projects that I've developed
+            Guides related to some of the projects that I&apos;ve developed
           </Text>
         </VStack>
       </Box>

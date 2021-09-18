@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Router from "next/router";
 import React, { useEffect } from "react";
+import Script from "next/script";
 
 const Layout = dynamic(
   import(/* webpackChunkName: "Layouts" */ "components/layouts")
@@ -58,21 +59,30 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Serif:wght@700&display=swap"
-          rel="preload"
-          as="style"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Serif:wght@700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
+      {isProduction && (
+        <>
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+          />
+          <Script strategy="lazyOnload" id="google-tag-manager">
+            {`
+              window.dataLayer = window.dataLayer || [];
+
+              function gtag(){
+                dataLayer.push(arguments);
+              }
+
+              gtag('js', new Date());
+
+              gtag('config', '${process.env.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+          `}
+          </Script>
+        </>
+      )}
       <NextSeo
         title={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
         description={siteConfig.details.description}

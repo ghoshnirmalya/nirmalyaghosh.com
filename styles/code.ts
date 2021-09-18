@@ -3,7 +3,6 @@ import { theme } from "@chakra-ui/react";
 
 const prismBaseTheme = css`
   .article > h2 {
-    font-family: "Noto Serif", serif;
     padding: ${theme.space[8]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
     font-weight: ${theme.fontWeights.bold};
@@ -12,7 +11,6 @@ const prismBaseTheme = css`
   .article p,
   .article ul,
   .article ol {
-    font-family: "Inter", sans-serif;
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
   }
@@ -31,6 +29,7 @@ const prismBaseTheme = css`
 
   .article img {
     border-radius: ${theme.radii.md};
+    margin: ${theme.space[6]} 0;
   }
 
   .article #table-of-contents + ul,
@@ -50,10 +49,9 @@ const prismBaseTheme = css`
     display: inline-flex;
   }
 
-  .article blockquote > p {
+  .article blockquote {
     padding: ${theme.space[4]};
     margin: 0;
-    border: 1px solid;
     border-radius: ${theme.radii.md};
   }
 
@@ -92,7 +90,6 @@ const prismBaseTheme = css`
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     background: ${theme.colors.gray[50]};
-    border: 1px solid ${theme.colors.gray[200]};
     border-radius: ${theme.radii.md};
   }
 
@@ -195,17 +192,18 @@ const prismBaseTheme = css`
   }
 
   .remark-code-title {
+    margin: ${theme.space[6]} 0;
     padding: ${theme.space[2]} ${theme.space[4]};
     font-family: ${theme.fonts.mono};
     background: ${theme.colors.gray[200]};
     color: ${theme.colors.gray[800]};
-    border: 1px solid ${theme.colors.gray[200]};
     border-top-left-radius: ${theme.radii.md};
     border-top-right-radius: ${theme.radii.md};
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 0;
     width: 100%;
+
     + pre {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
@@ -290,7 +288,6 @@ export const prismDarkTheme = css`
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     background: ${theme.colors.gray[800]};
-    border: 1px solid ${theme.colors.gray[700]};
   }
 
   .mdx-marker {
@@ -300,7 +297,6 @@ export const prismDarkTheme = css`
   .remark-code-title {
     background: ${theme.colors.gray[700]};
     color: ${theme.colors.gray[100]};
-    border: 1px solid ${theme.colors.gray[700]};
   }
 
   .article a:not(.chakra-link) {
@@ -311,8 +307,7 @@ export const prismDarkTheme = css`
     color: ${theme.colors.purple[300]};
   }
 
-  .article blockquote > p {
+  .article blockquote {
     background: ${theme.colors.gray[800]};
-    border-color: ${theme.colors.gray[500]};
   }
 `;

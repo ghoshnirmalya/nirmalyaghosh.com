@@ -40,3 +40,7 @@ export async function getStaticProps() {
 }
 
 export default IndexPage;
+
+export const config = {
+  unstable_runtimeJS: false,
+};

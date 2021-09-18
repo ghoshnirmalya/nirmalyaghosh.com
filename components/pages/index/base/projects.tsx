@@ -1,14 +1,6 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Link as _Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Heading, Link as _Link, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
-import React, { FC } from "react";
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { FC } from "react";
 import IProject from "types/project";
 
 interface Props {
@@ -24,12 +16,9 @@ const projects: FC<Props> = ({
     if (hideViewAllLinksNode) return false;
 
     return (
-      <Link href="/projects">
+      <Link href="/projects" passHref>
         <_Link p={2} href="/projects" rounded="md">
-          <HStack spacing={2} alignItems="center">
-            <Box fontWeight="bold">View all projects</Box>
-            <Box as={IoMdArrowRoundForward} size="15px" />
-          </HStack>
+          <Box fontWeight="bold">View all projects</Box>
         </_Link>
       </Link>
     );
@@ -62,7 +51,7 @@ const projects: FC<Props> = ({
     return projects.map((project: IProject, index: number) => {
       return (
         <Box key={index}>
-          <a href={project.url} target="_blank" rel="noopener">
+          <a href={project.url} target="_blank" rel="noopener noreferrer">
             <VStack spacing={1} align="left">
               {titleNode(project.title)}
               {descriptionNode(project.description)}

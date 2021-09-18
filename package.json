@@ -9,7 +9,8 @@
     "build": "next build",
     "dev": "next dev",
     "release": "release-it",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
@@ -37,6 +38,8 @@
     "@sentry/nextjs": "^6.12.0",
     "@types/node": "^16.9.2",
     "@types/react": "^17.0.21",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
     "release-it": "^14.11.5",
