@@ -96,7 +96,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
               rounded="md"
               shadow="md"
             >
-              <a href={project.url} target="_blank" rel="noopener">
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
                 <Box p={8}>
                   <VStack
                     spacing={4}

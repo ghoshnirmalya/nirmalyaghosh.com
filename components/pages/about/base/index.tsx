@@ -45,7 +45,7 @@ const Page: FC = () => {
           development with an eye for detail.
         </Text>
         <Text>
-          I'm also a big fan of{" "}
+          I&apos;m also a big fan of{" "}
           <Box as="span" fontWeight="bold">
             React.js
           </Box>{" "}
@@ -54,15 +54,16 @@ const Page: FC = () => {
             around 5 years
           </Box>{" "}
           experience with it. I have also fiddled with Ruby on Rails and Elixir.
-          I'm eager to learn new frameworks, libraries and languages like Elm,
-          Vue.js and ReasonML. I'm also interested in learning Go and Python.
+          I&apos;m eager to learn new frameworks, libraries and languages like
+          Elm, Vue.js and ReasonML. I&apos;m also interested in learning Go and
+          Python.
         </Text>
         <Text>
           Though I spend most of my time writing code for building User
-          Interfaces, I've also fiddled with many Back-end technologies. I like
-          enjoying working in the intersection of design and development. I feel
-          most productive when I'm able to design User Interfaces which not only
-          look good but has a good performance as well.
+          Interfaces, I&apos;ve also fiddled with many Back-end technologies. I
+          like enjoying working in the intersection of design and development. I
+          feel most productive when I&apos;m able to design User Interfaces
+          which not only look good but has a good performance as well.
         </Text>
       </Box>
     );

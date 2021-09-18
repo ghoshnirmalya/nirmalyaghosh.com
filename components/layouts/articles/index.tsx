@@ -43,7 +43,7 @@ const Articles: FC<Props> = ({
 
   const viewAllLinksNode = () => {
     return (
-      <Link href="/articles">
+      <Link href="/articles" passHref>
         <_Link p={2} href="/articles" rounded="md">
           <HStack spacing={2} alignItems="center">
             <Box fontWeight="bold">View all articles</Box>

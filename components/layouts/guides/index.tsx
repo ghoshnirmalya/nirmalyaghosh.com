@@ -44,7 +44,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
             Guides
           </Heading>
           <Text>
-            Guides related to some of the projects that I've developed
+            Guides related to some of the projects that I&apos;ve developed
           </Text>
         </VStack>
       </Box>

@@ -22,7 +22,7 @@ const SocialLinks: FC = () => {
               </_Link>
             </Box>
             <Box>
-              <Link href="/">
+              <Link href="/" passHref>
                 <_Link href="/" target="_blank" p={4}>
                   <Image
                     src="/images/common/favicon.svg"

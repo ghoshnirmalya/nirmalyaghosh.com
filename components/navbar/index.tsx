@@ -46,7 +46,7 @@ const Navbar: FC = () => {
             LINKS.map((link: NavLink) => {
               return (
                 <Box key={link.url}>
-                  <Link href={link.url}>
+                  <Link href={link.url} passHref>
                     <MenuItem>
                       <_Link href={link.url} rounded="md">
                         {link.title}
@@ -69,7 +69,7 @@ const Navbar: FC = () => {
           LINKS.map((link: NavLink) => {
             return (
               <Box key={link.url}>
-                <Link href={link.url}>
+                <Link href={link.url} passHref>
                   <_Link p={4} href={link.url} rounded="md">
                     {link.title}
                   </_Link>
@@ -97,7 +97,7 @@ const Navbar: FC = () => {
       <Box maxW="6xl" mx="auto">
         <HStack justifyContent="space-between" alignItems="center" py={4}>
           <Box d="flex" alignItems="center">
-            <Link href="/">
+            <Link href="/" passHref>
               <_Link href="/" d="flex">
                 <Image
                   src="/images/common/favicon.svg"
