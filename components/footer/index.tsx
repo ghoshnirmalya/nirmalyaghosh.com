@@ -5,7 +5,7 @@ import { FC } from "react";
 const SocialLinks: FC = () => {
   return (
     <Box p={4} as="footer">
-      <Box maxW="6xl" mx="auto" fontsize="sm">
+      <Box maxW="6xl" mx="auto" fontSize="sm">
         <Box
           d="flex"
           textAlign="center"

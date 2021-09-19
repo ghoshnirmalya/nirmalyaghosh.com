@@ -30,13 +30,10 @@ const Articles: FC<Props> = ({
   const sortedArticles = articles
     .sort(
       (a: IArticle & IPublication, b: IArticle & IPublication) =>
-        Number(new Date(b.frontMatter.date)) -
-        Number(new Date(a.frontMatter.date))
+        Number(new Date(b.data?.date)) - Number(new Date(a.data?.date))
     )
     .filter((article: IArticle) =>
-      article.frontMatter.title
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase())
+      article.data?.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   const viewAllLinksNode = () => {
@@ -134,19 +131,19 @@ const Articles: FC<Props> = ({
     }
 
     return sortedArticles.map((article: IArticle & IPublication) => {
-      if (!article.slug) {
+      if (!article.data.slug) {
         return (
-          <Box key={article.frontMatter.url}>
+          <Box key={article.data.slug}>
             <a
-              href={article.frontMatter.url}
+              href={`/articles/${article.data.slug}`}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(article.frontMatter.date)}
-                  {titleNode(article.frontMatter.title)}
-                  {descriptionNode(article.frontMatter.description)}
+                  {metaNode(article.data.date)}
+                  {titleNode(article.data.title)}
+                  {descriptionNode(article.data.description)}
                 </VStack>
               </Box>
             </a>
@@ -155,14 +152,14 @@ const Articles: FC<Props> = ({
       }
 
       return (
-        <Box key={article.slug}>
-          <Link href={`/articles/${article.slug}`}>
+        <Box key={article.data.slug}>
+          <Link href={`/articles/${article.data.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(article.frontMatter.date)}
-                  {titleNode(article.frontMatter.title)}
-                  {descriptionNode(article.frontMatter.description)}
+                  {metaNode(article.data.date)}
+                  {titleNode(article.data.title)}
+                  {descriptionNode(article.data.description)}
                 </VStack>
               </Box>
             </a>

@@ -7,4 +7,5 @@ export default interface frontMatter {
   title: string;
   githubLink?: string;
   demoLink?: string;
+  slug: string;
 }

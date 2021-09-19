@@ -1,8 +1,8 @@
 import Page from "components/pages/projects/base";
-import { NextPage } from "next";
-import IProject from "types/project";
-import projectsData from "public/data/projects.json";
+import { getAllProjects } from "lib/get-projects-data";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import IProject from "types/project";
 
 interface Props {
   projects: IProject[];
@@ -19,15 +19,13 @@ const ProjectsIndexPage: NextPage<Props> = ({ projects = [] }) => {
   );
 };
 
-export async function getStaticProps() {
-  const projects = projectsData;
-
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
-      projects,
+      projects: getAllProjects(),
     },
   };
-}
+};
 
 export default ProjectsIndexPage;
 

@@ -15,10 +15,6 @@ const prismBaseTheme = css`
     line-height: ${theme.lineHeights.tall};
   }
 
-  .article p {
-    display: inline;
-  }
-
   .article a:hover {
     text-decoration: underline;
   }
@@ -53,6 +49,10 @@ const prismBaseTheme = css`
     padding: ${theme.space[4]};
     margin: 0;
     border-radius: ${theme.radii.md};
+  }
+
+  .article blockquote > p {
+    margin: 0;
   }
 
   code[class*="language-"],

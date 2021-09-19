@@ -1,7 +1,7 @@
 import Page from "components/pages/guides/base";
 import fs from "fs";
 import matter from "gray-matter";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import path from "path";
 import IGuide from "types/guide";
@@ -23,7 +23,7 @@ const guidesIndexPage: NextPage<IProps> = ({ guides }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const guidesRoot = path.join(root, "data", "guides");
   const guides = fs.readdirSync(guidesRoot).map((p) => {
     const content = fs.readFileSync(
@@ -43,7 +43,7 @@ export async function getStaticProps() {
       guides,
     },
   };
-}
+};
 
 export default guidesIndexPage;
 

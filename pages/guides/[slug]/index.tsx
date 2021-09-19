@@ -1,7 +1,7 @@
 import Page from "components/pages/guides/[slug]";
 import fs from "fs";
 import matter from "gray-matter";
-import { NextPage } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
@@ -45,7 +45,7 @@ const GuidesSlugPage: NextPage<IProps> = ({
   );
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     fallback: false,
     paths: fs.readdirSync(path.join(root, "data", "guides")).map((p) => ({
@@ -54,9 +54,9 @@ export async function getStaticPaths() {
       },
     })),
   };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const guidesRoot = path.join(root, "data", "guides", `${params.slug}`);
   const guides = fs.readdirSync(guidesRoot).map((p) => {
     const content = fs.readFileSync(path.join(guidesRoot, p), "utf8");
@@ -98,7 +98,7 @@ export async function getStaticProps({ params }) {
       slug: params.slug,
     },
   };
-}
+};
 
 export default GuidesSlugPage;
 

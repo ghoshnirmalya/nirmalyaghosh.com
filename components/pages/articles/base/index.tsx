@@ -16,15 +16,12 @@ interface Props {
 const Page: FC<Props> = ({ articles = [], publications = [] }) => {
   const allArticlesAndPublications = [...articles, ...publications];
 
-  const sortedAllArticlesAndPublications: (IArticle &
-    IPublication)[] = allArticlesAndPublications.sort(
-    (a: IArticle & IPublication, b: IArticle & IPublication) => {
-      return (
-        Number(new Date(b.frontMatter.date)) -
-        Number(new Date(a.frontMatter.date))
-      );
-    }
-  );
+  const sortedAllArticlesAndPublications: (IArticle & IPublication)[] =
+    allArticlesAndPublications.sort(
+      (a: IArticle & IPublication, b: IArticle & IPublication) => {
+        return Number(new Date(b.data?.date)) - Number(new Date(a.data?.date));
+      }
+    );
 
   return (
     <Box maxW="2xl" mx="auto" px={4} py={8}>

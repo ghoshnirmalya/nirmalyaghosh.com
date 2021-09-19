@@ -27,8 +27,8 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
   const metaNode = (date: string) => {
     return (
       <HStack spacing={2} isInline alignItems="center">
-        <Text fontsize="sm">Published on</Text>
-        <Text fontsize="sm" fontWeight="bold">
+        <Text fontSize="sm">Published on</Text>
+        <Text fontSize="sm" fontWeight="bold">
           {dayjs(date).format("LL")}
         </Text>
       </HStack>
