@@ -28,24 +28,24 @@ This boilerplate is built using the following technologies:
 ### 1. **Clone the application**
 
 ```sh
-git clone https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate
+git clone git@github.com:ghoshnirmalya/nirmalyaghosh.com.git portfolio
 ```
 
 ### 2. **Install necessary dependencies for the frontend application**
 
 ```sh
-cd frontend && yarn install
+cd portfolio && yarn install
 ```
 
-### 3. **Start the frontend application**
+### 3. **Start the application**
 
-From the frontend directory, we can run the following command to start our Next.js frontend application:
+From the root directory, we can run the following command to start the application:
 
 ```sh
 yarn dev
 ```
 
-The above command will start the frontend application on [http://localhost:3000/](http://localhost:3000).
+The above command will start the application on [http://localhost:3000/](http://localhost:3000).
 
 ## License
 

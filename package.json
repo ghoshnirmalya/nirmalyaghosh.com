@@ -4,7 +4,6 @@
   "description": "Personal portfolio of Nirmalya Ghosh",
   "license": "MIT",
   "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
-  "version": "0.0.5",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
