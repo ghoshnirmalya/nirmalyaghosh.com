@@ -1,9 +1,14 @@
-# [1.5.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.4.1...1.5.0) (2021-03-27)
+## [1.5.1](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.5.0...1.5.1) (2021-09-19)
 
+### Bug Fixes
+
+- updates CSS ([8003af0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/8003af03c9fd72fd186e6a82d54d3aecc0e41193))
+
+# [1.5.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.4.1...1.5.0) (2021-03-27)
 
 ### Features
 
-* updates projects and publications ([b69e46d](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/b69e46db98a7a52da9c7b48cb7135a05703874b2))
+- updates projects and publications ([b69e46d](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/b69e46db98a7a52da9c7b48cb7135a05703874b2))
 
 ## [1.4.1](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.4.0...1.4.1) (2021-01-26)
 
