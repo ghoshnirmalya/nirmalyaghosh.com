@@ -1,12 +1,17 @@
 import Page from "components/pages/guides/[slug]";
 import fs from "fs";
 import matter from "gray-matter";
+import MDXPrism from "mdx-prism";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
-import React from "react";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkCodeTitles from "remark-code-titles";
+import remarkExternalLinks from "remark-external-links";
+import remarkSlug from "remark-slug";
+import remarkTOC from "remark-toc";
 
 const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -76,15 +81,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
-        require("remark-slug"),
-        require("remark-code-titles"),
-        require("remark-toc"),
-        require("remark-external-links"),
+        remarkSlug,
+        remarkCodeTitles,
+        remarkTOC,
+        remarkExternalLinks,
       ],
-      rehypePlugins: [
-        require("rehype-autolink-headings"),
-        require("mdx-prism"),
-      ],
+      rehypePlugins: [rehypeAutolinkHeadings, MDXPrism],
       compilers: [],
     },
     scope: {},

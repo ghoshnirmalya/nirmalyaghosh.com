@@ -1,18 +1,21 @@
 import { serialize } from "next-mdx-remote/serialize";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkCodeTitles from "remark-code-titles";
+import remarkExternalLinks from "remark-external-links";
+import remarkSlug from "remark-slug";
+import remarkTOC from "remark-toc";
+import MDXPrism from "mdx-prism";
 
 const getMdxData = async (content: string) => {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
-        require("remark-slug"),
-        require("remark-code-titles"),
-        require("remark-toc"),
-        require("remark-external-links"),
+        remarkSlug,
+        remarkCodeTitles,
+        remarkTOC,
+        remarkExternalLinks,
       ],
-      rehypePlugins: [
-        require("rehype-autolink-headings"),
-        require("mdx-prism"),
-      ],
+      rehypePlugins: [rehypeAutolinkHeadings, MDXPrism],
       compilers: [],
     },
     scope: {},
