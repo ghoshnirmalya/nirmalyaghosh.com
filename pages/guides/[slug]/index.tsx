@@ -25,8 +25,12 @@ const Link = dynamic(
   import(/* webpackChunkName: "Link" */ "components/mdx/link")
 );
 
+const Image = dynamic(
+  import(/* webpackChunkName: "Image" */ "components/mdx/image")
+);
+
 const root = process.cwd();
-const components = { Callout, Jumbotron, Link };
+const components = { Callout, Jumbotron, Link, Image };
 interface IProps {
   mdxSource: any;
   frontMatter: any;

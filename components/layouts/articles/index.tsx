@@ -101,13 +101,7 @@ const Articles: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading
-        as="h3"
-        size="md"
-        letterSpacing="tight"
-        color="blue.400"
-        fontWeight="bold"
-      >
+      <Heading as="h3" size="md" color="blue.400" fontWeight="bold">
         {title}
       </Heading>
     );

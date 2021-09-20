@@ -36,11 +36,6 @@ const prismBaseTheme = css`
     text-decoration: none;
   }
 
-  .article img {
-    border-radius: ${theme.radii.sm};
-    margin: ${theme.space[6]} 0;
-  }
-
   .article #table-of-contents + ul,
   .article ol {
     list-style-type: decimal;
@@ -228,11 +223,6 @@ const prismBaseTheme = css`
       border-top-right-radius: 0;
       margin-top: 0;
     }
-  }
-
-  .article p > img {
-    padding: ${theme.space[8]};
-    background-image: linear-gradient(to bottom, #2d3848, #1a202c);
   }
 `;
 

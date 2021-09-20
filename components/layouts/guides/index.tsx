@@ -24,7 +24,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     return (
       <Box>
         <Input
-          bg="gray.900"
+          bg="gray.800"
           color="white"
           border="none"
           value={searchQuery}
@@ -57,7 +57,6 @@ const Guides: FC<Props> = ({ guides = [] }) => {
       <Heading
         as="h3"
         size="md"
-        letterSpacing="tight"
         lineHeight="tall"
         color="blue.400"
         fontWeight="bold"

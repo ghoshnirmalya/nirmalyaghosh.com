@@ -9,7 +9,11 @@ const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
 );
 
-const components = { Callout };
+const Image = dynamic(
+  import(/* webpackChunkName: "Image" */ "components/mdx/image")
+);
+
+const components = { Callout, img: Image };
 
 interface IProps {
   mdxSource: any;
