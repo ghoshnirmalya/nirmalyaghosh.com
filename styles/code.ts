@@ -4,7 +4,19 @@ import { theme } from "@chakra-ui/react";
 const prismBaseTheme = css`
   .article > h2 {
     padding: ${theme.space[8]} 0 ${theme.space[2]};
+    font-size: ${theme.fontSizes["3xl"]};
+    font-weight: ${theme.fontWeights.bold};
+  }
+
+  .article > h3 {
+    padding: ${theme.space[6]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
+    font-weight: ${theme.fontWeights.bold};
+  }
+
+  .article > h4 {
+    padding: ${theme.space[4]} 0 ${theme.space[2]};
+    font-size: ${theme.fontSizes["xl"]};
     font-weight: ${theme.fontWeights.bold};
   }
 
@@ -13,6 +25,7 @@ const prismBaseTheme = css`
   .article ol {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
+    font-size: ${theme.fontSizes.lg};
   }
 
   .article a:hover {
@@ -309,5 +322,17 @@ export const prismDarkTheme = css`
 
   .article blockquote {
     background: ${theme.colors.gray[800]};
+  }
+
+  .article > h2,
+  .article > h3,
+  .article > h4 {
+    color: ${theme.colors.gray[200]};
+  }
+
+  .article p,
+  .article ul,
+  .article ol {
+    color: ${theme.colors.gray[300]};
   }
 `;

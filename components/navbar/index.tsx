@@ -43,7 +43,14 @@ const Navbar: FC = () => {
             return (
               <Box key={link.url}>
                 <Link href={link.url} passHref>
-                  <_Link p={4} href={link.url} rounded="md">
+                  <_Link
+                    p={4}
+                    href={link.url}
+                    rounded="md"
+                    _hover={{
+                      textDecoration: "none",
+                    }}
+                  >
                     {link.title}
                   </_Link>
                 </Link>
@@ -77,7 +84,7 @@ const Navbar: FC = () => {
         >
           <Box d="flex" alignItems="center">
             <Link href="/" passHref>
-              <_Link href="/" d="flex" aria-label="Logo">
+              <_Link href="/" d="flex" O>
                 <svg
                   height={32}
                   width={32}

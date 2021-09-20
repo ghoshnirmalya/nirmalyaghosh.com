@@ -1,13 +1,11 @@
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import siteConfig from "config/site";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-import React from "react";
 import IFrontMatter from "types/frontMatter";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
 
 dayjs.extend(localizedFormat);
 
@@ -43,34 +41,6 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
     );
   };
 
-  const coverImageNode = () => {
-    if (!frontMatter.coverImage) {
-      return (
-        <Box h={64} pos="relative">
-          <Image
-            src="/images/common/cover.jpg"
-            alt={frontMatter.title}
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        </Box>
-      );
-    }
-
-    return (
-      <Box h={64} pos="relative">
-        <Image
-          src={frontMatter.coverImage}
-          alt={frontMatter.title}
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-      </Box>
-    );
-  };
-
   return (
     <>
       <NextSeo
@@ -96,16 +66,14 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
         }}
       />
       <Box>
-        {coverImageNode()}
         <Box maxW="2xl" mx="auto" px={4} py={8}>
           <Grid templateColumns="1fr">
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">
-                {metaNode(frontMatter.date)}
-                {titleNode(frontMatter.title)}
-                <Box>
-                  <SocialShare title={frontMatter.title} />
-                </Box>
+                <VStack spacing={2} align="left">
+                  {metaNode(frontMatter.date)}
+                  {titleNode(frontMatter.title)}
+                </VStack>
                 <Box className="article">{content}</Box>
                 <Box>
                   <SocialShare title={frontMatter.title} />

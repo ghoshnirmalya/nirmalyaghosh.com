@@ -40,7 +40,7 @@ const Articles: FC<Props> = ({
     return (
       <Link href="/articles" passHref>
         <_Link p={2} href="/articles" rounded="md">
-          <Box fontWeight="bold">View all articles</Box>
+          <Box color="gray.400">View all articles</Box>
         </_Link>
       </Link>
     );
@@ -92,7 +92,9 @@ const Articles: FC<Props> = ({
   const metaNode = (date: string) => {
     return (
       <Box>
-        <Text fontSize="sm">{dayjs(date).format("LL")}</Text>
+        <Text fontSize="sm" color="gray.400">
+          {dayjs(date).format("LL")}
+        </Text>
       </Box>
     );
   };
@@ -103,7 +105,6 @@ const Articles: FC<Props> = ({
         as="h3"
         size="md"
         letterSpacing="tight"
-        lineHeight="tall"
         color="blue.400"
         fontWeight="bold"
       >
