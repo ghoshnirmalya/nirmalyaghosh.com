@@ -25,7 +25,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     return (
       <Box>
         <Input
-          bg="gray.900"
+          bg="gray.800"
           color="white"
           border="none"
           value={searchQuery}
@@ -70,18 +70,17 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   };
 
   const ctaNode = () => {
-    return <Button fontSize="sm">View project</Button>;
+    return (
+      <Button fontSize="sm" bg="gray.900">
+        View project
+      </Button>
+    );
   };
 
   const projectsNode = () => {
     if (!sortedProjects.length) {
       return (
         <VStack mx="auto" textAlign="center" w="100%">
-          <Image
-            src="/images/common/no-items.svg"
-            alt="No projects found!"
-            boxSize={64}
-          />
           <Text>No projects found!</Text>
         </VStack>
       );
@@ -101,7 +100,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
           return (
             <Box
               key={index}
-              bg="gray.900"
+              bg="gray.800"
               color="white"
               rounded="md"
               shadow="md"

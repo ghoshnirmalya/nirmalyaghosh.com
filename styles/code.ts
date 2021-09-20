@@ -25,7 +25,7 @@ const prismBaseTheme = css`
   .article ol {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
-    font-size: ${theme.fontSizes.lg};
+    font-size: ${theme.fontSizes.xl};
   }
 
   .article a:hover {
@@ -37,7 +37,7 @@ const prismBaseTheme = css`
   }
 
   .article img {
-    border-radius: ${theme.radii.md};
+    border-radius: ${theme.radii.sm};
     margin: ${theme.space[6]} 0;
   }
 
@@ -47,8 +47,14 @@ const prismBaseTheme = css`
     list-style-position: inside;
   }
 
+  .article ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
   .article #table-of-contents + ul > li,
-  .article ol > li {
+  .article ol > li,
+  .article ul > li {
     margin-bottom: ${theme.space[2]};
   }
 
@@ -61,7 +67,7 @@ const prismBaseTheme = css`
   .article blockquote {
     padding: ${theme.space[4]};
     margin: 0;
-    border-radius: ${theme.radii.md};
+    border-radius: ${theme.radii.sm};
   }
 
   .article blockquote > p {
@@ -103,7 +109,7 @@ const prismBaseTheme = css`
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     background: ${theme.colors.gray[50]};
-    border-radius: ${theme.radii.md};
+    border-radius: ${theme.radii.sm};
   }
 
   :not(pre) > code[class*="language-"] {
@@ -210,8 +216,8 @@ const prismBaseTheme = css`
     font-family: ${theme.fonts.mono};
     background: ${theme.colors.gray[200]};
     color: ${theme.colors.gray[800]};
-    border-top-left-radius: ${theme.radii.md};
-    border-top-right-radius: ${theme.radii.md};
+    border-top-left-radius: ${theme.radii.sm};
+    border-top-right-radius: ${theme.radii.sm};
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 0;
@@ -222,6 +228,11 @@ const prismBaseTheme = css`
       border-top-right-radius: 0;
       margin-top: 0;
     }
+  }
+
+  .article p > img {
+    padding: ${theme.space[8]};
+    background-image: linear-gradient(to bottom, #2d3848, #1a202c);
   }
 `;
 
@@ -333,6 +344,11 @@ export const prismDarkTheme = css`
   .article p,
   .article ul,
   .article ol {
+    color: ${theme.colors.gray[300]};
+  }
+
+  .article ol > li::marker,
+  .article ul > li::marker {
     color: ${theme.colors.gray[300]};
   }
 `;

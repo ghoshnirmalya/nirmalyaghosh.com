@@ -67,7 +67,7 @@ const Page: NextPage<IProps> = ({
   return (
     <>
       <NextSeo
-        title={`${frontMatter.title} | ${siteConfig.details.title}`}
+        title={`${frontMatter.title}`}
         description={frontMatter.description}
         openGraph={{
           url: `${siteConfig.details.url}`,

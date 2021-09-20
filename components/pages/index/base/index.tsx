@@ -41,7 +41,16 @@ const Page: FC<Props> = ({
 
   return (
     <>
-      <Box as="section">
+      <Box
+        as="section"
+        h="calc(100vh - 64px)"
+        d="flex"
+        alignItems="center"
+        maxW="2xl"
+        mx="auto"
+        px={4}
+        py={8}
+      >
         <Jumbotron />
       </Box>
       <Box>

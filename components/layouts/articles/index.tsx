@@ -40,7 +40,7 @@ const Articles: FC<Props> = ({
     return (
       <Link href="/articles" passHref>
         <_Link p={2} href="/articles" rounded="md">
-          <Box color="gray.400">View all articles</Box>
+          <Box color="gray.300">View all articles</Box>
         </_Link>
       </Link>
     );
@@ -52,7 +52,7 @@ const Articles: FC<Props> = ({
     return (
       <Box>
         <Input
-          bg="gray.900"
+          bg="gray.800"
           color="white"
           border="none"
           value={searchQuery}
@@ -81,7 +81,7 @@ const Articles: FC<Props> = ({
 
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="xl" color="gray.300">
           Articles
         </Heading>
         {viewAllLinksNode()}
@@ -121,11 +121,6 @@ const Articles: FC<Props> = ({
     if (!sortedArticles.length) {
       return (
         <VStack mx="auto" textAlign="center" w="100%">
-          <Image
-            src="/images/common/no-items.svg"
-            alt="No articles found!"
-            boxSize={64}
-          />
           <Text>No articles found!</Text>
         </VStack>
       );

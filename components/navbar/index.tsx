@@ -50,6 +50,7 @@ const Navbar: FC = () => {
                     _hover={{
                       textDecoration: "none",
                     }}
+                    _focus={{ outline: "none" }}
                   >
                     {link.title}
                   </_Link>
@@ -66,10 +67,6 @@ const Navbar: FC = () => {
     <Box
       as="header"
       zIndex={1}
-      bg="gray.900"
-      color="white"
-      shadow="md"
-      fontWeight="bold"
       px={4}
       borderTopWidth={5}
       borderColor="blue.400"
@@ -84,7 +81,7 @@ const Navbar: FC = () => {
         >
           <Box d="flex" alignItems="center">
             <Link href="/" passHref>
-              <_Link href="/" d="flex" O>
+              <_Link href="/" d="flex" _focus={{ outline: "none" }}>
                 <svg
                   height={32}
                   width={32}

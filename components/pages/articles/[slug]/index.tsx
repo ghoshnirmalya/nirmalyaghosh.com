@@ -44,11 +44,11 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
   return (
     <>
       <NextSeo
-        title={`${frontMatter.title} | ${siteConfig.details.title}`}
+        title={`${frontMatter.title}`}
         description={frontMatter.description}
         openGraph={{
           url: `${siteConfig.details.url}`,
-          title: `${frontMatter.title} | ${siteConfig.details.title}`,
+          title: `${frontMatter.title}`,
           description: frontMatter.description,
           images: [
             {

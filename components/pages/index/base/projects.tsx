@@ -18,7 +18,7 @@ const projects: FC<Props> = ({
     return (
       <Link href="/projects" passHref>
         <_Link p={2} href="/projects" rounded="md">
-          <Box color="gray.400">View all projects</Box>
+          <Box color="gray.300">View all projects</Box>
         </_Link>
       </Link>
     );
@@ -27,7 +27,7 @@ const projects: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="xl" color="gray.300">
           Projects
         </Heading>
         {viewAllLinksNode()}
