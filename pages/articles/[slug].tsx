@@ -2,8 +2,9 @@ import Page from "components/pages/articles/[slug]";
 import { getAllArticles, getCurrentArticle } from "lib/get-articles-data";
 import getMdxData from "lib/get-mdx-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import dynamic from "next/dynamic";
+import frontMatter from "types/frontMatter";
 
 const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -16,15 +17,21 @@ const Image = dynamic(
 const components = { Callout, img: Image };
 
 interface IProps {
-  mdxSource: any;
-  frontMatter: any;
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  frontMatter: frontMatter;
+  source: string;
 }
 
-const ArticlesSlugPage: NextPage<IProps> = ({ mdxSource, frontMatter }) => {
+const ArticlesSlugPage: NextPage<IProps> = ({
+  mdxSource,
+  frontMatter,
+  source,
+}) => {
   return (
     <Page
       content={<MDXRemote {...mdxSource} components={components} />}
       frontMatter={frontMatter}
+      source={source}
     />
   );
 };
@@ -49,6 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       mdxSource: await getMdxData(content),
       frontMatter: data,
+      source: content,
     },
   };
 };

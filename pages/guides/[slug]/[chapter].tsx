@@ -11,7 +11,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkCodeTitles from "remark-code-titles";
 import remarkExternalLinks from "remark-external-links";
 import remarkSlug from "remark-slug";
-import remarkTOC from "remark-toc";
 
 const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -109,12 +108,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [
-        remarkSlug,
-        remarkCodeTitles,
-        remarkTOC,
-        remarkExternalLinks,
-      ],
+      remarkPlugins: [remarkSlug, remarkCodeTitles, remarkExternalLinks],
       rehypePlugins: [rehypeAutolinkHeadings, MDXPrism],
       compilers: [],
     },

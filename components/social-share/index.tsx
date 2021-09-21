@@ -31,8 +31,8 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
 
   return (
     <Box bg="gray.800" color="gray.100" p={4} rounded="sm">
-      <VStack spacing={2} align="left">
-        <Text fontWeight="bold">Share this post</Text>
+      <VStack spacing={4} align="left">
+        <Text>Share</Text>
         <HStack spacing={2}>
           {socialLinks.map((link, index) => {
             return (
