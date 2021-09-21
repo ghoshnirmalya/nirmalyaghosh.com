@@ -7,17 +7,12 @@ const customTheme = extendTheme({
     initialColorMode: "dark",
     useSystemColorMode: false,
   },
-  fonts: {
-    ...theme.fonts,
-  },
 });
 
 const Layout: FC = ({ children }) => {
   return (
     <ChakraProvider theme={customTheme}>
-      <DarkMode>
-        <Container>{children}</Container>
-      </DarkMode>
+      <Container>{children}</Container>
     </ChakraProvider>
   );
 };

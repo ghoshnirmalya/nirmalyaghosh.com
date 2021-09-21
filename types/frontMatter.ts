@@ -8,4 +8,5 @@ export default interface frontMatter {
   githubLink?: string;
   demoLink?: string;
   slug: string;
+  lastmod: string;
 }

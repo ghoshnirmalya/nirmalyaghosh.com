@@ -15,7 +15,13 @@ const Page: FC = () => {
   const headingNode = () => {
     return (
       <HStack spacing={4} alignItems="center">
-        <Box bg="white" color="gray.900" rounded="full" p={1} w={100} h={100}>
+        <Box
+          bgGradient="linear(to-l, #79c2ff, #4a5888)"
+          rounded="full"
+          p={1}
+          w={100}
+          h={100}
+        >
           <Image
             src="/images/common/avatar.png"
             alt="Nirmalya Ghosh"
@@ -71,46 +77,38 @@ const Page: FC = () => {
 
   const socialLinksNode = () => {
     return (
-      <VStack spacing={4} align="left">
-        <VStack spacing={4} align="left">
-          <Heading as="h2" size="lg">
-            Social profiles
-          </Heading>
-          <Text>You can find me in the following social websites:</Text>
-        </VStack>
-        <Box d="flex" alignItems="center">
-          <HStack spacing={4}>
-            <Link
-              py={2}
-              px={4}
-              href="https://github.com/ghoshnirmalya"
-              rounded="md"
-              bg="#333"
-              color="#fff"
-              fontWeight="bold"
-              isExternal
-            >
-              <HStack spacing={2} alignItems="center">
-                <Box as={IoLogoGithub} /> <Text>Github</Text>
-              </HStack>
-            </Link>
-            <Link
-              py={2}
-              px={4}
-              href="https://www.linkedin.com/in/ghoshnirmalya/"
-              rounded="md"
-              bg="#0e76a8"
-              color="#fff"
-              fontWeight="bold"
-              isExternal
-            >
-              <HStack spacing={2} alignItems="center">
-                <Box as={IoLogoLinkedin} /> <Text>LinkedIn</Text>
-              </HStack>
-            </Link>
-          </HStack>
-        </Box>
-      </VStack>
+      <Box d="flex" alignItems="center">
+        <HStack spacing={4}>
+          <Link
+            py={2}
+            px={4}
+            href="https://github.com/ghoshnirmalya"
+            rounded="sm"
+            bg="#333"
+            color="#fff"
+            fontWeight="bold"
+            isExternal
+          >
+            <HStack spacing={2} alignItems="center">
+              <Box as={IoLogoGithub} /> <Text>Github</Text>
+            </HStack>
+          </Link>
+          <Link
+            py={2}
+            px={4}
+            href="https://www.linkedin.com/in/ghoshnirmalya/"
+            rounded="sm"
+            bg="#0e76a8"
+            color="#fff"
+            fontWeight="bold"
+            isExternal
+          >
+            <HStack spacing={2} alignItems="center">
+              <Box as={IoLogoLinkedin} /> <Text>LinkedIn</Text>
+            </HStack>
+          </Link>
+        </HStack>
+      </Box>
     );
   };
 
@@ -118,7 +116,7 @@ const Page: FC = () => {
     <Box maxW="2xl" mx="auto" px={4} py={8}>
       <Grid templateColumns="1fr">
         <Box as="section">
-          <VStack spacing={8} align="left">
+          <VStack spacing={4} align="left">
             {headingNode()}
             {bioDescriptionNode()}
             {socialLinksNode()}

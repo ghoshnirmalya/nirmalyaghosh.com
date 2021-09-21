@@ -17,7 +17,7 @@ const projects: FC<Props> = ({
 
     return (
       <Link href="/projects" passHref>
-        <_Link p={2} href="/projects" rounded="md">
+        <_Link p={2} href="/projects" rounded="sm">
           <Box color="gray.300">View all projects</Box>
         </_Link>
       </Link>

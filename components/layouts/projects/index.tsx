@@ -96,7 +96,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
               key={index}
               bg="gray.800"
               color="white"
-              rounded="md"
+              rounded="sm"
               shadow="md"
             >
               <a href={project.url} target="_blank" rel="noopener noreferrer">

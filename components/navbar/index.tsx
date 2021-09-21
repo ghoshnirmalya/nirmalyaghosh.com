@@ -46,7 +46,8 @@ const Navbar: FC = () => {
                   <_Link
                     p={4}
                     href={link.url}
-                    rounded="md"
+                    rounded="sm"
+                    fontSize="sm"
                     _hover={{
                       textDecoration: "none",
                     }}

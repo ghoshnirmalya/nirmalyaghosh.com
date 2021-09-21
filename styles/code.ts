@@ -25,7 +25,7 @@ const prismBaseTheme = css`
   .article ol {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
-    font-size: ${theme.fontSizes.xl};
+    font-size: ${theme.fontSizes.lg};
   }
 
   .article a:hover {

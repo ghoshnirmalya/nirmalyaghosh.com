@@ -39,7 +39,7 @@ const Articles: FC<Props> = ({
   const viewAllLinksNode = () => {
     return (
       <Link href="/articles" passHref>
-        <_Link p={2} href="/articles" rounded="md">
+        <_Link p={2} href="/articles" rounded="sm">
           <Box color="gray.300">View all articles</Box>
         </_Link>
       </Link>

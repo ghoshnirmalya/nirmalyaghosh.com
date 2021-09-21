@@ -22,7 +22,7 @@ const SocialShare = dynamic(
 );
 
 const Page: NextPage<IProps> = ({ content, frontMatter }) => {
-  const metaNode = (date: string) => {
+  const publishedMetaNode = (date: string) => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">Published on</Text>
@@ -33,9 +33,25 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
     );
   };
 
+  const updatedMetaNode = (date: string) => {
+    return (
+      <HStack spacing={2} isInline alignItems="center">
+        <Text fontSize="sm">This post was updated on</Text>
+        <Text fontSize="sm" fontWeight="bold">
+          {dayjs(date).format("LL")}.
+        </Text>
+      </HStack>
+    );
+  };
+
   const titleNode = (title: string) => {
     return (
-      <Heading as="h1" size="xl">
+      <Heading
+        as="h1"
+        size="xl"
+        bgClip="text"
+        bgGradient="linear(to-l, #79c2ff, #d3ddff)"
+      >
         {title}
       </Heading>
     );
@@ -71,10 +87,11 @@ const Page: NextPage<IProps> = ({ content, frontMatter }) => {
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">
                 <VStack spacing={2} align="left">
-                  {metaNode(frontMatter.date)}
+                  {publishedMetaNode(frontMatter.date)}
                   {titleNode(frontMatter.title)}
                 </VStack>
                 <Box className="article">{content}</Box>
+                {updatedMetaNode(frontMatter.lastmod)}
                 <Box>
                   <SocialShare title={frontMatter.title} />
                 </Box>

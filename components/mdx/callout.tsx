@@ -3,7 +3,7 @@ import React, { FC } from "react";
 
 const Callout: FC = ({ children }) => {
   return (
-    <Box p={4} rounded="md" bg="blue.900" color="white">
+    <Box p={4} rounded="sm" bg="blue.900" color="white">
       <HStack spacing={2}>
         <Box fontSize={48}>💡</Box>
         <Box>{children}</Box>
