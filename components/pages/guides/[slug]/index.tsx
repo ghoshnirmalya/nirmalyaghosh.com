@@ -81,7 +81,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, guides, slug }) => {
           locale: "en_IE",
         }}
       />
-      <Box bg="black" color="gray.100">
+      <Box>
         <Box maxW="6xl" mx="auto" px={4} py={8}>
           <Grid
             templateColumns={["1fr", "1fr", "1fr", "1fr 3fr"]}

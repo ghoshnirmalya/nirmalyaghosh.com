@@ -1,16 +1,11 @@
 import Page from "components/pages/guides/[slug]/[chapter]";
 import fs from "fs";
 import matter from "gray-matter";
-import MDXPrism from "mdx-prism";
+import getMdxData from "lib/get-mdx-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import path from "path";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import remarkCodeTitles from "remark-code-titles";
-import remarkExternalLinks from "remark-external-links";
-import remarkSlug from "remark-slug";
 
 const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -106,19 +101,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "utf8"
   );
   const { data, content } = matter(source);
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [remarkSlug, remarkCodeTitles, remarkExternalLinks],
-      rehypePlugins: [rehypeAutolinkHeadings, MDXPrism],
-      compilers: [],
-    },
-    scope: {},
-  });
 
   return {
     props: {
       guides,
-      mdxSource,
+      mdxSource: await getMdxData(content),
       frontMatter: data,
       slug: params.slug,
       chapter: params.chapter,

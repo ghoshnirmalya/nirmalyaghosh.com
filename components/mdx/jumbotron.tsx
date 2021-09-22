@@ -33,8 +33,8 @@ const Jumbotron: FC<IProps> = ({
         px={4}
         href={githubLink}
         rounded="sm"
-        bg="#333"
-        color="#fff"
+        bg="gray.600"
+        color="white"
         fontWeight="bold"
         isExternal
         textDecoration="none"
@@ -58,8 +58,8 @@ const Jumbotron: FC<IProps> = ({
         px={4}
         href={demoLink}
         rounded="sm"
-        bg="#754abb"
-        color="#fff"
+        bg="blue.600"
+        color="white"
         fontWeight="bold"
         isExternal
       >
@@ -80,7 +80,14 @@ const Jumbotron: FC<IProps> = ({
       p={[4, 12, 16]}
     >
       <Box>
-        <Heading as="h1" fontFamily="body" bgColor="blue.400" bgClip="text">
+        <Heading
+          as="h1"
+          fontFamily="body"
+          bgColor="blue.400"
+          bgClip="text"
+          size="2xl"
+          bgGradient="linear(to-l, #79c2ff, #4a5888)"
+        >
           {heading}
         </Heading>
       </Box>

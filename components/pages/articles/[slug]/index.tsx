@@ -134,7 +134,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
         }}
       />
       <Box>
-        <Box maxW={["2xl", "2xl", "2xl", "6xl"]} mx="auto" py={8}>
+        <Box maxW={["2xl", "2xl", "2xl", "6xl"]} mx="auto" py={8} px={4}>
           <Grid
             templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}
             gridGap={[0, 0, 0, 24]}
