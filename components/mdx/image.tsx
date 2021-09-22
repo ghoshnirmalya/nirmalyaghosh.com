@@ -8,12 +8,7 @@ interface IProps {
 
 const Image: FC<IProps> = ({ src, alt }) => {
   return (
-    <VStack
-      bgGradient="linear(to-b, #2d3848, #1a202c)"
-      borderRadius="sm"
-      mx={0}
-      spacing={0}
-    >
+    <VStack bg="gray.800" borderRadius="sm" mx={0} spacing={0}>
       <Box>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={alt} loading="lazy" />
