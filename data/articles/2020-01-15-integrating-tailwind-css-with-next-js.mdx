@@ -8,7 +8,7 @@ tags:
   - tailwind
 description: Learn how to use TailwindCSS with Next.js to build maintainable front-end applications.
 slug: integrate-tailwindcss-js
-lastmod: "2021-09-19T05:10:24.856Z"
+lastmod: "2021-09-22T08:26:38.040Z"
 ---
 
 In this tutorial, we'll learn how to integrate [TailwindCSS](https://tailwindcss.com/) with [Next.js](https://nextjs.org/).
@@ -35,7 +35,7 @@ npx create-next-app
 
 If everything works fine, you should get an output like the following:
 
-![Bootstrapping a Next.js application](/images/content/integrating-tailwindcss-with-next-js/1.png)
+![Fig 1: Bootstrapping a Next.js application](/images/content/integrating-tailwindcss-with-next-js/1.png)
 
 Once the installation is complete, we'll get a new `frontend` directory as that's the name we gave while creating the application. Let's go inside the `frontend` and start the server:
 
@@ -45,7 +45,7 @@ cd frontend && yarn dev
 
 Now,if we visit [http://localhost:3000](http://localhost:3000/), we'll see the following page:
 
-![Sample Next.js application](/images/content/integrating-tailwindcss-with-next-js/2.png)
+![Fig 2: Sample Next.js application](/images/content/integrating-tailwindcss-with-next-js/2.png)
 
 ## Installing TailwindCSS
 
@@ -78,13 +78,13 @@ Next, we need to add the `build:style` script to our `package.json` file:
   "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "build:style": "tailwind build public/assets/styles/vendors.css -o public/assets/styles/tailwind.css"
+  "build:style": "tailwind build public/assets/styles/vendors.css -o public/assets/styles/tailwind.css" // highlight-line
 },
 ```
 
 Now, the `build:style` command will generate a new `public/assets/styles/tailwind.css` file whenever we run it:
 
-![Generating new tailwind.css file](/images/content/integrating-tailwindcss-with-next-js/3.png)
+![Fig 3: Generating new tailwind.css file](/images/content/integrating-tailwindcss-with-next-js/3.png)
 
 Next, we need to add the generated file to our `pages/index.js` file:
 
@@ -92,12 +92,12 @@ Next, we need to add the generated file to our `pages/index.js` file:
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
-import "../public/assets/styles/tailwind.css";
+import "../public/assets/styles/tailwind.css"; // highlight-line
 ```
 
 However, if we visit [http://localhost:3000](http://localhost:3000/), we'll get the following error:
 
-![Error while compiling css files on Next.js](/images/content/integrating-tailwindcss-with-next-js/4.png)
+![Fig 4: Error while compiling css files on Next.js](/images/content/integrating-tailwindcss-with-next-js/4.png)
 
 This happens because Next.js doesn't know how to process this file as there is no [Webpack loader](https://webpack.js.org/concepts#loaders) installed in our application which can help in processing the `.css` file. To resolve this issue, we'll have to install the [next-css](https://github.com/zeit/next-plugins/tree/master/packages/next-css) plugin:
 
@@ -123,7 +123,7 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Nav />
-    <div className="hero bg-blue-100 py-8">
+    <div className="hero bg-blue-100 py-8"> // highlight-line
       <h1 className="title">Welcome to Next.js!</h1>
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
@@ -132,7 +132,7 @@ const Home = () => (
 
 Now, if we restart our server and visit [http://localhost:3000](http://localhost:3000/), we'll see that TailwindCSS is working as expected:
 
-![Integrating TailwindCSS with Next.js](/images/content/integrating-tailwindcss-with-next-js/5.png)
+![Fig 5: Integrating TailwindCSS with Next.js](/images/content/integrating-tailwindcss-with-next-js/5.png)
 
 If you want to know more about configuring Tailwind, you can read it [here](https://www.nirmalyaghosh.com/what-is-tailwind-css).
 

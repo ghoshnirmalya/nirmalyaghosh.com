@@ -71,35 +71,53 @@ const prismBaseTheme = css`
 
   pre {
     font-size: ${theme.fontSizes["sm"]};
-    padding-top: ${theme.space[4]};
-    padding-bottom: ${theme.space[4]};
-    padding-left: ${theme.space[4]};
-    padding-right: ${theme.space[4]};
+    // padding-left: ${theme.space[4]};
+    // padding-right: ${theme.space[4]};
     margin: ${theme.space[6]} 0;
     overflow: auto;
     min-width: 100%;
   }
 
-  inlinecode,
   pre {
     border-radius: ${theme.radii.sm};
   }
 
-  inlinecode {
+  :not(pre) > code {
+    border-radius: ${theme.radii.sm};
+  }
+
+  :not(pre) > code {
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
-    font-size: ${theme.fontSizes["md"]};
+    font-size: ${theme.fontSizes["sm"]};
   }
 
-  inlinecode:before,
-  inlinecode:after {
+  :not(pre) > code:before,
+  :not(pre) > code:after {
     content: "\`";
   }
 
-  .shiki .line {
-    padding: ${theme.space[1]} 0;
+  .grvsc-source > span {
+    padding: ${theme.space[2]} 0;
     display: inline-block;
+  }
+
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    height: 100%;
+  }
+
+  code.grvsc-code {
+    display: grid;
+  }
+
+  pre.grvsc-container {
+    border-radius: ${theme.radii.sm};
+  }
+
+  .grvsc-container.default-dark,
+  .grvsc-container.tomorrow-night-blue {
+    background: #1a202c;
   }
 
   .remark-code-title {
@@ -140,7 +158,7 @@ export const prismDarkTheme = css`
     color: ${theme.colors.blue[300]};
   }
 
-  inlinecode {
+  :not(pre) > code {
     color: ${theme.colors.purple[300]};
   }
 

@@ -3,12 +3,10 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkCodeTitles from "remark-code-titles";
 import remarkExternalLinks from "remark-external-links";
 import remarkSlug from "remark-slug";
-import shiki from "shiki";
-import remarkShiki from "@stefanprobst/remark-shiki";
-import rehypeRaw from "rehype-raw";
+import remarkVscode from "gatsby-remark-vscode";
 
 const getMdxData = async (content: string) => {
-  const highlighter = await shiki.getHighlighter({ theme: "github-dark" });
+  // const highlighter = await shiki.getHighlighter({ theme: "github-dark" });
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -16,9 +14,14 @@ const getMdxData = async (content: string) => {
         remarkSlug,
         remarkCodeTitles,
         remarkExternalLinks,
-        [remarkShiki, { highlighter }],
+        [
+          remarkVscode.remarkPlugin,
+          {
+            theme: "Tomorrow Night Blue",
+          },
+        ],
       ],
-      rehypePlugins: [rehypeAutolinkHeadings, rehypeRaw],
+      rehypePlugins: [rehypeAutolinkHeadings],
       compilers: [],
     },
     scope: {},

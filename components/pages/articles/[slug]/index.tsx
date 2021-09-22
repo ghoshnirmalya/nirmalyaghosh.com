@@ -51,7 +51,8 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
     return (
       <Heading
         as="h1"
-        size="xl"
+        size="2xl"
+        lineHeight="tall"
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >
@@ -133,10 +134,10 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
         }}
       />
       <Box>
-        <Box maxW={["2xl", "2xl", "2xl", "6xl"]} mx="auto" px={4} py={8}>
+        <Box maxW={["2xl", "2xl", "2xl", "6xl"]} mx="auto" py={8}>
           <Grid
             templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}
-            gridGap={[0, 0, 0, 8]}
+            gridGap={[0, 0, 0, 24]}
           >
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">
