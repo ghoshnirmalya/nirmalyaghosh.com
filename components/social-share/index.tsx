@@ -46,6 +46,9 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
                 color="#fff"
                 fontWeight="bold"
                 isExternal
+                w="33.33%"
+                display="flex"
+                justifyContent="center"
               >
                 <HStack spacing={2} alignItems="center">
                   <Box as={link.icon} /> <Text fontSize="sm">{link.label}</Text>
