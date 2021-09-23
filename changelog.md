@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.5.1...1.6.0) (2021-09-23)
+
+### Features
+
+- Add TOC ([6cb2f43](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/6cb2f43a277d3b631a234d83f8d504735cba7d01))
+- Adds Image component for MDX ([ccfc435](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/ccfc435f298827653477c28d7f12a6fb89d99647))
+
 ## [1.5.1](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.5.0...1.5.1) (2021-09-19)
 
 ### Bug Fixes
