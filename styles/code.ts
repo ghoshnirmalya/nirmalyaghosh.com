@@ -22,7 +22,8 @@ const prismBaseTheme = css`
 
   .article p,
   .article ul,
-  .article ol {
+  .article ol,
+  .article a {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
     font-size: ${theme.fontSizes.lg};

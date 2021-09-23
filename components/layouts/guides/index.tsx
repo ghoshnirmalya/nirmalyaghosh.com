@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Input, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Input, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
 import IGuide from "types/guide";
@@ -74,11 +74,6 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     if (!sortedGuides.length) {
       return (
         <VStack mx="auto" textAlign="center">
-          <Image
-            src="/images/common/no-items.svg"
-            alt="No guides found!"
-            size={64}
-          />
           <Text>No guides found!</Text>
         </VStack>
       );
