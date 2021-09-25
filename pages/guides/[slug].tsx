@@ -1,11 +1,9 @@
 import Page from "components/pages/guides/[slug]";
-import fs from "fs";
-import matter from "gray-matter";
+import { getAllGuides, getCurrentGuide } from "lib/get-guides.data";
 import getMdxData from "lib/get-mdx-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import path from "path";
 
 const Callout = dynamic(
   import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -23,27 +21,24 @@ const Image = dynamic(
   import(/* webpackChunkName: "Image" */ "components/mdx/image")
 );
 
-const root = process.cwd();
 const components = { Callout, Jumbotron, Link, Image };
+
 interface IProps {
   mdxSource: any;
   frontMatter: any;
-  guides: any;
-  slug: string;
+  source: string;
 }
 
 const GuidesSlugPage: NextPage<IProps> = ({
-  guides,
   mdxSource,
   frontMatter,
-  slug,
+  source,
 }) => {
   return (
     <Page
       content={<MDXRemote {...mdxSource} components={components} />}
       frontMatter={frontMatter}
-      guides={guides}
-      slug={slug}
+      source={source}
     />
   );
 };
@@ -51,38 +46,24 @@ const GuidesSlugPage: NextPage<IProps> = ({
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     fallback: false,
-    paths: fs.readdirSync(path.join(root, "data", "guides")).map((p) => ({
-      params: {
-        slug: p.replace(/\.mdx/, ""),
-      },
-    })),
+    paths: getAllGuides().map((guide) => {
+      return {
+        params: {
+          slug: guide.data.slug,
+        },
+      };
+    }),
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const guidesRoot = path.join(root, "data", "guides", `${params.slug}`);
-  const guides = fs.readdirSync(guidesRoot).map((p) => {
-    const content = fs.readFileSync(path.join(guidesRoot, p), "utf8");
-
-    return {
-      slug: p.replace(/\.mdx/, ""),
-      content,
-      frontMatter: matter(content).data,
-    };
-  });
-
-  const source = fs.readFileSync(
-    path.join(root, "data", "guides", `${params.slug}`, "01-index.mdx"),
-    "utf8"
-  );
-  const { data, content } = matter(source);
+  const { data, content } = getCurrentGuide(params.slug as string);
 
   return {
     props: {
-      guides,
       mdxSource: await getMdxData(content),
       frontMatter: data,
-      slug: params.slug,
+      source: content,
     },
   };
 };

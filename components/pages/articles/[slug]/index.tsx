@@ -2,12 +2,11 @@ import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import GithubSlugger from "github-slugger";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import IFrontMatter from "types/frontMatter";
-import GithubSlugger from "github-slugger";
-import { useEffect, useState } from "react";
 
 dayjs.extend(localizedFormat);
 
@@ -52,7 +51,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
       <Heading
         as="h1"
         size="2xl"
-        lineHeight="tall"
+        lineHeight="base"
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >

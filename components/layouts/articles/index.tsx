@@ -1,7 +1,6 @@
 import {
   Box,
   Heading,
-  Image,
   Input,
   Link as _Link,
   Text,

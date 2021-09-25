@@ -73,24 +73,12 @@ const Jumbotron: FC<IProps> = ({
 
   return (
     <VStack
-      spacing={2}
+      spacing={0}
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      p={[4, 12, 16]}
+      pb={12}
     >
-      <Box>
-        <Heading
-          as="h1"
-          fontFamily="body"
-          bgColor="blue.400"
-          bgClip="text"
-          size="2xl"
-          bgGradient="linear(to-l, #79c2ff, #4a5888)"
-        >
-          {heading}
-        </Heading>
-      </Box>
       <Box>
         <Text>{description}</Text>
       </Box>

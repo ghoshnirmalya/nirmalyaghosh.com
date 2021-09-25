@@ -1,7 +1,11 @@
 import { Box, Heading, Input, Text, VStack } from "@chakra-ui/react";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
 import IGuide from "types/guide";
+
+dayjs.extend(localizedFormat);
 
 interface Props {
   guides: IGuide[];
@@ -13,11 +17,10 @@ const Guides: FC<Props> = ({ guides = [] }) => {
   const sortedGuides = guides
     .sort(
       (a: IGuide, b: IGuide) =>
-        Number(new Date(b.frontMatter.date)) -
-        Number(new Date(a.frontMatter.date))
+        Number(new Date(b.data?.date)) - Number(new Date(a.data?.date))
     )
     .filter((guide: IGuide) =>
-      guide.frontMatter.title.toLowerCase().includes(searchQuery.toLowerCase())
+      guide.data?.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   const searchNode = () => {
@@ -81,13 +84,13 @@ const Guides: FC<Props> = ({ guides = [] }) => {
 
     return sortedGuides.map((guide: IGuide) => {
       return (
-        <Box key={guide.slug}>
-          <Link href={`/guides/${guide.slug}`}>
+        <Box key={guide.data.slug}>
+          <Link href={`/guides/${guide.data.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {titleNode(guide.frontMatter.title)}
-                  {descriptionNode(guide.frontMatter.description)}
+                  {titleNode(guide.data.title)}
+                  {descriptionNode(guide.data.description)}
                 </VStack>
               </Box>
             </a>

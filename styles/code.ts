@@ -23,7 +23,7 @@ const prismBaseTheme = css`
   .article p,
   .article ul,
   .article ol,
-  .article a {
+  .article a:not(.chakra-link) {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
     font-size: ${theme.fontSizes.lg};
@@ -52,6 +52,11 @@ const prismBaseTheme = css`
   .article ol > li,
   .article ul > li {
     margin-bottom: ${theme.space[2]};
+  }
+
+  .article ol > li > p,
+  .article ul > li > p {
+    display: inline;
   }
 
   .article .icon.icon-link::before {
