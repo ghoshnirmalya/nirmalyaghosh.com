@@ -93,6 +93,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
                 <a href={`#${heading.href}`} key={index}>
                   <Text
                     color="gray.400"
+                    fontSize="sm"
                     _hover={{
                       color: "blue.400",
                     }}

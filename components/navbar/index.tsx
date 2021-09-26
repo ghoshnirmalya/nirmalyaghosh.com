@@ -82,7 +82,12 @@ const Navbar: FC = () => {
         >
           <Box d="flex" alignItems="center">
             <Link href="/" passHref>
-              <_Link href="/" d="flex" _focus={{ outline: "none" }}>
+              <_Link
+                href="/"
+                d="flex"
+                _focus={{ outline: "none" }}
+                aria-label="Logo"
+              >
                 <svg
                   height={32}
                   width={32}

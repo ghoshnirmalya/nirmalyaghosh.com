@@ -17,6 +17,8 @@ const SocialLinks: FC = () => {
               <_Link
                 href="https://github.com/ghoshnirmalya/nirmalyaghosh.com"
                 p={4}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 Source code on Github
               </_Link>
