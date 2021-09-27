@@ -59,8 +59,17 @@ const prismBaseTheme = css`
     display: inline;
   }
 
-  .article .icon.icon-link::before {
+  .article .icon.icon-link {
     content: "#";
+    margin-right: ${theme.space[2]};
+  }
+
+  .article a[aria-hidden="true"]:hover {
+    text-decoration: none;
+  }
+
+  .article .icon.icon-link::before {
+    content: "🔗";
     margin-right: ${theme.space[2]};
     display: inline-flex;
   }
@@ -77,8 +86,6 @@ const prismBaseTheme = css`
 
   pre {
     font-size: ${theme.fontSizes["sm"]};
-    // padding-left: ${theme.space[4]};
-    // padding-right: ${theme.space[4]};
     margin: ${theme.space[6]} 0;
     overflow: auto;
     min-width: 100%;
