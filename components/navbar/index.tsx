@@ -1,15 +1,7 @@
-import {
-  Box,
-  Button,
-  HStack,
-  Link as _Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-} from "@chakra-ui/react";
+import { Box, HStack, Link as _Link } from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
+
 interface NavLink {
   url: string;
   title: string;
@@ -44,12 +36,14 @@ const Navbar: FC = () => {
               <Box key={link.url}>
                 <Link href={link.url} passHref>
                   <_Link
-                    p={4}
+                    px={4}
+                    py={2}
                     href={link.url}
                     rounded="sm"
                     fontSize="sm"
                     _hover={{
                       textDecoration: "none",
+                      bgColor: "gray.800",
                     }}
                     _focus={{ outline: "none" }}
                   >
@@ -65,14 +59,8 @@ const Navbar: FC = () => {
   };
 
   return (
-    <Box
-      as="header"
-      zIndex={1}
-      px={4}
-      borderTopWidth={5}
-      borderColor="blue.400"
-    >
-      <Box maxW="6xl" mx="auto">
+    <Box as="header" zIndex={1} borderTopWidth={5} borderColor="blue.400">
+      <Box maxW="6xl" mx="auto" px={4}>
         <HStack
           justifyContent="space-between"
           alignItems="center"
