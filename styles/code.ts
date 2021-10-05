@@ -2,24 +2,29 @@ import { css } from "@emotion/react";
 import { theme } from "@chakra-ui/react";
 
 const prismBaseTheme = css`
+  // Headings
+  .article > h2,
+  .article > h3,
+  .article > h4 {
+    font-weight: ${theme.fontWeights.bold};
+  }
+
   .article > h2 {
     padding: ${theme.space[8]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["3xl"]};
-    font-weight: ${theme.fontWeights.bold};
   }
 
   .article > h3 {
     padding: ${theme.space[6]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
-    font-weight: ${theme.fontWeights.bold};
   }
 
   .article > h4 {
     padding: ${theme.space[4]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["xl"]};
-    font-weight: ${theme.fontWeights.bold};
   }
 
+  // Paragraphs
   .article p,
   .article ul,
   .article ol,
@@ -29,6 +34,7 @@ const prismBaseTheme = css`
     font-size: ${theme.fontSizes.lg};
   }
 
+  // Links
   .article a:hover {
     text-decoration: underline;
   }
@@ -37,18 +43,29 @@ const prismBaseTheme = css`
     text-decoration: none;
   }
 
-  .article #table-of-contents + ul,
-  .article ol {
-    list-style-type: decimal;
-    list-style-position: inside;
+  .article a[aria-hidden="true"]:hover {
+    text-decoration: none;
   }
 
-  .article ul {
-    list-style-type: disc;
-    list-style-position: inside;
+  .article .icon.icon-link {
+    content: "#";
+    margin-right: ${theme.space[2]};
   }
 
-  .article #table-of-contents + ul > li,
+  .article .icon.icon-link::before {
+    content: "🔗";
+    margin-right: ${theme.space[2]};
+    display: inline-flex;
+  }
+
+  // Lists
+  .article li {
+    padding-left: ${theme.space[8]};
+    list-style: none;
+    counter-increment: custom-reset;
+    position: relative;
+  }
+
   .article ol > li,
   .article ul > li {
     margin-bottom: ${theme.space[2]};
@@ -59,21 +76,22 @@ const prismBaseTheme = css`
     display: inline;
   }
 
-  .article .icon.icon-link {
-    content: "#";
-    margin-right: ${theme.space[2]};
+  .article ol > li::before,
+  .article ul > li::before {
+    color: ${theme.colors.purple[300]};
+    left: 0;
+    position: absolute;
   }
 
-  .article a[aria-hidden="true"]:hover {
-    text-decoration: none;
+  .article ol > li::before {
+    content: counter(custom-reset) ". ";
   }
 
-  .article .icon.icon-link::before {
-    content: "🔗";
-    margin-right: ${theme.space[2]};
-    display: inline-flex;
+  .article ul > li::before {
+    content: "\\2022";
   }
 
+  // Typography
   .article blockquote {
     padding: ${theme.space[4]};
     margin: 0;
@@ -84,6 +102,7 @@ const prismBaseTheme = css`
     margin: 0;
   }
 
+  // Code
   pre {
     font-size: ${theme.fontSizes["sm"]};
     margin: ${theme.space[6]} 0;
@@ -157,6 +176,26 @@ const prismBaseTheme = css`
 export const prismDarkTheme = css`
   ${prismBaseTheme};
 
+  // Headings
+  .article > h2,
+  .article > h3,
+  .article > h4 {
+    color: ${theme.colors.gray[200]};
+  }
+
+  // Paragraphs
+  .article p,
+  .article ul,
+  .article ol {
+    color: ${theme.colors.gray[300]};
+  }
+
+  // Links
+  .article a:not(.chakra-link) {
+    color: ${theme.colors.blue[300]};
+  }
+
+  // Code
   code,
   pre {
     color: ${theme.colors.gray[50]};
@@ -167,32 +206,11 @@ export const prismDarkTheme = css`
     color: ${theme.colors.gray[100]};
   }
 
-  .article a:not(.chakra-link) {
-    color: ${theme.colors.blue[300]};
-  }
-
   :not(pre) > code {
     color: ${theme.colors.purple[300]};
   }
 
   .article blockquote {
     background: ${theme.colors.gray[800]};
-  }
-
-  .article > h2,
-  .article > h3,
-  .article > h4 {
-    color: ${theme.colors.gray[200]};
-  }
-
-  .article p,
-  .article ul,
-  .article ol {
-    color: ${theme.colors.gray[300]};
-  }
-
-  .article ol > li::marker,
-  .article ul > li::marker {
-    color: ${theme.colors.gray[300]};
   }
 `;
