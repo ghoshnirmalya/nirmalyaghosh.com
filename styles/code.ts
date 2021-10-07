@@ -187,7 +187,7 @@ export const prismDarkTheme = css`
   .article p,
   .article ul,
   .article ol {
-    color: ${theme.colors.gray[300]};
+    color: ${theme.colors.gray[400]};
   }
 
   // Links

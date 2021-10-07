@@ -30,35 +30,45 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
   ];
 
   return (
-    <Box bg="gray.800" color="gray.100" p={4} rounded="sm">
-      <VStack spacing={4} align="left">
-        <Text>Share</Text>
-        <HStack spacing={2}>
-          {socialLinks.map((link, index) => {
-            return (
-              <Link
-                key={index}
-                py={2}
-                px={4}
-                href={link.href}
-                rounded="sm"
-                bg={link.bg}
-                color="#fff"
-                fontWeight="bold"
-                isExternal
-                w="33.33%"
-                display="flex"
-                justifyContent="center"
-              >
-                <HStack spacing={2} alignItems="center">
-                  <Box as={link.icon} /> <Text fontSize="sm">{link.label}</Text>
-                </HStack>
-              </Link>
-            );
-          })}
-        </HStack>
-      </VStack>
-    </Box>
+    <HStack
+      spacing={4}
+      align="left"
+      justifyContent="space-between"
+      bg="gray.800"
+      color="gray.100"
+      p={4}
+      rounded="sm"
+      alignItems="center"
+    >
+      <Text fontWeight="bold">Share</Text>
+      <HStack spacing={2}>
+        {socialLinks.map((link, index) => {
+          return (
+            <Link
+              key={index}
+              py={2}
+              px={4}
+              href={link.href}
+              rounded="sm"
+              bg={link.bg}
+              color="#fff"
+              fontWeight="bold"
+              isExternal
+              w="33.33%"
+              display="flex"
+              justifyContent="center"
+              _hover={{
+                textDecoration: "none",
+              }}
+            >
+              <HStack spacing={2} alignItems="center">
+                <Box as={link.icon} /> <Text fontSize="sm">{link.label}</Text>
+              </HStack>
+            </Link>
+          );
+        })}
+      </HStack>
+    </HStack>
   );
 };
 
