@@ -1,13 +1,3 @@
 {
-  "cSpell.words": [
-    "graphcms",
-    "nextjs"
-  ],
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "articles",
-      "path": "[[workspace]]/data/articles"
-    }
-  ],
-  "frontMatter.content.autoUpdateDate": true
+  "cSpell.words": ["graphcms", "nextjs"]
 }
