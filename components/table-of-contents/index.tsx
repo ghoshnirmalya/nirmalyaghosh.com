@@ -1,6 +1,6 @@
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import GithubSlugger from "github-slugger";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC } from "react";
 
 interface IProps {
   source: string;
@@ -23,36 +23,6 @@ const TableOfContents: FC<IProps> = ({ source }) => {
     };
   });
 
-  useEffect(() => {
-    const target = document.querySelectorAll("h2[id], h3[id]");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute("id");
-
-        if (entry.intersectionRatio > 0) {
-          document
-            .querySelector(`.toc a[href="#${id}"]`)
-            .classList.add("active");
-        } else {
-          document
-            .querySelector(`.toc a[href="#${id}"]`)
-            .classList.remove("active");
-        }
-      });
-    });
-
-    target.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return function cleanup() {
-      target.forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
-  }, []);
-
   return (
     <Box
       pos="sticky"
@@ -63,7 +33,7 @@ const TableOfContents: FC<IProps> = ({ source }) => {
     >
       <VStack alignItems="left">
         <Heading size="sm">Table of contents</Heading>
-        <VStack spacing={2} alignItems="left" className="toc">
+        <VStack spacing={2} alignItems="left">
           {headings.map((heading, index) => {
             return (
               <Box as="a" href={`#${heading.href}`} key={index}>
