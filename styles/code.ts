@@ -131,7 +131,7 @@ const prismBaseTheme = css`
   }
 
   .grvsc-source > span {
-    padding: ${theme.space[2]} 0;
+    padding: ${theme.space[1]} 0;
     display: inline-block;
   }
 
