@@ -120,11 +120,9 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
           description: frontMatter.description,
           images: [
             {
-              url: frontMatter.coverImage
-                ? frontMatter.coverImage
-                : `${siteConfig.details.url}${siteConfig.assets.avatar}`,
-              width: 800,
-              height: 600,
+              url: `https://cover-images.vercel.app/api?postTitle=${frontMatter.title}&postDescription=${frontMatter.description}&backgroundColor=1a202c&foregroundColor=fff&authorAvatar=${siteConfig.details.url}${siteConfig.assets.favicon}&authorName=${siteConfig.details.title}`,
+              width: 1200,
+              height: 675,
               alt: frontMatter.title,
             },
           ],
