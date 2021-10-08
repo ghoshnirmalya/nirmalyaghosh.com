@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["graphcms", "nextjs"]
+  "cSpell.words": ["graphcms", "nextjs"],
+  "frontMatter.content.autoUpdateDate": false
 }
