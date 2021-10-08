@@ -1,8 +1,8 @@
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import GithubSlugger from "github-slugger";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
@@ -60,55 +60,6 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
     );
   };
 
-  const tocNode = () => {
-    const headingLines = source
-      .split("\n")
-      .filter((line) => line.match(/^###*\s/));
-
-    const headings = headingLines.map((raw) => {
-      const text = raw.replace(/^###*\s/, "");
-      const level = raw.slice(0, 3) === "###" ? 3 : 2;
-      const slugger = new GithubSlugger();
-
-      return {
-        text,
-        level,
-        href: slugger.slug(text),
-      };
-    });
-
-    return (
-      <Box
-        pos="sticky"
-        top={8}
-        h="100vh"
-        overflow="scroll"
-        display={["none", "none", "none", "block"]}
-      >
-        <VStack alignItems="left">
-          <Heading size="sm">Table of contents</Heading>
-          <VStack spacing={2} alignItems="left">
-            {headings.map((heading, index) => {
-              return (
-                <a href={`#${heading.href}`} key={index}>
-                  <Text
-                    color="gray.400"
-                    fontSize="sm"
-                    _hover={{
-                      color: "blue.400",
-                    }}
-                  >
-                    {heading.text}
-                  </Text>
-                </a>
-              );
-            })}
-          </VStack>
-        </VStack>
-      </Box>
-    );
-  };
-
   return (
     <>
       <NextSeo
@@ -150,7 +101,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
                 </Box>
               </VStack>
             </Box>
-            {tocNode()}
+            <TableOfContents source={source} />
           </Grid>
         </Box>
       </Box>

@@ -19,4 +19,8 @@ export const customStyles = css`
       }
     }
   }
+
+  .toc a.active {
+    font-weight: bold;
+  }
 `;
