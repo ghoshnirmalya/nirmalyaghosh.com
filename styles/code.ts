@@ -175,11 +175,17 @@ const prismBaseTheme = css`
   table {
     width: 100%;
     margin-bottom: 1rem;
+    font-size: ${theme.fontSizes.md};
+  }
+
+  .article table a:not(.chakra-link) {
+    font-size: ${theme.fontSizes.md};
   }
 
   thead td,
   thead th {
     border-bottom-width: 2px;
+    font-size: ${theme.fontSizes.sm};
   }
 
   thead th {
