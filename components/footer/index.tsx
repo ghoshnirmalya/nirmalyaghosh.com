@@ -19,6 +19,8 @@ const SocialLinks: FC = () => {
                 p={4}
                 rel="noopener noreferrer"
                 target="_blank"
+                d="flex"
+                justifyContent="center"
               >
                 Source code on Github
               </_Link>
@@ -49,7 +51,7 @@ const SocialLinks: FC = () => {
                 </_Link>
               </Link>
             </Box>
-            <Box p={4}>
+            <Box p={4} textAlign="center">
               <Text>
                 Copyright &copy; {new Date().getFullYear()} Nirmalya Ghosh
               </Text>
