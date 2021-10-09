@@ -35,10 +35,6 @@ const prismBaseTheme = css`
   }
 
   // Links
-  .article a:hover {
-    text-decoration: underline;
-  }
-
   .article a.chakra-link {
     text-decoration: none;
   }
@@ -108,10 +104,18 @@ const prismBaseTheme = css`
     margin: ${theme.space[6]} 0;
     overflow: auto;
     min-width: 100%;
+    border-radius: ${theme.radii.sm};
   }
 
-  pre {
-    border-radius: ${theme.radii.sm};
+  .article > h2 code {
+    font-size: ${theme.fontSizes["2xl"]};
+  }
+
+  .article > h3 code {
+    font-size: ${theme.fontSizes["xl"]};
+  }
+  .article > h4 code {
+    font-size: ${theme.fontSizes["lg"]};
   }
 
   :not(pre) > code {
@@ -147,11 +151,6 @@ const prismBaseTheme = css`
     border-radius: ${theme.radii.sm};
   }
 
-  .grvsc-container.default-dark,
-  .grvsc-container.tomorrow-night-blue {
-    background: #1a202c;
-  }
-
   .remark-code-title {
     margin: ${theme.space[6]} 0;
     padding: ${theme.space[2]} ${theme.space[4]};
@@ -170,6 +169,27 @@ const prismBaseTheme = css`
       border-top-right-radius: 0;
       margin-top: 0;
     }
+  }
+
+  // Table
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  thead td,
+  thead th {
+    border-bottom-width: 2px;
+  }
+
+  thead th {
+    vertical-align: bottom;
+  }
+
+  td,
+  th {
+    padding: 0.75rem;
+    vertical-align: top;
   }
 `;
 
@@ -190,9 +210,17 @@ export const prismDarkTheme = css`
     color: ${theme.colors.gray[400]};
   }
 
+  .article strong {
+    color: ${theme.colors.gray[300]};
+  }
+
   // Links
   .article a:not(.chakra-link) {
     color: ${theme.colors.blue[300]};
+  }
+
+  .article a:hover {
+    color: ${theme.colors.blue[400]};
   }
 
   // Code
@@ -212,5 +240,26 @@ export const prismDarkTheme = css`
 
   .article blockquote {
     background: ${theme.colors.gray[800]};
+  }
+
+  .grvsc-container.default-dark,
+  .grvsc-container.tomorrow-night-blue {
+    background: ${theme.colors.gray[800]};
+  }
+
+  // Table
+  table {
+    border-radius: ${theme.radii.sm};
+    color: ${theme.colors.gray[400]};
+    background-color: ${theme.colors.gray[800]};
+  }
+
+  thead th {
+    border-bottom: 2px solid ${theme.colors.gray[900]};
+  }
+
+  td,
+  th {
+    border: 2px solid ${theme.colors.gray[900]};
   }
 `;
