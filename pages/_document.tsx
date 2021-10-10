@@ -11,7 +11,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="IrBdsYE_b8xi2Yt3qVUdf0jCWzjuDnshFMrv4pQtoQY"
+          />
+        </Head>
         <body>
           <ColorModeScript initialColorMode="dark" />
           <Main />
