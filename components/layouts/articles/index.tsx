@@ -16,13 +16,17 @@ import IPublication from "types/publication";
 dayjs.extend(localizedFormat);
 
 interface Props {
-  articles: (IArticle & IPublication)[];
+  articles: (IArticle & IPublication)[] | IArticle[];
   hideViewAllLinksNode?: boolean;
+  currentTag?: string;
+  currentCategory?: string;
 }
 
 const Articles: FC<Props> = ({
   articles = [],
   hideViewAllLinksNode = false,
+  currentTag,
+  currentCategory,
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -65,16 +69,38 @@ const Articles: FC<Props> = ({
   };
 
   const headingNode = () => {
+    if (!!currentTag) {
+      return (
+        <VStack spacing={2} align="left">
+          <Heading as="h1" size="xl">
+            Articles
+          </Heading>
+          <Text>Posts tagged with &quot;{currentTag}&quot;</Text>
+        </VStack>
+      );
+    }
+
+    if (!!currentCategory) {
+      return (
+        <VStack spacing={2} align="left">
+          <Heading as="h1" size="xl">
+            Articles
+          </Heading>
+          <Text>
+            Posts which belong to the &quot;{currentCategory}&quot; category
+          </Text>
+        </VStack>
+      );
+    }
+
     if (hideViewAllLinksNode) {
       return (
-        <Box>
-          <VStack spacing={2} align="left">
-            <Heading as="h1" size="xl">
-              Articles
-            </Heading>
-            <Text>Posts related to some of the latest technologies</Text>
-          </VStack>
-        </Box>
+        <VStack spacing={2} align="left">
+          <Heading as="h1" size="xl">
+            Articles
+          </Heading>
+          <Text>Posts related to some of the latest technologies</Text>
+        </VStack>
       );
     }
 

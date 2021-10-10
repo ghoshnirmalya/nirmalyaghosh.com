@@ -1,7 +1,11 @@
 import fs from "fs";
 import matter from "gray-matter";
+import compact from "lodash/compact";
+import filter from "lodash/filter";
 import find from "lodash/find";
+import flattenDeep from "lodash/flattenDeep";
 import path from "path";
+import { ParsedUrlQuery } from "querystring";
 import Article from "types/article";
 
 const root = process.cwd();
@@ -36,4 +40,30 @@ export const getAllArticles = () => {
         content,
       };
     });
+};
+
+export const getAllArticlesWhichBelongToCurrentSlug = (
+  params: ParsedUrlQuery | undefined,
+  type: "categories" | "tags"
+) => {
+  const allArticles = getAllArticles();
+
+  switch (type) {
+    case "categories":
+      const allPostsFromThisCategory = filter(allArticles, (article) => {
+        return article.data.categories.includes(params?.slug as string);
+      }) as Article[];
+
+      return compact(flattenDeep(allPostsFromThisCategory));
+
+    case "tags":
+      const allPostsFromThisTag = filter(allArticles, (article) => {
+        return article.data.tags.includes(params?.slug as string);
+      }) as Article[];
+
+      return compact(flattenDeep(allPostsFromThisTag));
+
+    default:
+      break;
+  }
 };

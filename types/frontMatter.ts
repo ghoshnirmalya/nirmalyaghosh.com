@@ -1,6 +1,6 @@
 export default interface frontMatter {
   coverImage?: string;
-  category: string;
+  categories: string[];
   date: string;
   description: string;
   tags: string[];

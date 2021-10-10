@@ -1,4 +1,12 @@
-import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+  Link,
+} from "@chakra-ui/react";
 import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
@@ -7,6 +15,7 @@ import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import IFrontMatter from "types/frontMatter";
+import NextLink from "next/link";
 
 dayjs.extend(localizedFormat);
 
@@ -42,6 +51,38 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
         <Text fontSize="sm" fontWeight="bold">
           {dayjs(date).format("LL")}.
         </Text>
+      </HStack>
+    );
+  };
+
+  const categoriesNode = (categories: string[]) => {
+    return (
+      <HStack spacing={2} isInline alignItems="center">
+        {categories.map((category, index) => {
+          return (
+            <NextLink key={index} href={`/categories/${category}`}>
+              <Link fontSize="sm" _hover={{}}>
+                {category}
+              </Link>
+            </NextLink>
+          );
+        })}
+      </HStack>
+    );
+  };
+
+  const tagsNode = (tags: string[]) => {
+    return (
+      <HStack spacing={2} isInline alignItems="center">
+        {tags.map((tag, index) => {
+          return (
+            <NextLink key={index} href={`/tags/${tag}`}>
+              <Link fontSize="sm" px={4} py={2} bg="gray.800" _hover={{}}>
+                # {tag}
+              </Link>
+            </NextLink>
+          );
+        })}
       </HStack>
     );
   };
@@ -91,10 +132,14 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">
                 <VStack spacing={2} align="left">
-                  {publishedMetaNode(frontMatter.date)}
+                  <HStack justifyContent="space-between">
+                    {publishedMetaNode(frontMatter.date)}
+                    {categoriesNode(frontMatter.categories)}
+                  </HStack>
                   {titleNode(frontMatter.title)}
                 </VStack>
                 <Box className="article">{content}</Box>
+                {tagsNode(frontMatter.tags)}
                 {updatedMetaNode(frontMatter.lastmod)}
                 <Box>
                   <SocialShare title={frontMatter.title} />
