@@ -1,8 +1,8 @@
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import GithubSlugger from "github-slugger";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
@@ -24,29 +24,29 @@ const SocialShare = dynamic(
 );
 
 const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
-  const publishedMetaNode = (date: string) => {
+  const publishedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">Published on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(date).format("LL")}
+          {dayjs(frontMatter.date).format("LL")}
         </Text>
       </HStack>
     );
   };
 
-  const updatedMetaNode = (date: string) => {
+  const updatedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(date).format("LL")}.
+          {dayjs(frontMatter.lastmod).format("LL")}.
         </Text>
       </HStack>
     );
   };
 
-  const titleNode = (title: string) => {
+  const titleNode = () => {
     return (
       <Heading
         as="h1"
@@ -55,57 +55,8 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >
-        {title}
+        {frontMatter.title}
       </Heading>
-    );
-  };
-
-  const tocNode = () => {
-    const headingLines = source
-      .split("\n")
-      .filter((line) => line.match(/^###*\s/));
-
-    const headings = headingLines.map((raw) => {
-      const text = raw.replace(/^###*\s/, "");
-      const level = raw.slice(0, 3) === "###" ? 3 : 2;
-      const slugger = new GithubSlugger();
-
-      return {
-        text,
-        level,
-        href: slugger.slug(text),
-      };
-    });
-
-    return (
-      <Box
-        pos="sticky"
-        top={8}
-        h="100vh"
-        overflow="scroll"
-        display={["none", "none", "none", "block"]}
-      >
-        <VStack alignItems="left">
-          <Heading size="sm">Table of contents</Heading>
-          <VStack spacing={2} alignItems="left">
-            {headings.map((heading, index) => {
-              return (
-                <a href={`#${heading.href}`} key={index}>
-                  <Text
-                    color="gray.400"
-                    fontSize="sm"
-                    _hover={{
-                      color: "blue.400",
-                    }}
-                  >
-                    {heading.text}
-                  </Text>
-                </a>
-              );
-            })}
-          </VStack>
-        </VStack>
-      </Box>
     );
   };
 
@@ -142,17 +93,24 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">
                 <VStack spacing={2} align="left">
-                  {publishedMetaNode(frontMatter.date)}
-                  {titleNode(frontMatter.title)}
+                  {publishedMetaNode()}
+                  {titleNode()}
                 </VStack>
                 <Box className="article">{content}</Box>
-                {updatedMetaNode(frontMatter.lastmod)}
-                <Box>
-                  <SocialShare title={frontMatter.title} />
-                </Box>
+                {updatedMetaNode()}
               </VStack>
             </Box>
-            {tocNode()}
+            <VStack
+              spacing={8}
+              pos="sticky"
+              top={8}
+              h="100vh"
+              overflow="scroll"
+              display={["none", "none", "none", "block"]}
+            >
+              <TableOfContents source={source} />
+              <SocialShare title={frontMatter.title} />
+            </VStack>
           </Grid>
         </Box>
       </Box>

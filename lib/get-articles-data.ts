@@ -10,11 +10,11 @@ import Article from "types/article";
 
 const root = process.cwd();
 
-export const getCurrentArticle = (slug: string) => {
+export const getCurrentArticle = (params: ParsedUrlQuery | undefined) => {
   const allArticles = getAllArticles();
 
   const currentArticle = find(allArticles, (article) => {
-    if (article.data.slug === slug) {
+    if (article.data.slug === params.slug) {
       return {
         data: article.data,
         content: article.content,
@@ -66,4 +66,13 @@ export const getAllArticlesWhichBelongToCurrentSlug = (
     default:
       break;
   }
+};
+
+export const getNextArticles = (params: ParsedUrlQuery | undefined) => {
+  const allArticles = getAllArticles();
+
+  return filter(
+    allArticles,
+    (article) => article !== getCurrentArticle(params)
+  );
 };

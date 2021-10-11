@@ -1,4 +1,4 @@
-import { Box, HStack, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, HStack, Link, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 
@@ -30,17 +30,8 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
   ];
 
   return (
-    <HStack
-      spacing={4}
-      align="left"
-      justifyContent="space-between"
-      bg="gray.800"
-      color="gray.100"
-      p={4}
-      rounded="sm"
-      alignItems="center"
-    >
-      <Text fontWeight="bold">Share</Text>
+    <VStack alignItems="left">
+      <Heading size="sm">Share</Heading>
       <HStack spacing={2}>
         {socialLinks.map((link, index) => {
           return (
@@ -51,24 +42,19 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
               href={link.href}
               rounded="sm"
               bg={link.bg}
-              color="#fff"
-              fontWeight="bold"
               isExternal
-              w="33.33%"
-              display="flex"
-              justifyContent="center"
               _hover={{
                 textDecoration: "none",
               }}
             >
               <HStack spacing={2} alignItems="center">
-                <Box as={link.icon} /> <Text fontSize="sm">{link.label}</Text>
+                <Box as={link.icon} />
               </HStack>
             </Link>
           );
         })}
       </HStack>
-    </HStack>
+    </VStack>
   );
 };
 

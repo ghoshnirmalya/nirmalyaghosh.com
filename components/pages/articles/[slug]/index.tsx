@@ -16,6 +16,7 @@ import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import IFrontMatter from "types/frontMatter";
 import NextLink from "next/link";
+import Article from "types/article";
 
 dayjs.extend(localizedFormat);
 
@@ -23,6 +24,7 @@ interface IProps {
   content: any;
   frontMatter: IFrontMatter;
   source: string;
+  nextArticles: Article[];
 }
 
 const SocialShare = dynamic(
@@ -31,34 +33,42 @@ const SocialShare = dynamic(
     ssr: false,
   }
 );
+const Articles = dynamic(
+  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+);
 
-const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
-  const publishedMetaNode = (date: string) => {
+const Page: NextPage<IProps> = ({
+  content,
+  frontMatter,
+  source,
+  nextArticles,
+}) => {
+  const publishedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">Published on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(date).format("LL")}
+          {dayjs(frontMatter.date).format("LL")}
         </Text>
       </HStack>
     );
   };
 
-  const updatedMetaNode = (date: string) => {
+  const updatedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(date).format("LL")}.
+          {dayjs(frontMatter.lastmod).format("LL")}.
         </Text>
       </HStack>
     );
   };
 
-  const categoriesNode = (categories: string[]) => {
+  const categoriesNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
-        {categories.map((category, index) => {
+        {frontMatter.categories.map((category, index) => {
           return (
             <NextLink key={index} href={`/categories/${category}`}>
               <Link fontSize="sm" _hover={{}}>
@@ -71,10 +81,10 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
     );
   };
 
-  const tagsNode = (tags: string[]) => {
+  const tagsNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
-        {tags.map((tag, index) => {
+        {frontMatter.tags.map((tag, index) => {
           return (
             <NextLink key={index} href={`/tags/${tag}`}>
               <Link fontSize="sm" px={4} py={2} bg="gray.800" _hover={{}}>
@@ -87,7 +97,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
     );
   };
 
-  const titleNode = (title: string) => {
+  const titleNode = () => {
     return (
       <Heading
         as="h1"
@@ -96,8 +106,17 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >
-        {title}
+        {frontMatter.title}
       </Heading>
+    );
+  };
+
+  const relatedArticlesNode = () => {
+    return (
+      <Articles
+        articles={nextArticles.slice(0, 5)}
+        heading="Related articles"
+      />
     );
   };
 
@@ -133,20 +152,28 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
               <VStack spacing={8} align="left">
                 <VStack spacing={2} align="left">
                   <HStack justifyContent="space-between">
-                    {publishedMetaNode(frontMatter.date)}
-                    {categoriesNode(frontMatter.categories)}
+                    {publishedMetaNode()}
+                    {categoriesNode()}
                   </HStack>
-                  {titleNode(frontMatter.title)}
+                  {titleNode()}
                 </VStack>
                 <Box className="article">{content}</Box>
-                {tagsNode(frontMatter.tags)}
-                {updatedMetaNode(frontMatter.lastmod)}
-                <Box>
-                  <SocialShare title={frontMatter.title} />
-                </Box>
+                {tagsNode()}
+                {updatedMetaNode()}
+                {relatedArticlesNode()}
               </VStack>
             </Box>
-            <TableOfContents source={source} />
+            <VStack
+              spacing={8}
+              pos="sticky"
+              top={8}
+              h="100vh"
+              overflow="scroll"
+              display={["none", "none", "none", "block"]}
+            >
+              <TableOfContents source={source} />
+              <SocialShare title={frontMatter.title} />
+            </VStack>
           </Grid>
         </Box>
       </Box>

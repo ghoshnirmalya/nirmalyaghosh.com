@@ -20,6 +20,7 @@ interface Props {
   hideViewAllLinksNode?: boolean;
   currentTag?: string;
   currentCategory?: string;
+  heading?: string;
 }
 
 const Articles: FC<Props> = ({
@@ -27,6 +28,7 @@ const Articles: FC<Props> = ({
   hideViewAllLinksNode = false,
   currentTag,
   currentCategory,
+  heading,
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -90,6 +92,14 @@ const Articles: FC<Props> = ({
             Posts which belong to the &quot;{currentCategory}&quot; category
           </Text>
         </VStack>
+      );
+    }
+
+    if (!!heading) {
+      return (
+        <Heading as="h2" size="lg">
+          {heading}
+        </Heading>
       );
     }
 

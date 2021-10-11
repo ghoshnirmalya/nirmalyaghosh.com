@@ -24,35 +24,27 @@ const TableOfContents: FC<IProps> = ({ source }) => {
   });
 
   return (
-    <Box
-      pos="sticky"
-      top={8}
-      h="100vh"
-      overflow="scroll"
-      display={["none", "none", "none", "block"]}
-    >
-      <VStack alignItems="left">
-        <Heading size="sm">Table of contents</Heading>
-        <VStack spacing={2} alignItems="left">
-          {headings.map((heading, index) => {
-            return (
-              <Box as="a" href={`#${heading.href}`} key={index}>
-                <Text
-                  color="gray.400"
-                  fontSize="sm"
-                  ml={(heading.level - 2) * 4}
-                  _hover={{
-                    color: "blue.400",
-                  }}
-                >
-                  {heading.text}
-                </Text>
-              </Box>
-            );
-          })}
-        </VStack>
+    <VStack alignItems="left">
+      <Heading size="sm">Table of contents</Heading>
+      <VStack spacing={2} alignItems="left">
+        {headings.map((heading, index) => {
+          return (
+            <Box as="a" href={`#${heading.href}`} key={index}>
+              <Text
+                color="gray.400"
+                fontSize="sm"
+                ml={(heading.level - 2) * 4}
+                _hover={{
+                  color: "blue.400",
+                }}
+              >
+                {heading.text}
+              </Text>
+            </Box>
+          );
+        })}
       </VStack>
-    </Box>
+    </VStack>
   );
 };
 
