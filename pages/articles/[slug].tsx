@@ -72,7 +72,3 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default ArticlesSlugPage;
-
-export const config = {
-  unstable_runtimeJS: false,
-};

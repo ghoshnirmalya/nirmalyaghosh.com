@@ -4079,6 +4079,13 @@ image-size@1.0.0:
   dependencies:
     queue "6.0.2"
 
+image-size@^0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.9.7.tgz#43b4ead4b1310d5ae310a559d52935a347e47c09"
+  integrity sha512-KRVgLNZkr00YGN0qn9MlIrmlxbRhsCcEb1Byq3WKGnIV4M48iD185cprRtaoK4t5iC+ym2Q5qlArxZ/V1yzDgA==
+  dependencies:
+    queue "6.0.2"
+
 import-cwd@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-3.0.0.tgz#20845547718015126ea9b3676b7592fb8bd4cf92"
@@ -6191,6 +6198,14 @@ rehype-autolink-headings@^6.1.0:
     unified "^10.0.0"
     unist-util-visit "^4.0.0"
 
+rehype-img-size@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/rehype-img-size/-/rehype-img-size-0.0.1.tgz#bfdb653c08817171ce78ae37db2bee930533cad9"
+  integrity sha512-AfJgsG0LM81+ozLkdySg5vM93gcw8N9hF8LTs2mKG39pC+wVdId9chelh/oY9MCbqvR8x7jUol4UekgVnPi1rg==
+  dependencies:
+    image-size "^0.9.7"
+    unist-util-visit "^2.0.3"
+
 rehype-parse@^8.0.0:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/rehype-parse/-/rehype-parse-8.0.3.tgz#a1947132a08a930d0c2b6fd2b3dbcc137457c07a"
@@ -7391,7 +7406,7 @@ unist-util-visit-parents@^5.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^5.0.0"
 
-unist-util-visit@2.0.3, unist-util-visit@^2.0.0:
+unist-util-visit@2.0.3, unist-util-visit@^2.0.0, unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
