@@ -69,7 +69,3 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default GuidesSlugPage;
-
-export const config = {
-  unstable_runtimeJS: false,
-};

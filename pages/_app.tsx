@@ -1,9 +1,12 @@
 import { Box } from "@chakra-ui/react";
 import siteConfig from "config/site";
+import { initGA } from "lib/google-analytics";
+import isProduction from "lib/is-production";
 import { NextSeo } from "next-seo";
 import { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const Layout = dynamic(
   import(/* webpackChunkName: "Layouts" */ "components/layouts")
@@ -16,6 +19,12 @@ const Footer = dynamic(
 );
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    if (isProduction) {
+      initGA(process.env.NEXT_PUBLIC_GA);
+    }
+  }, []);
+
   return (
     <Layout>
       <Head>

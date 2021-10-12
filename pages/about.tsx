@@ -14,7 +14,3 @@ const AboutPage: NextPage = () => {
 };
 
 export default AboutPage;
-
-export const config = {
-  unstable_runtimeJS: false,
-};
