@@ -1,6 +1,7 @@
 import { Box, HStack, Link as _Link } from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
+import { Fade, ScaleFade, Slide, SlideFade } from "@chakra-ui/react";
 
 interface NavLink {
   url: string;

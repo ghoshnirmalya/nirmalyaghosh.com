@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import React, { FC } from "react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
+import AvatarImage from "public/images/common/avatar.png";
 
 const Page: FC = () => {
   const headingNode = () => {
@@ -23,12 +24,13 @@ const Page: FC = () => {
           h={100}
         >
           <Image
-            src="/images/common/avatar.png"
+            src={AvatarImage}
             alt="Nirmalya Ghosh"
             height={100}
             width={100}
             quality={100}
             priority
+            placeholder="blur"
           />
         </Box>
         <Box>

@@ -1,4 +1,4 @@
-import { Box, VStack } from "@chakra-ui/react";
+import { Box, SlideFade, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import IArticle from "types/article";
@@ -40,7 +40,7 @@ const Page: FC<Props> = ({
     );
 
   return (
-    <>
+    <SlideFade in>
       <Box
         as="section"
         h={["calc(100vh - 109px)", "calc(100vh - 109px)", "calc(100vh - 64px)"]}
@@ -66,7 +66,7 @@ const Page: FC<Props> = ({
           </VStack>
         </Box>
       </Box>
-    </>
+    </SlideFade>
   );
 };
 

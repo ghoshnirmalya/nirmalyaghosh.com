@@ -65,7 +65,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const ctaNode = () => {
     return (
-      <Button fontSize="sm" bg="gray.900">
+      <Button fontSize="sm" bg="gray.900" _hover={{}}>
         View project
       </Button>
     );
@@ -92,13 +92,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
       >
         {sortedProjects.map((project: IProject, index: number) => {
           return (
-            <Box
-              key={index}
-              bg="gray.800"
-              color="white"
-              rounded="sm"
-              shadow="md"
-            >
+            <Box key={index} bg="gray.800" color="white" rounded="sm">
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 <Box p={8}>
                   <VStack

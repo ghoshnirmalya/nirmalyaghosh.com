@@ -6,6 +6,7 @@ import {
   Text,
   VStack,
   Link,
+  SlideFade,
 } from "@chakra-ui/react";
 import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
@@ -121,7 +122,7 @@ const Page: NextPage<IProps> = ({
   };
 
   return (
-    <>
+    <SlideFade in>
       <NextSeo
         title={`${frontMatter.title}`}
         description={frontMatter.description}
@@ -177,7 +178,7 @@ const Page: NextPage<IProps> = ({
           </Grid>
         </Box>
       </Box>
-    </>
+    </SlideFade>
   );
 };
 

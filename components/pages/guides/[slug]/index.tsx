@@ -1,4 +1,12 @@
-import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+  SlideFade,
+} from "@chakra-ui/react";
 import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
@@ -61,7 +69,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
   };
 
   return (
-    <>
+    <SlideFade in>
       <NextSeo
         title={`${frontMatter.title}`}
         description={frontMatter.description}
@@ -114,7 +122,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
           </Grid>
         </Box>
       </Box>
-    </>
+    </SlideFade>
   );
 };
 
