@@ -160,7 +160,7 @@ const Page: NextPage<IProps> = ({
                 <Box className="article">{content}</Box>
                 {tagsNode()}
                 {updatedMetaNode()}
-                {relatedArticlesNode()}
+                <Box pt={12}>{relatedArticlesNode()}</Box>
               </VStack>
             </Box>
             <VStack
