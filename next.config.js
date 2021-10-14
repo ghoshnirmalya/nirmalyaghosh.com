@@ -8,6 +8,5 @@ module.exports = withContentlayer()({
   reactStrictMode: true,
   experimental: {
     esmExternals: true,
-    swcMinify: true,
   },
 });
