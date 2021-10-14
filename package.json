@@ -22,7 +22,6 @@
     "ga-4-react": "^0.1.281",
     "gatsby-remark-vscode": "^3.3.0",
     "github-slugger": "^1.4.0",
-    "gray-matter": "^4.0.3",
     "next": "11.1.2",
     "next-contentlayer": "^0.0.27",
     "next-mdx-remote": "^3.0.6",

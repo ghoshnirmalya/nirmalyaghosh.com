@@ -1,10 +1,7 @@
-import fs from "fs";
-import matter from "gray-matter";
+import { allGuides } from ".contentlayer/data";
 import find from "lodash/find";
-import path from "path";
+import IFrontMatter from "types/frontMatter";
 import Guide from "types/guide";
-
-const root = process.cwd();
 
 export const getCurrentGuide = (slug: string) => {
   const allGuides = getAllGuides();
@@ -22,16 +19,35 @@ export const getCurrentGuide = (slug: string) => {
 };
 
 export const getAllGuides = () => {
-  return fs.readdirSync(path.join(root, "data", "guides")).map((guidePath) => {
-    const source = fs.readFileSync(
-      path.join(root, "data", "guides", guidePath),
-      "utf8"
-    );
-    const { data, content } = matter(source);
+  return allGuides.map((guide) => {
+    const {
+      title,
+      description,
+      date,
+      lastmod,
+      tags,
+      categories,
+      keywords,
+      slug,
+      body,
+      githubLink,
+      coverImage,
+    } = guide;
 
     return {
-      data,
-      content,
+      data: {
+        title,
+        description,
+        date,
+        lastmod,
+        tags,
+        categories,
+        keywords,
+        slug,
+        githubLink,
+        coverImage,
+      } as unknown as IFrontMatter,
+      content: body.raw,
     };
   });
 };
