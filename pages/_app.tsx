@@ -9,13 +9,13 @@ import Head from "next/head";
 import { useEffect } from "react";
 
 const Layout = dynamic(
-  import(/* webpackChunkName: "Layouts" */ "components/layouts")
+  () => import(/* webpackChunkName: "Layouts" */ "components/layouts")
 );
 const Navbar = dynamic(
-  import(/* webpackChunkName: "Navbar" */ "components/navbar")
+  () => import(/* webpackChunkName: "Navbar" */ "components/navbar")
 );
 const Footer = dynamic(
-  import(/* webpackChunkName: "Footer" */ "components/footer")
+  () => import(/* webpackChunkName: "Footer" */ "components/footer")
 );
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {

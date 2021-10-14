@@ -7,19 +7,19 @@ import dynamic from "next/dynamic";
 import frontMatter from "types/frontMatter";
 
 const Callout = dynamic(
-  import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
 );
 
 const Jumbotron = dynamic(
-  import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
 );
 
 const Link = dynamic(
-  import(/* webpackChunkName: "Link" */ "components/mdx/link")
+  () => import(/* webpackChunkName: "Link" */ "components/mdx/link")
 );
 
 const Image = dynamic(
-  import(/* webpackChunkName: "Image" */ "components/mdx/image")
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
 );
 
 const components = { Callout, Jumbotron, Link, Image };
