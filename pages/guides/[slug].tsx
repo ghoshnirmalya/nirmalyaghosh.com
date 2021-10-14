@@ -1,10 +1,9 @@
 import Page from "components/pages/guides/[slug]";
 import { getAllGuides, getCurrentGuide } from "lib/get-guides.data";
 import getMdxData from "lib/get-mdx-data";
-import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import { useMemo } from "react";
 import frontMatter from "types/frontMatter";
 
 const Callout = dynamic(
@@ -26,12 +25,7 @@ const Image = dynamic(
 const components = { Callout, Jumbotron, Link, Image };
 
 interface IProps {
-  mdxSource: {
-    code: string;
-    frontmatter: {
-      [key: string]: any;
-    };
-  };
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
   frontMatter: frontMatter;
   source: string;
 }
@@ -41,14 +35,9 @@ const GuidesSlugPage: NextPage<IProps> = ({
   frontMatter,
   source,
 }) => {
-  const MDXContent = useMemo(
-    () => getMDXComponent(mdxSource.code),
-    [mdxSource.code]
-  );
-
   return (
     <Page
-      content={<MDXContent components={components} />}
+      content={<MDXRemote {...mdxSource} components={components} />}
       frontMatter={frontMatter}
       source={source}
     />

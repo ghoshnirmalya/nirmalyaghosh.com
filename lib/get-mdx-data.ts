@@ -1,7 +1,11 @@
-import { bundleMDX } from "mdx-bundler";
+import mdxOptions from "config/mdx";
+import { serialize } from "next-mdx-remote/serialize";
 
 const getMdxData = async (content: string) => {
-  const mdxSource = await bundleMDX(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions,
+    scope: {},
+  });
 
   return mdxSource;
 };

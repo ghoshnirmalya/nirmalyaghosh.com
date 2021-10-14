@@ -23,9 +23,9 @@
     "gatsby-remark-vscode": "^3.3.0",
     "github-slugger": "^1.4.0",
     "gray-matter": "^4.0.3",
-    "mdx-bundler": "^6.0.2",
     "next": "11.1.2",
     "next-contentlayer": "^0.0.27",
+    "next-mdx-remote": "^3.0.6",
     "next-seo": "^4.28.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -49,6 +49,9 @@
     "prettier": "^2.4.1",
     "release-it": "^14.11.6",
     "typescript": "^4.4.4"
+  },
+  "resolutions": {
+    "esbuild": "0.13.6"
   },
   "keywords": [
     "developer",
