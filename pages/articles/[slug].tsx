@@ -5,9 +5,10 @@ import {
   getNextArticles,
 } from "lib/get-articles-data";
 import getMdxData from "lib/get-mdx-data";
+import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import dynamic from "next/dynamic";
+import { useMemo } from "react";
 import Article from "types/article";
 import frontMatter from "types/frontMatter";
 
@@ -22,7 +23,12 @@ const Image = dynamic(
 const components = { Callout, img: Image };
 
 interface IProps {
-  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  mdxSource: {
+    code: string;
+    frontmatter: {
+      [key: string]: any;
+    };
+  };
   frontMatter: frontMatter;
   source: string;
   nextArticles: Article[];
@@ -34,9 +40,14 @@ const ArticlesSlugPage: NextPage<IProps> = ({
   source,
   nextArticles,
 }) => {
+  const MDXContent = useMemo(
+    () => getMDXComponent(mdxSource.code),
+    [mdxSource.code]
+  );
+
   return (
     <Page
-      content={<MDXRemote {...mdxSource} components={components} />}
+      content={<MDXContent components={components} />}
       frontMatter={frontMatter}
       source={source}
       nextArticles={nextArticles}
