@@ -29,13 +29,13 @@ interface IProps {
 }
 
 const SocialShare = dynamic(
-  import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
+  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
   {
     ssr: false,
   }
 );
 const Articles = dynamic(
-  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+  () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
 const Page: NextPage<IProps> = ({

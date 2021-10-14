@@ -1,0 +1,19 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.autoUpdateDate": true,
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "articles",
+      "path": "[[workspace]]/data/articles"
+    }
+  ],
+  "frontMatter.taxonomy.categories": ["css", "docker", "javascript"],
+  "frontMatter.taxonomy.tags": [
+    "api",
+    "cms",
+    "next.js",
+    "react.js",
+    "strapi",
+    "tailwind"
+  ]
+}

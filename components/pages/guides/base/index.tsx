@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import IGuide from "types/guide";
 
 const Guides = dynamic(
-  import(/* webpackChunkName: "guides" */ "components/layouts/guides")
+  () => import(/* webpackChunkName: "guides" */ "components/layouts/guides")
 );
 
 interface Props {

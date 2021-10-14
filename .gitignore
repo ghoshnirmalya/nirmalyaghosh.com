@@ -78,5 +78,5 @@ yarn-error.log
 # Ignore sitemap
 public/sitemap.xml
 
-# FrontMatter
-frontmatter.json
+# Contentlayer
+.contentlayer

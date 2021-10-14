@@ -12,11 +12,11 @@ import Article from "types/article";
 import frontMatter from "types/frontMatter";
 
 const Callout = dynamic(
-  import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
 );
 
 const Image = dynamic(
-  import(/* webpackChunkName: "Image" */ "components/mdx/image")
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
 );
 
 const components = { Callout, img: Image };

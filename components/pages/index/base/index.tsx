@@ -6,17 +6,19 @@ import IProject from "types/project";
 import IPublication from "types/publication";
 
 const Jumbotron = dynamic(
-  import(
-    /* webpackChunkName: "Jumbotron" */ "components/pages/index/base/jumbotron"
-  )
+  () =>
+    import(
+      /* webpackChunkName: "Jumbotron" */ "components/pages/index/base/jumbotron"
+    )
 );
 const Articles = dynamic(
-  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+  () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 const Projects = dynamic(
-  import(
-    /* webpackChunkName: "Projects" */ "components/pages/index/base/projects"
-  )
+  () =>
+    import(
+      /* webpackChunkName: "Projects" */ "components/pages/index/base/projects"
+    )
 );
 
 interface Props {

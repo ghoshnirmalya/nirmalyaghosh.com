@@ -25,7 +25,7 @@ interface IProps {
 }
 
 const SocialShare = dynamic(
-  import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
+  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
   {
     ssr: false,
   }

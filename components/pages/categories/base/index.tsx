@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import IArticle from "types/article";
 
 const Articles = dynamic(
-  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+  () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
 interface Props {

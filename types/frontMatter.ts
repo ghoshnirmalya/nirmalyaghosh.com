@@ -1,4 +1,4 @@
-export default interface frontMatter {
+export default interface FrontMatter {
   coverImage?: string;
   categories: string[];
   date: string;

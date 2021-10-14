@@ -1,14 +1,11 @@
-import fs from "fs";
-import matter from "gray-matter";
+import { allArticles } from ".contentlayer/data";
 import compact from "lodash/compact";
 import filter from "lodash/filter";
 import find from "lodash/find";
 import flattenDeep from "lodash/flattenDeep";
-import path from "path";
 import { ParsedUrlQuery } from "querystring";
 import Article from "types/article";
-
-const root = process.cwd();
+import IFrontMatter from "types/frontMatter";
 
 export const getCurrentArticle = (params: ParsedUrlQuery | undefined) => {
   const allArticles = getAllArticles();
@@ -26,20 +23,33 @@ export const getCurrentArticle = (params: ParsedUrlQuery | undefined) => {
 };
 
 export const getAllArticles = () => {
-  return fs
-    .readdirSync(path.join(root, "data", "articles"))
-    .map((articlePath) => {
-      const source = fs.readFileSync(
-        path.join(root, "data", "articles", articlePath),
-        "utf8"
-      );
-      const { data, content } = matter(source);
+  return allArticles.map((article) => {
+    const {
+      title,
+      description,
+      date,
+      lastmod,
+      tags,
+      categories,
+      keywords,
+      slug,
+      body,
+    } = article;
 
-      return {
-        data,
-        content,
-      };
-    });
+    return {
+      data: {
+        title,
+        description,
+        date,
+        lastmod,
+        tags,
+        categories,
+        keywords,
+        slug,
+      } as unknown as IFrontMatter,
+      content: body.raw,
+    };
+  });
 };
 
 export const getAllArticlesWhichBelongToCurrentSlug = (

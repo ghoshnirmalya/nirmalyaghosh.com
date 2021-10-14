@@ -2,30 +2,31 @@ import Page from "components/pages/guides/[slug]";
 import { getAllGuides, getCurrentGuide } from "lib/get-guides.data";
 import getMdxData from "lib/get-mdx-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import dynamic from "next/dynamic";
+import frontMatter from "types/frontMatter";
 
 const Callout = dynamic(
-  import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
 );
 
 const Jumbotron = dynamic(
-  import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
 );
 
 const Link = dynamic(
-  import(/* webpackChunkName: "Link" */ "components/mdx/link")
+  () => import(/* webpackChunkName: "Link" */ "components/mdx/link")
 );
 
 const Image = dynamic(
-  import(/* webpackChunkName: "Image" */ "components/mdx/image")
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
 );
 
 const components = { Callout, Jumbotron, Link, Image };
 
 interface IProps {
-  mdxSource: any;
-  frontMatter: any;
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  frontMatter: frontMatter;
   source: string;
 }
 

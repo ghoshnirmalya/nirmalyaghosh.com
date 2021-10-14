@@ -5,7 +5,7 @@ import IArticle from "types/article";
 import IPublication from "types/publication";
 
 const Articles = dynamic(
-  import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+  () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
 interface Props {
