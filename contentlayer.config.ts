@@ -1,10 +1,30 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkVscode from "gatsby-remark-vscode";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeImgSize from "rehype-img-size";
-import remarkCodeTitles from "remark-code-titles";
-import remarkExternalLinks from "remark-external-links";
-import remarkSlug from "remark-slug";
+import mdxOptions from "./config/mdx";
+import {
+  defineDocumentType,
+  makeSource,
+  defineNestedType,
+} from "contentlayer/source-files";
+
+export const Category = defineNestedType(() => ({
+  name: "Category",
+  fields: {
+    category: { type: "list", of: Category },
+  },
+}));
+
+export const Tag = defineNestedType(() => ({
+  name: "Tag",
+  fields: {
+    tag: { type: "list", of: Tag },
+  },
+}));
+
+export const Keyword = defineNestedType(() => ({
+  name: "Keyword",
+  fields: {
+    keyword: { type: "list", of: Keyword },
+  },
+}));
 
 export const Article = defineDocumentType(() => ({
   name: "Article",
@@ -16,11 +36,14 @@ export const Article = defineDocumentType(() => ({
     date: { type: "date", required: true },
     lastmod: { type: "date", required: true },
     draft: { type: "boolean", required: true },
+    categories: { type: "list", of: Category },
+    tags: { type: "list", of: Tag },
+    keywords: { type: "list", of: Keyword },
   },
 }));
 
 export const Guide = defineDocumentType(() => ({
-  name: "Article",
+  name: "Guide",
   filePathPattern: `guides/*.mdx`,
   fields: {
     title: { type: "string", required: true },
@@ -31,32 +54,14 @@ export const Guide = defineDocumentType(() => ({
     draft: { type: "boolean", required: true },
     coverImage: { type: "string" },
     githubLink: { type: "string" },
+    categories: { type: "list", of: Category },
+    tags: { type: "list", of: Tag },
+    keywords: { type: "list", of: Keyword },
   },
 }));
 
 export default makeSource({
   contentDirPath: "data",
   documentTypes: [Article, Guide],
-  mdx: {
-    remarkPlugins: [
-      remarkSlug,
-      remarkCodeTitles,
-      remarkExternalLinks,
-      [
-        remarkVscode.remarkPlugin,
-        {
-          theme: "Tomorrow Night Blue",
-        },
-      ],
-    ],
-    rehypePlugins: [
-      rehypeAutolinkHeadings,
-      [
-        rehypeImgSize,
-        {
-          dir: "public",
-        },
-      ],
-    ],
-  },
+  mdx: mdxOptions,
 });
