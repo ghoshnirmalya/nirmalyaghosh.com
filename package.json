@@ -50,7 +50,7 @@
     "typescript": "^4.4.4"
   },
   "resolutions": {
-    "esbuild": "0.13.6"
+    "esbuild": "0.12.8"
   },
   "keywords": [
     "developer",
