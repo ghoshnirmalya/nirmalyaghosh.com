@@ -4,5 +4,5 @@ import { getAllArticles } from "lib/get-articles-data";
 export const getAllCategories = () => {
   const allArticles = getAllArticles();
 
-  return flatMapDeep(allArticles, "data.categories");
+  return flatMapDeep(allArticles, "categories");
 };

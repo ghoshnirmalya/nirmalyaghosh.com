@@ -1,11 +1,12 @@
+import { Guide } from ".contentlayer/types";
 import {
   Box,
   Grid,
   Heading,
   HStack,
+  SlideFade,
   Text,
   VStack,
-  SlideFade,
 } from "@chakra-ui/react";
 import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
@@ -14,14 +15,12 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
-import IFrontMatter from "types/frontMatter";
 
 dayjs.extend(localizedFormat);
 
 interface IProps {
-  content: any;
-  frontMatter: IFrontMatter;
-  source: string;
+  guide: Guide;
+  content: JSX.Element;
 }
 
 const SocialShare = dynamic(
@@ -31,13 +30,13 @@ const SocialShare = dynamic(
   }
 );
 
-const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
+const Page: NextPage<IProps> = ({ content, guide }) => {
   const publishedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">Published on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(frontMatter.date).format("LL")}
+          {dayjs(guide.date).format("LL")}
         </Text>
       </HStack>
     );
@@ -48,7 +47,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(frontMatter.lastmod).format("LL")}.
+          {dayjs(guide.lastmod).format("LL")}.
         </Text>
       </HStack>
     );
@@ -63,7 +62,7 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >
-        {frontMatter.title}
+        {guide.title}
       </Heading>
     );
   };
@@ -71,20 +70,20 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
   return (
     <SlideFade in>
       <NextSeo
-        title={`${frontMatter.title}`}
-        description={frontMatter.description}
+        title={`${guide.title}`}
+        description={guide.description}
         openGraph={{
           url: `${siteConfig.details.url}`,
-          title: `${frontMatter.title}`,
-          description: frontMatter.description,
+          title: `${guide.title}`,
+          description: guide.description,
           images: [
             {
-              url: frontMatter.coverImage
-                ? frontMatter.coverImage
+              url: guide.coverImage
+                ? guide.coverImage
                 : `${siteConfig.details.url}${siteConfig.assets.avatar}`,
               width: 800,
               height: 600,
-              alt: frontMatter.title,
+              alt: guide.title,
             },
           ],
           site_name: siteConfig.details.title,
@@ -116,8 +115,8 @@ const Page: NextPage<IProps> = ({ content, frontMatter, source }) => {
               overflow="scroll"
               display={["none", "none", "none", "block"]}
             >
-              <TableOfContents source={source} />
-              <SocialShare title={frontMatter.title} />
+              <TableOfContents source={guide.body.raw} />
+              <SocialShare title={guide.title} />
             </VStack>
           </Grid>
         </Box>

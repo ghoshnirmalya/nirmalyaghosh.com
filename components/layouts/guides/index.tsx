@@ -3,12 +3,12 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import React, { FC, FormEvent, useState } from "react";
-import IGuide from "types/guide";
+import { Guide } from ".contentlayer/types";
 
 dayjs.extend(localizedFormat);
 
 interface Props {
-  guides: IGuide[];
+  guides: Guide[];
 }
 
 const Guides: FC<Props> = ({ guides = [] }) => {
@@ -16,11 +16,11 @@ const Guides: FC<Props> = ({ guides = [] }) => {
 
   const sortedGuides = guides
     .sort(
-      (a: IGuide, b: IGuide) =>
-        Number(new Date(b.data?.date)) - Number(new Date(a.data?.date))
+      (a: Guide, b: Guide) =>
+        Number(new Date(b.date)) - Number(new Date(a.date))
     )
-    .filter((guide: IGuide) =>
-      guide.data?.title.toLowerCase().includes(searchQuery.toLowerCase())
+    .filter((guide: Guide) =>
+      guide.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   const searchNode = () => {
@@ -29,6 +29,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
         <Input
           bg="gray.800"
           color="white"
+          borderRadius="sm"
           border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
@@ -80,15 +81,15 @@ const Guides: FC<Props> = ({ guides = [] }) => {
       );
     }
 
-    return sortedGuides.map((guide: IGuide) => {
+    return sortedGuides.map((guide: Guide) => {
       return (
-        <Box key={guide.data.slug}>
-          <Link href={`/guides/${guide.data.slug}`}>
+        <Box key={guide.slug}>
+          <Link href={`/guides/${guide.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {titleNode(guide.data.title)}
-                  {descriptionNode(guide.data.description)}
+                  {titleNode(guide.title)}
+                  {descriptionNode(guide.description)}
                 </VStack>
               </Box>
             </a>

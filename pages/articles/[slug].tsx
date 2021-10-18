@@ -8,8 +8,7 @@ import getMdxData from "lib/get-mdx-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import Article from "types/article";
-import frontMatter from "types/frontMatter";
+import { ParsedUrlQuery } from "querystring";
 
 const Callout = dynamic(
   () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -23,22 +22,17 @@ const components = { Callout, img: Image };
 
 interface IProps {
   mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
-  frontMatter: frontMatter;
-  source: string;
-  nextArticles: Article[];
+  params: ParsedUrlQuery;
 }
 
-const ArticlesSlugPage: NextPage<IProps> = ({
-  mdxSource,
-  frontMatter,
-  source,
-  nextArticles,
-}) => {
+const ArticlesSlugPage: NextPage<IProps> = ({ mdxSource, params }) => {
+  const nextArticles = getNextArticles(params);
+  const currentArticle = getCurrentArticle(params);
+
   return (
     <Page
-      content={<MDXRemote {...mdxSource} components={components} />}
-      frontMatter={frontMatter}
-      source={source}
+      content={<MDXRemote {...mdxSource} components={components} lazy />}
+      article={currentArticle}
       nextArticles={nextArticles}
     />
   );
@@ -50,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: getAllArticles().map((article) => {
       return {
         params: {
-          slug: article.data.slug,
+          slug: article.slug,
         },
       };
     }),
@@ -58,15 +52,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data, content } = getCurrentArticle(params);
-  const nextArticles = getNextArticles(params);
+  const { body } = getCurrentArticle(params);
 
   return {
     props: {
-      mdxSource: await getMdxData(content),
-      frontMatter: data,
-      source: content,
-      nextArticles,
+      mdxSource: await getMdxData(body.raw),
+      params,
     },
   };
 };

@@ -10,13 +10,13 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import { FC, FormEvent, useState } from "react";
-import IArticle from "types/article";
-import IPublication from "types/publication";
+import Publication from "types/publication";
+import { Article } from ".contentlayer/types";
 
 dayjs.extend(localizedFormat);
 
 interface Props {
-  articles: (IArticle & IPublication)[] | IArticle[];
+  articles: (Article & Publication)[] | Article[];
   hideViewAllLinksNode?: boolean;
   currentTag?: string;
   currentCategory?: string;
@@ -34,11 +34,11 @@ const Articles: FC<Props> = ({
 
   const sortedArticles = articles
     .sort(
-      (a: IArticle & IPublication, b: IArticle & IPublication) =>
-        Number(new Date(b.data?.date)) - Number(new Date(a.data?.date))
+      (a: Article & Publication, b: Article & Publication) =>
+        Number(new Date(b.date)) - Number(new Date(a.date))
     )
-    .filter((article: IArticle) =>
-      article.data?.title.toLowerCase().includes(searchQuery.toLowerCase())
+    .filter((article: Article) =>
+      article.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   const viewAllLinksNode = () => {
@@ -59,6 +59,7 @@ const Articles: FC<Props> = ({
         <Input
           bg="gray.800"
           color="white"
+          borderRadius="sm"
           border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
@@ -155,20 +156,20 @@ const Articles: FC<Props> = ({
       );
     }
 
-    return sortedArticles.map((article: IArticle & IPublication) => {
-      if (!article.data.slug) {
+    return sortedArticles.map((article: Article & Publication, index) => {
+      if (!article.slug) {
         return (
-          <Box key={article.data.slug}>
+          <Box key={index}>
             <a
-              href={`/articles/${article.data.slug}`}
+              href={`/articles/${article.slug}`}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(article.data.date)}
-                  {titleNode(article.data.title)}
-                  {descriptionNode(article.data.description)}
+                  {metaNode(article.date)}
+                  {titleNode(article.title)}
+                  {descriptionNode(article.description)}
                 </VStack>
               </Box>
             </a>
@@ -177,14 +178,14 @@ const Articles: FC<Props> = ({
       }
 
       return (
-        <Box key={article.data.slug}>
-          <Link href={`/articles/${article.data.slug}`}>
+        <Box key={index}>
+          <Link href={`/articles/${article.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(article.data.date)}
-                  {titleNode(article.data.title)}
-                  {descriptionNode(article.data.description)}
+                  {metaNode(article.date)}
+                  {titleNode(article.title)}
+                  {descriptionNode(article.description)}
                 </VStack>
               </Box>
             </a>

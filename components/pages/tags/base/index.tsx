@@ -1,23 +1,21 @@
 import { Box, Grid, SlideFade } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import IArticle from "types/article";
+import { Article } from ".contentlayer/types";
 
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
 interface Props {
-  articles: IArticle[];
+  articles: Article[];
   currentTag: string;
 }
 
 const Page: FC<Props> = ({ articles = [], currentTag }) => {
-  const sortedArticles: IArticle[] = articles.sort(
-    (a: IArticle, b: IArticle) => {
-      return Number(new Date(b.data?.date)) - Number(new Date(a.data?.date));
-    }
-  );
+  const sortedArticles: Article[] = articles.sort((a: Article, b: Article) => {
+    return Number(new Date(b.date)) - Number(new Date(a.date));
+  });
 
   return (
     <SlideFade in>

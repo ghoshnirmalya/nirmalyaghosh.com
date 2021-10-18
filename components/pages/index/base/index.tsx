@@ -1,9 +1,9 @@
 import { Box, SlideFade, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import IArticle from "types/article";
-import IProject from "types/project";
-import IPublication from "types/publication";
+import Project from "types/project";
+import Publication from "types/publication";
+import { Article } from ".contentlayer/types";
 
 const Jumbotron = dynamic(
   () =>
@@ -22,9 +22,9 @@ const Projects = dynamic(
 );
 
 interface Props {
-  articles: (IArticle & IPublication)[];
-  publications: any;
-  projects: IProject[];
+  articles: Article[];
+  publications: Publication[];
+  projects: Project[];
 }
 
 const Page: FC<Props> = ({
@@ -32,12 +32,15 @@ const Page: FC<Props> = ({
   publications = [],
   projects = [],
 }) => {
-  const allArticlesAndPublications = [...articles, ...publications];
+  const allArticlesAndPublications = [
+    ...articles,
+    ...publications,
+  ] as (Article & Publication)[];
 
-  const sortedAllArticlesAndPublications: (IArticle & IPublication)[] =
+  const sortedAllArticlesAndPublications: (Article & Publication)[] =
     allArticlesAndPublications.sort(
-      (a: IArticle & IPublication, b: IArticle & IPublication) => {
-        return Number(new Date(b.data?.date)) - Number(new Date(a.data?.date));
+      (a: Article & Publication, b: Article & Publication) => {
+        return Number(new Date(b.date)) - Number(new Date(a.date));
       }
     );
 

@@ -9,15 +9,15 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FC, FormEvent, useState } from "react";
-import IProject from "types/project";
+import Project from "types/project";
 
 interface Props {
-  projects: IProject[];
+  projects: Project[];
 }
 
 const Projects: FC<Props> = ({ projects = [] }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const sortedProjects = projects.filter((project: IProject) =>
+  const sortedProjects = projects.filter((project: Project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -27,6 +27,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
         <Input
           bg="gray.800"
           color="white"
+          borderRadius="sm"
           border="none"
           value={searchQuery}
           onChange={(e: FormEvent<HTMLInputElement>) =>
@@ -90,7 +91,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
         ]}
         gap={8}
       >
-        {sortedProjects.map((project: IProject, index: number) => {
+        {sortedProjects.map((project: Project, index: number) => {
           return (
             <Box key={index} bg="gray.800" color="white" rounded="sm">
               <a href={project.url} target="_blank" rel="noopener noreferrer">

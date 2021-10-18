@@ -1,25 +1,28 @@
 import { Box, Grid, SlideFade } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import IArticle from "types/article";
-import IPublication from "types/publication";
+import { Article } from ".contentlayer/types";
+import Publication from "types/publication";
 
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
 interface Props {
-  articles: (IArticle & IPublication)[];
-  publications: any;
+  articles: Article[];
+  publications: Publication[];
 }
 
 const Page: FC<Props> = ({ articles = [], publications = [] }) => {
-  const allArticlesAndPublications = [...articles, ...publications];
+  const allArticlesAndPublications = [
+    ...articles,
+    ...publications,
+  ] as (Article & Publication)[];
 
-  const sortedAllArticlesAndPublications: (IArticle & IPublication)[] =
+  const sortedAllArticlesAndPublications: (Article & Publication)[] =
     allArticlesAndPublications.sort(
-      (a: IArticle & IPublication, b: IArticle & IPublication) => {
-        return Number(new Date(b.data?.date)) - Number(new Date(a.data?.date));
+      (a: Article & Publication, b: Article & Publication) => {
+        return Number(new Date(b.date)) - Number(new Date(a.date));
       }
     );
 

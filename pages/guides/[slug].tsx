@@ -4,7 +4,7 @@ import getMdxData from "lib/get-mdx-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import dynamic from "next/dynamic";
-import frontMatter from "types/frontMatter";
+import { ParsedUrlQuery } from "querystring";
 
 const Callout = dynamic(
   () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -26,20 +26,16 @@ const components = { Callout, Jumbotron, Link, Image };
 
 interface IProps {
   mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
-  frontMatter: frontMatter;
-  source: string;
+  params: ParsedUrlQuery;
 }
 
-const GuidesSlugPage: NextPage<IProps> = ({
-  mdxSource,
-  frontMatter,
-  source,
-}) => {
+const GuidesSlugPage: NextPage<IProps> = ({ mdxSource, params }) => {
+  const currentGuide = getCurrentGuide(params);
+
   return (
     <Page
-      content={<MDXRemote {...mdxSource} components={components} />}
-      frontMatter={frontMatter}
-      source={source}
+      content={<MDXRemote {...mdxSource} components={components} lazy />}
+      guide={currentGuide}
     />
   );
 };
@@ -50,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: getAllGuides().map((guide) => {
       return {
         params: {
-          slug: guide.data.slug,
+          slug: guide.slug,
         },
       };
     }),
@@ -58,13 +54,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data, content } = getCurrentGuide(params.slug as string);
+  const { body } = getCurrentGuide(params);
 
   return {
     props: {
-      mdxSource: await getMdxData(content),
-      frontMatter: data,
-      source: content,
+      mdxSource: await getMdxData(body as unknown as string),
+      params,
     },
   };
 };

@@ -7,14 +7,16 @@ import {
   GetStaticPropsContext,
   NextPage,
 } from "next";
-import Article from "types/article";
+import { ParsedUrlQuery } from "querystring";
 
 interface IProps {
-  articles: Article[];
-  currentCategory: string;
+  params: ParsedUrlQuery;
 }
 
-const TagsListingPage: NextPage<IProps> = ({ articles, currentCategory }) => {
+const TagsListingPage: NextPage<IProps> = ({ params }) => {
+  const articles = getAllArticlesWhichBelongToCurrentSlug(params, "categories");
+  const currentCategory = params?.slug as string;
+
   return <Page articles={articles} currentCategory={currentCategory} />;
 };
 
@@ -23,7 +25,7 @@ export const getStaticProps: GetStaticProps = async ({
 }: GetStaticPropsContext) => {
   return {
     props: {
-      articles: getAllArticlesWhichBelongToCurrentSlug(params, "categories"),
+      params,
       currentCategory: params?.slug,
     },
   };

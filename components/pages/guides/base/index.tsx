@@ -1,14 +1,14 @@
 import { Box, Grid, SlideFade } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import IGuide from "types/guide";
+import { Guide } from ".contentlayer/types";
 
 const Guides = dynamic(
   () => import(/* webpackChunkName: "guides" */ "components/layouts/guides")
 );
 
 interface Props {
-  guides: IGuide[];
+  guides: Guide[];
 }
 
 const Page: FC<Props> = ({ guides = [] }) => {

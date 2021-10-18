@@ -1,53 +1,20 @@
 import { allGuides } from ".contentlayer/data";
 import find from "lodash/find";
-import IFrontMatter from "types/frontMatter";
-import Guide from "types/guide";
+import { ParsedUrlQuery } from "querystring";
+import { Guide } from ".contentlayer/types";
 
-export const getCurrentGuide = (slug: string) => {
+export const getCurrentGuide = (params: ParsedUrlQuery | undefined) => {
   const allGuides = getAllGuides();
 
   const currentGuide = find(allGuides, (guide) => {
-    if (guide.data.slug === slug) {
-      return {
-        data: guide.data,
-        content: guide.content,
-      };
+    if (guide.slug === params.slug) {
+      return guide;
     }
-  }) as Guide;
+  });
 
-  return currentGuide;
+  return currentGuide as Guide;
 };
 
 export const getAllGuides = () => {
-  return allGuides.map((guide) => {
-    const {
-      title,
-      description,
-      date,
-      lastmod,
-      tags,
-      categories,
-      keywords,
-      slug,
-      body,
-      githubLink,
-      coverImage,
-    } = guide;
-
-    return {
-      data: {
-        title,
-        description,
-        date,
-        lastmod,
-        tags,
-        categories,
-        keywords,
-        slug,
-        githubLink,
-        coverImage,
-      } as unknown as IFrontMatter,
-      content: body.raw,
-    };
-  });
+  return allGuides;
 };

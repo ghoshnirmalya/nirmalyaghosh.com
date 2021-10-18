@@ -1,10 +1,10 @@
 import { Box, Heading, Link as _Link, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 import { FC } from "react";
-import IProject from "types/project";
+import Project from "types/project";
 
 interface Props {
-  projects: IProject[];
+  projects: Project[];
   hideViewAllLinksNode?: boolean;
 }
 
@@ -48,7 +48,7 @@ const projects: FC<Props> = ({
   };
 
   const projectsNode = () => {
-    return projects.map((project: IProject, index: number) => {
+    return projects.map((project: Project, index: number) => {
       return (
         <Box key={index}>
           <a href={project.url} target="_blank" rel="noopener noreferrer">
