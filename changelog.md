@@ -1,3 +1,26 @@
+# [1.7.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.6.0...1.7.0) (2021-10-19)
+
+### Bug Fixes
+
+- Fix dynamic imports ([b421423](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/b4214231fa28f6fee35dda935a04ea73576167a5))
+- Fixes issues with guides ([b5cf96a](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/b5cf96a23fbff32254c2b6f265881514c173e925))
+- remove swcMinify config ([d26d011](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/d26d01113788b249866049074eeea7fad07b6286))
+
+### Features
+
+- Add 'Getting started with Next.js' ([4f5d55e](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/4f5d55e52b1dbddcc1c208c17fbfab03a9c4cd50))
+- Add 'How can you use the Next.js Image component' ([0472653](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/0472653237dc1b55b7abd25f3784ef76bd059e14))
+- Add 'What is getStaticProps in Next.js' ([d265a0b](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/d265a0b230ec701dd03a996e39b1380c427ad1e8))
+- Add 'What is Incremental Static Re-generation in Next.js' ([5cbae34](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/5cbae34296fb72d0180da6513f662bb23fbaff01))
+- Add google-site-verification code ([4bb0c09](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/4bb0c0973f6cbbdbb89bd464ecf7a2c616a6fc2a))
+- Add Next.js image component ([14abc2c](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/14abc2c3b82717f43d4b45b2bfdd039734596b68))
+- Adds animations ([9f17c1e](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/9f17c1e3897e6c39dab1385f9c4c8349edb7368d))
+- Adds contentlayer ([adda73a](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/adda73aeb7a897395f9ca24a9e5ddfb2516ae3fd))
+- Adds Google Analytics ([dbffd50](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/dbffd5010d4940215a0850a1dde67c0660614aa6))
+- Adds related posts ([8a750a7](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/8a750a75a029cb65d2a1c07dc1275c38efc4bbc1))
+- Adds tags and categories ([e88db6a](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/e88db6a4b3a2d70e45bf71d603ffe6b5c721f397))
+- Adds TOC component ([1f3a177](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/1f3a177dd0dbb57543347b7fad5a062c979bed9f))
+
 # [1.6.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.5.1...1.6.0) (2021-09-23)
 
 ### Features
