@@ -31,10 +31,20 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       rounded="sm"
       bgColor={allowedTypes[type].bgColor}
       color={allowedTypes[type].color}
-      mb={8}
+      mr={2}
     >
       <HStack spacing={2}>
-        <Box fontSize={48}>{allowedTypes[type].icon}</Box>
+        <Box
+          fontSize={40}
+          pos="absolute"
+          top="-32px"
+          right="-32px"
+          bgColor="gray.900"
+          rounded="full"
+          padding={1}
+        >
+          {allowedTypes[type].icon}
+        </Box>
         <Box
           sx={{
             "> p": {

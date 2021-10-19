@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      mdxSource: await getMdxData(body as unknown as string),
+      mdxSource: await getMdxData(body.raw),
       params,
     },
   };

@@ -225,7 +225,7 @@ export const prismDarkTheme = css`
     color: ${theme.colors.blue[300]};
   }
 
-  .article a:hover {
+  .article a:not(.chakra-link):hover {
     color: ${theme.colors.blue[400]};
   }
 

@@ -1,27 +1,14 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Link as _Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, HStack, Link as _Link, Text, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { IoLogoGithub, IoMdEye } from "react-icons/io";
 
 interface IProps {
-  heading: string;
   description: string;
   githubLink: string;
   demoLink: string;
 }
 
-const Jumbotron: FC<IProps> = ({
-  heading,
-  description,
-  githubLink,
-  demoLink,
-}) => {
+const Jumbotron: FC<IProps> = ({ description, githubLink, demoLink }) => {
   const githubButtonNode = () => {
     if (!githubLink) {
       return false;
