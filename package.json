@@ -44,7 +44,7 @@
     "@types/react": "^17.0.30",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
-    "husky": "^7.0.2",
+    "husky": "^7.0.4",
     "lint-staged": "^11.2.3",
     "prettier": "^2.4.1",
     "release-it": "^14.11.6",
