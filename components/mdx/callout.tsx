@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Icon } from "@chakra-ui/react";
 import React, { FC, ReactChildren } from "react";
 import { theme } from "@chakra-ui/react";
 import { IoIosAlert, IoIosHelpCircle, IoIosWarning } from "react-icons/io";
@@ -10,19 +10,19 @@ interface IProps {
 const Callout: FC<IProps> = ({ type = "info", children }) => {
   const allowedTypes = {
     error: {
-      icon: <IoIosAlert />,
+      icon: IoIosAlert,
       bgColor: "red.800",
-      color: "white",
+      color: "red.200",
     },
     info: {
-      icon: <IoIosHelpCircle />,
+      icon: IoIosHelpCircle,
       bgColor: "gray.800",
-      color: "white",
+      color: "gray.200",
     },
     warning: {
-      icon: <IoIosWarning />,
+      icon: IoIosWarning,
       bgColor: "yellow.800",
-      color: "white",
+      color: "yellow.200",
     },
   };
   return (
@@ -33,18 +33,18 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       color={allowedTypes[type].color}
       mr={2}
     >
-      <HStack spacing={2}>
-        <Box
+      <HStack spacing={2} pos="relative">
+        <Icon
+          as={allowedTypes[type].icon}
           fontSize={40}
           pos="absolute"
-          top="-32px"
-          right="-32px"
+          top="-30px"
+          right="-30px"
           bgColor="gray.900"
           rounded="full"
           padding={1}
-        >
-          {allowedTypes[type].icon}
-        </Box>
+          color={allowedTypes[type].color}
+        />
         <Box
           sx={{
             "> p": {
