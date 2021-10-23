@@ -161,7 +161,7 @@ const Articles: FC<Props> = ({
         return (
           <Box key={index}>
             <a
-              href={`/articles/${article.slug}`}
+              href={article.url}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
