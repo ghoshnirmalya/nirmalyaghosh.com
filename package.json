@@ -35,7 +35,7 @@
     "rehype-img-size": "^0.0.1",
     "remark-code-titles": "^0.1.2",
     "remark-external-links": "^9.0.1",
-    "remark-slug": "^7.0.0"
+    "remark-slug": "^7.0.1"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
