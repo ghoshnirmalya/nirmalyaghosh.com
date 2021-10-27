@@ -24,7 +24,7 @@
     "github-slugger": "^1.4.0",
     "next": "11.1.2",
     "next-contentlayer": "^0.0.27",
-    "next-mdx-remote": "^3.0.6",
+    "next-mdx-remote": "^3.0.7",
     "next-seo": "^4.28.1",
     "preact": "^10.5.15",
     "react": "17.0.2",
