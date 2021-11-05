@@ -3,23 +3,24 @@ import {
   defineDocumentType,
   makeSource,
   defineNestedType,
+  NestedType,
 } from "contentlayer/source-files";
 
-export const Category = defineNestedType(() => ({
+export const Category: NestedType<"Category"> = defineNestedType(() => ({
   name: "Category",
   fields: {
     category: { type: "list", of: Category },
   },
 }));
 
-export const Tag = defineNestedType(() => ({
+export const Tag: NestedType<"Tag"> = defineNestedType(() => ({
   name: "Tag",
   fields: {
     tag: { type: "list", of: Tag },
   },
 }));
 
-export const Keyword = defineNestedType(() => ({
+export const Keyword: NestedType<"Keyword"> = defineNestedType(() => ({
   name: "Keyword",
   fields: {
     keyword: { type: "list", of: Keyword },
@@ -36,9 +37,9 @@ export const Article = defineDocumentType(() => ({
     date: { type: "date", required: true },
     lastmod: { type: "date", required: true },
     draft: { type: "boolean", required: true },
-    categories: { type: "list", of: Category },
-    tags: { type: "list", of: Tag },
-    keywords: { type: "list", of: Keyword },
+    categories: { type: "list", of: Category, required: true },
+    tags: { type: "list", of: Tag, required: true },
+    keywords: { type: "list", of: Keyword, required: true },
   },
 }));
 
@@ -54,9 +55,9 @@ export const Guide = defineDocumentType(() => ({
     draft: { type: "boolean", required: true },
     coverImage: { type: "string" },
     githubLink: { type: "string" },
-    categories: { type: "list", of: Category },
-    tags: { type: "list", of: Tag },
-    keywords: { type: "list", of: Keyword },
+    categories: { type: "list", of: Category, required: true },
+    tags: { type: "list", of: Tag, required: true },
+    keywords: { type: "list", of: Keyword, required: true },
   },
 }));
 

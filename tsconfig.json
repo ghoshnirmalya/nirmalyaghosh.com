@@ -24,7 +24,8 @@
       "types/*": ["types/*"],
       "public/*": ["public/*"],
       "styles/*": ["styles/*"]
-    }
+    },
+    "incremental": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
