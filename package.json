@@ -22,7 +22,7 @@
     "ga-4-react": "^0.1.281",
     "gatsby-remark-vscode": "^3.3.0",
     "github-slugger": "^1.4.0",
-    "next": "12.0.2",
+    "next": "12.0.3",
     "next-contentlayer": "^0.0.27",
     "next-mdx-remote": "^3.0.7",
     "next-seo": "^4.28.1",
