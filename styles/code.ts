@@ -3,23 +3,23 @@ import { theme } from "@chakra-ui/react";
 
 const prismBaseTheme = css`
   // Headings
-  .article > h2,
-  .article > h3,
-  .article > h4 {
+  .article > div > h2,
+  .article > div > h3,
+  .article > div > h4 {
     font-weight: ${theme.fontWeights.bold};
   }
 
-  .article > h2 {
+  .article > div > h2 {
     padding: ${theme.space[8]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["3xl"]};
   }
 
-  .article > h3 {
+  .article > div > h3 {
     padding: ${theme.space[6]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
   }
 
-  .article > h4 {
+  .article > div > h4 {
     padding: ${theme.space[4]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["xl"]};
   }
@@ -107,14 +107,14 @@ const prismBaseTheme = css`
     border-radius: ${theme.radii.sm};
   }
 
-  .article > h2 code {
+  .article > div > h2 code {
     font-size: ${theme.fontSizes["2xl"]};
   }
 
-  .article > h3 code {
+  .article > div > h3 code {
     font-size: ${theme.fontSizes["xl"]};
   }
-  .article > h4 code {
+  .article > div > h4 code {
     font-size: ${theme.fontSizes["lg"]};
   }
 
@@ -203,9 +203,9 @@ export const prismDarkTheme = css`
   ${prismBaseTheme};
 
   // Headings
-  .article > h2,
-  .article > h3,
-  .article > h4 {
+  .article > div > h2,
+  .article > div > h3,
+  .article > div > h4 {
     color: ${theme.colors.gray[200]};
   }
 
