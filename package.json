@@ -16,7 +16,7 @@
     "@chakra-ui/react": "^1.6.12",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "contentlayer": "^0.0.27",
+    "contentlayer": "^0.0.28",
     "dayjs": "^1.10.7",
     "framer-motion": "^5.2.1",
     "ga-4-react": "^0.1.281",
