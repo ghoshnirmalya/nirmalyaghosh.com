@@ -1,10 +1,17 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/6391763/91746343-12db9600-ebda-11ea-852f-c53409d470ca.png" alt="Logo"/>
+  <img
+    src="https://user-images.githubusercontent.com/6391763/91746343-12db9600-ebda-11ea-852f-c53409d470ca.png"
+    alt="Logo"
+  />
 </p>
 
 <p align="center">
   <a href="https://twitter.com/nirmalyaghosh23">
-    <img alt="Twitter: Nirmalya Ghosh" src="https://img.shields.io/twitter/follow/nirmalyaghosh23.svg?style=social" target="_blank" />
+    <img
+      alt="Twitter: Nirmalya Ghosh"
+      src="https://img.shields.io/twitter/follow/nirmalyaghosh23.svg?style=social"
+      target="_blank"
+    />
   </a>
 </p>
 

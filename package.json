@@ -7,23 +7,23 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "release": "release-it",
-    "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "release-it",
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.12",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "contentlayer": "^0.0.27",
+    "contentlayer": "^0.0.30",
     "dayjs": "^1.10.7",
     "framer-motion": "^5.2.1",
     "ga-4-react": "^0.1.281",
     "gatsby-remark-vscode": "^3.3.0",
     "github-slugger": "^1.4.0",
     "next": "12.0.3",
-    "next-contentlayer": "^0.0.27",
+    "next-contentlayer": "^0.0.30",
     "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
     "preact": "^10.5.15",
@@ -60,6 +60,9 @@
   "lint-staged": {
     "*.{js,json,css,md,tsx,ts}": [
       "prettier --write"
+    ],
+    "*.mdx": [
+      "prettier --write --parser mdx"
     ]
   }
 }
