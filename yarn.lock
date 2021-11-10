@@ -864,6 +864,24 @@
     type-fest "^1.2.1"
     unified "^10.1.0"
 
+"@contentlayer/core@0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.0.31.tgz#50a18258775fe6dca6d99e1e2006594dd5a52d60"
+  integrity sha512-bhzoZP2osD1BMV+vA7tjIfbCJ2kSxTZN41FfSVyIMdgLwwznGmqYVL6MxXJ9rs64s8ofqZPu2MjpsarZgnMEUQ==
+  dependencies:
+    "@contentlayer/utils" "0.0.31"
+    camel-case "^4.1.2"
+    date-fns "2.x"
+    esbuild "0.11.x || 0.12.x || 0.13.x"
+    gray-matter "^4.0.3"
+    mdx-bundler "^6.0.2"
+    rehype-stringify "^9.0.2"
+    remark-parse "^10.0.0"
+    remark-rehype "^10.0.0"
+    source-map-support "^0.5.20"
+    type-fest "^1.2.1"
+    unified "^10.1.0"
+
 "@contentlayer/source-files@0.0.30":
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.30.tgz#37ae816ebbf06bb4ecc9df0b2c8cbd1b7a09f61f"
@@ -904,6 +922,29 @@
     ts-pattern "^3.3.3"
     type-fest "^1.2.1"
 
+"@contentlayer/utils@0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.0.31.tgz#f57ab36ad896e7d5e72aa4c2e585f98207817f08"
+  integrity sha512-ViHLvZGHBCSymvtZ7jLEMuk748D0x24R7xiHIXy3y9yngytoKuabSSUl0TCg6uo+FOgZ198CBi6CCMT2Ax2JbQ==
+  dependencies:
+    "@effect-ts/core" "^0.45.5"
+    "@effect-ts/otel" "^0.7.1"
+    "@effect-ts/otel-node" "^0.7.1"
+    "@opentelemetry/api" "^1.0.3"
+    "@opentelemetry/core" "^1.0.0"
+    "@opentelemetry/exporter-collector" "^0.25.0"
+    "@opentelemetry/exporter-collector-grpc" "^0.25.0"
+    "@opentelemetry/resources" "^1.0.0"
+    "@opentelemetry/sdk-trace-base" "^1.0.0"
+    "@opentelemetry/sdk-trace-node" "^1.0.0"
+    "@opentelemetry/semantic-conventions" "^1.0.0"
+    chokidar "^3.5.2"
+    hash-wasm "^4.9.0"
+    inflection "^1.13.1"
+    oo-ascii-tree "^1.36.0"
+    ts-pattern "^3.3.3"
+    type-fest "^1.2.1"
+
 "@ctrl/tinycolor@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
@@ -923,10 +964,22 @@
   dependencies:
     "@effect-ts/otel" "^0.7.0"
 
+"@effect-ts/otel-node@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@effect-ts/otel-node/-/otel-node-0.7.1.tgz#17ace4549992048305062ffe27d6b5d905327a4a"
+  integrity sha512-tDz3JrNhv2Au4WRRYRsyirNbPmggIk9Scvp0tmS1xIf8uNF2TmB/7qUVPlnPa4m5cHTQMlwSU9c6mxM1Uh4P/Q==
+  dependencies:
+    "@effect-ts/otel" "^0.7.1"
+
 "@effect-ts/otel@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@effect-ts/otel/-/otel-0.7.0.tgz#6f6f889b4c9a4db86f1cc94a7e6d60c2d1260544"
   integrity sha512-kRip3W6M5632nUrsjfRPJ64jLCDBBFi4lEtVWP5BVGH+vPSR3hHLAngkoad4gexZc/vby12wO9URCkAkWrUNtQ==
+
+"@effect-ts/otel@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@effect-ts/otel/-/otel-0.7.1.tgz#9d54ef7638b00dc6a89d7900e4545488bd4bb599"
+  integrity sha512-j5MUxdYToBzIfIzyfdUnKGWf/Jjkf+P49AhxZq+zI5Bmv7obCMDftrpZmFfWlRaTV4BsakGJNNTXxbT0PZsmDQ==
 
 "@effect-ts/system@^0.42.5":
   version "0.42.5"
@@ -6455,13 +6508,13 @@ new-github-release-url@1.0.0:
   dependencies:
     type-fest "^0.4.1"
 
-next-contentlayer@^0.0.30:
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.0.30.tgz#42393aa88e7d75559668eaa15beee012206e5fa9"
-  integrity sha512-CFYgwNXj1e2mNO02xbuG/f4CSVFnZxojn+SQtqbSS3yhWd0uO/i3pMeouCoPpHmg7o+FkiTe2yaKalfh8li4uA==
+next-contentlayer@^0.0.31:
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.0.31.tgz#a6c206aa31d6606cbd72618762d0b127edae40a1"
+  integrity sha512-KGosk1tBECZJ7g+HSvq427hAXbkTkWO83SRwxuE3E5fujB6xt/vDWu9g2MC3KmlXiR7jT4FO8LHVc2nk80TYNg==
   dependencies:
-    "@contentlayer/core" "0.0.30"
-    "@contentlayer/utils" "0.0.30"
+    "@contentlayer/core" "0.0.31"
+    "@contentlayer/utils" "0.0.31"
     rxjs "^7.1.0"
 
 next-mdx-remote@^3.0.8:
@@ -7867,17 +7920,10 @@ rxjs@^6.6.7:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^7.1.0:
+rxjs@^7.1.0, rxjs@^7.2.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.4.0.tgz#a12a44d7eebf016f5ff2441b87f28c9a51cebc68"
   integrity sha512-7SQDi7xeTMCJpqViXh8gL/lebcwlp3d831F05+9B44A4B0WfsEwUQHR64gsH1kvJ+Ep/J9K2+n1hVl1CsGN23w==
-  dependencies:
-    tslib "~2.1.0"
-
-rxjs@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.2.0.tgz#5cd12409639e9514a71c9f5f9192b2c4ae94de31"
-  integrity sha512-aX8w9OpKrQmiPKfT1bqETtUr9JygIz6GZ+gql8v7CijClsP0laoFUdKzxFAoWuRdSlOdU2+crss+cMf+cqMTnw==
   dependencies:
     tslib "~2.1.0"
 
