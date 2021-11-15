@@ -836,22 +836,22 @@
   dependencies:
     "@chakra-ui/utils" "1.9.1"
 
-"@contentlayer/cli@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.0.30.tgz#b9c5616f9dc068309d3fdffb92d9df03cf2e91f2"
-  integrity sha512-TWA5vMCKQetmWHDGfrnR9KZ8Ux8fYHqoEWFZP5/ouLcrFGcO+ADwDB09OMAr/lAIRU4j8lCJq2id+ozY//qHCA==
+"@contentlayer/cli@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.0.32.tgz#573947ccd1993e2c6e8b0d6655e48ea401debde0"
+  integrity sha512-exCjv6xVeJ3+OeC4TPvdvuhCAJtf2rW4xBKhENqHPmP2bWVzsTBE2q9Pdtw4BSSHkGJ0fjetZ6HMBbPgXA41Pw==
   dependencies:
-    "@contentlayer/core" "0.0.30"
-    "@contentlayer/utils" "0.0.30"
+    "@contentlayer/core" "0.0.32"
+    "@contentlayer/utils" "0.0.32"
     clipanion "^3.2.0-rc.3"
     typanion "^3.5.0"
 
-"@contentlayer/client@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.0.30.tgz#c783f64257ac908af1293ce1739f83ba88946ecb"
-  integrity sha512-emy2l7N23EhTIqaxnJ3UMwDxzp/b5ysg0arbyLL+c2JMZol0FGsK4Rl7YwRcLv6fR8uo37uBHr2xbQyJe4aa/Q==
+"@contentlayer/client@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.0.32.tgz#89b5d8f34e3a2c01ca32636f85499bb96db75005"
+  integrity sha512-OcYKntXCm/uNUaIS0okRDCjkj9fL+n91vu2Ap/E5n9Isrzz2P1JLkp5h7sgofVffByTgCwhiF+l65PkXoglUew==
   dependencies:
-    "@contentlayer/core" "0.0.30"
+    "@contentlayer/core" "0.0.32"
 
 "@contentlayer/core@0.0.30":
   version "0.0.30"
@@ -871,13 +871,31 @@
     type-fest "^1.2.1"
     unified "^10.1.0"
 
-"@contentlayer/source-files@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.30.tgz#37ae816ebbf06bb4ecc9df0b2c8cbd1b7a09f61f"
-  integrity sha512-q6aWydhfk8Lh6KiVR3gjrGcTeFQUJv9w2zT7cYsdHZdp8y0Cqx7Qmc7+w3YN+Zfc0q6D6htFKcGq1lfx08KWTg==
+"@contentlayer/core@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.0.32.tgz#45119318e213f68e8ef5dd0494fe31d8b2ef6384"
+  integrity sha512-xv4UClu37rExj86soFBBx9v5oHG/PpO38HYYN7MWfGVL5+6q3RebcMPDDZZsL1fXZG4/xxTwVURQK51vJ3hqzw==
   dependencies:
-    "@contentlayer/core" "0.0.30"
-    "@contentlayer/utils" "0.0.30"
+    "@contentlayer/utils" "0.0.32"
+    camel-case "^4.1.2"
+    date-fns "2.x"
+    esbuild "0.11.x || 0.12.x || 0.13.x"
+    gray-matter "^4.0.3"
+    mdx-bundler "^6.0.2"
+    rehype-stringify "^9.0.2"
+    remark-parse "^10.0.0"
+    remark-rehype "^10.0.0"
+    source-map-support "^0.5.20"
+    type-fest "^1.2.1"
+    unified "^10.1.0"
+
+"@contentlayer/source-files@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.0.32.tgz#0ca86e22ed39db728d2fe7c7f88259ba968b7c1a"
+  integrity sha512-GIrDTWwJGTIpD9MvQLM/OZE72B6EQ7ZSJNd+s6Vz5mmWhbcM2rafeRPDECL4b4/TBoGFmAyBoJUgEcp9KjOg+Q==
+  dependencies:
+    "@contentlayer/core" "0.0.32"
+    "@contentlayer/utils" "0.0.32"
     chokidar "^3.5.2"
     date-fns-tz "^1.1.6"
     glob "^7.2.0"
@@ -896,6 +914,29 @@
     "@effect-ts/core" "^0.45.5"
     "@effect-ts/otel" "^0.7.0"
     "@effect-ts/otel-node" "^0.7.0"
+    "@opentelemetry/api" "^1.0.3"
+    "@opentelemetry/core" "^1.0.0"
+    "@opentelemetry/exporter-collector" "^0.25.0"
+    "@opentelemetry/exporter-collector-grpc" "^0.25.0"
+    "@opentelemetry/resources" "^1.0.0"
+    "@opentelemetry/sdk-trace-base" "^1.0.0"
+    "@opentelemetry/sdk-trace-node" "^1.0.0"
+    "@opentelemetry/semantic-conventions" "^1.0.0"
+    chokidar "^3.5.2"
+    hash-wasm "^4.9.0"
+    inflection "^1.13.1"
+    oo-ascii-tree "^1.36.0"
+    ts-pattern "^3.3.3"
+    type-fest "^1.2.1"
+
+"@contentlayer/utils@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.0.32.tgz#15311b0640b774b8a01a0a9c30d4d1b50f6f8b1f"
+  integrity sha512-dwYV8mfUXzDHir81JQM8NohVD9fZXtkVNK9gFi4POWtxc9FHz4b5CSQlJcf457xf8l8ImmHWJhJb0LN8GwAX2A==
+  dependencies:
+    "@effect-ts/core" "^0.45.5"
+    "@effect-ts/otel" "^0.7.1"
+    "@effect-ts/otel-node" "^0.7.1"
     "@opentelemetry/api" "^1.0.3"
     "@opentelemetry/core" "^1.0.0"
     "@opentelemetry/exporter-collector" "^0.25.0"
@@ -930,10 +971,22 @@
   dependencies:
     "@effect-ts/otel" "^0.7.0"
 
+"@effect-ts/otel-node@^0.7.1":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@effect-ts/otel-node/-/otel-node-0.7.2.tgz#e69a8e01c150e7c1d2a79f43445e81bd178de7d6"
+  integrity sha512-0tsjcCawjIsS9KEinsU3r/lhb/Q3sm5tD2vAxOiRZSYcx5maWvB+Cl9JqhV1fWWs51jHwO8aY5Mcb/9msKuuTg==
+  dependencies:
+    "@effect-ts/otel" "^0.7.2"
+
 "@effect-ts/otel@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@effect-ts/otel/-/otel-0.7.0.tgz#6f6f889b4c9a4db86f1cc94a7e6d60c2d1260544"
   integrity sha512-kRip3W6M5632nUrsjfRPJ64jLCDBBFi4lEtVWP5BVGH+vPSR3hHLAngkoad4gexZc/vby12wO9URCkAkWrUNtQ==
+
+"@effect-ts/otel@^0.7.1", "@effect-ts/otel@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@effect-ts/otel/-/otel-0.7.2.tgz#bfb8cab1b30bde3fa353b9130e05938e9a0beeb3"
+  integrity sha512-LLwcHLb7ah+Ef91Ab5z6JTflGAMH6u9ShFbsqVOGax4MgfZDCmYLdB9/49wMMAuTKKfP+OT/0CxXhRTTLE3feg==
 
 "@effect-ts/system@^0.42.5":
   version "0.42.5"
@@ -2828,16 +2881,16 @@ constants-browserify@1.0.0:
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
   integrity sha1-wguW2MYXdIqvHBYCF2DNJ/y4y3U=
 
-contentlayer@^0.0.30:
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.0.30.tgz#582af760500a31ee405967f1ddf19fa6ad90a7ae"
-  integrity sha512-pyIp17ue2zPyryyYDDyrX4VwZJzXjyslq+d8zx53JLohYBuHM5nFkNB7zD2xZpfYh4K1Ns+SDEwQ7QAuybfA5Q==
+contentlayer@^0.0.32:
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.0.32.tgz#20b1209463b972b3959ccf168c77e53200455499"
+  integrity sha512-i82VAXhIVTPA3m37TS2AN5AU/FZbko/SLjIc7KKVOA7cdm91c4z+bqGMe+61Ibsd9vOK5pl9WFgDgKkIXzM9MQ==
   dependencies:
-    "@contentlayer/cli" "0.0.30"
-    "@contentlayer/client" "0.0.30"
-    "@contentlayer/core" "0.0.30"
-    "@contentlayer/source-files" "0.0.30"
-    "@contentlayer/utils" "0.0.30"
+    "@contentlayer/cli" "0.0.32"
+    "@contentlayer/client" "0.0.32"
+    "@contentlayer/core" "0.0.32"
+    "@contentlayer/source-files" "0.0.32"
+    "@contentlayer/utils" "0.0.32"
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.12"
