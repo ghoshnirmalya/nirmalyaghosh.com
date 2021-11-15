@@ -162,7 +162,7 @@ const Page: NextPage<IProps> = ({ article, content, nextArticles }) => {
               pos="sticky"
               top={8}
               h="100vh"
-              overflow="scroll"
+              overflow="auto"
               display={["none", "none", "none", "block"]}
             >
               <TableOfContents source={article.body.raw} />
