@@ -18,7 +18,7 @@
     "@emotion/styled": "^11.6.0",
     "contentlayer": "^0.0.30",
     "dayjs": "^1.10.7",
-    "framer-motion": "^5.3.0",
+    "framer-motion": "^5.3.1",
     "ga-4-react": "^0.1.281",
     "gatsby-remark-vscode": "^3.3.0",
     "github-slugger": "^1.4.0",
