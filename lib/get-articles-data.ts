@@ -1,5 +1,4 @@
 import { allArticles } from ".contentlayer/data";
-import { Category, Tag } from ".contentlayer/types";
 import compact from "lodash/compact";
 import filter from "lodash/filter";
 import find from "lodash/find";
@@ -30,17 +29,19 @@ export const getAllArticlesWhichBelongToCurrentSlug = (
   switch (type) {
     case "categories":
       const allPostsFromThisCategory = filter(allArticles, (article) => {
-        return article.categories.includes(params?.slug as unknown as Category);
+        return article.categories.includes(params?.slug);
       });
 
-      return compact(flattenDeep(allPostsFromThisCategory));
+      return compact(
+        flattenDeep(allPostsFromThisCategory)
+      ) as unknown as Article[];
 
     case "tags":
       const allPostsFromThisTag = filter(allArticles, (article) => {
-        return article.tags.includes(params?.slug as unknown as Tag);
+        return article.tags.includes(params?.slug);
       });
 
-      return compact(flattenDeep(allPostsFromThisTag));
+      return compact(flattenDeep(allPostsFromThisTag)) as unknown as Article[];
 
     default:
       break;

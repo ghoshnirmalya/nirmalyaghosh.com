@@ -54,7 +54,7 @@ export const getStaticProps = async () => {
 
 The TypeScript version of the above will be:
 
-```tsx
+```tsx {13}
 import { GetStaticProps, NextPage } from "next";
 
 interface IProps {
@@ -67,7 +67,6 @@ const Page: NextPage<IProps> = ({ articles }) => {
 
 export default Page;
 
-// highlight-next-line
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {

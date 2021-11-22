@@ -25,7 +25,7 @@ In a Next.js application, you can use ISR to re-generate the HTML content on a p
 
 Let's consider the following example of a Next.js page with the `getStaticProps` function:
 
-```jsx {numberLines}
+```jsx {25} showLineNumbers
 // Just a simple JSON file which has the `sections` key.
 import sections from "../data.json";
 
@@ -50,7 +50,7 @@ export async function getStaticProps() {
       // This file was imported on line 2
       sections,
     },
-    revalidate: 100, // highlight-line
+    revalidate: 100,
   };
 }
 ```

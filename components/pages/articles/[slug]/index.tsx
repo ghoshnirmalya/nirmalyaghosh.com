@@ -17,12 +17,22 @@ import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import NextLink from "next/link";
+import { useMDXComponent } from "next-contentlayer/hooks";
+
+const Callout = dynamic(
+  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+);
+
+const Image = dynamic(
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
+);
 
 dayjs.extend(localizedFormat);
 
+const components = { Callout, img: Image };
+
 interface IProps {
   article: Article;
-  content: JSX.Element;
   nextArticles: Article[];
 }
 
@@ -36,7 +46,9 @@ const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
-const Page: NextPage<IProps> = ({ article, content, nextArticles }) => {
+const Page: NextPage<IProps> = ({ article, nextArticles }) => {
+  const MDXContent = useMDXComponent(article.body.code);
+
   const publishedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
@@ -151,7 +163,9 @@ const Page: NextPage<IProps> = ({ article, content, nextArticles }) => {
                   </HStack>
                   {titleNode()}
                 </VStack>
-                <Box className="article">{content}</Box>
+                <Box className="article">
+                  <MDXContent components={components} />
+                </Box>
                 {tagsNode()}
                 {updatedMetaNode()}
                 <Box pt={12}>{relatedArticlesNode()}</Box>

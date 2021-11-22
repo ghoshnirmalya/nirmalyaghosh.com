@@ -13,14 +13,32 @@ import siteConfig from "config/site";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 
+const Callout = dynamic(
+  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+);
+
+const Jumbotron = dynamic(
+  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+);
+
+const Link = dynamic(
+  () => import(/* webpackChunkName: "Link" */ "components/mdx/link")
+);
+
+const Image = dynamic(
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
+);
+
 dayjs.extend(localizedFormat);
+
+const components = { Callout, Jumbotron, Link, Image };
 
 interface IProps {
   guide: Guide;
-  content: JSX.Element;
 }
 
 const SocialShare = dynamic(
@@ -30,7 +48,9 @@ const SocialShare = dynamic(
   }
 );
 
-const Page: NextPage<IProps> = ({ content, guide }) => {
+const Page: NextPage<IProps> = ({ guide }) => {
+  const MDXContent = useMDXComponent(guide.body.code);
+
   const publishedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
@@ -103,7 +123,9 @@ const Page: NextPage<IProps> = ({ content, guide }) => {
                   {publishedMetaNode()}
                   {titleNode()}
                 </VStack>
-                <Box className="article">{content}</Box>
+                <Box className="article">
+                  <MDXContent components={components} />
+                </Box>
                 {updatedMetaNode()}
               </VStack>
             </Box>

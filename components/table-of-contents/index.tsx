@@ -20,8 +20,6 @@ const useIntersectionObserver = (
 
   useEffect(() => {
     const callback = (headings: IntersectionObserverEntry[]) => {
-      console.log(headings);
-
       headingElementsRef.current = headings.reduce(
         (
           map: { [x: string]: any },
