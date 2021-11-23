@@ -23,7 +23,7 @@ const prismStyles = css`
     --prism-namespace: #4f4f4f;
     --prism-punctuation: #ababab;
     --prism-decorator: var(--prism-class);
-    --prism-operator: var(--prism-punctuation);
+    --prism-operator: #79c0ff;
     --prism-number: var(--prism-literal);
     --prism-boolean: var(--prism-literal);
     --prism-variable: var(--prism-literal);
@@ -70,19 +70,21 @@ const prismStyles = css`
 
     /* Overrides */
     --prism-scheme: dark;
-    --prism-foreground: #d4cfbf;
+    --prism-foreground: #ffa657;
     --prism-background: #1a202c;
     --prism-comment: #7285b7;
-    --prism-string: #d48372;
+    --prism-string: #a5d6ff;
     --prism-literal: #429988;
-    --prism-keyword: #ebbbff;
-    --prism-function: #bbdaff;
+    --prism-keyword: #ff7b72;
+    --prism-function: #ffa657;
+    --prism-function-variable: #d2a8ff;
     --prism-deleted: #a14f55;
-    --prism-class: #54b1bf;
-    --prism-builtin: #e0a569;
-    --prism-property: #dd8e6e;
+    --prism-class: #7ee787;
+    --prism-builtin: #c9d1d9;
+    --prism-property: #79c0ff;
+    --prism-parameter: #c9d1d9;
     --prism-namespace: #db889a;
-    --prism-punctuation: #858585;
+    --prism-punctuation: #c9d1d9;
     --prism-decorator: #bd8f8f;
     --prism-number: #6394bf;
     --prism-boolean: #1c6b48;
@@ -154,6 +156,18 @@ const prismStyles = css`
   .token.cdata {
     color: var(--prism-comment);
     font-style: var(--prism-comment-style);
+  }
+
+  .token.function.function-variable {
+    color: var(--prism-function-variable);
+  }
+
+  .token.function.function-variable > .token.maybe-class-name {
+    color: var(--prism-function);
+  }
+
+  .token.parameter {
+    color: var(--prism-parameter);
   }
 
   .token.namespace {

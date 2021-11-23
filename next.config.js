@@ -6,9 +6,6 @@ const { withContentlayer } = require("next-contentlayer");
 
 module.exports = withContentlayer()({
   reactStrictMode: true,
-  experimental: {
-    esmExternals: true,
-  },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
