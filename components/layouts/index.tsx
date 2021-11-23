@@ -1,4 +1,4 @@
-import { ChakraProvider, DarkMode, extendTheme, theme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Container from "components/layouts/container";
 import React, { FC } from "react";
 
