@@ -36,28 +36,26 @@ import Image from "next/image";
 
 Now, for local images, you can simply import and use the image:
 
-```js
+```js {6-8}
 import Image from "next/image";
 import backgroundImage from from "../images/background.png"
 
 const SomeComponent = () => {
   return (
-    // highlight-start
     <Image
       src={backgroundImage}
       alt="Background image"
     />
-    // highlight-end
   )
 }
 ```
 
 You can also add blur placeholder to the image using the `placeholder` prop:
 
-```js
+```js {3}
 <Image
   src={backgroundImage}
-  placeholder="blur" //highlight-line
+  placeholder="blur"
   // other props
 />
 ```
@@ -77,13 +75,11 @@ You can also pass a [blurDataURL](https://nextjs.org/docs/api-reference/next/ima
 
 For remote images, you will also have to update your `next.config.js` file to include the domain from which you are using the image:
 
-```js:next.config.js
+```js:next.config.js {2-4}
 module.exports = {
-  // highlight-start
   images: {
     domains: ["website.com"],
   },
-  // highlight-end
 };
 ```
 
@@ -93,13 +89,12 @@ One more important thing to note here is that it might not be always possible to
 
 Using the `fill` value for the `layout` prop ensures that the wrapping element supplies the styles for the image:
 
-```js
+```js {6-13}
 import Image from "next/image";
 import backgroundImage from from "../images/background.png"
 
 const SomeComponent = () => {
   return (
-    // highlight-start
     <div style={{ position: "relative", width: "400px", height: "200px" }}>
       <Image
         src={backgroundImage}
@@ -108,7 +103,6 @@ const SomeComponent = () => {
         objectFit="cover"
       />
     </div>
-    // highlight-end
   )
 }
 ```

@@ -1,24 +1,18 @@
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import remarkCodeTitles from "remark-code-titles";
+import rehypeCodeTitles from "rehype-code-titles";
 import remarkExternalLinks from "remark-external-links";
-import remarkSlug from "remark-slug";
-import remarkVscode from "gatsby-remark-vscode";
 import rehypeImgSize from "rehype-img-size";
 import { Pluggable } from "unified";
+import rehypePrism from "rehype-prism-plus";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 const mdxOptions = {
-  remarkPlugins: [
-    remarkSlug,
-    remarkCodeTitles,
-    remarkExternalLinks,
-    [
-      remarkVscode.remarkPlugin,
-      {
-        theme: "Tomorrow Night Blue",
-      },
-    ],
-  ],
+  remarkPlugins: [remarkExternalLinks, remarkGfm],
   rehypePlugins: [
+    rehypeSlug,
+    rehypeCodeTitles,
+    rehypePrism,
     rehypeAutolinkHeadings,
     [
       rehypeImgSize,

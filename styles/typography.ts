@@ -1,25 +1,25 @@
 import { css } from "@emotion/react";
 import { theme } from "@chakra-ui/react";
 
-const prismBaseTheme = css`
+const typographyStyles = css`
   // Headings
-  .article > div > h2,
-  .article > div > h3,
-  .article > div > h4 {
+  .article > h2,
+  .article > h3,
+  .article > h4 {
     font-weight: ${theme.fontWeights.bold};
   }
 
-  .article > div > h2 {
+  .article > h2 {
     padding: ${theme.space[8]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["3xl"]};
   }
 
-  .article > div > h3 {
+  .article > h3 {
     padding: ${theme.space[6]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["2xl"]};
   }
 
-  .article > div > h4 {
+  .article > h4 {
     padding: ${theme.space[4]} 0 ${theme.space[2]};
     font-size: ${theme.fontSizes["xl"]};
   }
@@ -98,79 +98,6 @@ const prismBaseTheme = css`
     margin: 0;
   }
 
-  // Code
-  pre {
-    font-size: ${theme.fontSizes["sm"]};
-    margin: ${theme.space[6]} 0;
-    overflow: auto;
-    min-width: 100%;
-    border-radius: ${theme.radii.sm};
-  }
-
-  .article > div > h2 code {
-    font-size: ${theme.fontSizes["2xl"]};
-  }
-
-  .article > div > h3 code {
-    font-size: ${theme.fontSizes["xl"]};
-  }
-  .article > div > h4 code {
-    font-size: ${theme.fontSizes["lg"]};
-  }
-
-  :not(pre) > code {
-    border-radius: ${theme.radii.sm};
-  }
-
-  :not(pre) > code {
-    padding: 0.1em;
-    border-radius: 0.3em;
-    white-space: normal;
-    font-size: ${theme.fontSizes["sm"]};
-  }
-
-  :not(pre) > code:before,
-  :not(pre) > code:after {
-    content: "\`";
-  }
-
-  .grvsc-source > span {
-    padding: ${theme.space[1]} 0;
-    display: inline-block;
-  }
-
-  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
-    height: 100%;
-  }
-
-  code.grvsc-code {
-    display: grid;
-  }
-
-  pre.grvsc-container {
-    border-radius: ${theme.radii.sm};
-  }
-
-  .remark-code-title {
-    margin: ${theme.space[6]} 0;
-    padding: ${theme.space[2]} ${theme.space[4]};
-    font-family: ${theme.fonts.mono};
-    background: ${theme.colors.gray[200]};
-    color: ${theme.colors.gray[800]};
-    border-top-left-radius: ${theme.radii.sm};
-    border-top-right-radius: ${theme.radii.sm};
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0;
-    width: 100%;
-
-    + pre {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      margin-top: 0;
-    }
-  }
-
   // Table
   table {
     width: 100%;
@@ -197,16 +124,12 @@ const prismBaseTheme = css`
     padding: 0.75rem;
     vertical-align: top;
   }
-`;
-
-export const prismDarkTheme = css`
-  ${prismBaseTheme};
 
   // Headings
-  .article > div > h2,
-  .article > div > h3,
-  .article > div > h4 {
-    color: ${theme.colors.gray[200]};
+  .article > h2,
+  .article > h3,
+  .article > h4 {
+    color: ${theme.colors.gray[400]};
   }
 
   // Paragraphs
@@ -229,28 +152,20 @@ export const prismDarkTheme = css`
     color: ${theme.colors.blue[400]};
   }
 
-  // Code
-  code,
-  pre {
-    color: ${theme.colors.gray[50]};
-  }
-
-  .remark-code-title {
-    background: ${theme.colors.gray[700]};
-    color: ${theme.colors.gray[100]};
-  }
-
-  :not(pre) > code {
-    color: ${theme.colors.purple[300]};
-  }
-
   .article blockquote {
     background: ${theme.colors.gray[800]};
   }
 
-  .grvsc-container.default-dark,
-  .grvsc-container.tomorrow-night-blue {
-    background: ${theme.colors.gray[800]};
+  // Code
+  .article > h2 code {
+    font-size: ${theme.fontSizes["2xl"]};
+  }
+
+  .article > h3 code {
+    font-size: ${theme.fontSizes["xl"]};
+  }
+  .article > h4 code {
+    font-size: ${theme.fontSizes["lg"]};
   }
 
   // Table
@@ -269,3 +184,5 @@ export const prismDarkTheme = css`
     border: 2px solid ${theme.colors.gray[900]};
   }
 `;
+
+export default typographyStyles;

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-export const customStyles = css`
+const generalStyles = css`
   html {
     scroll-behavior: smooth;
   }
@@ -20,3 +20,5 @@ export const customStyles = css`
     }
   }
 `;
+
+export default generalStyles;

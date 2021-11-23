@@ -1,35 +1,10 @@
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import mdxOptions from "./config/mdx";
-import {
-  defineDocumentType,
-  makeSource,
-  defineNestedType,
-  NestedType,
-} from "contentlayer/source-files";
-
-export const Category: NestedType<"Category"> = defineNestedType(() => ({
-  name: "Category",
-  fields: {
-    category: { type: "list", of: Category },
-  },
-}));
-
-export const Tag: NestedType<"Tag"> = defineNestedType(() => ({
-  name: "Tag",
-  fields: {
-    tag: { type: "list", of: Tag },
-  },
-}));
-
-export const Keyword: NestedType<"Keyword"> = defineNestedType(() => ({
-  name: "Keyword",
-  fields: {
-    keyword: { type: "list", of: Keyword },
-  },
-}));
 
 export const Article = defineDocumentType(() => ({
   name: "Article",
   filePathPattern: `articles/*.mdx`,
+  bodyType: "mdx",
   fields: {
     title: { type: "string", required: true },
     slug: { type: "string", required: true },
@@ -37,15 +12,16 @@ export const Article = defineDocumentType(() => ({
     date: { type: "date", required: true },
     lastmod: { type: "date", required: true },
     draft: { type: "boolean", required: true },
-    categories: { type: "list", of: Category, required: true },
-    tags: { type: "list", of: Tag, required: true },
-    keywords: { type: "list", of: Keyword, required: true },
+    categories: { type: "json", required: false },
+    tags: { type: "json", required: false },
+    keywords: { type: "json", required: false },
   },
 }));
 
 export const Guide = defineDocumentType(() => ({
   name: "Guide",
   filePathPattern: `guides/*.mdx`,
+  bodyType: "mdx",
   fields: {
     title: { type: "string", required: true },
     slug: { type: "string", required: true },
@@ -55,9 +31,9 @@ export const Guide = defineDocumentType(() => ({
     draft: { type: "boolean", required: true },
     coverImage: { type: "string" },
     githubLink: { type: "string" },
-    categories: { type: "list", of: Category, required: true },
-    tags: { type: "list", of: Tag, required: true },
-    keywords: { type: "list", of: Keyword, required: true },
+    categories: { type: "json", required: false },
+    tags: { type: "json", required: false },
+    keywords: { type: "json", required: false },
   },
 }));
 

@@ -78,12 +78,12 @@ Next, we need to use the @tailwind directive to inject Tailwind's base, componen
 
 Next, we need to add the `build:style` script to our `package.json` file:
 
-```json:package.json
+```json:package.json {5}
 "scripts": {
   "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "build:style": "tailwind build public/assets/styles/vendors.css -o public/assets/styles/tailwind.css" // highlight-line
+  "build:style": "tailwind build public/assets/styles/vendors.css -o public/assets/styles/tailwind.css"
 },
 ```
 
@@ -93,11 +93,11 @@ Now, the `build:style` command will generate a new `public/assets/styles/tailwin
 
 Next, we need to add the generated file to our `pages/index.js` file:
 
-```js
+```js {4}
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
-import "../public/assets/styles/tailwind.css"; // highlight-line
+import "../public/assets/styles/tailwind.css";
 ```
 
 However, if we visit [http://localhost:3000](http://localhost:3000/), we'll get the following error:
@@ -120,7 +120,7 @@ module.exports = withCSS({});
 
 That's all we need to do to make TailwindCSS work with Next.js. To verify whether TailwindCSS is working or not, we can add a TailwindCSS class. We can add the `bg-blue-900 py-8` class to our `pages/index.js` file:
 
-```js
+```js {8}
 const Home = () => (
   <div>
     <Head>
@@ -128,7 +128,7 @@ const Home = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Nav />
-    <div className="hero bg-blue-100 py-8"> // highlight-line
+    <div className="hero bg-blue-100 py-8">
       <h1 className="title">Welcome to Next.js!</h1>
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
