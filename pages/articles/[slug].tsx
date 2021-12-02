@@ -6,6 +6,7 @@ import {
   getNextArticles,
 } from "lib/get-articles-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import pick from "lodash/pick";
 
 interface IProps {
   currentArticle: Article;
@@ -34,7 +35,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentArticle = getCurrentArticle(params);
-  const nextArticles = getNextArticles(params);
+  const nextArticles = getNextArticles(params).map((articles) =>
+    pick(articles, ["date", "description", "title", "slug"])
+  );
 
   return {
     props: {

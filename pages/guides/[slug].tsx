@@ -2,7 +2,6 @@ import { Guide } from ".contentlayer/types";
 import Page from "components/pages/guides/[slug]";
 import { getAllGuides, getCurrentGuide } from "lib/get-guides.data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import dynamic from "next/dynamic";
 
 interface IProps {
   currentGuide: Guide;
