@@ -7,7 +7,12 @@ import generalStyles from "styles/general";
 
 const Container: FC = ({ children }) => {
   return (
-    <Box bg="gray.900" color="gray.200" minH="100vh">
+    <Box
+      bg="gray.900"
+      color="gray.200"
+      minH="100vh"
+      bgGradient={["linear(to-tr, gray.700, gray.900)"]}
+    >
       <Global styles={typographyStyles} />
       <Global styles={generalStyles} />
       <Global styles={prismStyles} />
