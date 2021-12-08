@@ -1,31 +1,35 @@
+import { Article } from ".contentlayer/types";
 import Page from "components/pages/tags/base";
 import { getAllArticlesWhichBelongToCurrentSlug } from "lib/get-articles-data";
 import { getAllTags } from "lib/get-tags-data";
+import pick from "lodash/pick";
 import {
   GetStaticPaths,
   GetStaticProps,
   GetStaticPropsContext,
   NextPage,
 } from "next";
-import { ParsedUrlQuery } from "querystring";
 
 interface IProps {
-  params: ParsedUrlQuery;
+  articles: Article[];
+  currentTag: string;
 }
 
-const TagsListingPage: NextPage<IProps> = ({ params }) => {
-  const articles = getAllArticlesWhichBelongToCurrentSlug(params, "tags");
-  const currentTag = params?.slug as string;
-
+const TagsListingPage: NextPage<IProps> = ({ articles, currentTag }) => {
   return <Page articles={articles} currentTag={currentTag} />;
 };
 
 export const getStaticProps: GetStaticProps = async ({
   params,
 }: GetStaticPropsContext) => {
+  const articles = getAllArticlesWhichBelongToCurrentSlug(params, "tags").map(
+    (articles) => pick(articles, ["date", "description", "title", "slug"])
+  );
+
   return {
     props: {
-      params,
+      articles,
+      currentTag: params?.slug as string,
     },
   };
 };
