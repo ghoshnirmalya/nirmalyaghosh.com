@@ -3857,10 +3857,10 @@ format@^0.2.0:
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=
 
-framer-motion@^5.4.1:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.4.1.tgz#a4e6737a15dfd8056936e244a7386df582787656"
-  integrity sha512-U4hiU3g5RCaZRTtTTOKStXH1jm+8uiIhM46wjIYQ7fWnc5c1cGlAzo238X7AM3WhU//jtqd1l5EHq32x96Eg4g==
+framer-motion@^5.4.3:
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.4.3.tgz#a91b45cd13ac0407192907858f802b4851ece939"
+  integrity sha512-PQufiovU9IbjDY/aWOF6Z0tw9/C/ABvmrLxF3Sk8Tz4NbYhtvSLxLxDY5wdjdxjWTa+4dFugdp5wXfHxayAHrw==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
