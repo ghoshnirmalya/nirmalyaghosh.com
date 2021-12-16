@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://twitter.com/nirmalyaghosh23">
+  <a href="https://twitter.com/NirmalyaGhosh_">
     <img
       alt="Twitter: Nirmalya Ghosh"
       src="https://img.shields.io/twitter/follow/nirmalyaghosh23.svg?style=social"
