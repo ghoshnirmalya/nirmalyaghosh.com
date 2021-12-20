@@ -1,18 +1,11 @@
-import { Box, Heading, SlideFade } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, SlideFade } from "@chakra-ui/react";
 
 const NotFoundPage = () => {
   return (
     <SlideFade in>
-      <Box
-        maxW="2xl"
-        mx="auto"
-        px={4}
-        py={8}
-        display="flex"
-        justifyContent="center"
-      >
+      <Center minH="calc(100vh - 200px)">
         <Heading>Page not found!</Heading>
-      </Box>
+      </Center>
     </SlideFade>
   );
 };
