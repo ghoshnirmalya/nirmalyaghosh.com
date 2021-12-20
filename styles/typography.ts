@@ -31,7 +31,7 @@ const typographyStyles = css`
   .article a:not(.chakra-link) {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.tall};
-    font-size: ${theme.fontSizes.lg};
+    font-size: ${theme.fontSizes.md};
   }
 
   // Links
@@ -136,7 +136,7 @@ const typographyStyles = css`
   .article p,
   .article ul,
   .article ol {
-    color: ${theme.colors.gray[400]};
+    color: ${theme.colors.gray[300]};
   }
 
   .article strong {
@@ -146,6 +146,8 @@ const typographyStyles = css`
   // Links
   .article a:not(.chakra-link) {
     color: ${theme.colors.blue[300]};
+    top: -3px;
+    position: relative;
   }
 
   .article a:not(.chakra-link):hover {
@@ -176,12 +178,12 @@ const typographyStyles = css`
   }
 
   thead th {
-    border-bottom: 2px solid ${theme.colors.gray[900]};
+    border-bottom: 1px solid ${theme.colors.gray[900]};
   }
 
   td,
   th {
-    border: 2px solid ${theme.colors.gray[900]};
+    border: 1px solid ${theme.colors.gray[900]};
   }
 `;
 

@@ -50,9 +50,9 @@ const prismStyles = css`
     --prism-marker-font-size: 0.8em;
 
     /* Font */
-    --prism-font-size: 0.95em;
-    --prism-line-height: 1.5em;
-    --prism-font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --prism-font-size: ${theme.fontSizes.sm};
+    --prism-line-height: ${theme.lineHeights.normal};
+    --prism-font-family: ${theme.fonts.mono};
     --prism-inline-font-size: var(--prism-font-size);
     --prism-block-font-size: var(--prism-font-size);
 
