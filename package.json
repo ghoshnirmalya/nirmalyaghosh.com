@@ -22,7 +22,7 @@
     "ga-4-react": "^0.1.281",
     "github-slugger": "^1.4.0",
     "next": "12.0.8",
-    "next-contentlayer": "^0.0.33",
+    "next-contentlayer": "^0.0.34",
     "next-seo": "^4.28.1",
     "preact": "^10.5.15",
     "react": "17.0.2",
