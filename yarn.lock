@@ -6365,10 +6365,10 @@ rehype-code-titles@^1.0.3:
   dependencies:
     unist-util-visit "^3.0.0"
 
-rehype-img-size@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/rehype-img-size/-/rehype-img-size-0.0.1.tgz#bfdb653c08817171ce78ae37db2bee930533cad9"
-  integrity sha512-AfJgsG0LM81+ozLkdySg5vM93gcw8N9hF8LTs2mKG39pC+wVdId9chelh/oY9MCbqvR8x7jUol4UekgVnPi1rg==
+rehype-img-size@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/rehype-img-size/-/rehype-img-size-0.0.2.tgz#75e8add77c37036435822a57054e4e23a6bb3edb"
+  integrity sha512-pKUz7y8LPqxSrEa1neWe258k1lfBXcj4/p0vXZ4DNndqI8Q63lxQBKeYXsD0mi0uT/YfwD1T9n5UI8mBPm1DWQ==
   dependencies:
     image-size "^0.9.7"
     unist-util-visit "^2.0.3"
