@@ -1,14 +1,5 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Heading,
-  Image,
-  Input,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import { FC, FormEvent, useState } from "react";
+import { Box, Button, Grid, Heading, Text, VStack } from "@chakra-ui/react";
+import { FC, useState } from "react";
 import Project from "types/project";
 
 interface Props {
@@ -20,24 +11,6 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   const sortedProjects = projects.filter((project: Project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const searchNode = () => {
-    return (
-      <Box>
-        <Input
-          bg="gray.800"
-          color="white"
-          borderRadius="sm"
-          border="none"
-          value={searchQuery}
-          onChange={(e: FormEvent<HTMLInputElement>) =>
-            setSearchQuery(e.currentTarget.value)
-          }
-          placeholder="Search for an project"
-        />
-      </Box>
-    );
-  };
 
   const headingNode = () => {
     return (
@@ -120,7 +93,6 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   return (
     <VStack spacing={8} align="left">
       {headingNode()}
-      {searchNode()}
       {projectsNode()}
     </VStack>
   );

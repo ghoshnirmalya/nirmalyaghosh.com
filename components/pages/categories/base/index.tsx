@@ -1,4 +1,4 @@
-import { Box, Grid, SlideFade } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import { Article } from ".contentlayer/types";
@@ -18,19 +18,17 @@ const Page: FC<Props> = ({ articles = [], currentCategory }) => {
   });
 
   return (
-    <SlideFade in>
-      <Box maxW="2xl" mx="auto" px={4} py={8}>
-        <Grid templateColumns="1fr">
-          <Box as="section">
-            <Articles
-              articles={sortedArticles}
-              hideViewAllLinksNode
-              currentCategory={currentCategory}
-            />
-          </Box>
-        </Grid>
-      </Box>
-    </SlideFade>
+    <Box maxW="2xl" mx="auto" px={4} py={8}>
+      <Grid templateColumns="1fr">
+        <Box as="section">
+          <Articles
+            articles={sortedArticles}
+            hideViewAllLinksNode
+            currentCategory={currentCategory}
+          />
+        </Box>
+      </Grid>
+    </Box>
   );
 };
 

@@ -1,17 +1,10 @@
-import {
-  Box,
-  Heading,
-  Input,
-  Link as _Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Article } from ".contentlayer/types";
+import { Box, Heading, Link as _Link, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
-import { FC, FormEvent, useState } from "react";
+import { FC, useState } from "react";
 import Publication from "types/publication";
-import { Article } from ".contentlayer/types";
 
 dayjs.extend(localizedFormat);
 
@@ -48,26 +41,6 @@ const Articles: FC<Props> = ({
           <Box color="gray.300">View all articles</Box>
         </_Link>
       </Link>
-    );
-  };
-
-  const searchNode = () => {
-    if (!hideViewAllLinksNode) return false;
-
-    return (
-      <Box>
-        <Input
-          bg="gray.800"
-          color="white"
-          borderRadius="sm"
-          border="none"
-          value={searchQuery}
-          onChange={(e: FormEvent<HTMLInputElement>) =>
-            setSearchQuery(e.currentTarget.value)
-          }
-          placeholder="Search for an article"
-        />
-      </Box>
     );
   };
 
@@ -198,7 +171,6 @@ const Articles: FC<Props> = ({
   return (
     <VStack spacing={8} align="left">
       {headingNode()}
-      {searchNode()}
       {articlesNode()}
     </VStack>
   );

@@ -5,7 +5,6 @@ import {
   Heading,
   HStack,
   Link,
-  SlideFade,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -127,7 +126,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
   };
 
   return (
-    <SlideFade in>
+    <>
       <NextSeo
         title={`${article.title}`}
         description={article.description}
@@ -185,7 +184,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
           </Grid>
         </Box>
       </Box>
-    </SlideFade>
+    </>
   );
 };
 

@@ -1,9 +1,9 @@
-import { Box, SlideFade, VStack } from "@chakra-ui/react";
+import { Article } from ".contentlayer/types";
+import { Box, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import Project from "types/project";
 import Publication from "types/publication";
-import { Article } from ".contentlayer/types";
 
 const Jumbotron = dynamic(
   () =>
@@ -45,7 +45,7 @@ const Page: FC<Props> = ({
     );
 
   return (
-    <SlideFade in>
+    <>
       <Box
         as="section"
         h={["calc(100vh - 109px)", "calc(100vh - 109px)", "calc(100vh - 64px)"]}
@@ -71,7 +71,7 @@ const Page: FC<Props> = ({
           </VStack>
         </Box>
       </Box>
-    </SlideFade>
+    </>
   );
 };
 

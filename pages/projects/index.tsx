@@ -16,4 +16,8 @@ const ProjectsIndexPage: NextPage = () => {
   );
 };
 
+export const config = {
+  unstable_runtimeJS: false,
+};
+
 export default ProjectsIndexPage;

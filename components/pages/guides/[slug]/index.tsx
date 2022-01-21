@@ -1,13 +1,5 @@
 import { Guide } from ".contentlayer/types";
-import {
-  Box,
-  Grid,
-  Heading,
-  HStack,
-  SlideFade,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
@@ -88,7 +80,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
   };
 
   return (
-    <SlideFade in>
+    <>
       <NextSeo
         title={`${guide.title}`}
         description={guide.description}
@@ -143,7 +135,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
           </Grid>
         </Box>
       </Box>
-    </SlideFade>
+    </>
   );
 };
 

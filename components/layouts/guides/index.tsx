@@ -1,9 +1,9 @@
-import { Box, Heading, Input, Text, VStack } from "@chakra-ui/react";
+import { Guide } from ".contentlayer/types";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
-import React, { FC, FormEvent, useState } from "react";
-import { Guide } from ".contentlayer/types";
+import React, { FC, useState } from "react";
 
 dayjs.extend(localizedFormat);
 
@@ -22,24 +22,6 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     .filter((guide: Guide) =>
       guide.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
-  const searchNode = () => {
-    return (
-      <Box>
-        <Input
-          bg="gray.800"
-          color="white"
-          borderRadius="sm"
-          border="none"
-          value={searchQuery}
-          onChange={(e: FormEvent<HTMLInputElement>) =>
-            setSearchQuery(e.currentTarget.value)
-          }
-          placeholder="Search for a guide"
-        />
-      </Box>
-    );
-  };
 
   const headingNode = () => {
     return (
@@ -102,7 +84,6 @@ const Guides: FC<Props> = ({ guides = [] }) => {
   return (
     <VStack spacing={8} align="left">
       {headingNode()}
-      {searchNode()}
       {guidesNode()}
     </VStack>
   );
