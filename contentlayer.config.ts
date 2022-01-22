@@ -37,8 +37,27 @@ export const Guide = defineDocumentType(() => ({
   },
 }));
 
+export const LearnGuide = defineDocumentType(() => ({
+  name: "LearnGuide",
+  filePathPattern: `learn-guides/*.mdx`,
+  bodyType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    slug: { type: "string", required: true },
+    description: { type: "string", required: true },
+    date: { type: "date", required: true },
+    lastmod: { type: "date", required: true },
+    draft: { type: "boolean", required: true },
+    coverImage: { type: "string" },
+    githubLink: { type: "string" },
+    categories: { type: "json", required: false },
+    tags: { type: "json", required: false },
+    keywords: { type: "json", required: false },
+  },
+}));
+
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Article, Guide],
+  documentTypes: [Article, Guide, LearnGuide],
   mdx: mdxOptions,
 });
