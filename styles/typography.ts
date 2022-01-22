@@ -146,8 +146,11 @@ const typographyStyles = css`
   // Links
   .article a:not(.chakra-link) {
     color: ${theme.colors.blue[300]};
-    top: -3px;
     position: relative;
+  }
+
+  .article a:not(.chakra-link)[aria-hidden="true"] {
+    top: -3px;
   }
 
   .article a:not(.chakra-link):hover {
