@@ -1,3 +1,19 @@
+# [1.8.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.7.0...1.8.0) (2022-01-23)
+
+### Bug Fixes
+
+- anchor styles ([0620c56](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/0620c5669cd6fd0f2e10fa8fe2213116bc9926b5))
+- Fixes Callout icon ([0e5b8c6](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/0e5b8c6cbd34422edbd8b9eeab3377b4c9ffa69a))
+- Fixes issues with scrollbar on Windows ([a8af956](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/a8af9567248e5ae0fa73eb05a13514dbfd88aabe))
+- Fixes missing links ([4683463](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/4683463e48c33e535df3977177d8f1cc70512471))
+- Missing styles ([fc74079](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/fc7407944e0b15fe7d29862e9c651c018ca67bd0))
+
+### Features
+
+- adds 'Fundamentals of Next.js' ([864c00c](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/864c00ca72b34f38852fa1e410b95a07c52fd098))
+- updates 404 page ([73943f8](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/73943f845db98290af30e235536d631e399270bb))
+- updates design ([c631be2](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/c631be2da76fed066f238251b189136dcf4b9dcd))
+
 # [1.7.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.6.0...1.7.0) (2021-10-19)
 
 ### Bug Fixes
