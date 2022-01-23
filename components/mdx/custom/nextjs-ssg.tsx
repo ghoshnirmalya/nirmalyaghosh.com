@@ -15,6 +15,7 @@ import { BiCodeCurly } from "react-icons/bi";
 import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
 import { MdOutlineRestartAlt } from "react-icons/md";
 import MockBrowser from "./browser";
+import Wrapper from "./wrapper";
 
 const MotionHStack = motion<StackProps>(HStack);
 const MotionVStack = motion<StackProps>(VStack);
@@ -404,12 +405,14 @@ const NextJSSSG: FC = () => {
   };
 
   return (
-    <VStack bg="gray.800" p={4} rounded="sm" spacing={8}>
-      {startStep()}
-      {buildingStep()}
-      {finishStep()}
-      {renderLayoutStep()}
-    </VStack>
+    <Wrapper>
+      <VStack spacing={8}>
+        {startStep()}
+        {buildingStep()}
+        {finishStep()}
+        {renderLayoutStep()}
+      </VStack>
+    </Wrapper>
   );
 };
 

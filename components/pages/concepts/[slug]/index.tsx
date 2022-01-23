@@ -26,6 +26,13 @@ const Image = dynamic(
   () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
 );
 
+const Placeholder = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: "Placeholder" */ "components/mdx/custom/placeholder"
+    )
+);
+
 const NextJSSSG = dynamic(
   () =>
     import(
@@ -52,6 +59,7 @@ const components = {
   Link,
   Image,
   SocialShare,
+  Placeholder,
   NextJSSSG,
 };
 
