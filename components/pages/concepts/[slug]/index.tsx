@@ -1,4 +1,4 @@
-import { LearnGuide } from ".contentlayer/types";
+import { Concept } from ".contentlayer/types";
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
@@ -7,6 +7,7 @@ import { NextPage } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
+import DynamicComponentLoader from "./dynamic-component-loader";
 import Sidebar from "./sidebar";
 
 const Callout = dynamic(
@@ -29,7 +30,18 @@ const NextJSSSG = dynamic(
   () =>
     import(
       /* webpackChunkName: "NextJSSSG" */ "components/mdx/custom/nextjs-ssg"
-    )
+    ),
+  {
+    ssr: false,
+    loading: () => <DynamicComponentLoader />,
+  }
+);
+
+const SocialShare = dynamic(
+  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
+  {
+    ssr: false,
+  }
 );
 
 dayjs.extend(localizedFormat);
@@ -39,29 +51,23 @@ const components = {
   Jumbotron,
   Link,
   Image,
+  SocialShare,
   NextJSSSG,
 };
 
 interface IProps {
-  guide: LearnGuide;
+  concept: Concept;
 }
 
-const SocialShare = dynamic(
-  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
-  {
-    ssr: false,
-  }
-);
-
-const Page: NextPage<IProps> = ({ guide }) => {
-  const MDXContent = useMDXComponent(guide.body.code);
+const Page: NextPage<IProps> = ({ concept }) => {
+  const MDXContent = useMDXComponent(concept.body.code);
 
   const publishedMetaNode = () => {
     return (
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">Published on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(guide.date).format("LL")}
+          {dayjs(concept.date).format("LL")}
         </Text>
       </HStack>
     );
@@ -72,7 +78,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
       <HStack spacing={2} isInline alignItems="center">
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
-          {dayjs(guide.lastmod).format("LL")}.
+          {dayjs(concept.lastmod).format("LL")}.
         </Text>
       </HStack>
     );
@@ -87,7 +93,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >
-        {guide.title}
+        {concept.title}
       </Heading>
     );
   };
@@ -95,20 +101,20 @@ const Page: NextPage<IProps> = ({ guide }) => {
   return (
     <>
       <NextSeo
-        title={`${guide.title}`}
-        description={guide.description}
+        title={`${concept.title}`}
+        description={concept.description}
         openGraph={{
           url: `${siteConfig.details.url}`,
-          title: `${guide.title}`,
-          description: guide.description,
+          title: `${concept.title}`,
+          description: concept.description,
           images: [
             {
-              url: guide.coverImage
-                ? guide.coverImage
+              url: concept.coverImage
+                ? concept.coverImage
                 : `${siteConfig.details.url}${siteConfig.assets.avatar}`,
               width: 800,
               height: 600,
-              alt: guide.title,
+              alt: concept.title,
             },
           ],
           site_name: siteConfig.details.title,
@@ -130,7 +136,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
               overflow="scroll"
               display={["none", "none", "none", "block"]}
             >
-              <Sidebar source={guide.body.raw} />
+              <Sidebar source={concept.body.raw} />
             </VStack>
             <Box maxW="100%" overflowX="hidden">
               <VStack spacing={8} align="left">

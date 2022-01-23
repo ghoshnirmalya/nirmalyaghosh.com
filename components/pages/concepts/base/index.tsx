@@ -1,22 +1,22 @@
-import { LearnGuide } from ".contentlayer/types";
+import { Concept } from ".contentlayer/types";
 import { Box, Grid } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 
-const Guides = dynamic(
-  () => import(/* webpackChunkName: "guides" */ "components/layouts/learn")
+const Concepts = dynamic(
+  () => import(/* webpackChunkName: "concepts" */ "components/layouts/concept")
 );
 
 interface Props {
-  guides: LearnGuide[];
+  concepts: Concept[];
 }
 
-const Page: FC<Props> = ({ guides = [] }) => {
+const Page: FC<Props> = ({ concepts = [] }) => {
   return (
     <Box maxW="2xl" mx="auto" px={4} py={8}>
       <Grid templateColumns="1fr">
         <Box as="section">
-          <Guides guides={guides} />
+          <Concepts concepts={concepts} />
         </Box>
       </Grid>
     </Box>

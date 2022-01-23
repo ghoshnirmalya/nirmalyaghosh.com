@@ -37,9 +37,9 @@ export const Guide = defineDocumentType(() => ({
   },
 }));
 
-export const LearnGuide = defineDocumentType(() => ({
-  name: "LearnGuide",
-  filePathPattern: `learn-guides/*.mdx`,
+export const Concept = defineDocumentType(() => ({
+  name: "Concept",
+  filePathPattern: `concepts/*.mdx`,
   bodyType: "mdx",
   fields: {
     title: { type: "string", required: true },
@@ -58,6 +58,6 @@ export const LearnGuide = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "data",
-  documentTypes: [Article, Guide, LearnGuide],
+  documentTypes: [Article, Guide, Concept],
   mdx: mdxOptions,
 });

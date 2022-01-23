@@ -1,6 +1,6 @@
 import { Guide } from ".contentlayer/types";
 import Page from "components/pages/guides/base";
-import { getAllGuides } from "lib/get-guides.data";
+import { getAllGuides } from "lib/get-guides-data";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import pick from "lodash/pick";

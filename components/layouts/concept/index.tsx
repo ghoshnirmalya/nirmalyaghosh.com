@@ -1,4 +1,4 @@
-import { LearnGuide } from ".contentlayer/types";
+import { Concept } from ".contentlayer/types";
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -8,29 +8,29 @@ import React, { FC, useState } from "react";
 dayjs.extend(localizedFormat);
 
 interface Props {
-  guides: LearnGuide[];
+  concepts: Concept[];
 }
 
-const Guides: FC<Props> = ({ guides = [] }) => {
+const Concepts: FC<Props> = ({ concepts = [] }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const sortedGuides = guides
+  const sortedConcepts = concepts
     .sort(
-      (a: LearnGuide, b: LearnGuide) =>
+      (a: Concept, b: Concept) =>
         Number(new Date(b.date)) - Number(new Date(a.date))
     )
-    .filter((guide: LearnGuide) =>
-      guide.title.toLowerCase().includes(searchQuery.toLowerCase())
+    .filter((concept: Concept) =>
+      concept.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
   const headingNode = () => {
     return (
       <VStack spacing={2} align="left">
         <Heading as="h1" size="xl">
-          Interactive guides
+          Interactive concepts
         </Heading>
         <Text>
-          Short and interactive guides to help you understand different
+          Short and interactive concepts to help you understand different
           technologies
         </Text>
       </VStack>
@@ -55,24 +55,24 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     return <Text fontSize="sm">{description}</Text>;
   };
 
-  const guidesNode = () => {
-    if (!sortedGuides.length) {
+  const conceptsNode = () => {
+    if (!sortedConcepts.length) {
       return (
         <VStack mx="auto" textAlign="center">
-          <Text>No guides found!</Text>
+          <Text>No concepts found!</Text>
         </VStack>
       );
     }
 
-    return sortedGuides.map((guide: LearnGuide) => {
+    return sortedConcepts.map((concept: Concept) => {
       return (
-        <Box key={guide.slug}>
-          <Link href={`/learn/${guide.slug}`}>
+        <Box key={concept.slug}>
+          <Link href={`/concepts/${concept.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {titleNode(guide.title)}
-                  {descriptionNode(guide.description)}
+                  {titleNode(concept.title)}
+                  {descriptionNode(concept.description)}
                 </VStack>
               </Box>
             </a>
@@ -85,9 +85,9 @@ const Guides: FC<Props> = ({ guides = [] }) => {
   return (
     <VStack spacing={8} align="left">
       {headingNode()}
-      {guidesNode()}
+      {conceptsNode()}
     </VStack>
   );
 };
 
-export default Guides;
+export default Concepts;
