@@ -13,7 +13,7 @@ const LearnGuidesIndexPage: NextPage<IProps> = ({ learnGuides }) => {
   return (
     <>
       <Head>
-        <title>Guides</title>
+        <title>Learn guides</title>
       </Head>
       <Page guides={learnGuides} />
     </>

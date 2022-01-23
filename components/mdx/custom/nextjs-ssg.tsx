@@ -1,18 +1,29 @@
 import {
   Box,
+  BoxProps,
   Button,
   Center,
   Fade,
+  Flex,
   HStack,
   Icon,
+  StackProps,
   VStack,
 } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
 import { MdOutlineRestartAlt } from "react-icons/md";
+import { BiCodeCurly } from "react-icons/bi";
+import { AiOutlineCode } from "react-icons/ai";
+import { motion } from "framer-motion";
+
+const MotionHStack = motion<StackProps>(HStack);
+const MotionVStack = motion<StackProps>(VStack);
+const MotionCenter = motion<BoxProps>(Center);
+const MotionBox = motion<BoxProps>(Box);
 
 const NextJSSSG: FC = () => {
-  const [currentStep, setCurrentStep] = useState<0 | 1 | 2>(0);
+  const [currentStep, setCurrentStep] = useState<0 | 1 | 2 | 3>(0);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -35,53 +46,90 @@ const NextJSSSG: FC = () => {
 
     return (
       <VStack spacing={4} w="100%">
-        <Center pos="relative" w={24} h={48} left={-12}>
-          <Center
+        <MotionCenter
+          pos="relative"
+          w={24}
+          h={48}
+          left={-12}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                delayChildren: 0.5,
+              },
+            },
+          }}
+          initial="hidden"
+          animate="show"
+        >
+          <MotionVStack
             pos="absolute"
             p={4}
             bg="gray.700"
-            rounded="lg"
+            rounded="sm"
             color="gray.400"
             w={32}
-            h={32}
-            left={-12}
-            transform="rotate(10deg)"
             shadow="lg"
             fontWeight="bold"
+            variants={{
+              hidden: { left: 0 },
+              show: {
+                left: "-80px",
+                transform: "rotate(10deg)",
+              },
+            }}
           >
+            <Fade in>
+              <Icon as={BiCodeCurly} h={12} w={12} />
+            </Fade>
             <Fade in>home.js</Fade>
-          </Center>
-          <Center
+          </MotionVStack>
+          <MotionVStack
             pos="absolute"
             p={4}
             bg="gray.700"
-            rounded="lg"
+            rounded="sm"
             color="gray.400"
             w={32}
-            h={32}
-            left={30}
-            transform="rotate(15deg)"
             shadow="lg"
             fontWeight="bold"
+            variants={{
+              hidden: { left: 0 },
+              show: {
+                left: 20,
+                transform: "rotate(15deg)",
+              },
+            }}
           >
+            <Fade in>
+              <Icon as={BiCodeCurly} h={12} w={12} />
+            </Fade>
             <Fade in>blogs.js</Fade>
-          </Center>
-          <Center
+          </MotionVStack>
+          <MotionVStack
             pos="absolute"
             p={4}
             bg="gray.700"
-            rounded="lg"
+            rounded="sm"
             color="gray.400"
             w={32}
-            h={32}
-            left="125px"
-            transform="rotate(20deg)"
             shadow="lg"
             fontWeight="bold"
+            variants={{
+              hidden: { left: 0 },
+              show: {
+                left: "125px",
+                transform: "rotate(20deg)",
+              },
+            }}
           >
+            <Fade in>
+              <Icon as={BiCodeCurly} h={12} w={12} />
+            </Fade>
             <Fade in>projects.js</Fade>
-          </Center>
-        </Center>
+          </MotionVStack>
+        </MotionCenter>
         <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
           The above JavaScript files are present inside your Next.js
           application. These files contain code in React.js. They might
@@ -116,73 +164,257 @@ const NextJSSSG: FC = () => {
         color="gray.400"
         w="100%"
       >
-        <VStack spacing={4} w="100%">
-          <Fade in>Building all the pages...</Fade>
+        <MotionVStack
+          spacing={4}
+          w="100%"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+        >
+          <Fade in>Next.js is building all the pages...</Fade>
           <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
             In this step, Next.js takes all the pages that your created inside
             your application and builds them into HTML files.
           </Box>
-        </VStack>
+        </MotionVStack>
       </Center>
     );
   };
 
   const finishStep = () => {
-    if (currentStep < 2) {
+    if (currentStep !== 2) {
       return false;
     }
 
     return (
       <VStack spacing={4} w="100%">
-        <HStack spacing={2} h={48}>
-          <VStack
+        <MotionHStack
+          spacing={2}
+          h={48}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.3,
+              },
+            },
+          }}
+          initial="hidden"
+          animate="visible"
+        >
+          <MotionVStack
             p={4}
             bg="gray.700"
-            rounded="lg"
+            rounded="sm"
             color="gray.400"
             shadow="lg"
             fontWeight="bold"
             w={32}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -100 },
+            }}
           >
             <Fade in>
               <Icon as={BsReverseLayoutTextWindowReverse} h={16} w={16} />
             </Fade>
             <Fade in>home.html</Fade>
-          </VStack>
-          <VStack
+          </MotionVStack>
+          <MotionVStack
             p={4}
             bg="gray.700"
-            rounded="lg"
+            rounded="sm"
             color="gray.400"
             shadow="lg"
             fontWeight="bold"
             w={32}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -100 },
+            }}
           >
             <Fade in>
               <Icon as={BsReverseLayoutTextWindowReverse} h={16} w={16} />
             </Fade>
             <Fade in>blogs.html</Fade>
-          </VStack>
-          <VStack
+          </MotionVStack>
+          <MotionVStack
             p={4}
             bg="gray.700"
-            rounded="lg"
+            rounded="sm"
             color="gray.400"
             shadow="lg"
             fontWeight="bold"
             w={32}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -100 },
+            }}
           >
             <Fade in>
               <Icon as={BsReverseLayoutTextWindowReverse} h={16} w={16} />
             </Fade>
             <Fade in>projects.html</Fade>
-          </VStack>
-        </HStack>
+          </MotionVStack>
+        </MotionHStack>
         <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
           Post the build process of Next.js, you will get a bunch of HTML,
           JavaScript and CSS files. You can deploy these files to a server to
-          make it available to everyone in the world. Since these are static
-          files, these files are immediately available when someone visits them.
+          make it available to everyone in the world.
+        </Box>
+        <Button
+          w="full"
+          bg="blue.600"
+          size="sm"
+          rounded="sm"
+          onClick={() => setCurrentStep(3)}
+          isDisabled={currentStep !== 2}
+        >
+          View the blogs.html page
+        </Button>
+      </VStack>
+    );
+  };
+
+  const renderLayoutStep = () => {
+    if (currentStep < 3) {
+      return false;
+    }
+
+    return (
+      <MotionVStack spacing={4} w="100%">
+        <MotionVStack spacing={0} w="100%">
+          <HStack
+            w="100%"
+            bg="gray.700"
+            p={2}
+            roundedTop="sm"
+            borderBottomWidth={2}
+            borderBottomColor="gray.800"
+            fontSize="xs"
+          >
+            <HStack w="100%">
+              <Icon as={AiOutlineCode} />
+              <Box>projects.html</Box>
+            </HStack>
+            <Box bg="green.500" w={2} h={2} rounded="full" />
+            <Box bg="yellow.500" w={2} h={2} rounded="full" />
+            <Box bg="red.500" w={2} h={2} rounded="full" />
+          </HStack>
+          <Box
+            w="100%"
+            h={64}
+            bg="gray.700"
+            p={2}
+            roundedBottom="sm"
+            fontSize="sm"
+          >
+            <HStack h="100%">
+              <Box
+                w="25%"
+                h="100%"
+                bg="gray.800"
+                p={2}
+                rounded="sm"
+                fontSize="xs"
+              >
+                <VStack spacing={2}>
+                  <Box w="100%">Menu 1</Box>
+                  <Box w="100%">Menu 2</Box>
+                  <Box w="100%">Menu 3</Box>
+                </VStack>
+              </Box>
+              <MotionVStack
+                w="75%"
+                h="100%"
+                bg="gray.800"
+                p={2}
+                rounded="sm"
+                spacing={2}
+                overflow="hidden"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      when: "beforeChildren",
+                      staggerChildren: 0.3,
+                    },
+                  },
+                }}
+                initial="hidden"
+                animate="visible"
+              >
+                <MotionBox
+                  w="100%"
+                  bg="gray.700"
+                  p={2}
+                  rounded="sm"
+                  variants={{
+                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: -10 },
+                  }}
+                >
+                  <VStack>
+                    <Box w="100%" fontWeight="bold">
+                      Title 1
+                    </Box>
+                    <Box w="100%" fontSize="xs">
+                      This is a description of the post.
+                    </Box>
+                  </VStack>
+                </MotionBox>
+                <MotionBox
+                  w="100%"
+                  bg="gray.700"
+                  p={2}
+                  rounded="sm"
+                  variants={{
+                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: -10 },
+                  }}
+                >
+                  <VStack>
+                    <Box w="100%" fontWeight="bold">
+                      Title 2
+                    </Box>
+                    <Box w="100%" fontSize="xs">
+                      This is a description of the post.
+                    </Box>
+                  </VStack>
+                </MotionBox>
+                <MotionBox
+                  w="100%"
+                  bg="gray.700"
+                  p={2}
+                  rounded="sm"
+                  variants={{
+                    visible: { opacity: 1, y: 0 },
+                    hidden: { opacity: 0, y: -10 },
+                  }}
+                >
+                  <VStack>
+                    <Box w="100%" fontWeight="bold">
+                      Title 3
+                    </Box>
+                    <Box w="100%" fontSize="xs">
+                      This is a description of the post.
+                    </Box>
+                  </VStack>
+                </MotionBox>
+              </MotionVStack>
+            </HStack>
+          </Box>
+        </MotionVStack>
+        <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
+          Since the generated files are static files, these files are
+          immediately available when someone visits them. No fetching of data
+          happens in these files.
         </Box>
         <Button
           w="full"
@@ -194,7 +426,7 @@ const NextJSSSG: FC = () => {
         >
           Play again
         </Button>
-      </VStack>
+      </MotionVStack>
     );
   };
 
@@ -203,6 +435,7 @@ const NextJSSSG: FC = () => {
       {startStep()}
       {buildingStep()}
       {finishStep()}
+      {renderLayoutStep()}
     </VStack>
   );
 };
