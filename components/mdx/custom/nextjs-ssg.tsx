@@ -4,18 +4,17 @@ import {
   Button,
   Center,
   Fade,
-  Flex,
   HStack,
   Icon,
   StackProps,
   VStack,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { FC, useEffect, useState } from "react";
+import { BiCodeCurly } from "react-icons/bi";
 import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
 import { MdOutlineRestartAlt } from "react-icons/md";
-import { BiCodeCurly } from "react-icons/bi";
-import { AiOutlineCode } from "react-icons/ai";
-import { motion } from "framer-motion";
+import MockBrowser from "./browser";
 
 const MotionHStack = motion<StackProps>(HStack);
 const MotionVStack = motion<StackProps>(VStack);
@@ -287,130 +286,104 @@ const NextJSSSG: FC = () => {
     }
 
     return (
-      <MotionVStack spacing={4} w="100%">
-        <MotionVStack spacing={0} w="100%">
-          <HStack
-            w="100%"
-            bg="gray.700"
-            p={2}
-            roundedTop="sm"
-            borderBottomWidth={2}
-            borderBottomColor="gray.800"
-            fontSize="xs"
-          >
-            <HStack w="100%">
-              <Icon as={AiOutlineCode} />
-              <Box>projects.html</Box>
-            </HStack>
-            <Box bg="green.500" w={2} h={2} rounded="full" />
-            <Box bg="yellow.500" w={2} h={2} rounded="full" />
-            <Box bg="red.500" w={2} h={2} rounded="full" />
-          </HStack>
-          <Box
-            w="100%"
-            h={64}
-            bg="gray.700"
-            p={2}
-            roundedBottom="sm"
-            fontSize="sm"
-          >
-            <HStack h="100%">
-              <Box
-                w="25%"
-                h="100%"
-                bg="gray.800"
-                p={2}
-                rounded="sm"
-                fontSize="xs"
-              >
-                <VStack spacing={2}>
-                  <Box w="100%">Menu 1</Box>
-                  <Box w="100%">Menu 2</Box>
-                  <Box w="100%">Menu 3</Box>
-                </VStack>
-              </Box>
-              <MotionVStack
-                w="75%"
-                h="100%"
-                bg="gray.800"
-                p={2}
-                rounded="sm"
-                spacing={2}
-                overflow="hidden"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      when: "beforeChildren",
-                      staggerChildren: 0.3,
-                    },
+      <VStack spacing={4} w="100%">
+        <MockBrowser address="projects.html">
+          <HStack h="100%">
+            <Box
+              w="25%"
+              h="100%"
+              bg="gray.800"
+              p={2}
+              rounded="sm"
+              fontSize="xs"
+            >
+              <VStack spacing={2}>
+                <Box w="100%">Menu 1</Box>
+                <Box w="100%">Menu 2</Box>
+                <Box w="100%">Menu 3</Box>
+              </VStack>
+            </Box>
+            <MotionVStack
+              w="75%"
+              h="100%"
+              bg="gray.800"
+              p={2}
+              rounded="sm"
+              spacing={2}
+              overflow="hidden"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    when: "beforeChildren",
+                    staggerChildren: 0.3,
                   },
+                },
+              }}
+              initial="hidden"
+              animate="visible"
+            >
+              <MotionBox
+                w="100%"
+                bg="gray.700"
+                p={2}
+                rounded="sm"
+                variants={{
+                  visible: { opacity: 1, y: 0 },
+                  hidden: { opacity: 0, y: -10 },
                 }}
-                initial="hidden"
-                animate="visible"
               >
-                <MotionBox
-                  w="100%"
-                  bg="gray.700"
-                  p={2}
-                  rounded="sm"
-                  variants={{
-                    visible: { opacity: 1, y: 0 },
-                    hidden: { opacity: 0, y: -10 },
-                  }}
-                >
-                  <VStack>
-                    <Box w="100%" fontWeight="bold">
-                      Title 1
-                    </Box>
-                    <Box w="100%" fontSize="xs">
-                      This is a description of the post.
-                    </Box>
-                  </VStack>
-                </MotionBox>
-                <MotionBox
-                  w="100%"
-                  bg="gray.700"
-                  p={2}
-                  rounded="sm"
-                  variants={{
-                    visible: { opacity: 1, y: 0 },
-                    hidden: { opacity: 0, y: -10 },
-                  }}
-                >
-                  <VStack>
-                    <Box w="100%" fontWeight="bold">
-                      Title 2
-                    </Box>
-                    <Box w="100%" fontSize="xs">
-                      This is a description of the post.
-                    </Box>
-                  </VStack>
-                </MotionBox>
-                <MotionBox
-                  w="100%"
-                  bg="gray.700"
-                  p={2}
-                  rounded="sm"
-                  variants={{
-                    visible: { opacity: 1, y: 0 },
-                    hidden: { opacity: 0, y: -10 },
-                  }}
-                >
-                  <VStack>
-                    <Box w="100%" fontWeight="bold">
-                      Title 3
-                    </Box>
-                    <Box w="100%" fontSize="xs">
-                      This is a description of the post.
-                    </Box>
-                  </VStack>
-                </MotionBox>
-              </MotionVStack>
-            </HStack>
-          </Box>
-        </MotionVStack>
+                <VStack>
+                  <Box w="100%" fontWeight="bold">
+                    Title 1
+                  </Box>
+                  <Box w="100%" fontSize="xs">
+                    This is a description of the post.
+                  </Box>
+                </VStack>
+              </MotionBox>
+              <MotionBox
+                w="100%"
+                bg="gray.700"
+                p={2}
+                rounded="sm"
+                variants={{
+                  visible: { opacity: 1, y: 0 },
+                  hidden: { opacity: 0, y: -10 },
+                }}
+              >
+                <VStack>
+                  <Box w="100%" fontWeight="bold">
+                    Title 2
+                  </Box>
+                  <Box w="100%" fontSize="xs">
+                    This is a description of the post.
+                  </Box>
+                </VStack>
+              </MotionBox>
+              <MotionBox
+                w="100%"
+                bg="gray.700"
+                p={2}
+                rounded="sm"
+                variants={{
+                  visible: { opacity: 1, y: 0 },
+                  hidden: { opacity: 0, y: -10 },
+                }}
+              >
+                <VStack>
+                  <Box w="100%" fontWeight="bold">
+                    Title 3
+                  </Box>
+                  <Box w="100%" fontSize="xs">
+                    This is a description of the post.
+                  </Box>
+                </VStack>
+              </MotionBox>
+            </MotionVStack>
+          </HStack>
+        </MockBrowser>
         <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
           Since the generated files are static files, these files are
           immediately available when someone visits them. No fetching of data
@@ -426,7 +399,7 @@ const NextJSSSG: FC = () => {
         >
           Play again
         </Button>
-      </MotionVStack>
+      </VStack>
     );
   };
 
