@@ -44,6 +44,17 @@ const NextJSSSG = dynamic(
   }
 );
 
+const NextJSSSR = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: "NextJSSSR" */ "components/mdx/custom/nextjs-ssr"
+    ),
+  {
+    ssr: false,
+    loading: () => <DynamicComponentLoader />,
+  }
+);
+
 const SocialShare = dynamic(
   () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
   {
@@ -61,6 +72,7 @@ const components = {
   SocialShare,
   Placeholder,
   NextJSSSG,
+  NextJSSSR,
 };
 
 interface IProps {

@@ -12,17 +12,18 @@ import {
 import { motion } from "framer-motion";
 import { FC, useEffect, useState } from "react";
 import { BiCodeCurly } from "react-icons/bi";
-import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
-import { MdOutlineRestartAlt } from "react-icons/md";
+import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg";
+import { FaServer } from "react-icons/fa";
+import { GoBrowser } from "react-icons/go";
+import { MdDataSaverOn, MdOutlineRestartAlt } from "react-icons/md";
 import MockBrowser from "./browser";
 import Wrapper from "./wrapper";
 
-const MotionHStack = motion<StackProps>(HStack);
 const MotionVStack = motion<StackProps>(VStack);
 const MotionCenter = motion<BoxProps>(Center);
 const MotionBox = motion<BoxProps>(Box);
 
-const NextJSSSG: FC = () => {
+const NextJSSSR: FC = () => {
   const [currentStep, setCurrentStep] = useState<0 | 1 | 2 | 3>(0);
 
   useEffect(() => {
@@ -143,7 +144,7 @@ const NextJSSSG: FC = () => {
           onClick={() => setCurrentStep(1)}
           isDisabled={currentStep === 1}
         >
-          Build all pages
+          View the projects.html page
         </Button>
       </VStack>
     );
@@ -155,15 +156,7 @@ const NextJSSSG: FC = () => {
     }
 
     return (
-      <Center
-        p={4}
-        border={2}
-        borderColor="gray.700"
-        borderStyle="dashed"
-        rounded="sm"
-        color="gray.400"
-        w="100%"
-      >
+      <Center rounded="sm" w="100%">
         <MotionVStack
           spacing={4}
           w="100%"
@@ -174,138 +167,90 @@ const NextJSSSG: FC = () => {
             hidden: { opacity: 0 },
           }}
         >
-          <Fade in>Next.js is building all the pages...</Fade>
+          <HStack justifyContent="space-between" w="100%">
+            <VStack spacing={0} p={4} rounded="sm" color="gray.400">
+              <Icon as={GoBrowser} h={16} w={16} />
+              <Box>Browser</Box>
+            </VStack>
+            <VStack w="100%">
+              <HStack spacing={4} w="100%">
+                <Box>Browser requests the page from server</Box>
+                <Icon as={CgArrowLongRight} />
+              </HStack>
+              <Box w="100%" justifyContent="right" pos="relative">
+                <Box
+                  pos="absolute"
+                  mt="14px"
+                  border={1}
+                  borderColor="gray.600"
+                  borderStyle="dashed"
+                  initial="hidden"
+                  animate="visible"
+                  w="100%"
+                />
+                <MotionBox
+                  pos="relative"
+                  color="gray.400"
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    visible: {
+                      marginLeft: "86%",
+                      transition: {
+                        duration: 2,
+                        repeat: 1,
+                        repeatType: "reverse",
+                      },
+                    },
+                    hidden: {
+                      marginLeft: "0%",
+                    },
+                  }}
+                >
+                  <HStack
+                    bg="gray.900"
+                    rounded="full"
+                    w="fit-content"
+                    px={2}
+                    py={1}
+                    borderWidth={1}
+                    shadow="lg"
+                  >
+                    <Icon as={MdDataSaverOn} />
+                    <Box fontSize="xs">Request</Box>
+                  </HStack>
+                </MotionBox>
+              </Box>
+              <HStack spacing={4} w="100%" justifyContent="right">
+                <Icon as={CgArrowLongLeft} />
+                <Box>Server sends pre-rendered HTML response</Box>
+              </HStack>
+            </VStack>
+            <VStack spacing={0} p={4} rounded="sm" color="gray.400">
+              <Icon as={FaServer} h={14} w={14} />
+              <Box>Server</Box>
+            </VStack>
+          </HStack>
           <Box fontSize="sm" bg="gray.900" p={4} rounded="sm" w="100%">
-            In this step, Next.js takes all the pages that your created inside
-            your application and builds them into HTML files.
+            In this step, Next.js request the page from the server. The server
+            returns the data in HTML format.
           </Box>
         </MotionVStack>
       </Center>
     );
   };
 
-  const finishStep = () => {
-    if (currentStep !== 2) {
-      return false;
-    }
-
-    return (
-      <VStack spacing={4} w="100%">
-        <MotionHStack
-          spacing={2}
-          h={48}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                when: "beforeChildren",
-                staggerChildren: 0.3,
-              },
-            },
-          }}
-          initial="hidden"
-          animate="visible"
-        >
-          <MotionVStack
-            p={4}
-            bg="gray.700"
-            rounded="sm"
-            color="gray.400"
-            shadow="lg"
-            fontWeight="bold"
-            w={32}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: -100 },
-            }}
-          >
-            <Fade in>
-              <Icon as={BsReverseLayoutTextWindowReverse} h={16} w={16} />
-            </Fade>
-            <Fade in>home.html</Fade>
-          </MotionVStack>
-          <MotionVStack
-            p={4}
-            bg="gray.700"
-            rounded="sm"
-            color="gray.400"
-            shadow="lg"
-            fontWeight="bold"
-            w={32}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: -100 },
-            }}
-          >
-            <Fade in>
-              <Icon as={BsReverseLayoutTextWindowReverse} h={16} w={16} />
-            </Fade>
-            <Fade in>blogs.html</Fade>
-          </MotionVStack>
-          <MotionVStack
-            p={4}
-            bg="gray.700"
-            rounded="sm"
-            color="gray.400"
-            shadow="lg"
-            fontWeight="bold"
-            w={32}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: -100 },
-            }}
-          >
-            <Fade in>
-              <Icon as={BsReverseLayoutTextWindowReverse} h={16} w={16} />
-            </Fade>
-            <Fade in>projects.html</Fade>
-          </MotionVStack>
-        </MotionHStack>
-        <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
-          Post the build process of Next.js, you will get a bunch of HTML,
-          JavaScript and CSS files. You can deploy these files to a server to
-          make it available to everyone in the world.
-        </Box>
-        <Button
-          w="full"
-          bg="blue.600"
-          size="sm"
-          rounded="sm"
-          onClick={() => setCurrentStep(3)}
-          isDisabled={currentStep !== 2}
-        >
-          View the blogs.html page
-        </Button>
-      </VStack>
-    );
-  };
-
   const renderLayoutStep = () => {
-    if (currentStep < 3) {
+    if (currentStep < 2) {
       return false;
     }
 
     return (
       <VStack spacing={4} w="100%">
-        <MockBrowser address="blogs.html">
-          <HStack h="100%">
-            <Box
-              w="25%"
-              h="100%"
-              bg="gray.800"
-              p={2}
-              rounded="sm"
-              fontSize="xs"
-            >
-              <VStack spacing={2}>
-                <Box w="100%">Menu 1</Box>
-                <Box w="100%">Menu 2</Box>
-                <Box w="100%">Menu 3</Box>
-              </VStack>
-            </Box>
+        <MockBrowser address="projects.html">
+          <Center h="100%">
             <MotionVStack
-              w="75%"
+              w="100%"
               h="100%"
               bg="gray.800"
               p={2}
@@ -325,7 +270,7 @@ const NextJSSSG: FC = () => {
               initial="hidden"
               animate="visible"
             >
-              <MotionBox
+              <MotionCenter
                 w="100%"
                 bg="gray.700"
                 p={2}
@@ -335,15 +280,15 @@ const NextJSSSG: FC = () => {
                   hidden: { opacity: 0, y: -10 },
                 }}
               >
-                <VStack>
+                <VStack w="100%">
                   <Box w="100%" fontWeight="bold">
-                    Title 1
+                    Project 1
                   </Box>
                   <Box w="100%" fontSize="xs">
-                    This is a description of the post.
+                    This is a description of the project.
                   </Box>
                 </VStack>
-              </MotionBox>
+              </MotionCenter>
               <MotionBox
                 w="100%"
                 bg="gray.700"
@@ -356,39 +301,20 @@ const NextJSSSG: FC = () => {
               >
                 <VStack>
                   <Box w="100%" fontWeight="bold">
-                    Title 2
+                    Project 2
                   </Box>
                   <Box w="100%" fontSize="xs">
-                    This is a description of the post.
-                  </Box>
-                </VStack>
-              </MotionBox>
-              <MotionBox
-                w="100%"
-                bg="gray.700"
-                p={2}
-                rounded="sm"
-                variants={{
-                  visible: { opacity: 1, y: 0 },
-                  hidden: { opacity: 0, y: -10 },
-                }}
-              >
-                <VStack>
-                  <Box w="100%" fontWeight="bold">
-                    Title 3
-                  </Box>
-                  <Box w="100%" fontSize="xs">
-                    This is a description of the post.
+                    This is a description of the project.
                   </Box>
                 </VStack>
               </MotionBox>
             </MotionVStack>
-          </HStack>
+          </Center>
         </MockBrowser>
         <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
-          Since the generated files are static files, these files are
-          immediately available when someone visits them. No fetching of data
-          happens in these files.
+          Next.js takes the JSON response from the server and generates HTML for
+          the page. Once the HTML has been generated, it is rendered on the
+          browser.
         </Box>
         <Button
           w="full"
@@ -409,11 +335,10 @@ const NextJSSSG: FC = () => {
       <VStack spacing={8}>
         {startStep()}
         {buildingStep()}
-        {finishStep()}
         {renderLayoutStep()}
       </VStack>
     </Wrapper>
   );
 };
 
-export default NextJSSSG;
+export default NextJSSSR;
