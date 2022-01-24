@@ -9,7 +9,7 @@
   <a href="https://twitter.com/NirmalyaGhosh_">
     <img
       alt="Twitter: Nirmalya Ghosh"
-      src="https://img.shields.io/twitter/follow/nirmalyaghosh23.svg?style=social"
+      src="https://img.shields.io/twitter/follow/NirmalyaGhosh_.svg?style=social"
       target="_blank"
     />
   </a>
