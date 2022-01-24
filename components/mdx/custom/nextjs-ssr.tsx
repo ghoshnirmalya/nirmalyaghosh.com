@@ -134,7 +134,7 @@ const NextJSSSR: FC = () => {
         <Box fontSize="sm" bg="gray.900" p={4} rounded="sm">
           The above JavaScript files are present inside your Next.js
           application. These files contain code in React.js. They might
-          potentially contain calls to 3rd party APIs as well as CSS files.
+          potentially contain logic related to authorization or authentication.
         </Box>
         <Button
           w="full"
@@ -178,7 +178,7 @@ const NextJSSSR: FC = () => {
                   pos="absolute"
                   mt="14px"
                   border={1}
-                  borderColor="gray.600"
+                  borderColor="gray.700"
                   borderStyle="dashed"
                   initial="hidden"
                   animate="visible"
@@ -220,7 +220,7 @@ const NextJSSSR: FC = () => {
                   pos="absolute"
                   mt="14px"
                   border={1}
-                  borderColor="gray.600"
+                  borderColor="gray.700"
                   borderStyle="dashed"
                   initial="hidden"
                   animate="visible"
