@@ -1,3 +1,13 @@
+# [1.9.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.8.0...1.9.0) (2022-01-24)
+
+### Bug Fixes
+
+- Twitter username ([533f939](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/533f939682d2919365890b7ccb790a7afdbb427b))
+
+### Features
+
+- adds new publications ([5649c25](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/5649c25add172004dfe85baa075e58d09039d131))
+
 # [1.8.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.7.0...1.8.0) (2022-01-23)
 
 ### Bug Fixes
