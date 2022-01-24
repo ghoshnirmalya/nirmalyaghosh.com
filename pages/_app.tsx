@@ -14,9 +14,6 @@ const Layout = dynamic(
 const Navbar = dynamic(
   () => import(/* webpackChunkName: "Navbar" */ "components/navbar")
 );
-const Footer = dynamic(
-  () => import(/* webpackChunkName: "Footer" */ "components/footer")
-);
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
@@ -60,7 +57,6 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
       <Box minH="calc(100vh - 77px - 148px)">
         <Component {...pageProps} />
       </Box>
-      <Footer />
     </Layout>
   );
 };

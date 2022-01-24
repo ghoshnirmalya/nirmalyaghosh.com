@@ -38,7 +38,12 @@ const Page: FC = () => {
             <Heading as="h1" size="xl">
               Nirmalya Ghosh
             </Heading>
-            <Text>A little bit about me</Text>
+            <Text fontWeight="bold">
+              Senior Developer Programs Engineer at{" "}
+              <Link href="https://rapidapi.com/" isExternal>
+                RapidAPI
+              </Link>
+            </Text>
           </VStack>
         </Box>
       </HStack>
@@ -59,7 +64,7 @@ const Page: FC = () => {
           </Box>{" "}
           and have{" "}
           <Box as="span" fontWeight="bold">
-            around 5 years
+            around 6 years
           </Box>{" "}
           experience with it. I have also fiddled with Ruby on Rails and Elixir.
           I&apos;m eager to learn new frameworks, libraries and languages like
