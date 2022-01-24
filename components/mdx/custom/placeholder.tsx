@@ -5,7 +5,7 @@ import Wrapper from "./wrapper";
 const Placeholder: FC = () => {
   return (
     <Wrapper>
-      <Center w="100%" h={64}>
+      <Center w="100%" h={64} color="gray.500">
         Component coming soon...
       </Center>
     </Wrapper>
