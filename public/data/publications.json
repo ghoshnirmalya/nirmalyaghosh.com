@@ -1,5 +1,41 @@
 [
   {
+    "title": "Component Testing with Storybook and ButterCMS",
+    "url": "https://buttercms.com/blog/component-testing-with-storybook",
+    "description": "In this article, you will learn about how you can use Storybook along with ButterCMS to test your website visually before deploying changes. We will start by understanding the various issues with visual testing using mock data. Then, we will discuss how to resolve those issues using Storybook and ButterCMS components.",
+    "date": "2022-01-21"
+  },
+  {
+    "title": "How To Maintain A Large Next.js Application",
+    "url": "https://www.smashingmagazine.com/2021/11/maintain-large-nextjs-application",
+    "description": "In this article, Nirmalya discusses some of the complex problems that he faced while building and maintaining large Next.js applications. He always explains how these problems can be solved by using various tools.",
+    "date": "2021-11-26"
+  },
+  {
+    "title": "Building a Multilingual Website with ButterCMS",
+    "url": "https://buttercms.com/blog/nextjs-multilingual-website",
+    "description": "In this article, you will learn about how to use ButterCMS along with your Next.js application to serve content in multiple languages and turn those potential users into paying clients. We will start by discussing the benefits of a multilingual site, then look into how to create one using Next.js and ButterCMS.",
+    "date": "2021-11-04"
+  },
+  {
+    "title": "How to Build a Monorepo with Nx, Next.js and TypeScript",
+    "url": "https://www.sitepoint.com/monorepo-nx-next-typescript",
+    "description": "In this article, we’ll learn what a monorepo is, and how monorepos help in developing applications faster with a better development experience. We’ll discuss the advantages of using the Nx development tools for managing a monorepo, and learn how to use those tools to build a Next.js application.",
+    "date": "2021-08-16"
+  },
+  {
+    "title": "Build a Twitter Clone Using TypeScript, Prisma and Next.js",
+    "url": "https://www.sitepoint.com/nextjs-prisma-twitter-clone",
+    "description": "In this tutorial, we’ll learn how to build a clone of Twitter using Next.js and Prisma.",
+    "date": "2021-02-21"
+  },
+  {
+    "title": "How to integrate Next.js with Fauna using React Query",
+    "url": "https://dev.to/ghoshnirmalya/how-to-integrate-next-js-with-fauna-using-react-query-7o4",
+    "description": "In this tutorial, we'll learn about how we can integrate Next.js with Fauna. We'll also learn about how we can fetch GraphQL data on the server using React Query.",
+    "date": "2021-02-08"
+  },
+  {
     "title": "User Authentication in Next.js with Strapi",
     "url": "https://strapi.io/blog/user-authentication-in-next-js-with-strapi",
     "description": "In this tutorial, we'll be building a Next.js application and authenticate that with Strapi and NextAuth.",
