@@ -173,10 +173,6 @@ const NextJSSSR: FC = () => {
               <Box>Browser</Box>
             </VStack>
             <VStack w="100%">
-              <HStack spacing={4} w="100%">
-                <Box>Browser requests the page from server</Box>
-                <Icon as={CgArrowLongRight} />
-              </HStack>
               <Box w="100%" justifyContent="right" pos="relative">
                 <Box
                   pos="absolute"
@@ -195,10 +191,10 @@ const NextJSSSR: FC = () => {
                   animate="visible"
                   variants={{
                     visible: {
-                      marginLeft: "86%",
+                      marginLeft: "calc(100% - 85px)",
                       transition: {
                         duration: 2,
-                        repeat: 1,
+                        repeat: 0,
                         repeatType: "reverse",
                       },
                     },
@@ -220,11 +216,50 @@ const NextJSSSR: FC = () => {
                     <Box fontSize="xs">Request</Box>
                   </HStack>
                 </MotionBox>
+                <Box
+                  pos="absolute"
+                  mt="14px"
+                  border={1}
+                  borderColor="gray.600"
+                  borderStyle="dashed"
+                  initial="hidden"
+                  animate="visible"
+                  w="100%"
+                />
+                <MotionBox
+                  pos="relative"
+                  color="gray.400"
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    visible: {
+                      marginLeft: "0%",
+                      transition: {
+                        duration: 2,
+                        repeat: 0,
+                        repeatType: "reverse",
+                        delay: 2,
+                      },
+                    },
+                    hidden: {
+                      marginLeft: "calc(100% - 95px)",
+                    },
+                  }}
+                >
+                  <HStack
+                    bg="gray.900"
+                    rounded="full"
+                    w="fit-content"
+                    px={2}
+                    py={1}
+                    borderWidth={1}
+                    shadow="lg"
+                  >
+                    <Icon as={MdDataSaverOn} />
+                    <Box fontSize="xs">Response</Box>
+                  </HStack>
+                </MotionBox>
               </Box>
-              <HStack spacing={4} w="100%" justifyContent="right">
-                <Icon as={CgArrowLongLeft} />
-                <Box>Server sends pre-rendered HTML response</Box>
-              </HStack>
             </VStack>
             <VStack spacing={0} p={4} rounded="sm" color="gray.400">
               <Icon as={FaServer} h={14} w={14} />
