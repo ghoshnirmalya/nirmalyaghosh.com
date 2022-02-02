@@ -21,7 +21,7 @@
     "framer-motion": "^6.2.3",
     "ga-4-react": "^0.1.281",
     "github-slugger": "^1.4.0",
-    "next": "12.0.9",
+    "next": "12.0.10",
     "next-contentlayer": "^0.0.34",
     "next-seo": "^5.1.0",
     "preact": "^10.6.5",
