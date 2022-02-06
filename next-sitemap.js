@@ -1,6 +1,6 @@
 module.exports = {
   siteUrl: "https://nirmalyaghosh.com",
-  generateRobotsTxt: true,
+  generateRobotsTxt: false,
   changefreq: "daily",
   priority: 1,
   transform: async (config, path) => {

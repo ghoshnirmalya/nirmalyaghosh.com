@@ -78,8 +78,5 @@ yarn-error.log
 # Ignore sitemap
 public/sitemap*.xml
 
-# Ignore robots.txt
-public/robots.txt
-
 # Contentlayer
 .contentlayer
