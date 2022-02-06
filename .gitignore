@@ -76,7 +76,10 @@ yarn-error.log
 .mdx-data
 
 # Ignore sitemap
-public/sitemap.xml
+public/sitemap*.xml
+
+# Ignore robots.txt
+public/robots.txt
 
 # Contentlayer
 .contentlayer
