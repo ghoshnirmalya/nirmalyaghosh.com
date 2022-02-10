@@ -76,7 +76,7 @@ const prismStyles = css`
     --prism-string: #a5d6ff;
     --prism-literal: #429988;
     --prism-keyword: #ff7b72;
-    --prism-function: #ffa657;
+    --prism-function: #79c0ff;
     --prism-function-variable: #d2a8ff;
     --prism-deleted: #a14f55;
     --prism-class: #7ee787;
