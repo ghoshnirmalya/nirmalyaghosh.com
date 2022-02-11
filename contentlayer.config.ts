@@ -4,7 +4,7 @@ import mdxOptions from "./config/mdx";
 export const Article = defineDocumentType(() => ({
   name: "Article",
   filePathPattern: `articles/*.mdx`,
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     slug: { type: "string", required: true },
@@ -21,7 +21,7 @@ export const Article = defineDocumentType(() => ({
 export const Guide = defineDocumentType(() => ({
   name: "Guide",
   filePathPattern: `guides/*.mdx`,
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     slug: { type: "string", required: true },
@@ -40,7 +40,7 @@ export const Guide = defineDocumentType(() => ({
 export const Concept = defineDocumentType(() => ({
   name: "Concept",
   filePathPattern: `concepts/*.mdx`,
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     slug: { type: "string", required: true },

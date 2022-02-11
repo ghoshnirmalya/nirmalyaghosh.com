@@ -1,4 +1,4 @@
-import { Guide } from ".contentlayer/types";
+import { Guide } from "contentlayer/generated";
 import Page from "components/pages/guides/[slug]";
 import { getAllGuides, getCurrentGuide } from "lib/get-guides-data";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";

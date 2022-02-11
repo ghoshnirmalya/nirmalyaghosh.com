@@ -23,10 +23,11 @@
       "config/*": ["config/*"],
       "types/*": ["types/*"],
       "public/*": ["public/*"],
-      "styles/*": ["styles/*"]
+      "styles/*": ["styles/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"]
 }

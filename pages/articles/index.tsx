@@ -1,4 +1,4 @@
-import { Article } from ".contentlayer/types";
+import { Article } from "contentlayer/generated";
 import Page from "components/pages/articles/base";
 import { getAllArticles } from "lib/get-articles-data";
 import { GetStaticProps, NextPage } from "next";

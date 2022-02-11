@@ -1,4 +1,4 @@
-import { Article } from ".contentlayer/types";
+import { Article } from "contentlayer/generated";
 import Page from "components/pages/categories/base";
 import { getAllArticlesWhichBelongToCurrentSlug } from "lib/get-articles-data";
 import { getAllCategories } from "lib/get-categories-data";

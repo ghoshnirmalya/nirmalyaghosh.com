@@ -1,4 +1,4 @@
-import { Concept } from ".contentlayer/types";
+import { Concept } from "contentlayer/generated";
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import siteConfig from "config/site";
 import dayjs from "dayjs";

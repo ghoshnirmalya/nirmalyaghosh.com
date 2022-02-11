@@ -1,4 +1,4 @@
-import { Concept } from ".contentlayer/types";
+import { Concept } from "contentlayer/generated";
 import Page from "components/pages/concepts/base";
 import { getAllConcepts } from "lib/get-concepts-data";
 import { GetStaticProps, NextPage } from "next";

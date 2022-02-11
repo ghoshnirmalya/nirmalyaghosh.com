@@ -1,4 +1,4 @@
-import { Article } from ".contentlayer/types";
+import { Article } from "contentlayer/generated";
 import { Box, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";

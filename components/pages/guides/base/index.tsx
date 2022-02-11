@@ -1,4 +1,4 @@
-import { Guide } from ".contentlayer/types";
+import { Guide } from "contentlayer/generated";
 import { Box, Grid } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";

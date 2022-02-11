@@ -1,4 +1,4 @@
-import { Guide } from ".contentlayer/types";
+import { Guide } from "contentlayer/generated";
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";

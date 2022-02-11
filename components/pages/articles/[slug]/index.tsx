@@ -1,4 +1,4 @@
-import { Article } from ".contentlayer/types";
+import { Article } from "contentlayer/generated";
 import {
   Box,
   Grid,

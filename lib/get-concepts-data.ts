@@ -1,7 +1,6 @@
-import { allConcepts } from ".contentlayer/data";
+import { allConcepts, Concept } from "contentlayer/generated";
 import find from "lodash/find";
 import { ParsedUrlQuery } from "querystring";
-import { Concept } from ".contentlayer/types";
 
 export const getCurrentConcept = (params: ParsedUrlQuery | undefined) => {
   const allConcepts = getAllConcepts();

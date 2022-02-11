@@ -1,7 +1,7 @@
 import { Box, Grid } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import { Article } from ".contentlayer/types";
+import { Article } from "contentlayer/generated";
 import Publication from "types/publication";
 
 const Articles = dynamic(

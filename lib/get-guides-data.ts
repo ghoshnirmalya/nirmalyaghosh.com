@@ -1,7 +1,6 @@
-import { allGuides } from ".contentlayer/data";
+import { allGuides, Guide } from "contentlayer/generated";
 import find from "lodash/find";
 import { ParsedUrlQuery } from "querystring";
-import { Guide } from ".contentlayer/types";
 
 export const getCurrentGuide = (params: ParsedUrlQuery | undefined) => {
   const allGuides = getAllGuides();

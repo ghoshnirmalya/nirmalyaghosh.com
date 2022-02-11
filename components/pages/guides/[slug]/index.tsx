@@ -1,4 +1,4 @@
-import { Guide } from ".contentlayer/types";
+import { Guide } from "contentlayer/generated";
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
