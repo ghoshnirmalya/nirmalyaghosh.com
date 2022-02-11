@@ -1,19 +1,18 @@
-import { Article } from "contentlayer/generated";
 import Page from "components/pages/index/base/index";
+import { Article } from "contentlayer/generated";
 import { getAllArticles } from "lib/get-articles-data";
+import pick from "lodash/pick";
 import { GetStaticProps, NextPage } from "next";
 import projects from "public/data/projects.json";
-import publications from "public/data/publications.json";
-import pick from "lodash/pick";
+import Project from "types/project";
 
 interface IProps {
   articles: Article[];
+  projects: Project[];
 }
 
-const IndexPage: NextPage<IProps> = ({ articles }) => {
-  return (
-    <Page articles={articles} projects={projects} publications={publications} />
-  );
+const IndexPage: NextPage<IProps> = ({ articles, projects }) => {
+  return <Page articles={articles} projects={projects} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -23,7 +22,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      articles,
+      articles: articles.slice(0, 5),
+      projects: projects.slice(0, 5),
     },
   };
 };

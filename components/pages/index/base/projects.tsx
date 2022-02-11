@@ -17,7 +17,15 @@ const projects: FC<Props> = ({
 
     return (
       <Link href="/projects" passHref>
-        <_Link p={2} href="/projects" rounded="sm">
+        <_Link
+          p={2}
+          href="/projects"
+          rounded="sm"
+          fontSize="sm"
+          _hover={{
+            textDecoration: "none",
+          }}
+        >
           <Box color="gray.300">View all projects</Box>
         </_Link>
       </Link>
@@ -27,7 +35,7 @@ const projects: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl" color="gray.300">
+        <Heading as="h2" size="lg" color="blue.100">
           Projects
         </Heading>
         {viewAllLinksNode()}

@@ -16,7 +16,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     return (
       <Box>
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="xl">
+          <Heading as="h1" size="lg" color="blue.100">
             Projects
           </Heading>
           <Text>Open Source Projects developed and available on Github</Text>

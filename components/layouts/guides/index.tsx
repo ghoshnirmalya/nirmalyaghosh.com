@@ -26,7 +26,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
   const headingNode = () => {
     return (
       <VStack spacing={2} align="left">
-        <Heading as="h1" size="xl">
+        <Heading as="h1" size="lg" color="blue.100">
           Guides
         </Heading>
         <Text>

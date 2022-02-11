@@ -1,10 +1,21 @@
 import { Article } from "contentlayer/generated";
-import { Box, Heading, Link as _Link, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  HStack,
+  Icon,
+  Link as _Link,
+  Tag,
+  TagLabel,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Link from "next/link";
 import { FC, useState } from "react";
 import Publication from "types/publication";
+import { IoIosLink } from "react-icons/io";
 
 dayjs.extend(localizedFormat);
 
@@ -37,7 +48,15 @@ const Articles: FC<Props> = ({
   const viewAllLinksNode = () => {
     return (
       <Link href="/articles" passHref>
-        <_Link p={2} href="/articles" rounded="sm">
+        <_Link
+          p={2}
+          href="/articles"
+          rounded="sm"
+          fontSize="sm"
+          _hover={{
+            textDecoration: "none",
+          }}
+        >
           <Box color="gray.300">View all articles</Box>
         </_Link>
       </Link>
@@ -48,7 +67,7 @@ const Articles: FC<Props> = ({
     if (!!currentTag) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="xl">
+          <Heading as="h1" size="lg" color="blue.100">
             Articles
           </Heading>
           <Text>Posts tagged with &quot;{currentTag}&quot;</Text>
@@ -59,7 +78,7 @@ const Articles: FC<Props> = ({
     if (!!currentCategory) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="xl">
+          <Heading as="h1" size="lg" color="blue.100">
             Articles
           </Heading>
           <Text>
@@ -80,7 +99,7 @@ const Articles: FC<Props> = ({
     if (hideViewAllLinksNode) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="xl">
+          <Heading as="h1" size="lg" color="blue.100">
             Articles
           </Heading>
           <Text>Posts related to some of the latest technologies</Text>
@@ -90,7 +109,7 @@ const Articles: FC<Props> = ({
 
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="xl" color="gray.300">
+        <Heading as="h2" size="lg" color="blue.100">
           Articles
         </Heading>
         {viewAllLinksNode()}
@@ -98,13 +117,26 @@ const Articles: FC<Props> = ({
     );
   };
 
-  const metaNode = (date: string) => {
+  const metaNode = (date: string, type: "publication" | "article") => {
     return (
-      <Box>
+      <HStack spacing={4} alignItems="center">
         <Text fontSize="sm" color="gray.400">
           {dayjs(date).format("LL")}
         </Text>
-      </Box>
+        {type === "publication" && (
+          <>
+            <Box>•</Box>
+            <Tag
+              size="sm"
+              colorScheme="blue"
+              borderRadius="full"
+              variant="subtle"
+            >
+              <TagLabel>Publication</TagLabel>
+            </Tag>
+          </>
+        )}
+      </HStack>
     );
   };
 
@@ -140,7 +172,7 @@ const Articles: FC<Props> = ({
             >
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(article.date)}
+                  {metaNode(article.date, "publication")}
                   {titleNode(article.title)}
                   {descriptionNode(article.description)}
                 </VStack>
@@ -156,7 +188,7 @@ const Articles: FC<Props> = ({
             <a>
               <Box>
                 <VStack spacing={1} align="left">
-                  {metaNode(article.date)}
+                  {metaNode(article.date, "article")}
                   {titleNode(article.title)}
                   {descriptionNode(article.description)}
                 </VStack>
