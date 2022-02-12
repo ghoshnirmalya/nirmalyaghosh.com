@@ -61,7 +61,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
 
   const updatedMetaNode = () => {
     return (
-      <HStack spacing={2} isInline alignItems="center">
+      <HStack spacing={2} isInline alignItems="center" color="gray.400">
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
           {dayjs(article.lastmod).format("LL")}.

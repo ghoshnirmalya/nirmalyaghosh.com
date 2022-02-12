@@ -56,7 +56,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
 
   const updatedMetaNode = () => {
     return (
-      <HStack spacing={2} isInline alignItems="center">
+      <HStack spacing={2} isInline alignItems="center" color="gray.400">
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
           {dayjs(guide.lastmod).format("LL")}.
