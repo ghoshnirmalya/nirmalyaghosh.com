@@ -668,6 +668,25 @@
     type-fest "^1.2.1"
     unified "^10.1.1"
 
+"@contentlayer/core@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.1.1.tgz#7effa30c8bbc72e1b6e5d389d977f08f1d10eb7e"
+  integrity sha512-adKI2xygOhp95wPIMvlyIdXs9gh51R6RLTQ+WwvVcLPX+eaNI+RgExGy7GzilqRDjfaidcYDOwk04FNhfbtUAQ==
+  dependencies:
+    "@contentlayer/utils" "0.1.1"
+    camel-case "^4.1.2"
+    date-fns "2.x"
+    esbuild "0.11.x || 0.12.x || 0.13.x || 0.14.x"
+    gray-matter "^4.0.3"
+    mdx-bundler "^8.0.1"
+    rehype-stringify "^9.0.2"
+    remark-frontmatter "^4.0.1"
+    remark-parse "^10.0.1"
+    remark-rehype "^10.0.1"
+    source-map-support "^0.5.21"
+    type-fest "^1.2.1"
+    unified "^10.1.1"
+
 "@contentlayer/source-files@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.1.0.tgz#75af8bb76038534b62c2bac542c2346ed386cf95"
@@ -689,6 +708,29 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.1.0.tgz#ae4e533e8a227e2d0948911a74397448bf99866a"
   integrity sha512-I+oyju/0B5xMk0AZKJDLTHwfVF9c4qtJj6KHdX6O5rOU8+bM+HNEPcFu2UyQ9s6ICoIfbwH+3LROepqLP7ygJg==
+  dependencies:
+    "@effect-ts/core" "^0.55.2"
+    "@effect-ts/otel" "^0.12.0"
+    "@effect-ts/otel-exporter-trace-otlp-grpc" "^0.12.0"
+    "@effect-ts/otel-sdk-trace-node" "^0.12.0"
+    "@opentelemetry/api" "^1.0.3"
+    "@opentelemetry/core" "^1.0.0"
+    "@opentelemetry/exporter-trace-otlp-grpc" "^0.27.0"
+    "@opentelemetry/resources" "^1.0.0"
+    "@opentelemetry/sdk-trace-base" "^1.0.0"
+    "@opentelemetry/sdk-trace-node" "^1.0.0"
+    "@opentelemetry/semantic-conventions" "^1.0.0"
+    chokidar "^3.5.3"
+    hash-wasm "^4.9.0"
+    inflection "^1.13.1"
+    oo-ascii-tree "^1.36.0"
+    ts-pattern "^3.3.3"
+    type-fest "^1.2.1"
+
+"@contentlayer/utils@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.1.1.tgz#314fe76c011d8e4d4a35b018ab226f8f1f5f1bb2"
+  integrity sha512-z7RouTg4LbnV22RwMhysYObd64Witb9Ox6BtJybwi2rEKhBgZKqxx1S5/j31jl/Rr55t22+MGsyzw8cm6GgDwA==
   dependencies:
     "@effect-ts/core" "^0.55.2"
     "@effect-ts/otel" "^0.12.0"
@@ -5418,13 +5460,13 @@ new-github-release-url@1.0.0:
   dependencies:
     type-fest "^0.4.1"
 
-next-contentlayer@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.1.0.tgz#96c9e7de2e03d23613ddb215ba0cd5576c8bf372"
-  integrity sha512-QsJtMX3avR/mpWhJ72v6wxEr0m4AlTwS/KVTMtXxhNOUcDBwypJlZ76fj6kkOOOpQSEuyTtGhRvLoomrJj6iDQ==
+next-contentlayer@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.1.1.tgz#e386c3bd79074bca62c7fb5487e11fd5e57bd985"
+  integrity sha512-I1ZMyUh5peSE/iiNHxStPHcqT60Ep2sV+cV6KIQQCzkwoFC1dppJFww5lYa7KA7HfvEfMyAMuRhksvACcAW+VA==
   dependencies:
-    "@contentlayer/core" "0.1.0"
-    "@contentlayer/utils" "0.1.0"
+    "@contentlayer/core" "0.1.1"
+    "@contentlayer/utils" "0.1.1"
     rxjs "^7.1.0"
 
 next-seo@^5.1.0:
@@ -6590,21 +6632,7 @@ run-parallel@^1.1.9:
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.1.10.tgz#60a51b2ae836636c81377df16cb107351bcd13ef"
   integrity sha512-zb/1OuZ6flOlH6tQyMPUrE3x3Ulxjlo9WIVXR4yVYi4H9UXQaeIsPbLn2R3O3vQCnDKkAl2qHiuocKKX4Tz/Sw==
 
-rxjs@^7.1.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.4.0.tgz#a12a44d7eebf016f5ff2441b87f28c9a51cebc68"
-  integrity sha512-7SQDi7xeTMCJpqViXh8gL/lebcwlp3d831F05+9B44A4B0WfsEwUQHR64gsH1kvJ+Ep/J9K2+n1hVl1CsGN23w==
-  dependencies:
-    tslib "~2.1.0"
-
-rxjs@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.2.0.tgz#5cd12409639e9514a71c9f5f9192b2c4ae94de31"
-  integrity sha512-aX8w9OpKrQmiPKfT1bqETtUr9JygIz6GZ+gql8v7CijClsP0laoFUdKzxFAoWuRdSlOdU2+crss+cMf+cqMTnw==
-  dependencies:
-    tslib "~2.1.0"
-
-rxjs@^7.5.2:
+rxjs@^7.1.0, rxjs@^7.2.0, rxjs@^7.5.2:
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.5.2.tgz#11e4a3a1dfad85dbf7fb6e33cbba17668497490b"
   integrity sha512-PwDt186XaL3QN5qXj/H9DGyHhP3/RYYgZZwqBv9Tv8rsAaiwFH1IsJJlcgD37J7UW5a6O67qX0KWKS3/pu0m4w==
@@ -7163,11 +7191,6 @@ tslib@^2.0.3, tslib@^2.1.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
-
-tslib@~2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
 tsutils@^3.21.0:
   version "3.21.0"
