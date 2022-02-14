@@ -632,22 +632,22 @@
   dependencies:
     "@chakra-ui/utils" "1.10.0"
 
-"@contentlayer/cli@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.1.0.tgz#74f669d646398627292db04379b5db810854b1ea"
-  integrity sha512-ThzOCh9m3Q3LOd3HhxvKUNFbt/zFzXfei6RKg7O6EsxVwYdjG+7K9Dbqr5UDlR0bu/erujpfjFVcoscmjNpr+Q==
+"@contentlayer/cli@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/cli/-/cli-0.1.1.tgz#7a19ddb6b693ad48c23294ec947a329ee0e2b110"
+  integrity sha512-KV09HE4In/bU7hM4IBjA3zkF/XdFcSzdJQIYIiCi2P07dk5xdinzzFrxPTjiPwNC6VTQ4TbjP5gGNGo6WsNsOg==
   dependencies:
-    "@contentlayer/core" "0.1.0"
-    "@contentlayer/utils" "0.1.0"
+    "@contentlayer/core" "0.1.1"
+    "@contentlayer/utils" "0.1.1"
     clipanion "^3.2.0-rc.6"
     typanion "^3.7.1"
 
-"@contentlayer/client@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.1.0.tgz#cbb9e3a6832b0e74502c3b7e7acb5c6d377d6b3e"
-  integrity sha512-DWCCs1u+Kfdeaav888FM/oBxAhqC1w5Gd+mWV2wNoTrJJm57jDSTSzfMinmZ1dLLhzw1bL7Ki9DlxK1K/Hj40A==
+"@contentlayer/client@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/client/-/client-0.1.1.tgz#84111a057096808820388d3ca2c446445b72c156"
+  integrity sha512-5rrBMKRJr7K1olm2rKFlzLKCuswHDS0fjR87TZhaOs9GKfmong4hd5JjWtULosMNC3//8BLgrPY/+QokJGQZtQ==
   dependencies:
-    "@contentlayer/core" "0.1.0"
+    "@contentlayer/core" "0.1.1"
 
 "@contentlayer/core@0.1.0":
   version "0.1.0"
@@ -668,13 +668,32 @@
     type-fest "^1.2.1"
     unified "^10.1.1"
 
-"@contentlayer/source-files@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.1.0.tgz#75af8bb76038534b62c2bac542c2346ed386cf95"
-  integrity sha512-WPzONr5N7vBPdTSQyQ6k4LpnnxCMnTPGNQ4K43073qn6k/5WudS3kwdYzkjk8UEOJMBNhxNXu90zrQXrbrRURg==
+"@contentlayer/core@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.1.1.tgz#7effa30c8bbc72e1b6e5d389d977f08f1d10eb7e"
+  integrity sha512-adKI2xygOhp95wPIMvlyIdXs9gh51R6RLTQ+WwvVcLPX+eaNI+RgExGy7GzilqRDjfaidcYDOwk04FNhfbtUAQ==
   dependencies:
-    "@contentlayer/core" "0.1.0"
-    "@contentlayer/utils" "0.1.0"
+    "@contentlayer/utils" "0.1.1"
+    camel-case "^4.1.2"
+    date-fns "2.x"
+    esbuild "0.11.x || 0.12.x || 0.13.x || 0.14.x"
+    gray-matter "^4.0.3"
+    mdx-bundler "^8.0.1"
+    rehype-stringify "^9.0.2"
+    remark-frontmatter "^4.0.1"
+    remark-parse "^10.0.1"
+    remark-rehype "^10.0.1"
+    source-map-support "^0.5.21"
+    type-fest "^1.2.1"
+    unified "^10.1.1"
+
+"@contentlayer/source-files@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.1.1.tgz#311c815b0a766c1ebf8b466bdfd3fad0433bb47a"
+  integrity sha512-43bfwbkTCMrOZvl3IrlXKhbWgGE1iHzrtrp6YCAThl8l6XCeJmpfOOx3l22bt8zsR+mZ34XqwjZXESO9ESp7/w==
+  dependencies:
+    "@contentlayer/core" "0.1.1"
+    "@contentlayer/utils" "0.1.1"
     chokidar "^3.5.3"
     date-fns-tz "^1.2.2"
     glob "^7.2.0"
@@ -689,6 +708,29 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.1.0.tgz#ae4e533e8a227e2d0948911a74397448bf99866a"
   integrity sha512-I+oyju/0B5xMk0AZKJDLTHwfVF9c4qtJj6KHdX6O5rOU8+bM+HNEPcFu2UyQ9s6ICoIfbwH+3LROepqLP7ygJg==
+  dependencies:
+    "@effect-ts/core" "^0.55.2"
+    "@effect-ts/otel" "^0.12.0"
+    "@effect-ts/otel-exporter-trace-otlp-grpc" "^0.12.0"
+    "@effect-ts/otel-sdk-trace-node" "^0.12.0"
+    "@opentelemetry/api" "^1.0.3"
+    "@opentelemetry/core" "^1.0.0"
+    "@opentelemetry/exporter-trace-otlp-grpc" "^0.27.0"
+    "@opentelemetry/resources" "^1.0.0"
+    "@opentelemetry/sdk-trace-base" "^1.0.0"
+    "@opentelemetry/sdk-trace-node" "^1.0.0"
+    "@opentelemetry/semantic-conventions" "^1.0.0"
+    chokidar "^3.5.3"
+    hash-wasm "^4.9.0"
+    inflection "^1.13.1"
+    oo-ascii-tree "^1.36.0"
+    ts-pattern "^3.3.3"
+    type-fest "^1.2.1"
+
+"@contentlayer/utils@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.1.1.tgz#314fe76c011d8e4d4a35b018ab226f8f1f5f1bb2"
+  integrity sha512-z7RouTg4LbnV22RwMhysYObd64Witb9Ox6BtJybwi2rEKhBgZKqxx1S5/j31jl/Rr55t22+MGsyzw8cm6GgDwA==
   dependencies:
     "@effect-ts/core" "^0.55.2"
     "@effect-ts/otel" "^0.12.0"
@@ -2265,16 +2307,16 @@ configstore@^5.0.1:
     write-file-atomic "^3.0.0"
     xdg-basedir "^4.0.0"
 
-contentlayer@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.1.0.tgz#1868729fc06228949b44e2562046428d04cd70cb"
-  integrity sha512-etYhKRHSyDFTpWqsRvn9fvqik4I+6t3cHOKcVRMHtXtePF8sLTnVaR854u1X09Mp9dd8Jjyatv5TJebxajH6tw==
+contentlayer@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/contentlayer/-/contentlayer-0.1.1.tgz#843d988fc31484ee51b39ad3df6aa62ac72b8048"
+  integrity sha512-clVFYhLU0rduVAMKxQcO/wN/yQo5YlnfPU1a1AEZiaG5Ik1J58bLufv+ppJBLqhhnzMMgYyfPcYCsNzofVS4Cw==
   dependencies:
-    "@contentlayer/cli" "0.1.0"
-    "@contentlayer/client" "0.1.0"
-    "@contentlayer/core" "0.1.0"
-    "@contentlayer/source-files" "0.1.0"
-    "@contentlayer/utils" "0.1.0"
+    "@contentlayer/cli" "0.1.1"
+    "@contentlayer/client" "0.1.1"
+    "@contentlayer/core" "0.1.1"
+    "@contentlayer/source-files" "0.1.1"
+    "@contentlayer/utils" "0.1.1"
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.12"
