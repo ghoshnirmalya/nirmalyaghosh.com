@@ -1,6 +1,12 @@
-import { Box, Heading, Link as _Link, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Link as ChakraLink,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Project from "types/project";
 
 interface Props {
@@ -8,16 +14,21 @@ interface Props {
   hideViewAllLinksNode?: boolean;
 }
 
-const projects: FC<Props> = ({
+const Projects: FC<Props> = ({
   projects = [],
   hideViewAllLinksNode = false,
 }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const sortedProjects = projects.filter((project: Project) =>
+    project.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const viewAllLinksNode = () => {
     if (hideViewAllLinksNode) return false;
 
     return (
       <Link href="/projects" passHref>
-        <_Link
+        <ChakraLink
           p={2}
           href="/projects"
           rounded="sm"
@@ -27,7 +38,7 @@ const projects: FC<Props> = ({
           }}
         >
           <Box color="gray.300">View all projects</Box>
-        </_Link>
+        </ChakraLink>
       </Link>
     );
   };
@@ -45,7 +56,7 @@ const projects: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color="blue.400" fontWeight="bold">
+      <Heading as="h3" size="md" lineHeight="tall" color="blue.400">
         {title}
       </Heading>
     );
@@ -56,18 +67,41 @@ const projects: FC<Props> = ({
   };
 
   const projectsNode = () => {
-    return projects.map((project: Project, index: number) => {
+    if (!sortedProjects.length) {
       return (
-        <Box key={index}>
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
-            <VStack spacing={1} align="left">
-              {titleNode(project.title)}
-              {descriptionNode(project.description)}
-            </VStack>
-          </a>
-        </Box>
+        <VStack mx="auto" textAlign="center" w="100%">
+          <Text>No projects found!</Text>
+        </VStack>
       );
-    });
+    }
+
+    return (
+      <VStack spacing={8}>
+        {sortedProjects.map((project: Project, index: number) => {
+          return (
+            <ChakraLink
+              key={index}
+              bg="gray.800"
+              color="white"
+              rounded="sm"
+              href={project.url}
+              isExternal
+              w="100%"
+              _hover={{}}
+            >
+              <Box p={8}>
+                <VStack spacing={4} justifyContent="space-between" align="left">
+                  <VStack spacing={1} align="left">
+                    {titleNode(project.title)}
+                    {descriptionNode(project.description)}
+                  </VStack>
+                </VStack>
+              </Box>
+            </ChakraLink>
+          );
+        })}
+      </VStack>
+    );
   };
 
   return (
@@ -78,4 +112,4 @@ const projects: FC<Props> = ({
   );
 };
 
-export default projects;
+export default Projects;
