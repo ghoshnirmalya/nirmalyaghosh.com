@@ -33,7 +33,7 @@ const LINKS = [
 const Navbar: FC = () => {
   const menuNode = () => {
     return (
-      <HStack isInline spacing={4} alignItems="center">
+      <HStack isInline spacing={[0, 4]} alignItems="center">
         {[
           LINKS.map((link: NavLink) => {
             return (
@@ -44,7 +44,7 @@ const Navbar: FC = () => {
                     py={2}
                     href={link.url}
                     rounded="sm"
-                    fontSize="sm"
+                    fontSize={["xs", "sm"]}
                     _hover={{
                       textDecoration: "none",
                       bgColor: "gray.800",

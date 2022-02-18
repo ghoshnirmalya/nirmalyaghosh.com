@@ -89,7 +89,7 @@ const Projects: FC<Props> = ({
               w="100%"
               _hover={{}}
             >
-              <Box p={8}>
+              <Box p={4}>
                 <VStack spacing={4} justifyContent="space-between" align="left">
                   <VStack spacing={1} align="left">
                     {titleNode(project.title)}
