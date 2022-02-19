@@ -180,8 +180,6 @@ const NextJSSSR: FC = () => {
                   border={1}
                   borderColor="gray.700"
                   borderStyle="dashed"
-                  initial="hidden"
-                  animate="visible"
                   w="100%"
                 />
                 <MotionBox
@@ -222,8 +220,6 @@ const NextJSSSR: FC = () => {
                   border={1}
                   borderColor="gray.700"
                   borderStyle="dashed"
-                  initial="hidden"
-                  animate="visible"
                   w="100%"
                 />
                 <MotionBox
