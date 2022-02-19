@@ -23,5 +23,6 @@
     "react.js",
     "strapi",
     "tailwind"
-  ]
+  ],
+  "frontMatter.preview.host": "http://localhost:3000/articles"
 }
