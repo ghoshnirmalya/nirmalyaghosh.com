@@ -4,7 +4,7 @@ import {
   Grid,
   Heading,
   HStack,
-  Link,
+  Link as ChakraLink,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -17,6 +17,14 @@ import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import NextLink from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import DynamicComponentLoader from "./dynamic-component-loader";
+
+dayjs.extend(localizedFormat);
+
+interface IProps {
+  article: Article;
+  nextArticles: Article[];
+}
 
 const Callout = dynamic(
   () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -26,14 +34,42 @@ const Image = dynamic(
   () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
 );
 
-dayjs.extend(localizedFormat);
+const Jumbotron = dynamic(
+  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+);
 
-const components = { Callout, img: Image };
+const Link = dynamic(
+  () => import(/* webpackChunkName: "Link" */ "components/mdx/link")
+);
 
-interface IProps {
-  article: Article;
-  nextArticles: Article[];
-}
+const Placeholder = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: "Placeholder" */ "components/mdx/custom/placeholder"
+    )
+);
+
+const NextJSSSG = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: "NextJSSSG" */ "components/mdx/custom/nextjs-ssg"
+    ),
+  {
+    ssr: false,
+    loading: () => <DynamicComponentLoader />,
+  }
+);
+
+const NextJSSSR = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: "NextJSSSR" */ "components/mdx/custom/nextjs-ssr"
+    ),
+  {
+    ssr: false,
+    loading: () => <DynamicComponentLoader />,
+  }
+);
 
 const SocialShare = dynamic(
   () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
@@ -41,9 +77,22 @@ const SocialShare = dynamic(
     ssr: false,
   }
 );
+
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
+
+const components = {
+  Callout,
+  img: Image,
+  Jumbotron,
+  Link,
+  Image,
+  SocialShare,
+  Placeholder,
+  NextJSSSG,
+  NextJSSSR,
+};
 
 const Page: NextPage<IProps> = ({ article, nextArticles }) => {
   const MDXContent = useMDXComponent(article.body.code);
@@ -75,10 +124,10 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
       <HStack spacing={2} isInline alignItems="center">
         {article.categories.map((category, index) => {
           return (
-            <NextLink key={index} href={`/categories/${category}`}>
-              <Link fontSize="sm" _hover={{}}>
+            <NextLink key={index} href={`/categories/${category}`} passHref>
+              <ChakraLink fontSize="sm" _hover={{}}>
                 {category}
-              </Link>
+              </ChakraLink>
             </NextLink>
           );
         })}
@@ -91,10 +140,10 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
       <HStack spacing={2} isInline alignItems="center">
         {article.tags.map((tag, index) => {
           return (
-            <NextLink key={index} href={`/tags/${tag}`}>
-              <Link fontSize="sm" px={4} py={2} bg="gray.800" _hover={{}}>
+            <NextLink key={index} href={`/tags/${tag}`} passHref>
+              <ChakraLink fontSize="sm" px={4} py={2} bg="gray.800" _hover={{}}>
                 # {tag}
-              </Link>
+              </ChakraLink>
             </NextLink>
           );
         })}
