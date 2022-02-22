@@ -34,7 +34,6 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
     <>
       <Box
         as="section"
-        h={["calc(100vh - 109px)", "calc(100vh - 109px)", "calc(100vh - 64px)"]}
         d="flex"
         alignItems="center"
         maxW="2xl"

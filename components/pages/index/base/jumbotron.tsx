@@ -8,6 +8,7 @@ const Jumbotron: FC = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
+      py={24}
     >
       <Box>
         <Heading
@@ -15,11 +16,11 @@ const Jumbotron: FC = () => {
           fontFamily="body"
           bgColor="blue.400"
           bgClip="text"
-          size="2xl"
+          size="4xl"
           bgGradient="linear(to-l, #79c2ff, #4a5888)"
           className="jumbotron-name-heading"
         >
-          Hi, I&apos;m Nirmalya
+          Nirmalya Ghosh
         </Heading>
       </Box>
       <Box>
@@ -45,7 +46,7 @@ const Jumbotron: FC = () => {
           <Box as="span" color="gray.300">
             Building Open Source
           </Box>{" "}
-          stuffs
+          projects.
         </Heading>
       </Box>
     </VStack>
