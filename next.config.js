@@ -18,4 +18,13 @@ module.exports = withContentlayer()({
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/concepts/:slug",
+        destination: "/articles/:slug",
+        permanent: true,
+      },
+    ];
+  },
 });
