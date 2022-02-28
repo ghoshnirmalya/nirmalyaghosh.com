@@ -16,7 +16,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     return (
       <Box>
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="blue.100">
+          <Heading as="h1" size="lg" color="white">
             Projects
           </Heading>
           <Text>Open Source Projects developed and available on Github</Text>
@@ -35,14 +35,6 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const descriptionNode = (description: string) => {
     return <Text fontSize="sm">{description}</Text>;
-  };
-
-  const ctaNode = () => {
-    return (
-      <Button fontSize="sm" bg="gray.900" _hover={{}}>
-        View project
-      </Button>
-    );
   };
 
   const projectsNode = () => {
@@ -66,12 +58,12 @@ const Projects: FC<Props> = ({ projects = [] }) => {
       >
         {sortedProjects.map((project: Project, index: number) => {
           return (
-            <Box key={index} bg="gray.800" color="white" rounded="sm">
+            <Box key={index} bg="gray.900" color="white" rounded="sm">
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 <Box p={8}>
                   <VStack
                     spacing={4}
-                    minH={48}
+                    minH={24}
                     justifyContent="space-between"
                     align="left"
                   >
@@ -79,7 +71,6 @@ const Projects: FC<Props> = ({ projects = [] }) => {
                       {titleNode(project.title)}
                       {descriptionNode(project.description)}
                     </VStack>
-                    <Box>{ctaNode()}</Box>
                   </VStack>
                 </Box>
               </a>

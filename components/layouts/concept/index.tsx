@@ -26,7 +26,7 @@ const Concepts: FC<Props> = ({ concepts = [] }) => {
   const headingNode = () => {
     return (
       <VStack spacing={2} align="left">
-        <Heading as="h1" size="lg" color="blue.100">
+        <Heading as="h1" size="lg" color="white">
           Interactive concepts
         </Heading>
         <Text>

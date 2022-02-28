@@ -12,7 +12,7 @@ interface IProps {
 const Image: FC<IProps> = ({ src, alt, height, width }) => {
   return (
     <Link href={src} target="_blank" rel="noopener noreferrer">
-      <VStack bg="gray.800" borderRadius="sm" mx={0} spacing={0} as="span">
+      <VStack bg="gray.900" borderRadius="sm" mx={0} spacing={0} as="span">
         <Box pos="relative" w="100%" h="100%">
           <NextImage
             src={src}

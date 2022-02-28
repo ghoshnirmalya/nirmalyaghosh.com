@@ -293,7 +293,7 @@ const NextJSSSG: FC = () => {
             <Box
               w="25%"
               h="100%"
-              bg="gray.800"
+              bg="gray.900"
               p={2}
               rounded="sm"
               fontSize="xs"
@@ -307,7 +307,7 @@ const NextJSSSG: FC = () => {
             <MotionVStack
               w="75%"
               h="100%"
-              bg="gray.800"
+              bg="gray.900"
               p={2}
               rounded="sm"
               spacing={2}

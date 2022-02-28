@@ -283,7 +283,7 @@ const NextJSSSR: FC = () => {
             <MotionVStack
               w="100%"
               h="100%"
-              bg="gray.800"
+              bg="gray.900"
               p={2}
               rounded="sm"
               spacing={2}

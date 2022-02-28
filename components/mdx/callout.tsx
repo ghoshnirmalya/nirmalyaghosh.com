@@ -16,7 +16,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
     },
     info: {
       icon: IoIosHelpCircle,
-      bgColor: "gray.800",
+      bgColor: "gray.900",
       color: "gray.200",
     },
     warning: {

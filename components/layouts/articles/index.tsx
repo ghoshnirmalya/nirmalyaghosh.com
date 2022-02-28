@@ -67,7 +67,7 @@ const Articles: FC<Props> = ({
     if (!!currentTag) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="blue.100">
+          <Heading as="h1" size="lg" color="white">
             Articles
           </Heading>
           <Text>Posts tagged with &quot;{currentTag}&quot;</Text>
@@ -78,7 +78,7 @@ const Articles: FC<Props> = ({
     if (!!currentCategory) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="blue.100">
+          <Heading as="h1" size="lg" color="white">
             Articles
           </Heading>
           <Text>
@@ -99,7 +99,7 @@ const Articles: FC<Props> = ({
     if (hideViewAllLinksNode) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="blue.100">
+          <Heading as="h1" size="lg" color="white">
             Articles
           </Heading>
           <Text>Posts related to some of the latest technologies</Text>
@@ -109,7 +109,7 @@ const Articles: FC<Props> = ({
 
     return (
       <Box d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="lg" color="blue.100">
+        <Heading as="h2" size="lg" color="white">
           Articles
         </Heading>
         {viewAllLinksNode()}

@@ -46,7 +46,7 @@ const Projects: FC<Props> = ({
   const headingNode = () => {
     return (
       <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="lg" color="blue.100">
+        <Heading as="h2" size="lg" color="white">
           Projects
         </Heading>
         {viewAllLinksNode()}
@@ -81,7 +81,7 @@ const Projects: FC<Props> = ({
           return (
             <ChakraLink
               key={index}
-              bg="gray.800"
+              bg="gray.900"
               color="white"
               rounded="sm"
               href={project.url}

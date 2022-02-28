@@ -18,7 +18,7 @@ const MockBrowser: FC<IProps> = ({
           p={2}
           roundedTop="sm"
           borderBottomWidth={2}
-          borderBottomColor="gray.800"
+          borderBottomColor="gray.900"
           fontSize="xs"
         >
           <HStack w="100%">

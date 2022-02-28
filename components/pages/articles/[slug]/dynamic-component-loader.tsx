@@ -4,7 +4,7 @@ import { FC } from "react";
 const DynamicComponentLoader: FC = () => {
   return (
     <Center
-      bg="gray.800"
+      bg="gray.900"
       p={4}
       rounded="sm"
       color="gray.400"

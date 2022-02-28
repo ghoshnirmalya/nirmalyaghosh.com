@@ -35,7 +35,7 @@ const Page: FC = () => {
         </Box>
         <Box>
           <VStack spacing={2} align="left">
-            <Heading as="h1" size="lg" color="blue.100">
+            <Heading as="h1" size="lg" color="white">
               Nirmalya Ghosh
             </Heading>
             <Text fontWeight="bold">

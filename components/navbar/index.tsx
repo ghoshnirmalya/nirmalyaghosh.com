@@ -43,7 +43,7 @@ const Navbar: FC = () => {
                     fontSize={["xs", "sm"]}
                     _hover={{
                       textDecoration: "none",
-                      bgColor: "gray.800",
+                      bgColor: "gray.900",
                     }}
                     _focus={{ outline: "none" }}
                   >
