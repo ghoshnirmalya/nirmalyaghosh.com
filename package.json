@@ -18,7 +18,7 @@
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "contentlayer": "^0.1.2",
-    "dayjs": "^1.10.8",
+    "dayjs": "^1.11.0",
     "framer-motion": "^6.2.8",
     "ga-4-react": "^0.1.281",
     "github-slugger": "^1.4.0",
