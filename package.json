@@ -22,7 +22,7 @@
     "framer-motion": "^6.2.9",
     "ga-4-react": "^0.1.281",
     "github-slugger": "^1.4.0",
-    "next": "12.1.4",
+    "next": "12.1.5",
     "next-contentlayer": "^0.1.2",
     "next-seo": "^5.4.0",
     "preact": "^10.7.1",
