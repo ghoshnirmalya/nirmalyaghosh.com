@@ -652,6 +652,26 @@
     type-fest "^2.12.1"
     unified "^10.1.2"
 
+"@contentlayer/core@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@contentlayer/core/-/core-0.2.3.tgz#5f7cb128be701c400f042b8655c34d56d0307c58"
+  integrity sha512-JqTtSU4b++LmaRvmK/sDKYArqQUK3J7G3kLdOxtwsI90h6FvptA3N1xNEkYbfnr+OaOdR61NyWPnGdkF2CrZpA==
+  dependencies:
+    "@contentlayer/utils" "0.2.3"
+    camel-case "^4.1.2"
+    comment-json "^4.2.2"
+    date-fns "2.x"
+    esbuild "0.11.x || 0.12.x || 0.13.x || 0.14.x"
+    gray-matter "^4.0.3"
+    mdx-bundler "^9.0.0"
+    rehype-stringify "^9.0.3"
+    remark-frontmatter "^4.0.1"
+    remark-parse "^10.0.1"
+    remark-rehype "^10.1.0"
+    source-map-support "^0.5.21"
+    type-fest "^2.12.1"
+    unified "^10.1.2"
+
 "@contentlayer/source-files@0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@contentlayer/source-files/-/source-files-0.2.2.tgz#7a85c0a2316a844f56cc5fa44ba9d431640ed898"
@@ -689,6 +709,29 @@
     hash-wasm "^4.9.0"
     inflection "^1.13.2"
     oo-ascii-tree "^1.55.1"
+    ts-pattern "^4.0.1"
+    type-fest "^2.12.1"
+
+"@contentlayer/utils@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@contentlayer/utils/-/utils-0.2.3.tgz#4be3a40d2e772dac0865fe531f11af677f3f2a7c"
+  integrity sha512-HBOoZ/M8qKq0lYgJ8fqnkAWygLG9u2120WwVUAHor+J2OGEjK/MRzggTNjmSRzbTNjgr86r9TR1sEpc+Ueb8jQ==
+  dependencies:
+    "@effect-ts/core" "^0.58.0"
+    "@effect-ts/otel" "^0.13.0"
+    "@effect-ts/otel-exporter-trace-otlp-grpc" "^0.13.0"
+    "@effect-ts/otel-sdk-trace-node" "^0.13.0"
+    "@opentelemetry/api" "^1.0.3"
+    "@opentelemetry/core" "^1.0.0"
+    "@opentelemetry/exporter-trace-otlp-grpc" "^0.27.0"
+    "@opentelemetry/resources" "^1.0.0"
+    "@opentelemetry/sdk-trace-base" "^1.0.0"
+    "@opentelemetry/sdk-trace-node" "^1.0.0"
+    "@opentelemetry/semantic-conventions" "^1.0.0"
+    chokidar "^3.5.3"
+    hash-wasm "^4.9.0"
+    inflection "^1.13.2"
+    oo-ascii-tree "^1.56.0"
     ts-pattern "^4.0.1"
     type-fest "^2.12.1"
 
@@ -918,6 +961,38 @@
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
+
+"@mdx-js/esbuild@^2.0.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@mdx-js/esbuild/-/esbuild-2.1.1.tgz#1e7102fabf1f5f64c2aa5f42147533ff4bb76af0"
+  integrity sha512-iwcbh7eZZh55r1/lqyrPpkIsuczmlUclulfrtc983mJncdhhhqv0g01loK2r3L0LeIzORhb8h1xUsAWneG0c6w==
+  dependencies:
+    "@mdx-js/mdx" "^2.0.0"
+    node-fetch "^3.0.0"
+    vfile "^5.0.0"
+
+"@mdx-js/mdx@^2.0.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-2.1.1.tgz#6d8b9b75456d7685a52c3812b1c3e4830c7458fb"
+  integrity sha512-SXC18cChut3F2zkVXwsb2no0fzTQ1z6swjK13XwFbF5QU/SFQM0orAItPypSdL3GvqYyzVJtz8UofzJhPEQtMw==
+  dependencies:
+    "@types/estree-jsx" "^0.0.1"
+    "@types/mdx" "^2.0.0"
+    astring "^1.6.0"
+    estree-util-build-jsx "^2.0.0"
+    estree-util-is-identifier-name "^2.0.0"
+    estree-walker "^3.0.0"
+    hast-util-to-estree "^2.0.0"
+    markdown-extensions "^1.0.0"
+    periscopic "^3.0.0"
+    remark-mdx "^2.0.0"
+    remark-parse "^10.0.0"
+    remark-rehype "^10.0.0"
+    unified "^10.0.0"
+    unist-util-position-from-estree "^1.0.0"
+    unist-util-stringify-position "^3.0.0"
+    unist-util-visit "^4.0.0"
+    vfile "^5.0.0"
 
 "@next/env@12.1.5":
   version "12.1.5"
@@ -4713,6 +4788,20 @@ mdx-bundler@^8.0.1:
     uuid "^8.3.2"
     xdm "^3.3.0"
 
+mdx-bundler@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/mdx-bundler/-/mdx-bundler-9.0.0.tgz#07e6d98d7f6d9d0fd9965c59281eb41263400bea"
+  integrity sha512-ZkP3xU6wPgGaEUNRaiRlwxQdIQyFyoa1q5eMJEAgFmCPSj3LRI0uR6ZvqiNb9794WBiGCafdFmWjQFN6JpBQAQ==
+  dependencies:
+    "@babel/runtime" "^7.16.3"
+    "@esbuild-plugins/node-resolve" "^0.1.4"
+    "@fal-works/esbuild-plugin-global-externals" "^2.1.2"
+    "@mdx-js/esbuild" "^2.0.0"
+    gray-matter "^4.0.3"
+    remark-frontmatter "^4.0.1"
+    remark-mdx-frontmatter "^1.1.1"
+    uuid "^8.3.2"
+
 meow@^8.0.0:
   version "8.1.2"
   resolved "https://registry.yarnpkg.com/meow/-/meow-8.1.2.tgz#bcbe45bda0ee1729d350c03cffc8395a36c4e897"
@@ -5221,13 +5310,13 @@ new-github-release-url@1.0.0:
   dependencies:
     type-fest "^0.4.1"
 
-next-contentlayer@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.2.2.tgz#329ae3fce2e6a63f31c8c8490e61ec288a5e2b3d"
-  integrity sha512-ll3I+3SS0/kW4zHmYix7q5stVeE04SDPm2kCDa8jhXJYu5+tqB/6RNZ2mCow00Wy8Zy1V2goSHGo3VvclkHsNA==
+next-contentlayer@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/next-contentlayer/-/next-contentlayer-0.2.3.tgz#2ac305f3ed418cbdf4d5dabecef77d2c5d53a0ce"
+  integrity sha512-Gieo2Al8syDTxKf7SQtHp5btiV0FEMxogFzDSJVVoMiShd6vJlGdBi4I7ozW/OHZ29Q0VM3D/ZRQkTAjB8nDUw==
   dependencies:
-    "@contentlayer/core" "0.2.2"
-    "@contentlayer/utils" "0.2.2"
+    "@contentlayer/core" "0.2.3"
+    "@contentlayer/utils" "0.2.3"
     rxjs "^7.1.0"
 
 next-seo@^5.4.0:
@@ -5291,7 +5380,7 @@ node-fetch@^2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-fetch@^3.2.0:
+node-fetch@^3.0.0, node-fetch@^3.2.0:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.2.3.tgz#a03c9cc2044d21d1a021566bd52f080f333719a6"
   integrity sha512-AXP18u4pidSZ1xYXRDPY/8jdv3RAozIt/WLNR/MBGZAz+xjtlr90RvCnsvHQRiXyWliZF/CpytExp32UU67/SA==
@@ -5416,7 +5505,7 @@ onetime@^5.1.0, onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-oo-ascii-tree@^1.55.1:
+oo-ascii-tree@^1.55.1, oo-ascii-tree@^1.56.0:
   version "1.56.0"
   resolved "https://registry.yarnpkg.com/oo-ascii-tree/-/oo-ascii-tree-1.56.0.tgz#be7313106598e33b6159a48547eba70140286ae5"
   integrity sha512-tPOSOEjN1uq2NktoBU2KExOU9lVghkpg+tDLWMtnqSSmX+lnDJIYIFpa/HqXwyiAXoHpcKh+bcmTPMZagLNIZA==
@@ -6207,6 +6296,14 @@ remark-mdx-frontmatter@^1.1.1:
     estree-util-value-to-estree "^1.0.0"
     js-yaml "^4.0.0"
     toml "^3.0.0"
+
+remark-mdx@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-2.1.1.tgz#14021be9ecbc9ad0310f4240980221328aa7ed55"
+  integrity sha512-0wXdEITnFyjLquN3VvACNLzbGzWM5ujzTvfgOkONBZgSFJ7ezLLDaTWqf6H9eUgVITEP8asp6LJ0W/X090dXBg==
+  dependencies:
+    mdast-util-mdx "^2.0.0"
+    micromark-extension-mdxjs "^1.0.0"
 
 remark-parse@^10.0.0, remark-parse@^10.0.1:
   version "10.0.1"
