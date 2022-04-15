@@ -1,6 +1,6 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Container from "components/layouts/container";
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 const customTheme = extendTheme({
   config: {
@@ -9,7 +9,11 @@ const customTheme = extendTheme({
   },
 });
 
-const Layout: FC = ({ children }) => {
+interface IProps {
+  children?: ReactNode;
+}
+
+const Layout: FC<IProps> = ({ children }) => {
   return (
     <ChakraProvider theme={customTheme}>
       <Container>{children}</Container>

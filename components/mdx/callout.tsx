@@ -1,11 +1,11 @@
 import { Box, HStack, Icon } from "@chakra-ui/react";
-import React, { FC, ReactChildren } from "react";
+import React, { FC, ReactNode } from "react";
 import { theme } from "@chakra-ui/react";
 import { IoIosAlert, IoIosHelpCircle, IoIosWarning } from "react-icons/io";
 
 interface IProps {
   type?: "error" | "info" | "warning";
-  children: ReactChildren;
+  children: ReactNode;
 }
 const Callout: FC<IProps> = ({ type = "info", children }) => {
   const allowedTypes = {

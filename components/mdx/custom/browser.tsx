@@ -1,8 +1,9 @@
 import { Box, HStack, VStack } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 interface IProps {
   address?: string;
+  children: ReactNode;
 }
 
 const MockBrowser: FC<IProps> = ({
