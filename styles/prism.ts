@@ -353,6 +353,8 @@ const prismStyles = css`
     overflow: auto;
     min-width: 100%;
     border-radius: ${theme.radii.sm};
+    border-width: 1px;
+    border-color: ${theme.colors.gray[700]};
   }
 
   :not(pre) > code {

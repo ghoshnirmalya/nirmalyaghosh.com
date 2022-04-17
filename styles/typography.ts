@@ -103,6 +103,8 @@ const typographyStyles = css`
     width: 100%;
     margin-bottom: 1rem;
     font-size: ${theme.fontSizes.md};
+    border-width: 1.25px;
+    border-color: ${theme.colors.gray[700]};
   }
 
   .article table a:not(.chakra-link) {
@@ -159,6 +161,8 @@ const typographyStyles = css`
 
   .article blockquote {
     background: ${theme.colors.gray[800]};
+    border-width: 1.25px;
+    border-color: ${theme.colors.gray[700]};
   }
 
   // Code

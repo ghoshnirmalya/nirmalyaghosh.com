@@ -41,9 +41,13 @@ const Navbar: FC = () => {
                     href={link.url}
                     rounded="sm"
                     fontSize={["xs", "sm"]}
+                    borderWidth={1}
+                    borderColor="transparent"
                     _hover={{
                       textDecoration: "none",
                       bgColor: "gray.900",
+                      borderWidth: 1,
+                      borderColor: "gray.700",
                     }}
                     _focus={{ outline: "none" }}
                   >

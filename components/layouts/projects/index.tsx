@@ -58,7 +58,14 @@ const Projects: FC<Props> = ({ projects = [] }) => {
       >
         {sortedProjects.map((project: Project, index: number) => {
           return (
-            <Box key={index} bg="gray.900" color="white" rounded="sm">
+            <Box
+              key={index}
+              bg="gray.900"
+              color="white"
+              rounded="sm"
+              borderWidth={1}
+              borderColor="gray.700"
+            >
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 <Box p={8}>
                   <VStack

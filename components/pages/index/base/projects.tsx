@@ -33,8 +33,13 @@ const Projects: FC<Props> = ({
           href="/projects"
           rounded="sm"
           fontSize="sm"
+          borderWidth={1}
+          borderColor="transparent"
           _hover={{
             textDecoration: "none",
+            borderWidth: 1,
+            borderColor: "gray.700",
+            bg: "gray.900",
           }}
         >
           <Box color="gray.300">View all projects</Box>
@@ -88,6 +93,8 @@ const Projects: FC<Props> = ({
               isExternal
               w="100%"
               _hover={{}}
+              borderWidth={1}
+              borderColor="gray.700"
             >
               <Box p={4}>
                 <VStack spacing={4} justifyContent="space-between" align="left">
