@@ -161,6 +161,8 @@ const typographyStyles = css`
 
   .article blockquote {
     background: ${theme.colors.gray[800]};
+    border-width: 1.25px;
+    border-color: ${theme.colors.gray[700]};
   }
 
   // Code
