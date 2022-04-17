@@ -46,6 +46,8 @@ const SocialShare: FC<IProps> = ({ title, url = window.location.href }) => {
               _hover={{
                 textDecoration: "none",
               }}
+              borderWidth={1}
+              borderColor="blue.400"
             >
               <HStack spacing={2} alignItems="center">
                 <Box as={link.icon} />

@@ -95,6 +95,9 @@ const Page: FC = () => {
             color="#fff"
             fontWeight="bold"
             isExternal
+            borderWidth={1}
+            borderColor="gray.600"
+            _hover={{}}
           >
             <HStack spacing={2} alignItems="center">
               <Box as={IoLogoGithub} /> <Text>Github</Text>
@@ -109,6 +112,9 @@ const Page: FC = () => {
             color="#fff"
             fontWeight="bold"
             isExternal
+            borderWidth={1}
+            borderColor="blue.400"
+            _hover={{}}
           >
             <HStack spacing={2} alignItems="center">
               <Box as={IoLogoLinkedin} /> <Text>LinkedIn</Text>

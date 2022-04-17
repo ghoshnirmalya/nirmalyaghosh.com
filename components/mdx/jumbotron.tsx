@@ -25,6 +25,8 @@ const Jumbotron: FC<IProps> = ({ description, githubLink, demoLink }) => {
         fontWeight="bold"
         isExternal
         textDecoration="none"
+        borderWidth={1}
+        borderColor="gray.500"
       >
         <HStack spacing={2} alignItems="center">
           <Box as={IoLogoGithub} />
@@ -49,6 +51,8 @@ const Jumbotron: FC<IProps> = ({ description, githubLink, demoLink }) => {
         color="white"
         fontWeight="bold"
         isExternal
+        borderWidth={1}
+        borderColor="blue.400"
       >
         <HStack spacing={2} alignItems="center">
           <Box as={IoMdEye} />

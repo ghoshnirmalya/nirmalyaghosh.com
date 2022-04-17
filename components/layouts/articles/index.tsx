@@ -53,8 +53,13 @@ const Articles: FC<Props> = ({
           href="/articles"
           rounded="sm"
           fontSize="sm"
+          borderWidth={1}
+          borderColor="transparent"
           _hover={{
             textDecoration: "none",
+            borderWidth: 1,
+            borderColor: "gray.700",
+            bg: "gray.900",
           }}
         >
           <Box color="gray.300">View all articles</Box>

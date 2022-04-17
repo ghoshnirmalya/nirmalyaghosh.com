@@ -25,6 +25,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       color: "yellow.200",
     },
   };
+
   return (
     <Box
       p={4}
@@ -32,6 +33,8 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       bgColor={allowedTypes[type].bgColor}
       color={allowedTypes[type].color}
       mr={2}
+      borderWidth={1}
+      borderColor="gray.700"
     >
       <HStack spacing={2} pos="relative">
         <Icon
@@ -39,11 +42,13 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
           fontSize={40}
           pos="absolute"
           top="-30px"
-          right="-30px"
+          right="-25px"
           bgColor="gray.900"
           rounded="full"
           padding={1}
           color={allowedTypes[type].color}
+          borderWidth={1}
+          borderColor="gray.700"
         />
         <Box
           sx={{
