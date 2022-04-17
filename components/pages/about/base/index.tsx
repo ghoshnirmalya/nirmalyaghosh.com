@@ -38,12 +38,7 @@ const Page: FC = () => {
             <Heading as="h1" size="lg" color="white">
               Nirmalya Ghosh
             </Heading>
-            <Text fontWeight="bold">
-              Senior Developer Programs Engineer at{" "}
-              <Link href="https://rapidapi.com/" isExternal>
-                RapidAPI
-              </Link>
-            </Text>
+            <Text fontWeight="bold">Software Engineer</Text>
           </VStack>
         </Box>
       </HStack>
@@ -67,9 +62,6 @@ const Page: FC = () => {
             around 6 years
           </Box>{" "}
           experience with it. I have also fiddled with Ruby on Rails and Elixir.
-          I&apos;m eager to learn new frameworks, libraries and languages like
-          Elm, Vue.js and ReasonML. I&apos;m also interested in learning Go and
-          Python.
         </Text>
         <Text>
           Though I spend most of my time writing code for building User
