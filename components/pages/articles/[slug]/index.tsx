@@ -141,7 +141,15 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
         {article.tags.map((tag, index) => {
           return (
             <NextLink key={index} href={`/tags/${tag}`} passHref>
-              <ChakraLink fontSize="sm" px={4} py={2} bg="gray.900" _hover={{}}>
+              <ChakraLink
+                fontSize="sm"
+                px={4}
+                py={2}
+                bg="gray.900"
+                _hover={{}}
+                borderWidth={1}
+                borderColor="gray.700"
+              >
                 # {tag}
               </ChakraLink>
             </NextLink>

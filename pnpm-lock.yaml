@@ -12,6 +12,7 @@ specifiers:
   dayjs: ^1.11.1
   eslint: <9.0.0
   eslint-config-next: 12.1.5
+  focus-visible: ^5.2.0
   framer-motion: ^6.3.0
   ga-4-react: ^0.1.281
   github-slugger: ^1.4.0
@@ -43,6 +44,7 @@ dependencies:
   '@emotion/styled': 11.8.1_412c1de586f5654421a5ae4c6aa1aefb
   contentlayer: 0.2.3
   dayjs: 1.11.1
+  focus-visible: 5.2.0
   framer-motion: 6.3.0_react-dom@17.0.2+react@17.0.2
   ga-4-react: 0.1.281
   github-slugger: 1.4.0
@@ -3749,6 +3751,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       tslib: 2.3.1
+    dev: false
+
+  /focus-visible/5.2.0:
+    resolution: {integrity: sha512-Rwix9pBtC1Nuy5wysTmKy+UjbDJpIfg8eHjw0rjZ1mX4GNLz1Bmd16uDpI3Gk1i70Fgcs8Csg2lPm8HULFg9DQ==}
     dev: false
 
   /form-data/4.0.0:

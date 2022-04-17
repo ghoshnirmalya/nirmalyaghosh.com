@@ -7,6 +7,7 @@ import { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect } from "react";
+import "focus-visible/dist/focus-visible";
 
 const Layout = dynamic(
   () => import(/* webpackChunkName: "Layouts" */ "components/layouts")
