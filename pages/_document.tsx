@@ -16,6 +16,10 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="IrBdsYE_b8xi2Yt3qVUdf0jCWzjuDnshFMrv4pQtoQY"
           />
+          <meta
+            name="ahrefs-site-verification"
+            content="a3cfb025018605bc9a5fcfd78fad26e8784fb310e1da70f90309d72114de2b55"
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode="dark" />
