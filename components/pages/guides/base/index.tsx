@@ -1,7 +1,7 @@
+import { Box } from "@chakra-ui/react";
 import { Guide } from "contentlayer/generated";
-import { Box, Grid } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import { FC } from "react";
 
 const Guides = dynamic(
   () => import(/* webpackChunkName: "guides" */ "components/layouts/guides")
@@ -13,12 +13,8 @@ interface Props {
 
 const Page: FC<Props> = ({ guides = [] }) => {
   return (
-    <Box maxW="2xl" mx="auto" px={4} py={8}>
-      <Grid templateColumns="1fr">
-        <Box as="section">
-          <Guides guides={guides} />
-        </Box>
-      </Grid>
+    <Box as="main" maxW="2xl" mx="auto" p={8}>
+      <Guides guides={guides} />
     </Box>
   );
 };

@@ -1,7 +1,7 @@
-import { Box, Grid } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import { Box } from "@chakra-ui/react";
 import { Article } from "contentlayer/generated";
+import dynamic from "next/dynamic";
+import { FC } from "react";
 import Publication from "types/publication";
 
 const Articles = dynamic(
@@ -27,15 +27,11 @@ const Page: FC<Props> = ({ articles = [], publications = [] }) => {
     );
 
   return (
-    <Box maxW="2xl" mx="auto" px={4} py={8}>
-      <Grid templateColumns="1fr">
-        <Box as="section">
-          <Articles
-            articles={sortedAllArticlesAndPublications}
-            hideViewAllLinksNode
-          />
-        </Box>
-      </Grid>
+    <Box as="main" maxW="2xl" mx="auto" p={8}>
+      <Articles
+        articles={sortedAllArticlesAndPublications}
+        hideViewAllLinksNode
+      />
     </Box>
   );
 };

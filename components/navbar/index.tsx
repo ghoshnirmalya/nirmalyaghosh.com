@@ -40,7 +40,7 @@ const Navbar: FC = () => {
                     py={2}
                     href={link.url}
                     rounded="sm"
-                    fontSize={["xs", "sm"]}
+                    fontSize={["sm", "md"]}
                     borderWidth={1}
                     borderColor="transparent"
                     _hover={{
@@ -64,7 +64,7 @@ const Navbar: FC = () => {
 
   return (
     <Box as="header" zIndex={1} borderTopWidth={5} borderColor="blue.400">
-      <Box maxW="6xl" mx="auto" px={4}>
+      <Box mx="auto" px={4}>
         <HStack
           justifyContent="space-between"
           alignItems="center"

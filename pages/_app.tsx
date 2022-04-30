@@ -55,9 +55,7 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
         }}
       />
       <Navbar />
-      <Box minH="calc(100vh - 77px - 148px)">
-        <Component {...pageProps} />
-      </Box>
+      <Component {...pageProps} />
     </Layout>
   );
 };

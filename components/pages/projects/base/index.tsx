@@ -1,6 +1,6 @@
-import { Box, Grid } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import { FC } from "react";
 import Project from "types/project";
 
 const Projects = dynamic(
@@ -13,12 +13,8 @@ interface Props {
 
 const Page: FC<Props> = ({ projects = [] }) => {
   return (
-    <Box maxW="6xl" mx="auto" px={4} py={8}>
-      <Grid templateColumns="1fr">
-        <Box as="section">
-          <Projects projects={projects} />
-        </Box>
-      </Grid>
+    <Box as="main" maxW="6xl" mx="auto" p={8}>
+      <Projects projects={projects} />
     </Box>
   );
 };

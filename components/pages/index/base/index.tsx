@@ -31,30 +31,17 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
   });
 
   return (
-    <>
-      <Box
-        as="section"
-        d="flex"
-        alignItems="center"
-        maxW="2xl"
-        mx="auto"
-        px={4}
-      >
+    <VStack spacing={32} as="main" p={8}>
+      <Box as="section" maxW="2xl" mx="auto" w="100%">
         <Jumbotron />
       </Box>
-      <Box>
-        <Box maxW="2xl" mx="auto" px={4} py={8}>
-          <VStack spacing={32} order={[2, 2, 2, 1]} align="left">
-            <Box as="section">
-              <Articles articles={sortedArticles.slice(0, 10)} />
-            </Box>
-            <Box as="section">
-              <Projects projects={projects.slice(0, 10)} />
-            </Box>
-          </VStack>
-        </Box>
+      <Box as="section" maxW="2xl" mx="auto" w="100%">
+        <Articles articles={sortedArticles.slice(0, 10)} />
       </Box>
-    </>
+      <Box as="section" maxW="2xl" mx="auto" w="100%" pb={8}>
+        <Projects projects={projects.slice(0, 10)} />
+      </Box>
+    </VStack>
   );
 };
 

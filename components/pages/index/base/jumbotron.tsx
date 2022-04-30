@@ -8,7 +8,8 @@ const Jumbotron: FC = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      py={24}
+      pt={24}
+      pb={12}
     >
       <Box>
         <Heading

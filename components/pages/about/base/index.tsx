@@ -1,16 +1,8 @@
-import {
-  Box,
-  Grid,
-  Heading,
-  HStack,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import React, { FC } from "react";
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 import AvatarImage from "public/images/common/avatar.png";
+import { FC } from "react";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const Page: FC = () => {
   const headingNode = () => {
@@ -118,16 +110,12 @@ const Page: FC = () => {
   };
 
   return (
-    <Box maxW="2xl" mx="auto" px={4} py={8}>
-      <Grid templateColumns="1fr">
-        <Box as="section">
-          <VStack spacing={4} align="left">
-            {headingNode()}
-            {bioDescriptionNode()}
-            {socialLinksNode()}
-          </VStack>
-        </Box>
-      </Grid>
+    <Box as="main" maxW="2xl" mx="auto" p={8}>
+      <VStack spacing={4} align="left">
+        {headingNode()}
+        {bioDescriptionNode()}
+        {socialLinksNode()}
+      </VStack>
     </Box>
   );
 };

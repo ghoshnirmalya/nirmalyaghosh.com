@@ -204,42 +204,40 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
           locale: "en_IE",
         }}
       />
-      <Box>
-        <Box maxW={["2xl", "2xl", "2xl", "6xl"]} mx="auto" py={8} px={4}>
-          <Grid
-            templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}
-            gridGap={[0, 0, 0, 24]}
-          >
-            <Box maxW="100%" overflowX="hidden">
-              <VStack spacing={8} align="left">
-                <VStack spacing={2} align="left">
-                  <HStack justifyContent="space-between">
-                    {publishedMetaNode()}
-                    {categoriesNode()}
-                  </HStack>
-                  {titleNode()}
-                </VStack>
-                <Box className="article">
-                  <MDXContent components={components} />
-                </Box>
-                {tagsNode()}
-                {updatedMetaNode()}
-                <Box pt={12}>{relatedArticlesNode()}</Box>
+      <Box maxW={["2xl", "2xl", "2xl", "6xl"]} as="main" mx="auto" p={8}>
+        <Grid
+          templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}
+          gridGap={[0, 0, 0, 24]}
+        >
+          <Box maxW="100%" overflowX="hidden">
+            <VStack spacing={8} align="left">
+              <VStack spacing={2} align="left">
+                <HStack justifyContent="space-between">
+                  {publishedMetaNode()}
+                  {categoriesNode()}
+                </HStack>
+                {titleNode()}
               </VStack>
-            </Box>
-            <VStack
-              spacing={8}
-              pos="sticky"
-              top={8}
-              h="100vh"
-              overflow="auto"
-              display={["none", "none", "none", "block"]}
-            >
-              <TableOfContents source={article.body.raw} />
-              <SocialShare title={article.title} />
+              <Box className="article">
+                <MDXContent components={components} />
+              </Box>
+              {tagsNode()}
+              {updatedMetaNode()}
+              <Box pt={12}>{relatedArticlesNode()}</Box>
             </VStack>
-          </Grid>
-        </Box>
+          </Box>
+          <VStack
+            spacing={8}
+            pos="sticky"
+            top={8}
+            h="100vh"
+            overflow="auto"
+            display={["none", "none", "none", "block"]}
+          >
+            <TableOfContents source={article.body.raw} />
+            <SocialShare title={article.title} />
+          </VStack>
+        </Grid>
       </Box>
     </>
   );
