@@ -30,8 +30,9 @@ const typographyStyles = css`
   .article ol,
   .article a:not(.chakra-link) {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
-    line-height: ${theme.lineHeights.tall};
-    font-size: ${theme.fontSizes.md};
+    line-height: ${theme.lineHeights.taller};
+    letter-spacing: ${theme.letterSpacings.tight};
+    font-size: ${theme.fontSizes.lg};
   }
 
   // Links
@@ -88,14 +89,19 @@ const typographyStyles = css`
   }
 
   // Typography
-  .article blockquote {
+  .article > blockquote {
     padding: ${theme.space[4]};
     margin: 0;
     border-radius: ${theme.radii.sm};
+    background: ${theme.colors.gray[800]};
+    border-width: 1.25px;
+    border-color: ${theme.colors.gray[700]};
   }
 
-  .article blockquote > p {
+  .article > blockquote > p {
     margin: 0;
+    font-size: ${theme.fontSizes.md};
+    letter-spacing: ${theme.letterSpacings.wide};
   }
 
   // Table
@@ -157,12 +163,6 @@ const typographyStyles = css`
 
   .article a:not(.chakra-link):hover {
     color: ${theme.colors.blue[400]};
-  }
-
-  .article blockquote {
-    background: ${theme.colors.gray[800]};
-    border-width: 1.25px;
-    border-color: ${theme.colors.gray[700]};
   }
 
   // Code

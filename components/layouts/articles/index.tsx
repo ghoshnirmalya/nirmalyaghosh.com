@@ -154,7 +154,7 @@ const Articles: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text fontSize="sm">{description}</Text>;
+    return <Text>{description}</Text>;
   };
 
   const articlesNode = () => {

@@ -2,10 +2,14 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Container from "components/layouts/container";
 import React, { FC, ReactNode } from "react";
 
-const customTheme = extendTheme({
+export const customTheme = extendTheme({
   config: {
     initialColorMode: "dark",
     useSystemColorMode: false,
+  },
+  fonts: {
+    heading: "'Source Sans Pro', sans-serif",
+    body: "'Inter', sans-serif",
   },
 });
 

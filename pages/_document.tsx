@@ -20,6 +20,14 @@ export default class MyDocument extends Document {
             name="ahrefs-site-verification"
             content="a3cfb025018605bc9a5fcfd78fad26e8784fb310e1da70f90309d72114de2b55"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=optional"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode="dark" />
