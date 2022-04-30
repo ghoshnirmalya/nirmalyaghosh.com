@@ -24,5 +24,6 @@
     "strapi",
     "tailwind"
   ],
-  "frontMatter.preview.host": "http://localhost:3000/articles"
+  "frontMatter.preview.host": "http://localhost:3000/articles",
+  "frontMatter.framework.startCommand": "yarn dev"
 }
