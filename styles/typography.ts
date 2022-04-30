@@ -33,6 +33,7 @@ const typographyStyles = css`
     line-height: ${theme.lineHeights.taller};
     letter-spacing: ${theme.letterSpacings.tight};
     font-size: ${theme.fontSizes.lg};
+    font-weight: ${theme.fontWeights.normal};
   }
 
   // Links
@@ -42,17 +43,6 @@ const typographyStyles = css`
 
   .article a[aria-hidden="true"]:hover {
     text-decoration: none;
-  }
-
-  .article .icon.icon-link {
-    content: "#";
-    margin-right: ${theme.space[2]};
-  }
-
-  .article .icon.icon-link::before {
-    content: "🔗";
-    margin-right: ${theme.space[2]};
-    display: inline-flex;
   }
 
   // Lists
@@ -98,10 +88,11 @@ const typographyStyles = css`
     border-color: ${theme.colors.gray[700]};
   }
 
-  .article > blockquote > p {
+  .article > blockquote > p,
+  .article > blockquote > p > a {
     margin: 0;
-    font-size: ${theme.fontSizes.md};
-    letter-spacing: ${theme.letterSpacings.wide};
+    font-size: ${theme.fontSizes.md} !important;
+    letter-spacing: ${theme.letterSpacings.wide} !important;
   }
 
   // Table
