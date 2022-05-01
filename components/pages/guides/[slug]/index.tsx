@@ -70,7 +70,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
       <Heading
         as="h1"
         size="2xl"
-        lineHeight="base"
+        lineHeight="normal"
         bgClip="text"
         bgGradient="linear(to-l, #79c2ff, #d3ddff)"
       >
