@@ -32,6 +32,7 @@ const Projects: FC<Props> = ({
           p={2}
           href="/projects"
           rounded="sm"
+          fontSize="sm"
           borderWidth={1}
           borderColor="transparent"
           _hover={{
@@ -67,7 +68,7 @@ const Projects: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text>{description}</Text>;
+    return <Text fontSize="sm">{description}</Text>;
   };
 
   const projectsNode = () => {
