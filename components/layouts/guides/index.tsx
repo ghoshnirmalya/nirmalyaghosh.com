@@ -51,7 +51,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
   };
 
   const descriptionNode = (description: string) => {
-    return <Text fontSize="sm">{description}</Text>;
+    return <Text color="gray.400">{description}</Text>;
   };
 
   const guidesNode = () => {

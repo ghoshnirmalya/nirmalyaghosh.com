@@ -44,24 +44,6 @@ const Page: FC = () => {
           Computer Science Engineer having interest in web-designing and
           development with an eye for detail.
         </Text>
-        <Text>
-          I&apos;m also a big fan of{" "}
-          <Box as="span" fontWeight="bold">
-            React.js
-          </Box>{" "}
-          and have{" "}
-          <Box as="span" fontWeight="bold">
-            around 6 years
-          </Box>{" "}
-          experience with it. I have also fiddled with Ruby on Rails and Elixir.
-        </Text>
-        <Text>
-          Though I spend most of my time writing code for building User
-          Interfaces, I&apos;ve also fiddled with many Back-end technologies. I
-          like enjoying working in the intersection of design and development. I
-          feel most productive when I&apos;m able to design User Interfaces
-          which not only look good but has a good performance as well.
-        </Text>
       </Box>
     );
   };

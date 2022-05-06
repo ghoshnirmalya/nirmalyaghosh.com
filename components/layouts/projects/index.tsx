@@ -34,7 +34,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   };
 
   const descriptionNode = (description: string) => {
-    return <Text fontSize="sm">{description}</Text>;
+    return <Text color="gray.400">{description}</Text>;
   };
 
   const projectsNode = () => {
