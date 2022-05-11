@@ -10,7 +10,7 @@ const typographyStyles = css`
   }
 
   .article > h2 {
-    padding: ${theme.space[8]} 0 ${theme.space[2]};
+    padding: ${theme.space[8]} 0 0;
     font-size: ${theme.fontSizes["3xl"]};
   }
 
@@ -31,9 +31,7 @@ const typographyStyles = css`
   .article a:not(.chakra-link) {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.taller};
-    letter-spacing: ${theme.letterSpacings.tight};
     font-size: ${theme.fontSizes.lg};
-    font-weight: ${theme.fontWeights.normal};
   }
 
   // Links
@@ -91,8 +89,6 @@ const typographyStyles = css`
   .article > blockquote > p,
   .article > blockquote > p > a {
     margin: 0;
-    font-size: ${theme.fontSizes.md} !important;
-    letter-spacing: ${theme.letterSpacings.wide} !important;
   }
 
   // Table

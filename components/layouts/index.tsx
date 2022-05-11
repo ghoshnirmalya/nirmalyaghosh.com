@@ -8,8 +8,8 @@ export const customTheme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    heading: "'Source Sans Pro', sans-serif",
-    body: "'Inter', sans-serif",
+    heading: "'Open Sans', sans-serif",
+    body: "'Open+Sans', sans-serif",
   },
 });
 

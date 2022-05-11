@@ -21,11 +21,7 @@ export default class MyDocument extends Document {
             content="a3cfb025018605bc9a5fcfd78fad26e8784fb310e1da70f90309d72114de2b55"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=optional"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=optional"
             rel="stylesheet"
           />
         </Head>
