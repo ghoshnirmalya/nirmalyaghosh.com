@@ -36,7 +36,7 @@ git clone https://github.com/mjohnson518/co2__storage.git
 ### 2. **Install necessary dependencies for the frontend application**
 
 ```sh
-cd portfolio && yarn install
+yarn install
 ```
 
 ### 3. **Start the application**
