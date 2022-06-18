@@ -11,18 +11,13 @@ interface IProps {
   projects: Project[];
 }
 
-const IndexPage: NextPage<IProps> = ({ articles, projects }) => {
-  return <Page articles={articles} projects={projects} />;
+const IndexPage: NextPage<IProps> = ({ projects }) => {
+  return <Page projects={projects} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = getAllArticles().map((articles) =>
-    pick(articles, ["date", "description", "title", "slug"])
-  );
-
   return {
     props: {
-      articles: articles.slice(0, 5),
       projects: projects.slice(0, 5),
     },
   };

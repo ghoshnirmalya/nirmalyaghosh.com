@@ -9,20 +9,12 @@ interface NavLink {
 
 const LINKS = [
   {
-    url: "/projects",
-    title: "Projects",
-  },
-  {
-    url: "/articles",
-    title: "Articles",
-  },
-  {
-    url: "/guides",
-    title: "Guides",
-  },
-  {
     url: "/about",
     title: "About",
+  },
+  {
+    url: "/projects",
+    title: "Stats",
   },
 ];
 
@@ -63,8 +55,8 @@ const Navbar: FC = () => {
   };
 
   return (
-    <Box as="header" zIndex={1} borderTopWidth={5} borderColor="blue.400">
-      <Box mx="auto" px={4}>
+    <Box as="header" zIndex={1} borderTopWidth={5} borderColor="green.500">
+      <Box mx="auto" px={4} fontWeight="bold">
         <HStack
           justifyContent="space-between"
           alignItems="center"
@@ -88,17 +80,14 @@ const Navbar: FC = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <circle
-                    cx="125"
-                    cy="125"
-                    r="121"
-                    fill="white"
+                    cx="85"
+                    cy="85"
+                    r="81"
+                    fill="green"
                     stroke="black"
-                    strokeWidth="8"
+                    strokeWidth="15"
                   />
-                  <path
-                    d="M106.503 84.8457L107.303 95.9541C114.175 87.3636 123.388 83.0684 134.94 83.0684C145.131 83.0684 152.714 86.0602 157.69 92.0439C162.667 98.0277 165.215 106.974 165.333 118.882V181H139.65V119.504C139.65 114.053 138.465 110.114 136.096 107.685C133.726 105.196 129.786 103.952 124.276 103.952C117.049 103.952 111.628 107.033 108.014 113.194V181H82.3311V84.8457H106.503Z"
-                    fill="black"
-                  />
+                  <path fill="green" />
                 </svg>
               </_Link>
             </Link>

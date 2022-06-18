@@ -27,7 +27,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" lineHeight="tall" color="blue.400">
+      <Heading as="h3" size="md" lineHeight="tall" color="green.500">
         {title}
       </Heading>
     );

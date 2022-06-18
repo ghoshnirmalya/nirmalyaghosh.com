@@ -15,13 +15,14 @@ const Jumbotron: FC = () => {
         <Heading
           as="h1"
           fontFamily="body"
-          bgColor="blue.400"
+          bgColor="green.600"
           bgClip="text"
           size="4xl"
+          padding="2"
           bgGradient="linear(to-l, #79c2ff, #4a5888)"
           className="jumbotron-name-heading"
         >
-          Nirmalya Ghosh
+          CO2.Storage
         </Heading>
       </Box>
       <Box>
@@ -32,22 +33,14 @@ const Jumbotron: FC = () => {
           color="gray.500"
           fontWeight="medium"
         >
-          I&apos;m a{" "}
+          {" "}
           <Box as="span" color="gray.300">
-            Developer
+            Free decentralized storage utility
+          </Box>{" "}
+          <Box as="span" color="gray.300">
+            for Environmental Assets
           </Box>
-          , who likes{" "}
-          <Box as="span" color="gray.300">
-            Designing,{" "}
-          </Box>{" "}
-          <Box as="span" color="gray.300">
-            Writing
-          </Box>{" "}
-          and{" "}
-          <Box as="span" color="gray.300">
-            Building Open Source
-          </Box>{" "}
-          projects.
+          .{" "}
         </Heading>
       </Box>
     </VStack>

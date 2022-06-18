@@ -1,17 +1,16 @@
 const siteConfig = {
   details: {
-    title: "Nirmalya Ghosh",
-    tagLine: "Sofware Developer",
-    description:
-      "Articles and guides about JavaScript, CSS and Web Development from a software engineer.",
-    url: "https://www.nirmalyaghosh.com",
+    title: "CO2 Storage",
+    tagLine: "Data Stoage for Environmental Assets",
+    description: "Free decentralized data storage for environmental assets.",
+    url: "https://green.filecoin.io",
   },
   assets: {
-    avatar: "/images/common/seo-cover.png",
+    avatar: "/images/common/FG_logo.png",
     favicon: "/images/common/favicon.svg",
   },
   socialLinks: {
-    twitter: "@nirmalyaghosh23",
+    twitter: "@filecoingreen",
   },
 };
 

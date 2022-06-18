@@ -42,7 +42,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
         as="h3"
         size="md"
         lineHeight="tall"
-        color="blue.400"
+        color="green.500"
         fontWeight="bold"
       >
         {title}

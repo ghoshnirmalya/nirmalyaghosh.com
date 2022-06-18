@@ -1,9 +1,9 @@
 {
   "private": false,
-  "name": "portfolio",
-  "description": "Personal portfolio of Nirmalya Ghosh",
+  "name": "co2.stoarge frontend",
+  "description": "CO2.Storage",
   "license": "MIT",
-  "author": "Nirmalya Ghosh <nirmalya.email@gmail.com>",
+  "author": "Marc Johnson <marc.johnson@protocol.ai>",
   "scripts": {
     "build": "next build",
     "dev": "next dev",

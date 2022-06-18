@@ -133,7 +133,7 @@ const Articles: FC<Props> = ({
             <Box>•</Box>
             <Tag
               size="sm"
-              colorScheme="blue"
+              colorScheme="green"
               borderRadius="full"
               variant="subtle"
             >
@@ -147,7 +147,7 @@ const Articles: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color="blue.400" fontWeight="bold">
+      <Heading as="h3" size="md" color="green.500" fontWeight="bold">
         {title}
       </Heading>
     );

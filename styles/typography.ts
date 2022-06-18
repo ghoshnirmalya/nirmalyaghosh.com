@@ -140,7 +140,7 @@ const typographyStyles = css`
 
   // Links
   .article a:not(.chakra-link) {
-    color: ${theme.colors.blue[300]};
+    color: ${theme.colors.green[500]};
     position: relative;
   }
 
@@ -149,7 +149,7 @@ const typographyStyles = css`
   }
 
   .article a:not(.chakra-link):hover {
-    color: ${theme.colors.blue[400]};
+    color: ${theme.colors.green[500]};
   }
 
   // Code

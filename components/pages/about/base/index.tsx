@@ -1,6 +1,6 @@
 import { Box, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import AvatarImage from "public/images/common/avatar.png";
+import AvatarImage from "public/images/common/FG_logo.png";
 import { FC } from "react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
@@ -9,7 +9,7 @@ const Page: FC = () => {
     return (
       <HStack spacing={4} alignItems="center">
         <Box
-          bgGradient="linear(to-l, #79c2ff, #4a5888)"
+          bgGradient="linear(to-l, #050505, #73f292)"
           rounded="full"
           p={1}
           w={100}
@@ -17,7 +17,7 @@ const Page: FC = () => {
         >
           <Image
             src={AvatarImage}
-            alt="Nirmalya Ghosh"
+            alt="CO2.Storage"
             height={100}
             width={100}
             quality={100}
@@ -28,9 +28,11 @@ const Page: FC = () => {
         <Box>
           <VStack spacing={2} align="left">
             <Heading as="h1" size="lg" color="white">
-              Nirmalya Ghosh
+              CO2.Storage
             </Heading>
-            <Text fontWeight="bold">Software Engineer</Text>
+            <Text fontWeight="bold">
+              decentralized storage for Environmental Assets
+            </Text>
           </VStack>
         </Box>
       </HStack>
@@ -40,9 +42,14 @@ const Page: FC = () => {
   const bioDescriptionNode = () => {
     return (
       <Box className="article">
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+        />
         <Text fontWeight="bold">
-          Computer Science Engineer having interest in web-designing and
-          development with an eye for detail.
+          Made with <i className="icon ion-heart"></i> by{" "}
+          <a href="https://green.filecoin.io/">Filecoin Green</a>
         </Text>
       </Box>
     );
@@ -55,7 +62,7 @@ const Page: FC = () => {
           <Link
             py={2}
             px={4}
-            href="https://github.com/ghoshnirmalya"
+            href="https://github.com/mjohnson518/co2_storage.git"
             rounded="sm"
             bg="#333"
             color="#fff"
@@ -72,7 +79,7 @@ const Page: FC = () => {
           <Link
             py={2}
             px={4}
-            href="https://www.linkedin.com/in/ghoshnirmalya/"
+            href="https://www.linkedin.com/company/protocollabs/mycompany/"
             rounded="sm"
             bg="#0e76a8"
             color="#fff"

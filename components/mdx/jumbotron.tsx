@@ -47,12 +47,12 @@ const Jumbotron: FC<IProps> = ({ description, githubLink, demoLink }) => {
         px={4}
         href={demoLink}
         rounded="sm"
-        bg="blue.600"
+        bg="green.600"
         color="white"
         fontWeight="bold"
         isExternal
         borderWidth={1}
-        borderColor="blue.400"
+        borderColor="green.400"
       >
         <HStack spacing={2} alignItems="center">
           <Box as={IoMdEye} />

@@ -42,7 +42,7 @@ const Projects: FC<Props> = ({
             bg: "gray.900",
           }}
         >
-          <Box color="gray.300">View all projects</Box>
+          <Box color="gray.300">View all stats</Box>
         </ChakraLink>
       </Link>
     );
@@ -52,7 +52,7 @@ const Projects: FC<Props> = ({
     return (
       <Box pb={4} d="flex" justifyContent="space-between" alignItems="center">
         <Heading as="h2" size="lg" color="white">
-          Projects
+          Stats
         </Heading>
         {viewAllLinksNode()}
       </Box>
@@ -61,7 +61,7 @@ const Projects: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" lineHeight="tall" color="blue.400">
+      <Heading as="h3" size="md" lineHeight="tall" color="green.500">
         {title}
       </Heading>
     );

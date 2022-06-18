@@ -3,7 +3,7 @@ import { Center, Heading } from "@chakra-ui/react";
 const NotFoundPage = () => {
   return (
     <Center minH="calc(100vh - 200px)">
-      <Heading>Page not found!</Heading>
+      <Heading>Looks like you've found the end of the internet!</Heading>
     </Center>
   );
 };
