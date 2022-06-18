@@ -1,5 +1,4 @@
 # CO2__Storage
-Frontend built using Next.js, Chakra UI, SEO, MDX, and TypeScript
 
 <p align="center">
   <a href="https://twitter.com/filecoingreen">
@@ -11,7 +10,7 @@ Frontend built using Next.js, Chakra UI, SEO, MDX, and TypeScript
   </a>
 </p>
 
-This is a boilerplate for building portfolio applications using Next.js.
+Frontend built using Next.js, Chakra UI, SEO, MDX, and TypeScript
 
 ## Overview
 
