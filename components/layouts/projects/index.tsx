@@ -17,9 +17,9 @@ const Projects: FC<Props> = ({ projects = [] }) => {
       <Box>
         <VStack spacing={2} align="left">
           <Heading as="h1" size="lg" color="white">
-            Projects
+            Stats
           </Heading>
-          <Text>Open Source Projects developed and available on Github</Text>
+          <Text>High-level statistics about CO2.Storage</Text>
         </VStack>
       </Box>
     );
@@ -41,7 +41,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
     if (!sortedProjects.length) {
       return (
         <VStack mx="auto" textAlign="center" w="100%">
-          <Text>No projects found!</Text>
+          <Text>No Stats found!</Text>
         </VStack>
       );
     }

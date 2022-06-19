@@ -9,7 +9,7 @@ const ProjectsIndexPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Projects</title>
+        <title>Stats</title>
       </Head>
       <Page projects={projects} />
     </>
