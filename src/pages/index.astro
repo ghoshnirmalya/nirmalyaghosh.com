@@ -6,15 +6,17 @@ import Projects from "../components/Projects.astro";
 import Publications from "../components/Publications.astro";
 import Articles from "../components/Articles.astro";
 
-import "../styles/globals.css";
+const articles = await Astro.glob("./articles/*.md")
 
-const articles = await Astro.glob("../../public/data/articles/*.md")
+const lastFiveProjects = projects.slice(0, 5)
+const lastFivePublications = publications.slice(0, 5)
+const lastFiveArticles = articles.slice(0, 5)
 ---
 
 <SiteLayout>
 	<div class="space-y-16">
-		<Projects projects={projects} />
-		<Articles articles={articles} />
-		<Publications publications={publications} />
+		<Projects projects={lastFiveProjects} />
+		<Articles articles={lastFiveArticles} />
+		<Publications publications={lastFivePublications} />
 	</div>
 </SiteLayout>

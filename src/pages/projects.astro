@@ -1,24 +1,11 @@
 ---
-import MainHead from '../components/MainHead.astro';
-
-const projects = (await Astro.glob('./project/**/*.md'))
-	.filter(({ frontmatter }) => !!frontmatter.publishDate)
-	.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-	console.log(projects);
-
+import projects from "../../public/data/projects.json";
+import Projects from "../components/Projects.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<MainHead title="All Projects | Jeanine White" description="Learn about Jenine White's most recent projects" />
-	</head>
-	<body>
-		<div class="wrapper">
-			<h1 class="title mt4 mb4">All Projects</h1>
-			<div class="grid">
-				Projects
-			</div>
-		</div>
-	</body>
-</html>
+<SiteLayout>
+	<div class="space-y-16">
+		<Projects projects={projects} />
+	</div>
+</SiteLayout>

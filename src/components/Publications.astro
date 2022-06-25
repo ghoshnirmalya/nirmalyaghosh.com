@@ -2,13 +2,12 @@
 import Publication from "../types/publication";
 
 const { publications } = Astro.props
-const lastFivePublications = publications.slice(0, 5)
 ---
 
 <div class="space-y-4">
   <h2>Publications</h2>
   <div class="space-y-8">
-    {lastFivePublications.map((publication:Publication) => (
+    {publications.map((publication:Publication) => (
     <div>
       <h1 class="text-lg font-semibold">{publication.title}</h1>
       <p class="text-gray-500">{publication.description}</p>

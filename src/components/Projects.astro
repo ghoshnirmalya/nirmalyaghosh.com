@@ -2,13 +2,12 @@
 import Project from "../types/project";
 
 const { projects } = Astro.props
-const lastFiveProjects = projects.slice(0, 5)
 ---
 
 <div class="space-y-4">
   <h2>Projects</h2>
   <div class="space-y-8">
-    {lastFiveProjects.map((project:Project) => (
+    {projects.map((project:Project) => (
     <div>
       <h1 class="text-lg font-semibold">{project.title}</h1>
       <p class="text-gray-500">{project.description}</p>
