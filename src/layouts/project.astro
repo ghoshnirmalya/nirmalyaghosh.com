@@ -4,27 +4,32 @@ import MainHead from '../components/MainHead.astro';
 const { content } = Astro.props;
 ---
 
-<html lang={content.lang || 'en'}>
-	<head>
-		<MainHead title={content.title} description={content.description} />
-	</head>
-	<body>
-		<header style={`background-image:url(${content.img})`} class="hero">
-			<h1 class="title">{content.title}</h1>
-		</header>
-		<div class="leadIn">
-			<div class="wrapper pt8 pb8 mb8 tac">
-				{content.tags.map((t) => <span class="tag">{t}</span>)}
-				<h3 class="tagline">{content.description}</h3>
-			</div>
+<html lang={content.lang || 'en' }>
+
+<head>
+	<MainHead title={content.title} description={content.description} />
+</head>
+
+<body>
+	<header style={`background-image:url(${content.img})`} class="hero">
+		<h1 class="title">{content.title}</h1>
+	</header>
+	<div class="leadIn">
+		<div class="wrapper pt8 pb8 mb8 tac">
+			{content.tags.map((t) => <span class="tag">{t}</span>)}
+			<h3 class="tagline">{content.description}</h3>
 		</div>
-		<div class="wrapper wrapper__readable">
-			<div class="content"><slot /></div>
+	</div>
+	<div class="wrapper wrapper__readable">
+		<div class="content">
+			<slot />
 		</div>
-		<footer class="tac mt6">
-			<a href="/projects">
-				View More
-			</a>
-		</footer>
-	</body>
+	</div>
+	<footer class="tac mt6">
+		<a href="/projects">
+			View More
+		</a>
+	</footer>
+</body>
+
 </html>

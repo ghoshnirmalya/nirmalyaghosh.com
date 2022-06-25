@@ -3,22 +3,16 @@ import Article from "../types/article";
 
 const { articles } = Astro.props
 const lastFiveArticles = articles.slice(0, 5)
-
-// console.log(lastFiveArticles[0].rawContent());
-
-// const content = await lastFiveArticles[0].compiledContent()
-// console.log(content);
-
 ---
 
 <div class="space-y-4">
   <h2>Articles</h2>
   <div class="space-y-8">
     {lastFiveArticles.map((article:Article) => (
-    <div>
+    <a href={`/articles/${article.frontmatter.slug}`} class="block">
       <h1 class="text-lg font-semibold">{article.frontmatter.title}</h1>
       <p class="text-gray-500">{article.frontmatter.description}</p>
-    </div>
+    </a>
     ))}
   </div>
 </div>

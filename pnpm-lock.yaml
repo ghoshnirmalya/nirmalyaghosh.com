@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/sitemap': ^0.2.2
   '@astrojs/tailwind': ^0.2.1
   '@release-it/conventional-changelog': ^5.0.0
+  '@tailwindcss/typography': ^0.5.2
   '@types/react': ^18.0.14
   astro: ^1.0.0-beta.56
   husky: ^8.0.1
@@ -17,6 +18,7 @@ devDependencies:
   '@astrojs/sitemap': 0.2.2
   '@astrojs/tailwind': 0.2.1
   '@release-it/conventional-changelog': 5.0.0_release-it@15.1.0
+  '@tailwindcss/typography': 0.5.2
   '@types/react': 18.0.14
   astro: 1.0.0-beta.56
   husky: 8.0.1
@@ -640,6 +642,16 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       defer-to-connect: 2.0.1
+    dev: true
+
+  /@tailwindcss/typography/0.5.2:
+    resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
     dev: true
 
   /@tootallnate/once/1.1.2:
@@ -3555,8 +3567,20 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+    dev: true
+
   /lodash.ismatch/4.4.0:
     resolution: {integrity: sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==}
+    dev: true
+
+  /lodash.isplainobject/4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+    dev: true
+
+  /lodash.merge/4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
   /lodash/4.17.21:

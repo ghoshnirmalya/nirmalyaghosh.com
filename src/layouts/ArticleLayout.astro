@@ -1,0 +1,24 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+const { content } = Astro.props;
+---
+
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="space-y-16">
+	<Navbar />
+	<article class="p-4 max-w-2xl mx-auto prose">
+		<h1>{content.title}</h1>
+		<h2>{content.description}</h2>
+
+		<slot />
+
+	</article>
+</body>
+
+</html>
