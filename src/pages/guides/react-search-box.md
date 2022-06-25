@@ -9,18 +9,19 @@ tags:
   - react.js
 categories:
   - ui-component
-coverImage: ""
-githubLink: ""
 keywords:
   - react.js
   - components
+coverImage: ""
+githubLink: "https://github.com/ghoshnirmalya/react-search-box"
+layout: ../../layouts/GuideLayout.astro
 ---
 
-<Jumbotron
+<!-- <Jumbotron
   description="An auto-complete search box for React"
   githubLink="https://github.com/ghoshnirmalya/react-search-box"
   demoLink="https://codesandbox.io/s/react-search-box-example-cra-17ml6"
-/>
+/> -->
 
 ## Installation
 

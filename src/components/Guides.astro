@@ -1,0 +1,17 @@
+---
+import Guide from "../types/guide";
+
+const { guides } = Astro.props
+---
+
+<div class="space-y-4">
+  <h2>Guides</h2>
+  <div class="space-y-8">
+    {guides.map((guide:Guide) => (
+    <a href={`/guides/${guide.frontmatter.slug}`} class="block">
+      <h1 class="text-lg font-semibold">{guide.frontmatter.title}</h1>
+      <p class="text-gray-500">{guide.frontmatter.description}</p>
+    </a>
+    ))}
+  </div>
+</div>

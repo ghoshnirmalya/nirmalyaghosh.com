@@ -12,6 +12,8 @@ categories:
 keywords:
   - Next.js
 layout: ../../layouts/ArticleLayout.astro
+setup: |
+  import Callout from '../../components/Callout.astro'
 ---
 
 If you update the content of a page, you will again have to build and deploy your Next.js application for the new content to appear. This is be cause, once the HTML of the page is generated during the build time, the HTML content is not updated until the next build.

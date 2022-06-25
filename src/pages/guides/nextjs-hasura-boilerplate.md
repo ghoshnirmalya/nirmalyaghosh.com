@@ -17,6 +17,9 @@ keywords:
   - boilerplate
   - next.js
   - hasura
+setup: |
+  import Jumbotron from '../../components/Jumbotron.astro'
+layout: ../../layouts/GuideLayout.astro
 ---
 
 <Jumbotron

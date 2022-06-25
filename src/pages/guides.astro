@@ -1,0 +1,12 @@
+---
+import Guides from "../components/Guides.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const guides = await Astro.glob("./guides/*.md")
+---
+
+<SiteLayout>
+	<div class="space-y-16">
+		<Guides guides={guides} />
+	</div>
+</SiteLayout>
