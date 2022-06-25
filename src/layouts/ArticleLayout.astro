@@ -1,7 +1,7 @@
 ---
-import Navbar from "../components/Navbar.astro";
-
 import "../styles/globals.css";
+
+import Navbar from "../components/Navbar.astro";
 
 const { content } = Astro.props;
 ---
@@ -9,7 +9,8 @@ const { content } = Astro.props;
 <html lang="en">
 
 <head>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{content.title}</title>
 </head>
 
 <body class="space-y-16">

@@ -1,13 +1,16 @@
 ---
-import Navbar from "../components/Navbar.astro";
-
 import "../styles/globals.css";
+
+import Navbar from "../components/Navbar.astro";
+import siteConfig from "../utils/site";
+
 ---
 
 <html lang="en">
 
 <head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{siteConfig.details.title}</title>
 </head>
 
 <body class="space-y-16">
