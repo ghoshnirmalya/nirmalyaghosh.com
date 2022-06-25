@@ -1,5 +1,5 @@
 ---
-date: 2021-09-19T05:10:23.013Z
+pubDate: 2021-09-19T05:10:23.013Z
 title: Integrate TailwindCSS with Next.js
 tags:
   - react.js

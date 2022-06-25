@@ -1,5 +1,5 @@
 ---
-date: 2021-09-19T05:09:52.408Z
+pubDate: 2021-09-19T05:09:52.408Z
 title: Authenticate your Next.js application using Strapi
 tags:
   - react.js

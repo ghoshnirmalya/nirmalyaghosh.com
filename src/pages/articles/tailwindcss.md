@@ -1,5 +1,5 @@
 ---
-date: "2021-09-19T05:10:37.799Z"
+pubDate: "2021-09-19T05:10:37.799Z"
 title: What is TailwindCSS
 tags:
   - tailwind

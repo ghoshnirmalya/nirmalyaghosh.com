@@ -1,5 +1,5 @@
 ---
-date: "2021-09-19T05:10:02.469Z"
+pubDate: "2021-09-19T05:10:02.469Z"
 title: Use Mirage.js to jumpstart your frontend development
 tags:
   - api

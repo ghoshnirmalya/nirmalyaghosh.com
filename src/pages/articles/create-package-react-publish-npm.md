@@ -1,5 +1,5 @@
 ---
-date: 2021-09-19T05:09:11.274Z
+pubDate: 2021-09-19T05:09:11.274Z
 title: Create a Package using React and Publish it to NPM
 tags:
   - react.js

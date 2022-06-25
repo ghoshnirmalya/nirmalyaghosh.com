@@ -1,5 +1,5 @@
 ---
-date: "2021-09-19T05:08:34.201Z"
+pubDate: "2021-09-19T05:08:34.201Z"
 title: Authentication in Next.js using Strapi and NextAuth
 tags:
   - react.js

@@ -1,5 +1,5 @@
 ---
-date: 2021-09-19T05:08:50.161Z
+pubDate: 2021-09-19T05:08:50.161Z
 title: How to use Next.js with Strapi and Apollo
 tags:
   - react.js

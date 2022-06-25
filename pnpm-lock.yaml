@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/partytown': ^0.1.5
+  '@astrojs/rss': ^0.2.0
   '@astrojs/sitemap': ^0.2.2
   '@astrojs/tailwind': ^0.2.1
   '@release-it/conventional-changelog': ^5.0.0
@@ -20,6 +21,7 @@ specifiers:
 
 devDependencies:
   '@astrojs/partytown': 0.1.5
+  '@astrojs/rss': 0.2.0
   '@astrojs/sitemap': 0.2.2
   '@astrojs/tailwind': 0.2.1
   '@release-it/conventional-changelog': 5.0.0_release-it@15.1.0
@@ -123,6 +125,12 @@ packages:
   /@astrojs/prism/0.4.1:
     resolution: {integrity: sha512-JxkrXFiFhfunOFBI2Xxwru9t4IzrLw+nfA7RkNnV8qP65BLidrwWS+NfZhOSVGTrbf+cQfF8QNe6O4gAX8wQHw==}
     engines: {node: ^14.15.0 || >=16.0.0}
+    dev: true
+
+  /@astrojs/rss/0.2.0:
+    resolution: {integrity: sha512-Y6e6nL8BN0swd2tvlY3xNu9VHx6IQz70NcKIiPzjKXcjiubJMx0TyfpYWGOtwHCtGvHiPV3rJa6U+cbkgy2HVQ==}
+    dependencies:
+      fast-xml-parser: 4.0.8
     dev: true
 
   /@astrojs/sitemap/0.2.2:
@@ -2316,6 +2324,13 @@ packages:
 
   /fast-levenshtein/2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
+    dev: true
+
+  /fast-xml-parser/4.0.8:
+    resolution: {integrity: sha512-N4XqZaRMuHMvOFwFlqeBTlvrnXU+QN8wvCl2g9fHzMx2BnLoIYRDwy6XwI8FxogHMFI9OfGQBCddgckvSLTnvg==}
+    hasBin: true
+    dependencies:
+      strnum: 1.0.5
     dev: true
 
   /fastq/1.13.0:
@@ -5729,6 +5744,10 @@ packages:
   /strip-json-comments/2.0.1:
     resolution: {integrity: sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /strnum/1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
     dev: true
 
   /style-to-object/0.3.0:

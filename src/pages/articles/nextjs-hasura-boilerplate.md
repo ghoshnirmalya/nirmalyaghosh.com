@@ -1,5 +1,5 @@
 ---
-date: 2021-09-19T05:10:43.594Z
+pubDate: 2021-09-19T05:10:43.594Z
 title: Build full-stack applications using Hasura and Next.js
 categories:
   - boilerplates

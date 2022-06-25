@@ -2,7 +2,7 @@
 title: An auto-complete search box for React
 slug: react-search-box
 description: Use this auto-complete search box to add search functionality to your application.
-date: "2021-10-17T19:01:25.588Z"
+pubDate: "2021-10-17T19:01:25.588Z"
 lastmod: "2022-01-22T16:52:39.297Z"
 draft: false
 tags:

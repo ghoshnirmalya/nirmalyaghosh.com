@@ -2,7 +2,7 @@
 title: Getting started with Next.js
 slug: getting-started-with-next.js
 description: Learn why you should Next.js for your front-end applications.
-date: "2021-10-05T19:27:01.000Z"
+pubDate: "2021-10-05T19:27:01.000Z"
 lastmod: "2022-01-22T16:48:29.997Z"
 draft: false
 tags:

@@ -2,7 +2,7 @@
 title: How can you use the Next.js Image component
 slug: how-can-you-use-the-nextjs-image-component
 description: Learn how you can use the Next.js Image component to improve the performance of your application.
-date: "2021-10-07T20:06:58.657Z"
+pubDate: "2021-10-07T20:06:58.657Z"
 lastmod: "2021-10-08T20:20:47.524Z"
 draft: false
 tags:

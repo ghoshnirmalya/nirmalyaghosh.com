@@ -1,5 +1,5 @@
 ---
-date: 2021-09-19T05:09:33.160Z
+pubDate: 2021-09-19T05:09:33.160Z
 title: Create a Pagination Component with React and Theme UI
 tags:
   - react.js

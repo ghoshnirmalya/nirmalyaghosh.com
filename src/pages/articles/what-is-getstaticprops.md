@@ -2,7 +2,7 @@
 title: What is getStaticProps in Next.js
 slug: what-is-getstaticprops
 description: Learn what getStaticProps does in Next.js and how you can use it to create fast sites.
-date: "2021-10-08T20:26:32.886Z"
+pubDate: "2021-10-08T20:26:32.886Z"
 lastmod: "2021-10-09T10:30:03.206Z"
 draft: false
 tags:
