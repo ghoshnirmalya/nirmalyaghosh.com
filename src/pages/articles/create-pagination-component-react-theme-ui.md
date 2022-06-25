@@ -161,7 +161,7 @@ success Saved package.json
 
 It'll also generate the following **package.json** file:
 
-```json:package.json
+```json
 {
   "name": "react-pagination-component",
   "version": "0.0.1",
@@ -175,7 +175,7 @@ It'll also generate the following **package.json** file:
 
 Doing the above steps would help us in installing [npm
 packages](https://www.npmjs.com/). We'll be installing React and other packages
-from npm. npm stands for Node Package Manager and is the world’s largest software registry.
+from npm. npm stands for Node Package Manager and is the world's largest software registry.
 
 Although it's very easy to [add React to a
 website](https://reactjs.org/docs/add-react-to-a-website.html), managing and upgrading
@@ -198,7 +198,7 @@ It'll add **parcel-bundler** to our list of dev-dependencies.
 
 We also need to adding the following script to our **package.json** file:
 
-```json:package.json
+```json
 "scripts": {
   "start": "parcel index.html"
 }
@@ -206,7 +206,7 @@ We also need to adding the following script to our **package.json** file:
 
 Our **package.json** file should now contain these:
 
-```json:package.json
+```json
 {
   ....
 
@@ -229,22 +229,21 @@ Our **package.json** file should now contain these:
 We also need to create an **index.html** file in the root of our project and add
 a reference to our JavaScript entry point:
 
-```html:index.html
+```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  </head>
+  <head> </head>
   <body>
-      <div id="app"></div>
-      <!-- Here 👇 -->
-      <script src="./index.js"></script>
+    <div id="app"></div>
+    <!-- Here 👇 -->
+    <script src="./index.js"></script>
   </body>
 </html>
 ```
 
 Let's also create a new **index.js** which will be our JavaScript entry point:
 
-```js:index.js
+```js
 console.log("Hello from Parcel!");
 ```
 
@@ -260,7 +259,7 @@ The about application will start running at
 Let's start by fetching a list of news from Hacker News API and show it on our
 browser. We need to update our **index.js** file with the following code:
 
-```js:index.js
+```js
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
@@ -301,7 +300,7 @@ to view the page without any errors.
 Let's show the data fetched in a list. To do that, we'll need to modify our
 **index.js** file:
 
-```js:index.js
+```js
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -352,14 +351,14 @@ page.
 First, we need to define two states to store the `totalPages` and the
 `currentPage`:
 
-```js:index.js
+```js
 const [totalPages, setTotalPages] = useState(1);
 const [currentPage, setCurrentPage] = useState(1);
 ```
 
 We also need to update the `fetchData` function to use the `currentPage`:
 
-```js:index.js
+```js
 const fetchData = async () => {
   const response = await fetch(
     `https://hn.algolia.com/api/v1/search?query=javascript&hitsPerPage=5&page=${currentPage}`
@@ -373,7 +372,7 @@ const fetchData = async () => {
 
 We also need to add a new `paginationNode` function to show the pagination:
 
-```js:index.js
+```js
 const paginationNode = () => {
   return (
     <ul>
@@ -394,7 +393,7 @@ const paginationNode = () => {
 Finally, let's update our `return` function and add the `paginationNode`
 function to it:
 
-```js:index.js
+```js
 return (
   <div>
     {listNode()}
@@ -423,7 +422,7 @@ yarn add theme-ui
 
 Once the package is installed, we need to import `ThemeProvider` and it to our app first:
 
-```js:index.js
+```js
 import { ThemeProvider } from "theme-ui";
 
 const theme = {
@@ -447,7 +446,7 @@ return (
 The values for `text` , `background` and `primary` colors are the props that can
 be passed to our component. We can define defaults for those values:
 
-```js:index.js
+```js
 const ReactPaginationComponent = ({
   text = "#000",
   background = "#fff",
@@ -460,7 +459,7 @@ const ReactPaginationComponent = ({
 We need to update our `listNode` and `paginationNode` functions to use `Box`,
 `Button` and `Flex` components from Theme UI:
 
-```js:index.js
+```js
 ....
 
 const listNode = () => {
@@ -506,7 +505,7 @@ const paginationNode = () => {
 
 Let's update our pagination logic for a better User Experience.
 
-```js:index.js
+```js
 ....
 
 const paginationNode = () => {
@@ -570,7 +569,7 @@ As we've used the `ThemeProvider` component from Theme UI, our pagination
 component supports theming out of the box. We can do so by passing a `primary`
 prop to our `ReactPaginationComponent`:
 
-```js:index.js
+```js
 <ReactPaginationComponent primary="green" />
 ```
 

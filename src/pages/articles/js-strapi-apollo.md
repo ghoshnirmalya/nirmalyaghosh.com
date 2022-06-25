@@ -52,7 +52,7 @@ I've been using [Strapi](http://strapi.io/) for quite some time now and it's ver
 [Apollo](https://www.apollographql.com/) is the industry-standard GraphQL implementation, providing the data graph layer that connects modern apps to the cloud. It offers a lot of features like:
 
 1. **Declarative data fetching**: Write a query and receive data without manually tracking loading, error, or network states.
-2. **Reactive data cache**: Cut down on network traffic and keep data consistent throughout your application with Apollo Client’s normalized reactive data cache.
+2. **Reactive data cache**: Cut down on network traffic and keep data consistent throughout your application with Apollo Client's normalized reactive data cache.
 3. **Excellent dev experience**: Enjoy cross stack type safety, runtime cache inspectors, and full featured editor integrations to keep you writing applications faster.
 4. **Compatible and adoptable**: Use any build setup and any GraphQL API. Drop Apollo Client into any app seamlessly without re-architecting your entire data strategy.
 5. **Designed for modern UIs**: Take advantage of modern UI architectures in the web, iOS, and Android ecosystems.
@@ -109,7 +109,7 @@ yarn add  @apollo/client graphql
 
 Next, we need to create a new file `lib/with-graphql.js` with the following content:
 
-```js:lib/with-graphql.js
+```js
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 const WithGraphQL = ({ children }) => {
@@ -126,7 +126,7 @@ export default WithGraphQL;
 
 Now, we can import this file and wrap any Next.js page where we want to use GraphQL:
 
-```js:pages/index.js
+```js
 import React from "react";
 import Page from "components/pages/index";
 import WithGraphQL from "lib/with-graphql";
@@ -144,7 +144,7 @@ export default IndexPage;
 
 Now, we can use GraphQL queries and mutations in the `components/pages/index.js` file:
 
-```js:components/pages/index.js
+```js
 import { gql, useQuery } from "@apollo/client";
 import { Box, Stack } from "@chakra-ui/core";
 import Feed from "components/pages/index/feed";
@@ -172,7 +172,7 @@ const FeedsPageComponent = () => {
 
   return (
     <Stack spacing={8}>
-      {data.feeds.map(feed => {
+      {data.feeds.map((feed) => {
         return (
           <Box key={feed.id}>
             <Feed feed={feed} />

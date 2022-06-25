@@ -73,7 +73,7 @@ npm install tailwindcss
 
 Next, we need to use the @tailwind directive to inject Tailwind's base, components, and utilities styles into our CSS. To do that we need to create a new file at `public/assets/styles/vendors.css` add the following code to it:
 
-```scss:public/assets/styles/vendors.css
+```scss
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -81,7 +81,7 @@ Next, we need to use the @tailwind directive to inject Tailwind's base, componen
 
 Next, we need to add the `build:style` script to our `package.json` file:
 
-```json:package.json {5}
+```json {5}
 "scripts": {
   "dev": "next dev",
   "build": "next build",

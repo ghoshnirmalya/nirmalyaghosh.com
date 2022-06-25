@@ -7,7 +7,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(),  partytown(), sitemap()],
-  markdown: {
-    syntaxHighlight: 'prism',
+  markdown:{
+    remarkPlugins: [
+      'remark-gfm',
+    ]
   }
 });

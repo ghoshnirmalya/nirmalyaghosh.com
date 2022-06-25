@@ -56,11 +56,11 @@ It supports GraphQL Query and Mutation out of the box.
 
 [**Frontend**](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/tree/master/frontend): Next.js application
 
-This application is the primary user-facing application. Once it’s up and running (see Development section), it’s available on http://localhost:3000/.
+This application is the primary user-facing application. Once it's up and running (see Development section), it's available on http://localhost:3000/.
 
 [**Backend**](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/tree/master/backend): Dockerized Strapi application
 
-[Strapi](https://strapi.io/) is the leading open-source headless CMS. It’s 100% Javascript, fully customizable and developer-first.
+[Strapi](https://strapi.io/) is the leading open-source headless CMS. It's 100% Javascript, fully customizable and developer-first.
 
 ## Installation
 
@@ -78,7 +78,7 @@ This application is the primary user-facing application. Once it’s up and runn
 
 3. **Create a .env file and copy the contents from .env.example (present in frontend directory)**
 
-   ```yml:frontend/.env
+   ```yaml
    NEXT_PUBLIC_API_URL=http://localhost:1337/graphql
    NEXT_PUBLIC_DATABASE_URL=postgres://strapi:strapi@localhost:5432/strapi
    NEXTAUTH_URL=http://localhost:3000
@@ -118,7 +118,7 @@ This application is the primary user-facing application. Once it’s up and runn
    docker-compose up
    ```
 
-   We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on [http://localhost:1337/v1/graphql](http://localhost:1337/v1/graphql).
+   We need to start Docker and then run the above command which will change the current directory to the backend package's directory and then start the backend package. If everything goes well, it'll be up and running on [http://localhost:1337/v1/graphql](http://localhost:1337/v1/graphql).
 
 8. **Configure Strapi**
 

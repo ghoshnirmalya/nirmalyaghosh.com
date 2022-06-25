@@ -101,7 +101,7 @@ Now, if we fetching GraphQL from our URL endpoint, we will get proper data:
 
 Let's save the URL endpoint in a **.env** file in our application:
 
-```bash:.env
+```bash
 GRAPHQL_URL_ENDPOINT=https://api-eu-central-1.graphcms.com/v2/something/master
 ```
 
@@ -119,7 +119,7 @@ yarn add graphql-request
 
 Now, let's restart our Next.js server using `yarn dev`. We can use **graphq-request** to fetch data from our URL endpoint. To do so, we need to modify our `pages/index.js` file:
 
-```js:pages/index.js
+```js
 import { GraphQLClient } from "graphql-request";
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_URL_ENDPOINT);
@@ -183,7 +183,7 @@ We will be adding [TailwindCSS](https://tailwindcss.com/) using [CDN](https://ta
 
 We need to create a new file `_app.js` inside our **pages** directory and add the following code:
 
-```js:pages/_app.js
+```js
 import Head from "next/head";
 
 const App = ({ Component, pageProps }) => {
@@ -209,7 +209,7 @@ Now, if we restart our server, we should be able to see that TailwindCSS is gett
 
 Next, we need to modify our `pages/index.js` file with the following code:
 
-```js:pages/index.js
+```js
 export default ({ posts }) => {
   return (
     <div className="py-16 bg-gray-100">
@@ -258,7 +258,7 @@ We've successfully fetched data from GraphCMS and rendered them on the browser.
 
 We can also show blogs in separate routes. To do that, we will need to modify our `pages/index.js` file:
 
-```js:pages/index.js
+```js
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
 
@@ -333,7 +333,7 @@ export default ({ posts }) => {
 
 We will also need to create a new file `pages/post/[slug].js` with the following content:
 
-```js:pages/post/[slug].js
+```js
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
 

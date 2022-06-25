@@ -76,7 +76,7 @@ You can also pass a [blurDataURL](https://nextjs.org/docs/api-reference/next/ima
 
 For remote images, you will also have to update your `next.config.js` file to include the domain from which you are using the image:
 
-```js:next.config.js {2-4}
+```js {2-4}
 module.exports = {
   images: {
     domains: ["website.com"],

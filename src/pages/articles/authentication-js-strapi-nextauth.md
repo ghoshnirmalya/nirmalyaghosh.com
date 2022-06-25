@@ -23,7 +23,7 @@ Next.js application using Strapi and NextAuth
 
 ## Introduction
 
-[Strapi](https://strapi.io/) is the leading open-source headless CMS. It’s 100% Javascript, fully customizable and developer-first. I've been using Strapi for some of my [Open Source projects](https://github.com/ghoshnirmalya) and the developer experience is really good. It has helped me build prototypes and products much faster.
+[Strapi](https://strapi.io/) is the leading open-source headless CMS. It's 100% Javascript, fully customizable and developer-first. I've been using Strapi for some of my [Open Source projects](https://github.com/ghoshnirmalya) and the developer experience is really good. It has helped me build prototypes and products much faster.
 
 I've created a [boilerplate](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate) so that you can get up and running with [Strapi](http://strapi.io/), [Next.js](https://nextjs.org/) and [Apollo](https://www.apollographql.com/) quickly. Check out the project on [Github](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate).
 
@@ -69,7 +69,7 @@ cd frontend && yarn install
 
 We can create a .env file and copy the contents from .env.example which is present in the frontend directory. The following credentials are necessary for authentication:
 
-```yaml:frontend/.env
+```yaml
 NEXT_PUBLIC_API_URL=http://localhost:1337
 NEXT_PUBLIC_DATABASE_URL=postgres://strapi:strapi@localhost:5432/strapi?synchronize=true
 NEXTAUTH_URL=http://localhost:3000
@@ -108,7 +108,7 @@ We can go inside the directory of the backend package on another terminal window
 cd backend && docker-compose up
 ```
 
-> We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on http://localhost:1337/graphql.
+> We need to start Docker and then run the above command which will change the current directory to the backend package's directory and then start the backend package. If everything goes well, it'll be up and running on http://localhost:1337/graphql.
 
 ## Configuring the Google provider in the Strapi admin panel
 
@@ -120,7 +120,7 @@ In the Strapi admin panel, we need to add the Google OAuth Client credentials an
 
 All the configurations related to NextAuth is present on the [[...nextauth.ts]](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/blob/master/frontend/pages/api/auth/%5B...nextauth%5D.ts) file. We can use the following NextAuth options to use NextAuth with Strapi:
 
-```js:frontend/pages/api/auth/[...nextauth].ts
+```js
 const options = {
   providers: [
     Providers.Google({

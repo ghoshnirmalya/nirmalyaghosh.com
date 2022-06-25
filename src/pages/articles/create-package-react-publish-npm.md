@@ -72,48 +72,48 @@ yarn add @emotion/core
 
 This will install [Emotion](https://emotion.sh/docs/introduction#react) which we'll be using to style our Pagination component. Our component should look like the following:
 
-```js:src/index.js
+```js
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from "@emotion/core";
 
 const ReactPaginationComponent = ({
   onChange,
   currentPage,
   totalPages,
   color,
-  isLoading
+  isLoading,
 }) => {
   // The logic for generating pagination is taken from
   // https://gist.github.com/kottenator/9d936eb3e4e3c3e02598
 
-  const pageBuffer = 3
-  const startPage = currentPage - pageBuffer
-  const endPage = currentPage + pageBuffer + 1
-  const range = []
-  const rangeWithDots = []
-  let l
+  const pageBuffer = 3;
+  const startPage = currentPage - pageBuffer;
+  const endPage = currentPage + pageBuffer + 1;
+  const range = [];
+  const rangeWithDots = [];
+  let l;
 
   for (let i = 1; i <= totalPages; i++) {
     if (i == 1 || i == totalPages || (i >= startPage && i < endPage)) {
-      range.push(i)
+      range.push(i);
     }
   }
 
   for (let i of range) {
     if (l) {
       if (i - l === pageBuffer) {
-        rangeWithDots.push(l + 1)
+        rangeWithDots.push(l + 1);
       } else if (i - l !== 1) {
-        rangeWithDots.push('...')
+        rangeWithDots.push("...");
       }
     }
-    rangeWithDots.push(i)
+    rangeWithDots.push(i);
 
-    l = i
+    l = i;
   }
 
   if (isLoading) {
-    return false
+    return false;
   }
 
   return (
@@ -137,15 +137,15 @@ const ReactPaginationComponent = ({
             <button
               data-page-number={pageNumber}
               onClick={() => onChange(pageNumber)}
-              disabled={pageNumber === '...'}
+              disabled={pageNumber === "..."}
               css={css`
                 border: 1px solid ${color};
                 border-radius: 2px;
-                color: ${currentPage === pageNumber ? '#fff' : color};
+                color: ${currentPage === pageNumber ? "#fff" : color};
                 padding: 5px 10px;
                 background-color: ${currentPage === pageNumber
                   ? color
-                  : 'transparent'};
+                  : "transparent"};
                 font-size: inherit;
 
                 :hover {
@@ -161,20 +161,20 @@ const ReactPaginationComponent = ({
               {pageNumber}
             </button>
           </li>
-        )
+        );
       })}
     </ul>
-  )
-}
+  );
+};
 
-export default ReactPaginationComponent
+export default ReactPaginationComponent;
 ```
 
 > The explanation for the above logic is already explained [here](/articles/create-pagination-component-react-theme-ui). You can refer to that tutorial to understand the logic used for creating the pagination component.
 
 Now, we can import our component in our create-react-app application and render it on the browser:
 
-```js:example/src/App.js
+```js
 ....
 
 import ReactPaginationComponent from 'reactjs-pagination-component'
@@ -286,7 +286,7 @@ It's possible that we might see the above error when we're trying to publish our
 
 In this case, we can rename our package from **react-pagination-component** to **reactjs-pagination-component** in our **package.json** file:
 
-```json:package.json
+```json
 {
   "name": "reactjs-pagination-component",
 

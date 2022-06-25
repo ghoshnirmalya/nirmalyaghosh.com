@@ -25,8 +25,7 @@ We'll start from where we finished in [How to Automate the Backend stuffs with O
 
 First, we'll build the authentication in our frontend application. To do that, we'll add a new sign up page.
 
-```js:frontend/pages/sign-up.js
-
+```js
 import React, { useState } from "react";
 import Head from "next/head";
 import axios from "axios";
@@ -163,7 +162,7 @@ yarn add nookies
 
 We need to update our `handleSubmit` method:
 
-```js:frontend/pages/sign-up.js
+```js
 import React, { useState } from "react";
 import Head from "next/head";
 import axios from "axios";
@@ -219,8 +218,7 @@ We need to send the token in the `Authorization` header to get the proper data:
 
 Next, we'll redirect all the users to the [index](http://localhost:3000/) page if there is a token present and the user visited the [sign up](http://localhost:3000/sign-up) page:
 
-```jsx:frontend/pages/sign-up.js
-
+```jsx
 SignUp.getInitialProps = (ctx) => {
   const isAuthenticated = !!parseCookies(ctx).token;
 
