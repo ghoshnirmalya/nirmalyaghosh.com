@@ -59,13 +59,15 @@ I've been using [Strapi](http://strapi.io/) for quite some time now and it's ver
 I've created a [boilerplate](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate) so that you can get up and running with [Strapi](http://strapi.io/), [Next.js](https://nextjs.org/) and [Apollo](https://www.apollographql.com/) quickly. Check out the project on [Github](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate).
 
 <a
-  href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
-  target="_blank"
->
-  <img
+href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
+target="\_blank"
+
+> <img
+
     src="https://user-images.githubusercontent.com/6391763/90599044-ca070300-e211-11ea-8b8a-89354dd30bd5.png"
     alt="Logo"
-  />
+
+/>
 </a>
 
 ## Creating a Strapi application using Docker
@@ -188,11 +190,13 @@ export default FeedsPageComponent;
 In this tutorial, we've learnt how we can integrate Apollo with Next.js and use it with Strapi. I've created a [boilerplate](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate) so that you can get up and running with Strapi, Next.js and Apollo quickly. Check out the project on [Github](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate). Documentation of this project is available [here](/guides/nextjs-strapi-boilerplate).
 
 <a
-  href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
-  target="_blank"
->
-  <img
+href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
+target="\_blank"
+
+> <img
+
     src="https://user-images.githubusercontent.com/6391763/90599044-ca070300-e211-11ea-8b8a-89354dd30bd5.png"
     alt="Logo"
-  />
+
+/>
 </a>

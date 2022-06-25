@@ -7,5 +7,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), turbolinks(), partytown(), sitemap()]
+  integrations: [tailwind(), turbolinks(), partytown(), sitemap()],
+  markdown: {
+    syntaxHighlight: 'prism',
+  }
 });
