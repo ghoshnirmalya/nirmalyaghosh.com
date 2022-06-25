@@ -20,13 +20,13 @@
   {
     "title": "How to Build a Monorepo with Nx, Next.js and TypeScript",
     "url": "https://www.sitepoint.com/monorepo-nx-next-typescript",
-    "description": "In this article, we’ll learn what a monorepo is, and how monorepos help in developing applications faster with a better development experience. We’ll discuss the advantages of using the Nx development tools for managing a monorepo, and learn how to use those tools to build a Next.js application.",
+    "description": "In this article, we'll learn what a monorepo is, and how monorepos help in developing applications faster with a better development experience. We'll discuss the advantages of using the Nx development tools for managing a monorepo, and learn how to use those tools to build a Next.js application.",
     "date": "2021-08-16"
   },
   {
     "title": "Build a Twitter Clone Using TypeScript, Prisma and Next.js",
     "url": "https://www.sitepoint.com/nextjs-prisma-twitter-clone",
-    "description": "In this tutorial, we’ll learn how to build a clone of Twitter using Next.js and Prisma.",
+    "description": "In this tutorial, we'll learn how to build a clone of Twitter using Next.js and Prisma.",
     "date": "2021-02-21"
   },
   {
@@ -50,13 +50,13 @@
   {
     "title": "Getting started with Mock Service Worker",
     "url": "https://blog.logrocket.com/getting-started-with-mock-service-worker/",
-    "description": "In this tutorial, we’ll learn about Mock Service Worker and how we can use it to mock network requests. We’ll build a chat application that will use the mock data provided by the Mock Service Worker API.",
+    "description": "In this tutorial, we'll learn about Mock Service Worker and how we can use it to mock network requests. We'll build a chat application that will use the mock data provided by the Mock Service Worker API.",
     "date": "2020-09-03"
   },
   {
     "title": "Functional user interfaces with Moon.js",
     "url": "https://blog.logrocket.com/functional-uis-moon-js/",
-    "description": "In this tutorial, we’ll introduce Moon.js by understanding what it is and why it was created.",
+    "description": "In this tutorial, we'll introduce Moon.js by understanding what it is and why it was created.",
     "date": "2020-07-22"
   },
   {
@@ -80,19 +80,19 @@
   {
     "title": "Next.js, Storybook, and Lerna: Build a Monorepo Structure",
     "url": "https://buttercms.com/blog/nextjs-storybook-and-lerna-build-a-monorepo-structure",
-    "description": "In this tutorial, you'll learn about how to build a monorepo using Lerna. We’ll be building a Next.js application which will import components from a separate package. We’ll also be using Storybook to showcase those components.",
+    "description": "In this tutorial, you'll learn about how to build a monorepo using Lerna. We'll be building a Next.js application which will import components from a separate package. We'll also be using Storybook to showcase those components.",
     "date": "2020-03-24"
   },
   {
     "title": "Building a Product Hunt clone app using Hasura and Next.js",
     "url": "https://blog.logrocket.com/building-a-product-hunt-clone-app-using-hasura-and-next-js",
-    "description": "This tutorial will demonstrate how to create a clone of product curation app Product Hunt using Hasura and Next.js. We’ll show you how to conduct authentication and authorization using Hasura and how to leverage GraphQL to fetch and write data from a Next.js frontend application.",
+    "description": "This tutorial will demonstrate how to create a clone of product curation app Product Hunt using Hasura and Next.js. We'll show you how to conduct authentication and authorization using Hasura and how to leverage GraphQL to fetch and write data from a Next.js frontend application.",
     "date": "2020-02-20"
   },
   {
     "title": "Understand and implement your own Redux",
     "url": "https://buttercms.com/blog/understand-and-implement-your-own-redux",
-    "description": "In this tutorial, we'll discover the basic concepts of Redux and learn about Actions, Reducers, and a Store in Redux. In addition, we’ll also build our own version of Redux using vanilla JavaScript and use it in an application.",
+    "description": "In this tutorial, we'll discover the basic concepts of Redux and learn about Actions, Reducers, and a Store in Redux. In addition, we'll also build our own version of Redux using vanilla JavaScript and use it in an application.",
     "date": "2019-12-29"
   },
   {
@@ -110,7 +110,7 @@
   {
     "title": "How to test Next.js apps",
     "url": "https://buttercms.com/blog/how-to-test-nextjs-apps",
-    "description": "In this tutorial, we’ll be using Cypress to write End to End tests for the app that was built as a part of How to Build a CMS-powered Marketing Website while Avoiding WordPress. ",
+    "description": "In this tutorial, we'll be using Cypress to write End to End tests for the app that was built as a part of How to Build a CMS-powered Marketing Website while Avoiding WordPress. ",
     "date": "2019-06-05"
   },
   {
@@ -122,7 +122,7 @@
   {
     "title": "How to write a simple React search plugin, publish it to npm, and deploy it to Github pages",
     "url": "https://medium.freecodecamp.org/how-to-write-a-simple-react-search-plugin-publish-it-to-npm-and-deploy-it-to-github-pages-d8876dff7780",
-    "description": "In this article, we’re going to write a simple search plugin in React. Through this article, I hope to help fellow developers understand how to write plugins using React, publish them to npm and deploy a demo to Github pages.",
+    "description": "In this article, we're going to write a simple search plugin in React. Through this article, I hope to help fellow developers understand how to write plugins using React, publish them to npm and deploy a demo to Github pages.",
     "date": "2019-01-16"
   },
   {
@@ -146,7 +146,7 @@
   {
     "title": "Bootstrapping an API-only backend for a Social Networking app using Elixir/Phoenix",
     "url": "https://medium.com/@nirmalyaghosh/bootstrapping-an-api-only-backend-for-a-social-networking-app-using-elixir-f74a73b1da51",
-    "description": "While learning any programming language, I tend to document my struggles, about how I overcome stuffs and solve problems. Recently, I started learning Elixir mostly because I wanted to explore its ‘realtime’ feature.",
+    "description": "While learning any programming language, I tend to document my struggles, about how I overcome stuffs and solve problems. Recently, I started learning Elixir mostly because I wanted to explore its ‘realtime' feature.",
     "date": "2017-03-01"
   }
 ]

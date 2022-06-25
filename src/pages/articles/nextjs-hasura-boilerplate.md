@@ -19,7 +19,7 @@ keywords:
   - hasura
 setup: |
   import Jumbotron from '../../components/Jumbotron.astro'
-layout: ../../layouts/GuideLayout.astro
+layout: ../../layouts/ArticleLayout.astro
 ---
 
 <Jumbotron

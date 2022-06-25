@@ -14,14 +14,16 @@ keywords:
   - components
 coverImage: ""
 githubLink: "https://github.com/ghoshnirmalya/react-search-box"
-layout: ../../layouts/GuideLayout.astro
+setup: |
+  import Jumbotron from '../../components/Jumbotron.astro'
+layout: ../../layouts/ArticleLayout.astro
 ---
 
-<!-- <Jumbotron
+<Jumbotron
   description="An auto-complete search box for React"
   githubLink="https://github.com/ghoshnirmalya/react-search-box"
   demoLink="https://codesandbox.io/s/react-search-box-example-cra-17ml6"
-/> -->
+/>
 
 ## Installation
 

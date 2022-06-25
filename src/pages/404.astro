@@ -1,17 +1,12 @@
 ---
-import MainHead from '../components/MainHead.astro';
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<MainHead title="Not Found" />
-	</head>
-	<body>
-		<nav />
-		<div class="wrapper mt4 mb4">
-			<h1>Page Not Found</h1>
-			<p>Not found</p>
+<SiteLayout>
+	<div class="flex min-h-[400px] justify-center items-center bg-gray-100 rounded text-center">
+		<div class="space-y-4">
+			<h1 class="text-xl">Nothing found.</h1>
+			<a href="/" class="block">Click here to go back to the home page.</a>
 		</div>
-		<footer />
-	</body>
-</html>
+	</div>
+</SiteLayout>
