@@ -8,8 +8,30 @@ import siteConfig from "../utils/site";
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{siteConfig.details.title}</title>
+
+  <link rel="icon" type="image/x-icon" href={siteConfig.assets.favicon}>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content={siteConfig.details.title}>
+  <meta name="description" content={siteConfig.details.description}>
+  <meta name="keywords" content={siteConfig.keywords}>
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content={siteConfig.details.title}>
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={siteConfig.details.url}>
+  <meta property="og:title" content={siteConfig.details.title}>
+  <meta property="og:description" content={siteConfig.details.description}>
+  <meta property="og:image" content={siteConfig.assets.avatar}>
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content={siteConfig.details.url}>
+  <meta property="twitter:title" content={siteConfig.details.title}>
+  <meta property="twitter:description" content={siteConfig.details.description}>
+  <meta property="twitter:image" content={siteConfig.assets.avatar}>
 </head>
 
 <body class="space-y-8">
