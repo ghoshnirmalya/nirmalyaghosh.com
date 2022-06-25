@@ -8,7 +8,7 @@ const { articles } = Astro.props
   <h2>Articles</h2>
   <div class="space-y-8">
     {articles.map((article:Article) => (
-    <a href={`/articles/${article.frontmatter.slug}`} class="block">
+    <a href={`/articles/${article.frontmatter.slug}`} class="block hover:text-blue-500">
       <h1 class="text-lg font-semibold">{article.frontmatter.title}</h1>
       <p class="text-gray-500">{article.frontmatter.description}</p>
     </a>
