@@ -5,7 +5,7 @@ pubDate: "2021-10-17T19:01:25.588Z"
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 setup: |
-  import Jumbotron from '../../components/Jumbotron.astro'
+  import Jumbotron from '../../components/Markdown/Jumbotron.astro'
 ---
 
 <Jumbotron

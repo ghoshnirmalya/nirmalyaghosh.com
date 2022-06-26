@@ -6,7 +6,7 @@ coverImage: /images/content/nextjs-strapi-boilerplate/strapi-nextjs-boilerplate.
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 setup: |
-  import Jumbotron from '../../components/Jumbotron.astro'
+  import Jumbotron from '../../components/Markdown/Jumbotron.astro'
 ---
 
 <Jumbotron
