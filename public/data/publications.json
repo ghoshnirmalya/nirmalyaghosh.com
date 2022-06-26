@@ -2,37 +2,37 @@
   {
     "title": "Component Testing with Storybook and ButterCMS",
     "url": "https://buttercms.com/blog/component-testing-with-storybook",
-    "description": "In this article, you will learn about how you can use Storybook along with ButterCMS to test your website visually before deploying changes. We will start by understanding the various issues with visual testing using mock data. Then, we will discuss how to resolve those issues using Storybook and ButterCMS components.",
+    "description": "Learn about how you can use Storybook along with ButterCMS to test your website visually before deploying changes.",
     "date": "2022-01-21"
   },
   {
     "title": "How To Maintain A Large Next.js Application",
     "url": "https://www.smashingmagazine.com/2021/11/maintain-large-nextjs-application",
-    "description": "In this article, Nirmalya discusses some of the complex problems that he faced while building and maintaining large Next.js applications. He always explains how these problems can be solved by using various tools.",
+    "description": "Learn about some of the complex problems that faced while building and maintaining large Next.js applications.",
     "date": "2021-11-26"
   },
   {
     "title": "Building a Multilingual Website with ButterCMS",
     "url": "https://buttercms.com/blog/nextjs-multilingual-website",
-    "description": "In this article, you will learn about how to use ButterCMS along with your Next.js application to serve content in multiple languages and turn those potential users into paying clients. We will start by discussing the benefits of a multilingual site, then look into how to create one using Next.js and ButterCMS.",
+    "description": "Learn about how to use ButterCMS along with your Next.js application to serve content in multiple languages and turn those potential users into paying clients.",
     "date": "2021-11-04"
   },
   {
     "title": "How to Build a Monorepo with Nx, Next.js and TypeScript",
     "url": "https://www.sitepoint.com/monorepo-nx-next-typescript",
-    "description": "In this article, we'll learn what a monorepo is, and how monorepos help in developing applications faster with a better development experience. We'll discuss the advantages of using the Nx development tools for managing a monorepo, and learn how to use those tools to build a Next.js application.",
+    "description": "Learn what a monorepo is, and how monorepos help in developing applications faster with a better development experience.",
     "date": "2021-08-16"
   },
   {
     "title": "Build a Twitter Clone Using TypeScript, Prisma and Next.js",
     "url": "https://www.sitepoint.com/nextjs-prisma-twitter-clone",
-    "description": "In this tutorial, we'll learn how to build a clone of Twitter using Next.js and Prisma.",
+    "description": "Learn how to build a clone of Twitter using Next.js and Prisma.",
     "date": "2021-02-21"
   },
   {
     "title": "How to integrate Next.js with Fauna using React Query",
     "url": "https://dev.to/ghoshnirmalya/how-to-integrate-next-js-with-fauna-using-react-query-7o4",
-    "description": "In this tutorial, we'll learn about how we can integrate Next.js with Fauna. We'll also learn about how we can fetch GraphQL data on the server using React Query.",
+    "description": "Learn about how we can integrate Next.js with Fauna.",
     "date": "2021-02-08"
   },
   {
@@ -44,55 +44,55 @@
   {
     "title": "Difference between SWR and React Query in terms of fetching data",
     "url": "https://codebrahma.com/difference-between-swr-and-react-query/",
-    "description": "In this article, we'll be learning about React Query and SWR which will help us create easy to understand and maintainable structure to fetch data from a back-end API endpoint.",
+    "description": "Learn about React Query and SWR which will help us create easy to understand and maintainable structure to fetch data from a back-end API endpoint.",
     "date": "2020-12-20"
   },
   {
     "title": "Getting started with Mock Service Worker",
     "url": "https://blog.logrocket.com/getting-started-with-mock-service-worker/",
-    "description": "In this tutorial, we'll learn about Mock Service Worker and how we can use it to mock network requests. We'll build a chat application that will use the mock data provided by the Mock Service Worker API.",
+    "description": "Learn about Mock Service Worker and how we can use it to mock network requests.",
     "date": "2020-09-03"
   },
   {
     "title": "Functional user interfaces with Moon.js",
     "url": "https://blog.logrocket.com/functional-uis-moon-js/",
-    "description": "In this tutorial, we'll introduce Moon.js by understanding what it is and why it was created.",
+    "description": "Learn about Moon.js by understanding what it is and why it was created.",
     "date": "2020-07-22"
   },
   {
     "title": "JSX-driven components with Crank.js",
     "url": "https://blog.logrocket.com/jsx-driven-components-crank-js/",
-    "description": "In this tutorial, you'll learn about Crank.js by building a blogging application, which will use the JSONPlaceholder API.",
+    "description": "Learn about Crank.js by building a blogging application, which will use the JSONPlaceholder API.",
     "date": "2020-06-05"
   },
   {
     "title": "Optimizing static pages in your Next.js apps with Prisma",
     "url": "https://blog.logrocket.com/optimizing-static-pages-next-js-prisma/",
-    "description": "In this article, you'll learn about next-gen SSG support and why integrating your Next.js app with Prisma makes this feature even more powerful.",
+    "description": "Learn about next-gen SSG support and why integrating your Next.js app with Prisma makes this feature even more powerful.",
     "date": "2020-05-27"
   },
   {
     "title": "Building a table component with Tailwind CSS",
     "url": "https://blog.logrocket.com/building-a-table-component-with-tailwind-css/",
-    "description": "In this tutorial, you'll learn how easy it is to build components using Tailwind CSS. Learn how to create a table component and then use Tailwind to design a better variant of it.",
+    "description": "Learn how easy it is to build components using Tailwind CSS. Learn how to create a table component and then use Tailwind to design a better variant of it.",
     "date": "2020-04-13"
   },
   {
     "title": "Next.js, Storybook, and Lerna: Build a Monorepo Structure",
     "url": "https://buttercms.com/blog/nextjs-storybook-and-lerna-build-a-monorepo-structure",
-    "description": "In this tutorial, you'll learn about how to build a monorepo using Lerna. We'll be building a Next.js application which will import components from a separate package. We'll also be using Storybook to showcase those components.",
+    "description": "Learn about how to build a monorepo using Lerna.",
     "date": "2020-03-24"
   },
   {
     "title": "Building a Product Hunt clone app using Hasura and Next.js",
     "url": "https://blog.logrocket.com/building-a-product-hunt-clone-app-using-hasura-and-next-js",
-    "description": "This tutorial will demonstrate how to create a clone of product curation app Product Hunt using Hasura and Next.js. We'll show you how to conduct authentication and authorization using Hasura and how to leverage GraphQL to fetch and write data from a Next.js frontend application.",
+    "description": "This tutorial will demonstrate how to create a clone of product curation app Product Hunt using Hasura and Next.js.",
     "date": "2020-02-20"
   },
   {
     "title": "Understand and implement your own Redux",
     "url": "https://buttercms.com/blog/understand-and-implement-your-own-redux",
-    "description": "In this tutorial, we'll discover the basic concepts of Redux and learn about Actions, Reducers, and a Store in Redux. In addition, we'll also build our own version of Redux using vanilla JavaScript and use it in an application.",
+    "description": "Learn the basic concepts of Redux and learn about Actions, Reducers, and a Store in Redux.",
     "date": "2019-12-29"
   },
   {
@@ -110,7 +110,7 @@
   {
     "title": "How to test Next.js apps",
     "url": "https://buttercms.com/blog/how-to-test-nextjs-apps",
-    "description": "In this tutorial, we'll be using Cypress to write End to End tests for the app that was built as a part of How to Build a CMS-powered Marketing Website while Avoiding WordPress. ",
+    "description": "Learn how to use Cypress to write End to End tests.",
     "date": "2019-06-05"
   },
   {
@@ -122,13 +122,13 @@
   {
     "title": "How to write a simple React search plugin, publish it to npm, and deploy it to Github pages",
     "url": "https://medium.freecodecamp.org/how-to-write-a-simple-react-search-plugin-publish-it-to-npm-and-deploy-it-to-github-pages-d8876dff7780",
-    "description": "In this article, we're going to write a simple search plugin in React. Through this article, I hope to help fellow developers understand how to write plugins using React, publish them to npm and deploy a demo to Github pages.",
+    "description": "Learn how to write a simple search plugin in React.",
     "date": "2019-01-16"
   },
   {
     "title": "9 steps for dockerizing a Rails api-only application",
     "url": "https://medium.com/@nirmalyaghosh/9-steps-for-dockerizing-a-rails-api-only-application-d65a8836f3df",
-    "description": "Docker is a program that helps us in containerizing the environment in which development in being done. It helps us in creating a virtualized environment in which we can development applications without interfering with the host machine.",
+    "description": "Docker is a program that helps us in containerizing the environment in which development in being done.",
     "date": "2018-12-25"
   },
   {

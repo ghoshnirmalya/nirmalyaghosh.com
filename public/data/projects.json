@@ -1,71 +1,71 @@
 [
   {
     "title": "Writy",
-    "description": "Generate beautiful HTML files without writing any code",
+    "description": "Generate beautiful HTML files without writing any code.",
     "url": "https://github.com/ghoshnirmalya/writy",
     "demoUrl": "https://writy-beta.vercel.app"
   },
   {
     "title": "React Search Box",
-    "description": "An autocomplete search box built with and for React",
+    "description": "An autocomplete search box built with and for React.",
     "url": "https://github.com/ghoshnirmalya/react-search-box",
     "demoUrl": "https://ghoshnirmalya.github.io/react-search-box"
   },
   {
     "title": "Hasura Next.js Boilerplate",
-    "description": "Boilerplate for building applications using Hasura and Next.js",
+    "description": "Boilerplate for building applications using Hasura and Next.js.",
     "url": "https://github.com/ghoshnirmalya/nextjs-hasura-boilerplate"
   },
   {
     "title": "Building Monorepos Using Lerna",
-    "description": "Sample application which shows how to build monorepos using Lerna",
+    "description": "Sample application which shows how to build monorepos using Lerna.",
     "url": "https://github.com/ghoshnirmalya/building-monorepos-using-lerna"
   },
   {
     "title": "Product Hunt Clone Using Next.js and Hasura",
-    "description": "Full-stack application similar to Product Hunt built using Next.js and Hasura",
+    "description": "Full-stack application similar to Product Hunt built using Next.js and Hasura.",
     "url": "https://github.com/ghoshnirmalya/product-hunt-clone-using-nextjs-and-hasura"
   },
   {
     "title": "Strapi Next.js boilerplate",
-    "description": "Boilerplate for building applications using Strapi and Next.js",
+    "description": "Boilerplate for building applications using Strapi and Next.js.",
     "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
   },
   {
     "title": "Screenshot Mockup",
-    "description": "An app to generate mockups based on your images",
+    "description": "An app to generate mockups based on your images.",
     "url": "https://github.com/ghoshnirmalya/screenshot-mockup"
   },
   {
     "title": "Reddit Clone",
-    "description": "Sample app for the tutorial showing how you can create a Reddit clone using React and Firebase",
+    "description": "Sample app for the tutorial showing how you can create a Reddit clone using React and Firebase.",
     "url": "https://github.com/ghoshnirmalya/reddit-clone",
     "demoUrl": "https://www.sitepoint.com/reddit-clone-react-firebase"
   },
   {
     "title": "Hasura Next.js Trello Clone",
-    "description": "A clone of Trello built using Hasura and Next.js",
+    "description": "A clone of Trello built using Hasura and Next.js.",
     "url": "https://github.com/ghoshnirmalya/nextjs-hasura-trello-clone"
   },
   {
     "title": "LinkedIn Clone React Frontend",
-    "description": "Frontend for a software similar to LinkedIn",
+    "description": "Frontend for a software similar to LinkedIn.",
     "url": "https://github.com/ghoshnirmalya/linkedin-clone-react-frontend",
     "demoUrl": "https://linkedin-react.netlify.com/"
   },
   {
     "title": "LinkedIn Clone Rails Backend",
-    "description": "API to power a software similar to LinkedIn",
+    "description": "API to power a software similar to LinkedIn.",
     "url": "https://github.com/ghoshnirmalya/linkedin-clone-rails-backend"
   },
   {
     "title": "Building Redux From Scratch",
-    "description": "Building Redux from scratch",
+    "description": "Building Redux from scratch.",
     "url": "https://github.com/ghoshnirmalya/building-redux-from-scratch"
   },
   {
     "title": "Social App API In Elixir",
-    "description": "Social App API In Elixir",
+    "description": "Social App API In Elixir.",
     "url": "https://github.com/ghoshnirmalya/social-app-api-in-elixir"
   }
 ]
