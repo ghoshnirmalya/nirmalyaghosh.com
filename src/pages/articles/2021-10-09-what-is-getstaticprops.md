@@ -1,17 +1,8 @@
 ---
 title: What is getStaticProps in Next.js
-slug: what-is-getstaticprops
 description: Learn what getStaticProps does in Next.js and how you can use it to create fast sites.
 pubDate: "2021-10-08T20:26:32.886Z"
-lastmod: "2021-10-09T10:30:03.206Z"
 draft: false
-tags:
-  - next.js
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - getStaticProps
 layout: ../../layouts/ArticleLayout.astro
 ---
 
@@ -55,7 +46,7 @@ export const getStaticProps = async () => {
 
 The TypeScript version of the above will be:
 
-```tsx {13}
+```tsx
 import { GetStaticProps, NextPage } from "next";
 
 interface IProps {

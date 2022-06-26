@@ -1,15 +1,7 @@
 ---
 pubDate: "2021-09-19T05:10:37.799Z"
 title: What is TailwindCSS
-tags:
-  - tailwind
 description: Learn how to build components and design-systems using TailwindCSS.
-slug: tailwindcss
-lastmod: "2021-09-19T05:10:39.667Z"
-categories:
-  - css
-keywords:
-  - TailwindCSS
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---

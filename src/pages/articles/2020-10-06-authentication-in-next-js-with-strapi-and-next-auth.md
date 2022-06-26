@@ -1,19 +1,7 @@
 ---
 pubDate: "2021-09-19T05:08:34.201Z"
 title: Authentication in Next.js using Strapi and NextAuth
-tags:
-  - react.js
-  - next.js
-  - cms
 description: Learn how to build an authentication system in a Next.js application with Strapi and NextAuth.
-slug: authentication-js-strapi-nextauth
-lastmod: "2021-10-08T04:17:26.133Z"
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - Strapi
-  - NextAuth
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---
@@ -23,7 +11,7 @@ Next.js application using Strapi and NextAuth
 
 ## Introduction
 
-[Strapi](https://strapi.io/) is the leading open-source headless CMS. It's 100% Javascript, fully customizable and developer-first. I've been using Strapi for some of my [Open Source projects](https://github.com/ghoshnirmalya) and the developer experience is really good. It has helped me build prototypes and products much faster.
+[Strapi](https://strapi.io/) is the leading open-source headless CMS. It’s 100% Javascript, fully customizable and developer-first. I've been using Strapi for some of my [Open Source projects](https://github.com/ghoshnirmalya) and the developer experience is really good. It has helped me build prototypes and products much faster.
 
 I've created a [boilerplate](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate) so that you can get up and running with [Strapi](http://strapi.io/), [Next.js](https://nextjs.org/) and [Apollo](https://www.apollographql.com/) quickly. Check out the project on [Github](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate).
 
@@ -108,7 +96,7 @@ We can go inside the directory of the backend package on another terminal window
 cd backend && docker-compose up
 ```
 
-> We need to start Docker and then run the above command which will change the current directory to the backend package's directory and then start the backend package. If everything goes well, it'll be up and running on http://localhost:1337/graphql.
+> We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on http://localhost:1337/graphql.
 
 ## Configuring the Google provider in the Strapi admin panel
 

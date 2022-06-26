@@ -1,15 +1,7 @@
 ---
 pubDate: "2021-09-19T05:10:02.469Z"
 title: Use Mirage.js to jumpstart your frontend development
-tags:
-  - api
-categories:
-  - javascript
-keywords:
-  - Mirage.js
 description: Learn how to build front-end applications without any back-end APIs using Mirage.
-slug: mirage-js-jumpstart-frontend-development
-lastmod: "2021-10-08T04:19:46.322Z"
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---

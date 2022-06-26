@@ -1,15 +1,7 @@
 ---
 pubDate: "2021-09-19T05:10:13.593Z"
 title: Understand Component-Oriented Styling using Styletron
-tags:
-  - react.js
-categories:
-  - css
-keywords:
-  - Styletron
 description: Learn how to style your React components using Styletron.
-slug: understand-component-oriented-styling-styletron
-lastmod: "2021-10-08T04:21:00.810Z"
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---

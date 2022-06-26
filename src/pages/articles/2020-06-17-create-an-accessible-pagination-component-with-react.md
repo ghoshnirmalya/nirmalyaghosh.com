@@ -1,18 +1,9 @@
 ---
 pubDate: 2021-09-19T05:09:33.160Z
 title: Create a Pagination Component with React and Theme UI
-tags:
-  - react.js
-categories:
-  - javascript
-keywords:
-  - React.js
-  - ThemeUI
 description:
   This tutorial will explain all the things that is necessary to know how to
   build a custom pagination component with a good User Experience using React.
-lastmod: 2022-05-01T11:20:27.333Z
-slug: create-pagination-component-react-theme-ui
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---
@@ -175,7 +166,7 @@ It'll also generate the following **package.json** file:
 
 Doing the above steps would help us in installing [npm
 packages](https://www.npmjs.com/). We'll be installing React and other packages
-from npm. npm stands for Node Package Manager and is the world's largest software registry.
+from npm. npm stands for Node Package Manager and is the world’s largest software registry.
 
 Although it's very easy to [add React to a
 website](https://reactjs.org/docs/add-react-to-a-website.html), managing and upgrading

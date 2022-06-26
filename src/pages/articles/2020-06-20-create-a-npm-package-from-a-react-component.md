@@ -1,17 +1,9 @@
 ---
 pubDate: 2021-09-19T05:09:11.274Z
 title: Create a Package using React and Publish it to NPM
-tags:
-  - react.js
-categories:
-  - javascript
-keywords:
-  - React.js
 description:
   This tutorial will explain how you can create a package from a React component
   and publish it to NPM.
-slug: create-package-react-publish-npm
-lastmod: 2022-05-01T11:11:52.587Z
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---

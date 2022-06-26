@@ -1,17 +1,8 @@
 ---
 title: How can you use the Next.js Image component
-slug: how-can-you-use-the-nextjs-image-component
 description: Learn how you can use the Next.js Image component to improve the performance of your application.
 pubDate: "2021-10-07T20:06:58.657Z"
-lastmod: "2021-10-08T20:20:47.524Z"
 draft: false
-tags:
-  - next.js
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - Image component
 layout: ../../layouts/ArticleLayout.astro
 ---
 
@@ -37,7 +28,7 @@ import Image from "next/image";
 
 Now, for local images, you can simply import and use the image:
 
-```js {6-8}
+```js
 import Image from "next/image";
 import backgroundImage from from "../images/background.png"
 
@@ -53,7 +44,7 @@ const SomeComponent = () => {
 
 You can also add blur placeholder to the image using the `placeholder` prop:
 
-```js {3}
+```js
 <Image
   src={backgroundImage}
   placeholder="blur"
@@ -76,7 +67,7 @@ You can also pass a [blurDataURL](https://nextjs.org/docs/api-reference/next/ima
 
 For remote images, you will also have to update your `next.config.js` file to include the domain from which you are using the image:
 
-```js {2-4}
+```js
 module.exports = {
   images: {
     domains: ["website.com"],
@@ -90,7 +81,7 @@ One more important thing to note here is that it might not be always possible to
 
 Using the `fill` value for the `layout` prop ensures that the wrapping element supplies the styles for the image:
 
-```js {6-13}
+```js
 import Image from "next/image";
 import backgroundImage from from "../images/background.png"
 

@@ -1,24 +1,9 @@
 ---
 pubDate: "2021-09-19T05:10:43.594Z"
 title: Build full-stack applications using Strapi and Next.js
-categories:
-  - boilerplates
-tags:
-  - next.js
-  - strapi
-  - boilerplate
 description: Boilerplate for building applications using Strapi and Next.js.
-slug: nextjs-strapi-boilerplate
 coverImage: /images/content/nextjs-strapi-boilerplate/strapi-nextjs-boilerplate.png
-githubLink: "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate"
-lastmod: "2021-10-14T17:32:35.647Z"
 draft: false
-keywords:
-  - boilerplate
-  - next.js
-  - strapi
-setup: |
-  import Jumbotron from '../../components/Jumbotron.astro'
 layout: ../../layouts/ArticleLayout.astro
 ---
 
@@ -56,11 +41,11 @@ It supports GraphQL Query and Mutation out of the box.
 
 [**Frontend**](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/tree/master/frontend): Next.js application
 
-This application is the primary user-facing application. Once it's up and running (see Development section), it's available on http://localhost:3000/.
+This application is the primary user-facing application. Once it’s up and running (see Development section), it’s available on http://localhost:3000/.
 
 [**Backend**](https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/tree/master/backend): Dockerized Strapi application
 
-[Strapi](https://strapi.io/) is the leading open-source headless CMS. It's 100% Javascript, fully customizable and developer-first.
+[Strapi](https://strapi.io/) is the leading open-source headless CMS. It’s 100% Javascript, fully customizable and developer-first.
 
 ## Installation
 
@@ -118,7 +103,7 @@ This application is the primary user-facing application. Once it's up and runnin
    docker-compose up
    ```
 
-   We need to start Docker and then run the above command which will change the current directory to the backend package's directory and then start the backend package. If everything goes well, it'll be up and running on [http://localhost:1337/v1/graphql](http://localhost:1337/v1/graphql).
+   We need to start Docker and then run the above command which will change the current directory to the backend package’s directory and then start the backend package. If everything goes well, it’ll be up and running on [http://localhost:1337/v1/graphql](http://localhost:1337/v1/graphql).
 
 8. **Configure Strapi**
 

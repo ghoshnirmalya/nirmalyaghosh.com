@@ -1,19 +1,9 @@
 ---
 title: What is Incremental Static Re-generation in Next.js
-slug: what-is-incremental-static-re-generation-in-nextjs
 description: Learn what Incremental Static Re-generation is and how to use it to build fast Next.js applications.
 pubDate: "2021-10-10T03:40:10.331Z"
-lastmod: "2021-10-14T17:02:23.154Z"
 draft: false
-tags:
-  - next.js
-categories:
-  - javascript
-keywords:
-  - Next.js
 layout: ../../layouts/ArticleLayout.astro
-setup: |
-  import Callout from '../../components/Callout.astro'
 ---
 
 If you update the content of a page, you will again have to build and deploy your Next.js application for the new content to appear. This is be cause, once the HTML of the page is generated during the build time, the HTML content is not updated until the next build.
@@ -28,7 +18,7 @@ In a Next.js application, you can use ISR to re-generate the HTML content on a p
 
 Let's consider the following example of a Next.js page with the `getStaticProps` function:
 
-```jsx {25} showLineNumbers
+```jsx
 // Just a simple JSON file which has the `sections` key.
 import sections from "../data.json";
 

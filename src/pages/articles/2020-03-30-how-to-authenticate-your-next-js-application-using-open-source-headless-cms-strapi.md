@@ -1,16 +1,7 @@
 ---
 pubDate: 2021-09-19T05:09:52.408Z
 title: Authenticate your Next.js application using Strapi
-tags:
-  - react.js
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - Strapi
 description: Learn how to authenticate a front-end application using Next.js and Strapi.
-lastmod: 2022-05-01T11:01:04.708Z
-slug: authenticate-js-application-strapi
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---

@@ -1,19 +1,7 @@
 ---
 pubDate: 2021-09-19T05:08:50.161Z
 title: How to use Next.js with Strapi and Apollo
-tags:
-  - react.js
-  - next.js
-  - cms
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - Strapi
-  - Apollo
 description: Learn how to use Next.js with Strapi and Apollo.
-slug: js-strapi-apollo
-lastmod: 2022-05-01T11:32:48.609Z
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---
@@ -52,7 +40,7 @@ I've been using [Strapi](http://strapi.io/) for quite some time now and it's ver
 [Apollo](https://www.apollographql.com/) is the industry-standard GraphQL implementation, providing the data graph layer that connects modern apps to the cloud. It offers a lot of features like:
 
 1. **Declarative data fetching**: Write a query and receive data without manually tracking loading, error, or network states.
-2. **Reactive data cache**: Cut down on network traffic and keep data consistent throughout your application with Apollo Client's normalized reactive data cache.
+2. **Reactive data cache**: Cut down on network traffic and keep data consistent throughout your application with Apollo Client’s normalized reactive data cache.
 3. **Excellent dev experience**: Enjoy cross stack type safety, runtime cache inspectors, and full featured editor integrations to keep you writing applications faster.
 4. **Compatible and adoptable**: Use any build setup and any GraphQL API. Drop Apollo Client into any app seamlessly without re-architecting your entire data strategy.
 5. **Designed for modern UIs**: Take advantage of modern UI architectures in the web, iOS, and Android ecosystems.

@@ -1,20 +1,9 @@
 ---
 pubDate: 2021-09-19T05:10:23.013Z
 title: Integrate TailwindCSS with Next.js
-tags:
-  - react.js
-  - next.js
-  - tailwind
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - TailwindCSS
 description:
   Learn how to use TailwindCSS with Next.js to build maintainable front-end
   applications.
-slug: integrate-tailwindcss-js
-lastmod: 2022-05-01T11:31:07.296Z
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---
@@ -81,7 +70,7 @@ Next, we need to use the @tailwind directive to inject Tailwind's base, componen
 
 Next, we need to add the `build:style` script to our `package.json` file:
 
-```json {5}
+```json
 "scripts": {
   "dev": "next dev",
   "build": "next build",
@@ -96,7 +85,7 @@ Now, the `build:style` command will generate a new `public/assets/styles/tailwin
 
 Next, we need to add the generated file to our `pages/index.js` file:
 
-```js {4}
+```js
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
@@ -123,7 +112,7 @@ module.exports = withCSS({});
 
 That's all we need to do to make TailwindCSS work with Next.js. To verify whether TailwindCSS is working or not, we can add a TailwindCSS class. We can add the `bg-blue-900 py-8` class to our `pages/index.js` file:
 
-```js {8}
+```js
 const Home = () => (
   <div>
     <Head>

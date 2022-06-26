@@ -1,17 +1,7 @@
 ---
-pubDate: "2021-09-19T05:10:43.594Z"
+date: "2021-09-19T05:10:43.594Z"
 title: Automate the Backend stuffs with Strapi and Docker
-tags:
-  - strapi
-  - cms
 description: Learn how to get started with Strapi which is an Open Source Headless CMS using Docker.
-slug: automate-backend-stuffs-strapi-docker
-lastmod: "2021-10-08T04:16:21.269Z"
-categories:
-  - docker
-keywords:
-  - Docker
-  - Strapi
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---

@@ -2,17 +2,7 @@
 pubDate: "2021-09-19T05:08:50.161Z"
 title: Getting started with Next.js and GraphCMS
 tags:
-  - react.js
-  - next.js
-  - cms
-categories:
-  - javascript
-keywords:
-  - Next.js
-  - GraphCMS
 description: Learn how to get started with GraphCMS with Next.js.
-slug: started-js-graphcms
-lastmod: "2021-10-08T04:20:35.669Z"
 draft: false
 layout: ../../layouts/ArticleLayout.astro
 ---
