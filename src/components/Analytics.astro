@@ -4,13 +4,15 @@
   }
 </script>
 
-<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-S3GNZXNDBY"></script>
+<script type="text/partytown" src=`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA}`></script>
 
 <script type='text/partytown'>
-  window?.dataLayer = window.dataLayer || [];
+  if (import.meta.env.PROD) {
+    function gtag() {
+      window?.dataLayer?.push(arguments);
+    }
 
-  function gtag() { dataLayer.push(arguments); }
-
-  gtag('js', new Date());
-  gtag('config', 'G-S3GNZXNDBY');
+    gtag('js', new Date());
+    gtag('config', import.meta.env.PUBLIC_GA);
+  }
 </script>

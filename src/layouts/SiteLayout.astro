@@ -3,7 +3,7 @@ import "@styles/globals.css";
 
 import Navbar from "@components/Navbar.astro";
 import siteConfig from "@utils/site";
-import Analytics from "@components/analytics.astro";
+import Analytics from "@components/Analytics.astro";
 ---
 
 <html lang="en">
@@ -42,6 +42,7 @@ import Analytics from "@components/analytics.astro";
   </main>
 </body>
 
-<Analytics client:idle />
+{import.meta.env.PROD &&
+<Analytics client:idle />}
 
 </html>
