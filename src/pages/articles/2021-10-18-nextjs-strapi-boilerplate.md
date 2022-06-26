@@ -5,6 +5,8 @@ description: Boilerplate for building applications using Strapi and Next.js.
 coverImage: /images/content/nextjs-strapi-boilerplate/strapi-nextjs-boilerplate.png
 draft: false
 layout: ../../layouts/ArticleLayout.astro
+setup: |
+  import Jumbotron from '../../components/Jumbotron.astro'
 ---
 
 <Jumbotron

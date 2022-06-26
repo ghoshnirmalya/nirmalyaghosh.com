@@ -4,6 +4,8 @@ title: Build full-stack applications using Hasura and Next.js
 description: Boilerplate for building applications using Hasura and Next.js.
 draft: false
 layout: ../../layouts/ArticleLayout.astro
+setup: |
+  import Jumbotron from '../../components/Jumbotron.astro'
 ---
 
 <Jumbotron

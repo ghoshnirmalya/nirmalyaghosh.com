@@ -1,5 +1,5 @@
 ---
-date: "2021-09-19T05:10:43.594Z"
+pubDate: "2021-09-19T05:10:43.594Z"
 title: Automate the Backend stuffs with Strapi and Docker
 description: Learn how to get started with Strapi which is an Open Source Headless CMS using Docker.
 draft: false

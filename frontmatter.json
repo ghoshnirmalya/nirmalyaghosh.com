@@ -1,0 +1,12 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.autoUpdateDate": false,
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Articles",
+      "path": "[[workspace]]/src/pages/articles"
+    }
+  ],
+  "frontMatter.preview.host": "http://localhost:3000/articles",
+  "frontMatter.framework.startCommand": "pnpm run dev"
+}

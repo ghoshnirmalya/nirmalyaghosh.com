@@ -4,6 +4,8 @@ description: Use this auto-complete search box to add search functionality to yo
 pubDate: "2021-10-17T19:01:25.588Z"
 draft: false
 layout: ../../layouts/ArticleLayout.astro
+setup: |
+  import Jumbotron from '../../components/Jumbotron.astro'
 ---
 
 <Jumbotron
