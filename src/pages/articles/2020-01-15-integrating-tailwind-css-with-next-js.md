@@ -20,7 +20,7 @@ Deploying Next.js applications to production using [Zeit](https://zeit.co/) is a
 
 ## What is TailwindCSS?
 
-I've already covered about [TailwindCSS](https://tailwindcss.com/) in one of my [previous posts](/articles/tailwindcss). In short, TailwindCSS is a utility-first CSS framework which aims to provide us with a set of utlity classes (like flex, block, inline-block, etc.). In addition to that, it also provides us utility classes to create CSS grids, responsive designs as well as style hover, focus and active pseudo-classes.
+I've already covered about [TailwindCSS](https://tailwindcss.com/) in one of my [previous posts](/articles/2020-01-08-what-is-tailwind-css-and-what-problems-does-this-new-css-framework-solve-for-us). In short, TailwindCSS is a utility-first CSS framework which aims to provide us with a set of utlity classes (like flex, block, inline-block, etc.). In addition to that, it also provides us utility classes to create CSS grids, responsive designs as well as style hover, focus and active pseudo-classes.
 
 ## Getting started
 
@@ -46,7 +46,7 @@ Now,if we visit [http://localhost:3000](http://localhost:3000/), we'll see the f
 
 ## Installing TailwindCSS
 
-I've written about how to integrate TailwindCSS with React in one of my [previous posts](/articles/tailwindcss). The process of integrating TailwindCSS with Next.js will be a similar one.
+I've written about how to integrate TailwindCSS with React in one of my [previous posts](/articles/2020-01-08-what-is-tailwind-css-and-what-problems-does-this-new-css-framework-solve-for-us). The process of integrating TailwindCSS with Next.js will be a similar one.
 
 First, we need to install TailwindCSS:
 
@@ -131,7 +131,7 @@ Now, if we restart our server and visit [http://localhost:3000](http://localhost
 
 ![Fig 5: Integrating TailwindCSS with Next.js](/images/content/integrating-tailwindcss-with-next-js/5.png)
 
-If you want to know more about configuring Tailwind, you can read it [here](/articles/tailwindcss).
+If you want to know more about configuring Tailwind, you can read it [here](/articles/2020-01-08-what-is-tailwind-css-and-what-problems-does-this-new-css-framework-solve-for-us).
 
 ## Conclusion
 
