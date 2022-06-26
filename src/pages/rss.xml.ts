@@ -8,5 +8,5 @@ export const get = () =>
     site: siteConfig.details.url,
     items: import.meta.glob("../pages/articles/*.md"),
     customData: `<language>en-us</language>`,
-    stylesheet: "/public/styles/rss.xsl",
+    stylesheet: "/styles/rss.xsl",
   });
