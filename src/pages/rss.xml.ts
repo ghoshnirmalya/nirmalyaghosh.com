@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import siteConfig from "../utils/site";
+import siteConfig from "@utils/site";
 
 export const get = () =>
   rss({
