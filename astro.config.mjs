@@ -1,13 +1,13 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: 'https://nirmalyaghosh.com',
-  integrations: [tailwind(),  partytown(), sitemap()],
-  markdown:{
-    rehypePlugins:[
+  site: "https://nirmalyaghosh.com",
+  integrations: [tailwind(), partytown(), sitemap()],
+  markdown: {
+    rehypePlugins: [
       [
         "rehype-img-size",
         {
@@ -15,9 +15,9 @@ export default defineConfig({
         },
       ],
     ],
-    remarkPlugins: [
-      'remark-gfm',
-      "remark-external-links",
-    ]
-  }
+    remarkPlugins: ["remark-gfm", "remark-external-links"],
+    shikiConfig: {
+      theme: "github-light",
+    },
+  },
 });
