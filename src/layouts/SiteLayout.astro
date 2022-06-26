@@ -3,6 +3,7 @@ import "@styles/globals.css";
 
 import Navbar from "@components/Navbar.astro";
 import siteConfig from "@utils/site";
+import Analytics from "@components/analytics.astro";
 ---
 
 <html lang="en">
@@ -40,5 +41,7 @@ import siteConfig from "@utils/site";
     <slot />
   </main>
 </body>
+
+<Analytics client:idle />
 
 </html>

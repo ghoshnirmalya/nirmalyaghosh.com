@@ -8,9 +8,8 @@
     "prepare": "husky install",
     "release": "release-it",
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "start": "astro preview"
   },
   "devDependencies": {
     "@astrojs/partytown": "^0.1.5",
