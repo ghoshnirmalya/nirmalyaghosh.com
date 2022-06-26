@@ -23,7 +23,6 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "rehype-code-titles": "^1.0.3",
     "rehype-img-size": "^1.0.1",
     "rehype-slug": "^5.0.1",
     "release-it": "^15.1.0",

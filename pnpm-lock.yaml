@@ -11,7 +11,6 @@ specifiers:
   husky: ^8.0.1
   lint-staged: ^13.0.3
   prettier: ^2.7.1
-  rehype-code-titles: ^1.0.3
   rehype-img-size: ^1.0.1
   rehype-slug: ^5.0.1
   release-it: ^15.1.0
@@ -30,7 +29,6 @@ devDependencies:
   husky: 8.0.1
   lint-staged: 13.0.3
   prettier: 2.7.1
-  rehype-code-titles: 1.1.0
   rehype-img-size: 1.0.1
   rehype-slug: 5.0.1
   release-it: 15.1.0
@@ -5118,13 +5116,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       rc: 1.2.8
-    dev: true
-
-  /rehype-code-titles/1.1.0:
-    resolution: {integrity: sha512-muit6KQWNafowXA0HTUeQtUT+UuP0ra34xty1tuF8WsdjcSm++HswgRAFGXH8CAGe8axuGUxg13+I4yFHFnmfQ==}
-    engines: {node: '>=16'}
-    dependencies:
-      unist-util-visit: 4.1.0
     dev: true
 
   /rehype-img-size/1.0.1:
