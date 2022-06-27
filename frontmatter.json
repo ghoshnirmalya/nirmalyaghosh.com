@@ -8,5 +8,6 @@
     }
   ],
   "frontMatter.preview.host": "http://localhost:3000/articles",
-  "frontMatter.framework.startCommand": "pnpm run dev"
+  "frontMatter.framework.startCommand": "pnpm run dev",
+  "frontMatter.content.fmHighlight": false
 }
