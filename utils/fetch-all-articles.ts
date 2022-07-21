@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
-import { IArticle } from "../types/article";
-import notionClient from "./notion-client";
+import { ArticleStatus, IArticle } from "types/article";
+import notionClient from "utils/notion-client";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
 dayjs.extend(localizedFormat);
@@ -26,7 +26,11 @@ const fetchAllArticles = async () => {
     };
   }) as IArticle[];
 
-  return data;
+  const articles = data.filter(
+    (article: IArticle) => article.status === ArticleStatus.Published
+  );
+
+  return articles;
 };
 
 export default fetchAllArticles;

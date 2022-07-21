@@ -5,23 +5,29 @@ import { ArticleStatus, IArticle } from "types/article";
 import fetchAllArticles from "utils/fetch-all-articles";
 import fetchSingleArticle from "utils/fetch-single-article";
 
-interface IomeProps {
+interface IProps {
   article: IArticle;
   markdown: MDXRemoteSerializeResult;
 }
 
-const Home: NextPage<IomeProps> = ({ article, markdown }) => {
+const Home: NextPage<IProps> = ({ article, markdown }) => {
   return (
     <article className="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
-      <h1>{article.title}</h1>
-      <MDXRemote {...markdown} />
+      <h1>{article?.title}</h1>
+      {!!markdown && <MDXRemote {...markdown} />}
     </article>
   );
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const article = await fetchSingleArticle(ctx.params?.id as string);
-  const markdown = await serialize(article.content);
+  const markdown = await serialize(article?.content);
+
+  if (!article || article?.status !== ArticleStatus.Published) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

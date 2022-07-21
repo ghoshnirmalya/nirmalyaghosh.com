@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
-import { IArticle } from "../types/article";
-import notionClient from "./notion-client";
-import notionToMDClient from "./notion-to-md-client";
+import { IArticle } from "types/article";
+import notionClient from "utils/notion-client";
+import notionToMDClient from "utils/notion-to-md-client";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
 dayjs.extend(localizedFormat);
