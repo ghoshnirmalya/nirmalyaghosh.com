@@ -23,6 +23,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "rehype-img-size": "^1.0.1",
+    "rehype-plugin-image-native-lazy-loading": "^1.2.0",
     "rehype-slug": "^5.0.1",
     "release-it": "^15.1.3",
     "remark-external-links": "^9.0.1",
