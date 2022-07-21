@@ -17,7 +17,7 @@ export default defineConfig({
     ],
     remarkPlugins: ["remark-gfm", "remark-external-links"],
     shikiConfig: {
-      theme: "github-light",
+      theme: "github-dark-dimmed",
     },
   },
 });

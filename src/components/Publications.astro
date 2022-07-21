@@ -5,10 +5,10 @@ const { publications } = Astro.props
 ---
 
 <div class="space-y-4">
-  <h2>Publications</h2>
+  <h2 class="font-semibold text-lg">Publications</h2>
   <div class="space-y-8">
     {publications.map((publication:Publication) => (
-    <a href={publication.url} class="block hover:text-blue-500" target="_blank">
+    <a href={publication.url} class="block text-blue-700 hover:text-black" target="_blank">
       <h1 class="text-lg font-semibold">{publication.title}</h1>
       <p class="text-gray-500">{publication.description}</p>
     </a>
