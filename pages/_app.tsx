@@ -1,7 +1,10 @@
+import Navbar from "components/Navbar";
 import siteConfig from "configs/site";
 import { NextSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
+
+import "public/styles/tailwind.css";
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -37,7 +40,10 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
         }}
       />
 
-      <Component {...pageProps} />
+      <Navbar />
+      <main className="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+        <Component {...pageProps} />
+      </main>
     </>
   );
 };

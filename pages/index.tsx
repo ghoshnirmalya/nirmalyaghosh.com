@@ -1,4 +1,6 @@
 import Articles from "components/Articles";
+import Projects from "components/Projects";
+import Publications from "components/Publications";
 import { GetStaticProps, NextPage } from "next";
 import projects from "public/data/projects.json";
 import publications from "public/data/publications.json";
@@ -13,10 +15,12 @@ interface IProps {
   publications: IPublication[];
 }
 
-const IndexPage: NextPage<IProps> = ({ articles }) => {
+const IndexPage: NextPage<IProps> = ({ articles, projects, publications }) => {
   return (
-    <div>
-      <Articles articles={articles} />;
+    <div className="space-y-16">
+      <Projects projects={projects} />
+      <Articles articles={articles} />
+      <Publications publications={publications} />
     </div>
   );
 };

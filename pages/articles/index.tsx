@@ -1,3 +1,4 @@
+import Articles from "components/Articles";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { ArticleStatus, IArticle } from "types/article";
@@ -13,7 +14,7 @@ const ArticlesIndexPage: NextPage<IProps> = ({ articles }) => {
       <Head>
         <title>Articles</title>
       </Head>
-      <div>{JSON.stringify(articles, null, 2)}</div>
+      <Articles articles={articles} />
     </>
   );
 };

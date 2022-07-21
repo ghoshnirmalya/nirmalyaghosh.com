@@ -1,4 +1,3 @@
-import { MDXImage } from "components/Markdown";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -13,20 +12,10 @@ interface IomeProps {
 
 const Home: NextPage<IomeProps> = ({ article, markdown }) => {
   return (
-    <div>
-      {article?.title}
-      Published on {article?.publishedDate}
-      {!!markdown && (
-        <MDXRemote
-          {...markdown}
-          components={{
-            img: ({ src, alt }) => {
-              return <MDXImage src={src} alt={alt} />;
-            },
-          }}
-        />
-      )}
-    </div>
+    <article className="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+      <h1>{article.title}</h1>
+      <MDXRemote {...markdown} />
+    </article>
   );
 };
 
@@ -58,6 +47,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths,
     fallback: true,
   };
+};
+
+export const config = {
+  unstable_runtimeJS: false,
 };
 
 export default Home;
