@@ -5,11 +5,16 @@ specifiers:
   '@astrojs/rss': ^0.2.2
   '@astrojs/sitemap': ^0.2.6
   '@astrojs/tailwind': ^0.2.4
+  '@notionhq/client': ^1.0.4
   '@release-it/conventional-changelog': ^5.0.0
   '@tailwindcss/typography': ^0.5.4
+  '@types/lodash': ^4.14.182
   astro: ^1.0.0-beta.73
+  dayjs: ^1.11.4
   husky: ^8.0.1
   lint-staged: ^13.0.3
+  lodash: ^4.17.21
+  notion-to-md: ^2.5.2
   prettier: ^2.7.1
   rehype-img-size: ^1.0.1
   rehype-plugin-image-native-lazy-loading: ^1.2.0
@@ -24,11 +29,16 @@ devDependencies:
   '@astrojs/rss': 0.2.2
   '@astrojs/sitemap': 0.2.6
   '@astrojs/tailwind': 0.2.4
+  '@notionhq/client': 1.0.4
   '@release-it/conventional-changelog': 5.0.0_release-it@15.1.3
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
+  '@types/lodash': 4.14.182
   astro: 1.0.0-beta.73
+  dayjs: 1.11.4
   husky: 8.0.1
   lint-staged: 13.0.3
+  lodash: 4.17.21
+  notion-to-md: 2.5.2
   prettier: 2.7.1
   rehype-img-size: 1.0.1
   rehype-plugin-image-native-lazy-loading: 1.2.0
@@ -487,6 +497,16 @@ packages:
       fastq: 1.13.0
     dev: true
 
+  /@notionhq/client/1.0.4:
+    resolution: {integrity: sha512-m7zZ5l3RUktayf1lRBV1XMb8HSKsmWTv/LZPqP7UGC1NMzOlc+bbTOPNQ4CP/c1P4cP61VWLb/zBq7a3c0nMaw==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@types/node-fetch': 2.6.2
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /@octokit/auth-token/3.0.0:
     resolution: {integrity: sha512-MDNFUBcJIptB9At7HiV7VCvU3NcL4GnfCQaP8C5lrxWrRPMJBnemYtehaKSOlaM7AYxeRyj9etenu8LVpSpVaQ==}
     engines: {node: '>= 14'}
@@ -743,6 +763,10 @@ packages:
       '@types/node': 18.0.0
     dev: true
 
+  /@types/lodash/4.14.182:
+    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
+    dev: true
+
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
@@ -765,6 +789,13 @@ packages:
     resolution: {integrity: sha512-3TGCfOcy8R8mMQ4CNSNOe3PG66HttvjcLzCoOpvXvDtfWOTi+uT/rxeOKm/qEwbM4SNe1O/PjdiBK2YcTjU4OQ==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: true
+
+  /@types/node-fetch/2.6.2:
+    resolution: {integrity: sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==}
+    dependencies:
+      '@types/node': 18.0.0
+      form-data: 3.0.1
     dev: true
 
   /@types/node/17.0.45:
@@ -1719,6 +1750,10 @@ packages:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
 
+  /dayjs/1.11.4:
+    resolution: {integrity: sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==}
+    dev: true
+
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -2405,6 +2440,15 @@ packages:
 
   /form-data-encoder/1.7.1:
     resolution: {integrity: sha512-EFRDrsMm/kyqbTQocNvRXMLjc7Es2Vk+IQFx/YW7hkUH1eBl4J1fqiP34l74Yt0pFLCNpc06fkbVk00008mzjg==}
+    dev: true
+
+  /form-data/3.0.1:
+    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
     dev: true
 
   /form-data/4.0.0:
@@ -3646,6 +3690,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /markdown-table/2.0.0:
+    resolution: {integrity: sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==}
+    dependencies:
+      repeat-string: 1.6.1
+    dev: true
+
   /markdown-table/3.0.2:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
     dev: true
@@ -4309,6 +4359,13 @@ packages:
   /normalize-url/6.1.0:
     resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
     engines: {node: '>=10'}
+    dev: true
+
+  /notion-to-md/2.5.2:
+    resolution: {integrity: sha512-SqooTi0667D1d1EvNdtHdaV/A3kKdW0Fq/rswWHtmA8gSuTdE/qJQF8HDwy2Zs3p62Wxb46cYXQJlyEcdv8QjA==}
+    engines: {node: '>=12'}
+    dependencies:
+      markdown-table: 2.0.0
     dev: true
 
   /npm-run-path/4.0.1:
@@ -5181,6 +5238,11 @@ packages:
       retext: 8.1.0
       retext-smartypants: 5.1.0
       unist-util-visit: 4.1.0
+    dev: true
+
+  /repeat-string/1.6.1:
+    resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
+    engines: {node: '>=0.10'}
     dev: true
 
   /require-directory/2.1.1:

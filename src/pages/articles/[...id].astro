@@ -1,0 +1,78 @@
+---
+import "@styles/globals.css";
+
+import Navbar from "@components/Navbar.astro";
+import siteConfig from "@utils/site";
+import fetchSingleArticle from "@utils/fetch-single-article";
+import fetchAllArticles from "@utils/fetch-all-articles";
+import filter from "lodash/filter";
+import Article, { ArticleStatus } from "@custom-types/article";
+import { Markdown } from 'astro/components';
+
+export async function getStaticPaths() {
+	const articles = await fetchAllArticles();
+
+	const publishedArticles = filter(
+		articles,
+		(article: Article) => article.status === ArticleStatus.Published
+	);
+
+	const publishedArticlesIDs = publishedArticles.map(
+		(article) => article.id
+	);
+
+	const paths = publishedArticlesIDs.map((id) => ({
+		params: {
+			id,
+		},
+	}));
+
+	return paths
+}
+
+const { id } = Astro.params;
+
+const article = await fetchSingleArticle(id as string);
+---
+
+<html lang="en">
+
+<head>
+	<title>{article.title}</title>
+
+	<link rel="icon" type="image/x-icon" href={siteConfig.assets.favicon}>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content={article.title}>
+	<!-- <meta name="description" content={article.description}> -->
+	<meta name="keywords" content={siteConfig.keywords}>
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="author" content={siteConfig.details.title}>
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content={siteConfig.details.url}>
+	<meta property="og:title" content={article.title}>
+	<!-- <meta property="og:description" content={article.description}> -->
+	<meta property="og:image" content={siteConfig.assets.avatar}>
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content={siteConfig.details.url}>
+	<meta property="twitter:title" content={siteConfig.details.title}>
+	<!-- <meta property="twitter:description" content={article.description}> -->
+	<meta property="twitter:image" content={siteConfig.assets.avatar}>
+</head>
+
+<body class=" space-y-8">
+	<Navbar />
+	<article
+		class="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+		<h1>{article.title}</h1>
+		<!-- <h2>{article.description}</h2> -->
+
+		<Markdown content={article.content} />
+	</article>
+</body>
+
+</html>

@@ -1,16 +1,23 @@
 ---
-import SiteLayout from "@layouts/SiteLayout.astro";
-import projects from "@data/projects.json"
-import publications from "@data/publications.json"
+import Articles from "@components/Articles.astro";
 import Projects from "@components/Projects.astro";
 import Publications from "@components/Publications.astro";
-import Articles from "@components/Articles.astro";
+import Article, { ArticleStatus } from "@custom-types/article";
+import projects from "@data/projects.json";
+import publications from "@data/publications.json";
+import SiteLayout from "@layouts/SiteLayout.astro";
+import fetchAllArticles from "@utils/fetch-all-articles";
+import filter from "lodash/filter";
 
-const articles = await Astro.glob("./articles/*.md")
+const articles = await fetchAllArticles();
+const publishedArticles = filter(
+	articles,
+	(article: Article) => article.status === ArticleStatus.Published
+);
 
 const lastFiveProjects = projects.slice(0, 5)
 const lastFivePublications = publications.slice(0, 5)
-const lastFiveArticles = articles.slice(0, 5)
+const lastFiveArticles = publishedArticles.slice(0, 5)
 ---
 
 <SiteLayout>

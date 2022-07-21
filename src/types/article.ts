@@ -1,9 +1,14 @@
 export default interface Article {
-  frontmatter: {
-    title: string;
-    description: string;
-    pubDate: string;
-    draft: boolean;
-  };
+  id: string;
+  title: string;
+  publishedDate?: string;
+  status?: ArticleStatus;
+  cover?: string;
+  content: string;
   url: string;
+}
+
+export enum ArticleStatus {
+  Published = "Published",
+  Unpublished = "Unpublished",
 }
