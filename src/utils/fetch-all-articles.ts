@@ -1,9 +1,5 @@
 import Article from "@custom-types/article";
 import notionClient from "@utils/notion-client";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-
-dayjs.extend(localizedFormat);
 
 const pageID = "ea696c6d1c9f43f2bacb283f2da000dc";
 
@@ -18,9 +14,7 @@ const fetchAllArticles = async () => {
     return {
       id: result.id,
       title: result.properties["Name"].title?.[0].plain_text,
-      publishedDate: dayjs(
-        result.properties["Published date"].date?.start
-      ).format("LL"),
+      publishedDate: result.properties["Published date"].date?.start,
       status: result.properties["Status"].select?.name,
       cover: result?.cover?.external.url || "",
     };

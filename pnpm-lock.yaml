@@ -10,7 +10,6 @@ specifiers:
   '@tailwindcss/typography': ^0.5.4
   '@types/lodash': ^4.14.182
   astro: ^1.0.0-beta.73
-  dayjs: ^1.11.4
   husky: ^8.0.1
   lint-staged: ^13.0.3
   lodash: ^4.17.21
@@ -34,7 +33,6 @@ devDependencies:
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
   '@types/lodash': 4.14.182
   astro: 1.0.0-beta.73
-  dayjs: 1.11.4
   husky: 8.0.1
   lint-staged: 13.0.3
   lodash: 4.17.21
@@ -1748,10 +1746,6 @@ packages:
 
   /dateformat/3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
-    dev: true
-
-  /dayjs/1.11.4:
-    resolution: {integrity: sha512-Zj/lPM5hOvQ1Bf7uAvewDaUcsJoI6JmNqmHhHl3nyumwe0XHwt8sWdOVAPACJzCebL8gQCi+K49w7iKWnGwX9g==}
     dev: true
 
   /debug/4.3.4:

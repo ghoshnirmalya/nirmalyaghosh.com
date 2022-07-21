@@ -1,10 +1,6 @@
 import Article from "@custom-types/article";
 import notionClient from "@utils/notion-client";
 import notionToMDClient from "@utils/notion-to-md-client";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-
-dayjs.extend(localizedFormat);
 
 const fetchSingleArticle = async (articleID?: string) => {
   if (!articleID) {
@@ -20,9 +16,7 @@ const fetchSingleArticle = async (articleID?: string) => {
   const data = {
     id: result.id,
     title: result.properties["Name"].title[0].plain_text,
-    publishedDate: dayjs(
-      result.properties["Published date"].date?.start
-    ).format("LL"),
+    publishedDate: result.properties["Published date"].date?.start,
     status: result.properties["Status"].select.name,
     cover: result?.cover?.external.url || "",
     content: content,
