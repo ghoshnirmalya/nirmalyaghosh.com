@@ -8,11 +8,9 @@ specifiers:
   '@notionhq/client': ^1.0.4
   '@release-it/conventional-changelog': ^5.0.0
   '@tailwindcss/typography': ^0.5.4
-  '@types/lodash': ^4.14.182
   astro: ^1.0.0-beta.73
   husky: ^8.0.1
   lint-staged: ^13.0.3
-  lodash: ^4.17.21
   notion-to-md: ^2.5.2
   prettier: ^2.7.1
   rehype-img-size: ^1.0.1
@@ -31,11 +29,9 @@ devDependencies:
   '@notionhq/client': 1.0.4
   '@release-it/conventional-changelog': 5.0.0_release-it@15.1.3
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
-  '@types/lodash': 4.14.182
   astro: 1.0.0-beta.73
   husky: 8.0.1
   lint-staged: 13.0.3
-  lodash: 4.17.21
   notion-to-md: 2.5.2
   prettier: 2.7.1
   rehype-img-size: 1.0.1
@@ -759,10 +755,6 @@ packages:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
       '@types/node': 18.0.0
-    dev: true
-
-  /@types/lodash/4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: true
 
   /@types/mdast/3.0.10:

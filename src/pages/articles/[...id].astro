@@ -1,19 +1,16 @@
 ---
-import "@styles/globals.css";
-
 import Navbar from "@components/Navbar.astro";
-import siteConfig from "@utils/site";
-import fetchSingleArticle from "@utils/fetch-single-article";
-import fetchAllArticles from "@utils/fetch-all-articles";
-import filter from "lodash/filter";
 import Article, { ArticleStatus } from "@custom-types/article";
+import "@styles/globals.css";
+import fetchAllArticles from "@utils/fetch-all-articles";
+import fetchSingleArticle from "@utils/fetch-single-article";
+import siteConfig from "@utils/site";
 import { Markdown } from 'astro/components';
 
 export async function getStaticPaths() {
 	const articles = await fetchAllArticles();
 
-	const publishedArticles = filter(
-		articles,
+	const publishedArticles = articles.filter(
 		(article: Article) => article.status === ArticleStatus.Published
 	);
 

@@ -1,12 +1,17 @@
 ---
 import Articles from "@components/Articles.astro";
+import Article, { ArticleStatus } from "@custom-types/article";
 import SiteLayout from "@layouts/SiteLayout.astro";
+import fetchAllArticles from "@utils/fetch-all-articles";
 
-const articles = await Astro.glob("./articles/*.md")
+const articles = await fetchAllArticles();
+const publishedArticles = articles.filter(
+	(article: Article) => article.status === ArticleStatus.Published
+);
 ---
 
 <SiteLayout>
 	<div class="space-y-16">
-		<Articles articles={articles} />
+		<Articles articles={publishedArticles} />
 	</div>
 </SiteLayout>

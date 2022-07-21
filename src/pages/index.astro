@@ -7,11 +7,9 @@ import projects from "@data/projects.json";
 import publications from "@data/publications.json";
 import SiteLayout from "@layouts/SiteLayout.astro";
 import fetchAllArticles from "@utils/fetch-all-articles";
-import filter from "lodash/filter";
 
 const articles = await fetchAllArticles();
-const publishedArticles = filter(
-	articles,
+const publishedArticles = articles.filter(
 	(article: Article) => article.status === ArticleStatus.Published
 );
 
