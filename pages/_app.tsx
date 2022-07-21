@@ -1,34 +1,16 @@
-import { Box } from "@chakra-ui/react";
-import siteConfig from "config/site";
-import { initGA } from "lib/google-analytics";
-import isProduction from "lib/is-production";
+import siteConfig from "configs/site";
 import { NextSeo } from "next-seo";
 import { AppProps } from "next/app";
-import dynamic from "next/dynamic";
 import Head from "next/head";
-import { useEffect } from "react";
-import "focus-visible/dist/focus-visible";
-
-const Layout = dynamic(
-  () => import(/* webpackChunkName: "Layouts" */ "components/layouts")
-);
-const Navbar = dynamic(
-  () => import(/* webpackChunkName: "Navbar" */ "components/navbar")
-);
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    if (isProduction) {
-      initGA(process.env.NEXT_PUBLIC_GA);
-    }
-  }, []);
-
   return (
-    <Layout>
+    <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
       </Head>
+
       <NextSeo
         title={`${siteConfig.details.title} - ${siteConfig.details.tagLine}`}
         description={siteConfig.details.description}
@@ -54,9 +36,9 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
           locale: "en_IE",
         }}
       />
-      <Navbar />
+
       <Component {...pageProps} />
-    </Layout>
+    </>
   );
 };
 

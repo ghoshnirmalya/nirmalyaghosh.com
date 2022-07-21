@@ -1,29 +1,41 @@
-import Page from "components/pages/index/base/index";
-import { Article } from "contentlayer/generated";
-import { getAllArticles } from "lib/get-articles-data";
-import pick from "lodash/pick";
+import Articles from "components/Articles";
 import { GetStaticProps, NextPage } from "next";
 import projects from "public/data/projects.json";
-import Project from "types/project";
+import publications from "public/data/publications.json";
+import { ArticleStatus, IArticle } from "types/article";
+import IProject from "types/project";
+import IPublication from "types/publication";
+import fetchAllArticles from "utils/fetch-all-articles";
 
 interface IProps {
-  articles: Article[];
-  projects: Project[];
+  articles: IArticle[];
+  projects: IProject[];
+  publications: IPublication[];
 }
 
-const IndexPage: NextPage<IProps> = ({ articles, projects }) => {
-  return <Page articles={articles} projects={projects} />;
+const IndexPage: NextPage<IProps> = ({ articles }) => {
+  return (
+    <div>
+      <Articles articles={articles} />;
+    </div>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = getAllArticles().map((articles) =>
-    pick(articles, ["date", "description", "title", "slug"])
+  const articles = await fetchAllArticles();
+  const publishedArticles = articles.filter(
+    (article: IArticle) => article.status === ArticleStatus.Published
   );
+
+  const lastFiveProjects = projects.slice(0, 5);
+  const lastFivePublications = publications.slice(0, 5);
+  const lastFiveArticles = publishedArticles.slice(0, 5);
 
   return {
     props: {
-      articles: articles.slice(0, 5),
-      projects: projects.slice(0, 5),
+      articles: lastFiveArticles,
+      projects: lastFiveProjects,
+      publications: lastFivePublications,
     },
   };
 };

@@ -1,13 +1,10 @@
-import { Article } from "contentlayer/generated";
-import Page from "components/pages/articles/base";
-import { getAllArticles } from "lib/get-articles-data";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import publications from "public/data/publications.json";
-import pick from "lodash/pick";
+import { ArticleStatus, IArticle } from "types/article";
+import fetchAllArticles from "utils/fetch-all-articles";
 
 interface IProps {
-  articles: Article[];
+  articles: IArticle[];
 }
 
 const ArticlesIndexPage: NextPage<IProps> = ({ articles }) => {
@@ -16,19 +13,20 @@ const ArticlesIndexPage: NextPage<IProps> = ({ articles }) => {
       <Head>
         <title>Articles</title>
       </Head>
-      <Page articles={articles} publications={publications} />
+      <div>{JSON.stringify(articles, null, 2)}</div>
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = getAllArticles().map((articles) =>
-    pick(articles, ["date", "description", "title", "slug"])
+  const articles = await fetchAllArticles();
+  const publishedArticles = articles.filter(
+    (article: IArticle) => article.status === ArticleStatus.Published
   );
 
   return {
     props: {
-      articles,
+      articles: publishedArticles,
     },
   };
 };

@@ -17,17 +17,14 @@
     "paths": {
       "*": ["/*"],
       "components/*": ["components/*"],
-      "lib/*": ["lib/*"],
+      "utils/*": ["utils/*"],
       "pages/*": ["pages/*"],
-      "posts/*": ["posts/*"],
-      "config/*": ["config/*"],
+      "configs/*": ["configs/*"],
       "types/*": ["types/*"],
-      "public/*": ["public/*"],
-      "styles/*": ["styles/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "public/*": ["public/*"]
     },
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

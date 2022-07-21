@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Getting started with Next.js</title>
+
+	<link rel="icon" type="image/x-icon" href="https://nirmalyaghosh.com/images/common/favicon.svg">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="Getting started with Next.js">
+	<meta name="description" content="Learn why you should Next.js for your front-end applications.">
+	<meta name="keywords" content="engineering, software, code">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="author" content="Nirmalya Ghosh">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.nirmalyaghosh.com">
+	<meta property="og:title" content="Getting started with Next.js">
+	<meta property="og:description" content="Learn why you should Next.js for your front-end applications.">
+	<meta property="og:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.nirmalyaghosh.com">
+	<meta property="twitter:title" content="Nirmalya Ghosh">
+	<meta property="twitter:description" content="Learn why you should Next.js for your front-end applications.">
+	<meta property="twitter:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+<link rel="stylesheet" href="/assets/523a4829.4a78f79c.css" /><script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.4.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener("pt0",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.4.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement("script")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+<body class=" space-y-8">
+	<nav class="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+  <div class="space-x-4">
+    <a href="/" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">/</a>
+    <a href="/projects" class="text-sm text-black">/projects</a>
+    <a href="/articles" class="text-sm text-black">/articles</a>
+  </div>
+  <div>
+    <a href="https://twitter.com/NirmalyaGhosh_" target="_blank" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">Follow</a>
+  </div>
+</nav>
+	<article class="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+		<h1>Getting started with Next.js</h1>
+		<h2>Learn why you should Next.js for your front-end applications.</h2>
+
+		<p>When you want to build an application using <a href="https://reactjs.org/" target="_blank" rel="nofollow noopener noreferrer">React.js</a>, there are too many options - <a href="https://create-react-app.dev/" target="_blank" rel="nofollow noopener noreferrer">Create React App</a>, <a href="https://redwoodjs.com/" target="_blank" rel="nofollow noopener noreferrer">Redwood</a>, <a href="https://vitejs.dev/" target="_blank" rel="nofollow noopener noreferrer">Vite</a> and many more.</p><h2 id="introduction">Introduction</h2><p>Each of them have thier unique use-cases. For example, Redwood is a full-stack framework built on top of React.js and <a href="https://www.prisma.io/" target="_blank" rel="nofollow noopener noreferrer">Prisma</a>. So, if you are building a full-stack application, you can use that.</p><p>If you want to build only a client-side application, you can consider using Create React App. However, I feel that if you want to have the best developer experience while building front-end applications using React.js, you should consider using <a href="https://nextjs.org/" target="_blank" rel="nofollow noopener noreferrer">Next.js</a>.</p><h2 id="why-nextjs">Why Next.js</h2><p>Next.js is a framework built on top of the React.js library and provides the best development experience with a host of features like <a href="https://nextjs.org/docs/basic-features/data-fetching" target="_blank" rel="nofollow noopener noreferrer">SSR and SSG</a>, <a href="https://nextjs.org/docs/basic-features/image-optimization" target="_blank" rel="nofollow noopener noreferrer">Image optimization</a>, <a href="https://nextjs.org/docs/basic-features/typescript" target="_blank" rel="nofollow noopener noreferrer">support for TypeScript</a>, <a href="https://nextjs.org/docs/advanced-features/i18n-routing" target="_blank" rel="nofollow noopener noreferrer">i18n</a> and many more.</p><p>Next.js has been around for a long time but gained popularity in the recent years. I have been using Next.js for more than two years. Almost any front-end application that I build now, I use Next.js and I think that you should too. Next.js comes with the best development experience that I have come across.</p><p>Let's discuss some of these features in more details and how they make Next.js stand apart from the rest of the options.</p><h3 id="ssr-and-ssg">SSR and SSG</h3><p>Next.js comes with two forms of <a href="https://nextjs.org/docs/basic-features/pages#pre-rendering" target="_blank" rel="nofollow noopener noreferrer">pre-rendering</a>:</p><ul>
+<li><strong>Server Side Rendering (SSR):</strong> In this case, the HTML for a page is generated everytime the client requests for it.</li>
+<li><strong>Static Site Rendering (SSG):</strong> In this acse, the HTML for a page is generated at build time and will be reused when a client requests for it. No regeneration of HTML happens in this case. SSG was introduced in <a href="https://nextjs.org/blog/next-9-3" target="_blank" rel="nofollow noopener noreferrer">version 9.3</a>.</li>
+</ul><h3 id="image-optimization">Image Optimization</h3><p>Next.js ships with an <a href="https://nextjs.org/docs/api-reference/next/image" target="_blank" rel="nofollow noopener noreferrer">Image component</a> which does a bunch of performance optimizations for your application. Your Next.js application will have good <a href="https://web.dev/vitals/" target="_blank" rel="nofollow noopener noreferrer">Web Vitals</a> if it uses the image component. The image component is built for the following things:</p><ul>
+<li>Improve the performance of your application.</li>
+<li>Reduce <a href="https://web.dev/cls/" target="_blank" rel="nofollow noopener noreferrer">Cumulative Layout Shift</a>.</li>
+<li>Lazy load images with optional blurred placeholder.</li>
+<li>Support for resizing of images.</li>
+</ul><h3 id="incremental-static-regeneration-isr">Incremental Static Regeneration (ISR)</h3><p>With <a href="https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration" target="_blank" rel="nofollow noopener noreferrer">Incremental Static Regeneration</a>, you can pre-render your pages using SSG but update those pages after a fixed amount of time. ISR gives the option to re-generate pages which have been generated during the build time.</p><h3 id="file-system-based-routing">File-system based Routing</h3><p>In a Next.js application, any file inside the pages directory is available as a route. This enhances the development experience of any application. In a typical React.js application, you will have to configure and define your routes in a separate file. However, in Next.js, creating a new route is as easy as adding a new file inside the <strong>pages</strong> directory.</p><h3 id="api-routes">API Routes</h3><p>Using <a href="https://nextjs.org/docs/api-routes/introduction" target="_blank" rel="nofollow noopener noreferrer">API routes</a>, it's possible to connect to a database and create up a back-end application which can generate the data necessary for your front-end. When a new file is added in the folder <strong>pages/api</strong>, it is mapped to <strong>/api/*</strong> and is treated as an API endpoint and not as a page.</p><h2 id="learning-nextjs">Learning Next.js</h2><p>The best way to learn Next.js is via <a href="https://nextjs.org/learn" target="_blank" rel="nofollow noopener noreferrer">Next.js Learn</a>. If you go through the course once, you will be able to understand what Next.js offers. You can also check out the <a href="https://nextjs.org/docs" target="_blank" rel="nofollow noopener noreferrer">documentation</a> for further details.</p><h2 id="conclusion">Conclusion</h2><p>The fastest way of creating a new Next.js application is downloading a suitable example application from <a href="https://github.com/vercel/next.js/tree/canary/examples" target="_blank" rel="nofollow noopener noreferrer">the examples directory</a>. You can also bootstrap a new Next.js application using their <a href="https://nextjs.org/docs/getting-started" target="_blank" rel="nofollow noopener noreferrer">CLI</a>.</p><p>I feel that Next.js is improving with every release and they are now investing in <a href="https://nextjs.org/blog/next-11-1#adopting-rust-based-swc" target="_blank" rel="nofollow noopener noreferrer">Rust-based tooling</a>. I'm pretty excited about what innovations Next.js will bring in the JavaScript eco-system.</p>
+
+	</article>
+</body></html>

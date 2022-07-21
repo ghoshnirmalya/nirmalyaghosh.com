@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>What is getStaticProps in Next.js</title>
+
+	<link rel="icon" type="image/x-icon" href="https://nirmalyaghosh.com/images/common/favicon.svg">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="What is getStaticProps in Next.js">
+	<meta name="description" content="Learn what getStaticProps does in Next.js and how you can use it to create fast sites.">
+	<meta name="keywords" content="engineering, software, code">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="author" content="Nirmalya Ghosh">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.nirmalyaghosh.com">
+	<meta property="og:title" content="What is getStaticProps in Next.js">
+	<meta property="og:description" content="Learn what getStaticProps does in Next.js and how you can use it to create fast sites.">
+	<meta property="og:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.nirmalyaghosh.com">
+	<meta property="twitter:title" content="Nirmalya Ghosh">
+	<meta property="twitter:description" content="Learn what getStaticProps does in Next.js and how you can use it to create fast sites.">
+	<meta property="twitter:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+<link rel="stylesheet" href="/assets/523a4829.4a78f79c.css" /><script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.4.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener("pt0",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.4.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement("script")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+<body class=" space-y-8">
+	<nav class="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+  <div class="space-x-4">
+    <a href="/" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">/</a>
+    <a href="/projects" class="text-sm text-black">/projects</a>
+    <a href="/articles" class="text-sm text-black">/articles</a>
+  </div>
+  <div>
+    <a href="https://twitter.com/NirmalyaGhosh_" target="_blank" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">Follow</a>
+  </div>
+</nav>
+	<article class="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+		<h1>What is getStaticProps in Next.js</h1>
+		<h2>Learn what getStaticProps does in Next.js and how you can use it to create fast sites.</h2>
+
+		<p><a href="https://nextjs.org/" target="_blank" rel="nofollow noopener noreferrer">Next.js</a> offers three ways of fetching data from an API:</p><ul>
+<li><strong><a href="https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering" target="_blank" rel="nofollow noopener noreferrer">Server Side Rendering (SSR)</a>:</strong> Useful when you want to fetch data from the server everytime a page loads. The server sends the generated HTML to the client.</li>
+<li><strong><a href="https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation" target="_blank" rel="nofollow noopener noreferrer">Static Site Generation (SSG)</a>:</strong> Useful when you want to generate the HTML when the site builds. This can increase the build time but ensures that no data fetching happens when a page loads.</li>
+<li><strong><a href="https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration" target="_blank" rel="nofollow noopener noreferrer">Incremental Static Re-generation (ISR)</a>:</strong> Similar to SSG but you can re-generate the HTML of pages after an interval without needing to rebuild the entire site.</li>
+</ul><p>In this article, you will know more about <a href="https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation" target="_blank" rel="nofollow noopener noreferrer"><code>getStaticProps</code></a> which is way in which we can generate static pages for our site (using both SSG and ISR).</p><h2 id="introduction">Introduction</h2><p>If your page exports an <code>async</code> function named <code>getStaticProps</code>, Next.js will pre-render this page at build time using the props that are returned by the <code>getStaticProps</code> function.</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">Page</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> ({ </span><span style="color: #F69D50">articles</span><span style="color: #ADBAC7"> }) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #768390">// ArticlesList is a React component which renders the list of articles.</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">ArticlesList</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">articles</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{articles} /&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #F69D50"> </span><span style="color: #F47067">default</span><span style="color: #F69D50"> </span><span style="color: #ADBAC7">Page;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">getStaticProps</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">async</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    props: {</span></span>
+<span class="line"><span style="color: #ADBAC7">      articles: [</span></span>
+<span class="line"><span style="color: #ADBAC7">        {</span></span>
+<span class="line"><span style="color: #ADBAC7">          title: </span><span style="color: #96D0FF">&quot;Article one&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">          body: </span><span style="color: #96D0FF">&quot;This is the body of article one&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">        },</span></span>
+<span class="line"><span style="color: #ADBAC7">        {</span></span>
+<span class="line"><span style="color: #ADBAC7">          title: </span><span style="color: #96D0FF">&quot;Article two&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">          body: </span><span style="color: #96D0FF">&quot;This is the body of article two&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">        },</span></span>
+<span class="line"><span style="color: #ADBAC7">      ],</span></span>
+<span class="line"><span style="color: #ADBAC7">    },</span></span>
+<span class="line"><span style="color: #ADBAC7">  };</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span></code></pre><p>The TypeScript version of the above will be:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> { GetStaticProps, NextPage } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;next&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">interface</span><span style="color: #ADBAC7"> </span><span style="color: #F69D50">IProps</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F69D50">articles</span><span style="color: #F47067">:</span><span style="color: #ADBAC7"> { </span><span style="color: #F69D50">title</span><span style="color: #F47067">:</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">string</span><span style="color: #ADBAC7">; </span><span style="color: #F69D50">body</span><span style="color: #F47067">:</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">string</span><span style="color: #ADBAC7"> }[];</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">Page</span><span style="color: #F47067">:</span><span style="color: #ADBAC7"> </span><span style="color: #F69D50">NextPage</span><span style="color: #ADBAC7">&lt;</span><span style="color: #F69D50">IProps</span><span style="color: #ADBAC7">&gt; </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> ({ </span><span style="color: #F69D50">articles</span><span style="color: #ADBAC7"> }) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">ArticlesList</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">articles</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{articles} /&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #F69D50"> </span><span style="color: #F47067">default</span><span style="color: #F69D50"> </span><span style="color: #ADBAC7">Page;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">getStaticProps</span><span style="color: #F47067">:</span><span style="color: #ADBAC7"> </span><span style="color: #F69D50">GetStaticProps</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">async</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    props: {</span></span>
+<span class="line"><span style="color: #ADBAC7">      articles: [</span></span>
+<span class="line"><span style="color: #ADBAC7">        {</span></span>
+<span class="line"><span style="color: #ADBAC7">          title: </span><span style="color: #96D0FF">&quot;Article one&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">          body: </span><span style="color: #96D0FF">&quot;This is the body of article one&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">        },</span></span>
+<span class="line"><span style="color: #ADBAC7">        {</span></span>
+<span class="line"><span style="color: #ADBAC7">          title: </span><span style="color: #96D0FF">&quot;Article two&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">          body: </span><span style="color: #96D0FF">&quot;This is the body of article two&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">        },</span></span>
+<span class="line"><span style="color: #ADBAC7">      ],</span></span>
+<span class="line"><span style="color: #ADBAC7">    },</span></span>
+<span class="line"><span style="color: #ADBAC7">  };</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span></code></pre><h2 id="the-context-parameter">The context parameter</h2><p>You can also access the <code>context</code> parameter:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">export</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">getStaticProps</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">async</span><span style="color: #ADBAC7"> (</span><span style="color: #F69D50">context</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    props: {</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #768390">// Your props.</span></span>
+<span class="line"><span style="color: #ADBAC7">    },</span></span>
+<span class="line"><span style="color: #ADBAC7">  };</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span></code></pre><h3 id="contents-of-the-context-parameter">Contents of the context parameter</h3><p>The <code>context</code> parameters consists of the following keys:</p><table>
+<thead>
+<tr>
+<th>Name of key</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>params</code></td>
+<td>Parameters for the route</td>
+<td><code>{ id: "article-slug"}</code></td>
+</tr>
+<tr>
+<td><code>preview</code></td>
+<td>Depends on the <a href="https://nextjs.org/docs/advanced-features/preview-mode" target="_blank" rel="nofollow noopener noreferrer">preview mode</a></td>
+<td><code>true</code> or <code>undefined</code></td>
+</tr>
+<tr>
+<td><code>previewData</code></td>
+<td>Data set by <a href="https://nextjs.org/docs/advanced-features/preview-mode#step-1-create-and-access-a-preview-api-route" target="_blank" rel="nofollow noopener noreferrer"><code>setPreviewData</code></a></td>
+<td><code>en-US</code></td>
+</tr>
+<tr>
+<td><code>locale</code></td>
+<td>Current locale of your <a href="https://nextjs.org/docs/advanced-features/i18n-routing" target="_blank" rel="nofollow noopener noreferrer">internationalized Next.js application</a></td>
+<td><code>en-US</code></td>
+</tr>
+<tr>
+<td><code>locales</code></td>
+<td>All the locales of your <a href="https://nextjs.org/docs/advanced-features/i18n-routing" target="_blank" rel="nofollow noopener noreferrer">internationalized Next.js application</a></td>
+<td><code>en-US</code> or <code>fr</code></td>
+</tr>
+<tr>
+<td><code>defaultLocale</code></td>
+<td>Default locale of your <a href="https://nextjs.org/docs/advanced-features/i18n-routing" target="_blank" rel="nofollow noopener noreferrer">internationalized Next.js application</a></td>
+<td><code>en-US</code></td>
+</tr>
+</tbody>
+</table><h2 id="return-value-of-getstaticprops">Return value of getStaticProps</h2><p>The <code>getStaticProps</code> function should return an object with:</p><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Optional</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>props</code></td>
+<td>Whatever is passed will be props to the page</td>
+<td>✅</td>
+<td>Serializable object</td>
+</tr>
+<tr>
+<td><code>revalidate</code></td>
+<td>Time after which re-generation of page occurs</td>
+<td>✅</td>
+<td>Time (seconds)</td>
+</tr>
+<tr>
+<td><code>notFound</code></td>
+<td>Allows the page to return a 404 status</td>
+<td>✅</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>redirect</code></td>
+<td>Redirect to external or internal resources</td>
+<td>✅</td>
+<td><code>{ destination: string, permanent: boolean }</code></td>
+</tr>
+</tbody>
+</table><h2 id="use-cases-for-getstaticprops">Use-cases for getStaticProps</h2><ul>
+<li>Data for the page is available at build time via local files or from a headless CMS.</li>
+<li>Data is generic and doesn't depend on th user.</li>
+<li>Widely used for blogs and websites where the content doesn't change often.</li>
+</ul>
+
+	</article>
+</body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Understand Component-Oriented Styling using Styletron</title>
+
+	<link rel="icon" type="image/x-icon" href="https://nirmalyaghosh.com/images/common/favicon.svg">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="Understand Component-Oriented Styling using Styletron">
+	<meta name="description" content="Learn how to style your React components using Styletron.">
+	<meta name="keywords" content="engineering, software, code">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="author" content="Nirmalya Ghosh">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.nirmalyaghosh.com">
+	<meta property="og:title" content="Understand Component-Oriented Styling using Styletron">
+	<meta property="og:description" content="Learn how to style your React components using Styletron.">
+	<meta property="og:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.nirmalyaghosh.com">
+	<meta property="twitter:title" content="Nirmalya Ghosh">
+	<meta property="twitter:description" content="Learn how to style your React components using Styletron.">
+	<meta property="twitter:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+<link rel="stylesheet" href="/assets/523a4829.4a78f79c.css" /><script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.4.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener("pt0",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.4.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement("script")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+<body class=" space-y-8">
+	<nav class="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+  <div class="space-x-4">
+    <a href="/" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">/</a>
+    <a href="/projects" class="text-sm text-black">/projects</a>
+    <a href="/articles" class="text-sm text-black">/articles</a>
+  </div>
+  <div>
+    <a href="https://twitter.com/NirmalyaGhosh_" target="_blank" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">Follow</a>
+  </div>
+</nav>
+	<article class="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+		<h1>Understand Component-Oriented Styling using Styletron</h1>
+		<h2>Learn how to style your React components using Styletron.</h2>
+
+		<p>In this tutorial, we'll learn about the problems with styling <a href="https://reactjs.org/" target="_blank" rel="nofollow noopener noreferrer">React</a> applications and how we can solve them using <a href="https://www.styletron.org/" target="_blank" rel="nofollow noopener noreferrer">Styletron</a>.</p><h2 id="introduction">Introduction</h2><p>I've been using <a href="https://reactjs.org/" target="_blank" rel="nofollow noopener noreferrer">React</a> for quite some time now. In that time, the one thing which I've felt is most difficult while creating React applications is <strong>how to style them in a maintainable manner</strong>. There are various ways in which we can styles applications:</p><ul>
+<li><a href="https://styled-components.com/" target="_blank" rel="nofollow noopener noreferrer">Styled components</a></li>
+<li><a href="https://emotion.sh/docs/introduction" target="_blank" rel="nofollow noopener noreferrer">Emotion</a></li>
+<li><a href="https://github.com/css-modules/css-modules" target="_blank" rel="nofollow noopener noreferrer">CSS Modules</a></li>
+<li><a href="https://github.com/threepointone/glamor" target="_blank" rel="nofollow noopener noreferrer">Glamour</a></li>
+<li><a href="http://fela.js.org/" target="_blank" rel="nofollow noopener noreferrer">Fela</a></li>
+<li><a href="https://github.com/styletron/styletron" target="_blank" rel="nofollow noopener noreferrer">Styletron</a></li>
+</ul><p>All of these will generate classes based on how we write the styles for each class.</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">Button</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #ADBAC7">styled</span><span style="color: #96D0FF">.</span><span style="color: #DCBDFB">button</span><span style="color: #96D0FF">`</span></span>
+<span class="line"><span style="color: #96D0FF">  background: ${</span><span style="color: #96D0FF">(</span><span style="color: #6CB6FF">props</span><span style="color: #96D0FF">) </span><span style="color: #F47067">=&gt;</span><span style="color: #96D0FF"> (</span><span style="color: #ADBAC7">props</span><span style="color: #96D0FF">.</span><span style="color: #ADBAC7">primary</span><span style="color: #96D0FF"> </span><span style="color: #F47067">?</span><span style="color: #96D0FF"> </span><span style="color: #96D0FF">&quot;palevioletred&quot;</span><span style="color: #96D0FF"> </span><span style="color: #F47067">:</span><span style="color: #96D0FF"> </span><span style="color: #96D0FF">&quot;white&quot;</span><span style="color: #96D0FF">)</span><span style="color: #96D0FF">};</span></span>
+<span class="line"><span style="color: #96D0FF">  color: ${</span><span style="color: #96D0FF">(</span><span style="color: #6CB6FF">props</span><span style="color: #96D0FF">) </span><span style="color: #F47067">=&gt;</span><span style="color: #96D0FF"> (</span><span style="color: #ADBAC7">props</span><span style="color: #96D0FF">.</span><span style="color: #ADBAC7">primary</span><span style="color: #96D0FF"> </span><span style="color: #F47067">?</span><span style="color: #96D0FF"> </span><span style="color: #96D0FF">&quot;white&quot;</span><span style="color: #96D0FF"> </span><span style="color: #F47067">:</span><span style="color: #96D0FF"> </span><span style="color: #96D0FF">&quot;palevioletred&quot;</span><span style="color: #96D0FF">)</span><span style="color: #96D0FF">};</span></span>
+<span class="line"><span style="color: #96D0FF">  font-size: 1em;</span></span>
+<span class="line"><span style="color: #96D0FF">  margin: 1em;</span></span>
+<span class="line"><span style="color: #96D0FF">  padding: 0.25em 1em;</span></span>
+<span class="line"><span style="color: #96D0FF">  border: 2px solid palevioletred;</span></span>
+<span class="line"><span style="color: #96D0FF">  border-radius: 3px;</span></span>
+<span class="line"><span style="color: #96D0FF">`</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #DCBDFB">render</span><span style="color: #ADBAC7">(</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7">&gt;Normal&lt;/</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">primary</span><span style="color: #ADBAC7">&gt;Primary&lt;/</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;/</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">);</span></span></code></pre><p>The above code will generate the following HTML:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">&lt;</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">class</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;sc-fzXfMz bXoZBN&quot;</span><span style="color: #ADBAC7">&gt;Normal&lt;/</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">class</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;sc-fzXfMz fLZIOt&quot;</span><span style="color: #ADBAC7">&gt;Primary&lt;/</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">&lt;/</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span></code></pre><p>It will also generate the following buttons:</p><p><img src="/images/content/understanding-component-oriented-styling-using-styletron/1.png" alt="Buttons using Styled Components" width="726" height="304" loading="lazy"></p><p>The generate CSS will be:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #6CB6FF">.bXoZBN</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">color</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">palevioletred</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">font-size</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">1</span><span style="color: #F47067">em</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">background</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">white</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">margin</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">1</span><span style="color: #F47067">em</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">padding</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">0.25</span><span style="color: #F47067">em</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #F47067">em</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-width</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">2</span><span style="color: #F47067">px</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-style</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">solid</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-color</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">palevioletred</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-image</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">initial</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-radius</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">3</span><span style="color: #F47067">px</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6CB6FF">.fLZIOt</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">color</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">white</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">font-size</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">1</span><span style="color: #F47067">em</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">background</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">palevioletred</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">margin</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">1</span><span style="color: #F47067">em</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">padding</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">0.25</span><span style="color: #F47067">em</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #F47067">em</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-width</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">2</span><span style="color: #F47067">px</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-style</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">solid</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-color</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">palevioletred</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-image</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">initial</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">border-radius</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">3</span><span style="color: #F47067">px</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span></code></pre><p>As we can see here that based on the styles, each component will generate a different class. This is very good when we want to create a component library or we want to create separate styles for everything in our application. The downside is that, as our application grows, the amount of styles also grows. In most cases, these styles are injected inline and are downloaded before the HTML is rendered on the page. Having a large amount of inline-styles will slow down the initial loading of your page. However, once the page is cached, the subsequent page loads will be faster.</p><p>What if the <a href="https://cssinjs.org/" target="_blank" rel="nofollow noopener noreferrer">CSS-in-JS</a> adapter we're using could generate classes for each style definition and then re-use them across all our components. For example, if our adapter could generate a class like:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #6CB6FF">.text-white</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">color</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">white</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span></code></pre><p>Then, this could be re-used in our component to generate HTML like:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">&lt;</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">class</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;text-white bg-orange&quot;</span><span style="color: #ADBAC7">&gt;Normal&lt;/</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">class</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;text-white bg-red&quot;</span><span style="color: #ADBAC7">&gt;Primary&lt;/</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">&lt;/</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span></code></pre><p>In this case, the amount of styles will be much lesser as the adapter isn't creating new styles for all the components. Instead, it's creating classes for each style definition and re-using them for all our components.</p><p>This is exactly what <a href="https://www.styletron.org/" target="_blank" rel="nofollow noopener noreferrer">Styletron</a> does.</p><p>We can just code like:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> { useStyletron } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;styletron-react&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #F69D50"> </span><span style="color: #F47067">default</span><span style="color: #F69D50"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #F69D50"> </span><span style="color: #ADBAC7">{</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> [</span><span style="color: #6CB6FF">css</span><span style="color: #ADBAC7">] </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">useStyletron</span><span style="color: #ADBAC7">();</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">a</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #6CB6FF">href</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;/getting-started&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #6CB6FF">className</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{</span><span style="color: #DCBDFB">css</span><span style="color: #ADBAC7">({</span></span>
+<span class="line"><span style="color: #ADBAC7">        fontSize: </span><span style="color: #96D0FF">&quot;20px&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">        color: </span><span style="color: #96D0FF">&quot;red&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">      })}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      Start!</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">a</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span></code></pre><p>The above code will generate the following HTML:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">&lt;</span><span style="color: #8DDB8C">html</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">head</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">style</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #6CB6FF">.foo</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #6CB6FF">font-size</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">20</span><span style="color: #F47067">px</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">      }</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #6CB6FF">.bar</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #6CB6FF">color</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">red</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">      }</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">style</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;/</span><span style="color: #8DDB8C">head</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">body</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">a</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">href</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;/getting-started&quot;</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">class</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;foo bar&quot;</span><span style="color: #ADBAC7">&gt;Start!&lt;/</span><span style="color: #8DDB8C">a</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;/</span><span style="color: #8DDB8C">body</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">&lt;/</span><span style="color: #8DDB8C">html</span><span style="color: #ADBAC7">&gt;</span></span></code></pre><p>It will also generate the following link:</p><p><img src="/images/content/understanding-component-oriented-styling-using-styletron/2.png" alt="Link using Styletron" width="254" height="166" loading="lazy"></p><h2 id="features-of-styletron">Features of Styletron</h2><p>Styletron has a <a href="https://www.styletron.org/concepts" target="_blank" rel="nofollow noopener noreferrer">host of features</a> like:</p><ol>
+<li><a href="https://www.styletron.org/concepts/#media-queries-and-pseudo-classes" target="_blank" rel="nofollow noopener noreferrer">Defining our own Media Queries And Pseudo Classes</a></li>
+<li><a href="https://www.styletron.org/concepts/#selectors" target="_blank" rel="nofollow noopener noreferrer">Using CSS Selectors</a></li>
+<li><a href="https://www.styletron.org/concepts/#fonts" target="_blank" rel="nofollow noopener noreferrer">Using our own Fonts</a></li>
+<li><a href="https://www.styletron.org/concepts/#keyframes" target="_blank" rel="nofollow noopener noreferrer">Using Keyframes</a></li>
+<li><a href="https://www.styletron.org/concepts/#vendor-prefixes" target="_blank" rel="nofollow noopener noreferrer">Vendor Prefixes are added by Styletron</a></li>
+<li><a href="https://www.styletron.org/react/#themes" target="_blank" rel="nofollow noopener noreferrer">Theming</a></li>
+<li><a href="https://www.styletron.org/react/#testing" target="_blank" rel="nofollow noopener noreferrer">Testing</a></li>
+<li><a href="https://www.styletron.org/react/#debugging" target="_blank" rel="nofollow noopener noreferrer">Debugging</a></li>
+</ol><h2 id="usages">Usages</h2><p>We can use Styletron <a href="https://www.styletron.org/react/" target="_blank" rel="nofollow noopener noreferrer">with React</a>. It already has examples for using with the following:</p><ol>
+<li><a href="https://www.styletron.org/#with-react" target="_blank" rel="nofollow noopener noreferrer">React</a></li>
+<li><a href="https://www.styletron.org/#with-gatsby" target="_blank" rel="nofollow noopener noreferrer">Gatsby</a></li>
+<li><a href="https://www.styletron.org/#with-nextjs" target="_blank" rel="nofollow noopener noreferrer">Nextjs</a></li>
+</ol><h2 id="conclusion">Conclusion</h2><p>In this article, we've learnt about Styletron and how it can help us reduce the amount of styles that we ship with our application. I hope that this article helps you in your future projects.</p>
+
+	</article>
+</body></html>

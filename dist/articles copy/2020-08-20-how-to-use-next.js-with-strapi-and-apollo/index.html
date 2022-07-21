@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>How to use Next.js with Strapi and Apollo</title>
+
+	<link rel="icon" type="image/x-icon" href="https://nirmalyaghosh.com/images/common/favicon.svg">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="How to use Next.js with Strapi and Apollo">
+	<meta name="description" content="Learn how to use Next.js with Strapi and Apollo.">
+	<meta name="keywords" content="engineering, software, code">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="author" content="Nirmalya Ghosh">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.nirmalyaghosh.com">
+	<meta property="og:title" content="How to use Next.js with Strapi and Apollo">
+	<meta property="og:description" content="Learn how to use Next.js with Strapi and Apollo.">
+	<meta property="og:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.nirmalyaghosh.com">
+	<meta property="twitter:title" content="Nirmalya Ghosh">
+	<meta property="twitter:description" content="Learn how to use Next.js with Strapi and Apollo.">
+	<meta property="twitter:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+<link rel="stylesheet" href="/assets/523a4829.4a78f79c.css" /><script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.4.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener("pt0",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.4.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement("script")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+<body class=" space-y-8">
+	<nav class="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+  <div class="space-x-4">
+    <a href="/" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">/</a>
+    <a href="/projects" class="text-sm text-black">/projects</a>
+    <a href="/articles" class="text-sm text-black">/articles</a>
+  </div>
+  <div>
+    <a href="https://twitter.com/NirmalyaGhosh_" target="_blank" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">Follow</a>
+  </div>
+</nav>
+	<article class="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+		<h1>How to use Next.js with Strapi and Apollo</h1>
+		<h2>Learn how to use Next.js with Strapi and Apollo.</h2>
+
+		<p>In this tutorial, we'll learn how we can use Next.js with Strapi and Apollo.</p><h2 id="introduction">Introduction</h2><p>In <a href="/articles/automate-backend-stuffs-strapi-docker">one of my previous articles</a>, I've written about how to get started using Strapi. In this post, we'll be building a newsfeed application using Next.js. The APIs necessary for the Next.js front-end application will be powered by Strapi. We'll also use <a href="https://www.apollographql.com/" target="_blank" rel="nofollow noopener noreferrer">Apollo</a> as the GraphQL client.</p><p>The whole code for the application that we're going to build is available on <a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank" rel="nofollow noopener noreferrer">Github</a>.</p><p>Before we proceed, it's better if you have some idea about the following technologies:</p><ol>
+<li><a href="https://nextjs.org/" target="_blank" rel="nofollow noopener noreferrer">Next.js</a></li>
+<li><a href="https://www.apollographql.com/" target="_blank" rel="nofollow noopener noreferrer">Apollo</a></li>
+<li><a href="http://strapi.io/" target="_blank" rel="nofollow noopener noreferrer">Strapi</a></li>
+<li><a href="https://www.typescriptlang.org/" target="_blank" rel="nofollow noopener noreferrer">TypeScript</a></li>
+</ol><p>I've been using <a href="http://strapi.io/" target="_blank" rel="nofollow noopener noreferrer">Strapi</a> for quite some time now and it's very easy to get up and running with it within a very short amount of time. It gives us a lot of <a href="https://strapi.io/features" target="_blank" rel="nofollow noopener noreferrer">features</a> out of the box:</p><ol>
+<li><strong>Single types</strong>: Create one-off pages that have unique content structure</li>
+<li><strong>Customizable API</strong>: With Strapi, you can just hop in your code editor and edit the code to fit your API to your needs.</li>
+<li><strong>Integrations</strong>: Strapi supports integrations with Cloudinary, SendGrid, Algolia and others.</li>
+<li><strong>Editor interface</strong>: The editor allows you to pull in dynamic blocks of content.</li>
+<li><strong>Authentication</strong>: Secure and authorize access to your API with JWT or providers.</li>
+</ol><p><a href="https://nextjs.org/" target="_blank" rel="nofollow noopener noreferrer">Next.js</a> is a very popular <a href="https://reactjs.org/" target="_blank" rel="nofollow noopener noreferrer">React</a> framework. It offers a lot of features like:</p><ol>
+<li><strong>Zero config</strong>: Automatic compilation and bundling. Optimized for production from the start.</li>
+<li><strong>Hybrid: SSG and SSR</strong>: Pre-render pages at build time (SSG) or request time (SSR) in a single project.</li>
+<li><strong>Incremental Static Generation</strong>: Add and update statically pre-rendered pages incrementally after build time.</li>
+<li><strong>TypeScript Support</strong>: Automatic TypeScript configuration and compilation.</li>
+<li><strong>Fast Refresh</strong>: Automatic TypeScript configuration and compilation.</li>
+</ol><p><a href="https://www.apollographql.com/" target="_blank" rel="nofollow noopener noreferrer">Apollo</a> is the industry-standard GraphQL implementation, providing the data graph layer that connects modern apps to the cloud. It offers a lot of features like:</p><ol>
+<li><strong>Declarative data fetching</strong>: Write a query and receive data without manually tracking loading, error, or network states.</li>
+<li><strong>Reactive data cache</strong>: Cut down on network traffic and keep data consistent throughout your application with Apollo Client’s normalized reactive data cache.</li>
+<li><strong>Excellent dev experience</strong>: Enjoy cross stack type safety, runtime cache inspectors, and full featured editor integrations to keep you writing applications faster.</li>
+<li><strong>Compatible and adoptable</strong>: Use any build setup and any GraphQL API. Drop Apollo Client into any app seamlessly without re-architecting your entire data strategy.</li>
+<li><strong>Designed for modern UIs</strong>: Take advantage of modern UI architectures in the web, iOS, and Android ecosystems.</li>
+</ol><p>I've created a <a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank" rel="nofollow noopener noreferrer">boilerplate</a> so that you can get up and running with <a href="http://strapi.io/" target="_blank" rel="nofollow noopener noreferrer">Strapi</a>, <a href="https://nextjs.org/" target="_blank" rel="nofollow noopener noreferrer">Next.js</a> and <a href="https://www.apollographql.com/" target="_blank" rel="nofollow noopener noreferrer">Apollo</a> quickly. Check out the project on <a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank" rel="nofollow noopener noreferrer">Github</a>.</p><a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank"><img src="https://user-images.githubusercontent.com/6391763/90599044-ca070300-e211-11ea-8b8a-89354dd30bd5.png" alt="Logo"></a><h2 id="creating-a-strapi-application-using-docker">Creating a Strapi application using Docker</h2><p><strong>Step 1:</strong> We need to create a directory named <code>backend</code> and then download the <a href="https://github.com/strapi/strapi-docker/blob/master/examples/postgresql/docker-compose.yml" target="_blank" rel="nofollow noopener noreferrer">docker-compose.yml</a> file from the <a href="https://github.com/strapi/strapi-docker" target="_blank" rel="nofollow noopener noreferrer">strapi-docker repository</a>. Now, we need to start Docker. Once Docker is up and running, we can go inside the <code>backend</code> directory and run our Strapi container:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #6CB6FF">cd</span><span style="color: #ADBAC7"> backend </span><span style="color: #F47067">&amp;&amp;</span><span style="color: #ADBAC7"> docker-compose up</span></span></code></pre><p>This will pull <strong>postgres</strong> and <strong>strapi/strapi</strong> images from <a href="https://hub.docker.com/" target="_blank" rel="nofollow noopener noreferrer">Docker Hub</a>. So, it might take some time for this operation to complete. You can refer to this <a href="/articles/automate-backend-stuffs-strapi-docker">article</a> for more details regarding how to install Strapi using Docker.</p><p><strong>Step 2:</strong> We'll have to <a href="/articles/automate-backend-stuffs-strapi-docker">create our first administrator profile</a>. Once, our administrator profile is setup, we should be able to log into the admin panel of Strapi.</p><p><strong>Step 3:</strong> We'll have to <a href="/articles/automate-backend-stuffs-strapi-docker">add a new content-type</a>.</p><p><strong>Step 4:</strong> Install the <a href="https://strapi.io/documentation/3.0.0-beta.x/plugins/graphql.html" target="_blank" rel="nofollow noopener noreferrer">Strapi GraphQL plugin</a>.</p><blockquote>
+<p>I've already covered most about getting started with Strapi. We're adding links to a previous article in order to keep this tutorial short.</p>
+</blockquote><h2 id="creating-a-nextjs-application">Creating a Next.js application</h2><p>We can create a new Next.js app using create-next-app, which sets up everything automatically for us:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">yarn create next-app</span></span></code></pre><blockquote>
+<p>The above command will install all the necessary packages as well a create a new directory based on the application name (which you entered during the setup process).</p>
+</blockquote><h2 id="integrating-the-nextjs-application-with-apollo">Integrating the Next.js application with Apollo</h2><p>In order to integrate Apollo with Next.js, we need to add the required dependencies first:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">yarn add  @apollo/client graphql</span></span></code></pre><p>Next, we need to create a new file <code>lib/with-graphql.js</code> with the following content:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> { ApolloClient, ApolloProvider, InMemoryCache } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;@apollo/client&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">WithGraphQL</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> ({ </span><span style="color: #F69D50">children</span><span style="color: #ADBAC7"> }) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">client</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">new</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">ApolloClient</span><span style="color: #ADBAC7">({</span></span>
+<span class="line"><span style="color: #ADBAC7">    uri: </span><span style="color: #96D0FF">&quot;http://localhost:1337/graphql&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">    cache: </span><span style="color: #F47067">new</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">InMemoryCache</span><span style="color: #ADBAC7">(),</span></span>
+<span class="line"><span style="color: #ADBAC7">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">ApolloProvider</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">client</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{client}&gt;{children}&lt;/</span><span style="color: #8DDB8C">ApolloProvider</span><span style="color: #ADBAC7">&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #F69D50"> </span><span style="color: #F47067">default</span><span style="color: #F69D50"> </span><span style="color: #ADBAC7">WithGraphQL;</span></span></code></pre><p>Now, we can import this file and wrap any Next.js page where we want to use GraphQL:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> React </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;react&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> Page </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;components/pages/index&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> WithGraphQL </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;lib/with-graphql&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">IndexPage</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">WithGraphQL</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      &lt;</span><span style="color: #8DDB8C">Page</span><span style="color: #ADBAC7"> /&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">WithGraphQL</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #F69D50"> </span><span style="color: #F47067">default</span><span style="color: #F69D50"> </span><span style="color: #ADBAC7">IndexPage;</span></span></code></pre><p>Now, we can use GraphQL queries and mutations in the <code>components/pages/index.js</code> file:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> { gql, useQuery } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;@apollo/client&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> { Box, Stack } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;@chakra-ui/core&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> Feed </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;components/pages/index/feed&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> React </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;react&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">feedsQuery</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">gql</span><span style="color: #96D0FF">`</span></span>
+<span class="line"><span style="color: #96D0FF">  query fetchFeeds {</span></span>
+<span class="line"><span style="color: #96D0FF">    feeds {</span></span>
+<span class="line"><span style="color: #96D0FF">      id</span></span>
+<span class="line"><span style="color: #96D0FF">      created_at</span></span>
+<span class="line"><span style="color: #96D0FF">      body</span></span>
+<span class="line"><span style="color: #96D0FF">      author {</span></span>
+<span class="line"><span style="color: #96D0FF">        id</span></span>
+<span class="line"><span style="color: #96D0FF">        username</span></span>
+<span class="line"><span style="color: #96D0FF">      }</span></span>
+<span class="line"><span style="color: #96D0FF">    }</span></span>
+<span class="line"><span style="color: #96D0FF">  }</span></span>
+<span class="line"><span style="color: #96D0FF">`</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">FeedsPageComponent</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> { </span><span style="color: #6CB6FF">loading</span><span style="color: #ADBAC7">, </span><span style="color: #6CB6FF">error</span><span style="color: #ADBAC7">, </span><span style="color: #6CB6FF">data</span><span style="color: #ADBAC7"> } </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">useQuery</span><span style="color: #ADBAC7">(feedsQuery);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">if</span><span style="color: #ADBAC7"> (loading) </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">p</span><span style="color: #ADBAC7">&gt;Loading...&lt;/</span><span style="color: #8DDB8C">p</span><span style="color: #ADBAC7">&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">if</span><span style="color: #ADBAC7"> (error) </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">p</span><span style="color: #ADBAC7">&gt;Error :(&lt;/</span><span style="color: #8DDB8C">p</span><span style="color: #ADBAC7">&gt;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">Stack</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">spacing</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{</span><span style="color: #6CB6FF">8</span><span style="color: #ADBAC7">}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      {data.feeds.</span><span style="color: #DCBDFB">map</span><span style="color: #ADBAC7">((</span><span style="color: #F69D50">feed</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">key</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{feed.id}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;</span><span style="color: #8DDB8C">Feed</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">feed</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{feed} /&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;/</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">        );</span></span>
+<span class="line"><span style="color: #ADBAC7">      })}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">Stack</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">export</span><span style="color: #F69D50"> </span><span style="color: #F47067">default</span><span style="color: #F69D50"> </span><span style="color: #ADBAC7">FeedsPageComponent;</span></span></code></pre><h2 id="conclusion">Conclusion</h2><p>In this tutorial, we've learnt how we can integrate Apollo with Next.js and use it with Strapi. I've created a <a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank" rel="nofollow noopener noreferrer">boilerplate</a> so that you can get up and running with Strapi, Next.js and Apollo quickly. Check out the project on <a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank" rel="nofollow noopener noreferrer">Github</a>. Documentation of this project is available <a href="/guides/nextjs-strapi-boilerplate">here</a>.</p><a href="https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate" target="_blank"><img src="https://user-images.githubusercontent.com/6391763/90599044-ca070300-e211-11ea-8b8a-89354dd30bd5.png" alt="Logo"></a>
+
+	</article>
+</body></html>

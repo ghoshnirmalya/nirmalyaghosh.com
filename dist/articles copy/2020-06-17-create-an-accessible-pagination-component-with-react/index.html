@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Create a Pagination Component with React and Theme UI</title>
+
+	<link rel="icon" type="image/x-icon" href="https://nirmalyaghosh.com/images/common/favicon.svg">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="title" content="Create a Pagination Component with React and Theme UI">
+	<meta name="description" content="This tutorial will explain all the things that is necessary to know how to build a custom pagination component with a good User Experience using React.">
+	<meta name="keywords" content="engineering, software, code">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="author" content="Nirmalya Ghosh">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.nirmalyaghosh.com">
+	<meta property="og:title" content="Create a Pagination Component with React and Theme UI">
+	<meta property="og:description" content="This tutorial will explain all the things that is necessary to know how to build a custom pagination component with a good User Experience using React.">
+	<meta property="og:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://www.nirmalyaghosh.com">
+	<meta property="twitter:title" content="Nirmalya Ghosh">
+	<meta property="twitter:description" content="This tutorial will explain all the things that is necessary to know how to build a custom pagination component with a good User Experience using React.">
+	<meta property="twitter:image" content="https://nirmalyaghosh.com/images/common/seo-cover.png">
+<link rel="stylesheet" href="/assets/523a4829.4a78f79c.css" /><script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[])})(window,'partytown','forward');/* Partytown 0.4.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(w,1e4),e.addEventListener("pt0",f),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):w())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.4.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function w(t,n){for(f(),t=0;t<s.length;t++)(n=e.createElement("script")).innerHTML=s[t].innerHTML,e.head.appendChild(n);c&&c.parentNode.removeChild(c)}function f(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+<body class=" space-y-8">
+	<nav class="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+  <div class="space-x-4">
+    <a href="/" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">/</a>
+    <a href="/projects" class="text-sm text-black">/projects</a>
+    <a href="/articles" class="text-sm text-black">/articles</a>
+  </div>
+  <div>
+    <a href="https://twitter.com/NirmalyaGhosh_" target="_blank" class="py-2 px-4 bg-black text-white text-sm no-underline rounded">Follow</a>
+  </div>
+</nav>
+	<article class="p-4 max-w-2xl mx-auto prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-a:no-underline prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal">
+		<h1>Create a Pagination Component with React and Theme UI</h1>
+		<h2>This tutorial will explain all the things that is necessary to know how to build a custom pagination component with a good User Experience using React.</h2>
+
+		<p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/1.png" alt="Banner" width="1440" height="452" loading="lazy"></p><p>In this tutorial, we'll learn all the things that are necessary to build an accessible pagination component with a good User Experience using React. The source code is available on <a href="https://github.com/ghoshnirmalya/react-pagination-box" target="_blank" rel="nofollow noopener noreferrer">Github</a>.</p><h2 id="what-is-a-pagination-component-and-where-is-it-used">What is a Pagination component and where is it used?</h2><p>A Pagination component helps in fetching and showing data in steps. It's mainly useful in the following scenarios:</p><ol>
+<li>Lists or tables which consists of a large set of data</li>
+<li>Cases, where we might want to show data in steps</li>
+<li>Cases, where a long time will be taken to fetch and show the whole data</li>
+</ol><h2 id="difference-between-pagination-and-infinite-scrolling">Difference between Pagination and Infinite Scrolling</h2><p>A Pagination component is useful for fetching fragments of data and showing it
+to the user. The user can control when they want to view the next set of data.
+In a Pagination component, the user can also control the amount of data that
+they want to view.</p><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/2.png" alt="View with page-size selector" width="1440" height="634" loading="lazy"></p><p>In most cases like in <a href="https://ant.design/components/pagination/" target="_blank" rel="nofollow noopener noreferrer">Ant Design</a>
+and <a href="https://react.semantic-ui.com/addons/pagination/" target="_blank" rel="nofollow noopener noreferrer">Semantic UI</a>, the user
+can also view the data for a particular page directly by typing the number of
+that page in a small input box.</p><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/3.png" alt="View with page-number selector" width="1440" height="634" loading="lazy"></p><p>In an Infinite Scrolling component, initially, a subset of the whole data is
+shown. However, when the user scrolls to the bottom of the list or table, the
+next set of data is fetched from the server and shown on the browser.</p><p>For example, initially a set of 5 records out of 100 records will be fetched from the server and rendered on the list or table. When the user scrolls to the bottom of the list or table, the next 5 records are fetched from the server and shown.</p><p>It's also possible that the whole data is fetched initially but the records are
+shown lazily. This is done in order to <a href="https://www.smashingmagazine.com/2016/09/reducing-cognitive-overload-for-a-better-user-experience/" target="_blank" rel="nofollow noopener noreferrer">reduce Cognitive Overload</a>.</p><h2 id="when-should-we-use-pagination-instead-of-infinite-scrolling">When should we use Pagination instead of Infinite Scrolling?</h2><p><a href="https://uxplanet.org/ux-infinite-scrolling-vs-pagination-1030d29376f1" target="_blank" rel="nofollow noopener noreferrer">This article</a>
+explains the answer for this question in details. However, if an application
+needs to remember the scroll-position of the user during page transition, then
+it's always better to use pagination. For example, if we have an e-commerce
+application, we'll need to remember the scroll-position of the user in case of a
+page transition.</p><h2 id="types-of-pagination">Types of Pagination</h2><p>Effectively, there are two types of pagination:</p><ol>
+<li>Client-side pagination</li>
+<li>Server-side pagination</li>
+</ol><p>We'll be talking about both of these in details.</p><h2 id="client-side-pagination">Client-side Pagination</h2><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/4.png" alt="Client-side pagination" width="1440" height="784" loading="lazy"></p><p>In this type of pagination, the whole data is fetched from the server but is
+shown on the browser in steps. There can be certain cases in which the pagination
+can't be implemented on the server. In those cases, the pagination is generally
+done on the client-side.</p><p>This type of pagination can be achieved in the following ways:</p><ol>
+<li>Fetch all the records from the server</li>
+<li>Divide the records into certain parts based on a certain limit per page</li>
+<li>Show a set of records on each page</li>
+<li>Show the next set of records when the user clicks on the next page and so on</li>
+<li>Sorting, searching and filtering of records is done on the client-side</li>
+</ol><h2 id="server-side-pagination">Server-side Pagination</h2><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/5.png" alt="Server-side pagination" width="1440" height="784" loading="lazy"></p><p>In this type of pagination, the records are fetched from the server in steps.
+This is a better way of doing pagination because of the following:</p><ol>
+<li>Size of API requests are smaller since they are fetched in chunks</li>
+<li>The load on both the Server and Client is lesser since they've lesser data to
+deal with. On the Server-side, since the number of records is lesser,
+computing time for generating those records will be lesser as compared to
+computing all the records. This might not be noticeable if the total number
+of records aren't much but when we're fetching thousand records vs ten
+records, this will be noticeable. On the Client-side, if the number of
+records are lesser, there will be lesser load on the browser to parse the
+data and show it to the user.</li>
+</ol><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/6.png" alt="Server-side pagination view" width="1440" height="634" loading="lazy"></p><p>This type of pagination can be achieved in the following ways:</p><ol>
+<li>Fetch only the necessary records from the server for a particular page</li>
+<li>Show the fetched records for that particular page</li>
+<li>Fetch and show the next set of records when the user clicks on the next page and so on</li>
+<li>Sorting, searching and filtering of records is done on the server-side</li>
+</ol><h2 id="building-a-simple-pagination-component-using-react">Building a simple Pagination component using React</h2><p>In this step, we'll build a simple Pagination component using
+<a href="https://reactjs.org/" target="_blank" rel="nofollow noopener noreferrer">React</a> and the <a href="https://hn.algolia.com/api" target="_blank" rel="nofollow noopener noreferrer">Hacker News
+API</a>. We'll be building a server-side paginated
+component.</p><p>Let's start with creating a new directory for our component:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">mkdir react-pagination-component</span></span></code></pre><p>The above command will create a new directory called
+<strong>react-pagination-component</strong>.</p><p>We'll be using <a href="https://classic.yarnpkg.com/en/" target="_blank" rel="nofollow noopener noreferrer">Yarn</a> to manage our
+dependencies.</p><blockquote>
+<p>If you don't have Yarn installed on your machine, you can check out their
+<a href="https://classic.yarnpkg.com/en/docs/install" target="_blank" rel="nofollow noopener noreferrer">Installation guide</a>.</p>
+</blockquote><p>Let's initialize our package using Yarn inside our
+<strong>react-pagination-component</strong> directory:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #6CB6FF">cd</span><span style="color: #ADBAC7"> react-pagination-component </span><span style="color: #F47067">&amp;&amp;</span><span style="color: #ADBAC7"> yarn init</span></span></code></pre><p>The above command will show an output similar to the following on our terminal:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">question name (react-pagination-component):</span></span>
+<span class="line"><span style="color: #ADBAC7">question version (1.0.0): 0.0.1</span></span>
+<span class="line"><span style="color: #ADBAC7">question description: A simple pagination component </span><span style="color: #F47067">for</span><span style="color: #ADBAC7"> React.js</span></span>
+<span class="line"><span style="color: #ADBAC7">question entry point (index.js):</span></span>
+<span class="line"><span style="color: #ADBAC7">question repository url:</span></span>
+<span class="line"><span style="color: #ADBAC7">question author: Nirmalya Ghosh (nirmalya.email@gmail.com)</span></span>
+<span class="line"><span style="color: #ADBAC7">question license (MIT):</span></span>
+<span class="line"><span style="color: #ADBAC7">question private: </span><span style="color: #6CB6FF">false</span></span>
+<span class="line"><span style="color: #ADBAC7">success Saved package.json</span></span>
+<span class="line"><span style="color: #ADBAC7">✨  Done </span><span style="color: #F47067">in</span><span style="color: #ADBAC7"> 95.33s.</span></span></code></pre><p>It'll also generate the following <strong>package.json</strong> file:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">{</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;name&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;react-pagination-component&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;version&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;0.0.1&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;description&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;A simple pagination component for React.js&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;main&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;index.js&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;author&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;Nirmalya Ghosh (nirmalya.email@gmail.com)&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;license&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;MIT&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;private&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #6CB6FF">false</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span></code></pre><p>Doing the above steps would help us in installing <a href="https://www.npmjs.com/" target="_blank" rel="nofollow noopener noreferrer">npm
+packages</a>. We'll be installing React and other packages
+from npm. npm stands for Node Package Manager and is the world’s largest software registry.</p><p>Although it's very easy to <a href="https://reactjs.org/docs/add-react-to-a-website.html" target="_blank" rel="nofollow noopener noreferrer">add React to a
+website</a>, managing and upgrading
+packages would be much easier using npm.</p><p>We'd also use <a href="https://parceljs.org/" target="_blank" rel="nofollow noopener noreferrer">Parcel</a> for bundling our application.</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">yarn add react</span></span>
+<span class="line"><span style="color: #ADBAC7">yarn add react-dom</span></span>
+<span class="line"><span style="color: #ADBAC7">yarn add --dev parcel-bundler @babel/preset-react @babel/preset-env</span></span></code></pre><p>The above command will add <strong>react</strong> and <strong>react-dom</strong> to our list of dependencies.
+It'll add <strong>parcel-bundler</strong> to our list of dev-dependencies.</p><blockquote>
+<p>We've added parcel-bundler, @babel/preset-react and @babel/preset-env to our
+dev-dependencies >since we won't need it on production. Our application code
+will be bundled by Parcel and we'll deploy those assets (HTML, CSS and JavaScript) to our server.</p>
+</blockquote><p>We also need to adding the following script to our <strong>package.json</strong> file:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #96D0FF">&quot;scripts&quot;</span><span style="color: #ADBAC7">: {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;start&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;parcel index.html&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span></code></pre><p>Our <strong>package.json</strong> file should now contain these:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">{</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #FF938A; font-style: italic">....</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;scripts&quot;</span><span style="color: #ADBAC7">: {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #6CB6FF">&quot;start&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;parcel index.html&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">  },</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;dependencies&quot;</span><span style="color: #ADBAC7">: {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #6CB6FF">&quot;react&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;^16.13.1&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #6CB6FF">&quot;react-dom&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;^16.13.1&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">  },</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #6CB6FF">&quot;devDependencies&quot;</span><span style="color: #ADBAC7">: {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #6CB6FF">&quot;@babel/preset-env&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;^7.10.2&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #6CB6FF">&quot;@babel/preset-react&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;^7.10.1&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #6CB6FF">&quot;parcel-bundler&quot;</span><span style="color: #ADBAC7">: </span><span style="color: #96D0FF">&quot;^1.12.4&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">  }</span></span>
+<span class="line"><span style="color: #ADBAC7">}</span></span>
+<span class="line"></span></code></pre><p>We also need to create an <strong>index.html</strong> file in the root of our project and add
+a reference to our JavaScript entry point:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">&lt;!</span><span style="color: #8DDB8C">DOCTYPE</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">html</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">&lt;</span><span style="color: #8DDB8C">html</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">lang</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;en&quot;</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">head</span><span style="color: #ADBAC7">&gt; &lt;/</span><span style="color: #8DDB8C">head</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">body</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">id</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;app&quot;</span><span style="color: #ADBAC7">&gt;&lt;/</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #768390">&lt;!-- Here 👇 --&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">script</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">src</span><span style="color: #ADBAC7">=</span><span style="color: #96D0FF">&quot;./index.js&quot;</span><span style="color: #ADBAC7">&gt;&lt;/</span><span style="color: #8DDB8C">script</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;/</span><span style="color: #8DDB8C">body</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">&lt;/</span><span style="color: #8DDB8C">html</span><span style="color: #ADBAC7">&gt;</span></span></code></pre><p>Let's also create a new <strong>index.js</strong> which will be our JavaScript entry point:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">console.</span><span style="color: #DCBDFB">log</span><span style="color: #ADBAC7">(</span><span style="color: #96D0FF">&quot;Hello from Parcel!&quot;</span><span style="color: #ADBAC7">);</span></span></code></pre><p>Now, we can start our application by running the following command:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">yarn start</span></span></code></pre><p>The about application will start running at
+<a href="http://localhost:1234/" target="_blank" rel="nofollow noopener noreferrer">http://localhost:1234/</a>.</p><p>Let's start by fetching a list of news from Hacker News API and show it on our
+browser. We need to update our <strong>index.js</strong> file with the following code:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> React, { useEffect } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;react&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> ReactDOM </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;react-dom&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">ReactPaginationComponent</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #DCBDFB">useEffect</span><span style="color: #ADBAC7">(() </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #DCBDFB">fetchData</span><span style="color: #ADBAC7">();</span></span>
+<span class="line"><span style="color: #ADBAC7">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">fetchData</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">async</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">response</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">await</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">fetch</span><span style="color: #ADBAC7">(</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #96D0FF">&quot;https://hn.algolia.com/api/v1/search?query=javascript&amp;hitsPerPage=5&amp;page=0&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">    console.</span><span style="color: #DCBDFB">log</span><span style="color: #ADBAC7">(response);</span></span>
+<span class="line"><span style="color: #ADBAC7">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;&gt;Hello&lt;/&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">ReactDOM.</span><span style="color: #DCBDFB">render</span><span style="color: #ADBAC7">(&lt;</span><span style="color: #8DDB8C">ReactPaginationComponent</span><span style="color: #ADBAC7"> /&gt;, document.</span><span style="color: #DCBDFB">getElementById</span><span style="color: #ADBAC7">(</span><span style="color: #96D0FF">&quot;app&quot;</span><span style="color: #ADBAC7">));</span></span></code></pre><p>Now, if we visit <a href="http://localhost:1234/" target="_blank" rel="nofollow noopener noreferrer">http://localhost:1234/</a>, we'll see the following error:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">Uncaught ReferenceError: regeneratorRuntime is not defined</span></span></code></pre><p>To fix that, we need to add a couple of babel plugins:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">yarn add @babel/plugin-transform-runtime @babel/runtime --dev</span></span></code></pre><p>If we visit <a href="http://localhost:1234/" target="_blank" rel="nofollow noopener noreferrer">http://localhost:1234/</a>, we should be able
+to view the page without any errors.</p><p>Let's show the data fetched in a list. To do that, we'll need to modify our
+<strong>index.js</strong> file:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> React, { useEffect, useState } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;react&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> ReactDOM </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;react-dom&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">ReactPaginationComponent</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> [</span><span style="color: #6CB6FF">data</span><span style="color: #ADBAC7">, </span><span style="color: #6CB6FF">setData</span><span style="color: #ADBAC7">] </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">useState</span><span style="color: #ADBAC7">([]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #DCBDFB">useEffect</span><span style="color: #ADBAC7">(() </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #DCBDFB">fetchData</span><span style="color: #ADBAC7">();</span></span>
+<span class="line"><span style="color: #ADBAC7">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">fetchData</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">async</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">response</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">await</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">fetch</span><span style="color: #ADBAC7">(</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #96D0FF">&quot;https://hn.algolia.com/api/v1/search?query=javascript&amp;hitsPerPage=5&amp;page=0&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">    );</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">data</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">await</span><span style="color: #ADBAC7"> response.</span><span style="color: #DCBDFB">json</span><span style="color: #ADBAC7">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #DCBDFB">setData</span><span style="color: #ADBAC7">(data.hits);</span></span>
+<span class="line"><span style="color: #ADBAC7">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">listNode</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">      &lt;</span><span style="color: #8DDB8C">ul</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">        {data.</span><span style="color: #DCBDFB">map</span><span style="color: #ADBAC7">((</span><span style="color: #F69D50">datum</span><span style="color: #ADBAC7">, </span><span style="color: #F69D50">index</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">          </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">li</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">key</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{index}&gt;{datum.title}&lt;/</span><span style="color: #8DDB8C">li</span><span style="color: #ADBAC7">&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">        })}</span></span>
+<span class="line"><span style="color: #ADBAC7">      &lt;/</span><span style="color: #8DDB8C">ul</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    );</span></span>
+<span class="line"><span style="color: #ADBAC7">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> &lt;</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;{</span><span style="color: #DCBDFB">listNode</span><span style="color: #ADBAC7">()}&lt;/</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;;</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">ReactDOM.</span><span style="color: #DCBDFB">render</span><span style="color: #ADBAC7">(&lt;</span><span style="color: #8DDB8C">ReactPaginationComponent</span><span style="color: #ADBAC7"> /&gt;, document.</span><span style="color: #DCBDFB">getElementById</span><span style="color: #ADBAC7">(</span><span style="color: #96D0FF">&quot;app&quot;</span><span style="color: #ADBAC7">));</span></span></code></pre><p>Here, we're fetching the data from the server and storing it in the <code>data</code>
+state. In the <code>listNode</code> function, we're iterating over this data and showing it
+in a list.</p><p>If we visit <a href="http://localhost:1234/" target="_blank" rel="nofollow noopener noreferrer">http://localhost:1234/</a>, we should be able
+to view the following:</p><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/7.png" alt="Skeleton of our list component" width="4560" height="1377" loading="lazy"></p><p>Let's now add the logic to fetch records from the server based on the selected
+page.</p><p>First, we need to define two states to store the <code>totalPages</code> and the
+<code>currentPage</code>:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> [</span><span style="color: #6CB6FF">totalPages</span><span style="color: #ADBAC7">, </span><span style="color: #6CB6FF">setTotalPages</span><span style="color: #ADBAC7">] </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">useState</span><span style="color: #ADBAC7">(</span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">);</span></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> [</span><span style="color: #6CB6FF">currentPage</span><span style="color: #ADBAC7">, </span><span style="color: #6CB6FF">setCurrentPage</span><span style="color: #ADBAC7">] </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">useState</span><span style="color: #ADBAC7">(</span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">);</span></span></code></pre><p>We also need to update the <code>fetchData</code> function to use the <code>currentPage</code>:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">fetchData</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">async</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">response</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">await</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">fetch</span><span style="color: #ADBAC7">(</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #96D0FF">`https://hn.algolia.com/api/v1/search?query=javascript&amp;hitsPerPage=5&amp;page=${</span><span style="color: #ADBAC7">currentPage</span><span style="color: #96D0FF">}`</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">data</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">await</span><span style="color: #ADBAC7"> response.</span><span style="color: #DCBDFB">json</span><span style="color: #ADBAC7">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #DCBDFB">setData</span><span style="color: #ADBAC7">(data.hits);</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #DCBDFB">setTotalPages</span><span style="color: #ADBAC7">(data.nbPages);</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span></code></pre><p>We also need to add a new <code>paginationNode</code> function to show the pagination:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">paginationNode</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">ul</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      {[</span><span style="color: #F47067">...</span><span style="color: #6CB6FF">Array</span><span style="color: #ADBAC7">(totalPages)].</span><span style="color: #DCBDFB">map</span><span style="color: #ADBAC7">((</span><span style="color: #F69D50">_</span><span style="color: #ADBAC7">, </span><span style="color: #F69D50">index</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;</span><span style="color: #8DDB8C">li</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">key</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{index </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">onClick</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{() </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">handlePageChange</span><span style="color: #ADBAC7">(index </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">)}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">              {index </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">}</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;/</span><span style="color: #8DDB8C">button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;/</span><span style="color: #8DDB8C">li</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">        );</span></span>
+<span class="line"><span style="color: #ADBAC7">      })}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">ul</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span></code></pre><p>Finally, let's update our <code>return</code> function and add the <code>paginationNode</code>
+function to it:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    {</span><span style="color: #DCBDFB">listNode</span><span style="color: #ADBAC7">()}</span></span>
+<span class="line"><span style="color: #ADBAC7">    {</span><span style="color: #DCBDFB">paginationNode</span><span style="color: #ADBAC7">()}</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;/</span><span style="color: #8DDB8C">div</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">);</span></span></code></pre><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/8.gif" alt="Pagination list" width="3360" height="1730" loading="lazy"></p><h2 id="adding-styles-to-our-pagination-component">Adding styles to our Pagination component</h2><p>In this section, we'll be adding some styles to our pagination component using
+<a href="https://theme-ui.com/" target="_blank" rel="nofollow noopener noreferrer">Theme UI</a>.</p><blockquote>
+<p>Theme UI is a library for creating themeable user interfaces based on
+constraint-based design principles. Build custom component libraries, design
+systems, web applications, Gatsby themes, and more with a flexible API for
+best-in-class developer ergonomics.</p>
+</blockquote><p>Let's install the package first:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">yarn add theme-ui</span></span></code></pre><p>Once the package is installed, we need to import <code>ThemeProvider</code> and it to our app first:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">import</span><span style="color: #ADBAC7"> { ThemeProvider } </span><span style="color: #F47067">from</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;theme-ui&quot;</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">theme</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  colors: {</span></span>
+<span class="line"><span style="color: #ADBAC7">    text,</span></span>
+<span class="line"><span style="color: #ADBAC7">    background,</span></span>
+<span class="line"><span style="color: #ADBAC7">    primary,</span></span>
+<span class="line"><span style="color: #ADBAC7">  },</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">...</span><span style="color: #ADBAC7">.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;</span><span style="color: #8DDB8C">ThemeProvider</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">theme</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{theme}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">    {</span><span style="color: #DCBDFB">listNode</span><span style="color: #ADBAC7">()}</span></span>
+<span class="line"><span style="color: #ADBAC7">    {</span><span style="color: #DCBDFB">paginationNode</span><span style="color: #ADBAC7">()}</span></span>
+<span class="line"><span style="color: #ADBAC7">  &lt;/</span><span style="color: #8DDB8C">ThemeProvider</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">);</span></span></code></pre><p>The values for <code>text</code> , <code>background</code> and <code>primary</code> colors are the props that can
+be passed to our component. We can define defaults for those values:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">ReactPaginationComponent</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> ({</span></span>
+<span class="line"><span style="color: #ADBAC7">  text </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;#000&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  background </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;#fff&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">  primary </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;#33e&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">}) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">...</span><span style="color: #ADBAC7">.</span></span></code></pre><p>We need to update our <code>listNode</code> and <code>paginationNode</code> functions to use <code>Box</code>,
+<code>Button</code> and <code>Flex</code> components from Theme UI:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">...</span><span style="color: #ADBAC7">.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">listNode</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">Box</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #6CB6FF">as</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;ul&quot;</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #6CB6FF">sx</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{{</span></span>
+<span class="line"><span style="color: #ADBAC7">        listStyleType: </span><span style="color: #96D0FF">&quot;none&quot;</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">        p: </span><span style="color: #6CB6FF">0</span><span style="color: #ADBAC7">,</span></span>
+<span class="line"><span style="color: #ADBAC7">      }}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      {data.</span><span style="color: #DCBDFB">map</span><span style="color: #ADBAC7">((</span><span style="color: #F69D50">datum</span><span style="color: #ADBAC7">, </span><span style="color: #F69D50">index</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">key</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{index} </span><span style="color: #6CB6FF">as</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;li&quot;</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">mb</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{</span><span style="color: #6CB6FF">2</span><span style="color: #ADBAC7">}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">            {datum.title}</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;/</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">        );</span></span>
+<span class="line"><span style="color: #ADBAC7">      })}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">paginationNode</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">Flex</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">as</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;ul&quot;</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">sx</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{{ listStyleType: </span><span style="color: #96D0FF">&quot;none&quot;</span><span style="color: #ADBAC7">, p: </span><span style="color: #6CB6FF">0</span><span style="color: #ADBAC7">, flexWrap: </span><span style="color: #96D0FF">&quot;wrap&quot;</span><span style="color: #ADBAC7"> }}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      {[</span><span style="color: #F47067">...</span><span style="color: #6CB6FF">Array</span><span style="color: #ADBAC7">(totalPages)].</span><span style="color: #DCBDFB">map</span><span style="color: #ADBAC7">((</span><span style="color: #F69D50">_</span><span style="color: #ADBAC7">, </span><span style="color: #F69D50">index</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">key</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{index </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">} </span><span style="color: #6CB6FF">as</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;li&quot;</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">mr</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{</span><span style="color: #6CB6FF">2</span><span style="color: #ADBAC7">}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">onClick</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{() </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">handlePageChange</span><span style="color: #ADBAC7">(index </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">)}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">              {index </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">}</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;/</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;/</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">        );</span></span>
+<span class="line"><span style="color: #ADBAC7">      })}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">Flex</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">...</span><span style="color: #ADBAC7">.</span></span></code></pre><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/9.png" alt="Styled pagination list" width="4554" height="1754" loading="lazy"></p><p>Let's update our pagination logic for a better User Experience.</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #F47067">...</span><span style="color: #ADBAC7">.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">paginationNode</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> () </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #768390">// The logic for generating pagination is taken from</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #768390">// https://gist.github.com/kottenator/9d936eb3e4e3c3e02598</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">pageBuffer</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">3</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">startPage</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> currentPage </span><span style="color: #F47067">-</span><span style="color: #ADBAC7"> pageBuffer;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">endPage</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> currentPage </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> pageBuffer </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">;</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">range</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> [];</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">const</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">rangeWithDots</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> [];</span></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">let</span><span style="color: #ADBAC7"> l;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">for</span><span style="color: #ADBAC7"> (</span><span style="color: #F47067">let</span><span style="color: #ADBAC7"> i </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">; i </span><span style="color: #F47067">&lt;=</span><span style="color: #ADBAC7"> totalPages; i</span><span style="color: #F47067">++</span><span style="color: #ADBAC7">) {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #F47067">if</span><span style="color: #ADBAC7"> (i </span><span style="color: #F47067">==</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">||</span><span style="color: #ADBAC7"> i </span><span style="color: #F47067">==</span><span style="color: #ADBAC7"> totalPages </span><span style="color: #F47067">||</span><span style="color: #ADBAC7"> (i </span><span style="color: #F47067">&gt;=</span><span style="color: #ADBAC7"> startPage </span><span style="color: #F47067">&amp;&amp;</span><span style="color: #ADBAC7"> i </span><span style="color: #F47067">&lt;</span><span style="color: #ADBAC7"> endPage)) {</span></span>
+<span class="line"><span style="color: #ADBAC7">      range.</span><span style="color: #DCBDFB">push</span><span style="color: #ADBAC7">(i);</span></span>
+<span class="line"><span style="color: #ADBAC7">    }</span></span>
+<span class="line"><span style="color: #ADBAC7">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">for</span><span style="color: #ADBAC7"> (</span><span style="color: #F47067">let</span><span style="color: #ADBAC7"> i </span><span style="color: #F47067">of</span><span style="color: #ADBAC7"> range) {</span></span>
+<span class="line"><span style="color: #ADBAC7">    </span><span style="color: #F47067">if</span><span style="color: #ADBAC7"> (l) {</span></span>
+<span class="line"><span style="color: #ADBAC7">      </span><span style="color: #F47067">if</span><span style="color: #ADBAC7"> (i </span><span style="color: #F47067">-</span><span style="color: #ADBAC7"> l </span><span style="color: #F47067">===</span><span style="color: #ADBAC7"> pageBuffer) {</span></span>
+<span class="line"><span style="color: #ADBAC7">        rangeWithDots.</span><span style="color: #DCBDFB">push</span><span style="color: #ADBAC7">(l </span><span style="color: #F47067">+</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">);</span></span>
+<span class="line"><span style="color: #ADBAC7">      } </span><span style="color: #F47067">else</span><span style="color: #ADBAC7"> </span><span style="color: #F47067">if</span><span style="color: #ADBAC7"> (i </span><span style="color: #F47067">-</span><span style="color: #ADBAC7"> l </span><span style="color: #F47067">!==</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">1</span><span style="color: #ADBAC7">) {</span></span>
+<span class="line"><span style="color: #ADBAC7">        rangeWithDots.</span><span style="color: #DCBDFB">push</span><span style="color: #ADBAC7">(</span><span style="color: #96D0FF">&quot;...&quot;</span><span style="color: #ADBAC7">);</span></span>
+<span class="line"><span style="color: #ADBAC7">      }</span></span>
+<span class="line"><span style="color: #ADBAC7">    }</span></span>
+<span class="line"><span style="color: #ADBAC7">    rangeWithDots.</span><span style="color: #DCBDFB">push</span><span style="color: #ADBAC7">(i);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">    l </span><span style="color: #F47067">=</span><span style="color: #ADBAC7"> i;</span></span>
+<span class="line"><span style="color: #ADBAC7">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ADBAC7">  </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;</span><span style="color: #8DDB8C">Flex</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">as</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;ul&quot;</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">sx</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{{ listStyleType: </span><span style="color: #96D0FF">&quot;none&quot;</span><span style="color: #ADBAC7">, p: </span><span style="color: #6CB6FF">0</span><span style="color: #ADBAC7">, flexWrap: </span><span style="color: #96D0FF">&quot;wrap&quot;</span><span style="color: #ADBAC7"> }}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">      {rangeWithDots.</span><span style="color: #DCBDFB">map</span><span style="color: #ADBAC7">((</span><span style="color: #F69D50">pageNumber</span><span style="color: #ADBAC7">, </span><span style="color: #F69D50">index</span><span style="color: #ADBAC7">) </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> {</span></span>
+<span class="line"><span style="color: #ADBAC7">        </span><span style="color: #F47067">return</span><span style="color: #ADBAC7"> (</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">key</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{index} </span><span style="color: #6CB6FF">as</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;li&quot;</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">mr</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{</span><span style="color: #6CB6FF">2</span><span style="color: #ADBAC7">}&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;</span><span style="color: #8DDB8C">Button</span></span>
+<span class="line"><span style="color: #ADBAC7">              </span><span style="color: #6CB6FF">onClick</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{() </span><span style="color: #F47067">=&gt;</span><span style="color: #ADBAC7"> </span><span style="color: #DCBDFB">handlePageChange</span><span style="color: #ADBAC7">(pageNumber)}</span></span>
+<span class="line"><span style="color: #ADBAC7">              </span><span style="color: #6CB6FF">disabled</span><span style="color: #F47067">=</span><span style="color: #ADBAC7">{pageNumber </span><span style="color: #F47067">===</span><span style="color: #ADBAC7"> </span><span style="color: #96D0FF">&quot;...&quot;</span><span style="color: #ADBAC7">}</span></span>
+<span class="line"><span style="color: #ADBAC7">            &gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">              {pageNumber}</span></span>
+<span class="line"><span style="color: #ADBAC7">            &lt;/</span><span style="color: #8DDB8C">Button</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">          &lt;/</span><span style="color: #8DDB8C">Box</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">        );</span></span>
+<span class="line"><span style="color: #ADBAC7">      })}</span></span>
+<span class="line"><span style="color: #ADBAC7">    &lt;/</span><span style="color: #8DDB8C">Flex</span><span style="color: #ADBAC7">&gt;</span></span>
+<span class="line"><span style="color: #ADBAC7">  );</span></span>
+<span class="line"><span style="color: #ADBAC7">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F47067">...</span><span style="color: #ADBAC7">.</span></span></code></pre><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/10.gif" alt="Pagination with better User Experience" width="1374" height="460" loading="lazy"></p><p>Now, it looks much better.</p><h2 id="making-our-pagination-component-theme-able-using-theme-ui">Making our Pagination component theme-able using Theme UI</h2><p>As we've used the <code>ThemeProvider</code> component from Theme UI, our pagination
+component supports theming out of the box. We can do so by passing a <code>primary</code>
+prop to our <code>ReactPaginationComponent</code>:</p><pre class="astro-code" style="background-color: #22272e; overflow-x: auto;"><code><span class="line"><span style="color: #ADBAC7">&lt;</span><span style="color: #8DDB8C">ReactPaginationComponent</span><span style="color: #ADBAC7"> </span><span style="color: #6CB6FF">primary</span><span style="color: #F47067">=</span><span style="color: #96D0FF">&quot;green&quot;</span><span style="color: #ADBAC7"> /&gt;</span></span></code></pre><p><img src="/images/content/how-to-create-an-accessible-pagination-component-with-react/11.png" alt="Adding theme support for our pagination component" width="1814" height="1068" loading="lazy"></p><p>We can also pass the <code>text</code> prop to update the color of the text on the list items.</p><h2 id="conclusion">Conclusion</h2><p>In this tutorial, we learnt how to create a basic pagination component using
+React.js. We also leant how to make our component themeable using Theme UI. The source code is available on
+<a href="https://github.com/ghoshnirmalya/react-pagination-box" target="_blank" rel="nofollow noopener noreferrer">Github</a>.</p><blockquote>
+<p>Please
+note that the code for this tutorial is <a href="https://github.com/ghoshnirmalya/react-pagination-box/commit/58f51280cc071ed748ce65eb2702bfea6c832843" target="_blank" rel="nofollow noopener noreferrer">till this
+commit</a>.
+Further changes to this Github repository might make the code different. It's
+recommended that you check the code for this tutorial till <a href="https://github.com/ghoshnirmalya/react-pagination-box/commit/58f51280cc071ed748ce65eb2702bfea6c832843" target="_blank" rel="nofollow noopener noreferrer">this commit</a>.</p>
+</blockquote>
+
+	</article>
+</body></html>
