@@ -8,13 +8,13 @@ interface IProps {
 const Publications = ({ publications }: IProps) => {
   return (
     <div className="space-y-4">
-      <h2 className="font-semibold text-lg">Publications</h2>
+      <h2 className="font-semibold text-md">Publications</h2>
       <div className="space-y-8">
         {publications.map((publication) => (
           <a
             href={publication.url}
             key={publication.url}
-            className="block text-blue-700 hover:text-black"
+            className="block text-black"
             target="_blank"
             rel="noreferrer"
           >

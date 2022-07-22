@@ -40,10 +40,13 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
         }}
       />
 
-      <Navbar />
-      <main className="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
-        <Component {...pageProps} />
-      </main>
+      <div className="space-y-16 min-h-screen">
+        <Navbar />
+        <main className="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+          <Component {...pageProps} />
+        </main>
+        <footer className="text-center pb-16 sticky top-[100vh]">✌🏻</footer>
+      </div>
     </>
   );
 };

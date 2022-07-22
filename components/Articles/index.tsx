@@ -8,11 +8,11 @@ interface IProps {
 const Articles = ({ articles }: IProps) => {
   return (
     <div className="space-y-4">
-      <h2 className="font-semibold text-lg">Articles</h2>
+      <h2 className="font-semibold text-md">Articles</h2>
       <div className="space-y-8">
         {articles.map((article) => (
           <Link href={`/articles/${article.id}`} key={article.id} passHref>
-            <a className="block text-blue-700 hover:text-black">
+            <a className="block text-black">
               <h2 className="text-lg font-semibold">{article.title}</h2>
               <p className="text-gray-500">{article.publishedDate}</p>
             </a>

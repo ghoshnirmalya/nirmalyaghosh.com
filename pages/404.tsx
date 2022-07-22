@@ -1,7 +1,12 @@
+import Link from "next/link";
+
 const NotFoundPage = () => {
   return (
-    <div>
-      <h1>Page not found!</h1>
+    <div className="text-center w-full space-y-4">
+      <h1>404 😕</h1>
+      <Link href="/" passHref>
+        <a className="font-semibold text-md block">Go to the home page</a>
+      </Link>
     </div>
   );
 };

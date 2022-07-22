@@ -7,13 +7,13 @@ interface IProps {
 const Projects = ({ projects }: IProps) => {
   return (
     <div className="space-y-4">
-      <h2 className="font-semibold text-lg">Projects</h2>
+      <h2 className="font-semibold text-md">Projects</h2>
       <div className="space-y-8">
         {projects.map((project) => (
           <a
             href={project.url}
             key={project.url}
-            className="block text-blue-700 hover:text-black"
+            className="block text-black"
             target="_blank"
             rel="noreferrer"
           >
