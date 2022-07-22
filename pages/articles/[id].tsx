@@ -4,7 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { ArticleStatus, IArticle } from "types/article";
 import fetchAllArticles from "utils/fetch-all-articles";
 import fetchSingleArticle from "utils/fetch-single-article";
-import rehypeShiki from "@leafac/rehype-shiki";
+import rehypeShiki from "@stefanprobst/rehype-shiki";
 import * as shiki from "shiki";
 
 interface IProps {
