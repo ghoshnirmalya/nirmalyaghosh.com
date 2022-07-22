@@ -23,7 +23,6 @@ const fetchAllArticles = async () => {
         result.properties["Published date"].date?.start
       ).format("LL"),
       status: result.properties["Status"].select?.name,
-      cover: result?.cover?.external.url || "",
       slug: `${slugify(result.properties["Name"].title[0].plain_text, {
         lower: true,
       })}--${result.id}`,

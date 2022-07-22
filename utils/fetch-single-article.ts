@@ -3,6 +3,7 @@ import { IArticle } from "types/article";
 import notionClient from "utils/notion-client";
 import notionToMDClient from "utils/notion-to-md-client";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import slugify from "slugify";
 
 dayjs.extend(localizedFormat);
 
@@ -24,7 +25,9 @@ const fetchSingleArticle = async (articleID?: string) => {
       result.properties["Published date"].date?.start
     ).format("LL"),
     status: result.properties["Status"].select.name,
-    cover: result?.cover?.external.url || "",
+    slug: `${slugify(result.properties["Name"].title[0].plain_text, {
+      lower: true,
+    })}--${result.id}`,
     content: content,
   } as IArticle;
 
