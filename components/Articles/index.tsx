@@ -11,7 +11,7 @@ const Articles = ({ articles }: IProps) => {
       <h2 className="font-semibold text-md">Articles</h2>
       <div className="space-y-8">
         {articles.map((article) => (
-          <Link href={`/articles/${article.id}`} key={article.id} passHref>
+          <Link href={`/articles/${article.slug}`} key={article.id} passHref>
             <a className="block text-black group">
               <span className="space-x-2 flex flex-row items-center">
                 <h2 className="text-lg font-semibold">{article.title}</h2>

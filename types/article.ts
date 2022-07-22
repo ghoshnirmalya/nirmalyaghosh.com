@@ -6,6 +6,7 @@ export interface IArticle {
   status?: ArticleStatus;
   cover?: string;
   content: string;
+  slug: string;
   markdown: MDXRemoteSerializeResult;
 }
 

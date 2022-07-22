@@ -1,12 +1,13 @@
+import rehypeShiki from "@stefanprobst/rehype-shiki";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import path from "path";
+import * as shiki from "shiki";
+import slugify from "slugify";
 import { ArticleStatus, IArticle } from "types/article";
 import fetchAllArticles from "utils/fetch-all-articles";
 import fetchSingleArticle from "utils/fetch-single-article";
-import rehypeShiki from "@stefanprobst/rehype-shiki";
-import * as shiki from "shiki";
-import path from "path";
 
 interface IProps {
   article: IArticle;
@@ -23,7 +24,9 @@ const Home: NextPage<IProps> = ({ article, markdown }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const article = await fetchSingleArticle(ctx.params?.id as string);
+  const slug = (ctx.params.slug as string).split("--")[1];
+
+  const article = await fetchSingleArticle(slug);
 
   if (!article || article?.status !== ArticleStatus.Published) {
     return {
@@ -62,10 +65,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const publishedArticles = articles.filter(
     (article: IArticle) => article.status === ArticleStatus.Published
   );
-  const publishedArticlesIDs = publishedArticles.map((article) => article.id);
-  const paths = publishedArticlesIDs.map((id) => ({
+  const publishedArticlesSlugs = publishedArticles.map(
+    (article) =>
+      `${slugify(article.title, {
+        lower: true,
+      })}--${article.id}`
+  );
+  const paths = publishedArticlesSlugs.map((slug) => ({
     params: {
-      id,
+      slug,
     },
   }));
 

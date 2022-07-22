@@ -1,7 +1,8 @@
 import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import slugify from "slugify";
 import { ArticleStatus, IArticle } from "types/article";
 import notionClient from "utils/notion-client";
-import localizedFormat from "dayjs/plugin/localizedFormat";
 
 dayjs.extend(localizedFormat);
 
@@ -23,6 +24,9 @@ const fetchAllArticles = async () => {
       ).format("LL"),
       status: result.properties["Status"].select?.name,
       cover: result?.cover?.external.url || "",
+      slug: `${slugify(result.properties["Name"].title[0].plain_text, {
+        lower: true,
+      })}--${result.id}`,
     };
   }) as IArticle[];
 
