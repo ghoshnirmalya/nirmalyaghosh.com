@@ -12,7 +12,6 @@
     "start": "next start"
   },
   "devDependencies": {
-    "@leafac/rehype-shiki": "^2.1.2",
     "@notionhq/client": "^1.0.4",
     "@release-it/conventional-changelog": "^5.0.0",
     "@stefanprobst/rehype-shiki": "^2.2.0",

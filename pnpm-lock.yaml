@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@leafac/rehype-shiki': ^2.1.2
   '@notionhq/client': ^1.0.4
   '@release-it/conventional-changelog': ^5.0.0
   '@stefanprobst/rehype-shiki': ^2.2.0
@@ -28,7 +27,6 @@ specifiers:
   typescript: ^4.7.4
 
 devDependencies:
-  '@leafac/rehype-shiki': 2.1.2_shiki@0.10.1
   '@notionhq/client': 1.0.4
   '@release-it/conventional-changelog': 5.0.0_release-it@15.1.3
   '@stefanprobst/rehype-shiki': 2.2.0_shiki@0.10.1
@@ -131,26 +129,6 @@ packages:
 
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
-    dev: true
-
-  /@leafac/html/3.0.2:
-    resolution: {integrity: sha512-AWZdjmfWHeIU3pPdP2FrcMmoELtbWnOEiVBbC/FSTCIYCtV7lwG1IROLdSwEZ4yznscpCgpEm9/VTz7B1IzUKw==}
-    dependencies:
-      he: 1.2.0
-      sanitize-xml-string: 1.1.0
-    dev: true
-
-  /@leafac/rehype-shiki/2.1.2_shiki@0.10.1:
-    resolution: {integrity: sha512-9MLPga+h1kCIN41v7FacT7K2baZeHYwZSGctefphHqAAQuLPC3W5Wq/xkeDXvZWXu3E64UiWK77qCYOvLaKj3w==}
-    peerDependencies:
-      shiki: ^0.10.0
-    dependencies:
-      '@leafac/html': 3.0.2
-      hast-util-to-text: 3.1.1
-      rehype-parse: 8.0.4
-      shiki: 0.10.1
-      unified: 10.1.2
-      unist-util-modify-children: 3.0.0
     dev: true
 
   /@mdx-js/mdx/2.1.1:
@@ -663,10 +641,6 @@ packages:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
 
-  /@types/parse5/6.0.3:
-    resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
-    dev: true
-
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
@@ -928,10 +902,6 @@ packages:
       es-abstract: 1.19.5
       get-intrinsic: 1.1.1
       is-string: 1.0.7
-    dev: true
-
-  /array-iterate/2.0.1:
-    resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: true
 
   /array-union/2.1.0:
@@ -2728,26 +2698,6 @@ packages:
       function-bind: 1.1.1
     dev: true
 
-  /hast-util-from-parse5/7.1.0:
-    resolution: {integrity: sha512-m8yhANIAccpU4K6+121KpPP55sSl9/samzQSQGpb0mTExcNh2WlvjtMwSWFhg6uqD4Rr6Nfa8N6TMypQM51rzQ==}
-    dependencies:
-      '@types/hast': 2.3.4
-      '@types/parse5': 6.0.3
-      '@types/unist': 2.0.6
-      hastscript: 7.0.2
-      property-information: 6.1.1
-      vfile: 5.3.2
-      vfile-location: 4.0.1
-      web-namespaces: 2.0.1
-    dev: true
-
-  /hast-util-is-element/2.1.2:
-    resolution: {integrity: sha512-thjnlGAnwP8ef/GSO1Q8BfVk2gundnc2peGQqEg2kUt/IqesiGg/5mSwN2fE7nLzy61pg88NG6xV+UrGOrx9EA==}
-    dependencies:
-      '@types/hast': 2.3.4
-      '@types/unist': 2.0.6
-    dev: true
-
   /hast-util-parse-selector/3.1.0:
     resolution: {integrity: sha512-AyjlI2pTAZEOeu7GeBPZhROx0RHBnydkQIXlhnFzDi0qfXTmGUWoCYZtomHbrdrheV4VFUlPcfJ6LMF5T6sQzg==}
     dependencies:
@@ -2781,14 +2731,6 @@ packages:
       '@types/hast': 2.3.4
     dev: true
 
-  /hast-util-to-text/3.1.1:
-    resolution: {integrity: sha512-7S3mOBxACy8syL45hCn3J7rHqYaXkxRfsX6LXEU5Shz4nt4GxdjtMUtG+T6G/ZLUHd7kslFAf14kAN71bz30xA==}
-    dependencies:
-      '@types/hast': 2.3.4
-      hast-util-is-element: 2.1.2
-      unist-util-find-after: 4.0.0
-    dev: true
-
   /hast-util-whitespace/2.0.0:
     resolution: {integrity: sha512-Pkw+xBHuV6xFeJprJe2BBEoDV+AvQySaz3pPDRUs5PNZEMQjpXJJueqrpcHIXxnWTcAGi/UOCgVShlkY6kLoqg==}
     dev: true
@@ -2801,11 +2743,6 @@ packages:
       hast-util-parse-selector: 3.1.0
       property-information: 6.1.1
       space-separated-tokens: 2.0.1
-    dev: true
-
-  /he/1.2.0:
-    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
-    hasBin: true
     dev: true
 
   /hosted-git-info/2.8.9:
@@ -4535,10 +4472,6 @@ packages:
       protocols: 1.4.8
     dev: true
 
-  /parse5/6.0.1:
-    resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
-    dev: true
-
   /path-exists/3.0.0:
     resolution: {integrity: sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ==}
     engines: {node: '>=4'}
@@ -4985,15 +4918,6 @@ packages:
       rc: 1.2.8
     dev: true
 
-  /rehype-parse/8.0.4:
-    resolution: {integrity: sha512-MJJKONunHjoTh4kc3dsM1v3C9kGrrxvA3U8PxZlP2SjH8RNUSrb+lF7Y0KVaUDnGH2QZ5vAn7ulkiajM9ifuqg==}
-    dependencies:
-      '@types/hast': 2.3.4
-      hast-util-from-parse5: 7.1.0
-      parse5: 6.0.1
-      unified: 10.1.2
-    dev: true
-
   /release-it/15.1.3:
     resolution: {integrity: sha512-pdW9Ua59S3upm2wwzrWiQK8N5vXazNBBYk/UhpVf0faHV6mmY8GunS1ZzawSNi4fOOx55zSQFj2IHkOgfBxNUg==}
     engines: {node: '>=14.9'}
@@ -5186,11 +5110,6 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
-    dev: true
-
-  /sanitize-xml-string/1.1.0:
-    resolution: {integrity: sha512-RzX25K64YtZm9FvdZr/Ac7Eeq0va1YX0xmpOkjWoREhgKXXldrJRVJhBel83nS8omIcaKcNTdLY8XzOIK920HA==}
-    engines: {node: '>=7.0.0'}
     dev: true
 
   /scheduler/0.23.0:
@@ -5790,26 +5709,12 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /unist-util-find-after/4.0.0:
-    resolution: {integrity: sha512-gfpsxKQde7atVF30n5Gff2fQhAc4/HTOV4CvkXpTg9wRfQhZWdXitpyXHWB6YcYgnsxLx+4gGHeVjCTAAp9sjw==}
-    dependencies:
-      '@types/unist': 2.0.6
-      unist-util-is: 5.1.1
-    dev: true
-
   /unist-util-generated/2.0.0:
     resolution: {integrity: sha512-TiWE6DVtVe7Ye2QxOVW9kqybs6cZexNwTwSMVgkfjEReqy/xwGpAXb99OxktoWwmL+Z+Epb0Dn8/GNDYP1wnUw==}
     dev: true
 
   /unist-util-is/5.1.1:
     resolution: {integrity: sha512-F5CZ68eYzuSvJjGhCLPL3cYx45IxkqXSetCcRgUXtbcm50X2L9oOWQlfUfDdAf+6Pd27YDblBfdtmsThXmwpbQ==}
-    dev: true
-
-  /unist-util-modify-children/3.0.0:
-    resolution: {integrity: sha512-cbDbx+4BeR4UzJXzvOgw6M/b69dKiaezt3gvN3ZbaJnGr0q719GKQCkMhdjPQiOBH6DnQ7TfHZs2aPY3vOkPyg==}
-    dependencies:
-      '@types/unist': 2.0.6
-      array-iterate: 2.0.1
     dev: true
 
   /unist-util-position-from-estree/1.1.1:
@@ -5957,13 +5862,6 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vfile-location/4.0.1:
-    resolution: {integrity: sha512-JDxPlTbZrZCQXogGheBHjbRWjESSPEak770XwWPfw5mTc1v1nWGLB/apzZxsx8a0SJVfF8HK8ql8RD308vXRUw==}
-    dependencies:
-      '@types/unist': 2.0.6
-      vfile: 5.3.2
-    dev: true
-
   /vfile-matter/3.0.1:
     resolution: {integrity: sha512-CAAIDwnh6ZdtrqAuxdElUqQRQDQgbbIrYtDYI8gCjXS1qQ+1XdLoK8FIZWxJwn0/I+BkSSZpar3SOgjemQz4fg==}
     dependencies:
@@ -6009,10 +5907,6 @@ packages:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
       defaults: 1.0.3
-    dev: true
-
-  /web-namespaces/2.0.1:
-    resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
     dev: true
 
   /web-streams-polyfill/3.2.1:
