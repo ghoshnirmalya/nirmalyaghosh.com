@@ -6,6 +6,7 @@ import fetchAllArticles from "utils/fetch-all-articles";
 import fetchSingleArticle from "utils/fetch-single-article";
 import rehypeShiki from "@stefanprobst/rehype-shiki";
 import * as shiki from "shiki";
+import path from "path";
 
 interface IProps {
   article: IArticle;
@@ -37,7 +38,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
           rehypeShiki,
           {
             highlighter: await shiki.getHighlighter({
-              theme: "github-light",
+              theme: await shiki.loadTheme(
+                path.join(process.cwd(), "configs/github-light.json")
+              ),
             }),
           },
         ],
