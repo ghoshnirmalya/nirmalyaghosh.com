@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
       projects: lastFiveProjects,
       publications: lastFivePublications,
     },
+    revalidate: 60,
   };
 };
 
