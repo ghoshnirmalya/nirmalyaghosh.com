@@ -91,8 +91,14 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
           {
             highlighter: await shiki.getHighlighter({
               theme: await shiki.loadTheme(
-                path.join(process.cwd(), "configs/github-light.json")
+                path.join(
+                  process.cwd(),
+                  "configs/shiki/themes/github-light.json"
+                )
               ),
+              paths: {
+                languages: path.join(process.cwd(), "configs/shiki/languages/"),
+              },
             }),
           },
         ],
