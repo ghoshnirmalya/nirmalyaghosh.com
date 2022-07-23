@@ -4,7 +4,6 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
-import Image from "next/image";
 import path from "path";
 import rehypeExternalImgSize from "rehype-external-img-size";
 import * as shiki from "shiki";
@@ -68,26 +67,7 @@ const DraftArticlesShowPage: NextPage<IProps> = ({ article, markdown }) => {
 
       <article className="p-4 max-w-2xl mx-auto prose prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal prose-pre:rounded-md prose-pre:border-gray-100 prose-pre:shadow-lg prose-pre:shadow-gray-100 prose-a:text-gray-500 prose-a:font-normal prose-a:border-b prose-a:border-gray-300 prose-a:no-underline hover:prose-a:text-black hover:prose-a:border-black prose-headings:mb-4 prose-headings:font-semibold prose-a:transition-colors prose-a:ease-in-out prose-a:duration-500 prose-img:aspect-video">
         <h1 className="font-semibold">{article?.title}</h1>
-        {!!markdown && (
-          <MDXRemote
-            {...markdown}
-            components={{
-              img: ({ src, alt, height, width }) => {
-                return (
-                  <span>
-                    <Image
-                      src={src}
-                      alt={alt}
-                      height={height}
-                      width={width}
-                      layout="responsive"
-                    />
-                  </span>
-                );
-              },
-            }}
-          />
-        )}
+        {!!markdown && <MDXRemote {...markdown} />}
       </article>
     </>
   );
