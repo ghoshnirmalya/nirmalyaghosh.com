@@ -1,3 +1,4 @@
+import siteConfig from "configs/site";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
@@ -5,19 +6,18 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="icon" href={siteConfig.assets.favicon} type="image/png" />
+
           <meta
             name="google-site-verification"
-            content="IrBdsYE_b8xi2Yt3qVUdf0jCWzjuDnshFMrv4pQtoQY"
+            content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION_KEY}
           />
           <meta
             name="ahrefs-site-verification"
-            content="a3cfb025018605bc9a5fcfd78fad26e8784fb310e1da70f90309d72114de2b55"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=optional"
-            rel="stylesheet"
+            content={process.env.NEXT_PUBLIC_AHREFS_SITE_VERIFICATION_KEY}
           />
         </Head>
+
         <body>
           <Main />
           <NextScript />
