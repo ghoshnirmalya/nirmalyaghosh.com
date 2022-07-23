@@ -28,7 +28,7 @@ const fetchSingleArticle = async (articleID?: string) => {
     slug: `${slugify(result.properties["Name"].title[0].plain_text, {
       lower: true,
     })}--${result.id}`,
-    content: content,
+    content,
   } as IArticle;
 
   return data;

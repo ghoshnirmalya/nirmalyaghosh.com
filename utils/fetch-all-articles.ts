@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import slugify from "slugify";
-import { ArticleStatus, IArticle } from "types/article";
+import { IArticle } from "types/article";
 import notionClient from "utils/notion-client";
 
 dayjs.extend(localizedFormat);
@@ -15,7 +15,7 @@ const fetchAllArticles = async () => {
     }
   );
 
-  const data = results.map((result: any) => {
+  const articles = results.map((result: any) => {
     return {
       id: result.id,
       title: result.properties["Name"].title[0].plain_text,
@@ -28,10 +28,6 @@ const fetchAllArticles = async () => {
       })}--${result.id}`,
     };
   }) as IArticle[];
-
-  const articles = data.filter(
-    (article: IArticle) => article.status === ArticleStatus.Published
-  );
 
   return articles;
 };

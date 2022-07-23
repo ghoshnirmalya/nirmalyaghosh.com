@@ -16,11 +16,11 @@ interface IProps {
   markdown: MDXRemoteSerializeResult;
 }
 
-const ArticlesShowPage: NextPage<IProps> = ({ article, markdown }) => {
+const DraftArticlesShowPage: NextPage<IProps> = ({ article, markdown }) => {
   return (
     <>
       <Head>
-        <title>{article.title}</title>
+        <title>[DRAFT] {article.title}</title>
 
         <link rel="icon" type="image/x-icon" href={siteConfig.assets.favicon} />
         <link
@@ -34,7 +34,7 @@ const ArticlesShowPage: NextPage<IProps> = ({ article, markdown }) => {
           content={`${article.title} - ${siteConfig.details.title}`}
         />
         <meta name="description" content={article.title} />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex, nofollow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content={siteConfig.details.title} />
@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const article = await fetchSingleArticle(slug);
 
-  if (article?.status !== ArticleStatus.Published) {
+  if (article?.status !== ArticleStatus.Unpublished) {
     return {
       notFound: true,
     };
@@ -105,22 +105,21 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       article,
       markdown,
     },
-    revalidate: 60,
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = await fetchAllArticles();
-  const publishedArticles = articles.filter(
-    (article: IArticle) => article.status === ArticleStatus.Published
+  const draftArticles = articles.filter(
+    (article: IArticle) => article.status === ArticleStatus.Unpublished
   );
-  const publishedArticlesSlugs = publishedArticles.map(
+  const draftArticlesSlugs = draftArticles.map(
     (article) =>
       `${slugify(article.title, {
         lower: true,
       })}--${article.id}`
   );
-  const paths = publishedArticlesSlugs.map((slug) => ({
+  const paths = draftArticlesSlugs.map((slug) => ({
     params: {
       slug,
     },
@@ -128,7 +127,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: false,
   };
 };
 
@@ -136,4 +135,4 @@ export const config = {
   unstable_runtimeJS: false,
 };
 
-export default ArticlesShowPage;
+export default DraftArticlesShowPage;
