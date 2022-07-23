@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const article = await fetchSingleArticle(slug);
 
-  if (article?.status !== ArticleStatus.Unpublished) {
+  if (!article || article?.status !== ArticleStatus.Unpublished) {
     return {
       notFound: true,
     };
