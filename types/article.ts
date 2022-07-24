@@ -7,6 +7,7 @@ export interface IArticle {
   content: string;
   slug: string;
   markdown: MDXRemoteSerializeResult;
+  lastFetchedTime: number;
 }
 
 export enum ArticleStatus {

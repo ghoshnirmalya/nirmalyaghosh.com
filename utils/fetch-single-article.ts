@@ -29,6 +29,7 @@ const fetchSingleArticle = async (articleID?: string) => {
       lower: true,
     })}--${result.id}`,
     content,
+    lastFetchedTime: new Date().getTime(),
   } as IArticle;
 
   return data;
