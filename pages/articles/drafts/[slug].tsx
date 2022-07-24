@@ -88,13 +88,15 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const article = await fetchSingleArticle(slug);
 
-  if (!article || article?.status !== ArticleStatus.Unpublished) {
+  const { id, title, lastFetchedTime, content, status } = article;
+
+  if (!article || status !== ArticleStatus.Unpublished) {
     return {
       notFound: true,
     };
   }
 
-  const markdown = await serialize(article.content, {
+  const markdown = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
         [
@@ -121,7 +123,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   return {
     props: {
       article: {
-        ...article,
+        id,
+        title,
+        slug,
+        lastFetchedTime,
         markdown,
       },
     },
