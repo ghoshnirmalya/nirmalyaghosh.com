@@ -13,6 +13,7 @@ import slugify from "slugify";
 import { ArticleStatus, IArticle } from "types/article";
 import fetchAllArticles from "utils/fetch-all-articles";
 import fetchSingleArticle from "utils/fetch-single-article";
+import rehypeDownloadImages from "utils/rehype-download-images";
 
 interface IProps {
   article: IArticle;
@@ -117,6 +118,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
           },
         ],
         rehypeExternalImgSize,
+        rehypeDownloadImages,
       ],
       remarkPlugins: [remarkUnwrapImages],
     },

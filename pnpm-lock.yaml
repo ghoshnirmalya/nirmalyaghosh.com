@@ -12,6 +12,7 @@ specifiers:
   eslint: <9.0.0
   eslint-config-next: 12.2.3
   husky: ^8.0.1
+  image-downloader: ^4.3.0
   lint-staged: ^13.0.3
   next: ^12.2.3
   next-mdx-remote: ^4.1.0
@@ -44,6 +45,7 @@ devDependencies:
   eslint: 8.13.0
   eslint-config-next: 12.2.3_rnu4jypy7o2rmzgwaq2ddxen4a
   husky: 8.0.1
+  image-downloader: 4.3.0
   lint-staged: 13.0.3
   next: 12.2.3_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
@@ -2370,6 +2372,16 @@ packages:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
     dev: true
 
+  /follow-redirects/1.15.1:
+    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: true
+
   /form-data-encoder/1.7.1:
     resolution: {integrity: sha512-EFRDrsMm/kyqbTQocNvRXMLjc7Es2Vk+IQFx/YW7hkUH1eBl4J1fqiP34l74Yt0pFLCNpc06fkbVk00008mzjg==}
     dev: true
@@ -2872,6 +2884,15 @@ packages:
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
     engines: {node: '>= 4'}
+    dev: true
+
+  /image-downloader/4.3.0:
+    resolution: {integrity: sha512-UBioN0E+8zu8N0lLC6wkZmPA/MA1A3yx9B1whjy5O/YiOV9XrSxLLKi7JqLLj6knQ3n9N1OBoHFS7shp8sehBQ==}
+    engines: {node: '>=6.10.1'}
+    dependencies:
+      follow-redirects: 1.15.1
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /import-fresh/3.3.0:

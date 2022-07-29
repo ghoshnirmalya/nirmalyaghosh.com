@@ -23,6 +23,7 @@
     "eslint": "<9.0.0",
     "eslint-config-next": "12.2.3",
     "husky": "^8.0.1",
+    "image-downloader": "^4.3.0",
     "lint-staged": "^13.0.3",
     "next": "^12.2.3",
     "next-mdx-remote": "^4.1.0",
