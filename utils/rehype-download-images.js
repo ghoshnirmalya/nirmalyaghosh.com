@@ -1,6 +1,7 @@
 import download from "image-downloader";
 import path from "path";
 import { visit } from "unist-util-visit";
+import sharp from "sharp";
 
 function rehypeDownloadImages() {
   function transformer(tree) {
@@ -21,10 +22,15 @@ function rehypeDownloadImages() {
           })
           .then(({ filename }) => {
             console.log("Saved to", filename);
+
+            sharp(`${downloadDirectory}/${fileName}.png`).toFile(
+              `${downloadDirectory}/${fileName}.webp`
+            );
           })
           .catch((err) => console.error(err));
 
-        node.properties.src = `/images/content/${fileName}.png`;
+        node.properties.src = `/images/content/${fileName}.webp`;
+        node.properties.loading = "lazy";
       }
     }
   }
