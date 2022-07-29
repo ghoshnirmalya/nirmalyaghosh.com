@@ -1,12 +1,13 @@
 import rehypeShiki from "@stefanprobst/rehype-shiki";
 import siteConfig from "configs/site";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import path from "path";
 import rehypeExternalImgSize from "rehype-external-img-size";
+import remarkUnwrapImages from "remark-unwrap-images";
 import * as shiki from "shiki";
 import slugify from "slugify";
 import { ArticleStatus, IArticle } from "types/article";
@@ -117,6 +118,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
         ],
         rehypeExternalImgSize,
       ],
+      remarkPlugins: [remarkUnwrapImages],
     },
   });
 
