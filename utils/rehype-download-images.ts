@@ -2,9 +2,10 @@ import download from "image-downloader";
 import MDAST from "mdast";
 import path from "path";
 import sharp from "sharp";
+import type { VisitorResult } from "unist-util-visit";
 import { visit } from "unist-util-visit";
 
-interface ShortCode extends MDAST.Parent {
+interface Node extends MDAST.Parent {
   tagName: string;
   properties: { [key: string]: any };
 }
@@ -13,7 +14,7 @@ function rehypeDownloadImages() {
   return async (tree: MDAST.Root) => {
     const downloadImagePromises: any[] = [];
 
-    const visitor = (node: ShortCode) => {
+    const visitor = (node: Node): VisitorResult => {
       if (node.tagName === "img") {
         const src = node.properties.src;
         const fileName = src.split("/")[4];
