@@ -1,37 +1,61 @@
 import download from "image-downloader";
+import MDAST from "mdast";
 import path from "path";
+import sharp from "sharp";
 import { visit } from "unist-util-visit";
 
-function rehypeDownloadImages() {
-  function transformer(tree) {
-    visit(tree, "element", visitor);
+interface ShortCode extends MDAST.Parent {
+  tagName: string;
+  properties: { [key: string]: any };
+}
 
-    function visitor(node) {
+function rehypeDownloadImages() {
+  return async (tree: MDAST.Root) => {
+    const downloadImagePromises: any[] = [];
+
+    const visitor = (node: ShortCode) => {
       if (node.tagName === "img") {
         const src = node.properties.src;
         const fileName = src.split("/")[4];
+
         const downloadDirectory = path.join(
           process.cwd(),
           "public/images/content"
         );
 
-        download
+        const downloadImagePromise = download
           .image({
             url: src,
             dest: `${downloadDirectory}/${fileName}.png`,
           })
-          .then(({ filename }) => {
-            console.log("Saved to", filename);
+          .then(() => {
+            sharp(`${downloadDirectory}/${fileName}.png`)
+              .toFile(`${downloadDirectory}/${fileName}.webp`)
+              .catch((err) =>
+                console.error(
+                  `Error: ${err} when converting ${downloadDirectory}/${fileName}.webp`
+                )
+              );
           })
-          .catch((err) => console.error(err));
+          .catch((err) =>
+            console.error(
+              `Error: ${err} when saving ${downloadDirectory}/${fileName}.png`
+            )
+          );
 
-        node.properties.src = `/images/content/${fileName}.png`;
+        downloadImagePromises.push(downloadImagePromise);
+
+        node.properties.src = `/images/content/${fileName}.webp`;
         node.properties.loading = "lazy";
       }
-    }
-  }
+    };
 
-  return transformer;
+    visit(tree, "element", visitor);
+
+    await Promise.all(downloadImagePromises);
+
+    return null;
+  };
 }
 
 export default rehypeDownloadImages;
