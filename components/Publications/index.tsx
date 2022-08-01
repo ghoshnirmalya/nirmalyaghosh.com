@@ -14,7 +14,7 @@ const Publications = ({ publications }: IProps) => {
           <a
             href={publication.url}
             key={publication.url}
-            className="block text-black group"
+            className="block text-black dark:text-white group"
             target="_blank"
             rel="noreferrer"
           >

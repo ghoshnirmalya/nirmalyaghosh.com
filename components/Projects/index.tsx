@@ -13,7 +13,7 @@ const Projects = ({ projects }: IProps) => {
           <a
             href={project.url}
             key={project.url}
-            className="block text-black group"
+            className="block text-black dark:text-white group"
             target="_blank"
             rel="noreferrer"
           >

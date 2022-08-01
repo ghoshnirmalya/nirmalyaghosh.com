@@ -5,19 +5,19 @@ const Navbar = () => {
     <nav className="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
       <div className="space-x-8">
         <Link href="/">
-          <a className="py-2 px-4 bg-black text-white text-sm no-underline rounded">
+          <a className="py-2 px-4 bg-black dark:bg-white text-white dark:text-black text-sm no-underline rounded">
             🏠
           </a>
         </Link>
         <Link href="/articles">
-          <a className="text-sm text-black">/articles</a>
+          <a className="text-sm text-black dark:text-white">/articles</a>
         </Link>
       </div>
       <div>
         <a
           href="https://twitter.com/NirmalyaGhosh_"
           target="_blank"
-          className="py-2 px-4 bg-black text-white text-sm no-underline rounded"
+          className="py-2 px-4 bg-black dark:bg-white text-white dark:text-black text-sm no-underline rounded"
           rel="noreferrer"
         >
           Follow 👋

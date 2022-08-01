@@ -22,7 +22,7 @@ const Articles = ({
 
           return (
             <Link href={href} key={article.id} passHref>
-              <a className="block text-black group">
+              <a className="block text-black dark:text-white group">
                 <span className="space-x-2 flex flex-row items-center">
                   <h2 className="text-lg font-semibold">{article.title}</h2>
                   <svg
