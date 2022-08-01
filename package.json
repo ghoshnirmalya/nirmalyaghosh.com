@@ -31,6 +31,7 @@
     "notion-to-md": "^2.5.3",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-external-img-size": "^0.1.0",
@@ -44,7 +45,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,md,tsx,ts}": [
-      "prettier --write"
+      "prettier --write --plugin=prettier-plugin-tailwindcss"
     ],
     "*.mdx": [
       "prettier --write --parser mdx"

@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
-    <div className="text-center w-full space-y-4">
+    <div className="w-full space-y-4 text-center">
       <h1>404 😕</h1>
       <Link href="/" passHref>
-        <a className="font-semibold text-md block">Go to the home page</a>
+        <a className="text-md block font-semibold">Go to the home page</a>
       </Link>
     </div>
   );

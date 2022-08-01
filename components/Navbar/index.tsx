@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="p-4 max-w-2xl mx-auto w-full flex justify-between items-center">
+    <nav className="mx-auto flex w-full max-w-2xl items-center justify-between p-4">
       <div className="space-x-8">
         <Link href="/">
-          <a className="py-2 px-4 bg-black dark:bg-white text-white dark:text-black text-sm no-underline rounded">
+          <a className="rounded bg-black py-2 px-4 text-sm text-white no-underline dark:bg-white dark:text-black">
             🏠
           </a>
         </Link>
@@ -17,7 +17,7 @@ const Navbar = () => {
         <a
           href="https://twitter.com/NirmalyaGhosh_"
           target="_blank"
-          className="py-2 px-4 bg-black dark:bg-white text-white dark:text-black text-sm no-underline rounded"
+          className="rounded bg-black py-2 px-4 text-sm text-white no-underline dark:bg-white dark:text-black"
           rel="noreferrer"
         >
           Follow 👋

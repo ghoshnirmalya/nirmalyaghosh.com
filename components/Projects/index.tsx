@@ -7,21 +7,21 @@ interface IProps {
 const Projects = ({ projects }: IProps) => {
   return (
     <div className="space-y-4">
-      <h2 className="font-semibold text-md">Projects</h2>
+      <h2 className="text-md font-semibold">Projects</h2>
       <div className="space-y-8">
         {projects.map((project) => (
           <a
             href={project.url}
             key={project.url}
-            className="block text-black dark:text-white group"
+            className="group block text-black dark:text-white"
             target="_blank"
             rel="noreferrer"
           >
-            <h2 className="text-lg font-semibold space-x-2 flex flex-row items-center">
+            <h2 className="flex flex-row items-center space-x-2 text-lg font-semibold">
               <span>{project.title}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 opacity-0 group-hover:opacity-100 text-gray-500 transition-opacity ease-in-out duration-500"
+                className="h-4 w-4 text-gray-500 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

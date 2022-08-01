@@ -77,7 +77,7 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
         <meta property="twitter:image" content={siteConfig.assets.avatar} />
       </Head>
 
-      <article className="p-4 max-w-2xl mx-auto prose prose-img:rounded-md prose-pre:border prose-pre:text-sm prose-pre:leading-6 prose-code:font-normal prose-pre:rounded-md prose-pre:border-gray-100 dark:prose-pre:border-gray-900 dark:prose-pre:shadow-gray-900  prose-a:text-gray-600 dark:prose-a:text-gray-400 prose-a:font-normal prose-a:border-b prose-a:border-gray-300 prose-a:no-underline hover:prose-a:text-black dark:hover:prose-a:text-white hover:prose-a:border-blackdark:hover:prose-a:border-white prose-headings:mb-4 prose-headings:font-semibold prose-a:transition-colors prose-a:ease-in-out prose-a:duration-500 dark:prose-invert">
+      <article className="hover:prose-a:border-blackdark:hover:prose-a:border-white prose mx-auto max-w-2xl p-4 prose-headings:mb-4 prose-headings:font-semibold prose-a:border-b prose-a:border-gray-300 prose-a:font-normal prose-a:text-gray-600 prose-a:no-underline prose-a:transition-colors  prose-a:duration-500 prose-a:ease-in-out hover:prose-a:text-black prose-code:font-normal prose-pre:rounded-md prose-pre:border prose-pre:border-gray-100 prose-pre:text-sm prose-pre:leading-6 prose-img:rounded-md dark:prose-invert dark:prose-a:text-gray-400 dark:hover:prose-a:text-white dark:prose-pre:border-gray-900 dark:prose-pre:shadow-gray-900">
         <h1 className="font-semibold">{article?.title}</h1>
         {!!article.markdown && <MDXRemote {...article.markdown} />}
       </article>
