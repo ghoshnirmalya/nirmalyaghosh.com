@@ -4,7 +4,6 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import path from "path";
 import rehypeExternalImgSize from "rehype-external-img-size";
 import remarkUnwrapImages from "remark-unwrap-images";
@@ -20,16 +19,6 @@ interface IProps {
 }
 
 const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
-  const router = useRouter();
-
-  const cacheAge = Math.floor(
-    (new Date().getTime() - new Date(article.lastFetchedTime).getTime()) / 1000
-  );
-
-  if (cacheAge > 3600) {
-    router.replace(router.asPath);
-  }
-
   return (
     <>
       <Head>
@@ -79,6 +68,28 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
 
       <article className="hover:prose-a:border-blackdark:hover:prose-a:border-white prose mx-auto max-w-2xl p-4 prose-headings:mb-4 prose-headings:font-semibold prose-a:border-b prose-a:border-gray-300 prose-a:font-normal prose-a:text-gray-600 prose-a:no-underline prose-a:transition-colors  prose-a:duration-500 prose-a:ease-in-out hover:prose-a:text-black prose-code:font-normal prose-pre:rounded-md prose-pre:border prose-pre:border-gray-100 prose-pre:text-sm prose-pre:leading-6 prose-img:rounded-md dark:prose-invert dark:prose-a:text-gray-400 dark:hover:prose-a:text-white dark:prose-pre:border-gray-900 dark:prose-pre:shadow-gray-900">
         <h1 className="font-semibold">{article?.title}</h1>
+
+        <div className="-mt-8 flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/common/avatar.png"
+              className="h-6 w-6"
+              alt="Nirmalya Ghosh"
+            />
+            <a
+              href="https://twitter.com/NirmalyaGhosh_"
+              target="_blank"
+              className="border-none text-sm"
+              rel="noreferrer"
+            >
+              Nirmalya Ghosh
+            </a>
+          </div>
+          <span className="text-sm text-gray-500">/</span>
+          <p className="text-sm text-gray-500">{article.publishedDate}</p>
+        </div>
+
         {!!article.markdown && <MDXRemote {...article.markdown} />}
       </article>
     </>
@@ -90,7 +101,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const article = await fetchSingleArticle(slug);
 
-  const { id, title, lastFetchedTime, content, status } = article;
+  const { id, title, lastFetchedTime, content, status, publishedDate } =
+    article;
 
   if (!article || status !== ArticleStatus.Published) {
     return {
@@ -132,6 +144,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
         slug,
         lastFetchedTime,
         markdown,
+        publishedDate,
       },
     },
     revalidate: 60,
