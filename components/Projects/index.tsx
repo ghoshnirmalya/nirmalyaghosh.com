@@ -5,6 +5,10 @@ interface IProps {
 }
 
 const Projects = ({ projects }: IProps) => {
+  if (!projects.length) {
+    return null;
+  }
+
   return (
     <div className="space-y-4">
       <h2 className="text-md font-semibold">Projects</h2>

@@ -6,6 +6,10 @@ interface IProps {
 }
 
 const Publications = ({ publications }: IProps) => {
+  if (!publications.length) {
+    return null;
+  }
+
   return (
     <div className="space-y-4">
       <h2 className="text-md font-semibold">Publications</h2>

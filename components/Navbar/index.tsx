@@ -9,9 +9,9 @@ const Navbar = () => {
             🏠
           </a>
         </Link>
-        <Link href="/articles">
+        {/* <Link href="/articles">
           <a className="text-sm text-black dark:text-white">/articles</a>
-        </Link>
+        </Link> */}
       </div>
       <div>
         <a

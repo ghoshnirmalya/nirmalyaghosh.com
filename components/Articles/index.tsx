@@ -10,6 +10,10 @@ const Articles = ({
   articles,
   articlesStatus = ArticleStatus.Published,
 }: IProps) => {
+  if (!articles.length) {
+    return null;
+  }
+
   return (
     <div className="space-y-4">
       <h2 className="text-md font-semibold">Articles</h2>
