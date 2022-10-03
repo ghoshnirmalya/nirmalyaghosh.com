@@ -68,15 +68,11 @@ export const getStaticProps: GetStaticProps = async () => {
     (article: IArticle) => article.status === ArticleStatus.Published
   );
 
-  const lastFiveProjects = projects.slice(0, 5);
-  const lastFivePublications = publications.slice(0, 5);
-  const lastFiveArticles = publishedArticles.slice(0, 5);
-
   return {
     props: {
-      articles: lastFiveArticles,
-      projects: lastFiveProjects,
-      publications: lastFivePublications,
+      articles: publishedArticles,
+      projects,
+      publications,
     },
     revalidate: 60,
   };

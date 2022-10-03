@@ -16,7 +16,7 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
         <main className="mx-auto flex w-full max-w-2xl items-center justify-between p-4">
           <Component {...pageProps} />
         </main>
-        <footer className="sticky top-[100vh] pb-16 text-center">✌🏻</footer>
+        <footer className="sticky top-[100vh] pb-16 text-center">✌️</footer>
       </div>
     </>
   );
