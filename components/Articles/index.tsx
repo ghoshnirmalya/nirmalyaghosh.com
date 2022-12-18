@@ -25,7 +25,7 @@ const Articles = ({
               : `/articles/drafts/${article.slug}`;
 
           return (
-            <Link href={href} key={article.id} passHref>
+            <Link href={href} key={article.id} passHref legacyBehavior>
               <a className="group block text-black dark:text-white">
                 <span className="flex flex-row items-center space-x-2">
                   <h2 className="text-lg font-semibold">{article.title}</h2>

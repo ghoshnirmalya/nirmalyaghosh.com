@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="mx-auto flex w-full max-w-2xl items-center justify-between p-4">
       <div className="space-x-8">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className="rounded bg-black py-2 px-4 text-sm text-white no-underline dark:bg-white dark:text-black">
             🏠
           </a>

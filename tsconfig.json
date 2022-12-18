@@ -18,13 +18,18 @@
       "*": ["/*"],
       "components/*": ["components/*"],
       "utils/*": ["utils/*"],
-      "pages/*": ["pages/*"],
+      "app/*": ["app/*"],
       "configs/*": ["configs/*"],
       "types/*": ["types/*"],
       "public/*": ["public/*"]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }
