@@ -17,7 +17,7 @@ function rehypeDownloadImages() {
     const visitor = (node: Node): VisitorResult => {
       if (node.tagName === "img") {
         const src = node.properties.src;
-        const fileName = src.split("/")[4];
+        const fileName = (Math.random() + 1).toString(36).substring(7);
 
         const downloadDirectory = path.join(
           process.cwd(),
@@ -46,7 +46,7 @@ function rehypeDownloadImages() {
 
         downloadImagePromises.push(downloadImagePromise);
 
-        node.properties.src = `/images/content/${fileName}.webp`;
+        node.properties.src = `/images/content/${fileName}.png`;
         node.properties.loading = "lazy";
       }
     };
