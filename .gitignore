@@ -80,3 +80,7 @@ public/sitemap*.xml
 
 # Contentlayer
 .contentlayer
+
+# Public assets
+public/images/content/*.png
+public/images/content/*.webp

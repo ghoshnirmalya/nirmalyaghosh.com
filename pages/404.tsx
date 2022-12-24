@@ -1,10 +1,13 @@
-import { Center, Heading } from "@chakra-ui/react";
+import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
-    <Center minH="calc(100vh - 200px)">
-      <Heading>Page not found!</Heading>
-    </Center>
+    <div className="w-full space-y-4 text-center">
+      <h1>404 😕</h1>
+      <Link href="/" passHref legacyBehavior>
+        <a className="text-md block font-semibold">Go to the home page</a>
+      </Link>
+    </div>
   );
 };
 

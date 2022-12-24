@@ -1,30 +1,11 @@
-/**
- * @type {import('next').NextConfig}
- */
-
-const { withContentlayer } = require("next-contentlayer");
-
-module.exports = withContentlayer({
+/** @type {import('next').NextConfig} */
+module.exports = {
   reactStrictMode: true,
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        "react/jsx-runtime.js": "preact/compat/jsx-runtime",
-        react: "preact/compat",
-        "react-dom": "preact/compat",
-        "react-dom/test-utils": "preact/test-utils",
-      });
-    }
-
-    return config;
+  images: {
+    domains: ["s3.us-west-2.amazonaws.com"],
   },
-  async redirects() {
-    return [
-      {
-        source: "/concepts/:slug",
-        destination: "/articles/:slug",
-        permanent: true,
-      },
-    ];
+  experimental: {
+    appDir: true,
   },
-});
+  redirects: () => require("./utils/redirects.json"),
+};

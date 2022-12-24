@@ -1,0 +1,77 @@
+[
+  {
+    "source": "/articles/what-is-incremental-static-re-generation-in-nextjs",
+    "destination": "/articles/what-is-incremental-static-re-generation-in-next.js--0fe12527-7dcc-47db-ac03-387b7c06e8e6",
+    "permanent": true
+  },
+  {
+    "source": "/articles/what-is-getstaticprops",
+    "destination": "/articles/what-is-getstaticprops-in-next.js--726dcc47-6ad6-41cb-b75b-e21beb5ad2d5",
+    "permanent": true
+  },
+  {
+    "source": "/articles/how-can-you-use-the-nextjs-image-component",
+    "destination": "/articles/how-can-you-use-the-next.js-image-component--f0ac1d7b-ba23-4926-bd09-00f52f9d844e",
+    "permanent": true
+  },
+  {
+    "source": "/articles/getting-started-with-next.js",
+    "destination": "/articles/getting-started-with-next.js--fdfe9a75-520b-4f5a-a983-790396ef8bad",
+    "permanent": true
+  },
+  {
+    "source": "/articles/automate-backend-stuffs-strapi-docker",
+    "destination": "/articles/automate-the-backend-stuff-with-strapi-and-docker--7b3a69ba-dd9a-4860-8898-be50f82cf2b9",
+    "permanent": true
+  },
+  {
+    "source": "/articles/tailwindcss",
+    "destination": "/articles/what-is-tailwindcss--8d90c200-7e3d-4bfe-a52b-2279fd069c90",
+    "permanent": true
+  },
+  {
+    "source": "/articles/integrate-tailwindcss-js",
+    "destination": "/articles/integrate-tailwindcss-with-next.js--4014cc62-de96-40cc-910c-9221c7d86d40",
+    "permanent": true
+  },
+  {
+    "source": "/articles/understand-component-oriented-styling-styletron",
+    "destination": "/articles/understand-component-oriented-styling-using-styletron--2124ee4c-dfd5-4df5-9eeb-fd97ad3db400",
+    "permanent": true
+  },
+  {
+    "source": "/articles/mirage-js-jumpstart-frontend-development",
+    "destination": "/articles/use-mirage.js-to-jumpstart-your-frontend-development--954fac15-4720-487a-8fad-940e77a6aba4",
+    "permanent": true
+  },
+  {
+    "source": "/articles/authenticate-js-application-strapi",
+    "destination": "/articles/authenticate-your-next.js-application-using-strapi--8fac3477-6f49-4333-830f-97b1d7d53f47",
+    "permanent": true
+  },
+  {
+    "source": "/articles/create-pagination-component-react-theme-ui",
+    "destination": "/articles/create-a-pagination-component-with-react-and-theme-ui--28ae000d-1aaf-4604-8aa8-b93eaf4d6b5f",
+    "permanent": true
+  },
+  {
+    "source": "/articles/create-package-react-publish-npm",
+    "destination": "/articles/create-a-package-using-react-and-publish-it-to-npm--7b0c6094-fcab-46bd-a6e0-de248fb89237",
+    "permanent": true
+  },
+  {
+    "source": "/articles/started-js-graphcms",
+    "destination": "/articles/getting-started-with-next.js-and-graphcms--56141217-be0a-4e83-a943-d076ac197a23",
+    "permanent": true
+  },
+  {
+    "source": "/articles/js-strapi-apollo",
+    "destination": "/articles/how-to-use-next.js-with-strapi-and-apollo--6aa1ccd0-546c-46c3-8e29-4fe07527bb34",
+    "permanent": true
+  },
+  {
+    "source": "/articles/authentication-js-strapi-nextauth",
+    "destination": "/articles/authentication-in-next.js-using-strapi-and-nextauth--43325e80-4f14-4fc0-a892-2352d4dd689f",
+    "permanent": true
+  }
+]
