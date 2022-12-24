@@ -5,7 +5,6 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import path from "path";
-import rehypeExternalImgSize from "rehype-external-img-size";
 import remarkUnwrapImages from "remark-unwrap-images";
 import * as shiki from "shiki";
 import slugify from "slugify";
@@ -128,7 +127,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
             }),
           },
         ],
-        rehypeExternalImgSize,
         () => rehypeUploadImages(article.slug),
       ],
       remarkPlugins: [remarkUnwrapImages],

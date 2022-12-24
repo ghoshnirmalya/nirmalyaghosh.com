@@ -9,7 +9,8 @@
     "lint": "next lint",
     "prepare": "husky install",
     "release": "release-it",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "devDependencies": {
     "@notionhq/client": "^1.0.4",
@@ -32,7 +33,6 @@
     "prettier-plugin-tailwindcss": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rehype-external-img-size": "^0.1.0",
     "release-it": "^15.5.1",
     "remark-unwrap-images": "^3.0.1",
     "shiki": "^0.10.1",
@@ -73,6 +73,7 @@
     }
   },
   "dependencies": {
-    "imagekit": "^4.1.2"
+    "imagekit": "^4.1.2",
+    "next-sitemap": "^3.1.43"
   }
 }
