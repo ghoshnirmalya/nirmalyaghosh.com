@@ -23,7 +23,7 @@ function rehypeUploadImages(articleSlug: IArticle["slug"]) {
     const visitor = (node: Node): VisitorResult => {
       if (node.tagName === "img") {
         const src = node.properties.src;
-        const fileName = `${articleSlug}-${fileNumber}-${Date.now()}`;
+        const fileName = `${articleSlug}-${fileNumber}`;
 
         const uploadImagePromise = imagekit.upload(
           {
