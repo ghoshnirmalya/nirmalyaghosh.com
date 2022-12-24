@@ -7,4 +7,5 @@ module.exports = {
   experimental: {
     appDir: true,
   },
+  redirects: () => require("./utils/redirects.json"),
 };
