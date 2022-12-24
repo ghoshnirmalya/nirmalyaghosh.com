@@ -18,13 +18,11 @@
     "@tailwindcss/typography": "^0.5.8",
     "@types/node": "^18.11.17",
     "@types/react": "^18.0.26",
-    "@types/sharp": "^0.31.0",
     "autoprefixer": "^10.4.13",
     "dayjs": "^1.11.7",
     "eslint": "<9.0.0",
     "eslint-config-next": "13.0.7",
     "husky": "^8.0.2",
-    "image-downloader": "^4.3.0",
     "lint-staged": "^13.1.0",
     "next": "^13.0.7",
     "next-mdx-remote": "^4.2.0",
@@ -37,7 +35,6 @@
     "rehype-external-img-size": "^0.1.0",
     "release-it": "^15.5.1",
     "remark-unwrap-images": "^3.0.1",
-    "sharp": "^0.31.2",
     "shiki": "^0.10.1",
     "slugify": "^1.6.5",
     "tailwindcss": "^3.2.4",
@@ -70,9 +67,12 @@
     }
   },
   "eslintConfig": {
-    "extends": "eslint-config-next"
+    "extends": "eslint-config-next",
+    "rules": {
+      "@next/next/no-img-element": "off"
+    }
   },
   "dependencies": {
-    "remark-embed-images": "^3.1.0"
+    "imagekit": "^4.1.2"
   }
 }
