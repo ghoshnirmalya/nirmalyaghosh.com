@@ -18,14 +18,18 @@ interface IProps {
 }
 
 const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
+  const slug = `${slugify(article.title, {
+    lower: true,
+  })}--${article.id}`;
+
   return (
     <>
       <NextSeo
         title={article.title}
         description={article.title}
-        canonical={`${siteConfig.details.url}/articles/${article.slug}`}
+        canonical={`${siteConfig.details.url}/articles/${slug}`}
         openGraph={{
-          url: `${siteConfig.details.url}/articles/${article.slug}`,
+          url: `${siteConfig.details.url}/articles/${slug}`,
           title: article.title,
           description: article.title,
           siteName: siteConfig.details.title,
@@ -36,7 +40,7 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
         }}
       />
       <ArticleJsonLd
-        url={`${siteConfig.details.url}/articles/${article.slug}`}
+        url={`${siteConfig.details.url}/articles/${slug}`}
         title={article.title}
         images={[
           "https://example.com/photos/1x1/photo.jpg",
