@@ -3,6 +3,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 import path from "path";
 import remarkUnwrapImages from "remark-unwrap-images";
 import * as shiki from "shiki";
@@ -23,10 +24,11 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
 
         <div className="-mt-8 flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <img
+            <Image
               src="/images/common/avatar.png"
-              className="h-6 w-6"
               alt="Nirmalya Ghosh"
+              width={24}
+              height={24}
             />
             <a
               href="https://twitter.com/NirmalyaGhosh_"

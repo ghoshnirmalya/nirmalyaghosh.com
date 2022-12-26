@@ -66,11 +66,5 @@
     "hooks": {
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     }
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-next",
-    "rules": {
-      "@next/next/no-img-element": "off"
-    }
   }
 }
