@@ -1,10 +1,9 @@
 import "public/styles/tailwind.css";
 
 import Navbar from "components/Navbar";
-import { AppProps } from "next/app";
-import Head from "next/head";
-import { DefaultSeo } from "next-seo";
 import siteConfig from "configs/site";
+import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {
   return (

@@ -20,8 +20,6 @@ const Articles = ({
   const articlesListNode = () => {
     if (showAll) {
       return articles.map((article) => {
-        console.log(articlesStatus);
-
         const href =
           articlesStatus === ArticleStatus.Published
             ? `/articles/${article.slug}`

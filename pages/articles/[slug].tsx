@@ -129,7 +129,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
               theme: await shiki.loadTheme(
                 path.join(
                   process.cwd(),
-                  "configs/shiki/themes/github-dark.json"
+                  "configs/shiki/themes/github-dark-dimmed.json"
                 )
               ),
               paths: {
