@@ -44,7 +44,7 @@ const IndexPage: NextPage<IProps> = ({ articles, projects, publications }) => {
         }}
       />
 
-      <div className="space-y-16">
+      <div className="space-y-24">
         <Projects projects={projects} />
         <Articles articles={articles} />
         <Publications publications={publications} />
