@@ -3,14 +3,24 @@ import "public/styles/tailwind.css";
 import Navbar from "components/Navbar";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { DefaultSeo } from "next-seo";
+import siteConfig from "configs/site";
 
 const PortfolioApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
+      <DefaultSeo
+        openGraph={{
+          type: "website",
+          locale: "en_IE",
+          url: siteConfig.details.url,
+          siteName: siteConfig.details.title,
+        }}
+        twitter={{
+          handle: siteConfig.socialLinks.twitter,
+          cardType: "summary_large_image",
+        }}
+      />
       <div className="min-h-screen space-y-16">
         <Navbar />
         <main className="mx-auto flex w-full max-w-2xl items-center justify-between p-4">

@@ -3,7 +3,7 @@ import siteConfig from "configs/site";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import Head from "next/head";
+import { ArticleJsonLd, NextSeo } from "next-seo";
 import path from "path";
 import remarkUnwrapImages from "remark-unwrap-images";
 import * as shiki from "shiki";
@@ -20,51 +20,41 @@ interface IProps {
 const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
   return (
     <>
-      <Head>
-        <title>{article.title}</title>
-
-        <link rel="icon" type="image/x-icon" href={siteConfig.assets.favicon} />
-        <link
-          rel="canonical"
-          href={`${siteConfig.details.url}/articles/${article.slug}`}
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="title"
-          content={`${article.title} - ${siteConfig.details.title}`}
-        />
-        <meta name="description" content={article.title} />
-        <meta name="robots" content="index, follow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="language" content="English" />
-        <meta name="author" content={siteConfig.details.title} />
-
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`${siteConfig.details.url}/articles/${article.slug}`}
-        />
-        <meta
-          property="og:title"
-          content={`${article.title} - ${siteConfig.details.title}`}
-        />
-        <meta property="og:description" content={article.title} />
-        <meta property="og:image" content={siteConfig.assets.avatar} />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content={`${siteConfig.details.url}/articles/${article.slug}`}
-        />
-        <meta
-          property="twitter:title"
-          content={`${article.title} - ${siteConfig.details.title}`}
-        />
-        <meta property="twitter:description" content={article.title} />
-        <meta property="twitter:image" content={siteConfig.assets.avatar} />
-      </Head>
-
+      <NextSeo
+        title={article.title}
+        description={article.title}
+        canonical={`${siteConfig.details.url}/articles/${article.slug}`}
+        openGraph={{
+          url: `${siteConfig.details.url}/articles/${article.slug}`,
+          title: article.title,
+          description: article.title,
+          siteName: siteConfig.details.title,
+        }}
+        twitter={{
+          handle: siteConfig.socialLinks.twitter,
+          cardType: "summary_large_image",
+        }}
+      />
+      <ArticleJsonLd
+        url={`${siteConfig.details.url}/articles/${article.slug}`}
+        title={article.title}
+        images={[
+          "https://example.com/photos/1x1/photo.jpg",
+          "https://example.com/photos/4x3/photo.jpg",
+          "https://example.com/photos/16x9/photo.jpg",
+        ]}
+        datePublished={article.publishedDate}
+        dateModified={article.publishedDate}
+        authorName={[
+          {
+            name: siteConfig.details.title,
+            url: siteConfig.details.url,
+          },
+        ]}
+        publisherName={siteConfig.details.title}
+        description={article.title}
+        isAccessibleForFree={true}
+      />
       <article className="hover:prose-a:border-blackdark:hover:prose-a:border-white prose mx-auto w-full max-w-2xl py-4 prose-headings:mb-4 prose-headings:font-semibold prose-a:border-b prose-a:border-gray-300 prose-a:font-normal prose-a:text-gray-600 prose-a:no-underline  prose-a:transition-colors prose-a:duration-500 prose-a:ease-in-out hover:prose-a:text-black prose-code:font-normal prose-pre:rounded-md prose-pre:border prose-pre:border-gray-100 prose-pre:text-sm prose-pre:leading-6 prose-img:rounded-md dark:prose-invert dark:prose-a:text-gray-400 dark:hover:prose-a:text-white dark:prose-pre:border-gray-900 dark:prose-pre:shadow-gray-900">
         <h1 className="font-semibold">{article?.title}</h1>
 

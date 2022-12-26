@@ -16,6 +16,7 @@ specifiers:
   lint-staged: ^13.1.0
   next: ^13.0.7
   next-mdx-remote: ^4.2.0
+  next-seo: ^5.15.0
   notion-to-md: ^2.5.5
   postcss: ^8.4.20
   prettier: ^2.8.1
@@ -45,6 +46,7 @@ devDependencies:
   lint-staged: 13.1.0
   next: 13.0.7_biqbaboplfbrettd7655fr4n2y
   next-mdx-remote: 4.2.0_biqbaboplfbrettd7655fr4n2y
+  next-seo: 5.15.0_gvvct4imq5upoiloat43sswrza
   notion-to-md: 2.5.5
   postcss: 8.4.20
   prettier: 2.8.1
@@ -4110,6 +4112,18 @@ packages:
       vfile-matter: 3.0.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /next-seo/5.15.0_gvvct4imq5upoiloat43sswrza:
+    resolution: {integrity: sha512-LGbcY91yDKGMb7YI+28n3g+RuChUkt6pXNpa8FkfKkEmNiJkeRDEXTnnjVtwT9FmMhG6NH8qwHTelGrlYm9rgg==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.0.7_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: true
 
   /next/13.0.7_biqbaboplfbrettd7655fr4n2y:
