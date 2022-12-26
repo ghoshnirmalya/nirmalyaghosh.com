@@ -1,15 +1,17 @@
 import rehypeShiki from "@stefanprobst/rehype-shiki";
+import { Image } from "components/Markdown";
 import type { GetServerSideProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { NextSeo } from "next-seo";
-import Image from "next/image";
 import path from "path";
 import remarkUnwrapImages from "remark-unwrap-images";
 import * as shiki from "shiki";
 import { ArticleStatus, IArticle } from "types/article";
 import fetchSingleArticle from "utils/fetch-single-article";
 import rehypeUploadImages from "utils/rehype-upload-images";
+import AvatarImage from "/public/images/common/avatar.png";
+import NextImage from "next/image";
 
 interface IProps {
   article: IArticle;
@@ -24,11 +26,12 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
 
         <div className="-mt-8 flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <Image
+            <NextImage
               src="/images/common/avatar.png"
               alt="Nirmalya Ghosh"
               width={24}
               height={24}
+              className="overflow-hidden rounded-full"
             />
             <a
               href="https://twitter.com/NirmalyaGhosh_"
@@ -43,7 +46,18 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
           <p className="text-sm text-gray-500">Draft</p>
         </div>
 
-        {!!article.markdown && <MDXRemote {...article.markdown} />}
+        {!!article.markdown && (
+          <MDXRemote
+            {...article.markdown}
+            components={{
+              img: ({ alt, src, width = 640, height }) => {
+                return (
+                  <Image src={src} alt={alt} width={width} height={height} />
+                );
+              },
+            }}
+          />
+        )}
       </article>
     </>
   );

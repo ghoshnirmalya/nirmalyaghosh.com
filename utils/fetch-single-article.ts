@@ -18,6 +18,8 @@ const fetchSingleArticle = async (articleID?: string) => {
   const mdblocks = await notionToMDClient.pageToMarkdown(articleID);
   const content = notionToMDClient.toMarkdownString(mdblocks);
 
+  console.log(content);
+
   const data = {
     id: result.id,
     title: result.properties["Name"].title[0].plain_text,

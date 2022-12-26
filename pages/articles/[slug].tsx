@@ -1,10 +1,11 @@
 import rehypeShiki from "@stefanprobst/rehype-shiki";
+import { Image } from "components/Markdown";
 import siteConfig from "configs/site";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { ArticleJsonLd, NextSeo } from "next-seo";
-import Image from "next/image";
+import NextImage from "next/image";
 import path from "path";
 import remarkUnwrapImages from "remark-unwrap-images";
 import * as shiki from "shiki";
@@ -13,6 +14,7 @@ import { ArticleStatus, IArticle } from "types/article";
 import fetchAllArticles from "utils/fetch-all-articles";
 import fetchSingleArticle from "utils/fetch-single-article";
 import rehypeUploadImages from "utils/rehype-upload-images";
+import AvatarImage from "/public/images/common/avatar.png";
 
 interface IProps {
   article: IArticle;
@@ -67,11 +69,12 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
 
         <div className="-mt-8 flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <Image
-              src="/images/common/avatar.png"
+            <NextImage
+              src={AvatarImage}
               alt="Nirmalya Ghosh"
               width={24}
               height={24}
+              className="overflow-hidden rounded-full"
             />
             <a
               href="https://twitter.com/NirmalyaGhosh_"
@@ -85,7 +88,18 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
           <span className="text-sm text-gray-500">/</span>
           <p className="text-sm text-gray-500">{article.publishedDate}</p>
         </div>
-        {!!article.markdown && <MDXRemote {...article.markdown} />}
+        {!!article.markdown && (
+          <MDXRemote
+            {...article.markdown}
+            components={{
+              img: ({ alt, src, width = 640, height }) => {
+                return (
+                  <Image src={src} alt={alt} width={width} height={height} />
+                );
+              },
+            }}
+          />
+        )}
       </article>
     </>
   );

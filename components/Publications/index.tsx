@@ -85,7 +85,7 @@ const Publications = ({ publications }: IProps) => {
         className="rounded bg-black py-1 px-2 text-sm text-white no-underline dark:bg-white dark:text-black"
         onClick={() => setShowAll(true)}
       >
-        Show all articles
+        Show all publications
       </button>
     );
   };
