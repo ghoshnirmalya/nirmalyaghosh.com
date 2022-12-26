@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { IArticle } from "types/article";
+import { ArticleStatus, IArticle } from "types/article";
 import notionClient from "utils/notion-client";
 import notionToMDClient from "utils/notion-to-md-client";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -24,7 +24,8 @@ const fetchSingleArticle = async (articleID?: string) => {
     publishedDate: dayjs(
       result.properties["Published date"].date?.start
     ).format("LL"),
-    status: result.properties["Status"].select.name,
+    status:
+      result.properties["Status"].select?.name || ArticleStatus.Unpublished,
     slug: `${slugify(result.properties["Name"].title[0].plain_text, {
       lower: true,
     })}--${result.id}`,

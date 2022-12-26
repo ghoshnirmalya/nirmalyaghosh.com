@@ -4,7 +4,7 @@ import { ArticleStatus, IArticle } from "types/article";
 
 interface IProps {
   articles: IArticle[];
-  articlesStatus?: ArticleStatus.Published | ArticleStatus.Unpublished;
+  articlesStatus?: ArticleStatus;
 }
 
 const Articles = ({
@@ -20,6 +20,8 @@ const Articles = ({
   const articlesListNode = () => {
     if (showAll) {
       return articles.map((article) => {
+        console.log(articlesStatus);
+
         const href =
           articlesStatus === ArticleStatus.Published
             ? `/articles/${article.slug}`
