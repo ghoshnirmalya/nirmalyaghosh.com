@@ -166,8 +166,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const config = {
-  unstable_runtimeJS: false,
-};
-
 export default ArticlesShowPage;

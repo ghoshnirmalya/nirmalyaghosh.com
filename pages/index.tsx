@@ -69,8 +69,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export const config = {
-  unstable_runtimeJS: false,
-};
-
 export default IndexPage;
