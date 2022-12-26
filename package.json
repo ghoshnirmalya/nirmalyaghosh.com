@@ -9,8 +9,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "release": "release-it",
-    "start": "next start",
-    "postbuild": "next-sitemap"
+    "start": "next start"
   },
   "devDependencies": {
     "@notionhq/client": "^1.0.4",
@@ -38,7 +37,8 @@
     "shiki": "^0.10.1",
     "slugify": "^1.6.5",
     "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "imagekit": "^4.1.2"
   },
   "lint-staged": {
     "*.{js,json,css,md,tsx,ts}": [
@@ -71,9 +71,5 @@
     "rules": {
       "@next/next/no-img-element": "off"
     }
-  },
-  "dependencies": {
-    "imagekit": "^4.1.2",
-    "next-sitemap": "^3.1.43"
   }
 }
