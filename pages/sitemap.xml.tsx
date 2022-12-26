@@ -8,6 +8,9 @@ function generateSiteMap(articles: IArticle[]) {
      <url>
        <loc>${siteConfig.details.url}</loc>
      </url>
+     <url>
+       <loc>${`${siteConfig.details.url}/articles`}</loc>
+     </url>
      ${articles
        .map((article) => {
          return `

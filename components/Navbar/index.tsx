@@ -9,11 +9,13 @@ const Navbar = () => {
             🏠
           </a>
         </Link>
-        {/* <Link href="/articles">
-          <a className="text-sm text-black dark:text-white">/articles</a>
-        </Link> */}
       </div>
-      <div>
+      <div className="space-x-8">
+        <Link href="/articles" legacyBehavior>
+          <a className="py-2 px-4 text-sm text-black dark:text-white">
+            /articles
+          </a>
+        </Link>
         <a
           href="https://twitter.com/NirmalyaGhosh_"
           target="_blank"

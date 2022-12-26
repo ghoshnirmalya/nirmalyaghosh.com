@@ -33,6 +33,12 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
           title: article.title,
           description: article.title,
           siteName: siteConfig.details.title,
+          images: [
+            {
+              url: siteConfig.assets.avatar,
+              alt: siteConfig.details.title,
+            },
+          ],
         }}
         twitter={{
           handle: siteConfig.socialLinks.twitter,
@@ -42,11 +48,7 @@ const ArticlesShowPage: NextPage<IProps> = ({ article }) => {
       <ArticleJsonLd
         url={`${siteConfig.details.url}/articles/${slug}`}
         title={article.title}
-        images={[
-          "https://example.com/photos/1x1/photo.jpg",
-          "https://example.com/photos/4x3/photo.jpg",
-          "https://example.com/photos/16x9/photo.jpg",
-        ]}
+        images={[siteConfig.assets.avatar]}
         datePublished={article.publishedDate}
         dateModified={article.publishedDate}
         authorName={[
