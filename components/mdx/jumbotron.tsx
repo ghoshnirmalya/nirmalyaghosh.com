@@ -74,7 +74,7 @@ const Jumbotron: FC<IProps> = ({ description, githubLink, demoLink }) => {
         <Text>{description}</Text>
       </Box>
       <Box>
-        <Box d="flex" alignItems="center">
+        <Box display="flex" alignItems="center">
           <HStack spacing={4}>
             {githubButtonNode()}
             {demoButtonNode()}

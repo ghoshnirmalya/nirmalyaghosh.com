@@ -1,21 +1,19 @@
-import { Article } from "contentlayer/generated";
 import {
   Box,
   Heading,
   HStack,
-  Icon,
-  Link as _Link,
+  Link,
   Tag,
   TagLabel,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Article } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import Link from "next/link";
+import NextLink from "next/link";
 import { FC, useState } from "react";
 import Publication from "types/publication";
-import { IoIosLink } from "react-icons/io";
 
 dayjs.extend(localizedFormat);
 
@@ -47,8 +45,8 @@ const Articles: FC<Props> = ({
 
   const viewAllLinksNode = () => {
     return (
-      <Link href="/articles" passHref>
-        <_Link
+      <NextLink href="/articles" passHref legacyBehavior>
+        <Link
           p={2}
           href="/articles"
           rounded="sm"
@@ -57,14 +55,12 @@ const Articles: FC<Props> = ({
           borderColor="transparent"
           _hover={{
             textDecoration: "none",
-            borderWidth: 1,
-            borderColor: "gray.700",
             bg: "gray.900",
           }}
         >
           <Box color="gray.300">View all articles</Box>
-        </_Link>
-      </Link>
+        </Link>
+      </NextLink>
     );
   };
 
@@ -113,7 +109,7 @@ const Articles: FC<Props> = ({
     }
 
     return (
-      <Box d="flex" justifyContent="space-between" alignItems="center">
+      <Box display="flex" justifyContent="space-between" alignItems="center">
         <Heading as="h2" size="lg" color="white">
           Articles
         </Heading>
@@ -189,7 +185,7 @@ const Articles: FC<Props> = ({
 
       return (
         <Box key={index}>
-          <Link href={`/articles/${article.slug}`}>
+          <NextLink href={`/articles/${article.slug}`} legacyBehavior>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
@@ -199,7 +195,7 @@ const Articles: FC<Props> = ({
                 </VStack>
               </Box>
             </a>
-          </Link>
+          </NextLink>
         </Box>
       );
     });

@@ -22,6 +22,7 @@ const Image: FC<IProps> = ({ src, alt, height, width }) => {
         as="span"
         borderWidth={1}
         borderColor="gray.700"
+        overflow="hidden"
       >
         <Box pos="relative" w="100%" h="100%" className="image">
           <NextImage
@@ -29,7 +30,6 @@ const Image: FC<IProps> = ({ src, alt, height, width }) => {
             alt={alt}
             height={height}
             width={width}
-            layout="responsive"
             className={loaded ? "unblur" : ""}
             onLoadingComplete={() => setLoaded(true)}
           />

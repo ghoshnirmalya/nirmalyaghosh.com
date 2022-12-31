@@ -1,5 +1,5 @@
-import { Box, HStack, Link as _Link } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, HStack, Link } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { FC } from "react";
 
 interface NavLink {
@@ -34,8 +34,8 @@ const Navbar: FC = () => {
           LINKS.map((link: NavLink) => {
             return (
               <Box key={link.url}>
-                <Link href={link.url} passHref>
-                  <_Link
+                <NextLink href={link.url} passHref legacyBehavior>
+                  <Link
                     px={4}
                     py={2}
                     href={link.url}
@@ -46,14 +46,12 @@ const Navbar: FC = () => {
                     _hover={{
                       textDecoration: "none",
                       bgColor: "gray.900",
-                      borderWidth: 1,
-                      borderColor: "gray.700",
                     }}
                     _focus={{ outline: "none" }}
                   >
                     {link.title}
-                  </_Link>
-                </Link>
+                  </Link>
+                </NextLink>
               </Box>
             );
           }),
@@ -72,11 +70,11 @@ const Navbar: FC = () => {
           flexDir={["column", "column", "row"]}
           gridGap={[4, 4, 0]}
         >
-          <Box d="flex" alignItems="center">
-            <Link href="/" passHref>
-              <_Link
+          <Box display="flex" alignItems="center">
+            <NextLink href="/" passHref legacyBehavior>
+              <Link
                 href="/"
-                d="flex"
+                display="flex"
                 _focus={{ outline: "none" }}
                 aria-label="Logo"
               >
@@ -100,8 +98,8 @@ const Navbar: FC = () => {
                     fill="black"
                   />
                 </svg>
-              </_Link>
-            </Link>
+              </Link>
+            </NextLink>
           </Box>
           {menuNode()}
         </HStack>

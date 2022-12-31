@@ -2,7 +2,7 @@ import { Guide } from "contentlayer/generated";
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import Link from "next/link";
+import NextLink from "next/link";
 import React, { FC, useState } from "react";
 
 dayjs.extend(localizedFormat);
@@ -66,7 +66,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     return sortedGuides.map((guide: Guide) => {
       return (
         <Box key={guide.slug}>
-          <Link href={`/guides/${guide.slug}`}>
+          <NextLink href={`/guides/${guide.slug}`} legacyBehavior>
             <a>
               <Box>
                 <VStack spacing={1} align="left">
@@ -75,7 +75,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
                 </VStack>
               </Box>
             </a>
-          </Link>
+          </NextLink>
         </Box>
       );
     });

@@ -68,7 +68,7 @@ const Page: FC = () => {
 
   const socialLinksNode = () => {
     return (
-      <Box d="flex" alignItems="center">
+      <Box display="flex" alignItems="center">
         <HStack spacing={4}>
           <Link
             py={2}

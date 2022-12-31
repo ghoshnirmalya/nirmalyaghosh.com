@@ -1,4 +1,4 @@
-import _Link from "next/link";
+import NextLink from "next/link";
 import React, { FC } from "react";
 
 interface IProps {
@@ -8,9 +8,9 @@ interface IProps {
 
 const Link: FC<IProps> = ({ href, text }) => {
   return (
-    <_Link href={href}>
+    <NextLink href={href}>
       <a>{text}</a>
-    </_Link>
+    </NextLink>
   );
 };
 

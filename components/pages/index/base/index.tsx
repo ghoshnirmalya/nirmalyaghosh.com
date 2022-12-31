@@ -1,7 +1,7 @@
 import { Box, VStack } from "@chakra-ui/react";
 import { Article } from "contentlayer/generated";
 import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import { FC } from "react";
 import Project from "types/project";
 
 const Jumbotron = dynamic(
@@ -13,11 +13,9 @@ const Jumbotron = dynamic(
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
+
 const Projects = dynamic(
-  () =>
-    import(
-      /* webpackChunkName: "Projects" */ "components/pages/index/base/projects"
-    )
+  () => import(/* webpackChunkName: "Projects" */ "components/layouts/projects")
 );
 
 interface Props {

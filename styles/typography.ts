@@ -31,7 +31,6 @@ const typographyStyles = css`
   .article a:not(.chakra-link) {
     margin: ${theme.space[4]} 0 ${theme.space[8]};
     line-height: ${theme.lineHeights.taller};
-    font-size: ${theme.fontSizes.lg};
   }
 
   // Links
