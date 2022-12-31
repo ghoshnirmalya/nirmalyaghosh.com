@@ -30,7 +30,10 @@ const Callout = dynamic(
 );
 
 const Image = dynamic(
-  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image"),
+  {
+    ssr: false,
+  }
 );
 
 const Jumbotron = dynamic(

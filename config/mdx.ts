@@ -5,9 +5,10 @@ import { Pluggable } from "unified";
 import rehypePrismPlus from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import remarkUnwrapImages from "remark-unwrap-images";
 
 const mdxOptions = {
-  remarkPlugins: [remarkExternalLinks, remarkGfm],
+  remarkPlugins: [remarkExternalLinks, remarkGfm, remarkUnwrapImages],
   rehypePlugins: [
     rehypeSlug,
     rehypeCodeTitles,
