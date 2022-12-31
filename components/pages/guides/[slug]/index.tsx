@@ -1,7 +1,6 @@
-import { Guide } from "contentlayer/generated";
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
+import { Guide } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
@@ -32,13 +31,6 @@ const components = { Callout, Jumbotron, Link, Image };
 interface IProps {
   guide: Guide;
 }
-
-const SocialShare = dynamic(
-  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
-  {
-    ssr: false,
-  }
-);
 
 const Page: NextPage<IProps> = ({ guide }) => {
   const MDXContent = useMDXComponent(guide.body.code);
@@ -103,11 +95,8 @@ const Page: NextPage<IProps> = ({ guide }) => {
           locale: "en_IE",
         }}
       />
-      <Box maxW={["2xl", "2xl", "2xl", "6xl"]} as="main" mx="auto" p={8}>
-        <Grid
-          templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}
-          gridGap={[0, 0, 0, 24]}
-        >
+      <Box maxW="2xl" as="main" mx="auto" p={8}>
+        <Grid templateColumns="1fr" gridGap={0}>
           <Box maxW="100%" overflowX="hidden">
             <VStack spacing={8} align="left">
               <VStack spacing={2} align="left">
@@ -120,17 +109,6 @@ const Page: NextPage<IProps> = ({ guide }) => {
               {updatedMetaNode()}
             </VStack>
           </Box>
-          <VStack
-            spacing={8}
-            pos="sticky"
-            top={8}
-            h="100vh"
-            overflow="scroll"
-            display={["none", "none", "none", "block"]}
-          >
-            <TableOfContents source={guide.body.raw} />
-            <SocialShare title={guide.title} />
-          </VStack>
         </Grid>
       </Box>
     </>

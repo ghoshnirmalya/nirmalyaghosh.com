@@ -1,6 +1,7 @@
-import { Box, HStack, Link } from "@chakra-ui/react";
+import { Box, HStack, Link, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FC } from "react";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 interface NavLink {
   url: string;
@@ -28,6 +29,49 @@ const LINKS = [
 
 const Navbar: FC = () => {
   const menuNode = () => {
+    const socialLinksNode = () => {
+      return (
+        <Box display="flex" alignItems="center" fontSize="sm">
+          <HStack spacing={4}>
+            <Link
+              py={1}
+              px={2}
+              href="https://github.com/ghoshnirmalya"
+              rounded="sm"
+              bg="#333"
+              color="#fff"
+              isExternal
+              borderWidth={1}
+              borderColor="gray.600"
+              _hover={{}}
+            >
+              <HStack spacing={2} alignItems="center">
+                <Box as={IoLogoGithub} />{" "}
+                <Text display={["none", "none", "block"]}>Github</Text>
+              </HStack>
+            </Link>
+            <Link
+              py={1}
+              px={2}
+              href="https://www.linkedin.com/in/ghoshnirmalya/"
+              rounded="sm"
+              bg="#0e76a8"
+              color="#fff"
+              isExternal
+              borderWidth={1}
+              borderColor="blue.400"
+              _hover={{}}
+            >
+              <HStack spacing={2} alignItems="center">
+                <Box as={IoLogoLinkedin} />{" "}
+                <Text display={["none", "none", "block"]}>LinkedIn</Text>
+              </HStack>
+            </Link>
+          </HStack>
+        </Box>
+      );
+    };
+
     return (
       <HStack isInline spacing={[0, 4]} alignItems="center">
         {[
@@ -40,7 +84,7 @@ const Navbar: FC = () => {
                     py={2}
                     href={link.url}
                     rounded="sm"
-                    fontSize={["sm", "md"]}
+                    fontSize="sm"
                     borderWidth={1}
                     borderColor="transparent"
                     _hover={{
@@ -56,6 +100,7 @@ const Navbar: FC = () => {
             );
           }),
         ]}
+        {socialLinksNode()}
       </HStack>
     );
   };

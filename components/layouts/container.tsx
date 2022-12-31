@@ -1,9 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
-import React, { FC, ReactNode } from "react";
-import typographyStyles from "styles/typography";
-import prismStyles from "styles/prism";
+import { FC, ReactNode } from "react";
 import generalStyles from "styles/general";
+import prismStyles from "styles/prism";
+import typographyStyles from "styles/typography";
 
 interface IProps {
   children?: ReactNode;
@@ -11,7 +11,12 @@ interface IProps {
 
 const Container: FC<IProps> = ({ children }) => {
   return (
-    <Box bg="black" color="gray.200" minH="100vh">
+    <Box
+      bg="black"
+      bgGradient="linear(to-br, gray.900, gray.800)"
+      color="gray.200"
+      minH="100vh"
+    >
       <Global styles={typographyStyles} />
       <Global styles={generalStyles} />
       <Global styles={prismStyles} />

@@ -1,4 +1,4 @@
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 const Jumbotron: FC = () => {
@@ -23,6 +23,12 @@ const Jumbotron: FC = () => {
         >
           Nirmalya Ghosh
         </Heading>
+      </Box>
+      <Box>
+        Staff Developer Advocate @
+        <Link href="https://rapidapi.com/" isExternal>
+          Rapid
+        </Link>
       </Box>
       <Box>
         <Heading

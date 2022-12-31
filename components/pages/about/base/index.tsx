@@ -30,7 +30,12 @@ const Page: FC = () => {
             <Heading as="h1" size="lg" color="white">
               Nirmalya Ghosh
             </Heading>
-            <Text fontWeight="bold">Software Engineer</Text>
+            <Text fontWeight="bold">
+              Staff Developer Advocate @
+              <Link href="https://rapidapi.com/" isExternal>
+                Rapid
+              </Link>
+            </Text>
           </VStack>
         </Box>
       </HStack>

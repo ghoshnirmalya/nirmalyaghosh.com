@@ -41,8 +41,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export const config = {
-  unstable_runtimeJS: false,
-};
-
 export default TagsListingPage;

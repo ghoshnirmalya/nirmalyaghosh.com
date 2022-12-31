@@ -8,7 +8,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import TableOfContents from "components/table-of-contents";
 import siteConfig from "config/site";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -71,13 +70,6 @@ const NextJSSSR = dynamic(
   }
 );
 
-const SocialShare = dynamic(
-  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
-  {
-    ssr: false,
-  }
-);
-
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
@@ -88,7 +80,6 @@ const components = {
   Jumbotron,
   Link,
   Image,
-  SocialShare,
   Placeholder,
   NextJSSSG,
   NextJSSSR,
@@ -209,11 +200,8 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
           locale: "en_IE",
         }}
       />
-      <Box maxW={["2xl", "2xl", "2xl", "6xl"]} as="main" mx="auto" p={8}>
-        <Grid
-          templateColumns={["1fr", "1fr", "1fr", "2fr 1fr"]}
-          gridGap={[0, 0, 0, 24]}
-        >
+      <Box maxW="2xl" as="main" mx="auto" p={8}>
+        <Grid templateColumns="1fr" gridGap={0}>
           <Box maxW="100%" overflowX="hidden">
             <VStack spacing={8} align="left">
               <VStack spacing={2} align="left">
@@ -231,17 +219,6 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
               <Box pt={12}>{relatedArticlesNode()}</Box>
             </VStack>
           </Box>
-          <VStack
-            spacing={8}
-            pos="sticky"
-            top={8}
-            h="100vh"
-            overflow="auto"
-            display={["none", "none", "none", "block"]}
-          >
-            <TableOfContents source={article.body.raw} />
-            <SocialShare title={article.title} />
-          </VStack>
         </Grid>
       </Box>
     </>
