@@ -7,6 +7,7 @@ specifiers:
   '@release-it/conventional-changelog': ^5.1.1
   '@types/node': ^18.11.18
   '@types/react': ^18.0.26
+  '@vercel/analytics': ^0.1.6
   contentlayer: ^0.2.9
   dayjs: ^1.11.7
   eslint: <9.0.0
@@ -38,6 +39,7 @@ dependencies:
   '@chakra-ui/react': 2.4.6_xcb2icnvjeltjpmlq3fhxstwhm
   '@emotion/react': 11.10.5_kzbn2opkn2327fwg5yzwzya5o4
   '@emotion/styled': 11.10.5_qvatmowesywn4ye42qoh247szu
+  '@vercel/analytics': 0.1.6_react@18.2.0
   contentlayer: 0.2.9
   dayjs: 1.11.7
   focus-visible: 5.2.0
@@ -2374,6 +2376,14 @@ packages:
       '@typescript-eslint/types': 5.47.1
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/0.1.6_react@18.2.0:
+    resolution: {integrity: sha512-zNd5pj3iDvq8IMBQHa1YRcIteiw6ZiPB8AsONHd8ieFXlNpLqhXfIYnf4WvTfZ7S1NSJ++mIM14aJnNac/VMXQ==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@zag-js/element-size/0.3.0:
     resolution: {integrity: sha512-5/hEI+0c6ZNCx6KHlOS5/WeHsd6+I7gk7Y/b/zATp4Rp3tHirs/tu1frq+iy5BmfaG9hbQtfHfUJTjOcI5jnoQ==}

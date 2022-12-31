@@ -1,5 +1,6 @@
-import { Box } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
 import siteConfig from "config/site";
+import "focus-visible/dist/focus-visible";
 import { initGA } from "lib/google-analytics";
 import isProduction from "lib/is-production";
 import { NextSeo } from "next-seo";
@@ -7,7 +8,6 @@ import { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { useEffect } from "react";
-import "focus-visible/dist/focus-visible";
 
 const Layout = dynamic(
   () => import(/* webpackChunkName: "Layouts" */ "components/layouts")
@@ -56,6 +56,7 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
       />
       <Navbar />
       <Component {...pageProps} />
+      <Analytics />
     </Layout>
   );
 };
