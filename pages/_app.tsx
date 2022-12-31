@@ -56,7 +56,7 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
       />
       <Navbar />
       <Component {...pageProps} />
-      <Analytics />
+      {isProduction && <Analytics />}
     </Layout>
   );
 };
