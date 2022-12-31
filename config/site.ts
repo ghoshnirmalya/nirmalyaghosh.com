@@ -7,11 +7,11 @@ const siteConfig = {
     url: "https://www.nirmalyaghosh.com",
   },
   assets: {
-    avatar: "/images/common/seo-cover.png",
-    favicon: "/images/common/favicon.svg",
+    avatar: "http://nirmalyaghosh.com/images/common/seo-cover.png",
+    favicon: "http://nirmalyaghosh.com/images/common/favicon.svg",
   },
   socialLinks: {
-    twitter: "@nirmalyaghosh23",
+    twitter: "@NirmalyaGhosh_",
   },
 };
 
