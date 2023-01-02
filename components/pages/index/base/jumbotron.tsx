@@ -24,12 +24,18 @@ const Jumbotron: FC = () => {
           Nirmalya Ghosh
         </Heading>
       </Box>
-      <Box>
+      <Text fontSize="2xl">
         Staff Developer Advocate @
-        <Link href="https://rapidapi.com/" isExternal>
+        <Link
+          href="https://rapidapi.com/"
+          isExternal
+          _hover={{
+            textDecoration: "none",
+          }}
+        >
           Rapid
         </Link>
-      </Box>
+      </Text>
       <Box>
         <Heading
           as="h2"

@@ -29,14 +29,16 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
   });
 
   return (
-    <VStack spacing={32} as="main" p={8}>
-      <Box as="section" maxW="2xl" mx="auto" w="100%">
-        <Jumbotron />
+    <VStack spacing={32} as="main">
+      <Box as="section" w="100%" px={8} pb={16} bgColor="gray.900">
+        <Box maxW="2xl" mx="auto">
+          <Jumbotron />
+        </Box>
       </Box>
-      <Box as="section" maxW="2xl" mx="auto" w="100%">
+      <Box as="section" maxW="2xl" mx="auto" w="100%" px={8}>
         <Articles articles={sortedArticles.slice(0, 10)} />
       </Box>
-      <Box as="section" maxW="2xl" mx="auto" w="100%" pb={8}>
+      <Box as="section" maxW="2xl" mx="auto" w="100%" px={8} pb={8}>
         <Projects projects={projects.slice(0, 10)} />
       </Box>
     </VStack>

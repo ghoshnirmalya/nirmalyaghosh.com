@@ -95,15 +95,17 @@ const Page: NextPage<IProps> = ({ guide }) => {
           locale: "en_IE",
         }}
       />
-      <Box maxW="2xl" as="main" mx="auto" p={8}>
+      <Box as="main">
         <Grid templateColumns="1fr" gridGap={0}>
           <Box maxW="100%" overflowX="hidden">
-            <VStack spacing={8} align="left">
-              <VStack spacing={2} align="left">
-                {publishedMetaNode()}
-                {titleNode()}
-              </VStack>
-              <Box className="article">
+            <VStack spacing={8} w="100%">
+              <Box bgColor="gray.900" p={8} w="100%">
+                <VStack spacing={2} align="left" maxW="2xl" mx="auto">
+                  {publishedMetaNode()}
+                  {titleNode()}
+                </VStack>
+              </Box>
+              <Box className="article" maxW="2xl" mx="auto" px={[8, 0, 0]}>
                 <MDXContent components={components} />
               </Box>
               {updatedMetaNode()}

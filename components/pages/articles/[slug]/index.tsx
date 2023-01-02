@@ -1,5 +1,5 @@
-import { Article } from "contentlayer/generated";
 import {
+  Badge,
   Box,
   Grid,
   Heading,
@@ -9,13 +9,14 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import siteConfig from "config/site";
+import { Article } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import NextLink from "next/link";
-import { useMDXComponent } from "next-contentlayer/hooks";
 import DynamicComponentLoader from "./dynamic-component-loader";
 
 dayjs.extend(localizedFormat);
@@ -101,7 +102,16 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
 
   const updatedMetaNode = () => {
     return (
-      <HStack spacing={2} isInline alignItems="center" color="gray.400">
+      <HStack
+        spacing={2}
+        isInline
+        alignItems="center"
+        color="gray.400"
+        maxW="2xl"
+        mx="auto"
+        px={[8, 8, 0, 0]}
+        w="100%"
+      >
         <Text fontSize="sm">This post was updated on</Text>
         <Text fontSize="sm" fontWeight="bold">
           {dayjs(article.lastmod).format("LL")}.
@@ -116,8 +126,10 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
         {article.categories.map((category, index) => {
           return (
             <NextLink key={index} href={`/categories/${category}`} passHref>
-              <ChakraLink fontSize="sm" _hover={{}}>
-                {category}
+              <ChakraLink fontSize="sm" _hover={{}} display="flex">
+                <Badge variant="subtle" colorScheme="green">
+                  {category}
+                </Badge>
               </ChakraLink>
             </NextLink>
           );
@@ -128,7 +140,15 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
 
   const tagsNode = () => {
     return (
-      <HStack spacing={2} isInline alignItems="center">
+      <HStack
+        spacing={2}
+        isInline
+        alignItems="center"
+        maxW="2xl"
+        mx="auto"
+        px={[8, 8, 0, 0]}
+        w="100%"
+      >
         {article.tags.map((tag, index) => {
           return (
             <NextLink key={index} href={`/tags/${tag}`} passHref>
@@ -195,23 +215,33 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
           locale: "en_IE",
         }}
       />
-      <Box maxW="2xl" as="main" mx="auto" p={8}>
+      <Box as="main">
         <Grid templateColumns="1fr" gridGap={0}>
           <Box maxW="100%" overflowX="hidden">
-            <VStack spacing={8} align="left">
-              <VStack spacing={2} align="left">
-                <HStack justifyContent="space-between">
-                  {publishedMetaNode()}
-                  {categoriesNode()}
-                </HStack>
-                {titleNode()}
-              </VStack>
-              <Box className="article">
+            <VStack spacing={8} w="100%">
+              <Box bgColor="gray.900" p={8} w="100%">
+                <VStack spacing={2} align="left" maxW="2xl" mx="auto">
+                  <HStack spacing={4}>
+                    {publishedMetaNode()}
+                    {categoriesNode()}
+                  </HStack>
+                  {titleNode()}
+                </VStack>
+              </Box>
+              <Box
+                className="article"
+                maxW="2xl"
+                mx="auto"
+                px={[8, 8, 0, 0]}
+                w="100%"
+              >
                 <MDXContent components={components} />
               </Box>
               {tagsNode()}
               {updatedMetaNode()}
-              <Box pt={12}>{relatedArticlesNode()}</Box>
+              <Box py={12} maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
+                {relatedArticlesNode()}
+              </Box>
             </VStack>
           </Box>
         </Grid>

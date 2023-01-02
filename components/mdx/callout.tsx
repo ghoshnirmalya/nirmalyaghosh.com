@@ -32,7 +32,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       rounded="sm"
       bgColor={allowedTypes[type].bgColor}
       color={allowedTypes[type].color}
-      mr={2}
+      mr={[2, 2, 0, 0]}
       borderWidth={1}
       borderColor="gray.700"
     >

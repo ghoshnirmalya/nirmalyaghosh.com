@@ -6,6 +6,7 @@ import rehypePrismPlus from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkUnwrapImages from "remark-unwrap-images";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 const mdxOptions = {
   remarkPlugins: [remarkExternalLinks, remarkGfm, remarkUnwrapImages],
@@ -13,6 +14,12 @@ const mdxOptions = {
     rehypeSlug,
     rehypeCodeTitles,
     rehypePrismPlus,
+    [
+      rehypeAutolinkHeadings,
+      {
+        behavior: "wrap",
+      },
+    ],
     [
       rehypeImgSize,
       {
