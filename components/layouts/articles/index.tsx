@@ -45,7 +45,7 @@ const Articles: FC<Props> = ({
 
   const viewAllLinksNode = () => {
     return (
-      <NextLink href="/articles" passHref legacyBehavior>
+      <NextLink href="/articles" passHref>
         <Link
           p={2}
           href="/articles"
@@ -185,7 +185,7 @@ const Articles: FC<Props> = ({
 
       return (
         <Box key={index}>
-          <NextLink href={`/articles/${article.slug}`} legacyBehavior>
+          <NextLink href={`/articles/${article.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">

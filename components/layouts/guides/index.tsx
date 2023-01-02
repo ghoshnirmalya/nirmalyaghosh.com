@@ -66,7 +66,7 @@ const Guides: FC<Props> = ({ guides = [] }) => {
     return sortedGuides.map((guide: Guide) => {
       return (
         <Box key={guide.slug}>
-          <NextLink href={`/guides/${guide.slug}`} legacyBehavior>
+          <NextLink href={`/guides/${guide.slug}`}>
             <a>
               <Box>
                 <VStack spacing={1} align="left">

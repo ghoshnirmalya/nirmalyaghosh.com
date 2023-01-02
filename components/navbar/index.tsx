@@ -82,7 +82,7 @@ const Navbar: FC = () => {
           LINKS.map((link: NavLink) => {
             return (
               <Box key={link.url}>
-                <NextLink href={link.url} passHref legacyBehavior>
+                <NextLink href={link.url} passHref>
                   <Link
                     px={4}
                     py={2}
@@ -120,7 +120,7 @@ const Navbar: FC = () => {
           gridGap={[4, 4, 0]}
         >
           <Box display="flex" alignItems="center">
-            <NextLink href="/" passHref legacyBehavior>
+            <NextLink href="/" passHref>
               <Link
                 href="/"
                 display="flex"

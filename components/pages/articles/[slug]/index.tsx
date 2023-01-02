@@ -115,12 +115,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
       <HStack spacing={2} isInline alignItems="center">
         {article.categories.map((category, index) => {
           return (
-            <NextLink
-              key={index}
-              href={`/categories/${category}`}
-              passHref
-              legacyBehavior
-            >
+            <NextLink key={index} href={`/categories/${category}`} passHref>
               <ChakraLink fontSize="sm" _hover={{}}>
                 {category}
               </ChakraLink>
@@ -136,7 +131,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
       <HStack spacing={2} isInline alignItems="center">
         {article.tags.map((tag, index) => {
           return (
-            <NextLink key={index} href={`/tags/${tag}`} passHref legacyBehavior>
+            <NextLink key={index} href={`/tags/${tag}`} passHref>
               <ChakraLink
                 fontSize="sm"
                 px={2}
