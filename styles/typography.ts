@@ -10,18 +10,18 @@ const typographyStyles = css`
   }
 
   .article > h2 {
-    padding: ${theme.space[8]} 0 0;
-    font-size: ${theme.fontSizes["3xl"]};
+    padding: ${theme.space[16]} 0 0;
+    font-size: ${theme.fontSizes["2xl"]};
   }
 
   .article > h3 {
-    padding: ${theme.space[6]} 0 ${theme.space[2]};
-    font-size: ${theme.fontSizes["2xl"]};
+    padding: ${theme.space[8]} 0 ${theme.space[2]};
+    font-size: ${theme.fontSizes["xl"]};
   }
 
   .article > h4 {
     padding: ${theme.space[4]} 0 ${theme.space[2]};
-    font-size: ${theme.fontSizes["xl"]};
+    font-size: ${theme.fontSizes["lg"]};
   }
 
   // Paragraphs

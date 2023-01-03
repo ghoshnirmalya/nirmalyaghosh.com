@@ -23,6 +23,7 @@ const Image: FC<IProps> = ({ src, alt, height, width }) => {
         borderWidth={1}
         borderColor="gray.700"
         overflow="hidden"
+        shadow="xl"
       >
         <Box pos="relative" w="100%" h="100%" className="image">
           <NextImage
