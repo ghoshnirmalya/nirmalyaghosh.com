@@ -84,7 +84,7 @@ const Page: NextPage<IProps> = ({ guide }) => {
             {
               url: guide.coverImage
                 ? guide.coverImage
-                : `${siteConfig.details.url}${siteConfig.assets.avatar}`,
+                : `${siteConfig.assets.avatar}`,
               width: 800,
               height: 600,
               alt: guide.title,

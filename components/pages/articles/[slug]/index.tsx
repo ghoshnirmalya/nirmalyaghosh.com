@@ -212,7 +212,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
           description: article.description,
           images: [
             {
-              url: `https://cover-images.vercel.app/api?postTitle=${article.title}&postDescription=${article.description}&backgroundColor=1a202c&foregroundColor=fff&authorAvatar=${siteConfig.details.url}${siteConfig.assets.favicon}&authorName=${siteConfig.details.title}`,
+              url: `https://cover-images.vercel.app/api?postTitle=${article.title}&postDescription=${article.description}&backgroundColor=1a202c&foregroundColor=fff&authorAvatar=${siteConfig.assets.favicon}&authorName=${siteConfig.details.title}`,
               width: 1200,
               height: 675,
               alt: article.title,

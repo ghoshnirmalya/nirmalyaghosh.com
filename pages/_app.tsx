@@ -43,7 +43,7 @@ const PortfolioApp = ({ Component, pageProps }: AppProps) => {
           description: siteConfig.details.description,
           images: [
             {
-              url: `${siteConfig.details.url}${siteConfig.assets.avatar}`,
+              url: `${siteConfig.assets.avatar}`,
               width: 800,
               height: 600,
               alt: siteConfig.details.title,
