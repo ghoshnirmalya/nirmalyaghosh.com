@@ -16,6 +16,7 @@ const Wrapper: FC<IProps> = ({ children }) => {
       mb={8}
       borderWidth={1}
       borderColor="gray.700"
+      overflow="hidden"
     >
       {children}
     </Box>

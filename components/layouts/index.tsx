@@ -1,6 +1,7 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Container from "components/layouts/container";
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
+import "@fontsource/open-sans";
 
 export const customTheme = extendTheme({
   config: {

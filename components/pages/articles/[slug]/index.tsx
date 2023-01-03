@@ -71,6 +71,13 @@ const NextJSSSR = dynamic(
   }
 );
 
+const SocialShare = dynamic(
+  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
+  {
+    ssr: false,
+  }
+);
+
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
@@ -81,6 +88,7 @@ const components = {
   Jumbotron,
   Link,
   Image,
+  SocialShare,
   Placeholder,
   NextJSSSG,
   NextJSSSR,
@@ -227,6 +235,9 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
                   </HStack>
                   {titleNode()}
                 </VStack>
+              </Box>
+              <Box maxW="2xl" px={[8, 8, 0, 0]} w="100%">
+                <SocialShare title={article.title} />
               </Box>
               <Box
                 className="article"
