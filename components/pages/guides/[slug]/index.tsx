@@ -99,7 +99,12 @@ const Page: NextPage<IProps> = ({ guide }) => {
         <Grid templateColumns="1fr" gridGap={0}>
           <Box maxW="100%" overflowX="hidden">
             <VStack spacing={8} w="100%">
-              <Box bgColor="gray.900" p={8} w="100%">
+              <Box
+                bgColor="gray.900"
+                p={8}
+                w="100%"
+                bgGradient={["linear(to-b, gray.800,gray.900, gray.800)"]}
+              >
                 <VStack spacing={2} align="left" maxW="2xl" mx="auto">
                   {publishedMetaNode()}
                   {titleNode()}

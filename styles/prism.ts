@@ -355,6 +355,7 @@ const prismStyles = css`
     border-radius: ${theme.radii.sm};
     border-width: 1px;
     border-color: ${theme.colors.gray[700]};
+    box-shadow: ${theme.shadows.xl};
   }
 
   :not(pre) > code {

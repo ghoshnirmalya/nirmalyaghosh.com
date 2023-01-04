@@ -48,7 +48,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
     return (
       <Grid
-        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)"]}
+        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(1, 1fr)"]}
         gap={8}
       >
         {sortedProjects.map((project: Project, index: number) => {
@@ -62,7 +62,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
               borderColor="gray.700"
             >
               <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <Box p={4} minH={32}>
+                <Box p={4}>
                   <VStack spacing={1} align="left">
                     {titleNode(project.title)}
                     {descriptionNode(project.description)}

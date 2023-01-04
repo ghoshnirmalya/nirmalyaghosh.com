@@ -30,7 +30,14 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
 
   return (
     <VStack spacing={32} as="main">
-      <Box as="section" w="100%" px={8} pb={16} bgColor="gray.900">
+      <Box
+        as="section"
+        w="100%"
+        px={8}
+        pb={16}
+        bgColor="gray.900"
+        bgGradient={["linear(to-b, gray.800,gray.900, gray.800)"]}
+      >
         <Box maxW="2xl" mx="auto">
           <Jumbotron />
         </Box>

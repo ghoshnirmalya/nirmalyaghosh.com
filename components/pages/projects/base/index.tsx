@@ -13,7 +13,7 @@ interface Props {
 
 const Page: FC<Props> = ({ projects = [] }) => {
   return (
-    <Box as="main" maxW="6xl" mx="auto" p={8}>
+    <Box as="main" maxW="2xl" mx="auto" p={8}>
       <Projects projects={projects} />
     </Box>
   );

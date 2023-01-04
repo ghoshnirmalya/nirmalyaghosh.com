@@ -35,6 +35,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       mr={[2, 2, 0, 0]}
       borderWidth={1}
       borderColor="gray.700"
+      shadow="xl"
     >
       <HStack spacing={2} pos="relative">
         <Icon

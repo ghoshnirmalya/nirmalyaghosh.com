@@ -83,6 +83,7 @@ const typographyStyles = css`
     background: ${theme.colors.gray[800]};
     border-width: 1.25px;
     border-color: ${theme.colors.gray[700]};
+    box-shadow: ${theme.shadows.xl};
   }
 
   .article > blockquote > p,
@@ -131,6 +132,7 @@ const typographyStyles = css`
   .article ul,
   .article ol {
     color: ${theme.colors.gray[300]};
+    // font-size: ${theme.fontSizes.lg};
   }
 
   .article strong {
