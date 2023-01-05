@@ -1,6 +1,5 @@
-import { Box, HStack, Icon } from "@chakra-ui/react";
-import React, { FC, ReactNode } from "react";
-import { theme } from "@chakra-ui/react";
+import { Box, HStack, Icon, theme } from "@chakra-ui/react";
+import { FC, ReactNode } from "react";
 import { IoIosAlert, IoIosHelpCircle, IoIosWarning } from "react-icons/io";
 
 interface IProps {
@@ -36,6 +35,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       borderWidth={1}
       borderColor="gray.700"
       shadow="xl"
+      mb={8}
     >
       <HStack spacing={2} pos="relative">
         <Icon

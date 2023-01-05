@@ -1,7 +1,7 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Container from "components/layouts/container";
 import { FC, ReactNode } from "react";
-import "@fontsource/open-sans";
+import "@fontsource/inter";
 
 export const customTheme = extendTheme({
   config: {
@@ -9,8 +9,8 @@ export const customTheme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    heading: "'Open Sans', sans-serif",
-    body: "'Open+Sans', sans-serif",
+    heading: "Inter, sans-serif",
+    body: "Inter, sans-serif",
   },
 });
 
