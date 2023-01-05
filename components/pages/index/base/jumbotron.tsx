@@ -1,30 +1,49 @@
 import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
+import Image from "next/image";
+import AvatarImage from "public/images/common/avatar.png";
 
 const Jumbotron: FC = () => {
   return (
     <VStack
-      spacing={8}
+      spacing={4}
       alignItems="center"
       justifyContent="center"
       textAlign="center"
       pt={24}
       pb={12}
     >
+      <Box
+        bgGradient="linear(to-l, #79c2ff, #4a5888)"
+        rounded="full"
+        p={1}
+        w={100}
+        h={100}
+      >
+        <Image
+          src={AvatarImage}
+          alt="Nirmalya Ghosh"
+          height={100}
+          width={100}
+          quality={100}
+          priority
+          placeholder="blur"
+        />
+      </Box>
       <Box>
         <Heading
           as="h1"
           fontFamily="body"
           bgColor="blue.400"
           bgClip="text"
-          size="4xl"
+          size="2xl"
           bgGradient="linear(to-l, #79c2ff, #4a5888)"
           className="jumbotron-name-heading"
         >
           Nirmalya Ghosh
         </Heading>
       </Box>
-      <Text fontSize="2xl">
+      <Text fontSize="xl">
         Staff Developer Advocate @
         <Link
           href="https://rapidapi.com/"
@@ -39,27 +58,20 @@ const Jumbotron: FC = () => {
       <Box>
         <Heading
           as="h2"
-          size="lg"
+          size="sm"
           lineHeight="tall"
           color="gray.500"
           fontWeight="medium"
         >
-          I&apos;m a{" "}
+          Passionate about{" "}
           <Box as="span" color="gray.300">
-            Developer
-          </Box>
-          , who likes{" "}
-          <Box as="span" color="gray.300">
-            Designing,{" "}
-          </Box>{" "}
-          <Box as="span" color="gray.300">
-            Writing
+            User
           </Box>{" "}
           and{" "}
           <Box as="span" color="gray.300">
-            Building Open Source
+            Developer Experience
           </Box>{" "}
-          projects.
+          .
         </Heading>
       </Box>
     </VStack>

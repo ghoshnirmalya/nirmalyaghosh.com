@@ -229,9 +229,10 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
             <VStack spacing={8} w="100%">
               <Box
                 bgColor="gray.900"
-                p={8}
+                px={8}
+                py={16}
                 w="100%"
-                bgGradient={["linear(to-b, gray.800,gray.900, gray.800)"]}
+                bgGradient={["linear(to-br, gray.800, #181924)"]}
               >
                 <VStack spacing={2} align="left" maxW="2xl" mx="auto">
                   <HStack spacing={4}>

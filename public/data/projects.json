@@ -3,13 +3,15 @@
     "title": "Writy",
     "description": "Generate beautiful HTML files without writing any code",
     "url": "https://github.com/ghoshnirmalya/writy",
-    "demoUrl": "https://writy-beta.vercel.app"
+    "demoUrl": "https://writy-beta.vercel.app",
+    "image": "/images/projects/writy.png"
   },
   {
     "title": "React Search Box",
     "description": "An autocomplete search box built with and for React",
     "url": "https://github.com/ghoshnirmalya/react-search-box",
-    "demoUrl": "https://ghoshnirmalya.github.io/react-search-box"
+    "demoUrl": "https://ghoshnirmalya.github.io/react-search-box",
+    "image": "/images/projects/react-search-box.png"
   },
   {
     "title": "Hasura Next.js Boilerplate",

@@ -21,7 +21,7 @@ const Image: FC<IProps> = ({ src, alt, height, width }) => {
         spacing={0}
         as="span"
         borderWidth={1}
-        borderColor="gray.700"
+        borderColor="gray.800"
         overflow="hidden"
         shadow="xl"
       >

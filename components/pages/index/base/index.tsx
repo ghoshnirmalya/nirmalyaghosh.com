@@ -36,7 +36,7 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
         px={8}
         pb={16}
         bgColor="gray.900"
-        bgGradient={["linear(to-b, gray.800,gray.900, gray.800)"]}
+        bgGradient={["linear(to-br, gray.800, #181924)"]}
       >
         <Box maxW="2xl" mx="auto">
           <Jumbotron />

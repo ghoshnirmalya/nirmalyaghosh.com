@@ -1,4 +1,5 @@
-import { Box, Button, Grid, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Grid, Heading, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 import { FC, useState } from "react";
 import Project from "types/project";
 
@@ -14,14 +15,12 @@ const Projects: FC<Props> = ({ projects = [] }) => {
 
   const headingNode = () => {
     return (
-      <Box>
-        <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="white">
-            Projects
-          </Heading>
-          <Text>Open Source Projects developed and available on Github</Text>
-        </VStack>
-      </Box>
+      <VStack spacing={2} align="left">
+        <Heading as="h1" size="lg" color="white">
+          Projects
+        </Heading>
+        <Text>Open Source Projects developed and available on Github</Text>
+      </VStack>
     );
   };
 
@@ -59,15 +58,36 @@ const Projects: FC<Props> = ({ projects = [] }) => {
               color="white"
               rounded="sm"
               borderWidth={1}
-              borderColor="gray.700"
+              borderColor="gray.800"
             >
               <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <Box p={4}>
-                  <VStack spacing={1} align="left">
+                <VStack align="left">
+                  {project.image && (
+                    <Box
+                      bgGradient="linear(to-r, green.200, pink.500)"
+                      paddingLeft={12}
+                      paddingTop={12}
+                    >
+                      <Box roundedTopLeft="lg" overflow="hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={600}
+                          height={600 / 1.5}
+                          layout="responsive"
+                          sizes="100vw"
+                          style={{
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Box>
+                    </Box>
+                  )}
+                  <VStack spacing={1} align="left" padding={4}>
                     {titleNode(project.title)}
                     {descriptionNode(project.description)}
                   </VStack>
-                </Box>
+                </VStack>
               </a>
             </Box>
           );

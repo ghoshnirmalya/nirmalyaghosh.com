@@ -19,7 +19,6 @@ dayjs.extend(localizedFormat);
 
 interface Props {
   articles: (Article & Publication)[] | Article[];
-  hideViewAllLinksNode?: boolean;
   currentTag?: string;
   currentCategory?: string;
   heading?: string;
@@ -27,7 +26,6 @@ interface Props {
 
 const Articles: FC<Props> = ({
   articles = [],
-  hideViewAllLinksNode = false,
   currentTag,
   currentCategory,
   heading,
@@ -97,24 +95,13 @@ const Articles: FC<Props> = ({
       );
     }
 
-    if (hideViewAllLinksNode) {
-      return (
-        <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="white">
-            Articles
-          </Heading>
-          <Text>Posts related to some of the latest technologies</Text>
-        </VStack>
-      );
-    }
-
     return (
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Heading as="h2" size="lg" color="white">
+      <VStack spacing={2} align="left">
+        <Heading as="h1" size="lg" color="white">
           Articles
         </Heading>
-        {viewAllLinksNode()}
-      </Box>
+        <Text>Posts related to some of the latest technologies</Text>
+      </VStack>
     );
   };
 

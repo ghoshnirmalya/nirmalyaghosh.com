@@ -21,11 +21,7 @@ const Page: FC<Props> = ({ articles = [], currentTag }) => {
     <Box maxW="2xl" mx="auto" px={4} py={8}>
       <Grid templateColumns="1fr">
         <Box as="section">
-          <Articles
-            articles={sortedArticles}
-            hideViewAllLinksNode
-            currentTag={currentTag}
-          />
+          <Articles articles={sortedArticles} currentTag={currentTag} />
         </Box>
       </Grid>
     </Box>

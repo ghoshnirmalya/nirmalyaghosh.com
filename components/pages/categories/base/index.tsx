@@ -23,7 +23,6 @@ const Page: FC<Props> = ({ articles = [], currentCategory }) => {
         <Box as="section">
           <Articles
             articles={sortedArticles}
-            hideViewAllLinksNode
             currentCategory={currentCategory}
           />
         </Box>

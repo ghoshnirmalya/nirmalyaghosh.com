@@ -28,10 +28,7 @@ const Page: FC<Props> = ({ articles = [], publications = [] }) => {
 
   return (
     <Box as="main" maxW="2xl" mx="auto" p={8}>
-      <Articles
-        articles={sortedAllArticlesAndPublications}
-        hideViewAllLinksNode
-      />
+      <Articles articles={sortedAllArticlesAndPublications} />
     </Box>
   );
 };
