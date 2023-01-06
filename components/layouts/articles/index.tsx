@@ -41,27 +41,6 @@ const Articles: FC<Props> = ({
       article.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-  const viewAllLinksNode = () => {
-    return (
-      <NextLink href="/articles" passHref>
-        <Link
-          p={2}
-          href="/articles"
-          rounded="sm"
-          fontSize="sm"
-          borderWidth={1}
-          borderColor="transparent"
-          _hover={{
-            textDecoration: "none",
-            bg: "gray.900",
-          }}
-        >
-          <Box color="gray.300">View all articles</Box>
-        </Link>
-      </NextLink>
-    );
-  };
-
   const headingNode = () => {
     if (!!currentTag) {
       return (
@@ -172,24 +151,28 @@ const Articles: FC<Props> = ({
 
       return (
         <Box key={index}>
-          <NextLink href={`/articles/${article.slug}`}>
-            <a>
-              <Box>
-                <VStack spacing={1} align="left">
-                  {metaNode(article.date, "article")}
-                  {titleNode(article.title)}
-                  {descriptionNode(article.description)}
-                </VStack>
-              </Box>
-            </a>
-          </NextLink>
+          <Link
+            as={NextLink}
+            href={`/articles/${article.slug}`}
+            _hover={{
+              textDecoration: "none",
+            }}
+          >
+            <Box>
+              <VStack spacing={1} align="left">
+                {metaNode(article.date, "article")}
+                {titleNode(article.title)}
+                {descriptionNode(article.description)}
+              </VStack>
+            </Box>
+          </Link>
         </Box>
       );
     });
   };
 
   return (
-    <VStack spacing={8} align="left">
+    <VStack spacing={12} align="left">
       {headingNode()}
       {articlesNode()}
     </VStack>

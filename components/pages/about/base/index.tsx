@@ -22,7 +22,6 @@ const Page: FC = () => {
             width={100}
             quality={100}
             priority
-            placeholder="blur"
           />
         </Box>
         <Box>
@@ -32,7 +31,13 @@ const Page: FC = () => {
             </Heading>
             <Text fontWeight="bold">
               Staff Developer Advocate @
-              <Link href="https://rapidapi.com/" isExternal>
+              <Link
+                href="https://rapidapi.com/"
+                isExternal
+                _hover={{
+                  textDecoration: "none",
+                }}
+              >
                 Rapid
               </Link>
             </Text>
@@ -86,7 +91,9 @@ const Page: FC = () => {
             isExternal
             borderWidth={1}
             borderColor="gray.600"
-            _hover={{}}
+            _hover={{
+              textDecoration: "none",
+            }}
           >
             <HStack spacing={2} alignItems="center">
               <Box as={IoLogoGithub} /> <Text>Github</Text>
@@ -103,7 +110,9 @@ const Page: FC = () => {
             isExternal
             borderWidth={1}
             borderColor="blue.400"
-            _hover={{}}
+            _hover={{
+              textDecoration: "none",
+            }}
           >
             <HStack spacing={2} alignItems="center">
               <Box as={IoLogoLinkedin} /> <Text>LinkedIn</Text>

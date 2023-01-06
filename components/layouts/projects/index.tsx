@@ -74,7 +74,6 @@ const Projects: FC<Props> = ({ projects = [] }) => {
                           alt={project.title}
                           width={600}
                           height={600 / 1.5}
-                          layout="responsive"
                           sizes="100vw"
                           style={{
                             objectFit: "cover",
@@ -97,7 +96,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   };
 
   return (
-    <VStack spacing={8} align="left">
+    <VStack spacing={12} align="left">
       {headingNode()}
       {projectsNode()}
     </VStack>

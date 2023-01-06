@@ -27,7 +27,6 @@ const Jumbotron: FC = () => {
           width={100}
           quality={100}
           priority
-          placeholder="blur"
         />
       </Box>
       <Box>
@@ -70,7 +69,7 @@ const Jumbotron: FC = () => {
           and{" "}
           <Box as="span" color="gray.300">
             Developer Experience
-          </Box>{" "}
+          </Box>
           .
         </Heading>
       </Box>

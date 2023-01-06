@@ -13,7 +13,13 @@ const Image: FC<IProps> = ({ src, alt, height, width }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <Link href={src} target="_blank" rel="noopener noreferrer">
+    <Link
+      href={src}
+      isExternal
+      _hover={{
+        textDecoration: "none",
+      }}
+    >
       <VStack
         bg="gray.900"
         borderRadius="sm"

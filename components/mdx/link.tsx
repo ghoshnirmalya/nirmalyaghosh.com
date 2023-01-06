@@ -1,5 +1,6 @@
+import { Link as ChakraLink } from "@chakra-ui/react";
 import NextLink from "next/link";
-import React, { FC } from "react";
+import { FC } from "react";
 
 interface IProps {
   href: string;
@@ -8,9 +9,15 @@ interface IProps {
 
 const Link: FC<IProps> = ({ href, text }) => {
   return (
-    <NextLink href={href}>
-      <a>{text}</a>
-    </NextLink>
+    <ChakraLink
+      as={NextLink}
+      href={href}
+      _hover={{
+        textDecoration: "none",
+      }}
+    >
+      {text}
+    </ChakraLink>
   );
 };
 

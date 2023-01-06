@@ -133,13 +133,20 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
       <HStack spacing={2} isInline alignItems="center">
         {article.categories.map((category, index) => {
           return (
-            <NextLink key={index} href={`/categories/${category}`} passHref>
-              <ChakraLink fontSize="sm" _hover={{}} display="flex">
-                <Badge variant="subtle" colorScheme="green">
-                  {category}
-                </Badge>
-              </ChakraLink>
-            </NextLink>
+            <ChakraLink
+              key={index}
+              fontSize="sm"
+              _hover={{
+                textDecoration: "none",
+              }}
+              display="flex"
+              as={NextLink}
+              href={`/categories/${category}`}
+            >
+              <Badge variant="subtle" colorScheme="green">
+                {category}
+              </Badge>
+            </ChakraLink>
           );
         })}
       </HStack>
@@ -159,19 +166,21 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
       >
         {article.tags.map((tag, index) => {
           return (
-            <NextLink key={index} href={`/tags/${tag}`} passHref>
-              <ChakraLink
-                fontSize="sm"
-                px={2}
-                py={1}
-                _hover={{
-                  bg: "gray.900",
-                }}
-                rounded="sm"
-              >
-                # {tag}
-              </ChakraLink>
-            </NextLink>
+            <ChakraLink
+              as={NextLink}
+              key={index}
+              href={`/tags/${tag}`}
+              fontSize="sm"
+              px={2}
+              py={1}
+              _hover={{
+                bg: "gray.900",
+                textDecoration: "none",
+              }}
+              rounded="sm"
+            >
+              # {tag}
+            </ChakraLink>
           );
         })}
       </HStack>
