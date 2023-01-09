@@ -9,7 +9,7 @@ const globby = require("globby");
     <rss version="2.0">
       <channel>
         <title>Blog by Nirmalya Ghosh</title>
-        <link>https://www.nirmalyaghosh.com</link>
+        <link>https://nirmalyaghosh.com</link>
         <description>Personal portfolio of Nirmalya Ghosh</description>
         <language>en</language>
         ${pages

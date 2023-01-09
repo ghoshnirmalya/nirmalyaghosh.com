@@ -4,7 +4,7 @@ const siteConfig = {
     tagLine: "Sofware Developer",
     description:
       "Articles and guides about JavaScript, CSS and Web Development from a software engineer.",
-    url: "https://www.nirmalyaghosh.com",
+    url: "https://nirmalyaghosh.com",
   },
   assets: {
     avatar: "https://nirmalyaghosh.com/images/common/seo-cover.png",
