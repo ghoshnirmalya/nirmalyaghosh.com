@@ -5,9 +5,10 @@ import Project from "types/project";
 
 interface Props {
   projects: Project[];
+  headingLevel?: "h1" | "h2";
 }
 
-const Projects: FC<Props> = ({ projects = [] }) => {
+const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const sortedProjects = projects.filter((project: Project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -16,7 +17,7 @@ const Projects: FC<Props> = ({ projects = [] }) => {
   const headingNode = () => {
     return (
       <VStack spacing={2} align="left">
-        <Heading as="h1" size="lg" color="white">
+        <Heading as={headingLevel} size="lg" color="white">
           Projects
         </Heading>
         <Text>Open Source Projects developed and available on Github</Text>

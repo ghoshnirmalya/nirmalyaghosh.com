@@ -43,10 +43,10 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
         </Box>
       </Box>
       <Box as="section" maxW="2xl" mx="auto" w="100%" px={8}>
-        <Articles articles={sortedArticles.slice(0, 10)} />
+        <Articles articles={sortedArticles.slice(0, 10)} headingLevel="h2" />
       </Box>
       <Box as="section" maxW="2xl" mx="auto" w="100%" px={8} pb={8}>
-        <Projects projects={projects.slice(0, 10)} />
+        <Projects projects={projects.slice(0, 10)} headingLevel="h2" />
       </Box>
     </VStack>
   );

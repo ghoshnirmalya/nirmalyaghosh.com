@@ -22,6 +22,7 @@ interface Props {
   currentTag?: string;
   currentCategory?: string;
   heading?: string;
+  headingLevel?: "h1" | "h2";
 }
 
 const Articles: FC<Props> = ({
@@ -29,6 +30,7 @@ const Articles: FC<Props> = ({
   currentTag,
   currentCategory,
   heading,
+  headingLevel = "h1",
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -45,7 +47,7 @@ const Articles: FC<Props> = ({
     if (!!currentTag) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="white">
+          <Heading as={headingLevel} size="lg" color="white">
             Articles
           </Heading>
           <Text>Posts tagged with &quot;{currentTag}&quot;</Text>
@@ -56,7 +58,7 @@ const Articles: FC<Props> = ({
     if (!!currentCategory) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as="h1" size="lg" color="white">
+          <Heading as={headingLevel} size="lg" color="white">
             Articles
           </Heading>
           <Text>
@@ -68,7 +70,7 @@ const Articles: FC<Props> = ({
 
     if (!!heading) {
       return (
-        <Heading as="h2" size="lg">
+        <Heading as={headingLevel} size="lg">
           {heading}
         </Heading>
       );
@@ -76,7 +78,7 @@ const Articles: FC<Props> = ({
 
     return (
       <VStack spacing={2} align="left">
-        <Heading as="h1" size="lg" color="white">
+        <Heading as={headingLevel} size="lg" color="white">
           Articles
         </Heading>
         <Text>Posts related to some of the latest technologies</Text>
