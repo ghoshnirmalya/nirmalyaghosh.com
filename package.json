@@ -13,7 +13,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.6",
+    "@chakra-ui/react": "^2.4.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.14",
@@ -21,7 +21,7 @@
     "contentlayer": "^0.2.9",
     "dayjs": "^1.11.7",
     "focus-visible": "^5.2.0",
-    "framer-motion": "^8.1.9",
+    "framer-motion": "^8.4.2",
     "ga-4-react": "^0.1.281",
     "github-slugger": "^2.0.0",
     "next": "^13.1.1",
@@ -49,7 +49,7 @@
     "eslint-config-next": "13.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "release-it": "^15.6.0",
     "typescript": "^4.9.4"
   },
