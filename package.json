@@ -18,7 +18,7 @@
     "@emotion/styled": "^11.10.5",
     "@fontsource/inter": "^4.5.14",
     "@vercel/analytics": "^0.1.6",
-    "contentlayer": "^0.2.9",
+    "contentlayer": "^0.3.0",
     "dayjs": "^1.11.7",
     "focus-visible": "^5.2.0",
     "framer-motion": "^8.4.2",
