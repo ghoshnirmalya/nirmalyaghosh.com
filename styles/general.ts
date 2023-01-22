@@ -19,21 +19,6 @@ const generalStyles = css`
       }
     }
   }
-
-  .image {
-    .unblur {
-      animation: unblur 0.5s linear;
-    }
-
-    @keyframes unblur {
-      from {
-        filter: blur(20px);
-      }
-      to {
-        filter: blur(0);
-      }
-    }
-  }
 `;
 
 export default generalStyles;

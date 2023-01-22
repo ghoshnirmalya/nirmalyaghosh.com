@@ -1,5 +1,5 @@
 import { Box, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
+import BlurImage from "components/image";
 import AvatarImage from "public/images/common/avatar.png";
 import { FC } from "react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
@@ -15,7 +15,7 @@ const Page: FC = () => {
           w={100}
           h={100}
         >
-          <Image
+          <BlurImage
             src={AvatarImage}
             alt="Nirmalya Ghosh"
             height={100}

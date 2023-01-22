@@ -1,7 +1,7 @@
 import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
-import React, { FC } from "react";
-import Image from "next/image";
+import BlurImage from "components/image";
 import AvatarImage from "public/images/common/avatar.png";
+import { FC } from "react";
 
 const Jumbotron: FC = () => {
   return (
@@ -20,7 +20,7 @@ const Jumbotron: FC = () => {
         w={100}
         h={100}
       >
-        <Image
+        <BlurImage
           src={AvatarImage}
           alt="Nirmalya Ghosh"
           height={100}

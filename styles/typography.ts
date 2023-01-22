@@ -36,6 +36,8 @@ const typographyStyles = css`
   // Links
   .article a.chakra-link {
     text-decoration: none;
+    margin: 0 0 ${theme.space[8]};
+    display: inline-block;
   }
 
   .article a[aria-hidden="true"]:hover {
@@ -132,7 +134,6 @@ const typographyStyles = css`
   .article ul,
   .article ol {
     color: ${theme.colors.gray[300]};
-    // font-size: ${theme.fontSizes.lg};
   }
 
   .article strong {

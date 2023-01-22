@@ -1,6 +1,6 @@
-import { Box, VStack, Link } from "@chakra-ui/react";
-import { FC, useState } from "react";
-import NextImage from "next/image";
+import { Box, Link, VStack } from "@chakra-ui/react";
+import BlurImage from "components/image";
+import { FC } from "react";
 
 interface IProps {
   src: string;
@@ -10,8 +10,6 @@ interface IProps {
 }
 
 const Image: FC<IProps> = ({ src, alt, height, width }) => {
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <Link
       href={src}
@@ -32,14 +30,7 @@ const Image: FC<IProps> = ({ src, alt, height, width }) => {
         shadow="xl"
       >
         <Box pos="relative" w="100%" h="100%" className="image">
-          <NextImage
-            src={src}
-            alt={alt}
-            height={height}
-            width={width}
-            className={loaded ? "unblur" : ""}
-            onLoadingComplete={() => setLoaded(true)}
-          />
+          <BlurImage src={src} alt={alt} height={height} width={width} />
         </Box>
         <Box fontSize="sm" p={2} as="span">
           {alt}

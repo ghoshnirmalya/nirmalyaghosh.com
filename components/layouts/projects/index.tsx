@@ -1,5 +1,5 @@
 import { Box, Grid, Heading, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
+import BlurImage from "components/image";
 import { FC, useState } from "react";
 import Project from "types/project";
 
@@ -70,7 +70,7 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
                       paddingTop={12}
                     >
                       <Box roundedTopLeft="lg" overflow="hidden">
-                        <Image
+                        <BlurImage
                           src={project.image}
                           alt={project.title}
                           width={600}
