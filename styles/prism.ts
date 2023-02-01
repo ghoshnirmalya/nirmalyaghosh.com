@@ -332,9 +332,13 @@ const prismStyles = css`
   .highlight-line {
     margin-left: -16px;
     margin-right: -16px;
-    background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
-    border-left-width: 4px;
-    border-left-color: rgb(155 163 175); /* Set highlight accent border color */
+    background: linear-gradient(
+      to left,
+      var(--chakra-colors-gray-800),
+      #181924
+    ); /* Set highlight bg color */
+    border-left-width: 2px;
+    border-left-color: rgb(255 166 87); /* Set highlight accent border color */
   }
 
   .line-number::before {

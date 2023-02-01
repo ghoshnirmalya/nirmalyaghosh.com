@@ -15,7 +15,7 @@ const Wrapper: FC<IProps> = ({ children }) => {
       fontSize="sm"
       mb={8}
       borderWidth={1}
-      borderColor="gray.800"
+      borderColor="gray.700"
       overflow="hidden"
     >
       {children}

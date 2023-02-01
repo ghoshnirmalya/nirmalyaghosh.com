@@ -3,6 +3,7 @@ import { Article } from "contentlayer/generated";
 import dynamic from "next/dynamic";
 import { FC } from "react";
 import Project from "types/project";
+import Tilt from "react-parallax-tilt";
 
 const Jumbotron = dynamic(
   () =>
@@ -33,14 +34,20 @@ const Page: FC<Props> = ({ articles = [], projects = [] }) => {
       <Box
         as="section"
         w="100%"
-        px={8}
-        pb={16}
         bgColor="gray.900"
         bgGradient={["linear(to-br, gray.800, #181924)"]}
       >
-        <Box maxW="2xl" mx="auto">
-          <Jumbotron />
-        </Box>
+        <Tilt
+          tiltEnable={false}
+          glareEnable
+          glareMaxOpacity={0.8}
+          glareColor="#000"
+          glarePosition="all"
+        >
+          <Box maxW="2xl" mx="auto" px={8} pb={16}>
+            <Jumbotron />
+          </Box>
+        </Tilt>
       </Box>
       <Box as="section" maxW="2xl" mx="auto" w="100%" px={8}>
         <Articles articles={sortedArticles.slice(0, 10)} headingLevel="h2" />

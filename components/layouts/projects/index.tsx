@@ -59,7 +59,7 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
               color="white"
               rounded="sm"
               borderWidth={1}
-              borderColor="gray.800"
+              borderColor="gray.700"
             >
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 <VStack align="left">

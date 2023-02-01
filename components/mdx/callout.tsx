@@ -33,7 +33,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
       color={allowedTypes[type].color}
       mr={[2, 2, 0, 0]}
       borderWidth={1}
-      borderColor="gray.800"
+      borderColor="gray.700"
       shadow="xl"
       mb={8}
     >
@@ -49,7 +49,7 @@ const Callout: FC<IProps> = ({ type = "info", children }) => {
           padding={1}
           color={allowedTypes[type].color}
           borderWidth={1}
-          borderColor="gray.800"
+          borderColor="gray.700"
         />
         <Box
           sx={{

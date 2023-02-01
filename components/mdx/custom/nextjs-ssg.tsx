@@ -158,7 +158,7 @@ const NextJSSSG: FC = () => {
       <Center
         p={4}
         border={2}
-        borderColor="gray.800"
+        borderColor="gray.700"
         borderStyle="dashed"
         rounded="sm"
         color="gray.400"

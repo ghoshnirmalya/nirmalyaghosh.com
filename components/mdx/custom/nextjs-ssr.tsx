@@ -178,7 +178,7 @@ const NextJSSSR: FC = () => {
                   pos="absolute"
                   mt="14px"
                   border={1}
-                  borderColor="gray.800"
+                  borderColor="gray.700"
                   borderStyle="dashed"
                   w="100%"
                 />
@@ -218,7 +218,7 @@ const NextJSSSR: FC = () => {
                   pos="absolute"
                   mt="14px"
                   border={1}
-                  borderColor="gray.800"
+                  borderColor="gray.700"
                   borderStyle="dashed"
                   w="100%"
                 />

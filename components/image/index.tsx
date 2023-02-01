@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { useState } from "react";
 
-const BlurImage = ({ src, ...props }) => {
+const BlurImage = ({ src, ...props }: ImageProps) => {
   const [isLoaded, setIsLoaded] = useState(true);
 
   return (
