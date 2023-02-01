@@ -3,7 +3,7 @@ title: Fundamentals of Next.js 12
 slug: fundamentals-of-nextjs-12
 description: Learn the basics of Next.js from this series of interactive components.
 date: 2022-01-22T16:40:18.590Z
-lastmod: 2023-01-05T07:10:54.728Z
+lastmod: 2023-02-01T22:53:37.338Z
 draft: false
 tags:
   - next.js
@@ -52,3 +52,17 @@ is useful when you want to generate the HTML on every request.
 Play with the component below to visually understand how SSG works in a Next.js application.
 
 <NextJSSSR />
+
+## Data Fetching
+
+Next.js provides several methods for data fetching such as [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props), [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) and [getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props). These methods allow you to fetch data for your page and make it available for the page to render.
+
+- **[getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props)** is used to fetch the data at build time, which is useful for static websites.
+
+- **[getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)** is used to fetch the data on each request, which is useful for dynamic websites.
+
+- **[getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props)** is a legacy method that is used to fetch the data on the server and pass it to the client.
+
+Each of these data fetching methods can be used to fetch data for your page and make it available for the page to render. For example, you can use **[getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props)** to fetch the data at build time for a static website, or use **[getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)** to fetch the data on each request for a dynamic website. Additionally, **[getInitialProps](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props)** is a legacy method that can be used to fetch the data on the server and pass it to the client.
+
+Once data has been fetched, it can be used to render the page. For example, you can use the data to display a list of items on your page, or to create a form. Additionally, Next.js provides several tools that can be used to simplify the process of data fetching, such as the [swr](https://swr.now.sh/) library. With these tools, you can easily fetch data and use it to render your page.
