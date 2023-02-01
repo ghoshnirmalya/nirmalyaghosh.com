@@ -65,7 +65,7 @@
           "title": "keywords",
           "name": "keywords",
           "type": "choice",
-          "choices": ["Next.js"]
+          "choices": ["Next.js", "Prisma", "GraphQL", "CLI"]
         },
         {
           "title": "lastmod",
