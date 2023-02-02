@@ -1,0 +1,226 @@
+---
+title: Step-by-step guide to integrating Prisma with Next.js
+description: Take your Next.js development to the next level with Prisma. This
+  beginner-friendly tutorial will show you how to manage your database with
+  ease.
+date: 2023-02-02T18:23:54.081Z
+draft: false
+tags:
+  - next.js
+categories:
+  - javascript
+  - database
+keywords: Prisma
+lastmod: 2023-02-02T19:46:23.690Z
+slug: step-step-guide-integrating-prisma-js
+---
+
+Integrate [Prisma](https://www.prisma.io) into your Next.js app for improved database management and enhanced performance. This tutorial will guide you through the process from installation to implementation, making it accessible for both beginners and experienced developers. Learn how to use Prisma to boost efficiency, scalability, and achieve better results in your Next.js projects. Get started now and revolutionize your development game.
+
+## Introduction
+
+Prisma is an open-source data access layer that simplifies database management in modern applications. It offers a strong API to communicate with databases and supports various databases like PostgreSQL, MySQL, MongoDB, etc. Integrating Prisma with a Next.js app can boost database management and app performance, as well as increase reliability and security with its type safety and data protection features.
+
+This blog post provides a step-by-step guide on integrating Prisma into a Next.js app. The post covers the entire process, from setting up a Next.js project to testing the integration, and is aimed at developers who want to improve their database management skills. Even new Next.js or Prisma users should be able to follow the guide and integrate Prisma successfully. By the end of the guide, developers will have a complete understanding of integrating Prisma into their Next.js app.
+
+## Setting up a Next.js project
+
+Creating a new Next.js project is the first step in integrating Prisma into a Next.js app. This process involves setting up a basic Next.js app that serves as the foundation for the rest of the integration process. Here are the steps to create a new Next.js project:
+
+1. Install [Node.js](https://nodejs.org/en/download/) and npm (Node Package Manager) if you don't already have them installed on your system.
+
+2. Open a terminal or command prompt and navigate to the directory where you want to create your Next.js project.
+
+3. Run the following command to create a new Next.js project using npm:
+
+   ```bash
+   npx create-next-app my-app
+   ```
+
+4. Select the options that you would like for your project:
+
+   ```bash
+   ✔ Would you like to use TypeScript with this project? No
+   ✔ Would you like to use ESLint with this project? Yes
+   ```
+
+5. This command will create a new Next.js project in a directory named `my-app`. Change the directory to the newly created project by running:
+
+   ```bash
+   cd my-app
+   ```
+
+6. To start the development server, run the following command:
+
+   ```bash
+   npm run dev
+   ```
+
+7. Open a web browser and navigate to [http://localhost:3000](http://localhost:3000/) to see the default Next.js "Hello World" page.
+
+## Installing and setting up Prisma
+
+Installing and setting up Prisma is the next step after creating a new Next.js project. This process involves installing the necessary dependencies, setting up a Prisma client, and connecting it to a database. Here are the steps to install and set up Prisma:
+
+1. Install the Prisma client and the required dependencies by running the following command:
+
+   ```bash
+   npm install @prisma/client
+   ```
+
+2. Initialize a new Prisma service by running the following command:
+
+   ```bash
+   npx prisma init
+   ```
+
+3. In the `prisma` directory, update the file called `schema.prisma` and add the following code:
+
+   ```js:prisma/schema.prisma
+   datasource db {
+     provider = "sqlite"
+     url = "file:./dev.db"
+   }
+
+   generator client {
+     provider = "prisma-client-js"
+   }
+
+   model User {
+     id    String  @id @default(uuid())
+     name  String
+     email String  @unique
+   }
+   ```
+
+4. After the Prisma service is set up, you need to generate the Prisma client by running the following command:
+
+   ```bash
+   npx prisma generate
+   ```
+
+5. In your Next.js project, create a new file called `db.js` in the `lib` directory and add the following code:
+
+   ```js:lib/db.js
+   import { PrismaClient } from "@prisma/client";
+
+   const prisma = new PrismaClient();
+
+   export default prisma;
+   ```
+
+6. Push the changes to the database by running the following command:
+
+   ```bash
+   npx prisma db push
+   ```
+
+## Adding seed data to the table
+
+Adding seed data to the table is a useful step in developing a Next.js app with Prisma. Seed data provides initial data for your database, which can be used for testing and development purposes. Here are the steps to add seed data to the table:
+
+1. In the `prisma` directory, create a new file called `seed.js` and add the following code:
+
+   ```js:prisma/seed.js
+   const db = require("../lib/db");
+
+   const users = [
+     { name: "John Doe", email: "john.doe@example.com" },
+     { name: "Jane Doe", email: "jane.doe@example.com" }
+   ];
+
+   async function seed() {
+     for (const user of users) {
+       await db.user.create({ data: user });
+     }
+   }
+
+   seed().catch(console.error);
+   ```
+
+2. This code requires the `db` client and defines an array of `users` with two objects. It then creates an asynchronous function `seed` that loops through the `users` array and creates a new user in the `User` table for each object in the array using the `db.user.create` method.
+
+3. To run the seed data script, run the following command in your terminal:
+
+   ```bash
+   node prisma/seed.js
+   ```
+
+## Connecting Prisma to Next.js
+
+Connecting Prisma to Next.js is the final step in integrating Prisma into a Next.js app. This step involves using the Prisma client to connect to the database and make queries and mutations. Here are the steps to connect Prisma to Next.js:
+
+1. In the `pages/api` directory, create a new file called `users.js` and add the following code:
+
+   ```js:pages/api/users.js
+   import db from "../../lib/db";
+
+   export default async function handler(req, res) {
+     const users = await db.user.findMany();
+     res.status(200).json(users);
+   }
+   ```
+
+2. This code imports the `db` client and defines an asynchronous function `handler` that uses the `db.user.findMany` method to retrieve all users from the `User` table. It then returns the `users` array as a JSON response.
+
+3. Open a web browser and navigate to [http://localhost:3000/api/users](http://localhost:3000/api/users) to see the JSON response.
+
+4. In your Next.js project, create a new file called `users.js` in the `pages` directory and add the following code:
+
+   ```js:pages/users.js
+   import { useState, useEffect } from "react";
+
+   export default function Users() {
+     const [users, setUsers] = useState([]);
+
+     useEffect(() => {
+       fetch("/api/users")
+         .then((res) => res.json())
+         .then((data) => setUsers(data));
+     }, []);
+
+     return (
+       <div>
+         <h1>Users</h1>
+         <ul>
+           {users.map((user) => (
+             <li key={user.id}>{user.name}</li>
+           ))}
+         </ul>
+       </div>
+     );
+   }
+   ```
+
+5. This code imports the `useState` and `useEffect` hooks from React and defines a `Users` component that uses the `useState` hook to initialize an empty array of `users`. It then uses the `useEffect` hook to fetch the users from the `/api/users` endpoint and set the `users` state with the response data.
+
+6. If you navigate to [http://localhost:3000/users](http://localhost:3000/users), you should see the list of users from the database.
+
+## Using Prisma Studio to debug the database
+
+Using [Prisma Studio](https://www.prisma.io/studio) to debug the database is a useful step in developing a Next.js app with Prisma. Prisma Studio is a GUI tool that allows you to view and edit data in your database. Here are the steps to use Prisma Studio to debug the database:
+
+1. In your terminal, run the following command to start Prisma Studio:
+
+   ```bash
+   npx prisma studio
+   ```
+
+2. Open a web browser and navigate to [http://localhost:5555](http://localhost:5555) to see the Prisma Studio interface.
+
+3. In the Prisma Studio interface, click on the `User` table to see the list of users.
+
+4. Click on the `Add record` button to add a new user to the database.
+
+5. In the `Add new User` form, enter the following values:
+
+   - name: `John Smith`
+   - Email: `john@smith.com`
+
+6. Click on the `Save` button to save the new user to the database.
+
+## Conclusion
+
+In conclusion, integrating Prisma with Next.js can provide a powerful and efficient solution for your app development needs. By following the step-by-step guide provided in this blog post, you can easily set up Prisma, create a database schema, add seed data, and connect it to your Next.js app. With the benefits that Prisma offers, including efficient data management and improved developer experience, you can take your Next.js app development to the next level. I hope this guide has been helpful in your journey to implement Prisma in your Next.js app.
+
+Get the latest updates on cutting-edge tech and follow my journey as a developer by following me on [Twitter](https://twitter.com/NirmalyaGhosh_)!
