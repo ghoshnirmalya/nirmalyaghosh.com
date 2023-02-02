@@ -16,7 +16,7 @@ export const getCurrentArticle = (params: ParsedUrlQuery | undefined) => {
 };
 
 export const getAllArticles = () => {
-  return allArticles;
+  return allArticles.filter((article) => !article.draft);
 };
 
 export const getAllArticlesWhichBelongToCurrentSlug = (
