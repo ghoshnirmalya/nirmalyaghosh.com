@@ -1,0 +1,247 @@
+---
+title: "React and TypeScript: A Guide to Strongly Typed Components"
+description:
+  React & TypeScript speed up web app creation and provide type safety,
+  auto-complete, IntelliSense & type inference.
+date: 2023-02-04T08:01:12.398Z
+draft: false
+tags:
+  - react.js
+categories:
+  - typescript
+keywords:
+  - TypeScript
+lastmod: 2023-02-04T08:07:47.410Z
+slug: react-typescript-guide-strongly-typed-components
+---
+
+## What is React and TypeScript?
+
+When creating powerful web applications, [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/) are two of the most popular technologies. React is an open-source JavaScript library for building user interfaces, while TypeScript is a typed superset of JavaScript that adds optional static typing. Combining these two technologies allows developers to develop powerful applications quickly and efficiently. In this article, we'll explore how to get started with React and TypeScript, as well as the advantages of using this combination.
+
+## Benefits of Using React and TypeScript
+
+Using TypeScript with React can provide developers with the opportunity to write code that is more organized, structured, and understandable. With the added type safety that comes from TypeScript, developers can find and fix errors earlier in the development process, which can help to significantly reduce the time spent debugging and testing. This provides developers with the ability to write more accurate and reliable code, resulting in an improved overall code quality.
+
+By using TypeScript, developers can take advantage of the compiler's ability to identify errors earlier in the development process. This enables developers to quickly fix any issues with their code and reduce the amount of time spent debugging. Additionally, TypeScript also provides developers with features such as autocompletion and IntelliSense, which can help developers to write code more quickly and efficiently.
+
+Using TypeScript can allow developers to create code that is more modular and reusable. This provides developers with the opportunity to create more complex applications with ease, as they can easily reuse existing code and components. Additionally, TypeScript's type safety and other features can help to ensure code quality, making it easier to refactor and maintain code. This makes it much easier for developers to make changes to their existing code without having to start from scratch.
+
+## Create a React and TypeScript project using Parcel
+
+You can now create a project using a build tool such as [Parcel](https://parceljs.org/). To do this, you will first need to create a new directory for your project and create a `package.json` file. This file contains information about the project, including its name, author, dependencies, and scripts. Here is an example of the `package.json` file:
+
+```json:package.json
+{
+  "name": "my-project",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
+```
+
+Once the `package.json` file has been created, you can install the necessary dependencies by running the command `npm install`. This will install the React, ReactDOM, and TypeScript dependencies specified in the `package.json` file.
+
+Now that the dependencies have been installed, you can create a `src/index.html` file that will serve as the entry point for your application. This file will be the main file that Parcel will use to build your application. Here is an example of a basic `index.html` file:
+
+```html:src/index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My Parcel App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
+```
+
+Next, create a `src/index.tsx` file that will contain the React code for the app:
+
+```tsx:src/index.tsx
+import { createRoot } from "react-dom/client";
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+root.render(<h1>Hello world!</h1>);
+```
+
+This file simply renders an `<h1>` element with the text `Hello, world!`.
+
+Once the `index.tsx` file has been created, you can create a TypeScript configuration file called `tsconfig.json`. This file is used to configure the TypeScript compiler and can be used to specify various options such as the target version, module type, and whether strict type checking is enabled. You can just create an empty object or add the necessary TypeScript compiler configurations, such as:
+
+```json:tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "strict": true
+  }
+}
+```
+
+Alternatively, you can also use more advanced configurations, depending on your project needs, such as:
+
+```json:tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve"
+  }
+}
+```
+
+Finally, you can start the development server, which will serve your application and watch for any changes you make. To do this, simply run the command `npm start` in the project directory. This will start the development server, which will serve your application on [http://localhost:1234/](http://localhost:1234/) and watch for any changes you make.
+
+With the development server running, you can now begin developing your React and TypeScript application. Parcel will automatically transpile your TypeScript files and serve your application when changes are made. This makes it easy to quickly build powerful web applications using React and TypeScript.
+
+## Creating a basic React component using TypeScript
+
+Once the development server is up and running, you can begin creating React components using TypeScript. When creating components with TypeScript, you can take advantage of the added type safety that TypeScript provides, as well as other features such as type inference and type guards.
+
+To create a React component with TypeScript, you'll need to use the `React.FC` type. This type allows you to specify the type of the component's props and state. Here is an example of a basic React component that you can create in the `src/my-component.tsx` file:
+
+```tsx:src/my-component.tsx
+type Props = {
+  name: string;
+};
+
+const MyComponent: React.FC<Props> = ({ name }) => {
+  return <h1>Hello {name}!</h1>;
+};
+
+export default MyComponent;
+```
+
+This component takes a `name` prop and renders an `<h1>` element with the text `Hello {name}!`. By using the `React.FC` type, you can specify the type of the component's props, which provides added type safety.
+
+You can also take advantage of type inference when creating React components with TypeScript. Type inference allows the TypeScript compiler to infer the type of a variable based on the type of the value assigned to it. Here is an example of a component that utilizes type inference:
+
+```tsx:src/my-component.tsx
+type Props = {
+  name: string;
+};
+
+const MyComponent: React.FC<Props> = ({ name }) => {
+  const message = `Hello ${name}!`;
+  return <h1>{message}</h1>;
+};
+
+export default MyComponent;
+```
+
+In this example, the TypeScript compiler will infer the type of the `message` variable as `string` without the need to explicitly specify it. This makes it easier to quickly create components without having to manually specify types.
+
+You can import this file inside the `src/index.tsx` file like the following:
+
+```tsx:src/index.tsx
+import { createRoot } from "react-dom/client";
+import MyComponent from "./my-component";
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+// TypeScript will throw an error in the following line.
+// Property 'name' is missing in type '{}' but required in type 'Props'.
+root.render(<MyComponent />);
+```
+
+However, TypeScript will now complain since you haven’t passed the `name` prop to the `MyComponent` component. To fix that, you can pass the `name` prop to it like the following:
+
+```tsx:src/index.tsx
+import { createRoot } from "react-dom/client";
+import MyComponent from "./my-component";
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+root.render(<MyComponent name="John Doe" />);
+```
+
+This will render the `<h1>Hello John Doe!</h1>` element, as the `name` prop is optional.
+
+Using TypeScript, you can also make the `name` prop optional. To do this, you can use the `?` operator, which allows you to specify that a property is optional. Here is an example of a React component that has an optional `name` prop:
+
+```tsx:src/my-component.tsx
+type Props = {
+  name?: string;
+};
+
+const MyComponent: React.FC<Props> = ({ name }) => {
+  const message = name ? `Hello ${name}!` : "Hello world!";
+  return <h1>{message}</h1>;
+};
+
+export default MyComponent;
+```
+
+In this example, the `name` prop is declared as optional using the `?` operator. Then, the `message` variable is assigned a value depending on whether the `name` prop is present or not. This allows you to create components with optional props.
+
+You can now import this component into the `src/index.tsx` file and render it without passing the `name` prop:
+
+```tsx:src/index.tsx
+import { createRoot } from "react-dom/client";
+import MyComponent from "./my-component";
+
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+root.render(<MyComponent />);
+```
+
+This will render the `<h1>Hello world!</h1>` element, as the `name` prop is optional.
+
+## Using types for the most used React hooks
+
+React offers a wide range of built-in hooks that enable developers to leverage state and other features in functional components. TypeScript can be used to add type safety to these hooks, making it simpler to recognize and address errors as soon as possible, ultimately leading to higher code quality and more efficient coding.
+
+For instance, the `useState` hook can be used to add state to functional components. This hook is declared with a generic type, so the type of the state that the hook will manage can be specified. To illustrate, here is an example of the `useState` hook being employed to create a state variable of type `string`:
+
+```tsx
+import { useState } from "react";
+
+const MyComponent: React.FC = () => {
+  const [name, setName] = useState<string>();
+  // ...
+};
+```
+
+In this case, the `name` variable is declared as type `string` using the generic type. Doing so allows TypeScript to ensure that only strings can be assigned to it, making it possible to protect the code from potential bugs and errors.
+
+The `useEffect` hook allows you to perform side effects in response to changes in state or props. It is most commonly used to handle data fetching, setting up subscriptions, and manually changing the DOM in React components. There is no need to add explicit types to use it.
+
+Here is an example of the `useEffect` hook being used to log the value of the `name` variable:
+
+```tsx
+import { useState, useEffect } from "react";
+
+const MyComponent: React.FC = () => {
+  const [name, setName] = useState<string>();
+
+  useEffect(() => {
+    console.log(name);
+  }, [name]);
+  // ...
+};
+```
+
+In this example, the `useEffect` hook is declared without the generic type. This ensures that the callback function is only invoked when the given condition is met, making it possible to boost the code's safety and security.
+
+## Conclusion
+
+React and TypeScript provide powerful benefits to developers, including type safety, autocomplete, IntelliSense, and type inference. These features make it simpler for developers to identify and fix errors in the early stages of the development process, thus leading to higher code quality and more efficient coding. Moreover, TypeScript's type safety and other features make it much easier for developers to refactor, maintain and upgrade code, while at the same time allowing developers to effortlessly create complex applications. In addition, TypeScript also gives developers the ability to build applications with a robust type system that promotes code maintainability and scalability. Furthermore, it enables developers to use modern JavaScript features in their projects, such as async/await, and arrow functions, making it a great choice for web applications.
