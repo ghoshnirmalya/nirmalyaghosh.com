@@ -4,6 +4,8 @@ import { getAllGuides } from "lib/get-guides-data";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import pick from "lodash/pick";
+import { NextSeo } from "next-seo";
+import siteConfig from "config/site";
 
 interface IProps {
   guides: Guide[];
@@ -12,9 +14,17 @@ interface IProps {
 const GuidesIndexPage: NextPage<IProps> = ({ guides }) => {
   return (
     <>
-      <Head>
-        <title>Guides</title>
-      </Head>
+      <NextSeo
+        title={siteConfig.details.title}
+        description={siteConfig.details.description}
+        openGraph={{
+          url: `${siteConfig.details.url}/guides`,
+          title: `${siteConfig.details.title}`,
+          site_name: siteConfig.details.title,
+          type: "article",
+          locale: "en_IE",
+        }}
+      />
       <Page guides={guides} />
     </>
   );

@@ -5,6 +5,8 @@ import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import publications from "public/data/publications.json";
 import pick from "lodash/pick";
+import { NextSeo } from "next-seo";
+import siteConfig from "config/site";
 
 interface IProps {
   articles: Article[];
@@ -13,9 +15,17 @@ interface IProps {
 const ArticlesIndexPage: NextPage<IProps> = ({ articles }) => {
   return (
     <>
-      <Head>
-        <title>Articles</title>
-      </Head>
+      <NextSeo
+        title={siteConfig.details.title}
+        description={siteConfig.details.description}
+        openGraph={{
+          url: `${siteConfig.details.url}/articles`,
+          title: `${siteConfig.details.title}`,
+          site_name: siteConfig.details.title,
+          type: "article",
+          locale: "en_IE",
+        }}
+      />
       <Page articles={articles} publications={publications} />
     </>
   );

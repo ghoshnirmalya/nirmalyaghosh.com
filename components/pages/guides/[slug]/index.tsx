@@ -1,11 +1,9 @@
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import siteConfig from "config/site";
 import { Guide } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 
 const Callout = dynamic(
@@ -72,53 +70,29 @@ const Page: NextPage<IProps> = ({ guide }) => {
   };
 
   return (
-    <>
-      <NextSeo
-        title={`${guide.title}`}
-        description={guide.description}
-        openGraph={{
-          url: `${siteConfig.details.url}`,
-          title: `${guide.title}`,
-          description: guide.description,
-          images: [
-            {
-              url: guide.coverImage
-                ? guide.coverImage
-                : `${siteConfig.assets.avatar}`,
-              width: 800,
-              height: 600,
-              alt: guide.title,
-            },
-          ],
-          site_name: siteConfig.details.title,
-          type: "article",
-          locale: "en_IE",
-        }}
-      />
-      <Box as="main">
-        <Grid templateColumns="1fr" gridGap={0}>
-          <Box maxW="100%" overflowX="hidden">
-            <VStack spacing={8} w="100%">
-              <Box
-                bgColor="gray.900"
-                p={8}
-                w="100%"
-                bgGradient={["linear(to-br, gray.800, #181924)"]}
-              >
-                <VStack spacing={2} align="left" maxW="2xl" mx="auto">
-                  {publishedMetaNode()}
-                  {titleNode()}
-                </VStack>
-              </Box>
-              <Box className="article" maxW="2xl" mx="auto" px={[8, 0, 0]}>
-                <MDXContent components={components} />
-              </Box>
-              {updatedMetaNode()}
-            </VStack>
-          </Box>
-        </Grid>
-      </Box>
-    </>
+    <Box as="main">
+      <Grid templateColumns="1fr" gridGap={0}>
+        <Box maxW="100%" overflowX="hidden">
+          <VStack spacing={8} w="100%">
+            <Box
+              bgColor="gray.900"
+              p={8}
+              w="100%"
+              bgGradient={["linear(to-br, gray.800, #181924)"]}
+            >
+              <VStack spacing={2} align="left" maxW="2xl" mx="auto">
+                {publishedMetaNode()}
+                {titleNode()}
+              </VStack>
+            </Box>
+            <Box className="article" maxW="2xl" mx="auto" px={[8, 0, 0]}>
+              <MDXContent components={components} />
+            </Box>
+            {updatedMetaNode()}
+          </VStack>
+        </Box>
+      </Grid>
+    </Box>
   );
 };
 

@@ -4,14 +4,37 @@ import { getAllArticlesWhichBelongToCurrentSlug } from "lib/get-articles-data";
 import { getAllCategories } from "lib/get-categories-data";
 import pick from "lodash/pick";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
+import siteConfig from "config/site";
+import { useRouter } from "next/router";
 
 interface IProps {
   articles: Article[];
   currentCategory: string;
 }
 
-const TagsListingPage: NextPage<IProps> = ({ articles, currentCategory }) => {
-  return <Page articles={articles} currentCategory={currentCategory} />;
+const CategoriesListingPage: NextPage<IProps> = ({
+  articles,
+  currentCategory,
+}) => {
+  const router = useRouter();
+
+  return (
+    <>
+      <NextSeo
+        title={siteConfig.details.title}
+        description={siteConfig.details.description}
+        openGraph={{
+          url: `${siteConfig.details.url}/categories/${router.query.slug}`,
+          title: `${siteConfig.details.title}`,
+          site_name: siteConfig.details.title,
+          type: "article",
+          locale: "en_IE",
+        }}
+      />
+      <Page articles={articles} currentCategory={currentCategory} />
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -41,4 +64,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default TagsListingPage;
+export default CategoriesListingPage;

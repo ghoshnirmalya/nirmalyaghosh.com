@@ -6,6 +6,8 @@ import sortBy from "lodash/sortBy";
 import { GetStaticProps, NextPage } from "next";
 import projects from "public/data/projects.json";
 import Project from "types/project";
+import { NextSeo } from "next-seo";
+import siteConfig from "config/site";
 
 interface IProps {
   articles: Article[];
@@ -13,7 +15,22 @@ interface IProps {
 }
 
 const IndexPage: NextPage<IProps> = ({ articles, projects }) => {
-  return <Page articles={articles} projects={projects} />;
+  return (
+    <>
+      <NextSeo
+        title={siteConfig.details.title}
+        description={siteConfig.details.description}
+        openGraph={{
+          url: `${siteConfig.details.url}`,
+          title: `${siteConfig.details.title}`,
+          site_name: siteConfig.details.title,
+          type: "article",
+          locale: "en_IE",
+        }}
+      />
+      <Page articles={articles} projects={projects} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

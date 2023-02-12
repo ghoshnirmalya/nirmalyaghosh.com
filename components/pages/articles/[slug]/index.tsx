@@ -8,13 +8,11 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import siteConfig from "config/site";
 import { Article } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import NextLink from "next/link";
 import DynamicComponentLoader from "./dynamic-component-loader";
@@ -211,68 +209,46 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
   };
 
   return (
-    <>
-      <NextSeo
-        title={`${article.title}`}
-        description={article.description}
-        openGraph={{
-          url: `${siteConfig.details.url}`,
-          title: `${article.title}`,
-          description: article.description,
-          images: [
-            {
-              url: `https://cover-images.vercel.app/api?postTitle=${article.title}&postDescription=${article.description}&backgroundColor=1a202c&foregroundColor=fff&authorAvatar=${siteConfig.assets.favicon}&authorName=${siteConfig.details.title}`,
-              width: 1200,
-              height: 675,
-              alt: article.title,
-            },
-          ],
-          site_name: siteConfig.details.title,
-          type: "article",
-          locale: "en_IE",
-        }}
-      />
-      <Box as="main">
-        <Grid templateColumns="1fr" gridGap={0}>
-          <Box maxW="100%" overflowX="hidden">
-            <VStack spacing={8} w="100%">
-              <Box
-                bgColor="gray.900"
-                px={8}
-                py={16}
-                w="100%"
-                bgGradient={["linear(to-br, gray.800, #181924)"]}
-              >
-                <VStack spacing={2} align="left" maxW="2xl" mx="auto">
-                  <HStack spacing={4}>
-                    {publishedMetaNode()}
-                    {categoriesNode()}
-                  </HStack>
-                  {titleNode()}
-                </VStack>
-              </Box>
-              <Box maxW="2xl" px={[8, 8, 0, 0]} w="100%">
-                <SocialShare title={article.title} />
-              </Box>
-              <Box
-                className="article"
-                maxW="2xl"
-                mx="auto"
-                px={[8, 8, 0, 0]}
-                w="100%"
-              >
-                <MDXContent components={components} />
-              </Box>
-              {tagsNode()}
-              {updatedMetaNode()}
-              <Box py={12} maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
-                {relatedArticlesNode()}
-              </Box>
-            </VStack>
-          </Box>
-        </Grid>
-      </Box>
-    </>
+    <Box as="main">
+      <Grid templateColumns="1fr" gridGap={0}>
+        <Box maxW="100%" overflowX="hidden">
+          <VStack spacing={8} w="100%">
+            <Box
+              bgColor="gray.900"
+              px={8}
+              py={16}
+              w="100%"
+              bgGradient={["linear(to-br, gray.800, #181924)"]}
+            >
+              <VStack spacing={2} align="left" maxW="2xl" mx="auto">
+                <HStack spacing={4}>
+                  {publishedMetaNode()}
+                  {categoriesNode()}
+                </HStack>
+                {titleNode()}
+              </VStack>
+            </Box>
+            <Box maxW="2xl" px={[8, 8, 0, 0]} w="100%">
+              <SocialShare title={article.title} />
+            </Box>
+            <Box
+              className="article"
+              maxW="2xl"
+              mx="auto"
+              px={[8, 8, 0, 0]}
+              w="100%"
+            >
+              <MDXContent components={components} />
+            </Box>
+            {tagsNode()}
+            {updatedMetaNode()}
+            <Box py={12} maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
+              {relatedArticlesNode()}
+            </Box>
+          </VStack>
+        </Box>
+      </Grid>
+    </Box>
   );
 };
 

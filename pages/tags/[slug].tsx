@@ -9,6 +9,9 @@ import {
   GetStaticPropsContext,
   NextPage,
 } from "next";
+import { NextSeo } from "next-seo";
+import siteConfig from "config/site";
+import { useRouter } from "next/router";
 
 interface IProps {
   articles: Article[];
@@ -16,7 +19,24 @@ interface IProps {
 }
 
 const TagsListingPage: NextPage<IProps> = ({ articles, currentTag }) => {
-  return <Page articles={articles} currentTag={currentTag} />;
+  const router = useRouter();
+
+  return (
+    <>
+      <NextSeo
+        title={`${currentTag}`}
+        description={currentTag}
+        openGraph={{
+          url: `${siteConfig.details.url}/tags/${router.query.slug}`,
+          title: `${currentTag}`,
+          site_name: siteConfig.details.title,
+          type: "article",
+          locale: "en_IE",
+        }}
+      />
+      <Page articles={articles} currentTag={currentTag} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async ({
