@@ -32,11 +32,9 @@ export const metadata = {
     images: [`${siteConfig.assets.avatar}`],
   },
   verification: {
-    google: "IrBdsYE_b8xi2Yt3qVUdf0jCWzjuDnshFMrv4pQtoQY",
+    google: process.env.GOOGLE_SITE_VERIFICATION,
     other: {
-      "ahrefs-site-verification": [
-        "a3cfb025018605bc9a5fcfd78fad26e8784fb310e1da70f90309d72114de2b55",
-      ],
+      "ahrefs-site-verification": [process.env.AHREFS_SITE_VERIFICATION],
     },
   },
   category: "technology",
