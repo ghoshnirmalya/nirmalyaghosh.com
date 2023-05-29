@@ -29,22 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       locale: "en_IE",
     },
-    twitter: {
-      card: "summary_large_image",
-      title: siteConfig.details.title,
-      description: siteConfig.details.description,
-      creator: siteConfig.socialLinks.twitter,
-      images: [`${siteConfig.assets.avatar}`],
-    },
-    verification: {
-      google: "IrBdsYE_b8xi2Yt3qVUdf0jCWzjuDnshFMrv4pQtoQY",
-      other: {
-        "ahrefs-site-verification": [
-          "a3cfb025018605bc9a5fcfd78fad26e8784fb310e1da70f90309d72114de2b55",
-        ],
-      },
-    },
-    category: "technology",
   };
 }
 
