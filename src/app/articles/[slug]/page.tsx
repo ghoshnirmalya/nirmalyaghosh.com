@@ -2,6 +2,7 @@ import Page from "components/pages/articles/[slug]";
 import siteConfig from "config/site";
 import { getAllArticles, getCurrentArticle } from "lib/get-articles-data";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: { slug: string };
@@ -9,6 +10,29 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const currentArticle = getCurrentArticle(params.slug);
+
+  if (!currentArticle) {
+    return {
+      title: `${siteConfig.details.title} - ${siteConfig.details.tagLine}`,
+      description: siteConfig.details.description,
+      openGraph: {
+        title: siteConfig.details.title,
+        description: siteConfig.details.description,
+        url: siteConfig.details.url,
+        siteName: siteConfig.details.title,
+        images: [
+          {
+            url: `${siteConfig.assets.avatar}`,
+            width: 800,
+            height: 600,
+            alt: siteConfig.details.title,
+          },
+        ],
+        type: "article",
+        locale: "en_IE",
+      },
+    };
+  }
 
   return {
     title: currentArticle.title,
@@ -37,7 +61,13 @@ export default async function ArticlesSlugPage({
 }: {
   params: { slug: string };
 }) {
-  return <Page articleSlug={params.slug} />;
+  const article = getCurrentArticle(params.slug);
+
+  if (!article) {
+    return notFound();
+  }
+
+  return <Page article={article} />;
 }
 
 export async function generateStaticParams() {

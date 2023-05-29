@@ -7,6 +7,7 @@ import { getCurrentGuide } from "lib/get-guides-data";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import type { MDXComponents } from "mdx/types";
+import { Guide } from "contentlayer/generated";
 
 const Callout = dynamic(
   () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -28,9 +29,7 @@ dayjs.extend(localizedFormat);
 
 const components = { Callout, Jumbotron, Link, Image } as MDXComponents;
 
-const Page = ({ guideSlug }: { guideSlug: string }) => {
-  const guide = getCurrentGuide(guideSlug);
-
+const Page = ({ guide }: { guide: Guide }) => {
   const MDXContent = useMDXComponent(guide.body.code);
 
   const publishedMetaNode = () => {

@@ -1,15 +1,9 @@
-import { allArticles, Article } from "contentlayer/generated";
-import filter from "lodash/filter";
-import find from "lodash/find";
+import { allArticles } from "contentlayer/generated";
 
 export const getCurrentArticle = (slug: string) => {
-  const currentArticle = find(allArticles, (article) => {
-    if (article.slug === slug) {
-      return article;
-    }
-  });
+  const currentArticle = allArticles.find((article) => article.slug === slug);
 
-  return currentArticle as Article;
+  return currentArticle;
 };
 
 export const getAllArticles = () => {
@@ -19,5 +13,5 @@ export const getAllArticles = () => {
 export const getNextArticles = (slug: string) => {
   const allArticles = getAllArticles();
 
-  return filter(allArticles, (article) => article !== getCurrentArticle(slug));
+  return allArticles.filter((article) => article !== getCurrentArticle(slug));
 };

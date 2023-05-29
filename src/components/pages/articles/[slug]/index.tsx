@@ -8,6 +8,8 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import DynamicComponentLoader from "./dynamic-component-loader";
 import type { MDXComponents } from "mdx/types";
+import { notFound } from "next/navigation";
+import { Article } from "contentlayer/generated";
 
 dayjs.extend(localizedFormat);
 
@@ -79,11 +81,10 @@ const components = {
   NextJSSSR,
 } as MDXComponents;
 
-const Page = ({ articleSlug }: { articleSlug: string }) => {
-  const article = getCurrentArticle(articleSlug);
-  const nextArticles = getNextArticles(articleSlug);
-
+const Page = ({ article }: { article: Article }) => {
   const MDXContent = useMDXComponent(article.body.code);
+
+  const nextArticles = getNextArticles(article.slug);
 
   const publishedMetaNode = () => {
     return (
