@@ -1,18 +1,15 @@
+"use client";
+
 import { Box, Grid, HStack, Heading, Text, VStack } from "@chakra-ui/react";
-import { Article } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { NextPage } from "next";
+import { getCurrentArticle, getNextArticles } from "lib/get-articles-data";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
 import DynamicComponentLoader from "./dynamic-component-loader";
+import type { MDXComponents } from "mdx/types";
 
 dayjs.extend(localizedFormat);
-
-interface IProps {
-  article: Article;
-  nextArticles: Article[];
-}
 
 const Callout = dynamic(
   () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -80,9 +77,12 @@ const components = {
   Placeholder,
   NextJSSSG,
   NextJSSSR,
-};
+} as MDXComponents;
 
-const Page: NextPage<IProps> = ({ article, nextArticles }) => {
+const Page = ({ articleSlug }: { articleSlug: string }) => {
+  const article = getCurrentArticle(articleSlug);
+  const nextArticles = getNextArticles(articleSlug);
+
   const MDXContent = useMDXComponent(article.body.code);
 
   const publishedMetaNode = () => {

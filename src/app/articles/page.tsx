@@ -1,4 +1,4 @@
-import Page from "components/pages/index/base/index";
+import Page from "components/pages/articles/base";
 import siteConfig from "config/site";
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: siteConfig.details.title,
     description: siteConfig.details.description,
-    url: siteConfig.details.url,
+    url: `${siteConfig.details.url}/articles`,
     siteName: siteConfig.details.title,
     images: [
       {
@@ -38,6 +38,6 @@ export const metadata = {
   category: "technology",
 };
 
-export default async function IndexPage() {
+export default async function GuidesIndexPage() {
   return <Page />;
 }

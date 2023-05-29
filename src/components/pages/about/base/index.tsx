@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
 import BlurImage from "components/image";
 import AvatarImage from "public/images/common/avatar.png";

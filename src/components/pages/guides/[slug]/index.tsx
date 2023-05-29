@@ -1,10 +1,12 @@
+"use client";
+
 import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import { Guide } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { NextPage } from "next";
+import { getCurrentGuide } from "lib/get-guides-data";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
+import type { MDXComponents } from "mdx/types";
 
 const Callout = dynamic(
   () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
@@ -24,13 +26,11 @@ const Image = dynamic(
 
 dayjs.extend(localizedFormat);
 
-const components = { Callout, Jumbotron, Link, Image };
+const components = { Callout, Jumbotron, Link, Image } as MDXComponents;
 
-interface IProps {
-  guide: Guide;
-}
+const Page = ({ guideSlug }: { guideSlug: string }) => {
+  const guide = getCurrentGuide(guideSlug);
 
-const Page: NextPage<IProps> = ({ guide }) => {
   const MDXContent = useMDXComponent(guide.body.code);
 
   const publishedMetaNode = () => {

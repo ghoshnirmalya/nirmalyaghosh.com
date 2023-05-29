@@ -1,19 +1,22 @@
+"use client";
+
 import { Box } from "@chakra-ui/react";
 import { Article } from "contentlayer/generated";
+import { getAllArticles } from "lib/get-articles-data";
+import pick from "lodash/pick";
 import dynamic from "next/dynamic";
-import { FC } from "react";
+import publications from "public/data/publications.json";
 import Publication from "types/publication";
 
 const Articles = dynamic(
   () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
 );
 
-interface Props {
-  articles: Article[];
-  publications: Publication[];
-}
+const Page = () => {
+  const articles = getAllArticles().map((articles) =>
+    pick(articles, ["date", "description", "title", "slug"])
+  );
 
-const Page: FC<Props> = ({ articles = [], publications = [] }) => {
   const allArticlesAndPublications = [
     ...articles,
     ...publications,

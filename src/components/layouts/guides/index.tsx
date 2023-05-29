@@ -1,18 +1,20 @@
-import { Guide } from "contentlayer/generated";
 import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
+import { Guide } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import { getAllGuides } from "lib/get-guides-data";
+import pick from "lodash/pick";
 import NextLink from "next/link";
-import React, { FC, useState } from "react";
+import { useState } from "react";
 
 dayjs.extend(localizedFormat);
 
-interface Props {
-  guides: Guide[];
-}
-
-const Guides: FC<Props> = ({ guides = [] }) => {
+const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const guides = getAllGuides().map((guides) =>
+    pick(guides, ["date", "description", "title", "slug"])
+  );
 
   const sortedGuides = guides
     .sort(

@@ -2,11 +2,11 @@ import { allGuides, Guide } from "contentlayer/generated";
 import find from "lodash/find";
 import { ParsedUrlQuery } from "querystring";
 
-export const getCurrentGuide = (params: ParsedUrlQuery | undefined) => {
+export const getCurrentGuide = (slug: string) => {
   const allGuides = getAllGuides();
 
   const currentGuide = find(allGuides, (guide) => {
-    if (guide.slug === params.slug) {
+    if (guide.slug === slug) {
       return guide;
     }
   });

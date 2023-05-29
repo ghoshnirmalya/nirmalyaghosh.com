@@ -1,8 +1,10 @@
+"use client";
+
 import { Box, VStack } from "@chakra-ui/react";
-import { Article } from "contentlayer/generated";
+import { getAllArticles } from "lib/get-articles-data";
+import sortBy from "lodash/sortBy";
 import dynamic from "next/dynamic";
-import { FC } from "react";
-import Project from "types/project";
+import projects from "public/data/projects.json";
 import Tilt from "react-parallax-tilt";
 
 const Jumbotron = dynamic(
@@ -19,12 +21,9 @@ const Projects = dynamic(
   () => import(/* webpackChunkName: "Projects" */ "components/layouts/projects")
 );
 
-interface Props {
-  articles: Article[];
-  projects: Project[];
-}
+const Page = () => {
+  const articles = sortBy(getAllArticles(), ["date"]).reverse().slice(0, 5);
 
-const Page: FC<Props> = ({ articles = [], projects = [] }) => {
   const sortedArticles = articles.sort((a, b) => {
     return Number(new Date(b.date)) - Number(new Date(a.date));
   });
