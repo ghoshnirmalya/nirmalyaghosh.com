@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  Box,
-  ChakraProvider,
-  ColorModeScript,
-  extendTheme,
-} from "@chakra-ui/react";
+import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import Navbar from "components/navbar";
-import "focus-visible/dist/focus-visible";
+import { CacheProvider } from "@chakra-ui/next-js";
 import generalStyles from "styles/general";
 import prismStyles from "styles/prism";
 import typographyStyles from "styles/typography";
@@ -26,8 +21,7 @@ const customTheme = extendTheme({
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <ColorModeScript initialColorMode="dark" />
+    <CacheProvider>
       <ChakraProvider theme={customTheme}>
         <Box
           bg="black"
@@ -42,7 +36,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           {children}
         </Box>
       </ChakraProvider>
-    </>
+    </CacheProvider>
   );
 };
 

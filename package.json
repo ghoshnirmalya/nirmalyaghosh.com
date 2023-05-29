@@ -13,6 +13,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.1.3",
     "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
@@ -20,7 +21,6 @@
     "@vercel/analytics": "^1.0.1",
     "contentlayer": "^0.3.2",
     "dayjs": "^1.11.7",
-    "focus-visible": "^5.2.0",
     "framer-motion": "^10.12.16",
     "ga-4-react": "^0.1.281",
     "github-slugger": "^2.0.0",
