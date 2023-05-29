@@ -1,20 +1,25 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import { Article } from "contentlayer/generated";
-import { getAllArticles } from "lib/get-articles-data";
 import pick from "lodash/pick";
 import dynamic from "next/dynamic";
-import publications from "public/data/publications.json";
+
+import { getAllArticles } from "lib/get-articles-data";
+
 import Publication from "types/publication";
 
+import publications from "public/data/publications.json";
+
+import { Article } from "contentlayer/generated";
+
 const Articles = dynamic(
-  () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+  () =>
+    import(/* webpackChunkName: "Articles" */ "components/layouts/articles"),
 );
 
 const Page = () => {
   const articles = getAllArticles().map((articles) =>
-    pick(articles, ["date", "description", "title", "slug"])
+    pick(articles, ["date", "description", "title", "slug"]),
   );
 
   const allArticlesAndPublications = [
@@ -26,7 +31,7 @@ const Page = () => {
     allArticlesAndPublications.sort(
       (a: Article & Publication, b: Article & Publication) => {
         return Number(new Date(b.date)) - Number(new Date(a.date));
-      }
+      },
     );
 
   return (

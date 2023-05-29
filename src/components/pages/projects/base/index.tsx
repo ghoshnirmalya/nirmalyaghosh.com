@@ -2,10 +2,12 @@
 
 import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
+
 import { getAllProjects } from "lib/get-projects-data";
 
 const Projects = dynamic(
-  () => import(/* webpackChunkName: "Projects" */ "components/layouts/projects")
+  () =>
+    import(/* webpackChunkName: "Projects" */ "components/layouts/projects"),
 );
 
 const Page = () => {

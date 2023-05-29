@@ -1,6 +1,8 @@
 import { Box, Grid, Heading, Text, VStack } from "@chakra-ui/react";
-import BlurImage from "components/image";
 import { FC, useState } from "react";
+
+import BlurImage from "components/image";
+
 import Project from "types/project";
 
 interface Props {
@@ -11,7 +13,7 @@ interface Props {
 const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const sortedProjects = projects.filter((project: Project) =>
-    project.title.toLowerCase().includes(searchQuery.toLowerCase())
+    project.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   const headingNode = () => {

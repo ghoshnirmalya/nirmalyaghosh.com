@@ -1,4 +1,5 @@
 import Page from "components/pages/guides/base";
+
 import siteConfig from "config/site";
 
 export const metadata = {

@@ -1,19 +1,21 @@
 import {
   Box,
-  Heading,
   HStack,
+  Heading,
   Link,
   Tag,
   TagLabel,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Article } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import NextLink from "next/link";
 import { FC, useState } from "react";
+
 import Publication from "types/publication";
+
+import { Article } from "contentlayer/generated";
 
 dayjs.extend(localizedFormat);
 
@@ -37,10 +39,10 @@ const Articles: FC<Props> = ({
   const sortedArticles = articles
     .sort(
       (a: Article & Publication, b: Article & Publication) =>
-        Number(new Date(b.date)) - Number(new Date(a.date))
+        Number(new Date(b.date)) - Number(new Date(a.date)),
     )
     .filter((article: Article) =>
-      article.title.toLowerCase().includes(searchQuery.toLowerCase())
+      article.title.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
   const headingNode = () => {

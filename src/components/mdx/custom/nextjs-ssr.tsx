@@ -16,6 +16,7 @@ import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg";
 import { FaServer } from "react-icons/fa";
 import { GoBrowser } from "react-icons/go";
 import { MdDataSaverOn, MdOutlineRestartAlt } from "react-icons/md";
+
 import MockBrowser from "./browser";
 import Wrapper from "./wrapper";
 

@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+
 import mdxOptions from "./src/config/mdx";
 
 export const Article = defineDocumentType(() => ({

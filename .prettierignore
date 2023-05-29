@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+# Contentlayer
+.contentlayer
+
+# Next.js
+.next

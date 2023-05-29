@@ -1,28 +1,30 @@
 "use client";
 
-import { Box, Grid, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Grid, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { getCurrentGuide } from "lib/get-guides-data";
+import type { MDXComponents } from "mdx/types";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
-import type { MDXComponents } from "mdx/types";
+
+import { getCurrentGuide } from "lib/get-guides-data";
+
 import { Guide } from "contentlayer/generated";
 
 const Callout = dynamic(
-  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout")
+  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout"),
 );
 
 const Jumbotron = dynamic(
-  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron")
+  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron"),
 );
 
 const Link = dynamic(
-  () => import(/* webpackChunkName: "Link" */ "components/mdx/link")
+  () => import(/* webpackChunkName: "Link" */ "components/mdx/link"),
 );
 
 const Image = dynamic(
-  () => import(/* webpackChunkName: "Image" */ "components/mdx/image")
+  () => import(/* webpackChunkName: "Image" */ "components/mdx/image"),
 );
 
 dayjs.extend(localizedFormat);

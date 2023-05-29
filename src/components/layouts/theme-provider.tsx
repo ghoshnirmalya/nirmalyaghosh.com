@@ -1,9 +1,11 @@
 "use client";
 
+import { CacheProvider } from "@chakra-ui/next-js";
 import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
+
 import Navbar from "components/navbar";
-import { CacheProvider } from "@chakra-ui/next-js";
+
 import generalStyles from "styles/general";
 import prismStyles from "styles/prism";
 import typographyStyles from "styles/typography";

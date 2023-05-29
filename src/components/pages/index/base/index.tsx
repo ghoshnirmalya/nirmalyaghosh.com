@@ -1,24 +1,28 @@
 "use client";
 
 import { Box, VStack } from "@chakra-ui/react";
-import { getAllArticles } from "lib/get-articles-data";
 import sortBy from "lodash/sortBy";
 import dynamic from "next/dynamic";
-import projects from "public/data/projects.json";
 import Tilt from "react-parallax-tilt";
+
+import { getAllArticles } from "lib/get-articles-data";
+
+import projects from "public/data/projects.json";
 
 const Jumbotron = dynamic(
   () =>
     import(
       /* webpackChunkName: "Jumbotron" */ "components/pages/index/base/jumbotron"
-    )
+    ),
 );
 const Articles = dynamic(
-  () => import(/* webpackChunkName: "Articles" */ "components/layouts/articles")
+  () =>
+    import(/* webpackChunkName: "Articles" */ "components/layouts/articles"),
 );
 
 const Projects = dynamic(
-  () => import(/* webpackChunkName: "Projects" */ "components/layouts/projects")
+  () =>
+    import(/* webpackChunkName: "Projects" */ "components/layouts/projects"),
 );
 
 const Page = () => {

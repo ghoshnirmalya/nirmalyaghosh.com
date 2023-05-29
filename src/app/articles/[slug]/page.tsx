@@ -1,8 +1,11 @@
-import Page from "components/pages/articles/[slug]";
-import siteConfig from "config/site";
-import { getAllArticles, getCurrentArticle } from "lib/get-articles-data";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+import Page from "components/pages/articles/[slug]";
+
+import { getAllArticles, getCurrentArticle } from "lib/get-articles-data";
+
+import siteConfig from "config/site";
 
 type Props = {
   params: { slug: string };

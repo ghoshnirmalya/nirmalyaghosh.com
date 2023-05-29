@@ -1,10 +1,12 @@
 "use client";
 
-import { Box, Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
-import BlurImage from "components/image";
-import AvatarImage from "public/images/common/avatar.png";
+import { Box, HStack, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import { FC } from "react";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
+
+import BlurImage from "components/image";
+
+import AvatarImage from "public/images/common/avatar.png";
 
 const Page: FC = () => {
   const headingNode = () => {

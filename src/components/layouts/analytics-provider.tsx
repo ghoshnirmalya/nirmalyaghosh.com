@@ -1,9 +1,10 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/react";
+import { useEffect } from "react";
+
 import { initGA } from "lib/google-analytics";
 import isProduction from "lib/is-production";
-import { useEffect } from "react";
-import { Analytics } from "@vercel/analytics/react";
 
 const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {

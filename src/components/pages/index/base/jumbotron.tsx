@@ -1,7 +1,9 @@
 import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
-import BlurImage from "components/image";
-import AvatarImage from "public/images/common/avatar.png";
 import { FC } from "react";
+
+import BlurImage from "components/image";
+
+import AvatarImage from "public/images/common/avatar.png";
 
 const Jumbotron: FC = () => {
   return (

@@ -4,7 +4,7 @@ import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
 const Guides = dynamic(
-  () => import(/* webpackChunkName: "guides" */ "components/layouts/guides")
+  () => import(/* webpackChunkName: "guides" */ "components/layouts/guides"),
 );
 
 const Page = () => {

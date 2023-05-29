@@ -1,4 +1,5 @@
 import Page from "components/pages/projects/base";
+
 import siteConfig from "config/site";
 
 export const metadata = {

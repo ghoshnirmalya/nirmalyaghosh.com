@@ -1,5 +1,5 @@
-import Router from "next/router";
 import GA4React from "ga-4-react";
+import Router from "next/router";
 
 let ga4react: {
   initialize: () => any;

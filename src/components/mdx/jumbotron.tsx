@@ -1,4 +1,4 @@
-import { Box, HStack, Link as _Link, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Text, VStack, Link as _Link } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { IoLogoGithub, IoMdEye } from "react-icons/io";
 

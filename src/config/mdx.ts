@@ -1,12 +1,12 @@
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
-import remarkExternalLinks from "remark-external-links";
 import rehypeImgSize from "rehype-img-size";
-import { Pluggable } from "unified";
 import rehypePrismPlus from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
+import remarkExternalLinks from "remark-external-links";
 import remarkGfm from "remark-gfm";
 import remarkUnwrapImages from "remark-unwrap-images";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { Pluggable } from "unified";
 
 const mdxOptions = {
   remarkPlugins: [remarkExternalLinks, remarkGfm, remarkUnwrapImages],

@@ -14,6 +14,7 @@ import { FC, useEffect, useState } from "react";
 import { BiCodeCurly } from "react-icons/bi";
 import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
 import { MdOutlineRestartAlt } from "react-icons/md";
+
 import MockBrowser from "./browser";
 import Wrapper from "./wrapper";
 

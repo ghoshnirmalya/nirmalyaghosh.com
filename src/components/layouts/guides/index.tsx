@@ -1,11 +1,13 @@
 import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
-import { Guide } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { getAllGuides } from "lib/get-guides-data";
 import pick from "lodash/pick";
 import NextLink from "next/link";
 import { useState } from "react";
+
+import { getAllGuides } from "lib/get-guides-data";
+
+import { Guide } from "contentlayer/generated";
 
 dayjs.extend(localizedFormat);
 
@@ -13,16 +15,16 @@ const Guides = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const guides = getAllGuides().map((guides) =>
-    pick(guides, ["date", "description", "title", "slug"])
+    pick(guides, ["date", "description", "title", "slug"]),
   );
 
   const sortedGuides = guides
     .sort(
       (a: Guide, b: Guide) =>
-        Number(new Date(b.date)) - Number(new Date(a.date))
+        Number(new Date(b.date)) - Number(new Date(a.date)),
     )
     .filter((guide: Guide) =>
-      guide.title.toLowerCase().includes(searchQuery.toLowerCase())
+      guide.title.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
   const headingNode = () => {

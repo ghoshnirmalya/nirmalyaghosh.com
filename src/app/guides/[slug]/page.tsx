@@ -1,8 +1,11 @@
-import Page from "components/pages/guides/[slug]";
-import siteConfig from "config/site";
-import { getAllGuides, getCurrentGuide } from "lib/get-guides-data";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
+import Page from "components/pages/guides/[slug]";
+
+import { getAllGuides, getCurrentGuide } from "lib/get-guides-data";
+
+import siteConfig from "config/site";
 
 type Props = {
   params: { slug: string };

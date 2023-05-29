@@ -96,8 +96,9 @@ Now, the `build:style` command will generate a new `public/assets/styles/tailwin
 Next, we need to add the generated file to our `pages/index.js` file:
 
 ```js {4}
-import React from "react";
 import Head from "next/head";
+import React from "react";
+
 import Nav from "../components/nav";
 import "../public/assets/styles/tailwind.css";
 ```

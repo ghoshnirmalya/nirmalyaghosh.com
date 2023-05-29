@@ -1,6 +1,7 @@
 import { Box, Link, VStack } from "@chakra-ui/react";
-import BlurImage from "components/image";
 import { FC } from "react";
+
+import BlurImage from "components/image";
 
 interface IProps {
   src: string;
