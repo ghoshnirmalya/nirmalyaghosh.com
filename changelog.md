@@ -1,3 +1,51 @@
+# [1.10.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.9.0...1.10.0) (2023-05-29)
+
+### Bug Fixes
+
+- Adds .npmrc to fix pnpm issues ([1ecc631](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/1ecc63168fda152e28cbf922fed51a6361730e32))
+- Fixes broken images ([82377ae](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/82377aeca25a622d788915bd4c38124c7d33a01e))
+- Fixes dependencies ([c04dc5e](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/c04dc5e789c0eaff1f67fd33e497771c4203104d))
+- Fixes dependencies ([9920aae](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/9920aae37f86f0b3ffa7c72098985ccfeb764dab))
+- Fixes dependencies ([65fafe6](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/65fafe6815639e34c70165b6f1e09e54facc3d06))
+- Fixes failing build ([7cddb22](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/7cddb2275f12961a264ac16b18d945ae3554bbfb))
+- Fixes heading levels ([28544b6](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/28544b660ec7adeae639a196531c8c76ac8e10a2))
+- Fixes OG images ([dfb4fdf](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/dfb4fdf33e370e541301b502fd3576d3aec7ae2e))
+- fixes OG URLs ([b8f9964](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/b8f9964f327b818f6568a38443c49e6244350b85))
+- Fixes UI issues ([3909038](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/39090389eac93d77cc03c0993c5e11418e9ded0b))
+- Hides focus interaction ([3011c9a](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/3011c9a6534a72e3c414099000e79aa4d0fb1c3b))
+- Issues with border ([901577a](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/901577a7354a7f867e326fb1fe9436195bcb792f))
+- issues with list items ([d4fc0fe](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/d4fc0fe8e133a33e51bd6bff724ed7be11ce1dd1))
+- Unwraps images ([e99e34c](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/e99e34c64e2199a5b656cd97eb7881e93465abb2))
+- updates design to prevent navbar breakage ([abf84fb](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/abf84fbebd697ce4678b5fb51f737aca9ae54117))
+- Updates SEO URL ([c52b589](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/c52b589355bb1f53906c9f5ad9f40cfc3b106acf))
+- Updates text ([568f316](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/568f31686941e8f7c29e31c440b67c662b1d683a))
+
+### Features
+
+- Adds blur to images ([353b4c6](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/353b4c6968734c10b7823c2a6b76902f79702829))
+- Adds blurred images ([6a24c38](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/6a24c38c771836673f3cbde9b0060bee65e7b640))
+- adds favicon.ico file ([cc0930f](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/cc0930f4d45d9fe5ec1d63c37c6d0375ddde4e49))
+- adds sitemap ([2496fdd](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/2496fdd6580ff7cc92f0d19e30f76ed8cc5d1b3f))
+- adds SSR mdx ([e49cb60](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/e49cb60dd7f9e2df49f6c35ad3b7853cf013e1cc))
+- Adds Vercel audiences ([e81f5ad](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/e81f5ad2adcd0caee044bdc9016ef901f0f56701))
+- updates colors ([9c1d1c2](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/9c1d1c21470542423fc1921e12b6fc478f48db9c))
+- Updates design ([cb8d324](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/cb8d32455c99b9fc634142ccb082dc21b6c8bd28))
+- Updates design ([8851ff1](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/8851ff11e4edc46682fe39f57b4ee4c82264f244))
+- Updates design ([9b16fb9](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/9b16fb9a6b076d17672ca11e272ffceb13870ebc))
+- Updates design ([acdb140](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/acdb140592ef42f3f8e3e0d9b55d0f61e235eb04))
+- Updates design ([b15d92b](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/b15d92bbe1810ad0654451954786daf3814fffd6))
+- Updates design ([4fc4884](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/4fc4884a54c3944f6ed11f6d989908f81d9b1ba1))
+- Updates design ([8cfe196](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/8cfe196ff0985ad66275c68c79499517bf7ea06b))
+- Updates design ([27148c0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/27148c0d431e27642dd651dbba013fd9c89832bc))
+- Updates design ([7b71184](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/7b71184d0c45d178328c6832ad5cda93dc1f0ecf))
+- Updates font ([4c8b41d](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/4c8b41d294e0c546eb47c47547d55c6f523059c6))
+- Updates fonts ([d5b80cd](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/d5b80cdeebbc21d050ce6376e8cbc68a8418adc2))
+- Updates heading typography ([e490d55](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/e490d55c59c659e6b0f150d153b9dae47c91b517))
+- Updates heading typography ([29bccdb](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/29bccdb6a730c2255a42e3be972ddb267d30a1db))
+- Updates typography ([7be1ebe](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/7be1ebebaf73c2a86f5a49892fa1a2f59d1b205d))
+- Updates typography ([90799af](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/90799af6b8a666fc5cfcd46e0e7675da1096f040))
+- Updates typography ([8bd64b7](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/8bd64b7b47fc05102941cebff2091718f8cc3d46))
+
 # [1.9.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.8.0...1.9.0) (2022-01-24)
 
 ### Bug Fixes
