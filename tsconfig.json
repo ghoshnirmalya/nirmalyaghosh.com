@@ -18,7 +18,8 @@
       "*": ["/*"],
       "components/*": ["src/components/*"],
       "lib/*": ["src/lib/*"],
-      "pages/*": ["src/pages/*"],
+      "app/*": ["src/app/*"],
+      "pages/*": ["src/_pages/*"],
       "posts/*": ["src/posts/*"],
       "config/*": ["src/config/*"],
       "types/*": ["src/types/*"],
@@ -26,8 +27,20 @@
       "styles/*": ["src/styles/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".contentlayer/generated"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".contentlayer/generated",
+    ".next/types/**/*.ts"
+  ]
 }
