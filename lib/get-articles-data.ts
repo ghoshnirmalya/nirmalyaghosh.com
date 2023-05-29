@@ -19,34 +19,6 @@ export const getAllArticles = () => {
   return allArticles.filter((article) => !article.draft);
 };
 
-export const getAllArticlesWhichBelongToCurrentSlug = (
-  params: ParsedUrlQuery | undefined,
-  type: "categories" | "tags"
-) => {
-  const allArticles = getAllArticles();
-
-  switch (type) {
-    case "categories":
-      const allPostsFromThisCategory = filter(allArticles, (article) => {
-        return article.categories.includes(params?.slug);
-      });
-
-      return compact(
-        flattenDeep(allPostsFromThisCategory)
-      ) as unknown as Article[];
-
-    case "tags":
-      const allPostsFromThisTag = filter(allArticles, (article) => {
-        return article.tags.includes(params?.slug);
-      });
-
-      return compact(flattenDeep(allPostsFromThisTag)) as unknown as Article[];
-
-    default:
-      break;
-  }
-};
-
 export const getNextArticles = (params: ParsedUrlQuery | undefined) => {
   const allArticles = getAllArticles();
 
