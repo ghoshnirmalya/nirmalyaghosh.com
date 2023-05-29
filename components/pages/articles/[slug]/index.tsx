@@ -1,20 +1,10 @@
-import {
-  Badge,
-  Box,
-  Grid,
-  Heading,
-  HStack,
-  Link as ChakraLink,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Grid, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 import { Article } from "contentlayer/generated";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import { NextPage } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
-import NextLink from "next/link";
 import DynamicComponentLoader from "./dynamic-component-loader";
 
 dayjs.extend(localizedFormat);
@@ -126,65 +116,6 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
     );
   };
 
-  const categoriesNode = () => {
-    return (
-      <HStack spacing={2} isInline alignItems="center">
-        {article.categories.map((category, index) => {
-          return (
-            <ChakraLink
-              key={index}
-              fontSize="sm"
-              _hover={{
-                textDecoration: "none",
-              }}
-              display="flex"
-              as={NextLink}
-              href={`/categories/${category}`}
-            >
-              <Badge variant="subtle" colorScheme="green">
-                {category}
-              </Badge>
-            </ChakraLink>
-          );
-        })}
-      </HStack>
-    );
-  };
-
-  const tagsNode = () => {
-    return (
-      <HStack
-        spacing={2}
-        isInline
-        alignItems="center"
-        maxW="2xl"
-        mx="auto"
-        px={[8, 8, 0, 0]}
-        w="100%"
-      >
-        {article.tags.map((tag, index) => {
-          return (
-            <ChakraLink
-              as={NextLink}
-              key={index}
-              href={`/tags/${tag}`}
-              fontSize="sm"
-              px={2}
-              py={1}
-              _hover={{
-                bg: "gray.900",
-                textDecoration: "none",
-              }}
-              rounded="sm"
-            >
-              # {tag}
-            </ChakraLink>
-          );
-        })}
-      </HStack>
-    );
-  };
-
   const titleNode = () => {
     return (
       <Heading
@@ -221,10 +152,7 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
               bgGradient={["linear(to-br, gray.800, #181924)"]}
             >
               <VStack spacing={2} align="left" maxW="2xl" mx="auto">
-                <HStack spacing={4}>
-                  {publishedMetaNode()}
-                  {categoriesNode()}
-                </HStack>
+                <HStack spacing={4}>{publishedMetaNode()}</HStack>
                 {titleNode()}
               </VStack>
             </Box>
@@ -240,7 +168,6 @@ const Page: NextPage<IProps> = ({ article, nextArticles }) => {
             >
               <MDXContent components={components} />
             </Box>
-            {tagsNode()}
             {updatedMetaNode()}
             <Box py={12} maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
               {relatedArticlesNode()}
