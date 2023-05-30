@@ -1,11 +1,8 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
 
-const Guides = dynamic(
-  () => import(/* webpackChunkName: "guides" */ "components/layouts/guides"),
-);
+import Guides from "components/layouts/guides";
 
 const Page = () => {
   return (

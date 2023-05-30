@@ -1,14 +1,10 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
+
+import Projects from "components/layouts/projects";
 
 import { getAllProjects } from "lib/get-projects-data";
-
-const Projects = dynamic(
-  () =>
-    import(/* webpackChunkName: "Projects" */ "components/layouts/projects"),
-);
 
 const Page = () => {
   const projects = getAllProjects();

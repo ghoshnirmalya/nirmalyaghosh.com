@@ -2,7 +2,8 @@
 
 import { Box } from "@chakra-ui/react";
 import pick from "lodash/pick";
-import dynamic from "next/dynamic";
+
+import Articles from "components/layouts/articles";
 
 import { getAllArticles } from "lib/get-articles-data";
 
@@ -11,11 +12,6 @@ import Publication from "types/publication";
 import publications from "public/data/publications.json";
 
 import { Article } from "contentlayer/generated";
-
-const Articles = dynamic(
-  () =>
-    import(/* webpackChunkName: "Articles" */ "components/layouts/articles"),
-);
 
 const Page = () => {
   const articles = getAllArticles().map((articles) =>

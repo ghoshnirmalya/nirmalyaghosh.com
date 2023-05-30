@@ -2,28 +2,15 @@
 
 import { Box, VStack } from "@chakra-ui/react";
 import sortBy from "lodash/sortBy";
-import dynamic from "next/dynamic";
 import Tilt from "react-parallax-tilt";
+
+import Articles from "components/layouts/articles";
+import Projects from "components/layouts/projects";
+import Jumbotron from "components/pages/index/base/jumbotron";
 
 import { getAllArticles } from "lib/get-articles-data";
 
 import projects from "public/data/projects.json";
-
-const Jumbotron = dynamic(
-  () =>
-    import(
-      /* webpackChunkName: "Jumbotron" */ "components/pages/index/base/jumbotron"
-    ),
-);
-const Articles = dynamic(
-  () =>
-    import(/* webpackChunkName: "Articles" */ "components/layouts/articles"),
-);
-
-const Projects = dynamic(
-  () =>
-    import(/* webpackChunkName: "Projects" */ "components/layouts/projects"),
-);
 
 const Page = () => {
   const articles = sortBy(getAllArticles(), ["date"]).reverse().slice(0, 5);

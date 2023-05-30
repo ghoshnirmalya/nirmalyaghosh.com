@@ -1,43 +1,32 @@
 "use client";
 
-import { Box, Grid, HStack, Heading, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  HStack,
+  Heading,
+  Link,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import type { MDXComponents } from "mdx/types";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import dynamic from "next/dynamic";
-import { notFound } from "next/navigation";
 
-import { getCurrentArticle, getNextArticles } from "lib/get-articles-data";
+import Articles from "components/layouts/articles";
+import Callout from "components/mdx/callout";
+import Placeholder from "components/mdx/custom/placeholder";
+import Image from "components/mdx/image";
+import Jumbotron from "components/mdx/jumbotron";
+import DynamicComponentLoader from "components/pages/articles/[slug]/dynamic-component-loader";
+
+import { getNextArticles } from "lib/get-articles-data";
 
 import { Article } from "contentlayer/generated";
 
-import DynamicComponentLoader from "./dynamic-component-loader";
-
 dayjs.extend(localizedFormat);
-
-const Callout = dynamic(
-  () => import(/* webpackChunkName: "Callout" */ "components/mdx/callout"),
-);
-
-const Image = dynamic(
-  () => import(/* webpackChunkName: "Image" */ "components/mdx/image"),
-);
-
-const Jumbotron = dynamic(
-  () => import(/* webpackChunkName: "Jumbotron" */ "components/mdx/jumbotron"),
-);
-
-const Link = dynamic(
-  () => import(/* webpackChunkName: "Link" */ "components/mdx/link"),
-);
-
-const Placeholder = dynamic(
-  () =>
-    import(
-      /* webpackChunkName: "Placeholder" */ "components/mdx/custom/placeholder"
-    ),
-);
 
 const NextJSSSG = dynamic(
   () =>
@@ -66,11 +55,6 @@ const SocialShare = dynamic(
   {
     ssr: false,
   },
-);
-
-const Articles = dynamic(
-  () =>
-    import(/* webpackChunkName: "Articles" */ "components/layouts/articles"),
 );
 
 const components = {

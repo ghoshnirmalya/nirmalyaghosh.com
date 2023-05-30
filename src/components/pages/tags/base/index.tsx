@@ -1,13 +1,9 @@
 import { Box, Grid } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import { FC } from "react";
+
+import Articles from "components/layouts/articles";
 
 import { Article } from "contentlayer/generated";
-
-const Articles = dynamic(
-  () =>
-    import(/* webpackChunkName: "Articles" */ "components/layouts/articles"),
-);
 
 interface Props {
   articles: Article[];
