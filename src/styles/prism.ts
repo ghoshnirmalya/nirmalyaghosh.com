@@ -70,16 +70,16 @@ const prismStyles = css`
 
     /* Overrides */
     --prism-scheme: dark;
-    --prism-foreground: #ffa657;
+    --prism-foreground: #a5d6ff;
     --prism-background: #1a202c;
     --prism-comment: #7285b7;
     --prism-string: #a5d6ff;
     --prism-literal: #429988;
-    --prism-keyword: #ff7b72;
+    --prism-keyword: #5fb6ff;
     --prism-function: #79c0ff;
     --prism-function-variable: #d2a8ff;
     --prism-deleted: #a14f55;
-    --prism-class: #7ee787;
+    --prism-class: #b794f4;
     --prism-builtin: #c9d1d9;
     --prism-property: #79c0ff;
     --prism-parameter: #c9d1d9;
@@ -88,9 +88,9 @@ const prismStyles = css`
     --prism-decorator: #bd8f8f;
     --prism-number: #6394bf;
     --prism-boolean: #1c6b48;
-    --prism-variable: #c2b36e;
+    --prism-variable: #4299e1;
     --prism-regex: #ab5e3f;
-    --prism-json-property: #6b8b9e;
+    --prism-json-property: #5fb6ff;
     --prism-line-number: #888888;
     --prism-line-number-gutter: #eeeeee;
     --prism-line-highlight-background: #444444;
@@ -338,7 +338,7 @@ const prismStyles = css`
       #181924
     ); /* Set highlight bg color */
     border-left-width: 2px;
-    border-left-color: rgb(255 166 87); /* Set highlight accent border color */
+    border-left-color: #b794f4; /* Set highlight accent border color */
   }
 
   .line-number::before {
@@ -380,14 +380,15 @@ const prismStyles = css`
 
   .rehype-code-title {
     margin: ${theme.space[6]} 0 0;
-    padding: ${theme.space[2]} ${theme.space[4]};
+    padding: ${theme.space[4]} ${theme.space[6]};
     font-family: ${theme.fonts.mono};
     background: ${theme.colors.gray[200]};
     color: ${theme.colors.gray[800]};
     border-top-left-radius: ${theme.radii.sm};
     border-top-right-radius: ${theme.radii.sm};
+    border-width: 1px;
+    border-bottom: 0;
     font-size: 0.8rem;
-    font-weight: 600;
     width: 100%;
 
     + pre[class*="language-"] {
@@ -403,8 +404,9 @@ const prismStyles = css`
   }
 
   .rehype-code-title {
-    background: ${theme.colors.gray[700]};
+    background: ${theme.colors.gray[900]};
     color: ${theme.colors.gray[100]};
+    border-color: ${theme.colors.gray[700]};
   }
 
   :not(pre) > code {
