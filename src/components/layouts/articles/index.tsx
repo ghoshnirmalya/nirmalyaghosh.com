@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import pick from "lodash/pick";
 import NextLink from "next/link";
 import { FC, useState } from "react";
 
@@ -91,7 +92,7 @@ const Articles: FC<Props> = ({
   const metaNode = (date: string, type: "publication" | "article") => {
     return (
       <HStack spacing={4} alignItems="center">
-        <Text fontSize="sm" color="gray.400">
+        <Text fontSize="sm" color="gray.500">
           {dayjs(date).format("LL")}
         </Text>
         {type === "publication" && (
@@ -113,7 +114,7 @@ const Articles: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" color="blue.400" fontWeight="bold">
+      <Heading as="h3" size="sm" lineHeight="tall" color="blue.400">
         {title}
       </Heading>
     );
@@ -135,21 +136,18 @@ const Articles: FC<Props> = ({
     return sortedArticles.map((article: Article & Publication, index) => {
       if (!article.slug) {
         return (
-          <Box key={index}>
-            <a
-              href={article.url}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-            >
-              <Box>
-                <VStack spacing={1} align="left">
-                  {metaNode(article.date, "publication")}
-                  {titleNode(article.title)}
-                  {descriptionNode(article.description)}
-                </VStack>
-              </Box>
-            </a>
-          </Box>
+          <a
+            key={index}
+            href={article.url}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <VStack spacing={0} align="left">
+              {metaNode(article.date, "publication")}
+              {titleNode(article.title)}
+              {descriptionNode(article.description)}
+            </VStack>
+          </a>
         );
       }
 

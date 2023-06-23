@@ -8,6 +8,6 @@ export const metadata = {
   },
 };
 
-export default async function GuidesIndexPage() {
+export default async function ArticlesIndexPage() {
   return <Page />;
 }

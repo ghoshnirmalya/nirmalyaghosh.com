@@ -1,7 +1,6 @@
-import { Box, HStack, Link, Text } from "@chakra-ui/react";
+import { Box, HStack, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { FC } from "react";
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 interface NavLink {
   url: string;
@@ -17,10 +16,7 @@ const LINKS = [
     url: "/articles",
     title: "Articles",
   },
-  {
-    url: "/guides",
-    title: "Guides",
-  },
+
   {
     url: "/about",
     title: "About",

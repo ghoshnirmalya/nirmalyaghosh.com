@@ -1,7 +1,5 @@
-import { Box, Grid, Heading, Text, VStack } from "@chakra-ui/react";
+import { Heading, Text, VStack } from "@chakra-ui/react";
 import { FC, useState } from "react";
-
-import BlurImage from "components/image";
 
 import Project from "types/project";
 
@@ -29,7 +27,7 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" lineHeight="tall" color="blue.400">
+      <Heading as="h3" size="sm" lineHeight="tall" color="blue.400">
         {title}
       </Heading>
     );
@@ -49,52 +47,23 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
     }
 
     return (
-      <Grid
-        templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(1, 1fr)"]}
-        gap={8}
-      >
+      <VStack align="left" spacing={8}>
         {sortedProjects.map((project: Project, index: number) => {
           return (
-            <Box
+            <a
               key={index}
-              bg="gray.900"
-              color="white"
-              rounded="sm"
-              borderWidth={1}
-              borderColor="gray.700"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <VStack align="left">
-                  {project.image && (
-                    <Box
-                      bgGradient="linear(to-r, green.200, pink.500)"
-                      paddingLeft={12}
-                      paddingTop={12}
-                    >
-                      <Box roundedTopLeft="lg" overflow="hidden">
-                        <BlurImage
-                          src={project.image}
-                          alt={project.title}
-                          width={600}
-                          height={600 / 1.5}
-                          sizes="100vw"
-                          style={{
-                            objectFit: "cover",
-                          }}
-                        />
-                      </Box>
-                    </Box>
-                  )}
-                  <VStack spacing={1} align="left" padding={4}>
-                    {titleNode(project.title)}
-                    {descriptionNode(project.description)}
-                  </VStack>
-                </VStack>
-              </a>
-            </Box>
+              <VStack spacing={0} align="left">
+                {titleNode(project.title)}
+                {descriptionNode(project.description)}
+              </VStack>
+            </a>
           );
         })}
-      </Grid>
+      </VStack>
     );
   };
 

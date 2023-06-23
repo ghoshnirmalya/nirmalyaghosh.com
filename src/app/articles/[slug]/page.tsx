@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: currentArticle.title,
       description: currentArticle.description,
-      url: `${siteConfig.details.url}/guides/${params.slug}`,
+      url: `${siteConfig.details.url}/articles/${params.slug}`,
       siteName: siteConfig.details.title,
       images: [
         {

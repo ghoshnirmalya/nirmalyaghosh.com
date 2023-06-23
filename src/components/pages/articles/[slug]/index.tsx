@@ -50,20 +50,12 @@ const NextJSSSR = dynamic(
   },
 );
 
-const SocialShare = dynamic(
-  () => import(/* webpackChunkName: "SocialShare" */ "components/social-share"),
-  {
-    ssr: false,
-  },
-);
-
 const components = {
   Callout,
   img: Image,
   Jumbotron,
   Link,
   Image,
-  SocialShare,
   Placeholder,
   NextJSSSG,
   NextJSSSR,
@@ -144,9 +136,6 @@ const Page = ({ article }: { article: Article }) => {
                 <HStack spacing={4}>{publishedMetaNode()}</HStack>
                 {titleNode()}
               </VStack>
-            </Box>
-            <Box maxW="2xl" px={[8, 8, 0, 0]} w="100%">
-              <SocialShare title={article.title} />
             </Box>
             <Box
               className="article"
