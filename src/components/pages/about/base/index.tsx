@@ -33,7 +33,7 @@ const Page: FC = () => {
             <Heading as="h1" size="lg" color="white">
               Nirmalya Ghosh
             </Heading>
-            <Text fontWeight="bold">Staff Developer Advocate @</Text>
+            <Text fontWeight="bold">Staff Developer Advocate</Text>
           </VStack>
         </Box>
       </HStack>

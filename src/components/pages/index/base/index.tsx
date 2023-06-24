@@ -11,7 +11,7 @@ const Page = () => {
       w="100%"
       bgColor="gray.900"
       bgGradient={["linear(to-br, gray.800, #181924)"]}
-      h="calc(100vh - 76px)"
+      h="100vh"
       display="flex"
       alignItems="center"
     >
