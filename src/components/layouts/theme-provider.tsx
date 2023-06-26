@@ -28,6 +28,8 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           bgGradient="linear(to-br, gray.900, gray.800)"
           color="gray.200"
           minH="100vh"
+          display="flex"
+          flexDir="column"
         >
           <Global styles={typographyStyles} />
           <Global styles={generalStyles} />

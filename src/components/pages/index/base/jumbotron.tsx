@@ -1,113 +1,11 @@
-import { Box, HStack, Heading, Link, Text, VStack } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import { FC } from "react";
 
 import BlurImage from "components/image";
 
 import AvatarImage from "public/images/common/avatar.png";
 
-interface NavLink {
-  url: string;
-  title: string;
-}
-
-const LINKS = [
-  {
-    url: "/projects",
-    title: "Projects",
-  },
-  {
-    url: "/articles",
-    title: "Articles",
-  },
-
-  {
-    url: "/about",
-    title: "About",
-  },
-];
-
 const Jumbotron: FC = () => {
-  const menuNode = () => {
-    const socialLinksNode = () => {
-      return (
-        <Box display="flex" alignItems="center" fontSize="sm">
-          <HStack spacing={4}>
-            <Link
-              px={4}
-              py={2}
-              href="https://github.com/ghoshnirmalya"
-              rounded="sm"
-              fontSize="sm"
-              borderWidth={1}
-              borderColor="transparent"
-              _hover={{
-                textDecoration: "none",
-                bgColor: "gray.900",
-              }}
-              _focus={{ outline: "none" }}
-            >
-              Github
-            </Link>
-            <Link
-              px={4}
-              py={2}
-              href="https://www.linkedin.com/in/ghoshnirmalya/"
-              rounded="sm"
-              fontSize="sm"
-              borderWidth={1}
-              borderColor="transparent"
-              _hover={{
-                textDecoration: "none",
-                bgColor: "gray.900",
-              }}
-              _focus={{ outline: "none" }}
-            >
-              LinkedIn
-            </Link>
-          </HStack>
-        </Box>
-      );
-    };
-
-    return (
-      <HStack
-        isInline
-        spacing={[0, 4]}
-        alignItems="center"
-        flexWrap="wrap"
-        justifyContent="center"
-      >
-        {[
-          LINKS.map((link: NavLink) => {
-            return (
-              <Box key={link.url}>
-                <Link
-                  as={NextLink}
-                  px={4}
-                  py={2}
-                  href={link.url}
-                  rounded="sm"
-                  fontSize="sm"
-                  borderWidth={1}
-                  borderColor="transparent"
-                  _hover={{
-                    textDecoration: "none",
-                    bgColor: "gray.900",
-                  }}
-                  _focus={{ outline: "none" }}
-                >
-                  {link.title}
-                </Link>
-              </Box>
-            );
-          }),
-        ]}
-        {socialLinksNode()}
-      </HStack>
-    );
-  };
-
   return (
     <VStack
       alignItems="center"
@@ -166,7 +64,6 @@ const Jumbotron: FC = () => {
           </Heading>
         </Box>
       </VStack>
-      {menuNode()}
     </VStack>
   );
 };
