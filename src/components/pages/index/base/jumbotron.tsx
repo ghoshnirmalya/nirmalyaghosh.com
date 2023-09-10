@@ -43,7 +43,7 @@ const Jumbotron: FC = () => {
             Nirmalya Ghosh
           </Heading>
         </Box>
-        <Text fontSize="xl">Staff Developer Advocate</Text>
+        <Text fontSize="xl">Founding Engineer at Mintlify</Text>
         <Box>
           <Heading
             as="h2"
