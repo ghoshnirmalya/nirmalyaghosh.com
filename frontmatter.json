@@ -7,23 +7,6 @@
       "path": "[[workspace]]/data/articles"
     }
   ],
-  "frontMatter.taxonomy.categories": [
-    "boilerplates",
-    "css",
-    "docker",
-    "javascript",
-    "ui-component"
-  ],
-  "frontMatter.taxonomy.tags": [
-    "api",
-    "boilerplate",
-    "cms",
-    "hasura",
-    "next.js",
-    "react.js",
-    "strapi",
-    "tailwind"
-  ],
   "frontMatter.preview.host": "http://localhost:3000/articles",
   "frontMatter.framework.startCommand": "yarn dev",
   "frontMatter.taxonomy.contentTypes": [

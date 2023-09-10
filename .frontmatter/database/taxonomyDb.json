@@ -1,0 +1,21 @@
+{
+  "taxonomy": {
+    "tags": [
+      "api",
+      "boilerplate",
+      "cms",
+      "hasura",
+      "next.js",
+      "react.js",
+      "strapi",
+      "tailwind"
+    ],
+    "categories": [
+      "boilerplates",
+      "css",
+      "docker",
+      "javascript",
+      "ui-component"
+    ]
+  }
+}
