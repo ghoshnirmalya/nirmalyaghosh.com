@@ -24,7 +24,7 @@
     "dayjs": "^1.11.8",
     "framer-motion": "^10.12.16",
     "ga-4-react": "^0.1.281",
-    "next": "^13.4.7",
+    "next": "^13.5.0",
     "next-contentlayer": "^0.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
