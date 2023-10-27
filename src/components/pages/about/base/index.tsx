@@ -86,6 +86,7 @@ const Page: FC = () => {
             borderColor="gray.600"
             _hover={{
               textDecoration: "none",
+              bg: "#2c2c2c",
             }}
           >
             <HStack spacing={2} alignItems="center">
@@ -105,6 +106,7 @@ const Page: FC = () => {
             borderColor="blue.400"
             _hover={{
               textDecoration: "none",
+              bg="#0868ab",
             }}
           >
             <HStack spacing={2} alignItems="center">
