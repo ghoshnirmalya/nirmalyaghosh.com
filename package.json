@@ -19,6 +19,8 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^5.0.15",
+    "@highlight-run/next": "^7.2.0",
+    "@t3-oss/env-nextjs": "^0.7.1",
     "@vercel/analytics": "^1.1.1",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
@@ -37,7 +39,8 @@
     "rehype-slug": "^5.1.0",
     "remark-external-links": "^9.0.1",
     "remark-gfm": "^3.0.1",
-    "remark-unwrap-images": "^3.0.1"
+    "remark-unwrap-images": "^3.0.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^7.0.2",

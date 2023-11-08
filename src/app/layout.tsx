@@ -1,4 +1,6 @@
+import { HighlightInit } from "@highlight-run/next/client";
 import { Inter } from "next/font/google";
+import { env } from "src/env.mjs";
 
 import AnalyticsProvider from "components/layouts/analytics-provider";
 import ThemeProvider from "components/layouts/theme-provider";
@@ -35,9 +37,9 @@ export const metadata = {
     images: [`${siteConfig.assets.avatar}`],
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    google: env.GOOGLE_SITE_VERIFICATION,
     other: {
-      "ahrefs-site-verification": [process.env.AHREFS_SITE_VERIFICATION],
+      "ahrefs-site-verification": [env.AHREFS_SITE_VERIFICATION],
     },
   },
   category: "technology",
@@ -49,15 +51,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AnalyticsProvider>
-          <ThemeProvider>
-            <Navbar />
-            {children}
-          </ThemeProvider>
-        </AnalyticsProvider>
-      </body>
-    </html>
+    <>
+      <HighlightInit
+        projectId={env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
+        serviceName={env.NEXT_PUBLIC_HIGHLIGHT_SERVICE_NAME}
+        tracingOrigins
+        networkRecording={{
+          enabled: true,
+          recordHeadersAndBody: true,
+          urlBlocklist: [],
+        }}
+      />
+      <html lang="en">
+        <body className={inter.className}>
+          <AnalyticsProvider>
+            <ThemeProvider>
+              <Navbar />
+              {children}
+            </ThemeProvider>
+          </AnalyticsProvider>
+        </body>
+      </html>
+    </>
   );
 }

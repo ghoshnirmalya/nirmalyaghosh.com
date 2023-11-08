@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "*": ["/*"],
+      "src/*": ["src/*"],
       "components/*": ["src/components/*"],
       "lib/*": ["src/lib/*"],
       "app/*": ["src/app/*"],
@@ -41,6 +42,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/env.mjs"
   ]
 }
