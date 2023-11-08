@@ -1,3 +1,19 @@
+# [1.11.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.10.0...1.11.0) (2023-11-08)
+
+### Bug Fixes
+
+- fixes SSR class mismatch ([a9c5323](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/a9c532368407a6dda11acf2eaac0bea3652411ec))
+
+### Features
+
+- simplifies articles structure ([abdda0a](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/abdda0af0dfe73ef57bd729293444e63df15a1a9))
+- updates about page ([04c7899](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/04c78992eaeabbf323afaf6e830a077bb01d7461))
+- updates bio ([c22e065](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/c22e06590cab6c80cf0317a1b2e2ca34936c05a3))
+- updates frontmatter ([980f3f5](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/980f3f5e34fced45bf54e0a8e23b4e322eb5e61b))
+- updates landing page ([e8f712d](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/e8f712dc9883e31c138e24c94e8e1975f7365fb3))
+- updates landing page ([5dac3bc](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/5dac3bca0ff1714f4945e199329fde9f0285dfb3))
+- updates theme ([483f5fc](https://github.com/ghoshnirmalya/nirmalyaghosh.com/commit/483f5fc41b4d79edb97b2d35d8de54cef36f0bf7))
+
 # [1.10.0](https://github.com/ghoshnirmalya/nirmalyaghosh.com/compare/1.9.0...1.10.0) (2023-05-29)
 
 ### Bug Fixes
