@@ -70,5 +70,51 @@
     "*.mdx": [
       "prettier --write --parser mdx"
     ]
+  },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "singleQuote": false,
+    "semi": true,
+    "importOrder": [
+      "^components/(.*)$",
+      "^lib/(.*)$",
+      "^app/(.*)$",
+      "^pages/(.*)$",
+      "^posts/(.*)$",
+      "^config/(.*)$",
+      "^types/(.*)$",
+      "^public/(.*)$",
+      "^styles/(.*)$",
+      "^contentlayer/generated",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": false,
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "changelog.md"
+      }
+    },
+    "hooks": {
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
   }
 }
