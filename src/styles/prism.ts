@@ -52,7 +52,7 @@ const prismStyles = css`
     /* Font */
     --prism-font-size: ${theme.fontSizes.sm};
     --prism-line-height: ${theme.lineHeights.normal};
-    --prism-font-family: ${theme.fonts.mono};
+    --prism-font-family: "Fira Code", monospace;
     --prism-inline-font-size: var(--prism-font-size);
     --prism-block-font-size: var(--prism-font-size);
 

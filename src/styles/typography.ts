@@ -3,10 +3,12 @@ import { css } from "@emotion/react";
 
 const typographyStyles = css`
   // Headings
+  .article > h1,
   .article > h2,
   .article > h3,
   .article > h4 {
     font-weight: ${theme.fontWeights.bold};
+    font-family: ${theme.fonts.heading};
   }
 
   .article > h2 {

@@ -1,6 +1,7 @@
 import { HighlightInit } from "@highlight-run/next/client";
-import { Inter } from "next/font/google";
+import { DM_Sans, Fira_Code, Inter } from "next/font/google";
 import { env } from "src/env.mjs";
+import isProduction from "src/lib/is-production";
 
 import AnalyticsProvider from "components/layouts/analytics-provider";
 import ThemeProvider from "components/layouts/theme-provider";
@@ -8,7 +9,9 @@ import Navbar from "components/navbar";
 
 import siteConfig from "config/site";
 
-const inter = Inter({ subsets: ["latin"] });
+export const inter = Inter({ subsets: ["latin"] });
+export const dmSans = DM_Sans({ subsets: ["latin"] });
+export const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export const metadata = {
   title: `${siteConfig.details.title} - ${siteConfig.details.tagLine}`,
@@ -57,9 +60,8 @@ export default function RootLayout({
         serviceName={env.NEXT_PUBLIC_HIGHLIGHT_SERVICE_NAME}
         tracingOrigins
         networkRecording={{
-          enabled: true,
+          enabled: isProduction,
           recordHeadersAndBody: true,
-          urlBlocklist: [],
         }}
       />
       <html lang="en">

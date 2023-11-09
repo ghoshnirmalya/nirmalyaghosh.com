@@ -8,14 +8,15 @@ import generalStyles from "styles/general";
 import prismStyles from "styles/prism";
 import typographyStyles from "styles/typography";
 
-const customTheme = extendTheme({
+export const customTheme = extendTheme({
   config: {
     initialColorMode: "dark",
     useSystemColorMode: false,
   },
   fonts: {
-    heading: "Inter, sans-serif",
-    body: "Inter, sans-serif",
+    heading: '"DM Sans", sans-serif',
+    body: '"Inter", sans-serif',
+    mono: '"Fira Code", monospace',
   },
 });
 
