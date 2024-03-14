@@ -36,20 +36,20 @@ const Jumbotron: FC = () => {
             fontFamily="body"
             bgColor="blue.400"
             bgClip="text"
-            size="xl"
+            size={["md", "md", "lg", "xl"]}
             bgGradient="linear(to-l, #79c2ff, #4a5888)"
             className="jumbotron-name-heading"
           >
             Nirmalya Ghosh
           </Heading>
         </Box>
-        <Text fontSize="xl" color="blue.100">
+        <Text fontSize={["sm", "lg", "xl", "xl"]} color="blue.100">
           Founding Engineer at Mintlify
         </Text>
         <Box>
           <Heading
             as="h2"
-            size="sm"
+            fontSize={["sm", "sm", "sm", "lg"]}
             lineHeight="tall"
             color="gray.500"
             fontWeight="medium"

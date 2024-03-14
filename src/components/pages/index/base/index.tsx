@@ -26,38 +26,33 @@ const Page = () => {
         maxW="6xl"
         h="full"
       >
-        <Box
-          position="absolute"
-          top="16rem"
-          h="1px"
-          w="full"
-          bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
-          opacity={0.15}
-        />
-        <Box
-          position="absolute"
-          top="15.5rem"
-          h="1px"
-          w="full"
-          bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
-          opacity={0.15}
-        />
-        <Box
-          position="absolute"
-          top="38.5rem"
-          h="1px"
-          w="full"
-          bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
-          opacity={0.15}
-        />
-        <Box
-          position="absolute"
-          top="39rem"
-          h="1px"
-          w="full"
-          bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
-          opacity={0.15}
-        />
+        <Box top="20%" position="absolute" w="full">
+          <Box
+            h="1px"
+            bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
+            opacity={0.15}
+          />
+          <Box
+            h="1px"
+            mt={2}
+            bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
+            opacity={0.15}
+          />
+        </Box>
+
+        <Box bottom="20%" position="absolute" w="full">
+          <Box
+            h="1px"
+            bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
+            opacity={0.15}
+          />
+          <Box
+            h="1px"
+            mt={2}
+            bgGradient={["linear(to-r, gray.800, blue.100,gray.800)"]}
+            opacity={0.15}
+          />
+        </Box>
       </Box>
 
       <Box
