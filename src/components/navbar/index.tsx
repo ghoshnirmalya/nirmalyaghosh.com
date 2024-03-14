@@ -18,11 +18,6 @@ const LINKS = [
     url: "/articles",
     title: "Articles",
   },
-
-  {
-    url: "/about",
-    title: "About",
-  },
 ];
 
 const Navbar: FC = () => {
@@ -42,6 +37,7 @@ const Navbar: FC = () => {
               _hover={{
                 textDecoration: "none",
                 bgColor: "gray.900",
+                borderColor: "gray.700",
               }}
               _focus={{ outline: "none" }}
             >
@@ -58,6 +54,7 @@ const Navbar: FC = () => {
               _hover={{
                 textDecoration: "none",
                 bgColor: "gray.900",
+                borderColor: "gray.700",
               }}
               _focus={{ outline: "none" }}
             >
@@ -75,6 +72,7 @@ const Navbar: FC = () => {
         alignItems="center"
         flexWrap="wrap"
         justifyContent="center"
+        color="blue.100"
       >
         {[
           LINKS.map((link: NavLink) => {
@@ -92,6 +90,7 @@ const Navbar: FC = () => {
                   _hover={{
                     textDecoration: "none",
                     bgColor: "gray.900",
+                    borderColor: "gray.700",
                   }}
                   _focus={{ outline: "none" }}
                 >
@@ -108,7 +107,7 @@ const Navbar: FC = () => {
 
   return (
     <Box as="header" zIndex={1} borderTopWidth={5} borderColor="blue.400">
-      <Box mx="auto" px={4}>
+      <Box mx="auto" px={[4, 4, 4, 0]} maxW="6xl">
         <HStack
           justifyContent="space-between"
           alignItems="center"
@@ -152,6 +151,7 @@ const Navbar: FC = () => {
           {menuNode()}
         </HStack>
       </Box>
+      <Box w="full" h="1px" bg="gray.700" />
     </Box>
   );
 };

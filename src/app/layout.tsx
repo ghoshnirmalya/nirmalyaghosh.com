@@ -64,6 +64,7 @@ export default function RootLayout({
           recordHeadersAndBody: true,
         }}
       />
+
       <html lang="en">
         <body className={inter.className}>
           <AnalyticsProvider>

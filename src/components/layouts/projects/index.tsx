@@ -17,10 +17,12 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
   const headingNode = () => {
     return (
       <VStack spacing={2} align="left">
-        <Heading as={headingLevel} size="lg" color="white">
+        <Heading as={headingLevel} size="lg" color="blue.100">
           Projects
         </Heading>
-        <Text>Open Source Projects developed and available on Github</Text>
+        <Text color="blue.100">
+          Open Source Projects developed and available on Github
+        </Text>
       </VStack>
     );
   };
@@ -34,7 +36,7 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
   };
 
   const descriptionNode = (description: string) => {
-    return <Text color="gray.400">{description}</Text>;
+    return <Text color="blue.100">{description}</Text>;
   };
 
   const projectsNode = () => {

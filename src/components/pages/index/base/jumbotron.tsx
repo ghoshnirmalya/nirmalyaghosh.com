@@ -43,7 +43,9 @@ const Jumbotron: FC = () => {
             Nirmalya Ghosh
           </Heading>
         </Box>
-        <Text fontSize="xl">Founding Engineer at Mintlify</Text>
+        <Text fontSize="xl" color="blue.100">
+          Founding Engineer at Mintlify
+        </Text>
         <Box>
           <Heading
             as="h2"
@@ -53,11 +55,11 @@ const Jumbotron: FC = () => {
             fontWeight="medium"
           >
             Passionate about{" "}
-            <Box as="span" color="gray.300">
+            <Box as="span" color="blue.100">
               User
             </Box>{" "}
             and{" "}
-            <Box as="span" color="gray.300">
+            <Box as="span" color="blue.100">
               Developer Experience
             </Box>
             .

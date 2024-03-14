@@ -131,12 +131,15 @@ const Page = ({ article }: { article: Article }) => {
               py={16}
               w="100%"
               bgGradient={["linear(to-br, gray.800, #181924)"]}
+              borderColor="gray.700"
+              borderBottomWidth={1}
             >
               <VStack spacing={2} align="left" maxW="2xl" mx="auto">
                 <HStack spacing={4}>{publishedMetaNode()}</HStack>
                 {titleNode()}
               </VStack>
             </Box>
+
             <Box
               className="article"
               maxW="2xl"
@@ -146,9 +149,13 @@ const Page = ({ article }: { article: Article }) => {
             >
               <MDXContent components={components} />
             </Box>
+
             {updatedMetaNode()}
-            <Box py={12} maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
-              {relatedArticlesNode()}
+
+            <Box py={12} w="100%" borderColor="gray.700" borderTopWidth={1}>
+              <Box maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
+                {relatedArticlesNode()}
+              </Box>
             </Box>
           </VStack>
         </Box>

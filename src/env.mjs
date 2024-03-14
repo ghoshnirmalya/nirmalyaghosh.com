@@ -7,9 +7,14 @@ export const env = createEnv({
     AHREFS_SITE_VERIFICATION: z.string().min(10),
   },
   client: {
-    NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID: z.string().length(8),
-    NEXT_PUBLIC_HIGHLIGHT_SERVICE_NAME: z.string().min(5),
-    NEXT_PUBLIC_GA: z.string().min(10),
+    NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID:
+      process.env.NODE_ENV === "production"
+        ? z.string().length(8)
+        : z.optional(),
+    NEXT_PUBLIC_HIGHLIGHT_SERVICE_NAME:
+      process.env.NODE_ENV === "production" ? z.string().min(5) : z.optional(),
+    NEXT_PUBLIC_GA:
+      process.env.NODE_ENV === "production" ? z.string().min(10) : z.optional(),
   },
   // Only destructure client variables.
   experimental__runtimeEnv: {

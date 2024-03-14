@@ -50,7 +50,7 @@ const Articles: FC<Props> = ({
     if (!!currentTag) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as={headingLevel} size="lg" color="white">
+          <Heading as={headingLevel} size="lg" color="blue.100">
             Articles
           </Heading>
           <Text>Posts tagged with &quot;{currentTag}&quot;</Text>
@@ -61,7 +61,7 @@ const Articles: FC<Props> = ({
     if (!!currentCategory) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as={headingLevel} size="lg" color="white">
+          <Heading as={headingLevel} size="lg" color="blue.100">
             Articles
           </Heading>
           <Text>
@@ -81,10 +81,12 @@ const Articles: FC<Props> = ({
 
     return (
       <VStack spacing={2} align="left">
-        <Heading as={headingLevel} size="lg" color="white">
+        <Heading as={headingLevel} size="lg" color="blue.100">
           Articles
         </Heading>
-        <Text>Posts related to some of the latest technologies</Text>
+        <Text color="blue.100">
+          Posts related to some of the latest technologies
+        </Text>
       </VStack>
     );
   };
@@ -121,7 +123,7 @@ const Articles: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text color="gray.400">{description}</Text>;
+    return <Text color="blue.100">{description}</Text>;
   };
 
   const articlesNode = () => {
