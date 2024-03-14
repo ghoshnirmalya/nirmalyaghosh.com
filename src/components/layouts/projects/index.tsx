@@ -1,4 +1,4 @@
-import { Heading, Text, VStack } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Text, VStack } from "@chakra-ui/react";
 import { FC, useState } from "react";
 
 import Project from "types/project";
@@ -36,7 +36,11 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
   };
 
   const descriptionNode = (description: string) => {
-    return <Text color="blue.100">{description}</Text>;
+    return (
+      <Text color="blue.100" fontSize="sm">
+        {description}
+      </Text>
+    );
   };
 
   const projectsNode = () => {
@@ -49,23 +53,20 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
     }
 
     return (
-      <VStack align="left" spacing={8}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={12} w="100%">
         {sortedProjects.map((project: Project, index: number) => {
           return (
-            <a
-              key={index}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <VStack spacing={0} align="left">
-                {titleNode(project.title)}
-                {descriptionNode(project.description)}
-              </VStack>
-            </a>
+            <GridItem key={index} w="100%">
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <VStack spacing={0} align="left">
+                  {titleNode(project.title)}
+                  {descriptionNode(project.description)}
+                </VStack>
+              </a>
+            </GridItem>
           );
         })}
-      </VStack>
+      </Grid>
     );
   };
 

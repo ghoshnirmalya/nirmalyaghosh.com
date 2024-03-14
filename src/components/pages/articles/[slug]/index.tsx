@@ -152,7 +152,13 @@ const Page = ({ article }: { article: Article }) => {
 
             {updatedMetaNode()}
 
-            <Box py={12} w="100%" borderColor="gray.700" borderTopWidth={1}>
+            <Box
+              py={12}
+              w="100%"
+              borderColor="gray.700"
+              borderTopWidth={1}
+              bgColor="gray.900"
+            >
               <Box maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
                 {relatedArticlesNode()}
               </Box>
