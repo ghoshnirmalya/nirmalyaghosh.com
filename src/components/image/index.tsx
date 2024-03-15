@@ -12,7 +12,7 @@ const BlurImage = ({ src, ...props }: ImageProps) => {
       style={{
         filter: isLoaded ? "none" : "blur(5px)",
       }}
-      onLoadingComplete={() => setIsLoaded(true)}
+      onLoad={() => setIsLoaded(true)}
     />
   );
 };

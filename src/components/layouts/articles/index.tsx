@@ -123,7 +123,11 @@ const Articles: FC<Props> = ({
   };
 
   const descriptionNode = (description: string) => {
-    return <Text color="blue.100">{description}</Text>;
+    return (
+      <Text color="blue.100" fontSize="sm">
+        {description}
+      </Text>
+    );
   };
 
   const articlesNode = () => {
