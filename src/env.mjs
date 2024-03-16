@@ -10,11 +10,15 @@ export const env = createEnv({
     NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID:
       process.env.NODE_ENV === "production"
         ? z.string().length(8)
-        : z.optional(),
+        : z.string().optional(),
     NEXT_PUBLIC_HIGHLIGHT_SERVICE_NAME:
-      process.env.NODE_ENV === "production" ? z.string().min(5) : z.optional(),
+      process.env.NODE_ENV === "production"
+        ? z.string().min(5)
+        : z.string().optional(),
     NEXT_PUBLIC_GA:
-      process.env.NODE_ENV === "production" ? z.string().min(10) : z.optional(),
+      process.env.NODE_ENV === "production"
+        ? z.string().min(10)
+        : z.string().optional(),
   },
   // Only destructure client variables.
   experimental__runtimeEnv: {
