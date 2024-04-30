@@ -80,7 +80,7 @@ const Jumbotron: FC = () => {
           color="blue.100"
           letterSpacing="-1"
         >
-          {"Founding Engineer at Mintlify".split("").map((el, i) => (
+          {"Staff Frontend Engineer at StarTree".split("").map((el, i) => (
             <MotionBox
               key={i}
               as="span"
