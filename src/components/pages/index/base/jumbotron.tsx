@@ -138,7 +138,7 @@ const Jumbotron: FC = () => {
           color="gray.500"
           letterSpacing="-1"
         >
-          {"Previously at Rapid, Granicus".split("").map((el, i) => (
+          {"Previously at Mintlify, Rapid, Granicus".split("").map((el, i) => (
             <MotionBox
               key={i}
               as="span"
