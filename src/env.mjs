@@ -3,8 +3,14 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    GOOGLE_SITE_VERIFICATION: z.string().min(10),
-    AHREFS_SITE_VERIFICATION: z.string().min(10),
+    GOOGLE_SITE_VERIFICATION:
+      process.env.NODE_ENV === "production"
+        ? z.string().min(10)
+        : z.string().optional(),
+    AHREFS_SITE_VERIFICATION:
+      process.env.NODE_ENV === "production"
+        ? z.string().min(10)
+        : z.string().optional(),
   },
   client: {
     NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID:
