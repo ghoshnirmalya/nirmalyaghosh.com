@@ -34,7 +34,6 @@ const Jumbotron: FC = () => {
           }}
           bgGradient="linear(to-l, #79c2ff, #4a5888)"
           rounded="full"
-          p={1}
           w={100}
           h={100}
         >
@@ -138,7 +137,7 @@ const Jumbotron: FC = () => {
           color="gray.500"
           letterSpacing="-1"
         >
-          {"Previously at Mintlify, Rapid, Granicus".split("").map((el, i) => (
+          {"Previously at Mintlify, Rapid".split("").map((el, i) => (
             <MotionBox
               key={i}
               as="span"

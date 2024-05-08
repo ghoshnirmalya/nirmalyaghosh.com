@@ -10,9 +10,8 @@ import {
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import pick from "lodash/pick";
 import NextLink from "next/link";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 import Publication from "types/publication";
 
@@ -35,16 +34,10 @@ const Articles: FC<Props> = ({
   heading,
   headingLevel = "h1",
 }) => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const sortedArticles = articles
-    .sort(
-      (a: Article & Publication, b: Article & Publication) =>
-        Number(new Date(b.date)) - Number(new Date(a.date)),
-    )
-    .filter((article: Article) =>
-      article.title.toLowerCase().includes(searchQuery.toLowerCase()),
-    );
+  const sortedArticles = articles.sort(
+    (a: Article & Publication, b: Article & Publication) =>
+      Number(new Date(b.date)) - Number(new Date(a.date)),
+  );
 
   const headingNode = () => {
     if (!!currentTag) {
@@ -73,7 +66,7 @@ const Articles: FC<Props> = ({
 
     if (!!heading) {
       return (
-        <Heading as={headingLevel} size="lg">
+        <Heading as={headingLevel} size="md">
           {heading}
         </Heading>
       );
@@ -84,7 +77,7 @@ const Articles: FC<Props> = ({
         <Heading as={headingLevel} size="lg" color="blue.100">
           Articles
         </Heading>
-        <Text color="blue.100">
+        <Text color="blue.100" fontSize="sm">
           Posts related to some of the latest technologies
         </Text>
       </VStack>
@@ -116,7 +109,7 @@ const Articles: FC<Props> = ({
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h2" size="md" lineHeight="tall" color="blue.400">
+      <Heading as="h2" size="sm" lineHeight="tall" color="blue.400">
         {title}
       </Heading>
     );

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   BoxProps,
@@ -12,7 +14,6 @@ import {
 import { motion } from "framer-motion";
 import { FC, useEffect, useState } from "react";
 import { BiCodeCurly } from "react-icons/bi";
-import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg";
 import { FaServer } from "react-icons/fa";
 import { GoBrowser } from "react-icons/go";
 import { MdDataSaverOn, MdOutlineRestartAlt } from "react-icons/md";

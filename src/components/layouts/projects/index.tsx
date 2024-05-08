@@ -20,7 +20,7 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
         <Heading as={headingLevel} size="lg" color="blue.100">
           Projects
         </Heading>
-        <Text color="blue.100">
+        <Text color="blue.100" fontSize="sm">
           Open Source Projects developed and available on Github
         </Text>
       </VStack>
@@ -29,7 +29,7 @@ const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
 
   const titleNode = (title: string) => {
     return (
-      <Heading as="h3" size="md" lineHeight="tall" color="blue.400">
+      <Heading as="h3" size="sm" lineHeight="tall" color="blue.400">
         {title}
       </Heading>
     );

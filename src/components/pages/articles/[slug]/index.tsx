@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Grid,
@@ -113,10 +111,9 @@ const Page = ({ article }: { article: Article }) => {
 
   const relatedArticlesNode = () => {
     return (
-      <Articles
-        articles={nextArticles.slice(0, 5)}
-        heading="Related articles"
-      />
+      <Box color="blue.100">
+        <Articles articles={nextArticles.slice(0, 5)} heading="More articles" />
+      </Box>
     );
   };
 
@@ -152,17 +149,19 @@ const Page = ({ article }: { article: Article }) => {
 
             {updatedMetaNode()}
 
-            <Box
-              py={12}
-              w="100%"
-              borderColor="gray.700"
-              borderTopWidth={1}
-              bgColor="gray.900"
-            >
-              <Box maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
-                {relatedArticlesNode()}
+            <VStack w="100%" spacing={0}>
+              <Box
+                py={12}
+                w="100%"
+                borderColor="gray.700"
+                borderTopWidth={1}
+                bgColor="gray.900"
+              >
+                <Box maxW="2xl" mx="auto" px={[8, 8, 0, 0]} w="100%">
+                  {relatedArticlesNode()}
+                </Box>
               </Box>
-            </Box>
+            </VStack>
           </VStack>
         </Box>
       </Grid>

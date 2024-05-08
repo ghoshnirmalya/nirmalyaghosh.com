@@ -119,7 +119,7 @@ const Navbar: FC = () => {
                   py={2}
                   href={link.url}
                   rounded="sm"
-                  fontSize="sm"
+                  fontSize="xs"
                   borderWidth={1}
                   borderColor="transparent"
                   _hover={{
