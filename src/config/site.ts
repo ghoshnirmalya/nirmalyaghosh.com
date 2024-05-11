@@ -11,7 +11,7 @@ const siteConfig = {
     favicon: "https://nirmalyaghosh.com/images/common/favicon.svg",
   },
   socialLinks: {
-    twitter: "@NirmalyaGhosh_",
+    twitter: "@ghoshnirmalya_",
   },
 };
 
