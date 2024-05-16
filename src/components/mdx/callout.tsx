@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, HStack, Icon, theme } from "@chakra-ui/react";
 import { FC, ReactNode } from "react";
 import { IoIosAlert, IoIosHelpCircle, IoIosWarning } from "react-icons/io";

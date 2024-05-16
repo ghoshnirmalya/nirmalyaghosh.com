@@ -1,3 +1,4 @@
+import type { MDXOptions } from "@contentlayer2/core";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypeImgSize from "rehype-img-size";
@@ -26,8 +27,7 @@ const mdxOptions = {
         dir: "public",
       },
     ],
-  ] as Pluggable[],
-  compilers: [],
-};
+  ],
+} as MDXOptions;
 
 export default mdxOptions;
