@@ -1,7 +1,7 @@
 import { Center } from "@chakra-ui/react";
 import { FC } from "react";
 
-const DynamicComponentLoader: FC = () => {
+const DynamicComponentLoader = () => {
   return (
     <Center
       bg="gray.900"

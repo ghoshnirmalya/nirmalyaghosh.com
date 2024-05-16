@@ -8,7 +8,7 @@ interface IProps {
   type?: "error" | "info" | "warning";
   children: ReactNode;
 }
-const Callout: FC<IProps> = ({ type = "info", children }) => {
+const Callout = ({ type = "info", children }: IProps) => {
   const allowedTypes = {
     error: {
       icon: IoIosAlert,

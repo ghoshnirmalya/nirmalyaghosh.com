@@ -3,12 +3,12 @@ import { FC, useState } from "react";
 
 import Project from "types/project";
 
-interface Props {
+interface IProps {
   projects: Project[];
   headingLevel?: "h1" | "h2";
 }
 
-const Projects: FC<Props> = ({ projects = [], headingLevel = "h1" }) => {
+const Projects = ({ projects = [], headingLevel = "h1" }: IProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const sortedProjects = projects.filter((project: Project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase()),

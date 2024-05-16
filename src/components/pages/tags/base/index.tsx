@@ -5,12 +5,12 @@ import Articles from "components/layouts/articles";
 
 import { Article } from "contentlayer/generated";
 
-interface Props {
+interface IProps {
   articles: Article[];
   currentTag: string;
 }
 
-const Page: FC<Props> = ({ articles = [], currentTag }) => {
+const Page = ({ articles = [], currentTag }: IProps) => {
   const sortedArticles: Article[] = articles.sort((a: Article, b: Article) => {
     return Number(new Date(b.date)) - Number(new Date(a.date));
   });

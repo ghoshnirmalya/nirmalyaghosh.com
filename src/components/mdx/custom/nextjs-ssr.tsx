@@ -25,7 +25,7 @@ const MotionVStack = motion<StackProps>(VStack);
 const MotionCenter = motion<BoxProps>(Center);
 const MotionBox = motion<BoxProps>(Box);
 
-const NextJSSSR: FC = () => {
+const NextJSSSR = () => {
   const [currentStep, setCurrentStep] = useState<0 | 1 | 2 | 3>(0);
 
   useEffect(() => {

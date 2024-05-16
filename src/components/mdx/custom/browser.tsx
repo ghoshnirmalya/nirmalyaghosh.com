@@ -6,10 +6,10 @@ interface IProps {
   children: ReactNode;
 }
 
-const MockBrowser: FC<IProps> = ({
+const MockBrowser = ({
   address = "http://localhost:3000",
   children,
-}) => {
+}: IProps) => {
   return (
     <VStack spacing={4} w="100%">
       <VStack spacing={0} w="100%">

@@ -7,7 +7,7 @@ interface IProps {
   text: string;
 }
 
-const Link: FC<IProps> = ({ href, text }) => {
+const Link = ({ href, text }: IProps) => {
   return (
     <ChakraLink
       as={NextLink}

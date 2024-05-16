@@ -11,7 +11,6 @@ import {
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import NextLink from "next/link";
-import { FC } from "react";
 
 import Publication from "types/publication";
 
@@ -19,7 +18,7 @@ import { Article } from "contentlayer/generated";
 
 dayjs.extend(localizedFormat);
 
-interface Props {
+interface IProps {
   articles: (Article & Publication)[] | Article[];
   currentTag?: string;
   currentCategory?: string;
@@ -27,13 +26,13 @@ interface Props {
   headingLevel?: "h1" | "h2";
 }
 
-const Articles: FC<Props> = ({
+const Articles = ({
   articles = [],
   currentTag,
   currentCategory,
   heading,
   headingLevel = "h1",
-}) => {
+}: IProps) => {
   const sortedArticles = articles.sort(
     (a: Article & Publication, b: Article & Publication) =>
       Number(new Date(b.date)) - Number(new Date(a.date)),

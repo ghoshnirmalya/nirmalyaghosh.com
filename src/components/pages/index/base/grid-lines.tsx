@@ -1,26 +1,8 @@
-"use client";
-
-import { Box, BoxProps } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-
-const MotionBox = motion<BoxProps>(Box);
+import { Box } from "@chakra-ui/react";
 
 const GridLines = () => {
   return (
-    <MotionBox
-      as="span"
-      initial="hidden"
-      animate="show"
-      variants={{
-        hidden: { opacity: 0 },
-        show: {
-          opacity: 1,
-          transition: {
-            delay: 0.15,
-          },
-        },
-      }}
-    >
+    <Box as="span">
       <Box
         display={{ base: "none", md: "block" }}
         position="absolute"
@@ -151,7 +133,7 @@ const GridLines = () => {
           opacity={0.15}
         />
       </Box>
-    </MotionBox>
+    </Box>
   );
 };
 

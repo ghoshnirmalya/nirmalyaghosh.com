@@ -10,7 +10,7 @@ interface IProps {
   width: number;
 }
 
-const Image: FC<IProps> = ({ src, alt, height, width }) => {
+const Image = ({ src, alt, height, width }: IProps) => {
   return (
     <Link
       href={src}

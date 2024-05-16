@@ -1,12 +1,5 @@
-"use client";
-
-import { Box, BoxProps, HStack, Link } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Box, HStack, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { usePathname } from "next/navigation";
-import { FC } from "react";
-
-const MotionBox = motion<BoxProps>(Box);
 
 interface NavLink {
   url: string;
@@ -24,9 +17,7 @@ const LINKS = [
   },
 ];
 
-const Navbar: FC = () => {
-  const pathname = usePathname();
-
+const Navbar = () => {
   const menuNode = () => {
     const socialLinksNode = () => {
       return (
@@ -141,23 +132,7 @@ const Navbar: FC = () => {
   };
 
   return (
-    <MotionBox
-      as="header"
-      initial="hidden"
-      animate="show"
-      variants={{
-        hidden: { opacity: 0 },
-        show: {
-          opacity: 1,
-          transition: {
-            delay: pathname === "/" ? 1 : 0,
-          },
-        },
-      }}
-      zIndex={1}
-      borderTopWidth={5}
-      borderColor="blue.400"
-    >
+    <Box as="header" zIndex={1} borderTopWidth={5} borderColor="blue.400">
       <Box mx="auto" px={[4, 4, 4, 0]} maxW="6xl">
         <HStack
           justifyContent="space-between"
@@ -203,7 +178,7 @@ const Navbar: FC = () => {
         </HStack>
       </Box>
       <Box w="full" h="1px" bg="gray.700" />
-    </MotionBox>
+    </Box>
   );
 };
 

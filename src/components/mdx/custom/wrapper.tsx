@@ -5,7 +5,7 @@ interface IProps {
   children?: ReactNode;
 }
 
-const Wrapper: FC<IProps> = ({ children }) => {
+const Wrapper = ({ children }: IProps) => {
   return (
     <Box
       w="100%"

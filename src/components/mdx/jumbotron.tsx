@@ -8,7 +8,7 @@ interface IProps {
   demoLink: string;
 }
 
-const Jumbotron: FC<IProps> = ({ description, githubLink, demoLink }) => {
+const Jumbotron = ({ description, githubLink, demoLink }: IProps) => {
   const githubButtonNode = () => {
     if (!githubLink) {
       return false;
