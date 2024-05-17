@@ -42,7 +42,7 @@ const Articles = ({
     if (!!currentTag) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as={headingLevel} size="lg" color="blue.100">
+          <Heading as={headingLevel} size="md" color="blue.100">
             Articles
           </Heading>
           <Text>Posts tagged with &quot;{currentTag}&quot;</Text>
@@ -53,7 +53,7 @@ const Articles = ({
     if (!!currentCategory) {
       return (
         <VStack spacing={2} align="left">
-          <Heading as={headingLevel} size="lg" color="blue.100">
+          <Heading as={headingLevel} size="md" color="blue.100">
             Articles
           </Heading>
           <Text>
@@ -73,7 +73,7 @@ const Articles = ({
 
     return (
       <VStack spacing={2} align="left">
-        <Heading as={headingLevel} size="lg" color="blue.100">
+        <Heading as={headingLevel} size="md" color="blue.100">
           Articles
         </Heading>
         <Text color="blue.100" fontSize="sm">

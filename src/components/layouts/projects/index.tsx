@@ -1,5 +1,7 @@
+"use client";
+
 import { Grid, GridItem, Heading, Text, VStack } from "@chakra-ui/react";
-import { FC, useState } from "react";
+import { useState } from "react";
 
 import Project from "types/project";
 
@@ -17,7 +19,7 @@ const Projects = ({ projects = [], headingLevel = "h1" }: IProps) => {
   const headingNode = () => {
     return (
       <VStack spacing={2} align="left">
-        <Heading as={headingLevel} size="lg" color="blue.100">
+        <Heading as={headingLevel} size="md" color="blue.100">
           Projects
         </Heading>
         <Text color="blue.100" fontSize="sm">
