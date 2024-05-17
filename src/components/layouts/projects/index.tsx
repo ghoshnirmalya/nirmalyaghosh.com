@@ -18,10 +18,11 @@ const Projects = ({
   hideSearch = false,
 }: IProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<Project[]>([]);
+  const [searchResults, setSearchResults] = useState(projects);
 
   const fuse = new Fuse(projects, {
-    keys: ["title", "description", "date"],
+    keys: ["title"],
+    threshold: 0.3,
   });
 
   useEffect(() => {

@@ -41,12 +41,11 @@ const Articles = ({
   hideSearch = false,
 }: IProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<
-    (Article & Publication)[] | Article[]
-  >([]);
+  const [searchResults, setSearchResults] = useState(articles);
 
   const fuse = new Fuse(articles, {
-    keys: ["title", "description", "date"],
+    keys: ["title"],
+    threshold: 0.3,
   });
 
   useEffect(() => {
