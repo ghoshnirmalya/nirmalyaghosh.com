@@ -76,7 +76,11 @@ const Projects = ({
     }
 
     return (
-      <Grid templateColumns="repeat(2, 1fr)" gap={12} w="100%">
+      <Grid
+        templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]}
+        gap={12}
+        w="100%"
+      >
         {searchResults.map((project: Project, index: number) => {
           return (
             <GridItem key={index} w="100%">
