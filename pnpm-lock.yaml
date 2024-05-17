@@ -41,6 +41,9 @@ importers:
       framer-motion:
         specifier: ^11.2.3
         version: 11.2.3(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      fuse.js:
+        specifier: ^7.0.0
+        version: 7.0.0
       ga-4-react:
         specifier: ^0.1.281
         version: 0.1.281
@@ -2545,6 +2548,10 @@ packages:
 
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  fuse.js@7.0.0:
+    resolution: {integrity: sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==}
+    engines: {node: '>=10'}
 
   ga-4-react@0.1.281:
     resolution: {integrity: sha512-LBvn8digT3gS8Iw8/XN3Z60c/JlFjMreLrZEneeQr+N/3+Ymv8yOsuK6qFAX2VPS6TscLbSlgtb/mriJ2P17Ow==}
@@ -7759,6 +7766,8 @@ snapshots:
       functions-have-names: 1.2.3
 
   functions-have-names@1.2.3: {}
+
+  fuse.js@7.0.0: {}
 
   ga-4-react@0.1.281: {}
 

@@ -133,7 +133,7 @@ const Navbar = () => {
 
   return (
     <Box as="header" zIndex={1} borderTopWidth={5} borderColor="blue.400">
-      <Box mx="auto" px={[4, 4, 4, 0]} maxW="6xl">
+      <Box maxW="2xl" mx="auto" py={0} px={[8, 8, 8, 0]}>
         <HStack
           justifyContent="space-between"
           alignItems="center"

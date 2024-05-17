@@ -1,20 +1,41 @@
 "use client";
 
-import { Grid, GridItem, Heading, Text, VStack } from "@chakra-ui/react";
-import { useState } from "react";
+import { Grid, GridItem, Heading, Input, Text, VStack } from "@chakra-ui/react";
+import Fuse from "fuse.js";
+import { useEffect, useState } from "react";
 
 import Project from "types/project";
 
 interface IProps {
   projects: Project[];
   headingLevel?: "h1" | "h2";
+  hideSearch?: boolean;
 }
 
-const Projects = ({ projects = [], headingLevel = "h1" }: IProps) => {
+const Projects = ({
+  projects = [],
+  headingLevel = "h1",
+  hideSearch = false,
+}: IProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const sortedProjects = projects.filter((project: Project) =>
-    project.title.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  const [searchResults, setSearchResults] = useState<Project[]>([]);
+
+  const fuse = new Fuse(projects, {
+    keys: ["title", "description", "date"],
+  });
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      setSearchResults(projects);
+
+      return;
+    }
+
+    const results = fuse.search(searchQuery);
+    const filteredResults = results.map((result) => result.item);
+
+    setSearchResults(filteredResults);
+  }, [searchQuery]);
 
   const headingNode = () => {
     return (
@@ -46,7 +67,7 @@ const Projects = ({ projects = [], headingLevel = "h1" }: IProps) => {
   };
 
   const projectsNode = () => {
-    if (!sortedProjects.length) {
+    if (!searchResults.length) {
       return (
         <VStack mx="auto" textAlign="center" w="100%">
           <Text>No projects found!</Text>
@@ -56,7 +77,7 @@ const Projects = ({ projects = [], headingLevel = "h1" }: IProps) => {
 
     return (
       <Grid templateColumns="repeat(2, 1fr)" gap={12} w="100%">
-        {sortedProjects.map((project: Project, index: number) => {
+        {searchResults.map((project: Project, index: number) => {
           return (
             <GridItem key={index} w="100%">
               <a href={project.url} target="_blank" rel="noopener noreferrer">
@@ -72,9 +93,29 @@ const Projects = ({ projects = [], headingLevel = "h1" }: IProps) => {
     );
   };
 
+  const searchBarNode = () => {
+    if (hideSearch) {
+      return null;
+    }
+
+    return (
+      <Input
+        type="text"
+        placeholder="Search projects..."
+        onChange={(e) => setSearchQuery(e.target.value)}
+        value={searchQuery}
+        borderColor="gray.700"
+        fontSize="sm"
+      />
+    );
+  };
+
   return (
     <VStack spacing={12} align="left">
-      {headingNode()}
+      <VStack spacing={4} align="left">
+        {headingNode()}
+        {searchBarNode()}
+      </VStack>
       {projectsNode()}
     </VStack>
   );

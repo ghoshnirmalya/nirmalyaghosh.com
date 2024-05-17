@@ -1,7 +1,10 @@
+"use client";
+
 import {
   Box,
   HStack,
   Heading,
+  Input,
   Link,
   Tag,
   TagLabel,
@@ -10,7 +13,9 @@ import {
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import Fuse from "fuse.js";
 import NextLink from "next/link";
+import { useEffect, useState } from "react";
 
 import Publication from "types/publication";
 
@@ -24,6 +29,7 @@ interface IProps {
   currentCategory?: string;
   heading?: string;
   headingLevel?: "h1" | "h2";
+  hideSearch?: boolean;
 }
 
 const Articles = ({
@@ -32,8 +38,31 @@ const Articles = ({
   currentCategory,
   heading,
   headingLevel = "h1",
+  hideSearch = false,
 }: IProps) => {
-  const sortedArticles = articles.sort(
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<
+    (Article & Publication)[] | Article[]
+  >([]);
+
+  const fuse = new Fuse(articles, {
+    keys: ["title", "description", "date"],
+  });
+
+  useEffect(() => {
+    if (searchQuery === "") {
+      setSearchResults(articles);
+
+      return;
+    }
+
+    const results = fuse.search(searchQuery);
+    const filteredResults = results.map((result) => result.item);
+
+    setSearchResults(filteredResults);
+  }, [searchQuery]);
+
+  const sortedArticles = searchResults.sort(
     (a: Article & Publication, b: Article & Publication) =>
       Number(new Date(b.date)) - Number(new Date(a.date)),
   );
@@ -171,9 +200,29 @@ const Articles = ({
     });
   };
 
+  const searchBarNode = () => {
+    if (hideSearch) {
+      return null;
+    }
+
+    return (
+      <Input
+        type="text"
+        placeholder="Search articles..."
+        onChange={(e) => setSearchQuery(e.target.value)}
+        value={searchQuery}
+        borderColor="gray.700"
+        fontSize="sm"
+      />
+    );
+  };
+
   return (
     <VStack spacing={12} align="left">
-      {headingNode()}
+      <VStack spacing={4} align="left">
+        {headingNode()}
+        {searchBarNode()}
+      </VStack>
       {articlesNode()}
     </VStack>
   );

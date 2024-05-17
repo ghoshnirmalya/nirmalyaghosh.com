@@ -40,7 +40,11 @@ const Page = () => {
 
       <Box bgColor="gray.900" borderColor="gray.700" borderTopWidth={1}>
         <Box as="main" maxW="2xl" mx="auto" py={16} px={[8, 8, 8, 0]}>
-          <Projects projects={projects.slice(0, 10)} headingLevel="h2" />
+          <Projects
+            projects={projects.slice(0, 10)}
+            headingLevel="h2"
+            hideSearch
+          />
         </Box>
       </Box>
 
@@ -49,6 +53,7 @@ const Page = () => {
           <Articles
             articles={sortedAllArticlesAndPublications.slice(0, 5)}
             headingLevel="h2"
+            hideSearch
           />
         </Box>
       </Box>
